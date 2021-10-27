@@ -1,2 +1,2 @@
 # ge-web
-Replacing Molo-Gem to use standard Wagtali
+Replacing Molo-Gem to use standard Wagtail
