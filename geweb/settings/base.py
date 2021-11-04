@@ -19,6 +19,8 @@ env = environ.Env()
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+DEFAULT_SECRET_KEY = "please-change-me"
+SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
