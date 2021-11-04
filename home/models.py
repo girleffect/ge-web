@@ -26,18 +26,16 @@ from django.utils.translation import gettext_lazy as _
 
 class HomePage(Page):
     subpage_types = [
-    "SectionPage",
-]
+        "SectionPage",
+    ]
+
 
 class SectionPage(Page):
     subpage_types = [
-    "ArticlePage",
-    "SectionPage",
-    ]
-    parent_page_type = [
+        "ArticlePage",
         "SectionPage",
-        "HomePage"
     ]
+    parent_page_type = ["SectionPage", "HomePage"]
 
 
 class ArticlePageTag(TaggedItemBase):
@@ -74,110 +72,124 @@ class ArticlePage(Page):
 @register_setting
 class SiteSettings(BaseSetting):
     fb_analytics_app_id = models.CharField(
-        verbose_name=_('Facebook Analytics App ID'),
+        verbose_name=_("Facebook Analytics App ID"),
         max_length=25,
         null=True,
         blank=True,
-        help_text=_(
-            "The tracking ID to be used to view Facebook Analytics")
+        help_text=_("The tracking ID to be used to view Facebook Analytics"),
     )
     ga_tag_manager = models.CharField(
-        verbose_name=_('Local GA Tag Manager'),
+        verbose_name=_("Local GA Tag Manager"),
         max_length=255,
         null=True,
         blank=True,
         help_text=_(
             "Local GA Tag Manager tracking code (e.g GTM-XXX) to be used to "
-            "view analytics on this site only")
+            "view analytics on this site only"
+        ),
     )
     global_ga_tag_manager = models.CharField(
-        verbose_name=_('Global GA Tag Manager'),
+        verbose_name=_("Global GA Tag Manager"),
         max_length=255,
         null=True,
         blank=True,
         help_text=_(
             "Global GA Tag Manager tracking code (e.g GTM-XXX) to be used"
-            " to view analytics on more than one site globally")
+            " to view analytics on more than one site globally"
+        ),
     )
     google_search_console = models.CharField(
-        verbose_name=_('Google Search Console'),
+        verbose_name=_("Google Search Console"),
         max_length=255,
         null=True,
         blank=True,
-        help_text=_(
-            "The Google Search Console verification code")
+        help_text=_("The Google Search Console verification code"),
     )
-    social_media_links_on_footer_page = StreamField([
-        ('social_media_site', blocks.URLBlock()),
-    ], null=True, blank=True)
+    social_media_links_on_footer_page = StreamField(
+        [
+            ("social_media_site", blocks.URLBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
     facebook_sharing = models.BooleanField(
-        default=False, verbose_name='Facebook',
-        help_text='Enable this field to allow for sharing to Facebook.')
+        default=False,
+        verbose_name="Facebook",
+        help_text="Enable this field to allow for sharing to Facebook.",
+    )
     facebook_image = models.ForeignKey(
-        'wagtailimages.Image',
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name="+",
     )
     twitter_sharing = models.BooleanField(
-        default=False, verbose_name='Twitter',
-        help_text='Enable this field to allow for sharing to Twitter.')
+        default=False,
+        verbose_name="Twitter",
+        help_text="Enable this field to allow for sharing to Twitter.",
+    )
     twitter_image = models.ForeignKey(
-        'wagtailimages.Image',
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name="+",
     )
     whatsapp_sharing = models.BooleanField(
-        default=False, verbose_name='Whatsapp',
-        help_text='Enable this field to allow for sharing to Whatsapp.')
+        default=False,
+        verbose_name="Whatsapp",
+        help_text="Enable this field to allow for sharing to Whatsapp.",
+    )
     whatsapp_image = models.ForeignKey(
-        'wagtailimages.Image',
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name="+",
     )
     viber_sharing = models.BooleanField(
-        default=False, verbose_name='Viber',
-        help_text='Enable this field to allow for sharing to Viber.')
+        default=False,
+        verbose_name="Viber",
+        help_text="Enable this field to allow for sharing to Viber.",
+    )
     viber_image = models.ForeignKey(
-        'wagtailimages.Image',
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name="+",
     )
     telegram_sharing = models.BooleanField(
-        default=False, verbose_name='Telegram',
-        help_text='Enable this field to allow for sharing to Telegram.')
+        default=False,
+        verbose_name="Telegram",
+        help_text="Enable this field to allow for sharing to Telegram.",
+    )
     telegram_image = models.ForeignKey(
-        'wagtailimages.Image',
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name="+",
     )
 
     panels = [
         MultiFieldPanel(
             [
-                FieldPanel('fb_analytics_app_id'),
+                FieldPanel("fb_analytics_app_id"),
             ],
             heading="Facebook Analytics Settings",
         ),
         MultiFieldPanel(
             [
-                FieldPanel('ga_tag_manager'),
-                FieldPanel('global_ga_tag_manager'),
+                FieldPanel("ga_tag_manager"),
+                FieldPanel("global_ga_tag_manager"),
             ],
             heading="GA Tag Manager Settings",
         ),
         MultiFieldPanel(
             [
-                FieldPanel('google_search_console'),
+                FieldPanel("google_search_console"),
             ],
             heading="Google Search Console Verification Code",
         ),
@@ -185,24 +197,26 @@ class SiteSettings(BaseSetting):
             [
                 MultiFieldPanel(
                     [
-                        StreamFieldPanel('social_media_links_on_footer_page'),
+                        StreamFieldPanel("social_media_links_on_footer_page"),
                     ],
-                    heading="Social Media Footer Page", ),
+                    heading="Social Media Footer Page",
+                ),
             ],
-            heading="Social Media Footer Page Links", ),
+            heading="Social Media Footer Page Links",
+        ),
         MultiFieldPanel(
             [
-                FieldPanel('facebook_sharing'),
-                ImageChooserPanel('facebook_image'),
-                FieldPanel('twitter_sharing'),
-                ImageChooserPanel('twitter_image'),
-                FieldPanel('whatsapp_sharing'),
-                ImageChooserPanel('whatsapp_image'),
-                FieldPanel('viber_sharing'),
-                ImageChooserPanel('viber_image'),
-                FieldPanel('telegram_sharing'),
-                ImageChooserPanel('telegram_image'),
+                FieldPanel("facebook_sharing"),
+                ImageChooserPanel("facebook_image"),
+                FieldPanel("twitter_sharing"),
+                ImageChooserPanel("twitter_image"),
+                FieldPanel("whatsapp_sharing"),
+                ImageChooserPanel("whatsapp_image"),
+                FieldPanel("viber_sharing"),
+                ImageChooserPanel("viber_image"),
+                FieldPanel("telegram_sharing"),
+                ImageChooserPanel("telegram_image"),
             ],
             heading="Social Media Article Sharing Buttons",
-        )
+        ),
     ]
