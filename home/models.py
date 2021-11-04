@@ -2,12 +2,9 @@ from django.db import models
 
 from wagtail.core.models import Page
 
-from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
-from wagtail.api import APIField
-from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.core import blocks
@@ -16,10 +13,7 @@ from wagtail.admin.edit_handlers import (
     FieldPanel,
     MultiFieldPanel,
     StreamFieldPanel,
-    ObjectList,
-    TabbedInterface,
 )
-from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from django.utils.translation import gettext_lazy as _
 
