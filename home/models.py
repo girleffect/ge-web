@@ -21,6 +21,7 @@ from django.utils.translation import gettext_lazy as _
 class HomePage(Page):
     subpage_types = [
         "SectionPage",
+        "ArticleTagIndexPage"
     ]
 
 
@@ -61,6 +62,20 @@ class ArticlePage(Page):
         StreamFieldPanel("body"),
         FieldPanel("tags"),
     ]
+
+
+class ArticleTagIndexPage(Page):
+
+    def get_context(self, request):
+
+        # Filter by tag
+        tag = request.GET.get('tag')
+        articlepages = ArticlePage.objects.filter(tags__name=tag)
+
+        # Update template context
+        context = super().get_context(request)
+        context['articlepages'] = articlepages
+        return context
 
 
 @register_setting
