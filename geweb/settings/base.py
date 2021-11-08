@@ -171,3 +171,5 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("fr", "French"),
     ("es", "Spanish"),
 ]
+
+TAGGIT_CASE_INSENSITIVE = True
