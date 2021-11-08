@@ -44,7 +44,7 @@ class ArticlePage(Page):
     ]
 
     # general page attributes
-    tags = ClusterTaggableManager(through=ArticlePageTag)
+    tags = ClusterTaggableManager(through=ArticlePageTag, blank=True)
 
     # Web page setup
     subtitle = models.CharField(max_length=200, blank=True, null=True)
