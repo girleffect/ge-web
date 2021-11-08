@@ -20,19 +20,16 @@ from django.utils.translation import gettext_lazy as _
 
 
 class HomePage(Page):
-    subpage_types = [
-        "SectionPage",
-        "ArticleTagIndexPage"
-    ]
+    subpage_types = ["SectionPage", "ArticleTagIndexPage"]
 
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index
         context = super().get_context(request)
         sections = SectionPage.objects.child_of(self).live()
-        context['sections'] = sections
+        context["sections"] = sections
 
         tags = [tag.tag.name for tag in ArticlePageTag.objects.all()]
-        context['tags'] = set(tags)
+        context["tags"] = set(tags)
         return context
 
 
@@ -46,8 +43,8 @@ class SectionPage(Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
-        articlepages = self.get_children().live().order_by('-first_published_at')
-        context['articlepages'] = articlepages
+        articlepages = self.get_children().live().order_by("-first_published_at")
+        context["articlepages"] = articlepages
         return context
 
 
@@ -81,22 +78,21 @@ class ArticlePage(Page):
         FieldPanel("tags"),
     ]
     search_fields = Page.search_fields + [
-        index.SearchField('body'),
-        index.SearchField('subtitle'),
+        index.SearchField("body"),
+        index.SearchField("subtitle"),
     ]
 
 
 class ArticleTagIndexPage(Page):
-
     def get_context(self, request):
 
         # Filter by tag
-        tag = request.GET.get('tag')
+        tag = request.GET.get("tag")
         articlepages = ArticlePage.objects.filter(tags__name=tag)
 
         # Update template context
         context = super().get_context(request)
-        context['articlepages'] = articlepages
+        context["articlepages"] = articlepages
         return context
 
 
