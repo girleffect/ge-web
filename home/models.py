@@ -25,6 +25,16 @@ class HomePage(Page):
         "ArticleTagIndexPage"
     ]
 
+    def get_context(self, request):
+        # Update context to seperate sectionpages and tag index
+        context = super().get_context(request)
+        sections = SectionPage.objects.child_of(self).live()
+        context['sections'] = sections
+
+        tags = [tag.tag.name for tag in ArticlePageTag.objects.all()]
+        context['tags'] = set(tags)
+        return context
+
 
 class SectionPage(Page):
     subpage_types = [
@@ -32,6 +42,13 @@ class SectionPage(Page):
         "SectionPage",
     ]
     parent_page_type = ["SectionPage", "HomePage"]
+
+    def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse-chron
+        context = super().get_context(request)
+        articlepages = self.get_children().live().order_by('-first_published_at')
+        context['articlepages'] = articlepages
+        return context
 
 
 class ArticlePageTag(TaggedItemBase):

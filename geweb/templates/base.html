@@ -28,7 +28,10 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <p><a href="/">HOME</a></p>
+
+        {% block content %}
+        {% endblock %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/geweb.js' %}"></script>
