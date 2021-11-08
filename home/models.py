@@ -15,6 +15,7 @@ from wagtail.admin.edit_handlers import (
     StreamFieldPanel,
 )
 from wagtail.contrib.settings.models import BaseSetting, register_setting
+from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
 
 
@@ -61,6 +62,10 @@ class ArticlePage(Page):
         FieldPanel("subtitle"),
         StreamFieldPanel("body"),
         FieldPanel("tags"),
+    ]
+    search_fields = Page.search_fields + [
+        index.SearchField('body'),
+        index.SearchField('subtitle'),
     ]
 
 
