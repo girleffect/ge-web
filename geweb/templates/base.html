@@ -1,5 +1,7 @@
 {% load static wagtailuserbar %}
 
+{% load home_tags %}
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -33,6 +35,7 @@
         {% block content %}
         {% endblock %}
 
+        {% footer_pages %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/geweb.js' %}"></script>
 
