@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 
 DEBUG = False
 
-PROJECT_ROOT = env.str("PROJECT_ROOT") or dirname(dirname(abspath(__file__)))
+PROJECT_ROOT = os.environ.get("PROJECT_ROOT") or dirname(dirname(abspath(__file__)))
 DATABASES = {
     "default": dj_database_url.config(
         default="sqlite:///%s" % (join(PROJECT_ROOT, "geweb.db"),)
