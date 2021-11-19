@@ -89,8 +89,6 @@ class FooterPage(ArticlePage):
     parent_page_types = ['FooterIndexPage']
     subpage_types = []
 
-    template = 'home/article_page.html'
-
 
 @register_setting
 class SiteSettings(BaseSetting):
