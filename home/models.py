@@ -82,11 +82,11 @@ class ArticlePage(Page):
 
 
 class FooterIndexPage(Page):
-    subpage_types = ['FooterPage']
+    subpage_types = ["FooterPage"]
 
 
 class FooterPage(ArticlePage):
-    parent_page_types = ['FooterIndexPage']
+    parent_page_types = ["FooterIndexPage"]
     subpage_types = []
 
 
