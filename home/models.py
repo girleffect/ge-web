@@ -20,7 +20,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class HomePage(Page):
-    subpage_types = ["SectionPage", "ArticleTagIndexPage", "FooterIndexPage"]
+    subpage_types = ["SectionPage", "FooterIndexPage"]
 
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index
@@ -28,8 +28,6 @@ class HomePage(Page):
         sections = SectionPage.objects.child_of(self).live()
         context["sections"] = sections
 
-        tags = [tag.tag.name for tag in ArticlePageTag.objects.all()]
-        context["tags"] = set(tags)
         return context
 
 
@@ -81,19 +79,6 @@ class ArticlePage(Page):
         index.SearchField("body"),
         index.SearchField("subtitle"),
     ]
-
-
-class ArticleTagIndexPage(Page):
-    def get_context(self, request):
-
-        # Filter by tag
-        tag = request.GET.get("tag")
-        articlepages = ArticlePage.objects.filter(tags__name=tag)
-
-        # Update template context
-        context = super().get_context(request)
-        context["articlepages"] = articlepages
-        return context
 
 
 class FooterIndexPage(Page):
