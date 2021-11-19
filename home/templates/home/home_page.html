@@ -12,8 +12,4 @@
     {% for section in sections %}
         <h2><a href="{% pageurl section %}">{{ section.title }}</a></h2>
     {% endfor %}
-
-    {% for tag in tags %}
-        <p><a href="{% slugurl 'tags' %}?tag={{ tag }}">#{{ tag }}</a></p>
-    {% endfor %}
 {% endblock content %}
