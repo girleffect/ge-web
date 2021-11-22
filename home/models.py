@@ -17,6 +17,7 @@ from wagtail.admin.edit_handlers import (
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
+from articles.models import SectionPage
 
 
 class HomePage(Page):
