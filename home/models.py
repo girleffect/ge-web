@@ -20,7 +20,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 class HomePage(Page):
-    subpage_types = ["SectionPage"]
 
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index

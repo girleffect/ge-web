@@ -13,7 +13,6 @@ from wagtail.core.models import Site
 from .models import GEUser
 from .models import GEUserSettings
 
-from phonenumber_field.formfields import PhoneNumberField
 
 User = get_user_model()
 
@@ -66,7 +65,6 @@ def validate_no_email_or_phone(input):
 class DateOfBirthValidationMixin(object):
 
     def clean_date_of_birth(self):
-        print("in clean dob")
         date_of_birth = self.data.get('date_of_birth')
         is_date = isinstance(date_of_birth, datetime.date)
 
@@ -97,7 +95,7 @@ class DateOfBirthValidationMixin(object):
             return date_of_birth
 
 
-class RegistrationForm(DateOfBirthValidationMixin, forms.Form):
+class RegistrationForm(forms.Form):
     username = forms.RegexField(
         regex=r'^[\w.@+-]+$',
         widget=forms.TextInput(

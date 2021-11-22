@@ -15,9 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from wagtail.core.models import Site
 
 from . import forms
-from .models import SecurityQuestionAnswer
-from .models import GEUser
-from .models import GEUserSettings, SecurityQuestion
+from .models import SecurityQuestionAnswer, GEUser, GEUserSettings, SecurityQuestion
 
 
 class RegistrationView(FormView):

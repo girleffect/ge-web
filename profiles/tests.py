@@ -107,28 +107,6 @@ class RegisterTestCase(TestCase):
         )
         self.assertEqual(form.is_valid(), False)
 
-    def test_security_questions_can_contain_non_ascii(self):
-        question_accents = SecurityQuestion(
-            title=u'Non-ascii characters? ê ờ ប အ',
-            slug='non-ascii-characters',
-        )
-        self.security_index.add_child(instance=question_accents)
-        question_accents.save()
-        form_data = {
-            'username': 'test',
-            'password': '1234',
-            'terms_and_conditions': True,
-        }
-        form = RegistrationForm(
-            data=form_data,
-            questions=[question_accents]
-        )
-        self.assertTrue(form.is_valid())
-        self.assertEqual(
-            form.fields['question_0'].label,
-            u'Non-ascii characters? ê ờ ប အ',
-        )
-
 
 class PasswordRecoveryTestCase(MoloTestCaseMixin, TestCase):
 
@@ -167,7 +145,6 @@ class PasswordRecoveryTestCase(MoloTestCaseMixin, TestCase):
 # -*- coding: utf-8 -*-
 from datetime import date
 from django.utils import timezone
-from django.urls import re_path, include
 from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.contrib.auth.tokens import default_token_generator
@@ -176,24 +153,14 @@ from django.urls import reverse
 from django.http import QueryDict
 from django.test import TestCase, override_settings, Client
 
-from molo.profiles.forms import (
+from .forms import (
     RegistrationForm, EditProfileForm,
     ProfilePasswordChangeForm, ForgotPasswordForm)
-from molo.profiles.models import (
+from .models import (
     SecurityQuestion, SecurityAnswer,
     UserProfile, SecurityQuestionIndexPage, UserProfilesSettings
 )
-from molo.core.models import Main, FooterPage, Languages, SiteLanguageRelation
-
-from molo.core.tests.base import MoloTestCaseMixin
-
 from wagtail.core.models import Site
-
-from bs4 import BeautifulSoup
-
-from django.contrib import admin
-from wagtail.admin import urls as wagtailadmin_urls
-from wagtail.core import urls as wagtail_urls
 
 
 class RegistrationViewTest(TestCase, MoloTestCaseMixin):
@@ -903,9 +870,6 @@ class ResetPasswordViewTest(TestCase, MoloTestCaseMixin):
             user=self.user.profile, question=self.question, answer="20"
         )
 
-    def test_none_type_security_answer(self):
-        self.assertFalse(self.a1.check_answer(None))
-
     def proceed_to_reset_password_page(self):
         expected_token = default_token_generator.make_token(self.user)
         expected_query_params = QueryDict(mutable=True)
@@ -938,10 +902,6 @@ class ResetPasswordViewTest(TestCase, MoloTestCaseMixin):
         })
         self.assertContains(response, "The two PINs that you entered do not "
                                       "match. Please try again.")
-
-    def test_reset_password_view_requires_query_params(self):
-        response = self.client.get(reverse("molo.profiles:reset_password"))
-        self.assertEqual(403, response.status_code)
 
     def test_reset_password_view_invalid_username(self):
         expected_token, expected_redirect_url = \

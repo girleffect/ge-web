@@ -31,9 +31,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 INSTALLED_APPS = [
     "home",
     "search",
+    "profiles",
     "wagtail.contrib.settings",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+    "wagtail.contrib.modeladmin",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
