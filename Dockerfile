@@ -1,19 +1,6 @@
 # Use an official Python runtime based on Debian 10 "buster" as a parent image.
 FROM python:3.8.1-slim-buster
 
-# Add user that will be used in the container.
-RUN useradd wagtail
-
-# Port used by this container to serve HTTP.
-EXPOSE 8000
-
-# Set environment variables.
-# 1. Force Python stdout and stderr streams to be unbuffered.
-# 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
-#    command.
-ENV PYTHONUNBUFFERED=1 \
-    PORT=8000
-
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
@@ -26,6 +13,26 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
 
 # Install the application server.
 RUN pip install "gunicorn==20.0.4"
+COPY gunicorn/ /etc/gunicorn/
+
+RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends nginx
+
+COPY nginx/sites-available/wagtail.conf /etc/nginx/sites-available/wagtail.conf
+COPY nginx/sites-available/wagtail.conf /etc/nginx/sites-enabled/wagtail.conf
+RUN nginx; service nginx reload
+
+# Add user that will be used in the container.
+RUN useradd wagtail
+
+# Port used by this container to serve HTTP.
+EXPOSE 8000
+
+# Set environment variables.
+# 1. Force Python stdout and stderr streams to be unbuffered.
+# 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
+#    command.
+ENV PYTHONUNBUFFERED=1 \
+    PORT=8000
 
 # Install the project requirements.
 COPY requirements.txt /
@@ -57,4 +64,4 @@ RUN python manage.py collectstatic --noinput --clear
 #   PRACTICE. The database should be migrated manually or using the release
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
-CMD set -xe; python manage.py migrate --noinput; gunicorn geweb.wsgi:application
+CMD set -xe; python manage.py migrate --noinput; gunicorn geweb.wsgi:application --config /etc/gunicorn/conf.py
