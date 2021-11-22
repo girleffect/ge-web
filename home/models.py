@@ -20,7 +20,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class HomePage(Page):
-    subpage_types = ["SectionPage"]
+    subpage_types = ["articles.SectionPage"]
 
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index
@@ -29,56 +29,6 @@ class HomePage(Page):
         context["sections"] = sections
 
         return context
-
-
-class SectionPage(Page):
-    subpage_types = [
-        "ArticlePage",
-        "SectionPage",
-    ]
-    parent_page_type = ["SectionPage", "HomePage"]
-
-    def get_context(self, request):
-        # Update context to include only published posts, ordered by reverse-chron
-        context = super().get_context(request)
-        articlepages = self.get_children().live().order_by("-first_published_at")
-        context["articlepages"] = articlepages
-        return context
-
-
-class ArticlePageTag(TaggedItemBase):
-    content_object = ParentalKey(
-        "ArticlePage", on_delete=models.CASCADE, related_name="tagged_items"
-    )
-
-
-class ArticlePage(Page):
-    parent_page_type = [
-        "SectionPage",
-    ]
-
-    # general page attributes
-    tags = ClusterTaggableManager(through=ArticlePageTag, blank=True)
-
-    # Web page setup
-    subtitle = models.CharField(max_length=200, blank=True, null=True)
-    body = StreamField(
-        [
-            ("paragraph", blocks.RichTextBlock()),
-            ("image", ImageChooserBlock()),
-        ],
-        blank=True,
-        null=True,
-    )
-    content_panels = Page.content_panels + [
-        FieldPanel("subtitle"),
-        StreamFieldPanel("body"),
-        FieldPanel("tags"),
-    ]
-    search_fields = Page.search_fields + [
-        index.SearchField("body"),
-        index.SearchField("subtitle"),
-    ]
 
 
 @register_setting
