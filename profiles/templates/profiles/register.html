@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n static wagtailsettings_tags wagtailcore_tags %}
+{% get_settings %}
+
+{% block content %}
+  <div class="heading">
+    <h1 class="heading__profiles">{% trans "Register" %}</h1>
+  </div>
+
+  <div class="call-to-action call-to-action--profile">
+      <h4 class="heading heading--subtitle">
+        {% trans "Already a member?" %}
+      </h4>
+      <a href="/profiles/login/" class="call-to-action__nav-item-text call-to-action__nav-item-text--login">{% trans "Login" %}</a>
+
+      <h4 class="heading heading--subtitle">
+          {% trans "Not a member yet?" %}
+          {% trans "Join us by signing up below." %}
+      </h4>
+  </div>
+  <div class="profiles">
+    <form method="post" action="/profiles/register/" class="profiles__form">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="{% trans "Register" %}" />
+  </form>
+</div>
+{% endblock %}
