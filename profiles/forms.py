@@ -16,11 +16,15 @@ from .models import GEUserSettings
 
 User = get_user_model()
 
-REGEX_PHONE = settings.REGEX_PHONE if hasattr(settings, 'REGEX_PHONE') else \
-    r'.*?(\(?\d{3})? ?[\.-]? ?\d{3} ?[\.-]? ?\d{4}.*?'
+REGEX_PHONE = (
+    settings.REGEX_PHONE
+    if hasattr(settings, "REGEX_PHONE")
+    else r".*?(\(?\d{3})? ?[\.-]? ?\d{3} ?[\.-]? ?\d{4}.*?"
+)
 
-REGEX_EMAIL = settings.REGEX_EMAIL if hasattr(settings, 'REGEX_PHONE') else \
-    r'([\w\.-]+@[\w\.-]+)'
+REGEX_EMAIL = (
+    settings.REGEX_EMAIL if hasattr(settings, "REGEX_PHONE") else r"([\w\.-]+@[\w\.-]+)"
+)
 
 
 def validate_no_email_or_phone(input):
@@ -36,24 +40,23 @@ def validate_no_email_or_phone(input):
 
 
 class DateOfBirthValidationMixin(object):
-
     def clean_date_of_birth(self):
-        date_of_birth = self.data.get('date_of_birth')
+        date_of_birth = self.data.get("date_of_birth")
         is_date = isinstance(date_of_birth, datetime.date)
 
         if date_of_birth and not is_date:
-            date_of_birth = timezone.datetime.strptime(
-                date_of_birth, '%Y-%m-%d').date()
+            date_of_birth = timezone.datetime.strptime(date_of_birth, "%Y-%m-%d").date()
         else:
             user_input = (
-                self.data.get('date_of_birth_year'),
-                self.data.get('date_of_birth_month'),
-                self.data.get('date_of_birth_day'),
+                self.data.get("date_of_birth_year"),
+                self.data.get("date_of_birth_month"),
+                self.data.get("date_of_birth_day"),
             )
             if all(user_input):
                 try:
                     date_of_birth = timezone.datetime(
-                        *(int(i) for i in user_input)).date()
+                        *(int(i) for i in user_input)
+                    ).date()
                 except ValueError:
                     date_of_birth = None
 
@@ -62,7 +65,7 @@ class DateOfBirthValidationMixin(object):
 
 class RegistrationForm(forms.Form):
     username = forms.RegexField(
-        regex=r'^[\w.@+-]+$',
+        regex=r"^[\w.@+-]+$",
         widget=forms.TextInput(
             attrs=dict(
                 required=True,
@@ -71,26 +74,24 @@ class RegistrationForm(forms.Form):
         ),
         label=_("Username"),
         error_messages={
-            'invalid': _("This value must contain only letters, "
-                         "numbers and underscores."),
-        }
+            "invalid": _(
+                "This value must contain only letters, " "numbers and underscores."
+            ),
+        },
     )
     password = forms.RegexField(
-        regex=r'^\d{4}$',
+        regex=r"^\d{4}$",
         widget=forms.PasswordInput(
             attrs=dict(
-                required=True,
-                render_value=False,
-                type='password',
-                autocomplete='off'
+                required=True, render_value=False, type="password", autocomplete="off"
             )
         ),
         max_length=4,
         min_length=4,
         error_messages={
-            'invalid': _("This value must contain only numbers."),
+            "invalid": _("This value must contain only numbers."),
         },
-        label=_("PIN")
+        label=_("PIN"),
     )
     terms_and_conditions = forms.BooleanField(required=True)
 
@@ -109,48 +110,40 @@ class RegistrationForm(forms.Form):
                     attrs=dict(
                         max_length=150,
                     )
-                )
+                ),
             )
 
     def security_questions(self):
         return [
-            self[name] for name in filter(
-                lambda x: x.startswith('question_'), self.fields.keys()
-            )
+            self[name]
+            for name in filter(lambda x: x.startswith("question_"), self.fields.keys())
         ]
 
     def clean_username(self):
-        validation_msg_fragment = 'phone number or email address'
+        validation_msg_fragment = "phone number or email address"
 
-        if User.objects.filter(
-                username__iexact=self.cleaned_data['username']
-        ).exists():
+        if User.objects.filter(username__iexact=self.cleaned_data["username"]).exists():
             raise forms.ValidationError(_("Username already exists."))
 
-        if not validate_no_email_or_phone(self.cleaned_data['username']):
+        if not validate_no_email_or_phone(self.cleaned_data["username"]):
             raise forms.ValidationError(
                 _(
                     "Sorry, but that is an invalid username. Please don't use"
                     " your phone number or email address in your username."
                 )
             )
-        return self.cleaned_data['username']
+        return self.cleaned_data["username"]
 
 
 class DoneForm(forms.Form):
     date_of_birth = forms.DateField(
         widget=SelectDateWidget(
             years=list(reversed(range(1930, timezone.now().year + 1)))
-        ), required=False
+        ),
+        required=False,
     )
-    gender = forms.CharField(
-        label=_("Gender"),
-        required=False
-    )
-    location = forms.CharField(
-        label=_("Location"),
-        required=False
-    )
+    gender = forms.CharField(label=_("Gender"), required=False)
+    location = forms.CharField(label=_("Location"), required=False)
 
 
 class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
@@ -159,84 +152,84 @@ class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
             years=list(reversed(range(1930, timezone.now().year + 1)))
         ),
         label=_("Date of Birth"),
-        required=False
+        required=False,
     )
-    gender = forms.CharField(
-        label=_("Gender"),
-        required=False
-    )
-    location = forms.CharField(
-        label=_("Location"),
-        required=False
-    )
+    gender = forms.CharField(label=_("Gender"), required=False)
+    location = forms.CharField(label=_("Location"), required=False)
 
     class Meta:
         model = GEUser
-        fields = ['date_of_birth', 'gender', 'location',]
+        fields = [
+            "date_of_birth",
+            "gender",
+            "location",
+        ]
 
 
 class ProfilePasswordChangeForm(forms.Form):
     old_password = forms.RegexField(
-        regex=r'^\d{4}$',
+        regex=r"^\d{4}$",
         widget=forms.PasswordInput(
             attrs=dict(
-                required=True,
-                render_value=False,
-                type='password',
-                autocomplete='off'
-            )
-        ),
-        max_length=4, min_length=4,
-        error_messages={'invalid': _("This value must contain only  \
-         numbers.")},
-        label=_("Old Password")
-    )
-    new_password = forms.RegexField(
-        regex=r'^\d{4}$',
-        widget=forms.PasswordInput(
-            attrs=dict(
-                required=True,
-                render_value=False,
-                type='password',
-                autocomplete='off'
-            )
-        ),
-        max_length=4,
-        min_length=4,
-        error_messages={'invalid': _("This value must contain only  \
-         numbers.")},
-        label=_("New Password")
-    )
-    confirm_password = forms.RegexField(
-        regex=r'^\d{4}$',
-        widget=forms.PasswordInput(
-            attrs=dict(
-                required=True,
-                render_value=False,
-                type='password',
+                required=True, render_value=False, type="password", autocomplete="off"
             )
         ),
         max_length=4,
         min_length=4,
         error_messages={
-            'invalid': _("This value must contain only numbers."),
+            "invalid": _(
+                "This value must contain only  \
+         numbers."
+            )
         },
-        label=_("Confirm Password")
+        label=_("Old Password"),
+    )
+    new_password = forms.RegexField(
+        regex=r"^\d{4}$",
+        widget=forms.PasswordInput(
+            attrs=dict(
+                required=True, render_value=False, type="password", autocomplete="off"
+            )
+        ),
+        max_length=4,
+        min_length=4,
+        error_messages={
+            "invalid": _(
+                "This value must contain only  \
+         numbers."
+            )
+        },
+        label=_("New Password"),
+    )
+    confirm_password = forms.RegexField(
+        regex=r"^\d{4}$",
+        widget=forms.PasswordInput(
+            attrs=dict(
+                required=True,
+                render_value=False,
+                type="password",
+            )
+        ),
+        max_length=4,
+        min_length=4,
+        error_messages={
+            "invalid": _("This value must contain only numbers."),
+        },
+        label=_("Confirm Password"),
     )
 
     def clean(self):
-        new_password = self.cleaned_data.get('new_password', None)
-        confirm_password = self.cleaned_data.get('confirm_password', None)
-        if (new_password and confirm_password and
-                (new_password == confirm_password)):
+        new_password = self.cleaned_data.get("new_password", None)
+        confirm_password = self.cleaned_data.get("confirm_password", None)
+        if new_password and confirm_password and (new_password == confirm_password):
             return self.cleaned_data
         else:
-            raise forms.ValidationError(_('New passwords do not match.'))
+            raise forms.ValidationError(_("New passwords do not match."))
 
 
 class ForgotPasswordForm(forms.Form):
     username = forms.RegexField(
-        regex=r'^[\w.@+-]+$',
+        regex=r"^[\w.@+-]+$",
         widget=forms.TextInput(
             attrs=dict(
                 required=True,
@@ -245,9 +238,10 @@ class ForgotPasswordForm(forms.Form):
         ),
         label=_("Username"),
         error_messages={
-            'invalid': _("This value must contain only letters, "
-                         "numbers and underscores."),
-        }
+            "invalid": _(
+                "This value must contain only letters, " "numbers and underscores."
+            ),
+        },
     )
 
     def __init__(self, *args, **kwargs):
@@ -262,51 +256,41 @@ class ForgotPasswordForm(forms.Form):
                         required=True,
                         max_length=150,
                     )
-                )
+                ),
             )
 
 
 class ResetPasswordForm(forms.Form):
-    username = forms.CharField(
-        widget=forms.HiddenInput()
-    )
+    username = forms.CharField(widget=forms.HiddenInput())
 
-    token = forms.CharField(
-        widget=forms.HiddenInput()
-    )
+    token = forms.CharField(widget=forms.HiddenInput())
 
     password = forms.RegexField(
-        regex=r'^\d{4}$',
+        regex=r"^\d{4}$",
         widget=forms.PasswordInput(
             attrs=dict(
-                required=True,
-                render_value=False,
-                type='password',
-                autocomplete='off'
+                required=True, render_value=False, type="password", autocomplete="off"
             )
         ),
         max_length=4,
         min_length=4,
         error_messages={
-            'invalid': _("This value must contain only numbers."),
+            "invalid": _("This value must contain only numbers."),
         },
-        label=_("PIN")
+        label=_("PIN"),
     )
 
     confirm_password = forms.RegexField(
-        regex=r'^\d{4}$',
+        regex=r"^\d{4}$",
         widget=forms.PasswordInput(
             attrs=dict(
-                required=True,
-                render_value=False,
-                type='password',
-                autocomplete='off'
+                required=True, render_value=False, type="password", autocomplete="off"
             )
         ),
         max_length=4,
         min_length=4,
         error_messages={
-            'invalid': _("This value must contain only numbers."),
+            "invalid": _("This value must contain only numbers."),
         },
-        label=_("Confirm PIN")
+        label=_("Confirm PIN"),
     )
