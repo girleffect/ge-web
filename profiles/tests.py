@@ -301,7 +301,7 @@ class TestTermsAndConditions(TestCase, ProfilesTestCaseMixin):
         )
 
         site = Site.objects.get(is_default_site=True)
-        profile_settings = UserProfilesSettings.for_site(site)
+        profile_settings = GEUserSettings.for_site(site)
 
         profile_settings.terms_and_conditions = self.footer
         profile_settings.save()
@@ -335,7 +335,7 @@ class MyProfileViewTest(TestCase, ProfilesTestCaseMixin):
 
 class MyProfileEditTest(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
-        set_cms()
+        setup_cms()
 
     def test_view(self):
         response = self.client.get("/profiles/edit/myprofile/")

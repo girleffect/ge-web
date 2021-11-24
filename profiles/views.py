@@ -57,7 +57,6 @@ class RegistrationView(FormView):
             SecurityQuestion.objects.descendant_of(site.root_page).live().filter()
         )
 
-        context = {"request": self.request}
         kwargs["questions"] = self.questions
         kwargs["request"] = self.request
         return kwargs
@@ -205,7 +204,6 @@ class ForgotPasswordView(FormView):
             site.root_page
         ).live()
 
-        context = {"request": self.request}
         kwargs["questions"] = self.security_questions[
             : profile_settings.num_security_questions
         ]

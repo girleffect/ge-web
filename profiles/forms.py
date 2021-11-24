@@ -97,9 +97,7 @@ class RegistrationForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         questions = kwargs.pop("questions", [])
-        request = kwargs.pop("request", [])
         super(RegistrationForm, self).__init__(*args, **kwargs)
-        site = Site.objects.get(is_default_site=True)
 
         # Security questions fields are created dynamically.
         # This allows any number of security questions to be specified
@@ -120,8 +118,6 @@ class RegistrationForm(forms.Form):
         ]
 
     def clean_username(self):
-        validation_msg_fragment = "phone number or email address"
-
         if User.objects.filter(username__iexact=self.cleaned_data["username"]).exists():
             raise forms.ValidationError(_("Username already exists."))
 
