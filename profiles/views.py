@@ -29,11 +29,12 @@ class RegistrationView(FormView):
     def form_valid(self, form):
         username = form.cleaned_data["username"]
         password = form.cleaned_data["password"]
-        try:
-            user = User.objects.create_user(username=username, password=password)
-        except:
+
+        if User.objects.filter(username=username).exists():
             messages.error(self.request, _("Username is already taken"))
             return render(self.request, self.template_name, {"form": form})
+
+        user = User.objects.create_user(username=username, password=password)
         GEUser.objects.create(user=user)
 
         for index, question in enumerate(self.questions):

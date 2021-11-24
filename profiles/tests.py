@@ -335,7 +335,7 @@ class MyProfileViewTest(TestCase, ProfilesTestCaseMixin):
 
 class MyProfileEditTest(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
-        setup_cms()
+        self.setup_cms()
 
     def test_view(self):
         response = self.client.get("/profiles/edit/myprofile/")
