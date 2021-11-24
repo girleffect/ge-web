@@ -1,5 +1,6 @@
 from django import template
 from articles.models import FooterPage
+from wagtail.core.models import Page
 
 register = template.Library()
 
