@@ -21,7 +21,11 @@ from articles.models import SectionPage
 
 
 class HomePage(Page):
-    subpage_types = ["articles.SectionIndexPage", "articles.FooterIndexPage", "forms.FormsIndexPage"]
+    subpage_types = [
+        "articles.SectionIndexPage",
+        "articles.FooterIndexPage",
+        "forms.FormsIndexPage",
+    ]
 
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index
