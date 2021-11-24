@@ -14,6 +14,7 @@ urlpatterns = [
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("profiles/", include(profile_urls), name="profiles"),
+    path("", include("social_django.urls", namespace="social")),
 ]
 
 
