@@ -27,8 +27,7 @@
     <span class="input-hint">({% trans "Eg.: 2086" %})</span>
     </fieldset>
     <input type="submit" value="{% trans 'Log in' %}">
-    <input type="hidden" name="next" value="/" />
-
+    <input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{% url "login_success" %}{% endif %}" />
     <a href="/profiles/forgot-password/">
       {% trans "Forgotten your pin?" %}
     </a>

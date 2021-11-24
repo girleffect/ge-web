@@ -97,6 +97,8 @@ class RegistrationForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         questions = kwargs.pop("questions", [])
+        kwargs.pop("request", [])
+        kwargs.pop("context", [])
         super(RegistrationForm, self).__init__(*args, **kwargs)
 
         # Security questions fields are created dynamically.

@@ -57,7 +57,6 @@ class RegistrationView(FormView):
         self.questions = (
             SecurityQuestion.objects.descendant_of(site.root_page).live().filter()
         )
-
         kwargs["questions"] = self.questions
         kwargs["request"] = self.request
         return kwargs

@@ -21,7 +21,15 @@
   <div class="profiles">
     <form method="post" action="/profiles/register/" class="profiles__form">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% for field in form %}
+    <p>
+        {{ field.errors }}
+        {{ field.label_tag }}: {{ field }}
+        {% if field.name == "terms_and_conditions" %}
+          <a href="{% pageurl settings.profiles.GEUserSettings.terms_and_conditions %}">Terms and Cnditions</a>
+        {% endif %}
+    </p>
+{% endfor %}
 
     <input type="submit" value="{% trans "Register" %}" />
   </form>

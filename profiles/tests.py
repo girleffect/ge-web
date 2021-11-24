@@ -23,6 +23,7 @@ from .models import (
     GEUserSettings,
 )
 from home.models import HomePage
+from articles.models import FooterPage, FooterIndexPage
 from wagtail.core.models import Site
 
 from django.contrib.auth import get_user_model
@@ -33,15 +34,8 @@ from wagtail.core.models import Page
 
 class ProfilesTestCaseMixin(object):
     def login(self):
-        # Create a user
-        user = get_user_model().objects.create_superuser(
-            username="superuser", email="superuser@email.com", password="pass"
-        )
-
         # Login
-        self.client.login(username="superuser", password="pass")
-
-        return user
+        self.client.post("/profiles/login/", {"username": "tester", "password": "0000"})
 
     def mk_root(self):
         page_content_type, created = ContentType.objects.get_or_create(
@@ -69,7 +63,9 @@ class ProfilesTestCaseMixin(object):
         )
         self.main.add_child(instance=self.index)
         self.index.save_revision().publish()
-        self.client = Client()
+        self.footer_index = FooterIndexPage(title="Footers", slug="footers")
+        self.main.add_child(instance=self.footer_index)
+        self.footer_index.save_revision().publish()
         self.user = User.objects.create_user(
             username="tester", email="tester@example.com", password="0000"
         )
@@ -84,14 +80,19 @@ class ProfilesTestCaseMixin(object):
         self.a1 = SecurityQuestionAnswer.objects.create(
             user=self.user.geuser, question=self.question, answer="20"
         )
+        self.footer = FooterPage(title="terms footer", slug="terms-footer")
+        self.footer_index.add_child(instance=self.footer)
+        self.footer.save_revision().publish()
         self.site = Site.objects.get(is_default_site=True)
         self.profile_settings = GEUserSettings.for_site(self.site)
-        GEUserSettings.objects.get(site=self.site, num_security_questions=1)
+        self.profile_settings.terms_and_conditions = self.footer
+        self.profile_settings.save()
+        self.client = Client()
 
 
-class RegisterTestCase(TestCase):
+class RegisterTestCase(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
-        self.user = User.objects.create_user(username="tester", password="tester")
+        self.setup_cms()
 
     def test_register_username_correct(self):
         form_data = {
@@ -252,6 +253,7 @@ class RegistrationViewTest(TestCase, ProfilesTestCaseMixin):
 class RegistrationDone(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
         self.setup_cms()
+        self.login()
 
     def test_gender_on_done(self):
         response = self.client.get("/profiles/register/done/")
@@ -287,40 +289,19 @@ class TestTermsAndConditions(TestCase, ProfilesTestCaseMixin):
 
     def test_terms_and_conditions_linked_to_terms_and_conditions_page(self):
         response = self.client.get(reverse("user_register"))
-        self.assertNotContains(
-            response,
-            '<a href="/footer-pages/terms-and-conditions/"'
-            ' for="id_terms_and_conditions" class="profiles__terms">'
-            "I accept the Terms and Conditions</a>",
-        )
         self.assertContains(
-            response,
-            '<label for="id_terms_and_conditions"'
-            ' class="profiles__terms">'
-            "I accept the Terms and Conditions</label>",
-        )
-
-        site = Site.objects.get(is_default_site=True)
-        profile_settings = GEUserSettings.for_site(site)
-
-        profile_settings.terms_and_conditions = self.footer
-        profile_settings.save()
-
-        response = self.client.get(reverse("user_register"))
-        self.assertContains(
-            response,
-            '<a href="/footers-main-1/terms-and-conditions/"'
-            ' for="id_terms_and_conditions" class="profiles__terms">'
-            "I accept the Terms and Conditions</a>",
+            response, '<a href="/en/footers/terms-footer/">terms footer</a>'
         )
 
 
 class MyProfileViewTest(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
         self.setup_cms()
+        self.user.geuser.gender = "The Gender"
+        self.user.geuser.save()
+        self.login()
 
     def test_view(self):
-        self.client.login(username="tester", password="tester")
         response = self.client.get("/profiles/view/myprofile/")
         self.assertContains(response, "tester")
         self.assertContains(response, "The Gender")
@@ -336,6 +317,7 @@ class MyProfileViewTest(TestCase, ProfilesTestCaseMixin):
 class MyProfileEditTest(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
         self.setup_cms()
+        self.login()
 
     def test_view(self):
         response = self.client.get("/profiles/edit/myprofile/")
@@ -369,6 +351,7 @@ class MyProfileEditTest(TestCase, ProfilesTestCaseMixin):
 class ProfilePasswordChangeViewTest(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
         self.setup_cms()
+        self.login()
 
     def test_view(self):
         response = self.client.get(reverse("profile_password_change"))
