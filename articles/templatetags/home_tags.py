@@ -1,5 +1,5 @@
 from django import template
-from home.models import FooterPage
+from articles.models import FooterPage
 
 register = template.Library()
 
