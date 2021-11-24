@@ -8,8 +8,20 @@ from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, PageChooser
 
 
 class GEUser(models.Model):
+    class Gender(models.TextChoices):
+        FEMALE = _("Female")
+        MALE = _("Male")
+        TRANSGENDER = _("Transgender")
+        NON_CONFORMING_NON_BINARY = _("Non-conforming/Non-binary")
+        OTHER = _("Other")
+        NOT_GIVEN = _("Not comfortable sharing")
+
+    gender = models.CharField(
+        max_length=50,
+        choices=Gender.choices,
+        null=True,
+    )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    gender = models.CharField(max_length=128, blank=True, null=True)
     location = models.CharField(max_length=128, blank=True, null=True)
     date_of_birth = models.DateField(null=True)
     terms_and_conditions = models.BooleanField(default=False)

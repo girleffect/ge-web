@@ -152,7 +152,9 @@ class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
         label=_("Date of Birth"),
         required=False,
     )
-    gender = forms.CharField(label=_("Gender"), required=False)
+    gender = forms.ChoiceField(
+        label=_("Gender"), choices=GEUser.Gender.choices, required=False
+    )
     location = forms.CharField(label=_("Location"), required=False)
 
     class Meta:
