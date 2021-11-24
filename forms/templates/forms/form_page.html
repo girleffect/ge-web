@@ -1,20 +1,24 @@
-{% extends "base.html" %}
 {% load wagtailcore_tags %}
-
-{% block content %}
 <html>
     <head>
         <title>{{ page.title }}</title>
     </head>
     <body>
         <h1>{{ page.title }}</h1>
-        {{ page.intro|richtext }}
-        <form action="{% pageurl page %}" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit">
-        </form>
+
+        {% if user.is_authenticated and user.is_active or request.is_preview %}
+            {% if form %}
+                <div>{{ page.intro|richtext }}</div>
+                <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:"1" }}{% endif %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit">
+                </form>
+            {% else %}
+                <div>You can fill in the from only one time.</div>
+            {% endif %}
+        {% else %}
+            <div>To fill in the form, you must to log in.</div>
+        {% endif %}
     </body>
 </html>
-
-{% endblock %}

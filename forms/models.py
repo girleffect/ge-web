@@ -45,6 +45,16 @@ from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 class CustomFormSubmission(AbstractFormSubmission):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
+    def get_data(self):
+        form_data = super().get_data()
+        form_data.update(
+            {
+                "username": self.user.username,
+            }
+        )
+
+        return form_data
+
 
 class FormField(AbstractFormField):
     page = ParentalKey("FormPage", on_delete=models.CASCADE, related_name="form_fields")
@@ -151,6 +161,14 @@ class FormPage(AbstractEmailForm):
             heading="Form Settings",
         )
     ]
+
+    def get_data_fields(self):
+        data_fields = [
+            ("username", "Username"),
+        ]
+        data_fields += super().get_data_fields()
+
+        return data_fields
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
