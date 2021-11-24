@@ -16,3 +16,13 @@ def footer_pages(context):
         "request": request,
         "footers": pages,
     }
+
+
+@register.simple_tag(takes_context=True)
+def get_next_article(context, article):
+    return (
+        article.specific.get_siblings(False)
+        .filter(path__gte=article.path, live=True, content_type=8)
+        .order_by("path")
+        .first()
+    )
