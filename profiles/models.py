@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 from wagtail.core.models import Page
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth import hashers
 from wagtail.admin.edit_handlers import (
     FieldPanel,
     MultiFieldPanel,
-    StreamFieldPanel,
     PageChooserPanel
 )
 
@@ -25,6 +25,7 @@ class GEUser(models.Model):
     terms_and_conditions = models.BooleanField(default=False)
     user_questions = models.ManyToManyField('profiles.SecurityQuestion', through='SecurityQuestionAnswer')
 
+
 class SecurityQuestionIndexPage(Page):
     subpage_types = ['profiles.SecurityQuestion']
     parent_page_type = ['home.HomePage']
@@ -38,6 +39,26 @@ class SecurityQuestionAnswer(models.Model):
     user = models.ForeignKey('profiles.GEUser', on_delete=models.CASCADE)
     question = models.ForeignKey('profiles.SecurityQuestion', on_delete=models.CASCADE)
     answer = models.CharField(max_length=250, null=False)
+
+    def set_answer(self, raw_answer):
+        self.answer = hashers.make_password(raw_answer.strip().lower())
+
+    def check_answer(self, raw_answer):
+        def setter(raw_answer):
+            self.set_answer(raw_answer)
+            self.save(update_fields=["answer"])
+
+        return hashers.check_password(
+            raw_answer.strip().lower() if raw_answer else None,
+            self.answer,
+            setter
+        )
+
+    def save(self, is_import=False, *args, **kwargs):
+        # checks if this save is coming from an import so we don't hash a hash
+        if not is_import and not self.id:
+            self.set_answer(self.answer)
+        super(SecurityQuestionAnswer, self).save(*args, **kwargs)
 
 
 @register_setting

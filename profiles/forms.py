@@ -23,36 +23,9 @@ REGEX_EMAIL = settings.REGEX_EMAIL if hasattr(settings, 'REGEX_PHONE') else \
     r'([\w\.-]+@[\w\.-]+)'
 
 
-def get_validation_msg_fragment():
-    site = Site.objects.get(is_default_site=True)
-    profile_settings = GEUserSettings.for_site(site)
-
-    invalid_msg = ''
-
-    if getattr(profile_settings, 'prevent_email_in_username', False) \
-            and getattr(profile_settings, 'prevent_phone_number_in_username',
-                        False):
-        invalid_msg = 'phone number or email address'
-
-    elif getattr(profile_settings, 'prevent_phone_number_in_username', False):
-        invalid_msg = 'phone number'
-
-    elif getattr(profile_settings, 'prevent_email_in_username', False):
-        invalid_msg = 'email address'
-
-    return invalid_msg
-
-
 def validate_no_email_or_phone(input):
-    site = Site.objects.get(is_default_site=True)
-    profile_settings = GEUserSettings.for_site(site)
 
-    regexes = []
-    if profile_settings.prevent_phone_number_in_username:
-        regexes.append(REGEX_PHONE)
-
-    if profile_settings.prevent_email_in_username:
-        regexes.append(REGEX_EMAIL)
+    regexes = [REGEX_PHONE, REGEX_EMAIL]
 
     for regex in regexes:
         match = re.search(regex, input)
@@ -71,7 +44,6 @@ class DateOfBirthValidationMixin(object):
         if date_of_birth and not is_date:
             date_of_birth = timezone.datetime.strptime(
                 date_of_birth, '%Y-%m-%d').date()
-
         else:
             user_input = (
                 self.data.get('date_of_birth_year'),
@@ -85,14 +57,7 @@ class DateOfBirthValidationMixin(object):
                 except ValueError:
                     date_of_birth = None
 
-        if self.fields['date_of_birth'].required and not date_of_birth:
-            err = _("This field is required.")
-            raise forms.ValidationError(err)
-
-            if date_of_birth and date_of_birth > timezone.now().date():
-                err = _("Date of birth can not be in the future.")
-                raise forms.ValidationError(err)
-            return date_of_birth
+        return date_of_birth
 
 
 class RegistrationForm(forms.Form):
@@ -155,7 +120,7 @@ class RegistrationForm(forms.Form):
         ]
 
     def clean_username(self):
-        validation_msg_fragment = get_validation_msg_fragment()
+        validation_msg_fragment = 'phone number or email address'
 
         if User.objects.filter(
                 username__iexact=self.cleaned_data['username']
@@ -166,7 +131,7 @@ class RegistrationForm(forms.Form):
             raise forms.ValidationError(
                 _(
                     "Sorry, but that is an invalid username. Please don't use"
-                    " your %s in your username." % validation_msg_fragment
+                    " your phone number or email address in your username."
                 )
             )
         return self.cleaned_data['username']
@@ -176,7 +141,7 @@ class DoneForm(forms.Form):
     date_of_birth = forms.DateField(
         widget=SelectDateWidget(
             years=list(reversed(range(1930, timezone.now().year + 1)))
-        )
+        ), required=False
     )
     gender = forms.CharField(
         label=_("Gender"),
@@ -193,6 +158,7 @@ class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
         widget=SelectDateWidget(
             years=list(reversed(range(1930, timezone.now().year + 1)))
         ),
+        label=_("Date of Birth"),
         required=False
     )
     gender = forms.CharField(

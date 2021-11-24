@@ -97,21 +97,10 @@ class MyProfileView(LoginRequiredMixin, TemplateView):
 
 
 class MyProfileEdit(LoginRequiredMixin, UpdateView):
-    """
-    Enables editing of the user's profile in the HTML site
-    """
     model = GEUser
     form_class = forms.EditProfileForm
     template_name = 'profiles/editprofile.html'
     success_url = "/profiles/view/myprofile/"
-
-    def get_initial(self):
-        initial = super(MyProfileEdit, self).get_initial()
-        return initial
-
-    def form_valid(self, form):
-        super(MyProfileEdit, self).form_valid(form)
-        return HttpResponseRedirect("/profiles/view/myprofile/")
 
     def get_object(self, queryset=None):
         return self.request.user.geuser
@@ -179,8 +168,8 @@ class ForgotPasswordView(FormView):
         for i in range(profile_settings.num_security_questions):
             user_answer = form.cleaned_data.get("question_%s" % (i,))
             try:
-                print(dir(SecurityQuestionAnswer))
-                saved_answer = SecurityQuestionAnswer.objects.get(user=user.geuser, question=self.security_questions[i]).answer
+                saved_answer = SecurityQuestionAnswer.objects.get(user=user.geuser, question=self.security_questions[i])
+                answer_checks.append(saved_answer.check_answer(user_answer))
             except SecurityQuestionAnswer.DoesNotExist:
                 form.add_error(
                     None,
@@ -188,17 +177,15 @@ class ForgotPasswordView(FormView):
                       "stored against your profile."))
                 return self.render_to_response({'form': form})
 
+
         # redirect to reset password page if username and security
         # questions were matched
-        print(saved_answer)
-        print(user_answer)
-        if saved_answer.answer == user_answer:
+        if all(answer_checks):
             token = default_token_generator.make_token(user)
             q = QueryDict(mutable=True)
             q["user"] = username
             q["token"] = token
-            reset_password_url = "{0}?{1}".format(
-                reverse("molo.profiles:reset_password"), q.urlencode()
+            reset_password_url = "{0}?{1}".format("/profiles/reset-password/", q.urlencode()
             )
             return HttpResponseRedirect(reset_password_url)
         else:
@@ -219,8 +206,6 @@ class ForgotPasswordView(FormView):
         context = {"request": self.request}
         kwargs["questions"] = self.security_questions[
             :profile_settings.num_security_questions]
-        # limit security questions - done here because query in get_pages()
-        # cannot be performed once queryset is sliced into a list
         self.security_questions = self.security_questions[
             :profile_settings.num_security_questions]
         return kwargs
@@ -259,7 +244,7 @@ class ResetPasswordView(FormView):
         self.request.session.flush()
 
         return HttpResponseRedirect(
-            reverse("molo.profiles:reset_password_success")
+            "/profiles/reset-success/"
         )
 
     def render_to_response(self, context, **response_kwargs):
