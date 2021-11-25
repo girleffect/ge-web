@@ -11,18 +11,25 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
  && rm -rf /var/lib/apt/lists/*
 
-# Install the application server.
+# Install and configure gunicorn
 RUN pip install "gunicorn==20.0.4"
+RUN mkdir /etc/gunicorn
 COPY gunicorn/ /etc/gunicorn/
 
-RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends nginx
+# Add user and group that will be used in the container.
+RUN addgroup --system wagtail && adduser --system wagtail --ingroup wagtail
 
+# Make sure gunicorn files are owned by the user
+RUN chown -R wagtail:wagtail /etc/gunicorn/
+
+# Install and configure Nginx
+RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends nginx
 COPY nginx/sites-available/wagtail.conf /etc/nginx/sites-available/wagtail.conf
 COPY nginx/sites-available/wagtail.conf /etc/nginx/sites-enabled/wagtail.conf
-RUN nginx; service nginx reload
-
-# Add user that will be used in the container.
-RUN useradd wagtail
+# Add the user Nginx is using to the wagtail group so it can write to the socket
+RUN sed -i 's/user www-data;/user wagtail;/' /etc/nginx/nginx.conf
+RUN chown -R wagtail:wagtail /var/log/nginx;
+RUN chmod -R 755 /var/log/nginx;
 
 # Port used by this container to serve HTTP.
 EXPOSE 8000
@@ -64,4 +71,8 @@ RUN python manage.py collectstatic --noinput --clear
 #   PRACTICE. The database should be migrated manually or using the release
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
-CMD set -xe; python manage.py migrate --noinput; gunicorn geweb.wsgi:application --config /etc/gunicorn/conf.py
+CMD set -xe; \
+    nginx -g 'daemon off;'; \
+    service nginx reload; \
+    python manage.py migrate --noinput; \
+    gunicorn geweb.wsgi:application --config /etc/gunicorn/conf.py
