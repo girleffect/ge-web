@@ -338,9 +338,9 @@ class MyProfileEditTest(TestCase, ProfilesTestCaseMixin):
         )
 
     def test_update_gender(self):
-        response = self.client.post("/profiles/edit/myprofile/", {"gender": "male"})
+        response = self.client.post("/profiles/edit/myprofile/", {"gender": "Female"})
         self.assertRedirects(response, "/profiles/view/myprofile/")
-        self.assertEqual(GEUser.objects.get(user=self.user).gender, "male")
+        self.assertEqual(GEUser.objects.get(user=self.user).gender, "Female")
 
     def test_update_location(self):
         response = self.client.post("/profiles/edit/myprofile/", {"location": "mlazi"})
