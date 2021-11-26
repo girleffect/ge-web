@@ -31,8 +31,8 @@ RUN adduser --system nginx --ingroup wagtail
 COPY nginx/ /etc/nginx/
 
 # Install gunicorn
+RUN pip install "gunicorn==20.0.4"
 COPY gunicorn/ /etc/gunicorn/
-RUN pip install -r /etc/gunicorn/requirements.txt
 
 EXPOSE 8000
 WORKDIR /app
