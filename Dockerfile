@@ -11,28 +11,10 @@ RUN addgroup --system --gid 107 wagtail \
 # Install libpq for psycopg2 for PostgreSQL support
  RUN apt-get-install.sh libpq5
 
-# Install a modern Nginx and configure
-ENV NGINX_VERSION=1.14.2 \
-    NGINX_GPG_KEY=573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
-RUN set -ex; \
-    fetchDeps=" \
-        wget \
-        $(command -v gpg > /dev/null || echo 'dirmngr gnupg') \
-    "; \
-    apt-get-install.sh $fetchDeps; \
-    wget https://nginx.org/keys/nginx_signing.key; \
-    [ "$(gpg --batch -q --with-fingerprint --with-colons nginx_signing.key | awk -F: '/^fpr:/ { print $10 }')" \
-        = $NGINX_GPG_KEY ]; \
-    apt-key add nginx_signing.key; \
-    codename="$(. /etc/os-release; echo $VERSION | grep -oE [a-z]+)"; \
-    echo "deb http://nginx.org/packages/debian/ $codename nginx" > /etc/apt/sources.list.d/nginx.list; \
-    rm nginx_signing.key; \
-    apt-get purge -y --auto-remove $fetchDeps; \
-    \
-    apt-get-install.sh "nginx=$NGINX_VERSION-1\~$codename"; \
-    rm /etc/nginx/conf.d/default.conf; \
+# Install Nginx and configure
+RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends nginx
 # Add nginx user to wagtail group so that Nginx can read/write to gunicorn socket
-    adduser nginx wagtail
+RUN adduser --system nginx --ingroup wagtail
 COPY nginx/ /etc/nginx/
 
 # Install gunicorn
