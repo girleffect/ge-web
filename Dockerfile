@@ -52,6 +52,8 @@ WORKDIR /app
 # uses SQLite, the folder needs to be owned by the user that
 # will be writing to the database file.
 RUN chown wagtail:wagtail /app
+RUN mkdir /run/gunicorn/
+RUN chown -R wagtail:wagtail /run/gunicorn/
 
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . .
