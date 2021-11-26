@@ -8,11 +8,17 @@ RUN addgroup --system --gid 107 wagtail \
     && adduser --system --uid 104 --ingroup wagtail wagtail \
     && mkdir /etc/gunicorn
 
-# Install libpq for psycopg2 for PostgreSQL support
- RUN apt-get-install.sh libpq5
+# Install system packages required by Wagtail and Django.
+RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    libmariadbclient-dev \
+    libjpeg62-turbo-dev \
+    zlib1g-dev \
+    libwebp-dev \
+    nginx \
+ && rm -rf /var/lib/apt/lists/*
 
-# Install Nginx and configure
-RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends nginx
 # Add nginx user to wagtail group so that Nginx can read/write to gunicorn socket
 RUN adduser --system nginx --ingroup wagtail
 COPY nginx/ /etc/nginx/
