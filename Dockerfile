@@ -19,17 +19,10 @@ COPY gunicorn/ /etc/gunicorn/
 # Add user and group that will be used in the container.
 RUN addgroup --system wagtail && adduser --system wagtail --ingroup wagtail
 
-# Make sure gunicorn files are owned by the user
-RUN chown -R wagtail:wagtail /etc/gunicorn/
-
 # Install and configure Nginx
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends nginx
 COPY nginx/sites-available/wagtail.conf /etc/nginx/sites-available/wagtail.conf
 COPY nginx/sites-available/wagtail.conf /etc/nginx/sites-enabled/wagtail.conf
-# Add the user Nginx is using to the wagtail group so it can write to the socket
-RUN sed -i 's/user www-data;/user wagtail;/' /etc/nginx/nginx.conf
-RUN chown -R wagtail:wagtail /var/log/nginx;
-RUN chmod -R 755 /var/log/nginx;
 
 # Port used by this container to serve HTTP.
 EXPOSE 8000
@@ -53,13 +46,9 @@ WORKDIR /app
 # will be writing to the database file.
 RUN chown wagtail:wagtail /app
 RUN mkdir /run/gunicorn/
-RUN chown -R wagtail:wagtail /run/gunicorn/
 
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . .
-
-# Use user "wagtail" to run the build commands below and the server itself.
-USER wagtail
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
@@ -74,7 +63,7 @@ RUN python manage.py collectstatic --noinput --clear
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
 CMD set -xe; \
-    nginx -g 'daemon off;'; \
+    nginx -g 'daemon off;' & \
     service nginx reload; \
     python manage.py migrate --noinput; \
-    gunicorn geweb.wsgi:application --config /etc/gunicorn/conf.py
+    gunicorn geweb.wsgi:application --config /etc/gunicorn/conf.py;
