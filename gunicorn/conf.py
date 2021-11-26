@@ -7,3 +7,4 @@ bind = 'unix:/run/gunicorn/gunicorn.sock'
 # 0o660) so that they are only read/writable by django and nginx users.
 umask = '0o117'
 worker_tmp_dir = "/run/gunicorn"
+user = 'wagtail'
