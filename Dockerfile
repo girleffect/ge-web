@@ -8,6 +8,13 @@ RUN addgroup --system --gid 107 wagtail \
     && adduser --system --uid 104 --ingroup wagtail wagtail \
     && mkdir /etc/gunicorn
 
+# Set environment variables.
+# 1. Force Python stdout and stderr streams to be unbuffered.
+# 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
+#    command.
+ENV PYTHONUNBUFFERED=1 \
+    PORT=8000
+
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
