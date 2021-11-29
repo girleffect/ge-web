@@ -24,7 +24,7 @@ class SectionPage(Page):
         "articles.ArticlePage",
         "articles.SectionPage",
     ]
-    parent_page_type = ["articles.SectionPage", "home.HomePage"]
+    parent_page_type = ["articles.SectionPage", "articles.SectionIndexPage"]
 
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
@@ -67,3 +67,16 @@ class ArticlePage(Page):
         index.SearchField("body"),
         index.SearchField("subtitle"),
     ]
+
+
+class SectionIndexPage(Page):
+    subpage_types = ["SectionPage"]
+
+
+class FooterIndexPage(Page):
+    subpage_types = ["FooterPage"]
+
+
+class FooterPage(ArticlePage):
+    parent_page_types = ["FooterIndexPage"]
+    subpage_types = []
