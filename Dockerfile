@@ -29,6 +29,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
 # Add nginx user to wagtail group so that Nginx can read/write to gunicorn socket
 RUN adduser --system nginx --ingroup wagtail
 COPY nginx/ /etc/nginx/
+RUN sed -i 's/^www-data;/nginx;/' /etc/nginx/nginx.conf
 
 # Install gunicorn
 RUN pip install "gunicorn==20.0.4"
