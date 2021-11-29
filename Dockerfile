@@ -7,15 +7,14 @@ FROM praekeltfoundation/django-bootstrap:py3.7-stretch
 ENV PYTHONUNBUFFERED=1 \
     PORT=8000
 
+# Copy the source code of the project into the container.
+COPY . .
+
 # Install the project requirements.
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
+RUN pip install .
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
-
-# Copy the source code of the project into the container.
-COPY . .
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
