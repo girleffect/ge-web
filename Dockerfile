@@ -45,8 +45,6 @@ RUN chown wagtail:wagtail /app
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . .
 
-COPY django-entrypoint.sh /scripts/
-
 # Install the project requirements.
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
@@ -54,7 +52,6 @@ RUN pip install -r /requirements.txt
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
 
-ENTRYPOINT ["tini", "--", "django-entrypoint.sh"]
 # Runtime command that executes when "docker run" is called, it does the
 # following:
 #   1. Migrate the database.
