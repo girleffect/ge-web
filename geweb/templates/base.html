@@ -39,7 +39,7 @@
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/geweb.js' %}"></script>
         {% if not user.is_authenticated %}
-          <a href=/profiles/register/>Sign up</a>
+          <a href="{% url "profiles.user_register" %}">Sign up</a>
         {% else %}
           <a href=/profiles/view/myprofile/>Profile</a>
         {% endif %}
