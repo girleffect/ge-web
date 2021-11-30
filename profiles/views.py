@@ -125,7 +125,7 @@ class ForgotPasswordView(FormView):
     def form_valid(self, form):
         site = Site.find_for_request(self.request)
         error_message = (
-            "The username and security question(s) combination " + "do not match."
+            "The username and security question(s) combination do not match."
         )
         profile_settings = GEUserSettings.for_site(site)
 
