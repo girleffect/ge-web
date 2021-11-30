@@ -16,15 +16,11 @@ from .models import GEUserSettings
 
 User = get_user_model()
 
-REGEX_PHONE = (
-    settings.REGEX_PHONE
-    if hasattr(settings, "REGEX_PHONE")
-    else r".*?(\(?\d{3})? ?[\.-]? ?\d{3} ?[\.-]? ?\d{4}.*?"
+REGEX_PHONE = getattr(
+    settings, "REGEX_PHONE", r".*?(\(?\d{3})? ?[\.-]? ?\d{3} ?[\.-]? ?\d{4}.*?"
 )
 
-REGEX_EMAIL = (
-    settings.REGEX_EMAIL if hasattr(settings, "REGEX_PHONE") else r"([\w\.-]+@[\w\.-]+)"
-)
+REGEX_EMAIL = getattr(settings, "REGEX_EMAIL", r"([\w\.-]+@[\w\.-]+)")
 
 
 def validate_no_email_or_phone(input):
