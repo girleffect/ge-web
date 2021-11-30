@@ -114,7 +114,7 @@ class ProfilePasswordChangeView(LoginRequiredMixin, FormView):
         if user.check_password(form.cleaned_data["old_password"]):
             user.set_password(form.cleaned_data["new_password"])
             user.save()
-            return HttpResponseRedirect(reverse_lazy("profiles.view_my_profile"))
+            return HttpResponseRedirect(reverse_lazy("view_my_profile"))
         messages.error(self.request, _("The old password is incorrect."))
         return render(self.request, self.template_name, {"form": form})
 
@@ -214,37 +214,47 @@ class ForgotPasswordView(FormView):
 class ResetPasswordView(FormView):
     form_class = forms.ResetPasswordForm
     template_name = "profiles/reset_password.html"
+    success_url = reverse_lazy("reset_password_success")
 
-    def form_valid(self, form):
-        username = form.cleaned_data["username"]
-        token = form.cleaned_data["token"]
+    def post(self, request, *args, **kwargs):
+        """
+        Handle POST requests: instantiate a form instance with the passed
+        POST variables and then check if it's valid.
+        """
+        form = self.get_form()
+        if form.is_valid():
+            username = form.cleaned_data["username"]
+            token = form.cleaned_data["token"]
+            try:
+                user = User.objects.get_by_natural_key(username)
+            except User.DoesNotExist:
+                return HttpResponseForbidden()
 
-        try:
-            user = User.objects.get_by_natural_key(username)
-        except User.DoesNotExist:
-            return HttpResponseForbidden()
+            if not user.is_active:
+                return HttpResponseForbidden()
 
-        if not user.is_active:
-            return HttpResponseForbidden()
+            if not default_token_generator.check_token(user, token):
+                return HttpResponseForbidden()
 
-        if not default_token_generator.check_token(user, token):
-            return HttpResponseForbidden()
+            password = form.cleaned_data["password"]
+            confirm_password = form.cleaned_data["confirm_password"]
 
-        password = form.cleaned_data["password"]
-        confirm_password = form.cleaned_data["confirm_password"]
+            if password != confirm_password:
+                form.add_error(
+                    None,
+                    _(
+                        "The two PINs that you entered do not match. "
+                        "Please try again."
+                    ),
+                )
+                return self.render_to_response({"form": form})
 
-        if password != confirm_password:
-            form.add_error(
-                None,
-                _("The two PINs that you entered do not match. " "Please try again."),
-            )
-            return self.render_to_response({"form": form})
-
-        user.set_password(password)
-        user.save()
-        self.request.session.flush()
-
-        return HttpResponseRedirect("/profiles/reset-success/")
+            user.set_password(password)
+            user.save()
+            self.request.session.flush()
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
     def render_to_response(self, context, **response_kwargs):
         username = self.request.GET.get("user")

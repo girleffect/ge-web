@@ -20,10 +20,11 @@ class GEUser(models.Model):
         max_length=50,
         choices=Gender.choices,
         null=True,
+        blank=True
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     location = models.CharField(max_length=128, blank=True, null=True)
-    date_of_birth = models.DateField(null=True)
+    date_of_birth = models.DateField(null=True, blank=True)
     terms_and_conditions = models.BooleanField(default=False)
     user_questions = models.ManyToManyField(
         "profiles.SecurityQuestion", through="SecurityQuestionAnswer"

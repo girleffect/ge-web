@@ -158,7 +158,7 @@ class RegisterTestCase(TestCase, ProfilesTestCaseMixin):
         )
         self.assertFalse(form.is_valid())
         [validation_error] = form.errors.as_data()["username"]
-        self.assertEqual("Username already exists.", validation_error.message)
+        self.assertEqual("Sorry, but that is an invalid username. Please don't use your phone number or email address in your username.", validation_error.message)
 
     def test_terms_and_conditions_is_required(self):
         form_data = {
@@ -263,12 +263,12 @@ class RegistrationDone(TestCase, ProfilesTestCaseMixin):
         response = self.client.post(
             "/profiles/register/done/",
             {
-                "gender": "male",
+                "gender": "Male",
             },
         )
         self.assertEqual(response.status_code, 302)
         user = User.objects.get(username="tester")
-        self.assertEqual(user.geuser.gender, ("male"))
+        self.assertEqual(user.geuser.gender, ("Male"))
 
     def test_location_on_done(self):
         response = self.client.get("/profiles/register/done/")
@@ -409,7 +409,7 @@ class ForgotPasswordViewTest(TestCase, ProfilesTestCaseMixin):
 
     def test_unidentified_user_gets_error(self):
         error_message = (
-            "The username that you entered appears to be invalid." " Please try again."
+            "The details you have entered are invalid. Please try again."
         )
         response = self.client.post(
             reverse("forgot_password"),
