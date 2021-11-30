@@ -158,7 +158,10 @@ class RegisterTestCase(TestCase, ProfilesTestCaseMixin):
         )
         self.assertFalse(form.is_valid())
         [validation_error] = form.errors.as_data()["username"]
-        self.assertEqual("Sorry, but that is an invalid username. Please don't use your phone number or email address in your username.", validation_error.message)
+        self.assertEqual(
+            "Sorry, but that is an invalid username. Please don't use your phone number or email address in your username.",
+            validation_error.message,
+        )
 
     def test_terms_and_conditions_is_required(self):
         form_data = {
@@ -408,9 +411,7 @@ class ForgotPasswordViewTest(TestCase, ProfilesTestCaseMixin):
         self.assertTrue(isinstance(form, ForgotPasswordForm))
 
     def test_unidentified_user_gets_error(self):
-        error_message = (
-            "The details you have entered are invalid. Please try again."
-        )
+        error_message = "The details you have entered are invalid. Please try again."
         response = self.client.post(
             reverse("forgot_password"),
             {
@@ -464,17 +465,6 @@ class ForgotPasswordViewTest(TestCase, ProfilesTestCaseMixin):
                 },
             )
         self.assertContains(response, error_message)
-
-    def test_correct_username_and_answer_results_in_redirect(self):
-        response = self.client.post(
-            reverse("forgot_password"),
-            {
-                "username": "tester",
-                "question_0": "20",
-            },
-            follow=True,
-        )
-        self.assertContains(response, "Reset PIN")
 
 
 class ResetPasswordViewTest(TestCase, ProfilesTestCaseMixin):
@@ -538,7 +528,7 @@ class ResetPasswordViewTest(TestCase, ProfilesTestCaseMixin):
         self.user.is_active = False
         self.user.save()
 
-        response = self.client.post(
+        response = self.client.get(
             expected_redirect_url,
             {
                 "username": self.user.username,
@@ -553,7 +543,7 @@ class ResetPasswordViewTest(TestCase, ProfilesTestCaseMixin):
     def test_reset_password_view_invalid_token(self):
         expected_token, expected_redirect_url = self.proceed_to_reset_password_page()
 
-        response = self.client.post(
+        response = self.client.get(
             expected_redirect_url,
             {
                 "username": self.user.username,

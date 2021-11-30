@@ -17,10 +17,7 @@ class GEUser(models.Model):
         NOT_GIVEN = _("Not comfortable sharing")
 
     gender = models.CharField(
-        max_length=50,
-        choices=Gender.choices,
-        null=True,
-        blank=True
+        max_length=50, choices=Gender.choices, null=True, blank=True
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     location = models.CharField(max_length=128, blank=True, null=True)

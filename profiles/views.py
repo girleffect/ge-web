@@ -216,6 +216,21 @@ class ResetPasswordView(FormView):
     template_name = "profiles/reset_password.html"
     success_url = reverse_lazy("reset_password_success")
 
+    def get(self, request, *args, **kwargs):
+        username = self.request.GET.get("user")
+        token = self.request.GET.get("token")
+        if not username or not token:
+            return HttpResponseForbidden()
+        try:
+            user = User.objects.get_by_natural_key(username)
+        except User.DoesNotExist:
+            return HttpResponseForbidden()
+        if not user.is_active:
+            return HttpResponseForbidden()
+        if not default_token_generator.check_token(user, token):
+            return HttpResponseForbidden()
+        return self.render_to_response(self.get_context_data())
+
     def post(self, request, *args, **kwargs):
         """
         Handle POST requests: instantiate a form instance with the passed
@@ -224,21 +239,12 @@ class ResetPasswordView(FormView):
         form = self.get_form()
         if form.is_valid():
             username = form.cleaned_data["username"]
-            token = form.cleaned_data["token"]
+            password = form.cleaned_data["password"]
+            confirm_password = form.cleaned_data["confirm_password"]
             try:
                 user = User.objects.get_by_natural_key(username)
             except User.DoesNotExist:
                 return HttpResponseForbidden()
-
-            if not user.is_active:
-                return HttpResponseForbidden()
-
-            if not default_token_generator.check_token(user, token):
-                return HttpResponseForbidden()
-
-            password = form.cleaned_data["password"]
-            confirm_password = form.cleaned_data["confirm_password"]
-
             if password != confirm_password:
                 form.add_error(
                     None,
