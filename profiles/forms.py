@@ -121,7 +121,11 @@ class RegistrationForm(forms.Form):
 
     def clean_username(self):
         if User.objects.filter(username__iexact=self.cleaned_data["username"]).exists():
-            raise forms.ValidationError(_("Username already exists."))
+            raise forms.ValidationError(
+                _(
+                    "Sorry, but that is an invalid username. Please don't use your phone number or email address in your username."
+                )
+            )
 
         if not validate_no_email_or_phone(self.cleaned_data["username"]):
             raise forms.ValidationError(
