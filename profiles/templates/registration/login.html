@@ -5,8 +5,8 @@
     <h1>{% trans "Log in" %}</h1>
 
     <h4>{% trans "Not a member yet?" %}</h4>
-    <a href="/profiles/register/">{% trans "Register" %}</a>
-    <h4>Login by signing in below.</h4>
+    <a href="{% url 'profiles.user_register' %}">{% trans "Register" %}</a>
+    <h4>{% trans Login by signing in below. %}</h4>
 
     <form method="post" action="">
     {% csrf_token %}

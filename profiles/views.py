@@ -48,7 +48,7 @@ class RegistrationView(FormView):
         )
         login(self.request, authed_user)
         return HttpResponseRedirect(
-            form.cleaned_data.get("next", "/profiles/register/done/")
+            form.cleaned_data.get("next", reverse("profiles.registration_done"))
         )
 
     def get_form_kwargs(self):
@@ -98,7 +98,7 @@ class MyProfileEdit(LoginRequiredMixin, UpdateView):
     model = GEUser
     form_class = forms.EditProfileForm
     template_name = "profiles/editprofile.html"
-    success_url = "/profiles/view/myprofile/"
+    success_url = reverse_lazy("profiles.view_my_profile")
 
     def get_object(self, queryset=None):
         return self.request.user.geuser
@@ -113,7 +113,7 @@ class ProfilePasswordChangeView(LoginRequiredMixin, FormView):
         if user.check_password(form.cleaned_data["old_password"]):
             user.set_password(form.cleaned_data["new_password"])
             user.save()
-            return HttpResponseRedirect("/profiles/view/myprofile/")
+            return HttpResponseRedirect(reverse_lazy("profiles.view_my_profile"))
         messages.error(self.request, _("The old password is incorrect."))
         return render(self.request, self.template_name, {"form": form})
 
@@ -145,10 +145,7 @@ class ForgotPasswordView(FormView):
             self.request.session["forgot_password_attempts"] += 1
             form.add_error(
                 "username",
-                _(
-                    "The username that you entered appears to be "
-                    "invalid. Please try again."
-                ),
+                _("The details you have entered are invalid. Please try again."),
             )
             return self.render_to_response({"form": form})
 

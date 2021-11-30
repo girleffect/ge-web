@@ -41,7 +41,7 @@ def validate_no_email_or_phone(input):
 
 class DateOfBirthValidationMixin(object):
     def clean_date_of_birth(self):
-        date_of_birth = self.data.get("date_of_birth")
+        date_of_birth = self.cleaned_data.get("date_of_birth")
         is_date = isinstance(date_of_birth, datetime.date)
 
         if date_of_birth and not is_date:
@@ -135,9 +135,7 @@ class RegistrationForm(forms.Form):
 
 class DoneForm(forms.Form):
     date_of_birth = forms.DateField(
-        widget=SelectDateWidget(
-            years=list(reversed(range(1930, timezone.now().year + 1)))
-        ),
+        widget=SelectDateWidget(years=list(reversed(range(1930, timezone.now().year)))),
         required=False,
     )
     gender = forms.CharField(label=_("Gender"), required=False)
