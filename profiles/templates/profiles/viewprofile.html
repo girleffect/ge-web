@@ -34,9 +34,9 @@
 
 
   <div class="call-to-action call-to-action--profiles">
-    <a href="/profiles/logout/" class="call-to-action__button call-to-action__button--primary">{% trans "log out" %}</a>
-    <a href="/profiles/edit/myprofile/" %}" class="call-to-action__button call-to-action__button--primary">{% trans "Edit My Profile" %}</a>
-    <a href="/profiles/password-reset/" %}" class="call-to-action__button call-to-action__button--primary">{% trans "Change my pin" %}</a>
+    <a href="{% url 'auth_logout' %}" class="call-to-action__button call-to-action__button--primary">{% trans "log out" %}</a>
+    <a href="{% url 'edit_my_profile' %}" class="call-to-action__button call-to-action__button--primary">{% trans "Edit My Profile" %}</a>
+    <a href="{% url 'reset_password' %}" class="call-to-action__button call-to-action__button--primary">{% trans "Change my pin" %}</a>
   </div>
 </div>
 {% endblock %}

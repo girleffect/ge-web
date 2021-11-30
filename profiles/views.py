@@ -53,7 +53,7 @@ class RegistrationView(FormView):
         )
         login(self.request, authed_user)
         return HttpResponseRedirect(
-            form.cleaned_data.get("next", reverse("profiles.registration_done"))
+            form.cleaned_data.get("next", reverse("registration_done"))
         )
 
     def get_form_kwargs(self):
@@ -67,17 +67,13 @@ class RegistrationView(FormView):
         return kwargs
 
 
-class RegistrationDone(LoginRequiredMixin, FormView):
+class RegistrationDone(LoginRequiredMixin, UpdateView):
     form_class = forms.DoneForm
     template_name = "profiles/done.html"
+    success_url = "/"
 
-    def form_valid(self, form):
-        profile = self.request.user.geuser
-        profile.date_of_birth = form.cleaned_data["date_of_birth"]
-        profile.gender = form.cleaned_data["gender"]
-        profile.location = form.cleaned_data["location"]
-        profile.save()
-        return HttpResponseRedirect(form.cleaned_data.get("next", "/"))
+    def get_object(self, queryset=None):
+        return self.request.user.geuser
 
 
 def logout_page(request):
@@ -103,7 +99,7 @@ class MyProfileEdit(LoginRequiredMixin, UpdateView):
     model = GEUser
     form_class = forms.EditProfileForm
     template_name = "profiles/editprofile.html"
-    success_url = reverse_lazy("profiles.view_my_profile")
+    success_url = reverse_lazy("view_my_profile")
 
     def get_object(self, queryset=None):
         return self.request.user.geuser

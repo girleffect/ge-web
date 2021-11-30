@@ -1,6 +1,6 @@
 from . import views
 
-from django.conf.urls import path
+from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 
@@ -8,14 +8,14 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path(r"^logout/$", views.logout_page, name="auth_logout"),
     # If user is not login it will redirect to login page
-    path(r"^login/$", auth_views.LoginView.as_view(), name="auth_login"),
-    path(r"^register/$", views.RegistrationView.as_view(), name="user_register"),
+    path("login/", auth_views.LoginView.as_view(), name="auth_login"),
+    path("register/", views.RegistrationView.as_view(), name="user_register"),
     path(
-        r"^register/done/",
+        "register/done/",
         views.RegistrationDone.as_view(template_name="profiles/done.html"),
         name="registration_done",
     ),
-    path(r"^view/myprofile/$", views.MyProfileView.as_view(), name="view_my_profile"),
+    path("view/myprofile/", views.MyProfileView.as_view(), name="view_my_profile"),
     path(r"^edit/myprofile/$", views.MyProfileEdit.as_view(), name="edit_my_profile"),
     path(
         r"^password-reset/$",

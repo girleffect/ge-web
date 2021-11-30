@@ -133,13 +133,16 @@ class RegistrationForm(forms.Form):
         return self.cleaned_data["username"]
 
 
-class DoneForm(forms.Form):
+class DoneForm(DateOfBirthValidationMixin, forms.ModelForm):
     date_of_birth = forms.DateField(
         widget=SelectDateWidget(years=list(reversed(range(1930, timezone.now().year)))),
+        label=_("Date of Birth"),
         required=False,
     )
-    gender = forms.CharField(label=_("Gender"), required=False)
-    location = forms.CharField(label=_("Location"), required=False)
+
+    class Meta:
+        model = GEUser
+        fields = ["date_of_birth", "gender", "location"]
 
 
 class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
