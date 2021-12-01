@@ -4,7 +4,7 @@ from articles.models import SectionPage, SectionIndexPage, ArticlePage
 from wagtail.core.models import Site
 from django.contrib.contenttypes.models import ContentType
 from wagtail.core.models import Page
-from .templatetags.home_tags import get_next_article
+from .templatetags.article_tags import get_next_article
 
 
 class ArticlesTestCaseMixin(object):
