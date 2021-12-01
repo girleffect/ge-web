@@ -1,4 +1,3 @@
-
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -17,20 +16,20 @@ from threadedcomments.forms import ThreadedCommentForm
 
 class AdminCommentReplyView(FormView):
     form_class = ThreadedCommentForm
-    template_name = 'admin/reply.html'
-    success_url = reverse_lazy('admin:commenting_molocomment_changelist')
+    template_name = "admin/reply.html"
+    success_url = reverse_lazy("admin:commenting_molocomment_changelist")
 
     def get_form_kwargs(self):
         kwargs = super(AdminCommentReplyView, self).get_form_kwargs()
-        kwargs['parent'] = self.kwargs['parent']
+        kwargs["parent"] = self.kwargs["parent"]
         return kwargs
 
     def form_valid(self, form):
         self.request.POST = self.request.POST.copy()
-        self.request.POST['name'] = ''
-        self.request.POST['url'] = ''
-        self.request.POST['email'] = ''
-        self.request.POST['parent'] = self.kwargs['parent']
+        self.request.POST["name"] = ""
+        self.request.POST["url"] = ""
+        self.request.POST["email"] = ""
+        self.request.POST["parent"] = self.kwargs["parent"]
         reply = post_comment(self.request, next=self.success_url)
-        messages.success(self.request, _('Reply successfully created.'))
+        messages.success(self.request, _("Reply successfully created."))
         return reply

@@ -15,8 +15,26 @@ class CommentAdmin(ModelAdmin):
     exclude_from_explorer = (
         False  # or True to exclude pages of this type from Wagtail's explorer view
     )
-    list_display = ("user_name", "site", "comment", "parent_comment", "moderator_reply", "submit_date", "is_public", "is_removed", "flagged_count")
-    list_export = ("user_name", "site", "comment", "submit_date", "is_public", "is_removed", "flagged_count")
+    list_display = (
+        "user_name",
+        "site",
+        "comment",
+        "parent_comment",
+        "moderator_reply",
+        "submit_date",
+        "is_public",
+        "is_removed",
+        "flagged_count",
+    )
+    list_export = (
+        "user_name",
+        "site",
+        "comment",
+        "submit_date",
+        "is_public",
+        "is_removed",
+        "flagged_count",
+    )
     list_filter = ("site", "submit_date", "is_public", "is_removed")
     search_fields = ("user", "comment")
     export_filename = "comments"
@@ -27,13 +45,15 @@ class CommentAdmin(ModelAdmin):
     def moderator_reply(self, obj):
         # We only want to reply to root comments
         if obj.parent is None:
-            reply_url = reverse(
-                'comments-admin-reply', args=(obj.id,))
-            image_url = static('admin/img/icon_addlink.gif')
+            reply_url = reverse("comments-admin-reply", args=(obj.id,))
+            image_url = static("admin/img/icon_addlink.gif")
             return '<img src="%s" alt="add" /> <a href="%s">Add reply</a>' % (
-                image_url, reply_url)
+                image_url,
+                reply_url,
+            )
         else:
-            return ''
+            return ""
+
     moderator_reply.allow_tags = True
 
     def parent_comment(self, obj):
@@ -45,13 +65,16 @@ class CommentAdmin(ModelAdmin):
             )
         else:
             return format_html(
-                ('<a href="{}">'
-                 '<img '
-                 'src = "/static/admin/img/icon-yes.svg" '
-                 'alt = "True" >'
-                 '</a>'),
+                (
+                    '<a href="{}">'
+                    "<img "
+                    'src = "/static/admin/img/icon-yes.svg" '
+                    'alt = "True" >'
+                    "</a>"
+                ),
                 "?tree_path={}".format(obj.tree_path),
             )
+
     parent_comment.allow_tags = True
 
     def get_changelist(self, request):
@@ -65,7 +88,7 @@ class CommentAdmin(ModelAdmin):
                 changelist_view).
                 """
                 qs = super(ModeratorChangeList, self).get_queryset(request)
-                obj = getattr(request, 'obj', None)
+                obj = getattr(request, "obj", None)
                 if obj:
                     ct = ContentType.objects.get_for_model(obj)
                     qs = qs.filter(content_type=ct, object_pk=obj.pk)
@@ -93,13 +116,16 @@ class CommentAdmin(ModelAdmin):
                 for obj in results:
                     if obj.content_type not in ct_map:
                         ct_map.setdefault(obj.content_type, {})
-                        for content_obj in obj.content_type.model_class()\
-                                ._default_manager.filter(pk__in=object_pks):
-                            ct_map[
-                                obj.content_type][content_obj.id] = content_obj
+                        for (
+                            content_obj
+                        ) in obj.content_type.model_class()._default_manager.filter(
+                            pk__in=object_pks
+                        ):
+                            ct_map[obj.content_type][content_obj.id] = content_obj
                 self.model_admin.ct_map = ct_map
 
         return ModeratorChangeList
+
 
 # Now you just need to register your customised ModelAdmin class with Wagtail
 modeladmin_register(CommentAdmin)
@@ -109,11 +135,12 @@ from .views import AdminCommentReplyView
 from wagtail.core import hooks
 
 
-@hooks.register('register_admin_urls')
+@hooks.register("register_admin_urls")
 def register_molo_comments_admin_reply_url():
     return [
         path(
-            r'comment/(?P<parent>\d+)/reply/$',
+            r"comment/(?P<parent>\d+)/reply/$",
             AdminCommentReplyView.as_view(),
-            name='comments-admin-reply'),
+            name="comments-admin-reply",
+        ),
     ]
