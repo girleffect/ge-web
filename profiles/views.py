@@ -123,73 +123,76 @@ class ForgotPasswordView(FormView):
     form_class = forms.ForgotPasswordForm
     template_name = "profiles/forgot_password.html"
 
-    def form_valid(self, form):
-        site = Site.find_for_request(self.request)
-        error_message = (
-            "The username and security question(s) combination do not match."
-        )
-        profile_settings = ProfileSettings.for_site(site)
-
-        if "forgot_password_attempts" not in self.request.session:
-            self.request.session[
-                "forgot_password_attempts"
-            ] = profile_settings.password_recovery_retries
-
-        # max retries exceeded
-        if self.request.session["forgot_password_attempts"] <= 0:
-            form.add_error(None, _("Too many attempts. Please try again later."))
-            return self.render_to_response({"form": form})
-        username = form.cleaned_data["username"]
-        try:
-            user = User.objects.get(username=username)
-        except User.DoesNotExist:
-            self.request.session["forgot_password_attempts"] += 1
-            form.add_error(
-                "username",
-                _("The details you have entered are invalid. Please try again."),
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            site = Site.find_for_request(self.request)
+            error_message = (
+                "The username and security question(s) combination do not match."
             )
-            return self.render_to_response({"form": form})
+            profile_settings = ProfileSettings.for_site(site)
 
-        if not user.is_active:
-            # add non_field_error
-            form.add_error(None, _(error_message))
-            self.request.session["forgot_password_attempts"] -= 1
-            return self.render_to_response({"form": form})
+            if "forgot_password_attempts" not in self.request.session:
+                self.request.session[
+                    "forgot_password_attempts"
+                ] = profile_settings.password_recovery_retries
 
-        # check security question answers
-        answer_checks = []
-        for i in range(profile_settings.num_security_questions):
-            user_answer = form.cleaned_data.get("question_%s" % (i,))
+            # max retries exceeded
+            if self.request.session["forgot_password_attempts"] <= 0:
+                form.add_error(None, _("Too many attempts. Please try again later."))
+                return self.render_to_response({"form": form})
+            username = form.cleaned_data["username"]
             try:
-                saved_answer = SecurityQuestionAnswer.objects.get(
-                    user=user.profile, question=self.security_questions[i]
-                )
-                answer_checks.append(saved_answer.check_answer(user_answer))
-            except SecurityQuestionAnswer.DoesNotExist:
+                user = User.objects.get(username=username)
+            except User.DoesNotExist:
+                self.request.session["forgot_password_attempts"] += 1
                 form.add_error(
-                    None,
-                    _(
-                        "There are no security questions "
-                        "stored against your profile."
-                    ),
+                    "username",
+                    _("The details you have entered are invalid. Please try again."),
                 )
                 return self.render_to_response({"form": form})
+            if not user.is_active:
+                # add non_field_error
+                form.add_error(None, _(error_message))
+                self.request.session["forgot_password_attempts"] -= 1
+                return self.render_to_response({"form": form})
+            # check security question answers
+            answer_checks = []
+            for i in range(profile_settings.num_security_questions):
+                user_answer = form.cleaned_data.get("question_%s" % (i,))
+                try:
+                    saved_answer = SecurityQuestionAnswer.objects.get(
+                        user=user.profile, question=self.security_questions[i]
+                    )
+                    answer_checks.append(saved_answer.check_answer(user_answer))
+                except SecurityQuestionAnswer.DoesNotExist:
+                    form.add_error(
+                        None,
+                        _(
+                            "There are no security questions "
+                            "stored against your profile."
+                        ),
+                    )
+                    return self.render_to_response({"form": form})
 
-        # redirect to reset password page if username and security
-        # questions were matched
-        if all(answer_checks):
-            token = default_token_generator.make_token(user)
-            q = QueryDict(mutable=True)
-            q["user"] = username
-            q["token"] = token
-            reset_password_url = "{0}?{1}".format(
-                "/profiles/reset-password/", q.urlencode()
-            )
-            return HttpResponseRedirect(reset_password_url)
+            # redirect to reset password page if username and security
+            # questions were matched
+            if all(answer_checks):
+                token = default_token_generator.make_token(user)
+                q = QueryDict(mutable=True)
+                q["user"] = username
+                q["token"] = token
+                reset_password_url = "{0}?{1}".format(
+                    "/profiles/reset-password/", q.urlencode()
+                )
+                return HttpResponseRedirect(reset_password_url)
+            else:
+                form.add_error(None, _(error_message))
+                self.request.session["forgot_password_attempts"] -= 1
+                return self.render_to_response({"form": form})
+            return self.form_valid(form)
         else:
-            form.add_error(None, _(error_message))
-            self.request.session["forgot_password_attempts"] -= 1
-            return self.render_to_response({"form": form})
+            return self.form_invalid(form)
 
     def get_form_kwargs(self):
         # add security questions for form field generation
