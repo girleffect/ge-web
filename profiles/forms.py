@@ -70,7 +70,7 @@ class RegistrationForm(forms.Form):
         label=_("Username"),
         error_messages={
             "invalid": _(
-                "This value must contain only letters, " "numbers and underscores."
+                "This value must contain only letters, numbers and underscores."
             ),
         },
     )
@@ -110,8 +110,8 @@ class RegistrationForm(forms.Form):
 
     def security_questions(self):
         return [
-            self[name]
-            for name in filter(lambda x: x.startswith("question_"), self.fields.keys())
+            field for field_name, field in self.fields.items()
+            if field_name.startswith("question_")
         ]
 
     def clean_username(self):
