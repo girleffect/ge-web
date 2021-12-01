@@ -46,20 +46,20 @@ class TestTemplateTags(TestCase, ArticlesTestCaseMixin):
         request = self.factory.get("/")
         context = {"locale_code": "en", "request": request}
 
-        # it should not return None if there is only 1 article
+        # it should return None if there is only 1 article
         self.assertEquals(get_next_article(context, self.article), None)
 
         self.article2 = ArticlePage(title="How big are you?", slug="how-big-are-you")
         self.index.add_child(instance=self.article2)
         self.article2.save_revision().publish()
         self.article2.unpublish()
-        # it should not return None if there is only 1 article live
+        # it should return None if there is only 1 article live
         self.assertEquals(get_next_article(context, self.article), None)
 
         self.section = SectionPage(title="section", slug="section")
         self.index.add_child(instance=self.section)
         self.section.save_revision().publish()
-        # it should not return None if the next sibling is not an article
+        # it should return None if the next sibling is not an article
         self.assertEquals(get_next_article(context, self.article2), None)
 
         self.article3 = ArticlePage(
