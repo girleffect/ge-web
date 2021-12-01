@@ -110,7 +110,8 @@ class RegistrationForm(forms.Form):
 
     def security_questions(self):
         return [
-            field for field_name, field in self.fields.items()
+            field
+            for field_name, field in self.fields.items()
             if field_name.startswith("question_")
         ]
 
