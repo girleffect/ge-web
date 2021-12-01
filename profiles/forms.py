@@ -71,7 +71,7 @@ class RegistrationForm(forms.Form):
         label=_("Username"),
         error_messages={
             "invalid": _(
-                "This value must contain only letters, " "numbers and underscores."
+                "This value must contain only letters, numbers and underscores."
             ),
         },
     )
