@@ -89,7 +89,7 @@ class GEUserSettings(BaseSetting):
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text=_("Choose a footer page"),
+        help_text=_("Choose a Terms and Conditions page"),
     )
 
     panels = [
