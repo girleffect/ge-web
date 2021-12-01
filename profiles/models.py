@@ -34,6 +34,8 @@ class SecurityQuestionIndexPage(Page):
 
 
 class SecurityQuestion(Page):
+    """Subclasses page to make use of translation functionality"""
+
     parent_page_type = ["profiles.SecurityQuestionIndexPage"]
 
 

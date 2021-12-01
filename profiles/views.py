@@ -241,12 +241,18 @@ class ResetPasswordView(FormView):
         """
         form = self.get_form()
         if form.is_valid():
+            token = self.request.GET.get("token")
+            if not token:
+                return HttpResponseForbidden()
+
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
             confirm_password = form.cleaned_data["confirm_password"]
             try:
                 user = User.objects.get_by_natural_key(username)
             except User.DoesNotExist:
+                return HttpResponseForbidden()
+            if not default_token_generator.check_token(user, token):
                 return HttpResponseForbidden()
             if password != confirm_password:
                 form.add_error(
