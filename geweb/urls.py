@@ -7,6 +7,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from profiles import urls as profile_urls
+from comments import urls as comments_urls
 from search import views as search_views
 
 urlpatterns = [
@@ -14,6 +15,7 @@ urlpatterns = [
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("profiles/", include(profile_urls), name="profiles"),
+    path("comments/", include(comments_urls), name="comments"),
     path("", include("social_django.urls", namespace="social")),
 ]
 

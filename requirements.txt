@@ -4,3 +4,4 @@ django-environ==0.4.5
 dj-database-url
 psycopg2-binary
 social-auth-app-django
+django-threadedcomments
