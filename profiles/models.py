@@ -7,7 +7,7 @@ from django.contrib.auth import hashers
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, PageChooserPanel
 
 
-class GEUser(models.Model):
+class Profile(models.Model):
     class Gender(models.TextChoices):
         FEMALE = _("Female")
         MALE = _("Male")
@@ -38,7 +38,7 @@ class SecurityQuestion(Page):
 
 
 class SecurityQuestionAnswer(models.Model):
-    user = models.ForeignKey("profiles.GEUser", on_delete=models.CASCADE)
+    user = models.ForeignKey("profiles.Profile", on_delete=models.CASCADE)
     question = models.ForeignKey("profiles.SecurityQuestion", on_delete=models.CASCADE)
     answer = models.CharField(max_length=250, null=False)
 
@@ -62,7 +62,7 @@ class SecurityQuestionAnswer(models.Model):
 
 
 @register_setting
-class GEUserSettings(BaseSetting):
+class ProfileSettings(BaseSetting):
     prevent_phone_number_in_username = models.BooleanField(
         default=False,
         editable=True,

@@ -14,8 +14,8 @@
     <fieldset>
       <label>{% trans "Date of Birth: " %}</label>
       <p class="profiles__description profiles__dob">
-        {% if user.geuser.date_of_birth %}
-          {{ user.geuser.date_of_birth | date:"M d, Y" }}
+        {% if user.profile.date_of_birth %}
+          {{ user.profile.date_of_birth | date:"M d, Y" }}
         {% else %}{{defaultText}}{% endif %}
       </p>
     </fieldset>
@@ -23,13 +23,13 @@
     <fieldset>
       <label for="id_gender">{% trans "Gender:" %}</label>
       <p class="profiles__description profiles__gender">
-        {{ user.geuser.gender | default:defaultText }}
+        {{ user.profile.gender | default:defaultText }}
       </p>
     </fieldset>
 
     <fieldset>
       <label for="id_location">{% trans "Location:" %}</label>
-      <p class="profiles__description profiles__location">{{ user.geuser.location | default:defaultText }}</p>
+      <p class="profiles__description profiles__location">{{ user.profile.location | default:defaultText }}</p>
     </fieldset>
 
 

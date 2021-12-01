@@ -4,9 +4,9 @@
 
 {% block content %}
     {% trans "Thank you for joining!" %}
-    {{request.user.geuser.user}}
+    {{request.user.username}}
     <h6 >{% trans "Let us know more about yourself." %}</h6>
-    <form method="post" action="{% url 'registration_done' %}" instance={{request.user.geuser}}>
+    <form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}}>
     {% csrf_token %}
     {{ form.as_p }}
 

@@ -15,7 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from wagtail.core.models import Site
 
 from . import forms
-from .models import SecurityQuestionAnswer, GEUser, GEUserSettings, SecurityQuestion
+from .models import SecurityQuestionAnswer, Profile, ProfileSettings, SecurityQuestion
 
 
 class RegistrationView(FormView):
@@ -40,13 +40,13 @@ class RegistrationView(FormView):
             return render(self.request, self.template_name, {"form": form})
 
         user = User.objects.create_user(username=username, password=password)
-        GEUser.objects.create(user=user)
+        Profile.objects.create(user=user)
 
         for index, question in enumerate(self.questions):
             answer = form.cleaned_data.get("question_%s" % index)
             if answer:
                 SecurityQuestionAnswer.objects.create(
-                    user=user.geuser, question=question, answer=answer
+                    user=user.profile, question=question, answer=answer
                 )
         authed_user = authenticate(
             request=self.request, username=username, password=password
@@ -73,7 +73,7 @@ class RegistrationDone(LoginRequiredMixin, UpdateView):
     success_url = "/"
 
     def get_object(self, queryset=None):
-        return self.request.user.geuser
+        return self.request.user.profile
 
 
 def logout_page(request):
@@ -96,13 +96,13 @@ class MyProfileView(LoginRequiredMixin, TemplateView):
 
 
 class MyProfileEdit(LoginRequiredMixin, UpdateView):
-    model = GEUser
+    model = Profile
     form_class = forms.EditProfileForm
     template_name = "profiles/editprofile.html"
     success_url = reverse_lazy("view_my_profile")
 
     def get_object(self, queryset=None):
-        return self.request.user.geuser
+        return self.request.user.profile
 
 
 class ProfilePasswordChangeView(LoginRequiredMixin, FormView):
@@ -128,7 +128,7 @@ class ForgotPasswordView(FormView):
         error_message = (
             "The username and security question(s) combination do not match."
         )
-        profile_settings = GEUserSettings.for_site(site)
+        profile_settings = ProfileSettings.for_site(site)
 
         if "forgot_password_attempts" not in self.request.session:
             self.request.session[
@@ -162,7 +162,7 @@ class ForgotPasswordView(FormView):
             user_answer = form.cleaned_data.get("question_%s" % (i,))
             try:
                 saved_answer = SecurityQuestionAnswer.objects.get(
-                    user=user.geuser, question=self.security_questions[i]
+                    user=user.profile, question=self.security_questions[i]
                 )
                 answer_checks.append(saved_answer.check_answer(user_answer))
             except SecurityQuestionAnswer.DoesNotExist:
@@ -197,7 +197,7 @@ class ForgotPasswordView(FormView):
         # all the questions the user has answered
         site = Site.find_for_request(self.request)
         kwargs = super(ForgotPasswordView, self).get_form_kwargs()
-        profile_settings = GEUserSettings.for_site(site)
+        profile_settings = ProfileSettings.for_site(site)
         self.security_questions = SecurityQuestion.objects.descendant_of(
             site.root_page
         ).live()
