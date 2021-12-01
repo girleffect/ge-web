@@ -10,21 +10,16 @@ from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
 from wagtail.core.models import Site
-from .models import GEUser
-from .models import GEUserSettings
+from .models import Profile, ProfileSettings
 
 
 User = get_user_model()
 
-REGEX_PHONE = (
-    settings.REGEX_PHONE
-    if hasattr(settings, "REGEX_PHONE")
-    else r".*?(\(?\d{3})? ?[\.-]? ?\d{3} ?[\.-]? ?\d{4}.*?"
+REGEX_PHONE = getattr(
+    settings, "REGEX_PHONE", r".*?(\(?\d{3})? ?[\.-]? ?\d{3} ?[\.-]? ?\d{4}.*?"
 )
 
-REGEX_EMAIL = (
-    settings.REGEX_EMAIL if hasattr(settings, "REGEX_PHONE") else r"([\w\.-]+@[\w\.-]+)"
-)
+REGEX_EMAIL = getattr(settings, "REGEX_EMAIL", r"([\w\.-]+@[\w\.-]+)")
 
 
 def validate_no_email_or_phone(input):
@@ -41,7 +36,7 @@ def validate_no_email_or_phone(input):
 
 class DateOfBirthValidationMixin(object):
     def clean_date_of_birth(self):
-        date_of_birth = self.data.get("date_of_birth")
+        date_of_birth = self.cleaned_data.get("date_of_birth")
         is_date = isinstance(date_of_birth, datetime.date)
 
         if date_of_birth and not is_date:
@@ -75,7 +70,7 @@ class RegistrationForm(forms.Form):
         label=_("Username"),
         error_messages={
             "invalid": _(
-                "This value must contain only letters, " "numbers and underscores."
+                "This value must contain only letters, numbers and underscores."
             ),
         },
     )
@@ -115,13 +110,18 @@ class RegistrationForm(forms.Form):
 
     def security_questions(self):
         return [
-            self[name]
-            for name in filter(lambda x: x.startswith("question_"), self.fields.keys())
+            field
+            for field_name, field in self.fields.items()
+            if field_name.startswith("question_")
         ]
 
     def clean_username(self):
         if User.objects.filter(username__iexact=self.cleaned_data["username"]).exists():
-            raise forms.ValidationError(_("Username already exists."))
+            raise forms.ValidationError(
+                _(
+                    "Sorry, but that is an invalid username. Please don't use your phone number or email address in your username."
+                )
+            )
 
         if not validate_no_email_or_phone(self.cleaned_data["username"]):
             raise forms.ValidationError(
@@ -133,15 +133,16 @@ class RegistrationForm(forms.Form):
         return self.cleaned_data["username"]
 
 
-class DoneForm(forms.Form):
+class DoneForm(DateOfBirthValidationMixin, forms.ModelForm):
     date_of_birth = forms.DateField(
-        widget=SelectDateWidget(
-            years=list(reversed(range(1930, timezone.now().year + 1)))
-        ),
+        widget=SelectDateWidget(years=list(reversed(range(1930, timezone.now().year)))),
+        label=_("Date of Birth"),
         required=False,
     )
-    gender = forms.CharField(label=_("Gender"), required=False)
-    location = forms.CharField(label=_("Location"), required=False)
+
+    class Meta:
+        model = Profile
+        fields = ["date_of_birth", "gender", "location"]
 
 
 class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
@@ -153,12 +154,12 @@ class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
         required=False,
     )
     gender = forms.ChoiceField(
-        label=_("Gender"), choices=GEUser.Gender.choices, required=False
+        label=_("Gender"), choices=Profile.Gender.choices, required=False
     )
     location = forms.CharField(label=_("Location"), required=False)
 
     class Meta:
-        model = GEUser
+        model = Profile
         fields = [
             "date_of_birth",
             "gender",

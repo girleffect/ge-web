@@ -11,7 +11,7 @@
       <h4 class="heading heading--subtitle">
         {% trans "Already a member?" %}
       </h4>
-      <a href="/profiles/login/" class="call-to-action__nav-item-text call-to-action__nav-item-text--login">{% trans "Login" %}</a>
+      <a href="{% url 'auth_login' %}" class="call-to-action__nav-item-text call-to-action__nav-item-text--login">{% trans "Login" %}</a>
 
       <h4 class="heading heading--subtitle">
           {% trans "Not a member yet?" %}
@@ -19,19 +19,21 @@
       </h4>
   </div>
   <div class="profiles">
-    <form method="post" action="/profiles/register/" class="profiles__form">
-    {% csrf_token %}
-    {% for field in form %}
-    <p>
-        {{ field.errors }}
-        {{ field.label_tag }}: {{ field }}
-        {% if field.name == "terms_and_conditions" %}
-          <a href="{% pageurl settings.profiles.GEUserSettings.terms_and_conditions %}">Terms and Cnditions</a>
-        {% endif %}
-    </p>
-{% endfor %}
+    <form method="post" action="{% url 'user_register' %}" class="profiles__form">
+      {% csrf_token %}
+      {% for field in form %}
+        <p>
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+            {% if field.name == "terms_and_conditions" %}
+              {% if settings.profiles.ProfileSettings.terms_and_conditions %}
+                <a href="{% pageurl settings.profiles.ProfileSettings.terms_and_conditions %}">Terms and Cnditions</a>
+              {% endif %}
+            {% endif %}
+        </p>
+      {% endfor %}
 
-    <input type="submit" value="{% trans "Register" %}" />
-  </form>
-</div>
+      <input type="submit" value="{% trans 'Register' %}" />
+    </form>
+  </div>
 {% endblock %}

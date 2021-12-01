@@ -14,8 +14,8 @@
     <fieldset>
       <label>{% trans "Date of Birth: " %}</label>
       <p class="profiles__description profiles__dob">
-        {% if user.geuser.date_of_birth %}
-          {{ user.geuser.date_of_birth | date:"M d, Y" }}
+        {% if user.profile.date_of_birth %}
+          {{ user.profile.date_of_birth | date:"M d, Y" }}
         {% else %}{{defaultText}}{% endif %}
       </p>
     </fieldset>
@@ -23,20 +23,20 @@
     <fieldset>
       <label for="id_gender">{% trans "Gender:" %}</label>
       <p class="profiles__description profiles__gender">
-        {{ user.geuser.gender | default:defaultText }}
+        {{ user.profile.gender | default:defaultText }}
       </p>
     </fieldset>
 
     <fieldset>
       <label for="id_location">{% trans "Location:" %}</label>
-      <p class="profiles__description profiles__location">{{ user.geuser.location | default:defaultText }}</p>
+      <p class="profiles__description profiles__location">{{ user.profile.location | default:defaultText }}</p>
     </fieldset>
 
 
   <div class="call-to-action call-to-action--profiles">
-    <a href="/profiles/logout/" class="call-to-action__button call-to-action__button--primary">{% trans "log out" %}</a>
-    <a href="/profiles/edit/myprofile/" %}" class="call-to-action__button call-to-action__button--primary">{% trans "Edit My Profile" %}</a>
-    <a href="/profiles/password-reset/" %}" class="call-to-action__button call-to-action__button--primary">{% trans "Change my pin" %}</a>
+    <a href="{% url 'auth_logout' %}" class="call-to-action__button call-to-action__button--primary">{% trans "log out" %}</a>
+    <a href="{% url 'edit_my_profile' %}" class="call-to-action__button call-to-action__button--primary">{% trans "Edit My Profile" %}</a>
+    <a href="{% url 'reset_password' %}" class="call-to-action__button call-to-action__button--primary">{% trans "Change my pin" %}</a>
   </div>
 </div>
 {% endblock %}
