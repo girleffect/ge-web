@@ -241,7 +241,7 @@ class ResetPasswordView(FormView):
         """
         form = self.get_form()
         if form.is_valid():
-            token = self.request.GET.get("token")
+            token = form.cleaned_data["token"]
             if not token:
                 return HttpResponseForbidden()
 
