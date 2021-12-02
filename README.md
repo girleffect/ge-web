@@ -6,6 +6,8 @@ Replacing Molo-Gem to use standard Wagtail
 
 python3 -m venv ve
 
+source ve/bin/activate 
+
 pip3 install -r requirements.txt
 
 pip3 install -r requirements-dev.txt
