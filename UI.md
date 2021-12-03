@@ -7,7 +7,7 @@ We need to find an optimal templating solution for GE brands pages in the curren
 
 Static template solution
 * (Torchbox pattern components)[https://github.com/torchbox/wagtail-torchbox/tree/master/tbx/project_styleguide/templates/patterns]
-
+* (Adding a React component in Wagtail Admin)[https://dev.to/lb/adding-a-react-component-in-wagtail-admin-3e]
 #### What is the flow of these component structure?
 
 - geweb templates base.html is the main page - which dynamically consumes different brand views. Or interpolate the brand view - which should tie in with the settings switch of the different brands ie. via a global variable for internationalized domain routing etc.
