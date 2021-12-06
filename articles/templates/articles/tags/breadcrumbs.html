@@ -1,0 +1,21 @@
+{% load wagtailcore_tags i18n %}
+{% block breadcrumbs %}
+{% if ancestors %}
+  <div>
+    <ul>
+      <li>
+        <a href="{{current_site.root_page.url}}">{% trans "Home" %}</a>
+      </li>
+      {% for ancestor in ancestors %}
+        <li>
+          {% if forloop.last %}
+            <span >{{ ancestor }}</span>
+          {% else %}
+            <a href="{% pageurl ancestor %}">{{ ancestor }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+{% endblock %}
