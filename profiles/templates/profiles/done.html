@@ -4,15 +4,15 @@
 
 {% block content %}
     {% trans "Thank you for joining!" %}
-    {{request.user.geuser.user}}
+    {{request.user.username}}
     <h6 >{% trans "Let us know more about yourself." %}</h6>
-    <form method="post" action="{% url 'registration_done' %}" instance={{request.user.geuser}}>
+    <form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}}>
     {% csrf_token %}
     {{ form.as_p }}
 
     <input type="submit" value="{% trans 'Save' %}"/>
     </form>
-      <a href="/profiles/view/myprofile/" >{% trans "Profile" %}</a>
+      <a href="{% url 'view_my_profile' %}" >{% trans "Profile" %}</a>
       <a href="/">{% trans "Home Page" %}</a>
 
 {% endblock %}

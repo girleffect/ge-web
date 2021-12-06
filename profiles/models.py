@@ -7,7 +7,7 @@ from django.contrib.auth import hashers
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, PageChooserPanel
 
 
-class GEUser(models.Model):
+class Profile(models.Model):
     class Gender(models.TextChoices):
         FEMALE = _("Female")
         MALE = _("Male")
@@ -34,11 +34,13 @@ class SecurityQuestionIndexPage(Page):
 
 
 class SecurityQuestion(Page):
+    """Subclasses page to make use of translation functionality"""
+
     parent_page_type = ["profiles.SecurityQuestionIndexPage"]
 
 
 class SecurityQuestionAnswer(models.Model):
-    user = models.ForeignKey("profiles.GEUser", on_delete=models.CASCADE)
+    user = models.ForeignKey("profiles.Profile", on_delete=models.CASCADE)
     question = models.ForeignKey("profiles.SecurityQuestion", on_delete=models.CASCADE)
     answer = models.CharField(max_length=250, null=False)
 
@@ -51,7 +53,9 @@ class SecurityQuestionAnswer(models.Model):
             self.save(update_fields=["answer"])
 
         return hashers.check_password(
-            raw_answer.strip().lower() if raw_answer else None, self.answer, setter
+            raw_answer.strip().lower() if raw_answer else None,
+            self.answer,
+            setter=setter,
         )
 
     def save(self, is_import=False, *args, **kwargs):
@@ -62,7 +66,7 @@ class SecurityQuestionAnswer(models.Model):
 
 
 @register_setting
-class GEUserSettings(BaseSetting):
+class ProfileSettings(BaseSetting):
     prevent_phone_number_in_username = models.BooleanField(
         default=False,
         editable=True,
@@ -89,7 +93,7 @@ class GEUserSettings(BaseSetting):
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text=_("Choose a footer page"),
+        help_text=_("Choose a Terms and Conditions page"),
     )
 
     panels = [

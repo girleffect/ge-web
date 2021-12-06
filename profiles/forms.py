@@ -10,8 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
 from wagtail.core.models import Site
-from .models import GEUser
-from .models import GEUserSettings
+from .models import Profile, ProfileSettings
 
 
 User = get_user_model()
@@ -71,7 +70,7 @@ class RegistrationForm(forms.Form):
         label=_("Username"),
         error_messages={
             "invalid": _(
-                "This value must contain only letters, " "numbers and underscores."
+                "This value must contain only letters, numbers and underscores."
             ),
         },
     )
@@ -111,8 +110,9 @@ class RegistrationForm(forms.Form):
 
     def security_questions(self):
         return [
-            self[name]
-            for name in filter(lambda x: x.startswith("question_"), self.fields.keys())
+            field
+            for field_name, field in self.fields.items()
+            if field_name.startswith("question_")
         ]
 
     def clean_username(self):
@@ -141,7 +141,7 @@ class DoneForm(DateOfBirthValidationMixin, forms.ModelForm):
     )
 
     class Meta:
-        model = GEUser
+        model = Profile
         fields = ["date_of_birth", "gender", "location"]
 
 
@@ -154,12 +154,12 @@ class EditProfileForm(DateOfBirthValidationMixin, forms.ModelForm):
         required=False,
     )
     gender = forms.ChoiceField(
-        label=_("Gender"), choices=GEUser.Gender.choices, required=False
+        label=_("Gender"), choices=Profile.Gender.choices, required=False
     )
     location = forms.CharField(label=_("Location"), required=False)
 
     class Meta:
-        model = GEUser
+        model = Profile
         fields = [
             "date_of_birth",
             "gender",

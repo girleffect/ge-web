@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
-{% load comments %}
-{% block body_class %}articlepage{% endblock %}
+{% load wagtailcore_tags article_tags i18n comments %}
 
+{% block body_class %}articlepage{% endblock %}
 {% block content %}
+  {% breadcrumbs %}
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}
         <p class="meta">{{ page.subtitle }}</p>
@@ -20,9 +20,19 @@
             {% endfor %}
         </div>
     {% endif %}
+
     {% render_comment_form for page %}
 
     {% render_comment_list for page %}
+
     <p><a href="{{ page.get_parent.url }}">Return to section</a></p>
+    {% get_next_article page as next_article %}
+    {% if next_article %}
+      {% trans 'Next Article: '%}
+      <p><a href="{{ next_article.url }}">{{ next_article.title }}</a></p>
+    {% endif %}
+
+
+    <p><a href="{{ page.get_parent.url }}">{% trans 'Return to section'%}</a></p>
 
 {% endblock %}

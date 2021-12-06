@@ -18,9 +18,9 @@ from .forms import (
 from .models import (
     SecurityQuestion,
     SecurityQuestionAnswer,
-    GEUser,
+    Profile,
     SecurityQuestionIndexPage,
-    GEUserSettings,
+    ProfileSettings,
 )
 from home.models import HomePage
 from articles.models import FooterPage, FooterIndexPage
@@ -75,16 +75,16 @@ class ProfilesTestCaseMixin(object):
         )
         self.index.add_child(instance=self.question)
         self.question.save_revision().publish()
-        self.geuser = GEUser.objects.create(user=self.user)
+        self.profile = Profile.objects.create(user=self.user)
         # create answers for this user
         self.a1 = SecurityQuestionAnswer.objects.create(
-            user=self.user.geuser, question=self.question, answer="20"
+            user=self.user.profile, question=self.question, answer="20"
         )
         self.footer = FooterPage(title="terms footer", slug="terms-footer")
         self.footer_index.add_child(instance=self.footer)
         self.footer.save_revision().publish()
         self.site = Site.objects.get(is_default_site=True)
-        self.profile_settings = GEUserSettings.for_site(self.site)
+        self.profile_settings = ProfileSettings.for_site(self.site)
         self.profile_settings.terms_and_conditions = self.footer
         self.profile_settings.save()
         self.client = Client()
@@ -271,7 +271,7 @@ class RegistrationDone(TestCase, ProfilesTestCaseMixin):
         )
         self.assertEqual(response.status_code, 302)
         user = User.objects.get(username="tester")
-        self.assertEqual(user.geuser.gender, ("Male"))
+        self.assertEqual(user.profile.gender, ("Male"))
 
     def test_location_on_done(self):
         response = self.client.get("/profiles/register/done/")
@@ -283,7 +283,7 @@ class RegistrationDone(TestCase, ProfilesTestCaseMixin):
         )
         self.assertEqual(response.status_code, 302)
         user = User.objects.get(username="tester")
-        self.assertEqual(user.geuser.location, ("mlazi"))
+        self.assertEqual(user.profile.location, ("mlazi"))
 
 
 class TestTermsAndConditions(TestCase, ProfilesTestCaseMixin):
@@ -300,8 +300,8 @@ class TestTermsAndConditions(TestCase, ProfilesTestCaseMixin):
 class MyProfileViewTest(TestCase, ProfilesTestCaseMixin):
     def setUp(self):
         self.setup_cms()
-        self.user.geuser.gender = "The Gender"
-        self.user.geuser.save()
+        self.user.profile.gender = "The Gender"
+        self.user.profile.save()
         self.login()
 
     def test_view(self):
@@ -337,18 +337,18 @@ class MyProfileEditTest(TestCase, ProfilesTestCaseMixin):
         )
         self.assertRedirects(response, "/profiles/view/myprofile/")
         self.assertEqual(
-            GEUser.objects.get(user=self.user).date_of_birth, date(2000, 1, 1)
+            Profile.objects.get(user=self.user).date_of_birth, date(2000, 1, 1)
         )
 
     def test_update_gender(self):
         response = self.client.post("/profiles/edit/myprofile/", {"gender": "Female"})
         self.assertRedirects(response, "/profiles/view/myprofile/")
-        self.assertEqual(GEUser.objects.get(user=self.user).gender, "Female")
+        self.assertEqual(Profile.objects.get(user=self.user).gender, "Female")
 
     def test_update_location(self):
         response = self.client.post("/profiles/edit/myprofile/", {"location": "mlazi"})
         self.assertRedirects(response, "/profiles/view/myprofile/")
-        self.assertEqual(GEUser.objects.get(user=self.user).location, "mlazi")
+        self.assertEqual(Profile.objects.get(user=self.user).location, "mlazi")
 
 
 class ProfilePasswordChangeViewTest(TestCase, ProfilesTestCaseMixin):
@@ -453,7 +453,7 @@ class ForgotPasswordViewTest(TestCase, ProfilesTestCaseMixin):
 
     def test_too_many_retries_result_in_error(self):
         error_message = "Too many attempts"
-        profile_settings = GEUserSettings.for_site(self.site)
+        profile_settings = ProfileSettings.for_site(self.site)
 
         # post more times than the set number of retries
         for i in range(profile_settings.password_recovery_retries + 5):
