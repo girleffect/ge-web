@@ -21,8 +21,10 @@ def footer_pages(context):
 @register.simple_tag(takes_context=True)
 def get_next_article(context, article):
     return (
-        article.specific.get_siblings(False)
-        .filter(path__gte=article.path, live=True, content_type=8)
+        Page.objects.exact_type(ArticlePage)
+        .siblings_of(article)
+        .filter(path__gte=self.path)
+        .live()
+        .specific()
         .order_by("path")
-        .first()
     )
