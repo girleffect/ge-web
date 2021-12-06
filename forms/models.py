@@ -41,6 +41,9 @@ from wagtail.contrib.forms.views import SubmissionsListView
 from wagtail.contrib.forms.forms import SelectDateForm
 from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
+from wagtail.contrib.forms.views import SubmissionsListView
+
 
 class CustomFormSubmission(AbstractFormSubmission):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -94,26 +97,12 @@ class FormPage(AbstractEmailForm):
         help_text="Whether to show the form results to the user after they"
         " have submitted their answer(s).",
     )
-    show_results_as_percentage = BooleanField(
-        default=False,
-        help_text="Whether to show the form results to the user after they"
-        " have submitted their answer(s) as a percentage or as"
-        " a number.",
-    )
 
     multi_step = BooleanField(
         default=False,
         verbose_name="Multi-step",
         help_text="Whether to display the form questions to the user one at"
         " a time, instead of all at once.",
-    )
-
-    display_form_directly = BooleanField(
-        default=False,
-        verbose_name="Display Question Directly",
-        help_text="This is similar to polls, in which the questions are "
-        "displayed directly on the page, instead of displaying "
-        "a link to another page to complete the form.",
     )
     your_words_competition = BooleanField(
         default=False,
@@ -152,9 +141,7 @@ class FormPage(AbstractEmailForm):
                 FieldPanel("allow_anonymous_submissions"),
                 FieldPanel("allow_multiple_submissions_per_user"),
                 FieldPanel("show_results"),
-                FieldPanel("show_results_as_percentage"),
                 FieldPanel("multi_step"),
-                FieldPanel("display_form_directly"),
                 FieldPanel("your_words_competition"),
                 FieldPanel("contact_form"),
             ],

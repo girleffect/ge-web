@@ -6,7 +6,7 @@
     <body>
         <h1>{{ page.title }}</h1>
 
-        {% if user.is_authenticated and user.is_active or request.is_preview %}
+        {% if user.is_authenticated and user.is_active or request.is_preview or page.allow_anonymous_submissions %}
             {% if form %}
                 <div>{{ page.intro|richtext }}</div>
                 <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:"1" }}{% endif %}" method="POST">
