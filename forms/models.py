@@ -41,9 +41,6 @@ from wagtail.contrib.forms.views import SubmissionsListView
 from wagtail.contrib.forms.forms import SelectDateForm
 from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 
-from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
-from wagtail.contrib.forms.views import SubmissionsListView
-
 
 class CustomFormSubmission(AbstractFormSubmission):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
