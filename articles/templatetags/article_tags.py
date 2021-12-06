@@ -31,6 +31,7 @@ def breadcrumbs(context):
         "request": context["request"],
     }
 
+
 @register.simple_tag(takes_context=True)
 def get_next_article(context, article):
     return (
