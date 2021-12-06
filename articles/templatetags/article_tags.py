@@ -26,7 +26,6 @@ def breadcrumbs(context):
         ancestors = (
             Page.objects.live().ancestor_of(self, inclusive=True).filter(depth__gt=3)
         )
-
     return {
         "ancestors": ancestors,
         "request": context["request"],
