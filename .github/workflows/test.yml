@@ -28,4 +28,5 @@ jobs:
         flake8 . --count --show-source --statistics
     - name: Django Test
       run: |
+        ./manage.py collectstatic --settings=geweb.settings.base
         ./manage.py test --settings=geweb.settings.base

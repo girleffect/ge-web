@@ -38,7 +38,11 @@
         {% footer_pages %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/geweb.js' %}"></script>
-
+        {% if not user.is_authenticated %}
+          <a href="{% url 'user_register' %}">Sign up</a>
+        {% else %}
+          <a href="{% url 'view_my_profile' %}">Profile</a>
+        {% endif %}
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
