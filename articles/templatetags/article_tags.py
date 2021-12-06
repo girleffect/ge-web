@@ -1,6 +1,6 @@
 from django import template
-from articles.models import FooterPage
-from wagtail.core.models import Site
+from articles.models import FooterPage, ArticlePage
+from wagtail.core.models import Site, Page
 
 register = template.Library()
 
@@ -21,10 +21,11 @@ def footer_pages(context):
 @register.simple_tag(takes_context=True)
 def get_next_article(context, article):
     return (
-        Page.objects.exact_type(ArticlePage)
-        .siblings_of(article)
-        .filter(path__gte=self.path)
+        Page.objects.filter(path__gt=article.path)
+        .exact_type(ArticlePage)
+        .sibling_of(article)
         .live()
         .specific()
         .order_by("path")
+        .first()
     )
