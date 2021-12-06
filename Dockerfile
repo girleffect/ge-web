@@ -1,11 +1,12 @@
 # Use an official Python runtime based on Debian 10 "buster" as a parent image.
 FROM python:3.8.1-slim-buster
 
-# Add user that will be used in the container.
-RUN useradd wagtail
-
-# Port used by this container to serve HTTP.
-EXPOSE 8000
+# Create the user and group first as they shouldn't change often.
+# Specify the UID/GIDs so that they do not change somehow and mess with the
+# ownership of external volumes.
+RUN addgroup --system --gid 107 wagtail \
+    && adduser --system --uid 104 --ingroup wagtail wagtail \
+    && mkdir /etc/gunicorn
 
 # Set environment variables.
 # 1. Force Python stdout and stderr streams to be unbuffered.
@@ -22,28 +23,31 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libjpeg62-turbo-dev \
     zlib1g-dev \
     libwebp-dev \
+    nginx \
  && rm -rf /var/lib/apt/lists/*
 
-# Install the application server.
+# Add nginx user to wagtail group so that Nginx can read/write to gunicorn socket
+RUN adduser --system nginx --ingroup wagtail
+COPY nginx/ /etc/nginx/
+RUN sed -i 's/www-data;/nginx;/' /etc/nginx/nginx.conf
+
+# Install gunicorn
 RUN pip install "gunicorn==20.0.4"
+COPY gunicorn/ /etc/gunicorn/
 
-# Install the project requirements.
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
-
-# Use /app folder as a directory where the source code is stored.
+EXPOSE 8000
 WORKDIR /app
 
 # Set this directory to be owned by the "wagtail" user. This Wagtail project
 # uses SQLite, the folder needs to be owned by the user that
 # will be writing to the database file.
 RUN chown wagtail:wagtail /app
-
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . .
 
-# Use user "wagtail" to run the build commands below and the server itself.
-USER wagtail
+# Install the project requirements.
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear

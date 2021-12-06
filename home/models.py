@@ -30,7 +30,7 @@ class HomePage(Page):
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index
         context = super().get_context(request)
-        sections = SectionPage.objects.child_of(self).live()
+        sections = SectionPage.objects.descendant_of(self).live()
         context["sections"] = sections
 
         return context
