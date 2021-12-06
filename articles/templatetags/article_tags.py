@@ -1,6 +1,6 @@
 from django import template
-from articles.models import FooterPage
-from wagtail.core.models import Page, Site
+from articles.models import FooterPage, ArticlePage
+from wagtail.core.models import Site, Page
 
 register = template.Library()
 
@@ -30,3 +30,15 @@ def breadcrumbs(context):
         "ancestors": ancestors,
         "request": context["request"],
     }
+
+@register.simple_tag(takes_context=True)
+def get_next_article(context, article):
+    return (
+        Page.objects.filter(path__gt=article.path)
+        .exact_type(ArticlePage)
+        .sibling_of(article)
+        .live()
+        .specific()
+        .order_by("path")
+        .first()
+    )
