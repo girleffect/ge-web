@@ -34,7 +34,7 @@ class RegistrationView(FormView):
             messages.error(
                 self.request,
                 _(
-                    "Sorry, but that is an invalid username. Please don't use your phone number or email address in your username."
+                    "Sorry, but that is an invalid username."
                 ),
             )
             return render(self.request, self.template_name, {"form": form})

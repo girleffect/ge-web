@@ -5,7 +5,7 @@ from wagtail.core.models import Site
 register = template.Library()
 
 
-@register.inclusion_tag("home/tags/footer_page_list.html", takes_context=True)
+@register.inclusion_tag("articles/tags/footer_page_list.html", takes_context=True)
 def footer_pages(context):
     request = context["request"]
     pages = []
