@@ -1,0 +1,14 @@
+{
+  "name": "geweb",
+  "version": "1.0.0",
+  "description": "GE brands mweb and desktop interfaces",
+  "main": "static/js/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "geweb"
+  ],
+  "author": "Mitso Qalaba",
+  "license": "ISC"
+}
