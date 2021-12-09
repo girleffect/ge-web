@@ -1,15 +1,43 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
-{% load static %}
+{% load wagtailcore_tags article_tags static %}
 
-{% block body_class %}homepage{% endblock %}
+{% block extra_css %}{% endblock extra_css %}
 
-{% block extra_css %}
-{% endblock extra_css %}
+{% block body_class %}main{% endblock %}
 
-{% block content %}
-    <h1>Sections</h1>
-    {% for section in sections %}
-        <h2><a href="{% pageurl section %}">{{ section.title }}</a></h2>
-    {% endfor %}
+{% block content %} 
+    {# HEADER #}
+    {% if brand == 'springster' %}
+        <div id="header-wrapper" class="header-wrapper">
+            <div id="language-bar" class="language"></div>
+            <div id="header" class="header">
+                <div class="menu">
+                    <ul class="menu-list">
+                        <li id="profile" class="menu-list__item">
+                            <a href="/profiles/register/" class="menu-list__anchor">
+                                Sign up
+                            </a>
+                        </li>
+                        <li class="menu-list__item">
+                            <a href="/" class="menu-list__anchor logo logo--center">
+                                <img alt="Springster" srcset="{% static 'img/springster/springster-logo.svg' %}" src="{% static 'img/springster/springster-logo.svg' %}" width="97" height="24">
+                            </a>
+                        </li>
+                        <li id="search" class="menu-list__item">
+                            <a class="menu-list__anchor">
+                                <label for="search-toggle">Search</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                {% include "./patterns/nav.html" with prefix="springster" %}
+            </div>
+        </div>
+        
+    {% endif %}
+    
 {% endblock content %}
+
+{% block footer %}
+    {% footer_pages %}
+{% endblock %}

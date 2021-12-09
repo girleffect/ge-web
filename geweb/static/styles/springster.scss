@@ -1,0 +1,64 @@
+$dark_grayish_blue: #a3a7ae;
+$violet: #7300ff;
+$pale_violet: #e3ccff;
+$white: #ffffff;
+
+
+html, body {
+    background-color: $dark_grayish_blue;
+    margin: 0 auto;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: $violet;
+    font-family: BatonRegular,Helvetica,Arial,sans-serif;
+    margin: 0 auto;
+    max-width: 360px;
+    padding: 10px 10px 5px;
+    position: relative;
+    outline: 0;
+}
+
+.menu {
+    overflow: auto;
+    text-align: center;
+    &-list {
+        align-items: center;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $white;
+            text-decoration: none;
+        }
+    } 
+}
+
+.nav {
+    text-align: center;
+    &-list {
+        list-style-type: none;
+        &__item {
+            display: inline-block;
+            padding: 10px 15px 5px 0;
+        }
+        &__anchor {
+            color: $pale_violet;
+            text-decoration: none;
+        }
+    }
+
+}
