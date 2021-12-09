@@ -32,10 +32,12 @@ INSTALLED_APPS = [
     "home",
     "articles",
     "search",
+    "profiles",
     "social_django",
     "wagtail.contrib.settings",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+    "wagtail.contrib.modeladmin",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -92,6 +94,7 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                "wagtail.contrib.settings.context_processors.settings",
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
                 "django.contrib.auth.context_processors.auth",
@@ -188,3 +191,5 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
 ]
 
 TAGGIT_CASE_INSENSITIVE = True
+
+LOGIN_URL = "/profiles/login/"
