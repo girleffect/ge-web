@@ -2,6 +2,10 @@ $dark_grayish_blue: #a3a7ae;
 $violet: #7300ff;
 $pale_violet: #e3ccff;
 $white: #ffffff;
+$soft_cyan: #6be6e6;
+$light_yellow: #ffe654;
+$light_orange: #ff9f73;
+$pale_red: #ffa4b8;
 
 
 html, body {
@@ -59,6 +63,42 @@ ul, ol, li {
             color: $pale_violet;
             text-decoration: none;
         }
+        &__my-life {
+            color: $soft_cyan;
+        }
+        &__my-body {
+            color: $light_yellow;
+        }
+        &__my-future {
+            color: $light_orange;
+        }
+        &__girl-stories {
+            color: $pale_red;
+        }
     }
 
+}
+
+#profile {
+    background: url('http://127.0.0.1:8000/static/img/springster/avatar.svg')  no-repeat 3px 0 / auto 95%;;
+    cursor: pointer;
+    height: 25px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    vertical-align: middle;
+    text-indent: 120%;
+}
+
+#search {
+    background: url('http://127.0.0.1:8000/static/img/springster/nav_search.svg')  no-repeat 3px 0 / auto 95%;
+    cursor: pointer;
+    text-indent: 120%;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    padding: 0;
+    height: 25px;
 }
