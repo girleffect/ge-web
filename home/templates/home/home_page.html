@@ -10,7 +10,7 @@
     {% if brand == 'springster' %}
         <div id="header-wrapper" class="header-wrapper">
             <div id="language-bar" class="language"></div>
-            <div id="header" class="header">
+            <header id="header" class="header">
                 <div class="menu">
                     <ul class="menu-list">
                         <li id="profile" class="menu-list__item">
@@ -31,6 +31,14 @@
                     </ul>
                 </div>
                 {% include "./patterns/nav.html" with prefix="springster" %}
+            </header>
+        </div>
+
+        <div class="content">
+            <div class="banner">
+                <a href="/sections/my-body/meet-big-sis-springster-v2/" target="_top" class="banner__link">
+                    <img alt="Big Sis on Springster" src="https://springster-english-south-africa-prd.s3.amazonaws.com/images/Big_sis_On_site_Banner_2_14OYmzk.width-1080.png" class="banner__image">
+                  </a>
             </div>
         </div>
         
@@ -39,5 +47,44 @@
 {% endblock content %}
 
 {% block footer %}
-    {% footer_pages %}
+    {% if brand == 'springster' %}
+        <footer class="footer">
+            <div class="footer__springster">
+                {% footer_pages %}
+            </div>
+            
+
+            <div class="heading heading__micro">
+                <p class="para">Find us elsewhere:</p>
+            </div>
+
+            <div class="social-media-footer-list">
+                <div class="social-media-footer-list__item">
+                  <a href="https://facebook.com/heyspringster/" class="social-media-footer__anchor">
+                    <img alt="Facebook" height="24" src="https://springster-english-south-africa-prd.s3.amazonaws.com/images/unnamed.width-24.png" width="24">
+                    <span class="social-media-footer__label">@HeySpringster</span>
+                  </a>
+                </div>
+            </div>
+
+            <a class="footer-logo items selected" href="/">
+                <img class="footer-logo__thumbnail" alt="Springster Logo - Footer" src="{% static 'img/springster/sp-footer-logo.png' %}" width="200" height="59">
+            </a>
+
+            <div class="call-to-action call-to-action--backToTop items">
+                <a href="#" class="call-to-action__nav-item-text call-to-action__nav-item-text--backToTop">
+                    Back to Top
+                </a>
+            </div>
+
+            <div class="copyright">
+                <p class="copyright__text">
+                    © 2021 Springster. All Rights Reserved.
+                    <a href="/footer-pages/terms-conditions/" class="copyright__anchor">
+                        Terms &amp; Conditions
+                    </a>
+                </p>
+            </div>
+        </footer>
+    {% endif %}
 {% endblock %}

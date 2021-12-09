@@ -1,0 +1,14 @@
+{% load wagtailcore_tags %}
+
+<nav class="nav nav--{{prefix}}">
+    <ul class="nav-list">
+        <li class="nav-list__item">
+            <a href="/" class="nav-list__anchor selected">Home</a>
+        </li>
+        {% for section in sections %}
+            <li class="nav-list__item">
+                <a href="{% pageurl section %}" class="nav-list__anchor">{{ section.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
