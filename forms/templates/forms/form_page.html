@@ -12,7 +12,7 @@
                 <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:"1" }}{% endif %}" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit">
+                    <button type="submit">{% trans "Submit" %}</button>
                 </form>
             {% else %}
                 <div>You can fill in the from only one time.</div>
