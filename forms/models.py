@@ -142,7 +142,7 @@ class FormPage(AbstractEmailForm):
                 FieldPanel("your_words_competition"),
                 FieldPanel("contact_form"),
             ],
-            heading="Form Settings",
+            heading=_("Form Settings"),
         )
     ]
 
