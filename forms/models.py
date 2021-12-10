@@ -117,7 +117,7 @@ class FormPage(AbstractEmailForm):
         FieldPanel("introduction", classname="full"),
         ImageChooserPanel("image"),
         StreamFieldPanel("description"),
-        InlinePanel("form_fields", label="Form fields"),
+        InlinePanel("form_fields", label=_("Form fields")),
         MultiFieldPanel(
             [
                 FieldRowPanel(
