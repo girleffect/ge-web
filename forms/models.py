@@ -13,7 +13,7 @@ from django.dispatch import receiver
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
 
 from wagtail.admin.edit_handlers import (
@@ -81,35 +81,35 @@ class FormPage(AbstractEmailForm):
 
     allow_anonymous_submissions = BooleanField(
         default=False,
-        help_text="Check this to allow users who are NOT logged in to complete"
-        " forms.",
+        help_text=_("Check this to allow users who are NOT logged in to complete"
+        " forms."),
     )
     allow_multiple_submissions_per_user = BooleanField(
         default=False,
-        help_text="Check this to allow users to complete a form more than" " once.",
+        help_text=_("Check this to allow users to complete a form more than" " once."),
     )
 
     show_results = BooleanField(
         default=False,
-        help_text="Whether to show the form results to the user after they"
-        " have submitted their answer(s).",
+        help_text=_("Whether to show the form results to the user after they"
+        " have submitted their answer(s)."),
     )
 
     multi_step = BooleanField(
         default=False,
         verbose_name="Multi-step",
-        help_text="Whether to display the form questions to the user one at"
-        " a time, instead of all at once.",
+        help_text=_("Whether to display the form questions to the user one at"
+        " a time, instead of all at once."),
     )
     your_words_competition = BooleanField(
         default=False,
         verbose_name="Is YourWords Competition",
-        help_text="This will display the correct template for yourwords",
+        help_text=_("This will display the correct template for yourwords"),
     )
     contact_form = BooleanField(
         default=False,
         verbose_name="Is Contact Form",
-        help_text="This will display the correct template for contact forms",
+        help_text=_("This will display the correct template for contact forms"),
     )
 
     content_panels = forms_models.AbstractForm.content_panels + [
@@ -159,7 +159,9 @@ class FormPage(AbstractEmailForm):
 
         # If you need to show results only on landing page,
         # you may need check request.method
-
+        if not self.show_results:
+            # return early, without further processing
+            return context
         results = dict()
         # Get information about form fields
         data_fields = [
@@ -208,7 +210,7 @@ class FormPage(AbstractEmailForm):
 
     def serve(self, request, *args, **kwargs):
         if (
-            self.allow_multiple_submissions_per_user is False
+            not self.allow_multiple_submissions_per_user
             and self.get_submission_class()
             .objects.filter(page=self, user__pk=request.user.pk)
             .exists()
