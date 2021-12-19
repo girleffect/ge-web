@@ -6,7 +6,11 @@
         margin: 0 auto;
     }
     &__body {
-        background: #fff url($staticPath + 'img/springster/sharpie-underline.png') no-repeat 50% 100%/122px;
+        background: #fff url($staticPath + 'img/springster/sharpie-underline.png') no-repeat 50% 98%/122px;
+        padding: 0 0 25px;
+    }
+    &__recommendations {
+        padding: 20px 0 0;
     }
 }
 
@@ -20,26 +24,22 @@
 }
 
 
-.tags {
-    padding: 25px 0 10px;
-    &-list {
-        margin: 0 auto 18px;
-        padding: 10px 15px;
-        &__item {
-            background: $light_gray_variation2;
-            color: #000;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 13px;
-            line-height: 1.5;
-            margin: 5px 0;
-            padding: 5px;
-        }
+.tags-list {
+    margin: 0 auto 18px;
+    padding: 10px;
+    &__item {
+        background: $light_gray_variation2;
+        color: #000;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 5px 0;
+        padding: 5px;
     }
 }
 
 .tag-cloud {
-    padding: 0 0 20px;
     text-align: center;
     &-list {
         display: inline-block;
