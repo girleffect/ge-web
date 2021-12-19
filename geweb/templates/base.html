@@ -25,9 +25,35 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/springster/springster_icon_96.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/springster/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/springster/favicon-16x16.png' %}">
+    {% with brand="springster" %} 
+        {%  if brand == 'springster' %}
+            {% block extra_css %}
+                <style>
+                    body {
+                        background-color: #a3a7ae;
+                        box-sizing: border-box;
+                        font-family: 'Arial, Helvetica, sans-serif';
+                        font-weight: normal;
+                        font-style: normal;
+                        margin: 0 auto;
+                    }
+                    .header-wrapper,
+                    .content,
+                    .footer {
+                        max-width: 360px;
+                        margin: 0 auto;
+                        position: relative;
+                    }
+                    .header-wrapper {
+                        background-color: #c6cad1;
+                    }
+                </style>
+            {% endblock %}
+        {% endif %}
 
+    {% endwith %}
 
-    {% block extra_css %}{# Override this in templates to add extra stylesheets #}{% endblock %}
+    
 </head>
 <body class="{% block body_class %}{% endblock %}">
     {% with brand="springster" %} 
