@@ -1,0 +1,79 @@
+.nav {
+    overflow: auto;
+    padding: 10px 8px 5px;
+    &-list {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $pale_violet;
+            font-family: 'Baton-Regular';
+            font-weight: normal; 
+            font-size: 18px;
+            font-style: normal;
+            text-decoration: none;
+            &:hover,
+            &.selected {
+                border-bottom: 2px solid $pale_violet;
+            }
+        }
+        &__my-life {
+            color: $soft_cyan;
+            &:hover,
+            &.selected {
+                border-bottom-color: $soft_cyan;
+            }
+            
+        }
+        &__my-body {
+            color: $light_yellow;
+            &:hover,
+            &.selected {
+                border-bottom-color: $light_yellow;
+            }
+        }
+        &__my-future {
+            color: $light_orange;
+            &:hover,
+            &.selected {
+                border-bottom-color: $light_orange;
+            }
+        }
+        &__girl-stories {
+            color: $pale_red;
+            &:hover,
+            &.selected {
+                border-bottom-color: $pale_red;
+            }
+        }
+    }
+}
+
+
+#profile {
+    background: url($staticPath + 'img/springster/avatar.svg')  no-repeat 3px 0 / auto 95%;;
+    cursor: pointer;
+    height: 25px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    vertical-align: middle;
+    text-indent: 120%;
+}
+
+#search {
+    background: url($staticPath + 'img/springster/nav_search.svg')  no-repeat 3px 0 / auto 95%;
+    cursor: pointer;
+    text-indent: 120%;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    padding: 0;
+    height: 25px;
+}

@@ -20,3 +20,12 @@ Static template solution
 
 ### Assumptions 
 - No javascript restrictions for Freebasics platform.
+
+
+
+# Getting Started
+```
+
+cd ge-web/geweb/
+npm i
+npm run build

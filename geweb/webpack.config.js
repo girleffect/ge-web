@@ -1,4 +1,6 @@
-const path = require('path');
+const path = require('path'),
+    MiniCssExtractPlugin = require("mini-css-extract-plugin"),
+    globImporter = require('node-sass-glob-importer');
 
 
 module.exports = {
@@ -6,6 +8,7 @@ module.exports = {
     entry: {
         ninyampinga: path.join(__dirname, 'static/js', 'ninyampinga.js'),
         springster: path.join(__dirname, 'static/js', 'springster.js'),
+        yegna: path.join(__dirname, 'static/js', 'yegna.js'),
         zathu: path.join(__dirname, 'static/js', 'zathu.js'),
     },
     devtool: "eval-source-map",
@@ -18,12 +21,26 @@ module.exports = {
         rules: [
             {
                 test: /\.s[ac]ss$/i,
-                use: ['style-loader','css-loader', 'sass-loader']
+                use: [
+                    'style-loader',
+                    'css-loader', 
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sassOptions: {
+                              importer: globImporter()
+                            }
+                        }
+                    }
+                ]
             },
             { 
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
                 use: ['file-loader'] 
             },
         ]
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin()
+    ]
 }

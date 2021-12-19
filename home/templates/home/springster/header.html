@@ -1,0 +1,26 @@
+{% load static %}
+<div id="header-wrapper" class="header-wrapper">
+    <div id="language-bar" class="language"></div>
+    <header id="header" class="header">
+        <div class="menu">
+            <ul class="menu-list">
+                <li id="profile" class="menu-list__item">
+                    <a  href="/profiles/register/" class="menu-list__anchor">
+                        Sign up
+                    </a>
+                </li>
+                <li class="menu-list__item">
+                    <a href="/" class="menu-list__anchor logo logo--center">
+                        <img alt="Springster" srcset="{% static 'img/springster/springster-logo.svg' %}" src="{% static 'img/springster/springster-logo.svg' %}" width="97" height="24">
+                    </a>
+                </li>
+                <li id="search" class="menu-list__item">
+                    <a class="menu-list__anchor">
+                        <label for="search-toggle">Search</label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {% include "../patterns/nav.html" with suffix="springster" %}
+    </header>
+</div>

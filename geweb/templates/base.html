@@ -43,6 +43,8 @@
             <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
         {%  elif brand == 'zathu' %}
             <script type="text/javascript" src="{% static '_dist/zathu.bundle.js' %}"></script>
+        {%  elif brand == 'yegna' %}
+            <script type="text/javascript" src="{% static '_dist/yegna.bundle.js' %}"></script>
         {% endif %}
     {% endwith %}
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
