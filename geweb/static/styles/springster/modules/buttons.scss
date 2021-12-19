@@ -3,32 +3,6 @@
         background: $light_gray;
         padding: 20px 0 18px 0;
     }
-    &__nav-item-text--backToTop {
-        color: $violet;
-        cursor: pointer;
-        display: block;
-        font-family: 'Baton-Medium';
-        font-size: 16px;
-        font-weight: 700;
-        position: relative;
-        text-align: center;
-        text-decoration: underline;
-        text-transform: uppercase;
-       
-        &:after {
-            background-image: url($staticPath + 'img/springster/up-arrow.svg');
-            background-repeat: no-repeat;
-            background-position: 0 0;
-            background-size: auto 100%;
-            position: absolute;
-            content: '';
-            height: 24px;
-            width: 24px;
-            top: 0;
-            margin-left: 10px;
-        }
-    }
-
     &__nav {
         &-item-text {
             color: $violet;
@@ -41,6 +15,31 @@
             text-align: center;
             text-decoration: underline;
             text-transform: uppercase;
+            &--backToTop {
+                color: $violet;
+                cursor: pointer;
+                display: block;
+                font-family: 'Baton-Medium';
+                font-size: 16px;
+                font-weight: 700;
+                position: relative;
+                text-align: center;
+                text-decoration: underline;
+                text-transform: uppercase;
+               
+                &:after {
+                    background-image: url($staticPath + 'img/springster/up-arrow.svg');
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    background-size: auto 100%;
+                    position: absolute;
+                    content: '';
+                    height: 24px;
+                    width: 24px;
+                    top: 0;
+                    margin-left: 10px;
+                }
+            }
         }
-    }
+    }   
 }
