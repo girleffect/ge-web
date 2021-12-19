@@ -1,0 +1,29 @@
+.article {
+    background: #fff url($staticPath + 'img/springster/sharpie-underline.png') no-repeat 50% 100%/122px;
+    max-width: 360px;
+    margin: 0 auto 18px;
+    padding: 15px 0 20px;
+    &-tags {
+        background: #fff;
+        padding: 10px 15px;
+        &__item {
+            background: $light_gray_variation2;
+            color: #000;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 5px 0;
+            padding: 5px;
+        }
+    }
+}
+
+.block-paragraph {
+    font-size: 18px;
+    padding: 10px 10px 20px;
+    p {
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+}

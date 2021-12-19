@@ -1,0 +1,27 @@
+{% load wagtailcore_tags article_tags i18n %}
+
+<div class="article">
+    <div class="heading heading--article">
+        <h1 class="heading__primary">{{ page.title }}</h1>
+    </div>
+    {% if page.subtitle %}
+        <p class="subheading">{{ page.subtitle }}</p>
+    {% endif %}
+
+    <div class="comments-counter">
+        <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
+            Your thoughts (238)
+        </a>
+    </div>
+
+    {% include_block page.body %}
+
+    {% if page.tags.all.count %}
+        <ul class="article-tags">
+            {% for tag in page.tags.all %}
+                <li class="article-tags__item">{{ tag.name}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+</div>
