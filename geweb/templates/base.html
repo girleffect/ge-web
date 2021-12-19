@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>
         {% block title %}
-            {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            Springster | {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
         {% endblock %}
         {% block title_suffix %}
             {% with self.get_site.site_name as site_name %}
@@ -25,43 +25,71 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/springster/springster_icon_96.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/springster/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/springster/favicon-16x16.png' %}">
-    {% with brand="springster" %} 
-        {%  if brand == 'springster' %}
-            {% block extra_css %}
+    {% block extra_css %}
+    <style>
+        html, body {
+            box-sizing: border-box;
+            margin: 0;
+        }
+        body {
+            font-family: 'Arial, Helvetica, sans-serif';
+            font-weight: normal;
+            font-style: normal;
+            margin: 0 auto;
+        }
+        h1, h2, h3, h4, h5, h6, p {
+            margin: 0;
+        }
+        ul, ol, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+        {% with brand="springster" %} 
+            {%  if brand == 'springster' %}
                 <style>
-                    body {
-                        background-color: #a3a7ae;
-                        box-sizing: border-box;
-                        font-family: 'Arial, Helvetica, sans-serif';
-                        font-weight: normal;
-                        font-style: normal;
-                        margin: 0 auto;
-                    }
                     .header-wrapper,
                     .content,
+                    .section-banners,
+                    .section-page__inner,
                     .footer {
                         max-width: 360px;
                         margin: 0 auto;
                         position: relative;
                     }
                     .header-wrapper {
-                        background-color: #c6cad1;
+                        background-color: #7300ff;
+                    }
+                    .section-banners,
+                    .section-page__inner {
+                        background-color: #fff;
                     }
                 </style>
-            {% endblock %}
-        {% endif %}
-
-    {% endwith %}
-
-    
+            {% endif %}
+        {% endwith %}
+    {% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
     {% with brand="springster" %} 
         {% wagtailuserbar %}
-    
+
+        {% block header %}
+            {% if brand == 'springster' %}
+                {% include "./springster/header.html" %}
+            {% endif %}
+        {% endblock %}
+
+        {% block banner %}{% endblock %}
+        
         {% block content %}{% endblock %}
 
-        {% block footer %}{% endblock %}
+        {% block footer %}
+            {% if brand == 'springster' %}
+                {% include "./springster/footer.html" %}
+            {% endif %}
+        {% endblock %}
+        
 
         {% if brand == 'ninyampinga' %}
             <script type="text/javascript" src="{% static '_dist/ninyampinga.bundle.js' %}"></script>

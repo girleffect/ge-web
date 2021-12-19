@@ -5,16 +5,13 @@
 
 {% block body_class %}main{% endblock %}
 
-{% block content %} 
+
+{% block banner %}
     {% if brand == 'springster' %}
-        {% include "./springster/header.html" %}
         {% include "./springster/banner.html" %}
     {% endif %}
-    
-{% endblock content %}
-
-{% block footer %}
-    {% if brand == 'springster' %}
-        {% include "./springster/footer.html" %}
-    {% endif %}
 {% endblock %}
+
+{% block content %}{% endblock content %}
+
+

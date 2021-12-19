@@ -1,11 +1,19 @@
-.heading__micro {
-    color: $dark_gray;
-    display: block;
+.heading {
     font-family: 'Baton-Medium';
-    font-size: 18px;
-    font-weight: normal;
-    margin: 18px 0;
-    padding: 15px 0 5px;
-    text-align: center;
-    text-transform: uppercase;   
+    &__primary {
+        font-size: 40px;
+    }
+    &__micro {
+        color: $dark_gray;
+        display: block;
+        font-size: 18px;
+        font-weight: normal;
+        margin: 18px 0;
+        padding: 15px 0 5px;
+        text-align: center;
+        text-transform: uppercase;   
+    }
+    &--section {
+        color: #fff;
+    }
 }

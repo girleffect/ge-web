@@ -50,8 +50,7 @@
     }
     &--header {
         #{$block}__bar { 
-            display: none;
-            visibility: hidden;
+            margin: 15px 0 10px;
         }
         .search-radio {
             position: absolute;

@@ -1,0 +1,16 @@
+{% load wagtailcore_tags article_tags static %}
+<div class="section-banners">
+  <div class="section-banners__inner section-banners__inner--{{ page.title|slugify }}">
+  
+    <div class="heading heading--section">
+      <h1 class="heading__primary">{{ page.title }}</h1>
+    </div>
+
+    {{page.photo}}
+
+    <div class="section-banners__image section-banners__image--{{ page.title|slugify }}">
+      <p class="para">Section banner image</p>
+    </div>
+  </div>
+</div>
+
