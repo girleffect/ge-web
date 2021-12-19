@@ -3,18 +3,34 @@
 
 {% block body_class %}article-page{% endblock %}
 {% block content %}
+   
     {% if brand == 'springster' %}
+    <div class="article-page-inner">
         {% include "./springster/article.html" %}
+        
+        {% if page.tags.all.count %}
+            <div class="tags">
+                <ul class="tags-list">
+                    {% for tag in page.tags.all %}
+                        <li class="tags-list__item">{{ tag.name}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if page.tags.all.count %}
+            <div class="tag-cloud">
+                <h3 class="heading heading__micro">Read more about</h3>
+                <ul class="tag-cloud-list">
+                    {% for tag in page.tags.all %}
+                        <li class="tag-cloud-list__item">#{{ tag.name}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% include "./patterns/article-teasers-recommendations.html" %}
+        {% include "./patterns/breadcrumbs.html" %}
+    </div>
     {% endif %}
-    
-    
-    {% get_next_article page as next_article %}
-    {% if next_article %}
-      {% trans 'Next Article: '%}
-      <p><a href="{{ next_article.url }}">{{ next_article.title }}</a></p>
-    {% endif %}
-
-
-    <p><a href="{{ page.get_parent.url }}">{% trans 'Return to section'%}</a></p>
-
 {% endblock %}

@@ -1,10 +1,29 @@
-.article {
-    background: #fff url($staticPath + 'img/springster/sharpie-underline.png') no-repeat 50% 100%/122px;
-    max-width: 360px;
-    margin: 0 auto 18px;
-    padding: 15px 0 20px;
-    &-tags {
+.article-page {
+    &-inner {
         background: #fff;
+        padding: 15px 0 20px;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    &__body {
+        background: #fff url($staticPath + 'img/springster/sharpie-underline.png') no-repeat 50% 100%/122px;
+    }
+}
+
+.block-paragraph {
+    font-size: 18px;
+    padding: 10px 10px 20px;
+    p {
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+}
+
+
+.tags {
+    padding: 25px 0 10px;
+    &-list {
+        margin: 0 auto 18px;
         padding: 10px 15px;
         &__item {
             background: $light_gray_variation2;
@@ -19,11 +38,20 @@
     }
 }
 
-.block-paragraph {
-    font-size: 18px;
-    padding: 10px 10px 20px;
-    p {
-        margin-bottom: 20px;
-        padding: 0 10px;
+.tag-cloud {
+    padding: 0 0 20px;
+    text-align: center;
+    &-list {
+        display: inline-block;
+        padding: 2px 5px;
+        &__item {
+            color: $violet;
+            display: inline-block;
+            font-size: 22px;
+            font-family: 'Baton-Medium';
+            margin: 0 5px;
+            text-decoration: none;
+            text-transform: lowercase;
+        }
     }
 }

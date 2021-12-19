@@ -20,12 +20,17 @@
     &--article {
         color: $very_dark_grayish_blue;
         font-family: 'Baton-Regular';
-        margin: 24px 8px 8px;
+        padding: 24px 8px 8px;
         text-align: center;
         #{$block}__primary {
             font-size: 32px;
         }
     }  
+    &--related-up-next {
+        font-size: 18px;
+        padding: 10px;
+        text-transform: uppercase;
+    }
 }
 
 .subheading {
