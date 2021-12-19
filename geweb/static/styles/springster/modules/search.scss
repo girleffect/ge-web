@@ -1,6 +1,6 @@
 .search { 
-    position: relative;
     $block: unquote("#{&}");
+    position: relative;
     &-radio {
         margin: 0 15px 0 10px;
         position: absolute;

@@ -1,4 +1,4 @@
-{% load wagtailcore_tags wagtailimages_tags article_tags static %}
+{% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
 
 <div class="article-teaser">
     <div class="teaser-stacklist">
@@ -21,7 +21,17 @@
                         </a>
                     </div>  
                 </div>
-                {% endwith %}             
+                {% endwith %} 
+                
+                {% if page.tags.all.count %}
+                    <div class="tags">
+                        {% for tag in page.tags.all %}
+                            #{{ tag.name}}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+
             {% endwith %}
         {% endfor %}
     </div>

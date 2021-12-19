@@ -1,4 +1,5 @@
 .heading {
+    $block: unquote("#{&}");
     font-family: 'Baton-Medium';
     &__primary {
         font-size: 40px;
@@ -16,4 +17,23 @@
     &--section {
         color: #fff;
     }
+    &--article {
+        color: $very_dark_grayish_blue;
+        font-family: 'Baton-Regular';
+        margin: 24px 8px 8px;
+        text-align: center;
+        #{$block}__primary {
+            font-size: 32px;
+        }
+    }  
+}
+
+.subheading {
+    color: #4e5358;
+    display: block;
+    font-family: 'Baton-Regular';
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    text-align: center;
 }

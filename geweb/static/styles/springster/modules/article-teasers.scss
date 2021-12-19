@@ -8,11 +8,10 @@
         border-bottom: 4px solid $light_gray_blue;
         color: #000;
         display: block;
-        //margin-left: 0;
         padding: 10px;
         position: relative;
         &--split {
-            align-items: center;
+            align-items: flex-start;;
             display: flex;
             justify-content: space-between;
         }
@@ -55,7 +54,7 @@
     }
     &__content {
         &--split {
-            width: 60%;
+            width: 67%;
         }
         
     }

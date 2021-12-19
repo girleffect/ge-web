@@ -1,17 +1,12 @@
 {% extends "base.html" %}
-
 {% load wagtailcore_tags article_tags i18n %}
 
-{% block body_class %}articlepage{% endblock %}
+{% block body_class %}article-page{% endblock %}
 {% block content %}
-  {% breadcrumbs %}
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}
-        <p class="meta">{{ page.subtitle }}</p>
+    {% if brand == 'springster' %}
+        {% include "./springster/article.html" %}
     {% endif %}
-
-    {% include_block page.body %}
-
+    
     {% if page.tags.all.count %}
         <div class="tags">
             <h3>SEO Tags</h3>
