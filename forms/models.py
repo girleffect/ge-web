@@ -157,8 +157,6 @@ class FormPage(AbstractEmailForm):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
 
-        # If you need to show results only on landing page,
-        # you may need check request.method
         if not self.show_results:
             # return early, without further processing
             return context
