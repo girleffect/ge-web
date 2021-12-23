@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 from datetime import date
+from unittest.mock import patch
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.cache import cache
@@ -479,15 +480,6 @@ class ResetPasswordViewTest(TestCase, ProfilesTestCaseMixin):
         expected_redirect_url = "{0}?{1}".format(
             reverse("reset_password"), expected_query_params.urlencode()
         )
-
-        response = self.client.post(
-            reverse("forgot_password"),
-            {
-                "username": self.user.username,
-                "question_0": "20",
-            },
-        )
-        self.assertRedirects(response, expected_redirect_url)
 
         return expected_token, expected_redirect_url
 
