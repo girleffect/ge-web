@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-from datetime import timedelta
 from datetime import date
-from unittest.mock import patch
-from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.urls import reverse
@@ -13,7 +10,6 @@ from .forms import (
     ForgotPasswordForm,
     RegistrationForm,
     ProfilePasswordChangeForm,
-    DoneForm,
     EditProfileForm,
 )
 from .models import (
@@ -27,7 +23,6 @@ from home.models import HomePage
 from articles.models import FooterPage, FooterIndexPage
 from wagtail.core.models import Site
 
-from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 
 from wagtail.core.models import Page
