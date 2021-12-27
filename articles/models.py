@@ -26,24 +26,24 @@ class SectionPage(Page):
     ]
     parent_page_type = ["articles.SectionPage", "articles.SectionIndexPage"]
     image = models.ForeignKey(
-        'wagtailimages.Image',
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+'
+        related_name="+",
     )
     css_color = models.TextField(
-        default='',
-        null=True, blank=True,
-        help_text=_(
-            "CSS color that should be applied to this section")
+        default="",
+        null=True,
+        blank=True,
+        help_text=_("CSS color that should be applied to this section"),
     )
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('image'),
+        ImageChooserPanel("image"),
     ]
     settings_panels = Page.settings_panels + [
-        FieldPanel('css_color'),
+        FieldPanel("css_color"),
     ]
 
     def get_context(self, request):
