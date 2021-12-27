@@ -5,7 +5,7 @@ from operator import itemgetter
 @dataclass
 class Theme:
     """Class for defining a site-wide 'themes'. For notes on dataclasses, see:
-     Ref: https://docs.python.org/3/whatsnew/3.7.html#whatsnew37-pep557"""
+    Ref: https://docs.python.org/3/whatsnew/3.7.html#whatsnew37-pep557"""
 
     frozen = True
     slug: str
