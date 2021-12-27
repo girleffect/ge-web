@@ -81,8 +81,9 @@ class FormPage(AbstractEmailForm):
 
     allow_anonymous_submissions = BooleanField(
         default=False,
-        help_text=_("Check this to allow users who are NOT logged in to complete"
-        " forms."),
+        help_text=_(
+            "Check this to allow users who are NOT logged in to complete" " forms."
+        ),
     )
     allow_multiple_submissions_per_user = BooleanField(
         default=False,
@@ -91,15 +92,19 @@ class FormPage(AbstractEmailForm):
 
     show_results = BooleanField(
         default=False,
-        help_text=_("Whether to show the form results to the user after they"
-        " have submitted their answer(s)."),
+        help_text=_(
+            "Whether to show the form results to the user after they"
+            " have submitted their answer(s)."
+        ),
     )
 
     multi_step = BooleanField(
         default=False,
         verbose_name="Multi-step",
-        help_text=_("Whether to display the form questions to the user one at"
-        " a time, instead of all at once."),
+        help_text=_(
+            "Whether to display the form questions to the user one at"
+            " a time, instead of all at once."
+        ),
     )
     your_words_competition = BooleanField(
         default=False,
