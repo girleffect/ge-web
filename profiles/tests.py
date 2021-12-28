@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-from datetime import timedelta
 from datetime import date
-from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.urls import reverse
@@ -12,7 +10,6 @@ from .forms import (
     ForgotPasswordForm,
     RegistrationForm,
     ProfilePasswordChangeForm,
-    DoneForm,
     EditProfileForm,
 )
 from .models import (
@@ -26,7 +23,6 @@ from home.models import HomePage
 from articles.models import FooterPage, FooterIndexPage
 from wagtail.core.models import Site
 
-from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 
 from wagtail.core.models import Page
@@ -479,15 +475,6 @@ class ResetPasswordViewTest(TestCase, ProfilesTestCaseMixin):
         expected_redirect_url = "{0}?{1}".format(
             reverse("reset_password"), expected_query_params.urlencode()
         )
-
-        response = self.client.post(
-            reverse("forgot_password"),
-            {
-                "username": self.user.username,
-                "question_0": "20",
-            },
-        )
-        self.assertRedirects(response, expected_redirect_url)
 
         return expected_token, expected_redirect_url
 
