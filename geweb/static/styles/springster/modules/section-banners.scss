@@ -11,17 +11,10 @@
         justify-content: space-between;
         padding: 0 8px;
         position: relative;
-        &--my-life {
-            background-color: $soft_cyan;
-        }
-        &--my-body {
-            background-color: $light_yellow;
-        }
-        &--my-future {
-            background-color: $light_orange;
-        }
-        &--girl-stories {
-            background-color: $pale_red;
+        @each $theme, $color in $themes {
+            &--#{$theme} {
+                background-color: $color;
+            }
         }
     }
     &__image {
@@ -30,20 +23,5 @@
         background-size: 100%;
         height: 128px;
         width: 172px;
-        &--my-life {
-            background-image: url('https://springster-english-south-africa-prd.s3.amazonaws.com/images/my-life.2e16d0ba.fill-172x128.png');
-        }
-        &--my-body {
-            background-image: url('https://springster-english-south-africa-prd.s3.amazonaws.com/images/my-body.2e16d0ba.fill-172x128.png');
-        }
-        &--my-future {
-            background-image: url('https://springster-english-south-africa-prd.s3.amazonaws.com/images/my-future.2e16d0ba.fill-172x128.png');
-        }
-        &--girl-stories {
-            background-image: url('https://springster-english-south-africa-prd.s3.amazonaws.com/images/girl-stories.2e16d0ba.fill-172x128.png');
-        }
-        .para {
-            visibility: hidden;
-        }
     }
 }

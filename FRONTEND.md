@@ -21,8 +21,6 @@ Static template solution
 ### Assumptions 
 - No javascript restrictions for Freebasics platform.
 
-
-
 # Getting Started
 ```
 

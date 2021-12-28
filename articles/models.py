@@ -53,6 +53,10 @@ class SectionPage(Page):
         context["articlepages"] = articlepages
         return context
 
+    def sections(self):
+        # Update context to seperate sectionpages
+        return self.get_parent().get_children().live()
+
 
 class ArticlePageTag(TaggedItemBase):
     content_object = ParentalKey(
