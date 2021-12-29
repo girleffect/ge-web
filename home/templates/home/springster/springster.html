@@ -26,72 +26,25 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/springster/springster_icon_96.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/springster/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/springster/favicon-16x16.png' %}">
-    {% if theme.slug == 'ninyampinga' %}
-        ninyampinga
-    {% elif theme.slug == 'springster' %}
-        <style>
-            .springster {
-                max-width: 360px;
-                margin: 0 auto;
-                position: relative;
-            }
-
-            .header-wrapper {
-                background-color: #7300ff;
-            }
-
-            .article,
-            .article-page-inner,
-            .section-banners,
-            .section-page__inner {
-                background-color: #fff;
-            }
-        </style>
-    {% elif theme.slug == 'yegna' %}
-        yegna
-    {% elif theme.slug == 'zathu' %}
-        zathu
-    {% endif %}
+   
     {% block extra_css %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
-    {% wagtailuserbar %}
+    home/templates => bliblibli
+
     {% block header %}
-        {% if theme.slug == 'ninyampinga' %}
-            ninyampinga
-        {% elif theme.slug == 'springster' %}
-            {% include "./springster/header.html" %}
-        {% elif theme.slug == 'yegna' %}
-            yegna
-        {% elif theme.slug == 'zathu' %}
-            zathu
-        {% endif %}
+        {% include "./springster/header.html" %}
     {% endblock %}
     
     {% block content %}{% endblock %}
 
     {% block footer %}
-        {% if theme.slug == 'ninyampinga' %}
-            ninyampinga
-        {% elif theme.slug == 'springster' %}
-            {% include "./springster/footer.html" %}
-        {% elif theme.slug == 'yegna' %}
-            yegna
-        {% elif theme.slug == 'zathu' %}
-            zathu
-        {% endif %}
+        {% include "./springster/footer.html" %}
     {% endblock %}
         
-    {% if theme.slug == 'ninyampinga' %}
-        <script type="text/javascript" src="{% static '_dist/ninyampinga.bundle.js' %}"></script>
-    {%  elif theme.slug == 'springster' %}
-        <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
-    {%  elif theme.slug == 'yegna' %}
-        <script type="text/javascript" src="{% static '_dist/yegna.bundle.js' %}"></script>
-    {%  elif theme.slug == 'zathu' %}
-        <script type="text/javascript" src="{% static '_dist/zathu.bundle.js' %}"></script>
-    {% endif %}
-
+   
+    <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
+   
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
 </body>
 </html>

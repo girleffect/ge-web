@@ -23,22 +23,22 @@ DEFAULT_THEME = Theme(
 THEMES = [
     DEFAULT_THEME,
     Theme(
-        slug="ninyampinga-theme",
+        slug="ninyampinga",
         label="Ninyampinga theme",
         base_template="path/to/ninyampinga/base.html",
     ),
     Theme(
-        slug="springster-theme",
+        slug="springster",
         label="Springster theme",
-        base_template="path/to/springster/base.html",
+        base_template="geweb/templates/springster/springster.html",
     ),
     Theme(
-        slug="yegna-theme",
+        slug="yegna",
         label="Yegna theme",
         base_template="path/to/yegna/base.html",
     ),
     Theme(
-        slug="zathu-theme",
+        slug="zathu",
         label="Zathu theme",
         base_template="path/to/zathu/base.html",
     ),

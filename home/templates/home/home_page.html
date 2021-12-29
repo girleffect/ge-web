@@ -1,13 +1,28 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags article_tags static theme_tags %}
 
-{% if theme.slug == 'default' %}
-    {% block body_class %}springster{% endblock %}
-{% endif %}
+
+{% block body_class %}
+    {% if theme.slug == 'ninyampinga' %}
+        ninyampinga
+    {% elif theme.slug == 'springster' %}
+        springster
+    {% elif theme.slug == 'yegna' %}
+        yegna
+    {% elif theme.slug == 'zathu' %}
+        zathu
+    {% endif %}
+{% endblock %}
 
 {% block content %}
-    {% if theme.slug == 'default' %}
+    {% if theme.slug == 'ninyampinga' %}
+        ninyampinga
+    {% elif theme.slug == 'springster' %}
         {% include "./springster/banner.html" %}
+        {% include "./springster/promotions/home-article-listing.html" %}
+    {% elif theme.slug == 'yegna' %}
+        yegna
+    {% elif theme.slug == 'zathu' %}
+        zathu
     {% endif %}
-    {% include "./springster/promotions/home-article-listing.html" %}
 {% endblock content %}
