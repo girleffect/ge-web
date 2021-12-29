@@ -1,0 +1,26 @@
+{% load wagtailcore_tags %}
+
+<nav class="nav nav--{{suffix}}">
+    <ul class="nav-list nav-list--{{suffix}}">
+        <li class="nav-list__item nav-list__item--{{suffix}}">
+            <a href="/" class="nav-list__anchor nav-list__{{suffix}} selected">Home</a>
+        </li>
+        {% if sections %}
+            {% for section in sections %}
+                <li class="nav-list__item nav-list__item--{{suffix}}">
+                    <a href="{% pageurl section %}" class="nav-list__anchor nav-list__{{ section.title|slugify }}">
+                        {{ section.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% elif page.sections %}
+            {% for section in page.sections  %}
+                <li class="nav-list__item nav-list__item--{{suffix}}">
+                    <a href="{% pageurl section %}" class="nav-list__anchor nav-list__{{ section.title|slugify }}">
+                        {{ section.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% endif %} 
+    </ul>
+</nav>

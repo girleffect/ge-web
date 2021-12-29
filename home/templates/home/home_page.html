@@ -2,18 +2,6 @@
 {% load wagtailcore_tags article_tags static theme_tags %}
 
 
-{% block body_class %}
-    {% if theme.slug == 'ninyampinga' %}
-        ninyampinga
-    {% elif theme.slug == 'springster' %}
-        springster
-    {% elif theme.slug == 'yegna' %}
-        yegna
-    {% elif theme.slug == 'zathu' %}
-        zathu
-    {% endif %}
-{% endblock %}
-
 {% block content %}
     {% if theme.slug == 'ninyampinga' %}
         ninyampinga

@@ -3,7 +3,7 @@
     font-family: 'Baton-Regular';
     margin: 0 auto;
     max-width: 360px;
-    &__springster {
+    &__inner {
         background: url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100% / contain, url('http://127.0.0.1:8000/static/img/springster/top-div-2@2x.png') no-repeat 0 0 / contain;
         background-color: $lime_green;
         padding: 12px 8px;

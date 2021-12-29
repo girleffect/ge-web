@@ -16,16 +16,16 @@
     </title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="{% static 'img/appicons/springster_icon_144.png' %}" />
+    <meta name="msapplication-TileImage" content=" {% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu.png.png' %}{% endif %}" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/springster/springster_icon_144.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/springster/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'img/springster/springster_icon_192.png' %}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/springster/springster_icon_96.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/springster/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/springster/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/apple-touch-icon.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_192.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_96.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-32x32.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     {% if theme.slug == 'ninyampinga' %}
         ninyampinga
     {% elif theme.slug == 'springster' %}
@@ -50,11 +50,13 @@
     {% elif theme.slug == 'yegna' %}
         yegna
     {% elif theme.slug == 'zathu' %}
-        zathu
+        <style>
+
+        </style>
     {% endif %}
     {% block extra_css %}{% endblock %}
 </head>
-<body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
     {% wagtailuserbar %}
     {% block header %}
         {% if theme.slug == 'ninyampinga' %}
@@ -64,7 +66,7 @@
         {% elif theme.slug == 'yegna' %}
             yegna
         {% elif theme.slug == 'zathu' %}
-            zathu
+            {% include "./zathu/header.html" %}
         {% endif %}
     {% endblock %}
     
@@ -78,7 +80,7 @@
         {% elif theme.slug == 'yegna' %}
             yegna
         {% elif theme.slug == 'zathu' %}
-            zathu
+            {% include "./zathu/footer.html" %}
         {% endif %}
     {% endblock %}
         

@@ -2,8 +2,6 @@
 
 {% load wagtailcore_tags wagtailimages_tags article_tags theme_tags static %}
 
-{% block body_class %}section-page{% endblock %}
-
 {% block content %}
     {% if theme.slug == 'springster' %}
         {% include "./springster/section-banners.html" %}

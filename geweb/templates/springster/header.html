@@ -1,6 +1,6 @@
 {% load wagtailcore_tags article_tags static %}
-<div id="header-wrapper" class="header-wrapper">  
-    <header id="header" class="header">
+<div id="header" class="header">  
+    <header id="header-wrapper" class="header-wrapper">
         <div class="menu">
             <ul class="menu-list">
                 <li id="profile" class="menu-list__item">
@@ -27,7 +27,7 @@
             </ul>
         </div>
 
-        {% include "../patterns/search-input.html" with enhance="header" %}
-        {% include "../patterns/nav.html" with suffix="springster" %}
+        {% include "../_patterns/search-input.html" with enhance="header" %}
+        {% include "../_patterns/nav.html" with suffix="springster" %}
     </header>
 </div>

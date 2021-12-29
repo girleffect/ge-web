@@ -1,0 +1,26 @@
+{% load static %}
+<div id="header" class="header">  
+    {% include "../_patterns/language.html" %}
+    <header id="header-wrapper" class="header-wrapper">
+        <div class="menu">
+            <div class="logo">
+                <img src="{% static 'img/zathu/zathu.png' %}" class="logo__image">
+            </div>
+            <nav class="nav">
+                <ul class="nav-list"> 
+                    <li class="nav-list__item">
+                        <a class="nav-list__anchor" href="#footer">Menu</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a class="nav-list__anchor">Sign up</a>
+                    </li>
+                    <li id="search" class="nav-list__item">
+                        <a class="nav-list__anchor">
+                            <label>Search</label>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>

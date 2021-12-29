@@ -1,0 +1,36 @@
+.nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    &-list {
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $dark_violet;
+            font-family: "Berfa";
+            font-size: 22px;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#search {
+    display: inline-block;
+    .nav-list__anchor {
+        background: url($staticPath + 'img/zathu/search_purple.png') no-repeat center / 70%;
+        display: inline-block;
+        height: 25px;
+        overflow: hidden;
+        text-indent: 120%;
+        vertical-align: middle;
+        width: 25px;
+        label {
+            color: $dark_violet;
+        }
+    }
+}
