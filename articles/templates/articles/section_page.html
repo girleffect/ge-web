@@ -3,21 +3,14 @@
 {% load wagtailcore_tags wagtailimages_tags article_tags theme_tags static %}
 
 {% block body_class %}section-page{% endblock %}
-    {% breadcrumbs %}
 
-    {% block banner %}
-        {% if brand == 'springster' %}
-            {% include "./springster/section-banners.html" %}
-        {% endif %}
-        
-    {% endblock %}
+{% block content %}
+    {% if theme.slug == 'springster' %}
+        {% include "./springster/section-banners.html" %}
+    {% endif %}
 
-    {% block content %}
-        {% get_current_theme as theme %}
-        <!-- <p>{{theme.slug}}</p> --> 
-
-        {% if brand == 'springster' %}
-            {% include "./springster/section-body.html" %}
-        {% endif %}
-    {% endblock %}
+    {% if theme.slug == 'default' %}
+        {% include "./springster/section-body.html" %}
+    {% endif %}
+{% endblock %}
 

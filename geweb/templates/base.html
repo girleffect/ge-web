@@ -1,4 +1,5 @@
 {% load static wagtailuserbar theme_tags %}
+{% get_current_theme as theme %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -25,11 +26,10 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/springster/springster_icon_96.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/springster/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/springster/favicon-16x16.png' %}">
-    {% block extra_css %}
     <style>
         html, body {
             box-sizing: border-box;
-            margin: 0;
+            margin: 0 auto;
         }
         body {
             font-family: 'Arial, Helvetica, sans-serif';
@@ -45,66 +45,58 @@
             margin: 0;
             padding: 0;
         }
+
+        .springster {
+            max-width: 360px;
+            margin: 0 auto;
+            position: relative;
+        }
     </style>
-        {% with brand="springster" %} 
-            {%  if brand == 'springster' %}
-                <style>
-                    .article,
-                    .article-page-inner,
-                    .header-wrapper,
-                    .content,
-                    .section-banners,
-                    .section-page__inner,
-                    .footer {
-                        max-width: 360px;
-                        margin: 0 auto;
-                        position: relative;
-                    }
-                    .header-wrapper {
-                        background-color: #7300ff;
-                    }
-                    .article,
-                    .article-page-inner,
-                    .section-banners,
-                    .section-page__inner {
-                        background-color: #fff;
-                    }
-                </style>
-            {% endif %}
-        {% endwith %}
+    {% block extra_css %}
+        {% if theme.slug == 'springster' %}
+            <style>
+                .header-wrapper {
+                    background-color: #7300ff;
+                }
+                .article,
+                .article-page-inner,
+                .section-banners,
+                .section-page__inner {
+                    background-color: #fff;
+                }
+            </style>
+        {% endif %}
     {% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
-    {% with brand="springster" %} 
-        {% wagtailuserbar %}
+    {% wagtailuserbar %}
 
-        {% block header %}
-            {% if brand == 'springster' %}
-                {% include "./springster/header.html" %}
-            {% endif %}
-        {% endblock %}
-
-        {% block banner %}{% endblock %}
-        
-        {% block content %}{% endblock %}
-
-        {% block footer %}
-            {% if brand == 'springster' %}
-                {% include "./springster/footer.html" %}
-            {% endif %}
-        {% endblock %}
-        
-
-        {% if brand == 'ninyampinga' %}
-            <script type="text/javascript" src="{% static '_dist/ninyampinga.bundle.js' %}"></script>
-        {%  elif brand == 'springster' %}
-            <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
-        {%  elif brand == 'zathu' %}
-            <script type="text/javascript" src="{% static '_dist/zathu.bundle.js' %}"></script>
-        {%  elif brand == 'yegna' %}
-            <script type="text/javascript" src="{% static '_dist/yegna.bundle.js' %}"></script>
+    {% block header %}
+        {% if theme.slug == 'default' %}
+            {% include "./springster/header.html" %}
         {% endif %}
-    {% endwith %}
+    {% endblock %}
+    
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+        {% if theme.slug == 'default' %}
+            {% include "./springster/footer.html" %}
+        {% endif %}
+    {% endblock %}
+        
+    {% if theme.slug == 'ninyampinga' %}
+        <script type="text/javascript" src="{% static '_dist/ninyampinga.bundle.js' %}"></script>
+    {%  elif theme.slug == 'springster' %}
+        <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
+    {%  elif theme.slug == 'yegna' %}
+        <script type="text/javascript" src="{% static '_dist/yegna.bundle.js' %}"></script>
+    {%  elif theme.slug == 'zathu' %}
+        <script type="text/javascript" src="{% static '_dist/zathu.bundle.js' %}"></script>
+    {%  else %}
+        <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
+    {% endif %}
+
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
 </body>
 </html>

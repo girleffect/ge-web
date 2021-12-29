@@ -23,19 +23,24 @@ DEFAULT_THEME = Theme(
 THEMES = [
     DEFAULT_THEME,
     Theme(
-        slug="a-custom-theme",
-        label="An example theme",
-        base_template="path/to/a-custom-theme-templates/base_a-custom-theme.html",
+        slug="ninyampinga-theme",
+        label="Ninyampinga theme",
+        base_template="path/to/ninyampinga/base.html",
     ),
     Theme(
         slug="springster-theme",
         label="Springster theme",
-        base_template="path/to/springster-theme-templates/base_springster-theme.html",
+        base_template="path/to/springster/base.html",
+    ),
+    Theme(
+        slug="yegna-theme",
+        label="Yegna theme",
+        base_template="path/to/yegna/base.html",
     ),
     Theme(
         slug="zathu-theme",
         label="Zathu theme",
-        base_template="path/to/zathu-theme-templates/base_zathu-theme.html",
+        base_template="path/to/zathu/base.html",
     ),
 ]
 

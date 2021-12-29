@@ -44,3 +44,14 @@ This is a living documentation about the frontend template approaches taken by t
         * Yegna - Country: Ethiopia
         * Zathu - Country: Malawi
 * CSS/JS setup & config 
+* Website components 
+    * Web pages 
+        * Homepage
+        * Section pages
+        * Article pages
+        * Comment thread pages [x]
+        * Login / Profile pages [x]
+        * Search (results) pages
+    * Web pages Components
+        * Article teasers 
+        * 

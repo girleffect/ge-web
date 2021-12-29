@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags article_tags static theme_tags %}
 
-
-{% block extra_css %}{% endblock extra_css %}
-
-{% block body_class %}main{% endblock %}
-
-
-{% block banner %}
-    {% if brand == 'springster' %}
-        {% include "./springster/banner.html" %}
-    {% endif %}
-{% endblock %}
+{% if theme.slug == 'default' %}
+    {% block body_class %}springster{% endblock %}
+{% endif %}
 
 {% block content %}
+    {% if theme.slug == 'default' %}
+        {% include "./springster/banner.html" %}
+    {% endif %}
     {% include "./springster/promotions/home-article-listing.html" %}
 {% endblock content %}
