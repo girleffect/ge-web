@@ -213,6 +213,16 @@ class FormPage(AbstractEmailForm):
             user=form.user,
         )
 
+    @property
+    def session_key_data(self):
+        return "form_data-{}".format(self.pk)
+
+    def load_data(self, request):
+        return json.loads(request.session.get(self.session_key_data, "{}"))
+
+    def save_data(self, request, data):
+        request.session[self.session_key_data] = json.dumps(data, cls=DjangoJSONEncoder)
+
     def serve(self, request, *args, **kwargs):
         if (
             not self.allow_multiple_submissions_per_user
@@ -222,7 +232,6 @@ class FormPage(AbstractEmailForm):
         ):
             return render(request, self.template, self.get_context(request))
         if self.multi_step:
-            session_key_data = "form_data-%s" % self.pk
             is_last_step = False
             step_number = request.GET.get("p", 1)
 
@@ -250,9 +259,9 @@ class FormPage(AbstractEmailForm):
                 prev_form = prev_form_class(request.POST, page=self, user=request.user)
                 if prev_form.is_valid():
                     # If data for step is valid, update the session
-                    form_data = request.session.get(session_key_data, {})
+                    form_data = self.load_data(request)
                     form_data.update(prev_form.cleaned_data)
-                    request.session[session_key_data] = form_data
+                    self.save_data(request, form_data)
 
                     if prev_step.has_next():
                         # Create a new form for a following step, if the following step is present
@@ -260,8 +269,9 @@ class FormPage(AbstractEmailForm):
                         form = form_class(page=self, user=request.user)
                     else:
                         # If there is no next step, create form for all fields
+                        data = self.load_data(request)
                         form = self.get_form(
-                            request.session[session_key_data],
+                            data,
                             page=self,
                             user=request.user,
                         )
@@ -271,7 +281,7 @@ class FormPage(AbstractEmailForm):
                             # After successful validation, save data into DB,
                             # and remove from the session.
                             form_submission = self.process_form_submission(form)
-                            del request.session[session_key_data]
+                            del request.session[self.session_key_data]
                             # render the landing page
                             return self.render_landing_page(
                                 request, form_submission, *args, **kwargs
