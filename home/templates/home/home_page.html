@@ -12,4 +12,9 @@
     {% for section in sections %}
         <h2><a href="{% pageurl section %}">{{ section.title }}</a></h2>
     {% endfor %}
+
+    <h1>Forms</h1>
+    {% for form in forms %}
+        <h2><a href="{% pageurl form %}">{{ form.title }}</a></h2>
+    {% endfor %}
 {% endblock content %}

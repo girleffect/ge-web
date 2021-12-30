@@ -18,6 +18,7 @@ from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
 from articles.models import SectionPage
+from forms.models import FormPage
 
 
 class HomePage(Page):
@@ -32,6 +33,9 @@ class HomePage(Page):
         context = super().get_context(request)
         sections = SectionPage.objects.descendant_of(self).live()
         context["sections"] = sections
+
+        forms = FormPage.objects.descendant_of(self).live()
+        context["forms"] = forms
 
         return context
 
