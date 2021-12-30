@@ -1,0 +1,12 @@
+{% load wagtailcore_tags article_tags static %}
+<div class="section-page">
+    <div class="section-page__banner">
+        <a href="{% pageurl page %}" class="section-page__anchor">
+            {{ section.title }}
+        </a>
+    </div>
+    <div class="section-page__inner">
+        {% include "./article-teasers-listing.html" %}
+    </div>
+    
+</div>

@@ -1,43 +1,14 @@
 {% extends "base.html" %}
-
 {% load wagtailcore_tags article_tags theme_tags i18n %}
 
-{% block body_class %}article-page{% endblock %}
 {% block content %}
-   
-    {% if theme.slug == 'default' %}
-    <div class="article-page-inner">
+    {% if theme.slug == 'ninyampinga' %}
+        {% breadcrumbs %}
+    {% elif theme.slug == 'springster' %}
         {% include "./springster/article.html" %}
-        
-        {% if page.tags.all.count %}
-            <div class="tags">
-                <ul class="tags-list">
-                    {% for tag in page.tags.all %}
-                        <li class="tags-list__item">{{ tag.name}}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
-  {% breadcrumbs %}
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}
-        <p class="meta">{{ page.subtitle }}</p>
-    {% endif %}
-
-        {% if page.tags.all.count %}
-            <div class="tag-cloud">
-                <h3 class="heading heading__micro">Read more about</h3>
-                <ul class="tag-cloud-list">
-                    {% for tag in page.tags.all %}
-                        <li class="tag-cloud-list__item">#{{ tag.name}}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
-        {% include "./patterns/article-teasers-recommendations.html" %}
-        {% include "./patterns/breadcrumbs.html" %}
-    </div>
+    {% elif theme.slug == 'yegna' %}
+        {% breadcrumbs %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/article.html" %}
     {% endif %}
 {% endblock %}

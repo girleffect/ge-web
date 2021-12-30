@@ -56,7 +56,7 @@
     {% endif %}
     {% block extra_css %}{% endblock %}
 </head>
-<body class="{% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
+<body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
     {% wagtailuserbar %}
     {% block header %}
         {% if theme.slug == 'ninyampinga' %}

@@ -1,38 +1,16 @@
 {% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
-
 <div class="article-teaser">
-    <div class="teaser-stacklist">
+    <div class="teaser-stacklist{% if theme.slug == 'zathu' %} teaser-stacklist--zathu{% endif %}">
         {% for post in articlepages %}
-            {% with post=post.specific %}
-                {% with item=post.body|first %}
-                <div class="teaser-stacklist__item{% if item.block_type == 'image' %} teaser-stacklist__item--split{% endif %}">
-                    {% if item.block_type == 'image' %}
-                    <div class="teaser-stacklist__thumbnail">
-                        <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
-                            {{ item }}
-                        </a>
-                    </div>
-                    {% endif %}
-                
-                    <div class="teaser-stacklist__content{% if item.block_type == 'image' %} teaser-stacklist__content--split{% endif %}">
-                        <a href="{% pageurl post %}" class="teaser-stacklist__anchor">
-                            <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
-                            <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
-                        </a>
-                    </div>  
+            {% include "./article-teasers.html" %}
+
+            {% if page.tags.all.count %}
+                <div class="tags">
+                    {% for tag in page.tags.all %}
+                        #{{ tag.name}}
+                    {% endfor %}
                 </div>
-                {% endwith %} 
-                
-                {% if page.tags.all.count %}
-                    <div class="tags">
-                        {% for tag in page.tags.all %}
-                            #{{ tag.name}}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-
-            {% endwith %}
+            {% endif %}
         {% endfor %}
     </div>
 </div>
