@@ -78,6 +78,7 @@ class FormPage(AbstractEmailForm):
         related_name="+",
     )
     description = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
 
     allow_anonymous_submissions = BooleanField(
         default=False,
@@ -123,6 +124,7 @@ class FormPage(AbstractEmailForm):
         ImageChooserPanel("image"),
         StreamFieldPanel("description"),
         InlinePanel("form_fields", label=_("Form fields")),
+        FieldPanel('thank_you_text', classname="full"),
         MultiFieldPanel(
             [
                 FieldRowPanel(
