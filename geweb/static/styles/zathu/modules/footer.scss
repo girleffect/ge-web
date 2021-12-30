@@ -4,8 +4,28 @@
     &__inner {
         overflow: hidden;
     }
+    &-languages {
+        padding: 20px 15px 5px;
+        &-list {
+            display: inline-block;
+            &__item {
+                display: inline;
+            }
+            &__label {
+                color: $gray;
+                font-size: 20px;
+            }
+            &__anchor {
+                color: $dark_gray;
+                &.is-active {
+                    color: $strong_cyan;
+                }
+            }
+        }
+    }
     &-nav {
         display: block;
+        padding: 0 15px;
         &-list {
             p {
                 padding: 8px 0;
@@ -15,10 +35,8 @@
                 font-size: 20px;
                 font-weight: 200;
                 text-decoration: none;
-                
             }
         }
-        
         .nav {
             display: block;
             &-list {
@@ -36,28 +54,8 @@
     }
 }
 
-.footer-languages {
-    padding: 20px 0 5px;
-    &-list {
-        display: inline-block;
-        &__item {
-            display: inline;
-        }
-        &__label {
-            color: $gray;
-            font-size: 20px;
-        }
-        &__anchor {
-            color: $dark_gray;
-            &.is-active {
-                color: $strong_cyan;
-            }
-        }
-    }
-}
-
 .copyright {
-    padding: 10px 0 5px;
+    padding: 10px 15px 5px;
     &__text {
         color: $dark_gray;
         font-size: 12px;
