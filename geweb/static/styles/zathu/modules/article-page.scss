@@ -4,16 +4,27 @@
         padding: 0 15px;
     }
     &__recommendations {
-        .teaser-stacklist__title {
-            font-size: $medium;
-            margin: 0 5px 5px;
-            text-transform: capitalize;
-        }
-        .teaser-stacklist__item {
-            width: 100%;
-        }
-        .teaser-stacklist__content {
-            padding: 0 15px 0 15px;
+        .teaser-stacklist {
+            &__title {
+                font-size: $medium;
+                margin: 0 5px 5px;
+                text-transform: capitalize;
+            }
+            &__item {
+                width: 100%;
+            }
+            &__thumbnail {
+                max-height: 300px;
+                width: 100%;
+                &-link {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            &__content {
+                padding: 0 15px 0 15px;
+            }
         }
     }
 }
