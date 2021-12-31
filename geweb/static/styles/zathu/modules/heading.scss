@@ -1,11 +1,23 @@
 .heading {
     color: $dark_violet;
-    &--primary {
+    &--primary,
+    &--related-up-next  {
         font-family: "Berfa";
-        font-size: 26px;
+        font-size: $very_larger;
         line-height: 32px;
-        margin: 0 0 15px 0;
+        padding: 0 0 15px 0;
         font-weight: 400;
         text-transform: uppercase;
+    }
+    &--micro {
+        font-family: Arial,sans-serif;
+        font-size: $default;
+        line-height: normal;
+        font-weight: 200;
+        padding: 0 0 20px 0;
+    }
+    &--related-up-next {
+        font-size: $medium;
+        padding: 0 15px;
     }
 }
