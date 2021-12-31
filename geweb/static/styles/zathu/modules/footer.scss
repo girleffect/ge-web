@@ -38,6 +38,9 @@
                 font-size: $larger;
                 font-weight: 200;
                 text-decoration: none;
+                &:hover {
+                    color: #000;
+                }
             }
         }
         .nav {
@@ -52,6 +55,10 @@
                     font-size: $larger;
                     font-weight: 600;
                     text-transform: capitalize;
+                    &:hover {
+                        color: #000;
+                        text-decoration: none;
+                    }
                 }
             }
         }
