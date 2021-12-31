@@ -38,7 +38,6 @@ class SectionPage(Page):
         blank=True,
         help_text=_("CSS color that should be applied to this section"),
     )
-
     content_panels = Page.content_panels + [
         ImageChooserPanel("image"),
     ]
@@ -91,6 +90,14 @@ class ArticlePage(Page):
         index.SearchField("body"),
         index.SearchField("subtitle"),
     ]
+
+    def article_parent(self):
+        # Update context to seperate sectionpages
+        return self.get_parent()
+    
+    def article_sections(self):
+        # Update context to seperate sectionpages
+        return self.get_parent().get_parent().get_children().live()
 
 
 class SectionIndexPage(Page):

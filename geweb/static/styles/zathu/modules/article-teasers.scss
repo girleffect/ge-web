@@ -20,11 +20,11 @@
     }
     &__title {
         color: $dark_violet;
-        font-size: 26px;
+        font-size: 20px;
         font-family: "Berfa";
         font-weight: 400;
-        line-height: 32px;
         margin: 0 0 15px 0;
+        text-transform: uppercase;
     }
     &__subtitle {
         color: $dark_violet;
@@ -55,6 +55,13 @@
                 img {
                     width: 400px;
                 }
+            }
+            .teaser-stacklist__title {
+                font-size: 26px;
+                line-height: 32px;
+            }
+            .teaser-stacklist__content {
+                padding: 15px 20px;
             }
         }
     }

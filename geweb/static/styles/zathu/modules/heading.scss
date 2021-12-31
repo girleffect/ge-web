@@ -1,0 +1,11 @@
+.heading {
+    color: $dark_violet;
+    &--primary {
+        font-family: "Berfa";
+        font-size: 26px;
+        line-height: 32px;
+        margin: 0 0 15px 0;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}

@@ -9,6 +9,10 @@
 }
 
 .logo {
+    position: relative;
+    &__anchor {
+        display: block;
+    }
     &__image {
         height: auto;
         max-width: 100px;

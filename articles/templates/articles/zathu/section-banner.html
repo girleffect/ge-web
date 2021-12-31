@@ -1,0 +1,15 @@
+{% load wagtailcore_tags  %}
+
+<div class="section-page__banner">
+    <a href="{% pageurl page %}" class="section-page__anchor">
+        <h1 class="section-page__title">
+            {% with parent=page.article_parent %}
+                {% if parent %}
+                    {{ parent }}
+                {% else %}
+                    {{ page.title }}
+                {% endif %}
+            {% endwith %}
+        </h1>
+    </a>
+</div>

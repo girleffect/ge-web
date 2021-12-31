@@ -1,6 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
 <div class="article-teaser">
-    <div class="teaser-stacklist{% if theme.slug == 'zathu' %} teaser-stacklist--zathu{% endif %}">
+    <div class="teaser-stacklist">
         {% for post in articlepages %}
             {% include "./article-teasers.html" %}
 
