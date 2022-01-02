@@ -4,7 +4,7 @@
 
 {% block content %}
     {% if theme.slug == 'ninyampinga' %}
-        ninyampinga
+        {% include "./ninyampinga/section.html" %}
     {% elif theme.slug == 'springster' %}
         {% include "./springster/section-banners.html" %}
         {% include "./springster/section.html" %}

@@ -7,10 +7,6 @@
         <h1 class="search-dropdown__title">Search:</h1>
       </div>
       
-      <form action="{% url 'search' %}" class="search__form" novalidate>
-        <label class="label" for="search_top">Search</label>
-        <input name="q" type="search" aria-label="Search Input" id="search_top" class="search__input" placeholder="Search">
-        <input type="submit" value="Search" class="call-to-action__item call-to-action__item--search">
-      </form>
+      {% include "./_search-form.html" %}
     </div>
   </div>

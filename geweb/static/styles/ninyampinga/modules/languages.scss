@@ -1,5 +1,6 @@
 .languages {
     &__label {
+
         color: #fff;
         cursor: pointer;
         display: inline-block;
@@ -20,7 +21,11 @@
         }
         &:hover,
         &:focus {
-            text-decoration: underline;
+            color: $pink;
+        }
+        &.is-active {
+            background-color: #fff;
+            color: $pink;
         }
     }
     &__checkbox {

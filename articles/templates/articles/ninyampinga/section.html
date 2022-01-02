@@ -1,0 +1,12 @@
+{% load wagtailcore_tags wagtailimages_tags article_tags static %}
+<div class="section-page section-page--{{ page.css_color }}">
+    <div class="section-page__theme section-page__{{ page.css_color }}"></div>
+    <div class="section-page__wrapper">
+        <div class="heading heading--primary heading--{{ page.css_color }}">
+            <div class="section-page__caption">
+                <h1 class="section-page__title">{{self.title}}</h1>
+            </div>
+        </div>
+        {% include "../_patterns/article-teasers-listing-leading-story.html" %}
+    </div>
+</div>

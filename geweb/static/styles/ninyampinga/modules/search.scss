@@ -30,6 +30,17 @@
             height: 40px;
             width: 40px;
         }
+        &:hover:after, 
+        &:focus:after {
+            background-position: -17px 9px;
+        }
+        &.is-active {
+            background-color: #fff;
+            color: $pink;
+            &:after {
+                background-position: -17px 9px;
+            }
+        }
     }
     
     &-dropdown {
