@@ -22,7 +22,7 @@ ul, ol, li {
 
 a {
     word-wrap: break-word;
-    &:hover {
-        outline: none;
-    }
+}
+a:hover {
+    outline: none;
 }

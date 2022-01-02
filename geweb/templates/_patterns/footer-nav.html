@@ -2,4 +2,18 @@
 
 <div class="footer-nav-list footer-nav-list--{{suffix}}">
     {% footer_pages %}
+    {% if theme.slug == 'springster' %}
+        {% if not user.is_authenticated %}
+            <p>
+                <a href="{% url 'user_register' %}">Join us</a>
+            </p>
+        {% else %}
+            <p>
+                <a href="{% url 'view_my_profile' %}">Profile</a>
+            </p>
+        {% endif %}
+        <p>
+            <a href="{% url 'auth_login' %}">Log in</a>
+        </p>
+    {% endif %}
 </div>
