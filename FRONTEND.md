@@ -55,3 +55,7 @@ This is a living documentation about the frontend template approaches taken by t
     * Web pages Components
         * Article teasers 
         * 
+
+#### CMS
+
+CMS: Homepage root page - Title tag setting is the web homepage title.

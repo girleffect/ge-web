@@ -92,11 +92,11 @@ class ArticlePage(Page):
     ]
 
     def article_parent(self):
-        # Update context to seperate sectionpages
+        # Get current article section page
         return self.get_parent()
-    
+
     def article_sections(self):
-        # Update context to seperate sectionpages
+        # Get section pages on an article page
         return self.get_parent().get_parent().get_children().live()
 
 
