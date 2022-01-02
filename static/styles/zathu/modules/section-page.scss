@@ -1,0 +1,20 @@
+.section-page {
+    background-color: $white;
+    &__banner {
+        background-color: $dark_violet;
+        padding: 10px 8px;
+    }
+    &__anchor {
+        display: block;
+    }
+    &__title {
+        color: $yellow;
+        font-family: "Berfa";
+        font-weight: 400;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    &__inner {
+        padding: 0 8px;
+    }
+}

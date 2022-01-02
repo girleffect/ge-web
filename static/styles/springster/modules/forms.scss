@@ -1,0 +1,20 @@
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="week"],
+input[type="date"],
+input[type="month"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+select {
+    border-radius: 0;
+    border: 2px solid $violet;
+    &:focus,
+    &:focus-visible {
+        outline: none; 
+    }
+}

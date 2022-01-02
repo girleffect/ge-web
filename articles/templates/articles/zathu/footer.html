@@ -1,0 +1,18 @@
+{% load wagtailcore_tags %}
+<div class="footer-page">
+    <h3 class="heading heading--title">{{ page.title }}</h3>
+    {% if page.subtitle %}
+        <p class="subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+
+    {% include_block page.body %}
+
+    {% if page.tags.all.count %}
+        <div class="tags">
+            <h3>SEO Tags</h3>
+            {% for tag in page.tags.all %}
+                #{{ tag.name}}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

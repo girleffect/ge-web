@@ -4,6 +4,11 @@
     &__inner {
         overflow: hidden;
     }
+    &-page {
+        background-color: $white;
+        color: $dark_violet;
+        padding: 0 0 5px;
+    }
     &-languages {
         padding: 20px 15px 5px;
         &-list {
