@@ -136,3 +136,4 @@ geweb/node_modules/*
 .DS_Store
 
 media/*
+static/*

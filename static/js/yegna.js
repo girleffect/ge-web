@@ -1,1 +1,0 @@
-import "../styles/yegna/yegna.scss";

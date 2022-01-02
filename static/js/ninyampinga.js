@@ -1,1 +1,0 @@
-import "../styles/ninyampinga/ninyampinga.scss";
