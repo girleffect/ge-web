@@ -1,9 +1,15 @@
 //COLORS
 $white: #ffffff;
 
+$dark_grey: #333333;
+
+$strong_cyan: #00a8b7;
+
 $vivid_red: #dc0d15;
 
-$vivid_: #ed018c;
+$pink: #e7357c;
+$vivid_pink: #ed018c;
+$plum: #711343;
 
 //THEMES
 $themes: (
@@ -11,4 +17,10 @@ $themes: (
 );
 
 //DIRECTORY
-$staticPath: 'http://127.0.0.1:8000/static/'
+$staticPath: 'http://127.0.0.1:8000/static/';
+
+
+$default: 16px;
+$standard: 17px;
+$medium: 18px;
+$medium_large: 22.88px;

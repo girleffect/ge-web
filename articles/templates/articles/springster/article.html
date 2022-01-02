@@ -1,7 +1,7 @@
 {% load wagtailcore_tags article_tags i18n %}
 
 <div class="article-page__body">
-    {% include "./patterns/breadcrumbs.html" %}
+    {% include "../_patterns/breadcrumbs.html" %}
     <div class="heading heading--article">
         <h1 class="heading__primary">{{ page.title }}</h1>
     </div>
@@ -28,5 +28,5 @@
             </ul>
         </div>
     {% endif %}
-    {% include "./patterns/article-teasers-recommendations.html" %}
+    {% include "../_patterns/article-teasers-recommendations.html" %}
 </div>

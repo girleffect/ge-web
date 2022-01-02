@@ -25,7 +25,7 @@ THEMES = [
     Theme(
         slug="ninyampinga",
         label="Ninyampinga theme",
-        base_template="path/to/ninyampinga/base.html",
+        base_template="geweb/templates/ninyampinga/ninyampinga.html",
     ),
     Theme(
         slug="springster",
@@ -35,12 +35,12 @@ THEMES = [
     Theme(
         slug="yegna",
         label="Yegna theme",
-        base_template="path/to/yegna/base.html",
+        base_template="geweb/templates/yegna/yegna.html",
     ),
     Theme(
         slug="zathu",
         label="Zathu theme",
-        base_template="path/to/zathu/base.html",
+        base_template="geweb/templates/zathu/zathu.html",
     ),
 ]
 

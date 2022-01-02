@@ -28,7 +28,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     {% if theme.slug == 'ninyampinga' %}
-        ninyampinga
+        <style></style>
     {% elif theme.slug == 'springster' %}
         <style>
             .springster {
@@ -61,11 +61,11 @@
     {% wagtailuserbar %}
     {% block header %}
         {% if theme.slug == 'ninyampinga' %}
-            ninyampinga
+            {% include "./ninyampinga/header.html" %}
         {% elif theme.slug == 'springster' %}
             {% include "./springster/header.html" %}
         {% elif theme.slug == 'yegna' %}
-            yegna
+            {% include "./yegna/header.html" %}
         {% elif theme.slug == 'zathu' %}
             {% include "./zathu/header.html" %}
         {% endif %}
@@ -75,11 +75,11 @@
 
     {% block footer %}
         {% if theme.slug == 'ninyampinga' %}
-            ninyampinga
+            {% include "./ninyampinga/footer.html" %}
         {% elif theme.slug == 'springster' %}
             {% include "./springster/footer.html" %}
         {% elif theme.slug == 'yegna' %}
-            yegna
+            {% include "./yegna/footer.html" %}
         {% elif theme.slug == 'zathu' %}
             {% include "./zathu/footer.html" %}
         {% endif %}

@@ -1,8 +1,4 @@
-html, body {
-    margin: 0 auto;
-}
-
-body {
-    font-family: Muli,sans-serif;
-    font-weight: 400;
-}
+@import "./utils/_variables.scss";
+@import "./utils/fonts.scss";
+@import "normalize.scss";
+@import "./modules/**/*.scss";
