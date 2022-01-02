@@ -5,19 +5,33 @@
         padding: 0 5%;
     }
     &__caption {
-        background-image: url($staticPath + 'img/ninyamping/ShapesSprites.png');
-        background-position: 0 0;
-        background-repeat: no-repeat;
-        background-size: contain;
-        content: "";
-        display: block;
-        height: 80px;
-        width: 100%;
-        position: absolute;
-        top: -10px;
+        color: #000;
+        display: inline-block;
+        position: relative;
+        &::before {
+            background-image: url($staticPath + 'img/ninyamping/ShapesSprites.png');
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "";
+            display: block;
+            height: 80px;
+            width: 100%;
+            position: absolute;
+            top: -10px;
+        }
     }
     &__title {
         font-size: 1.2em;
         margin: 15px 0 0 15px;
+    }
+    &__theme {
+        background-color: $dark_grey;
+        padding: 15px 0;
+    }
+    @each $theme, $color in $themes {
+        &__#{$theme} {
+            background-color: $color;
+        }
     }
 }
