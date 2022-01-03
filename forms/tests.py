@@ -279,7 +279,12 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
             page=self.form,
             label="How much water have you drunk?",
             field_type="radio",
-            choices=['less than 1 glass', '1 - 3 glasses', '2 litres', 'more than 2 litres'],
+            choices=[
+                "less than 1 glass",
+                "1 - 3 glasses",
+                "2 litres",
+                "more than 2 litres",
+            ],
             required=True,
         )
         field3 = FormField.objects.create(
