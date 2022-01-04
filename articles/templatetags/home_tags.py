@@ -6,20 +6,6 @@ from home.models import SiteSettings
 register = template.Library()
 
 
-@register.inclusion_tag("home/tags/footer_page_list.html", takes_context=True)
-def footer_pages(context):
-    pages = []
-    request = context["request"]
-    site = request._wagtail_site
-    if site:
-        pages = FooterPage.objects.descendant_of(site.root_page)
-
-    return {
-        "request": request,
-        "footers": pages,
-    }
-
-
 @register.inclusion_tag("home/tags/social_media_footer.html", takes_context=True)
 def social_media_footer(context, page=None):
     site = Site.find_for_request(context["request"])
