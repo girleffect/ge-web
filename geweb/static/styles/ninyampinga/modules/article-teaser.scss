@@ -1,3 +1,43 @@
 .article-teaser {
     position: relative;
 }
+
+.teaser-stacklist {
+   position: relative;
+    &__item {
+        align-items: flex-start;
+        display: flex;
+        justify-content: flex-start;
+        list-style: none;
+        margin: 0 5px 2em 5px;
+        vertical-align: top;
+        width: 100%;
+    }
+    &__thumbnail,
+    &__images {
+        background-color: #ecedef;
+        display: inline-block;
+        overflow: hidden;
+        &-link {
+            display: block;
+        }
+        img {
+            height: 250px;
+            width: 430px;
+        }
+    }
+    &__anchor {
+        text-decoration: none;
+    }
+    &__title {
+        color: #000;
+        font-size: $larger;
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        font-size: $standard;
+    }
+    &__content {
+        padding: 16px 68px 16px 16px;
+    }
+}

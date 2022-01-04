@@ -20,8 +20,14 @@
         text-align: center;
     }
     &--primary {
+        font-family: $heebo;
         margin: 10px 0 25px;
         padding: 15px 0;
         position: relative;
+    }
+    @each $theme, $color in $themes {
+        &--#{$theme} .section-page__title {
+            background-color: $color;
+        }
     }
 }
