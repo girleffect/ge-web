@@ -18,7 +18,7 @@ from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
 from home.themes import THEME_CHOICES
-from articles.models import SectionPage
+from articles.models import SectionPage, ArticlePage
 from forms.models import FormPage
 
 
@@ -50,6 +50,12 @@ class HomePage(Page):
 
         forms = FormPage.objects.descendant_of(self).live()
         context["forms"] = forms
+
+        section_index = self.get_children().live().first()
+        context["section_index"] = section_index
+
+        articlepages = ArticlePage.objects.live().descendant_of(section_index)
+        context["articlepages"] = articlepages
 
         return context
 

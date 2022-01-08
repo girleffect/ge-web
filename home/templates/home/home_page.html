@@ -6,8 +6,10 @@
     {% if theme.slug == 'ninyampinga' %}
         ninyampinga
     {% elif theme.slug == 'springster' %}
-        {% include "./springster/banner.html" %}
-        {% include "./springster/promotions/article-teasers-listing.html" %}
+        <div class="content">
+            {% include "./springster/banner.html" %}
+            {% include "./springster/promotions/article-teasers-listing.html" %}
+        </div>        
     {% elif theme.slug == 'yegna' %}
         yegna
     {% elif theme.slug == 'zathu' %}{% endif %}

@@ -1,2 +1,29 @@
-{% load wagtailcore_tags article_tags static theme_tags %}
+{% load wagtailcore_tags article_tags static theme_tags i18n %}
+
+<div class="homepage">
+{% with articles=articlepages|slice:":10" %}
+    {% for post in articles %}
+        {% with post=post.specific %}
+            {% with item=post.body|first %}
+                <div class="teaser-stacklist__item{% if theme.slug == 'springster' %}{% if item.block_type == 'image' %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
+                    {% if item.block_type == 'image' %}
+                        <div class="teaser-stacklist__thumbnail">
+                            <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
+                                {{ item }}
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    <div class="teaser-stacklist__content{% if theme.slug == 'springster' %}{% if item.block_type == 'image' %} teaser-stacklist__content--split{% endif %}{% endif %}">
+                        <a href="{% pageurl post %}" class="teaser-stacklist__anchor">
+                            <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
+                        </a>
+                        <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
+                    </div>  
+                </div>
+            {% endwith %} 
+        {% endwith %}
+    {% endfor %}
+{% endwith %}    
+</div>
 
