@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "articles",
     "search",
     "profiles",
+    "forms",
     "social_django",
     "wagtail.contrib.settings",
     "wagtail.contrib.forms",
