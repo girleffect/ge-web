@@ -31,11 +31,10 @@ const menuLinksFooter = document.querySelectorAll('.footer-nav-list p a')
         elem.classList.add('nav-list__anchor')
     })
 
-
 const menuLinks = document.querySelectorAll('.nav-list__anchor')
     for(let i = 0; i < menuLinks.length; i++) {
         menuLinks[i].addEventListener('click', function(e) {
-            e.preventDefault()
+            //e.preventDefault()
             const $this = e.target         
             menuLinks.forEach(function(item, i) {
                 item.classList.remove('selected')    
