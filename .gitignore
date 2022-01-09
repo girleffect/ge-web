@@ -133,7 +133,7 @@ dmypy.json
 # node
 geweb/node_modules/*
 
-.DS_Store
+*/.DS_Store/*
 
 media/*
 

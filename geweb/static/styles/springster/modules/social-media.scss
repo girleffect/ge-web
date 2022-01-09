@@ -1,0 +1,23 @@
+.social-media {
+    &-list {
+        display: block;
+        text-align: center;
+        margin: 0;
+        padding: 0 0 15px;
+        &__item {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 8px;
+        }
+        &__anchor {
+            color: $violet;
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        &__icon { 
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    }
+}

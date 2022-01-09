@@ -1,23 +1,23 @@
 {% load wagtailcore_tags article_tags i18n %}
 
-<div class="article-page__body">
-    {% include "./patterns/breadcrumbs.html" %}
-    <div class="heading heading--article">
-        <h1 class="heading__primary">{{ page.title }}</h1>
-    </div>
-    {% if page.subtitle %}
-        <p class="subheading">{{ page.subtitle }}</p>
-    {% endif %}
-    
-    <!-- CURRENTLY STATIC - Needs to be updated to be -->
-    <div class="comments-counter">
-        <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
-            Your thoughts (238)
-        </a>
-    </div>
+<div class="article-page">
+    <div class="article-page__body">
+        <div class="article-heading">
+            <h1 class="heading__primary">{{ page.title }}</h1>
+        </div>
+        {% if page.subtitle %}
+            <p class="subheading">{{ page.subtitle }}</p>
+        {% endif %}
+        
+        <!-- CURRENTLY STATIC - Needs to be updated to be -->
+        <div class="comments-counter">
+            <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
+                Your thoughts (238)
+            </a>
+        </div>
 
-    {% include_block page.body %}
-
+        {% include_block page.body %}
+    </div>
     {% if page.tags.all.count %}
         <div class="tag-cloud">
             <h3 class="heading heading__micro">Read more about</h3>
@@ -28,5 +28,6 @@
             </ul>
         </div>
     {% endif %}
-    {% include "./patterns/article-teasers-recommendations.html" %}
+    {% include "../_patterns/article-teasers-recommendations.html" %}
+    {% include "../_patterns/breadcrumbs.html" %}
 </div>

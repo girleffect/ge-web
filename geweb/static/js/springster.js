@@ -49,4 +49,22 @@ const menuLinks = document.querySelectorAll('.nav-list__anchor')
            
         })
     }
- 
+
+
+
+/**
+ * Forms
+ */
+
+const terms_input = document.getElementById('id_terms_and_conditions')
+if (terms_input) {
+    terms_input.addEventListener('change', function(e) {
+        if (e.target.checked) {
+            e.target.classList.add('is-on')
+        } else {
+            e.target.classList.remove('is-on')
+        }
+    })
+}
+    
+    

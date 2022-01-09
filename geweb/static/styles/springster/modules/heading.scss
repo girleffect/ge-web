@@ -1,0 +1,77 @@
+.component {
+    text-align: center;
+    &__super {
+        background: $violet url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100%/contain;
+        color: $dark_gray;
+        padding: 25px 8px 35px;
+        text-align: center;
+        .super-title {
+            background: url($staticPath + 'img/springster/skewed-underline.png') no-repeat 50% 100%/200px;
+            color: #fff;
+            font-family: 'Baton-Medium';
+            font-size: 32px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+    }
+    &__title {
+        background: url($staticPath + 'img/springster/zig-zag-underline.png') no-repeat 50% 100%/145px;
+        margin: 0 8px 20px;
+        padding: 20px 0 30px;
+    }
+    &__subtitle {
+        margin: 20px 0;
+    }
+    
+}
+
+.subheading {
+    color: #4e5358;
+    display: block;
+    font-family: 'Baton-Regular';
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.subtitle {
+    display: inline-block;
+    font-family: 'Baton-Medium';
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $dark_gray;
+}
+
+.heading {
+    $block: unquote("#{&}");
+    
+    &__primary {
+        color: $white;
+        font-family: 'Baton-Medium';
+        font-size: 40px;
+    }
+    &__micro {
+        color: $dark_gray;
+        display: block;
+        font-family: 'Baton-Medium';
+        font-size: 18px;
+        font-weight: normal;
+        margin: 18px 0 0;
+        padding: 15px 0 15px;
+        text-align: center;
+        text-transform: uppercase;   
+    }
+    &--section {
+        color: #fff;
+    }
+    &--related-up-next {
+        font-family: 'Baton-Medium';
+        font-size: 18px;
+        font-weight: 400;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+}
+
+

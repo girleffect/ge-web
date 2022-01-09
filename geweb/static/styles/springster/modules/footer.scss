@@ -3,6 +3,20 @@
     font-family: 'Baton-Regular';
     margin: 0 auto;
     max-width: 360px;
+    &-page {
+        background: $white;
+        &__body {
+            background: $white; 
+            padding: 10px 0;
+            .subtitle {
+                color: #000;
+                font-size: 16px;
+                font-family: "Baton-Turbo-Regular";
+                padding: 0 10px;
+                text-transform: inherit;
+            }
+        }
+    }
     &__inner {
         background: url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100% / contain, url('http://127.0.0.1:8000/static/img/springster/top-div-2@2x.png') no-repeat 0 0 / contain;
         background-color: $lime_green;
@@ -37,6 +51,9 @@
                 &__anchor {
                     color: $violet;
                     font-size: 20px;
+                    &:hover {
+                        border-color: $violet;
+                    }
                     &.selected {
                         border-color: $violet;
                     }
@@ -63,41 +80,3 @@
     }
 }
 
-.social-media {
-    &-list {
-        display: block;
-        text-align: center;
-        margin: 0;
-        padding: 0 0 15px;
-        &__item {
-            display: inline-block;
-            vertical-align: middle;
-            padding: 0 8px;
-        }
-        &__anchor {
-            color: $violet;
-            cursor: pointer;
-            font-size: 20px;
-            text-decoration: none;
-        }
-        &__icon { 
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-    }
-}
-
-.copyright {
-    color: $dark_gray;
-    font-family: 'Baton-Turbo-Regular';
-    font-size: 12px;
-    padding: 15px;
-    text-align: center;
-    &__text {
-        color: $dark_gray;
-    }
-    &__anchor {
-        color: $dark_gray;
-        text-decoration: underline;
-    }
-}
