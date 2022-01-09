@@ -4,14 +4,14 @@
     
         {% for post in articlepages %}
             {% if forloop.counter == 1 %}
-                {% include "../_patterns/article-teasers.html" %}        
+                {% include "./article-teasers.html" %}        
             {% endif %}
         {% endfor %}
         
         <div class="teaser-stacklist-wrapper">
             {% for post in articlepages %}
                 {% if not forloop.counter == 1 %}
-                    {% include "../_patterns/article-teasers.html" %}
+                    {% include "./article-teasers.html" %}
                 {% endif %}
             {% endfor %}
         </div>
