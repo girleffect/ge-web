@@ -1,10 +1,16 @@
 .profiles {
     background: #fff;
+    padding: 0 0 10px;
     width: 360px;
     &__form {
         padding: 25px 0 20px;
     }
     .heading__primary {
         color: $dark_gray;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+    .component__title {
+        padding: 20px 0 10px;
     }
 }

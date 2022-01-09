@@ -1,3 +1,18 @@
+//ARTICLE TEASER 
+.teaser-tags-list {
+    &__item {
+        color: $violet;
+        display: inline-block;
+        font-family: 'Baton-Medium';
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 8px 0 0;
+        text-transform: lowercase;
+    }
+
+}
+
+//ARTICLE PAGE TAGS
 .tags-list {
     margin: 0 auto 18px;
     padding: 10px;
@@ -13,6 +28,10 @@
     }
 }
 
+
+
+
+//TAG CLOUD TAGS
 .tag-cloud {
     text-align: center;
     &-list {

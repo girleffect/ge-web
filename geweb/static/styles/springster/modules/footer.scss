@@ -10,7 +10,6 @@
             padding: 10px 0;
             .subtitle {
                 color: #000;
-                font-size: 16px;
                 font-family: "Baton-Turbo-Regular";
                 padding: 0 10px;
                 text-transform: inherit;
@@ -33,48 +32,6 @@
             width: 50%;
         }
     }
-
-    &-nav {
-        display: flex;
-        padding: 0 10px;
-        justify-content: space-between;
-        .nav {
-            padding: 0;
-            text-align: left;
-            &-list {
-                display: block;
-                &__item {
-                    display: block;
-                    margin: 0;
-                    padding: 6px 0; 
-                }
-                &__anchor {
-                    color: $violet;
-                    font-size: 20px;
-                    &:hover {
-                        border-color: $violet;
-                    }
-                    &.selected {
-                        border-color: $violet;
-                    }
-                }
-            }
-            
-        }
-        &-list {
-            p { //HIGH SPECIFICITY (Make sure you're changing p tag by parent class)
-                display: block;
-                margin: 0 8px;
-                padding: 6px 0; 
-                a { //HIGH SPECIFICITY (Make sure you're changing a tag by parent class)
-                    color: $violet; 
-                    font-size: 20px;
-                    text-decoration: none;
-                }
-            }
-        }    
-    }
-
     p { //HIGH SPECIFICITY (Make sure you're changing p tag by parent class)
         margin: 0;
     }
