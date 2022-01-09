@@ -3,16 +3,13 @@
 {% get_settings %}
 
 {% block content %}
-    {% trans "Thank you for joining!" %}
-    {{request.user.username}}
-    <h6 >{% trans "Let us know more about yourself." %}</h6>
-    <form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}}>
-    {% csrf_token %}
-    {{ form.as_p }}
+  {% if theme.slug == 'ninyampinga' %}
+    Ninyampinga 
+  {% elif theme.slug == 'springster' or theme.slug == 'default' %}
+    {% include "./springster/done.html" %}
+  {% elif theme.slug == 'yegna' %}
 
-    <input type="submit" value="{% trans 'Save' %}"/>
-    </form>
-      <a href="{% url 'view_my_profile' %}" >{% trans "Profile" %}</a>
-      <a href="/">{% trans "Home Page" %}</a>
+  {% elif theme.slug == 'zathu' %}
 
+  {% endif %}
 {% endblock %}

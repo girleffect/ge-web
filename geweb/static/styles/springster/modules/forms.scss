@@ -11,6 +11,12 @@ label {
 fieldset {
     border: none;
     text-align: center;
+    .dropdowns {
+        align-items: center;
+        display: flex;
+        margin: 0 0 10px;
+        justify-content: space-between;
+    }
 }
 
 input[type="text"],
@@ -41,18 +47,6 @@ select {
     &:focus-visible {
         outline: none; 
     }
-}
-
-.input-hint {
-    color: $dark_gray;
-    font-size: 12px;
-}
-
-.error {
-    color: #f50;
-    font-family: 'Baton-Medium';
-    padding: 10px 15px;
-    text-align: center;
 }
 
 label[for=id_terms_and_conditions] {
@@ -86,4 +80,37 @@ input[type=checkbox]#id_terms_and_conditions {
     font-size: 20px;
     margin: 0 0 0 20px;
     vertical-align: text-top;
+}
+
+.input-hint {
+    color: $dark_gray;
+    font-size: 12px;
+}
+
+#id_date_of_birth_month, 
+#id_date_of_birth_day, 
+#id_date_of_birth_year {
+   margin: 0 5px 0 0;
+}
+
+
+.error {
+    color: #f50;
+    font-family: 'Baton-Medium';
+    padding: 10px 15px;
+    text-align: center;
+}
+.errorlist,
+.error-list {
+    li,
+    &__item {
+        color: #f50;
+        font-family: 'Baton-Medium';
+        padding: 10px 15px;
+        text-align: center;
+    }
+}
+
+.security {
+    padding: 10px 0 0;
 }

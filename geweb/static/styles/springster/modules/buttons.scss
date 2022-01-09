@@ -48,7 +48,7 @@
         display: block;
         font-family: 'Baton-Medium';
         font-size: 16px;
-        margin: 0 auto;
+        margin: 10px auto 5px;
         text-align: center;
         text-transform: uppercase;
         &--inline {
@@ -68,9 +68,15 @@
         font-size: 18px;
         font-weight: 400;
         height: 40px;
-        margin: 15px auto;
+        margin: 15px auto 0;
         max-width: 344px;
         max-height: 40px;
+        padding: 10px 0;
+        text-align: center;
+        text-decoration: none;
         width: 100%;
+    }
+    &--profiles {
+        padding: 10px 0;
     }
 } 
