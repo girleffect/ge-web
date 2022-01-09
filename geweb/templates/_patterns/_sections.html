@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %} 
+
+<li class="nav-list__item nav-list__item--{{suffix}}">
+    <a href="{% pageurl section %}" class="nav-list__anchor nav-list__{{ section.title|slugify }}">
+        {{ section.title }}
+    </a>
+</li>

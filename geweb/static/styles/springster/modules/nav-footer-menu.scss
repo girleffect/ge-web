@@ -1,0 +1,33 @@
+.footer-menu {
+    align-items: flex-start;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    text-align: left;
+
+    .nav {
+        padding: 0;
+        &-list {
+            display: block;
+            &__item {
+                display: block;
+                margin: 0;
+                padding: 6px 0; 
+            }
+            &__anchor {
+                color: $violet;
+                font-size: 20px;
+              
+                &:hover {
+                    border-color: $violet;
+                }
+                &.selected {
+                    border-color: $violet;
+                }
+            }
+        }   
+    }
+}
+.footer-nav {   
+    padding: 0 10px;
+} 
