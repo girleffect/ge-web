@@ -23,12 +23,17 @@
                             <h3 class="teaser-stacklist__title">{{ next_article.title }}</h3>
                             <p class="teaser-stacklist__subtitle"> {{ next_article.subtitle }}</p>
                         </a>
+
                         {% if next_article.tags.all.count %}
-                            <ul class="teaser-stacklist-tags">
-                                {% for tag in next_article.tags.all %}
-                                    <li class="teaser-stacklist-tags__item">#{{ tag.name}}</li>
-                                {% endfor %}
-                            </ul>
+                            <div class="teaser-stacklist__cta">
+                                <ul class="teaser-tags-list">
+                                    {% for tag in next_article.tags.all %}
+                                        <li class="teaser-tags-list__item">
+                                            #{{ tag.name}}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         {% endif %}
                     </div>  
                 </div>

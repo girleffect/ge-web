@@ -16,8 +16,8 @@
             }
             &__anchor {
                 color: $violet;
+                display: inline-block;
                 font-size: 20px;
-              
                 &:hover {
                     border-color: $violet;
                 }
