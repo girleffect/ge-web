@@ -18,13 +18,13 @@
         <label for="id_location">{% trans "Location" %}</label>
         {{form.location}}
     </fieldset>
-    {% if theme.slug == 'ninyampinga' %}
+    {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
         Ninyampinga 
     {% elif theme.slug == 'springster' %}
         <input type="submit" value="{% trans 'Save' %}" class="call-to-action__submit"/>
     {% elif theme.slug == 'yegna' %}
 
-    {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
+    {% elif theme.slug == 'zathu' %}
         <input type="submit" value="{% trans 'Update' %}" class="call-to-action__submit"/>
     {% endif %}
     

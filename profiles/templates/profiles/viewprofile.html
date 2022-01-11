@@ -3,13 +3,13 @@
 {% get_settings %}
 
 {% block content %}
-  {% if theme.slug == 'ninyampinga' %}
+  {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
       Ninyampinga 
     {% elif theme.slug == 'springster' %}
       {% include "./springster/sp_profile.html" %}
     {% elif theme.slug == 'yegna' %}
 
-    {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
+    {% elif theme.slug == 'zathu' %}
       {% include "./zathu/za_profile.html" %}
   {% endif %}
 {% endblock %}
