@@ -1,5 +1,5 @@
 form {
-    padding: 25px 15px;
+    padding: 25px 15px 10px;
 }
 
 fieldset {
@@ -27,8 +27,10 @@ label[for=id_terms_and_conditions] {
 label {
     color: $dark_violet;
     display: block;
-    font-weight: 600;
+    font-weight: 400;
     padding: 0 0 5px;
+    -webkit-font-smoothing: antialiased;
+
     //label[for=id_terms_and_conditions] specificity
     &.is-on:after {
         background-color: $very_dark_gray;
@@ -72,12 +74,18 @@ input[type="url"],
 select {
     background-color: $white;
     border: none;
+    color: #000;
+    font-size: 16px;
     padding: 10px;
     width: 100%;
     &:focus {
-        background-color: #f7f6f6;
+        background-color: $light_gray_red;
         outline: none;
     }
+}
+
+select {
+    margin: 0 0 5px;
 }
 
 input.search__input {
@@ -98,3 +106,35 @@ input[type=submit] {
     max-width: 100%;
  }
 
+ .security {
+    margin: 10px 0 0;
+    p {
+        color: $dark_violet;
+    }
+ }
+
+
+.error-list {
+    text-align: left;
+    &__item {
+        align-items: flex-start;
+        background: #fff;
+        color: $light_red;
+        display: flex;
+        font-size: 16px;
+        padding: 8px 10px;
+        &:before {
+            background:url($staticPath + 'img/error.png') no-repeat center / 100%;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            vertical-align: middle;
+            content: " ";
+            display: inline-block;
+            height: 25px;
+            margin: 0 5px 0 0;
+            padding: 0 5px 0 0;
+            width: 25px;
+        }
+    }
+}

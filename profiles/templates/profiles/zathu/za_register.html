@@ -1,4 +1,5 @@
 {% load i18n %}
+
 <div class="profiles">
     <div class="component">
         <div class="component__super">
@@ -10,7 +11,7 @@
         </div>
     </div>
     <div class="profiles__inner">
-        {% include "./_patterns/register-form.html" %}
+        {% include "./_patterns/za_register-form.html" %}
         <div class="call-to-action--profiles">
             <a href="{% url 'auth_login' %}" class="call-to-action__link">{% trans "Already joined?" %}</a>
         </div>

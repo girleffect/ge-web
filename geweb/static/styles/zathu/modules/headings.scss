@@ -27,7 +27,17 @@
     }
 }
 
+.heading__micro {
+    color: $dark_violet;
+}
+
 .subtitle {
     color: $dark_violet;
+    font-weight: 600;
     padding: 5px 15px;
+}
+
+.subheading {
+    color: $dark_violet;
+    font-size: 25px;
 }

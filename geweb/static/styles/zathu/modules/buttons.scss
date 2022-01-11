@@ -4,12 +4,14 @@
     &__submit {
         background-color: $dark_violet;
         color: $yellow;
+        cursor: pointer;
         font-size: 18px;
         font-family: "TwCenMTStd-Bold";
         display: block;
         margin: 0 auto;
         padding: 10px 25px;
         text-transform: uppercase;
+        text-decoration: none;
     }
     &__link {
         color: $dark_violet;

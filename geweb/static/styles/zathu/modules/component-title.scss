@@ -1,5 +1,5 @@
 .component {
-    padding: 15px 8px 0;
+    padding: 25px 8px 15px;
     text-align: center;
     &__super {
         .super-title {
@@ -23,8 +23,15 @@
     }
     
     .subtitle {
-        color: $dark_violet;
-        font-weight: 600;
         padding: 10px 0;
+    }
+    .subheading {
+        padding: 25px 0 5px 0;
+    }
+    .call-to-action__link {
+        padding: 25px 10px;
+    }
+    .heading--title {
+        font-size: 20px;
     }
 }
