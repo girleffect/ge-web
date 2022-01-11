@@ -3,16 +3,16 @@
 
 
 
-{% block title %}{% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' or theme.slug == 'default' %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' %}Zathu | {% endif %} Search{% endblock %}
+{% block title %}{% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}Zathu | {% endif %} Search{% endblock %}
 {% block content %}
    <div class="content">
     {% if theme.slug == 'ninyampinga' %}
         Ninyampinga 
-    {% elif theme.slug == 'springster' or theme.slug == 'default' %}
+    {% elif theme.slug == 'springster' %}
         {% include "./springster/search.html" %}
     {% elif theme.slug == 'yegna' %}
     
-    {% elif theme.slug == 'zathu' %}
+    {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
     
     {% endif %}
     </div>

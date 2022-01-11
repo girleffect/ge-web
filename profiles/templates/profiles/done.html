@@ -5,11 +5,11 @@
 {% block content %}
   {% if theme.slug == 'ninyampinga' %}
     Ninyampinga 
-  {% elif theme.slug == 'springster' or theme.slug == 'default' %}
+  {% elif theme.slug == 'springster' %}
     {% include "./springster/done.html" %}
   {% elif theme.slug == 'yegna' %}
 
-  {% elif theme.slug == 'zathu' %}
+  {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
 
   {% endif %}
 {% endblock %}
