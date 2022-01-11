@@ -21,8 +21,4 @@
 
   <input type="submit" value="{% trans 'Log in' %}" class="call-to-action__submit">
   <input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}/{% endif %}" />
-  
-  <a href="/profiles/forgot-password/" class="call-to-action__link">
-    {% trans "Forgotten your pin?" %}
-  </a>
 </form>
