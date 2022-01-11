@@ -11,16 +11,6 @@
         display: none;
         visibility: hidden;
     }
-    &__input {
-        background-color: $white;
-        border: none;
-        padding: 10px;
-        width: 75%;
-        &:focus {
-            background-color: #f7f6f6;
-            outline: none;
-        }
-    }
     &__cta {
         background-color: #fff;
         background-image: url($staticPath + 'img/zathu/search_grey.png');

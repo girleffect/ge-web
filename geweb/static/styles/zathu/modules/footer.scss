@@ -19,7 +19,6 @@
             &__label {
                 color: #5c5c5c;
                 font-size: $large;
-                -webkit-font-smoothing: antialiased;
             }
             &__anchor {
                 color: $dark_gray;
@@ -34,14 +33,3 @@
     }
 }
 
-.copyright {
-    padding: 10px 15px 5px;
-    &__text {
-        color: $dark_gray;
-        font-size: $smaller;
-    }
-    &__anchor {
-        color: $dark_gray;
-        text-decoration: underline;
-    }
-}

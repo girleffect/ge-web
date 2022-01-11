@@ -69,7 +69,7 @@ input[type=checkbox]#id_terms_and_conditions {
         width: 24px;
     }
     &.is-on:before {
-        background: #7300ff url($staticPath + 'img/springster/check-box.png') 0 50%/24px no-repeat;
+        background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
     }
 }
 

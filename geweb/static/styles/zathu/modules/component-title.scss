@@ -1,0 +1,20 @@
+.component {
+    padding: 15px 8px 0;
+    text-align: center;
+    &__super {
+        .super-title {
+            color: $dark_violet;
+            font-family: "Berfa";
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
+    &__subtitle {
+        padding: 15px 0 10px;
+        .subtitle {
+            color: $dark_violet;
+            padding: 10px 0;
+        }
+    }
+    
+}
