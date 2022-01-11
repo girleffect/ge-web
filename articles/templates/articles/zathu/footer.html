@@ -9,10 +9,11 @@
 
     {% if page.tags.all.count %}
         <div class="tags">
-            <h3>SEO Tags</h3>
+            <ul class="tags-list">
             {% for tag in page.tags.all %}
-                #{{ tag.name}}
+            <li class="tags-list__item">#{{ tag.name}}</li>
             {% endfor %}
+            </ul>
         </div>
     {% endif %}
 </div>

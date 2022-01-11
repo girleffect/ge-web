@@ -1,6 +1,6 @@
 .search {
     &__bar {
-        margin: 0 8px 24px;
+        margin: 0 8px 20px;
     }
     &__form {
         padding: 25px 5px 0;
@@ -34,5 +34,8 @@
         right: 5%;
         text-indent: 125%;
         width: 48px;
+    }
+    &--footer {
+        padding: 0 0 5px;
     }
 }

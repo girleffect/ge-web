@@ -12,5 +12,7 @@
         </div>        
     {% elif theme.slug == 'yegna' %}
         yegna
-    {% elif theme.slug == 'zathu' %}{% endif %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/landing.html" %}
+    {% endif %}
 {% endblock content %}

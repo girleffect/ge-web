@@ -9,11 +9,22 @@
         gap: 10px;
         flex-wrap: wrap;
         overflow: hidden;
+        padding: 0 8px;
         justify-content: space-between;
     }
     &__content {
         overflow: auto;
-        padding: 15px 0 0;
+    }
+    &-parent {
+        padding: 0 0 5px;
+        &__anchor {
+            color: $vivid_orange;
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
     }
     &__anchor {
         text-decoration: none;
@@ -31,7 +42,9 @@
         margin: 0 0 20px 0;
     }
     &__thumbnail {
+        height: 135px;
         overflow: hidden;
+        margin: 0 0 15px;
         width: 200px;
         &-link {
             display: block;
@@ -48,6 +61,18 @@
         
         &--full-width {
             width: 100%;
+            &:after {
+                background-image: url($staticPath + 'img/zathu/mw_zig_pattern_30.png');
+                background-position: center;
+                background-repeat: repeat-x;
+                content: '';
+                clear: both;
+                display: block;
+                height: 50px;
+                margin: 0 0 10px 0;
+                overflow: visible;
+                width: 100%;
+            }
             .teaser-stacklist__thumbnail {
                 height: 250px;
                 margin: 0 auto;

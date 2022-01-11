@@ -1,4 +1,4 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags article_tags static theme_tags i18n %}
 
 {% with post=post.specific %}
     {% with item=post.body|first %}
@@ -36,7 +36,5 @@
                 </div>
             </div>  
         </div>
-
-
     {% endwith %} 
 {% endwith %}

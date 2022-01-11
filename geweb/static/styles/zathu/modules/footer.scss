@@ -17,8 +17,9 @@
                 display: inline;
             }
             &__label {
-                color: $gray;
+                color: #5c5c5c;
                 font-size: $large;
+                -webkit-font-smoothing: antialiased;
             }
             &__anchor {
                 color: $dark_gray;
@@ -27,43 +28,6 @@
                 &.is-active {
                     color: $strong_cyan;
                     text-decoration: underline;
-                }
-            }
-        }
-    }
-    &-nav {
-        display: block;
-        padding: 0 15px;
-        &-list {
-            p {
-                padding: 8px 0;
-            }
-            a {
-                color: $gray;
-                font-size: $larger;
-                font-weight: 200;
-                text-decoration: none;
-                &:hover {
-                    color: #000;
-                }
-            }
-        }
-        .nav {
-            display: block;
-            &-list {
-                &__item {
-                    display: block;
-                    padding: 8px 0;
-                }
-                &__anchor {
-                    font-family: Arial,sans-serif;
-                    font-size: $larger;
-                    font-weight: 600;
-                    text-transform: capitalize;
-                    &:hover {
-                        color: #000;
-                        text-decoration: none;
-                    }
                 }
             }
         }

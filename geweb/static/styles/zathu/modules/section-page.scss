@@ -6,6 +6,7 @@
     }
     &__anchor {
         display: block;
+        text-decoration: none;
     }
     &__title {
         color: $yellow;
@@ -15,6 +16,6 @@
         text-transform: uppercase;
     }
     &__inner {
-        padding: 0 8px;
+       position: relative;
     }
 }
