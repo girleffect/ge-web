@@ -39,18 +39,18 @@
 
                 {% if not user.is_authenticated %}
                     <li class="nav-list__item">
-                        <a href="{{REGISTRATION_URL}}" class="nav-list__anchor">
+                        <a href="{% url 'user_register' %}" class="nav-list__anchor">
                             Join us
                         </a>
                     </li>
                     <li class="nav-list__item">
-                        <a href="{{ LOGIN_URL }}" class="nav-list__anchor">
+                        <a href="{% url 'auth_login' %}" class="nav-list__anchor">
                             Log in
                         </a>
                     </li>
                 {% else %}
                     <li class="nav-list__item">
-                        <a href="{{VIEW_PROFILE_URL}}" class="nav-list__anchor">
+                        <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">
                             Profile
                         </a>
                     </li>

@@ -3,9 +3,9 @@
 
 {% block content %}
   {% if theme.slug == 'ninyampinga' %}
-    Ninyampinga 
+    {% include "./springster/nn_login.html" %} 
   {% elif theme.slug == 'springster' %}
-    {% include "./springster/login.html" %}
+    {% include "./springster/sp_login.html" %}
   {% elif theme.slug == 'yegna' %}
 
   {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
