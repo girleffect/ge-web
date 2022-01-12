@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>
         {% block title %}
-            {% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' %}Springster | {% elif theme.slug == 'yegna' or theme.slug == 'default' %}Yegna | {% elif theme.slug == 'zathu' %}Zathu | {% endif %}
+            {% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster'  or theme.slug == 'default'  %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' %}Zathu | {% endif %}
             {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
         {% endblock %}
         {% block title_suffix %}
@@ -33,7 +33,7 @@
                 background: #fff;
             }
         </style>
-    {% elif theme.slug == 'springster' %}
+    {% elif theme.slug == 'springster' or theme.slug == 'default'   %}
         <style>
             .springster {
                 max-width: 360px;
@@ -53,7 +53,7 @@
                 background-color: #fff;
             }
         </style>
-    {% elif theme.slug == 'yegna' or theme.slug == 'default'  %}
+    {% elif theme.slug == 'yegna' %}
         <style>
 
         </style>
@@ -69,9 +69,9 @@
     {% block header %}
         {% if theme.slug == 'ninyampinga' %}
             {% include "./ninyampinga/nn_header.html" %}
-        {% elif theme.slug == 'springster' %}
+        {% elif theme.slug == 'springster'  or theme.slug == 'default'   %}
             {% include "./springster/sp_header.html" %}
-        {% elif theme.slug == 'yegna' or theme.slug == 'default'  %}
+        {% elif theme.slug == 'yegna' %}
             {% include "./yegna/yg_header.html" %}
         {% elif theme.slug == 'zathu' %}
             {% include "./zathu/za_header.html" %}
@@ -83,9 +83,9 @@
     {% block footer %}
         {% if theme.slug == 'ninyampinga' %}
             {% include "./ninyampinga/nn_footer.html" %}
-        {% elif theme.slug == 'springster' %}
+        {% elif theme.slug == 'springster' or theme.slug == 'default'   %}
             {% include "./springster/sp_footer.html" %}
-        {% elif theme.slug == 'yegna' or theme.slug == 'default'  %}
+        {% elif theme.slug == 'yegna' %}
             {% include "./yegna/yg_footer.html" %}
         {% elif theme.slug == 'zathu' %}
             {% include "./zathu/za_footer.html" %}
@@ -94,9 +94,9 @@
         
     {% if theme.slug == 'ninyampinga' %}
         <script type="text/javascript" src="{% static '_dist/ninyampinga.bundle.js' %}"></script>
-    {% elif theme.slug == 'springster' %}
+    {% elif theme.slug == 'springster' or theme.slug == 'default'   %}
         <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
-    {%  elif theme.slug == 'yegna'  or theme.slug == 'default'  %}
+    {%  elif theme.slug == 'yegna' %}
         <script type="text/javascript" src="{% static '_dist/yegna.bundle.js' %}"></script>
     {%  elif theme.slug == 'zathu' %}
         <script type="text/javascript" src="{% static '_dist/zathu.bundle.js' %}"></script>

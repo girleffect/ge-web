@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
+  {% if theme.slug == 'ninyampinga' %}
     {% include "./ninyampinga/nn_register.html" %} 
-  {% elif theme.slug == 'springster' %}
+  {% elif theme.slug == 'springster'  or theme.slug == 'default'  %}
     {% include "./springster/sp_register.html" %}
   {% elif theme.slug == 'yegna' %}
 
