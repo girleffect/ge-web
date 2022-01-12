@@ -1,10 +1,7 @@
-{% load wagtailcore_tags article_tags static theme_tags i18n %}
+{% with articles=articlepages|slice:":10" %}
+    {% for post in articles %}
+        {% include "./article-teasers-listing_inner.html" %}
+    {% endfor %}
+{% endwith %}    
 
-<div class="homepage">
-    {% with articles=articlepages|slice:":10" %}
-        {% for post in articles %}
-            {% include "./article-teasers-listing_inner.html" %}
-        {% endfor %}
-    {% endwith %}    
-</div>
 

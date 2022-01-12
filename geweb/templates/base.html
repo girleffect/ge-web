@@ -28,7 +28,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
-        ninyampinga
+        <style>
+            html, body {
+                background: #fff;
+            }
+        </style>
     {% elif theme.slug == 'springster' %}
         <style>
             .springster {
@@ -62,13 +66,13 @@
     {% wagtailuserbar %}
     {% block header %}
         {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
-            ninyampinga
+            {% include "./ninyampinga/nn_header.html" %}
         {% elif theme.slug == 'springster' %}
-            {% include "./springster/header.html" %}
+            {% include "./springster/sp_header.html" %}
         {% elif theme.slug == 'yegna' %}
             {% include "./yegna/header.html" %}
         {% elif theme.slug == 'zathu' %}
-            {% include "./zathu/header.html" %}
+            {% include "./zathu/za_header.html" %}
         {% endif %}
     {% endblock %}
     
@@ -76,13 +80,13 @@
 
     {% block footer %}
         {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
-            ninyampinga
+            {% include "./ninyampinga/nn_footer.html" %}
         {% elif theme.slug == 'springster' %}
-            {% include "./springster/footer.html" %}
+            {% include "./springster/sp_footer.html" %}
         {% elif theme.slug == 'yegna' %}
             {% include "./yegna/footer.html" %}
         {% elif theme.slug == 'zathu' %}
-            {% include "./zathu/footer.html" %}
+            {% include "./zathu/za_footer.html" %}
         {% endif %}
     {% endblock %}
         

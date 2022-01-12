@@ -2,6 +2,7 @@
 <div class="article-teaser">
     <div class="teaser-stacklist">
         {% for post in articlepages %}
+        
             {% include "./article-teasers.html" %}
 
             {% if post.tags.all.count %}

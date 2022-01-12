@@ -1,4 +1,4 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags i18n %}
 
 {% with post=post.specific %}
     {% with item=post.body|first %}
@@ -34,6 +34,19 @@
                         {% endfor %}
                     </ul>
                 </div>
+
+                {% if theme.slug == 'ninyampinga' %}
+                    <p class="teaser-stacklist__caption"> 
+                        {% for post_field in post.body %}
+                            {% if post_field.block_type == 'paragraph' %}
+                                {{ post_field|truncatewords:10 }}
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    <a href="{% pageurl post %}" class="call-to-action__submit">
+                        {% trans "Click here" %}
+                    </a>
+                {% endif %}
             </div>  
         </div>
 

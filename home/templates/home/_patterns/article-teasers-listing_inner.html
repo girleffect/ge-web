@@ -2,7 +2,7 @@
 
 {% with post=post.specific %}
     {% with item=post.body|first %}
-        <div class="teaser-stacklist__item{% if theme.slug == 'springster' %}{% if item.block_type == 'image' %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
+        <div class="teaser-stacklist__item{% if theme.slug == 'springster' %}{% if item.block_type == 'image' %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' or theme.slug == 'ninyampinga' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
             {% if item.block_type == 'image' %}
                 <div class="teaser-stacklist__thumbnail">
                     <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
@@ -34,6 +34,34 @@
                         {% endfor %}
                     </ul>
                 </div>
+
+
+                {% if theme.slug == 'ninyampinga' %}
+                    {% if forloop.first %}
+                        <p class="teaser-stacklist__caption"> 
+                            {% for post_field in post.body %}
+                                {% if post_field.block_type == 'paragraph' %}
+                                    {{ post_field|truncatewords:100 }}
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+                    {% else %}
+                        <p class="teaser-stacklist__caption"> 
+                            {% for post_field in post.body %}
+                                {% if post_field.block_type == 'paragraph' %}
+                                    {{ post_field|truncatewords:10 }}
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                    {% with parent=post.get_parent %}
+                        <a href="{% pageurl parent %}" class="call-to-action__submit">
+                            {% trans "Click here" %}
+                        </a>
+                    {% endwith %}
+                {% endif %}
+
+               
             </div>  
         </div>
     {% endwith %} 
