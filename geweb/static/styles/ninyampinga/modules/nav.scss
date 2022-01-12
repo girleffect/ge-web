@@ -23,7 +23,7 @@
         display: flex;
         font-size: $standard;
         text-transform: uppercase;
-        padding: 10px 20px 10px 5px;
+        padding: 10px 20px 10px 15px;
         height: 45px;
         &:before {
             content: "";
@@ -57,6 +57,7 @@
             }
         }
     }
+   
     &__checkbox {
         display: none;
         visibility: hidden;
@@ -103,6 +104,16 @@
                     background-size: 44px;
                 }
             }
+        }
+    }
+    &-list {
+        &__item {
+            margin: 10px 0;
+        }
+        &__anchor {
+            color: #000;
+            font-size: $medium;
+            text-transform: uppercase;
         }
     }
 }
