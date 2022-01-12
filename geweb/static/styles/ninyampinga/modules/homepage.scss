@@ -17,7 +17,8 @@
             display: inline-block;
             list-style: none;
             margin: 0 30px 20px 0;
-            width: auto;
+            vertical-align: text-top;
+            width: 25%;
             &--full-width {
                 float: left;
                 overflow: hidden;

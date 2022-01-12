@@ -3,7 +3,7 @@
 
 {% block content %}
     {% if theme.slug == 'ninyampinga' %}
-        {% breadcrumbs %}
+    {% include "./ninyampinga/articlepage.html" %}
     {% elif theme.slug == 'springster' %}
         {% include "./springster/article.html" %}
     {% elif theme.slug == 'yegna' %}
