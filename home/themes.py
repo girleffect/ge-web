@@ -14,10 +14,10 @@ class Theme:
 
 
 DEFAULT_THEME = Theme(
-        slug="springster",
-        label="Springster theme",
-        base_template="path/to/springster-theme-templates/base_springster-theme.html",
-    )
+    slug="springster",
+    label="Springster theme",
+    base_template="path/to/springster-theme-templates/base_springster-theme.html",
+)
 
 
 THEMES = [
