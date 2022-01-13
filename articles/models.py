@@ -72,7 +72,8 @@ class ArticlePage(Page):
         default=False,
         help_text=_(
             "Whether this article should appear with other featured articles"
-            " at the top of the home page"),
+            " at the top of the home page"
+        ),
     )
 
     # Web page setup
@@ -103,10 +104,7 @@ class ArticlePage(Page):
         index.SearchField("subtitle"),
     ]
     promote_panels = Page.promote_panels + [
-        MultiFieldPanel(
-            [ FieldPanel('feature_in_homepage') ],
-            "Featured in Homepage"
-        ),
+        MultiFieldPanel([FieldPanel("feature_in_homepage")], "Featured in Homepage"),
     ]
 
 
