@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.fields import BooleanField
 
 from wagtail.core.models import Page
 
@@ -15,7 +14,6 @@ from wagtail.admin.edit_handlers import (
     MultiFieldPanel,
     StreamFieldPanel,
 )
-from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
 
