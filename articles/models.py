@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import BooleanField
 
 from wagtail.core.models import Page
 
@@ -67,6 +68,12 @@ class ArticlePage(Page):
 
     # general page attributes
     tags = ClusterTaggableManager(through=ArticlePageTag, blank=True)
+    feature_in_homepage = models.BooleanField(
+        default=False,
+        help_text=_(
+            "Whether this article should appear with other featured articles"
+            " at the top of the home page"),
+    )
 
     # Web page setup
     subtitle = models.CharField(max_length=200, blank=True, null=True)
@@ -86,6 +93,12 @@ class ArticlePage(Page):
     search_fields = Page.search_fields + [
         index.SearchField("body"),
         index.SearchField("subtitle"),
+    ]
+    promote_panels = Page.promote_panels + [
+        MultiFieldPanel(
+            [ FieldPanel('feature_in_homepage') ],
+            "Featured in Homepage"
+        ),
     ]
 
 
