@@ -3,13 +3,5 @@
 
 
 {% block content %}
-    {% if theme.slug == 'ninyampinga' %}
-        {% include "./ninyampinga/nn_landing.html" %}
-    {% elif theme.slug == 'springster' %}
-        {% include "./springster/sp_landing.html" %} 
-    {% elif theme.slug == 'yegna' %}
-        yegna
-    {% elif theme.slug == 'zathu' %}
-        {% include "./zathu/landing.html" %}
-    {% endif %}
+    {% include "./springster/home.html" %} 
 {% endblock content %}

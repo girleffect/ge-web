@@ -1,0 +1,58 @@
+body {
+    max-width: 360px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header a {
+    color: #e3ccff;
+}
+
+li, ul {
+    display: inline-block;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+/* LOGO */
+img.logo-center {
+    width: 97px;
+    aspect-ratio: auto 97 / 24;
+    height: 24px;     
+}
+
+/* HEADER */
+.header-wrapper {
+    background-color: #7300ff;
+    padding: 10px 10px 5px;
+    position: relative;
+    outline: 0;
+}
+
+/* MENU */
+.menu {
+    overflow: auto;
+    text-align: center;
+}
+
+.menu-list {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+
+/* CONTENT */
+
+.content,
+.article,
+.article-page,
+.article-page-inner,
+.section-banners,
+.section-page__inner {
+    background-color: #fff;
+}
