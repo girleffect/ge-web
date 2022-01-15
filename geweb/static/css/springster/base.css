@@ -6,6 +6,7 @@ html, body {
 
 body {
     font-family: 'Signika, Helvetica', sans-serif;
+    font-size: 16px;
     max-width: 360px;
     margin: 0 auto;
     position: relative;
@@ -116,7 +117,8 @@ img.social-media-list__icon {
 .article-page,
 .article-page-inner,
 .section-banners,
-.section-page__inner {
+.section-page__inner,
+.footer-page {
     background-color: #fff;
 }
 
@@ -171,4 +173,33 @@ img.social-media-list__icon {
     justify-content: space-between;
     padding: 0 8px;
     position: relative;
+}
+
+
+.footer__inner {
+    background-color: #a4eed2;
+    padding: 12px 8px;
+}
+
+.footer-menu {
+    align-items: flex-start;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.footer-menu .nav-list {
+    display: block;
+} 
+
+.footer-menu .nav-list__item {
+    display: block;
+    margin: 0;
+    padding: 6px 0;
+}
+
+.footer-menu .nav-list__anchor {
+    color: #7300ff;
+    display: inline-block;
 }
