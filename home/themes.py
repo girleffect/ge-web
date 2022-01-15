@@ -14,33 +14,33 @@ class Theme:
 
 
 DEFAULT_THEME = Theme(
-    slug="default",
-    label="Default",
-    base_template="path/to/templates/base_default.html",
+    slug="springster",
+    label="Springster theme",
+    base_template="path/to/springster-theme-templates/base_springster-theme.html",
 )
 
 
 THEMES = [
     DEFAULT_THEME,
     Theme(
-        slug="ninyampinga",
-        label="Ninyampinga theme",
-        base_template="path/to/ninyampinga/base.html",
-    ),
-    Theme(
-        slug="springster",
-        label="Springster theme",
-        base_template="geweb/templates/springster/springster.html",
+        slug="zathu",
+        label="Zathu theme",
+        base_template="path/to/zathu-theme-templates/base_zathu-theme.html",
     ),
     Theme(
         slug="yegna",
         label="Yegna theme",
-        base_template="path/to/yegna/base.html",
+        base_template="path/to/yegna-theme-templates/base_yegna-theme.html",
     ),
     Theme(
-        slug="zathu",
-        label="Zathu theme",
-        base_template="path/to/zathu/base.html",
+        slug="ninyampinga",
+        label="NiNyampinga theme",
+        base_template="path/to/ninyampinga-theme-templates/base_ninyampinga-theme.html",
+    ),
+    Theme(
+        slug="tujibebe",
+        label="Tujibebe theme",
+        base_template="path/to/tujibebe-theme-templates/base_tujibebe-theme.html",
     ),
 ]
 

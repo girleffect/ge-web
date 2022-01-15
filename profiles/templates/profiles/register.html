@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% load i18n static wagtailsettings_tags wagtailcore_tags article_tags %}
+{% get_settings %}
+
 
 {% block content %}
   {% if theme.slug == 'ninyampinga' %}
@@ -8,6 +11,16 @@
   {% elif theme.slug == 'yegna' %}
 
   {% elif theme.slug == 'zathu' %}
+    {% section_pages as sections %}
+    {% for section in sections %}
+      <p>{{section.title}}</p>
+    {% endfor %}
 
-  {% endif %}
+    <div class="call-to-action call-to-action--profile">
+        <h4 class="heading heading--subtitle">
+          {% trans "Already a member?" %}
+        </h4>
+        <a href="{% url 'auth_login' %}" class="call-to-action__nav-item-text call-to-action__nav-item-text--login">{% trans "Login" %}</a>
+
+    {% endif %}
 {% endblock %}
