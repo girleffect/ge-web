@@ -4,7 +4,7 @@ from articles.models import SectionPage, SectionIndexPage, ArticlePage
 from wagtail.core.models import Site
 from django.contrib.contenttypes.models import ContentType
 from wagtail.core.models import Page
-from .templatetags.article_tags import get_next_article, breadcrumbs
+from .templatetags.article_tags import get_next_article, breadcrumbs, section_pages
 
 
 class ArticlesTestCaseMixin(object):
@@ -79,3 +79,12 @@ class TestTemplateTags(TestCase, ArticlesTestCaseMixin):
         self.article3.save_revision().publish()
         # it should return article 3
         self.assertEquals(get_next_article(context, self.article).pk, self.article3.pk)
+
+    def test_section_pages(self):
+        request = self.factory.get(self.article.url)
+        context = {"locale_code": "en", "request": request, "self": self.article}
+        sections = section_pages(context)
+        # it should only return 2
+        self.assertEquals(sections.count(), 1)
+        # it should not include section index page
+        self.assertEqual("section1", sections[0].title)

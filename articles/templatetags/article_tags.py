@@ -1,5 +1,5 @@
 from django import template
-from articles.models import FooterPage, ArticlePage
+from articles.models import FooterPage, ArticlePage, SectionPage
 from wagtail.core.models import Site, Page
 
 register = template.Library()
@@ -16,6 +16,16 @@ def footer_pages(context):
         "request": request,
         "footers": pages,
     }
+
+
+@register.simple_tag(takes_context=True)
+def section_pages(context):
+    request = context["request"]
+    pages = []
+    site = Site.find_for_request(request)
+    if site:
+        pages = SectionPage.objects.descendant_of(site.root_page)
+    return pages
 
 
 @register.inclusion_tag("articles/tags/breadcrumbs.html", takes_context=True)
