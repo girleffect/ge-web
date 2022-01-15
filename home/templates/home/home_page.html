@@ -3,9 +3,11 @@
 
 
 {% block content %}
-    <!--
-        Ideally should be {% include THEME_PATH|add:"header.html" %} but this does not work.
-    -->
+    {% comment %}
+        <!--
+            Ideally should be {% include THEME_PATH|add:"header.html" %} but this does not work.
+        -->
+    {% endcomment %}
 
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/home.html" %}
