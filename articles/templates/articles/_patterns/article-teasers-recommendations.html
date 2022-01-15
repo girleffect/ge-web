@@ -8,36 +8,35 @@
     </h4>
     <div class="article-teaser">
         <div class="teaser-stacklist">
-            {% with item=next_article.body|first %}
-                <div class="teaser-stacklist__item{% if item.block_type == 'image' %} teaser-stacklist__item--split{% endif %}">
-                    {% if item.block_type == 'image' %}
+            <div class="teaser-stacklist__item{% if post.image %} teaser-stacklist__item--split{% endif %}">
+                {% if post.image %}
                     <div class="teaser-stacklist__thumbnail">
-                        <a href="{{ next_article.url }}" class="teaser-stacklist__thumbnail-link">
-                            {{ item }}
+                        {% image post.image fill-360x160 as article_image %}
+                        <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
+                            <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
                         </a>
                     </div>
-                    {% endif %}
-                
-                    <div class="teaser-stacklist__content{% if item.block_type == 'image' %} teaser-stacklist__content--split{% endif %}">
-                        <a href="{{ next_article.url }}" class="teaser-stacklist__anchor">
-                            <h3 class="teaser-stacklist__title">{{ next_article.title }}</h3>
-                            <p class="teaser-stacklist__subtitle"> {{ next_article.subtitle }}</p>
-                        </a>
+                {% endif %}
+            
+                <div class="teaser-stacklist__content{% if post.image %} teaser-stacklist__content--split{% endif %}">
+                    <a href="{{ next_article.url }}" class="teaser-stacklist__anchor">
+                        <h3 class="teaser-stacklist__title">{{ next_article.title }}</h3>
+                        <p class="teaser-stacklist__subtitle"> {{ next_article.subtitle }}</p>
+                    </a>
 
-                        {% if next_article.tags.all.count %}
-                            <div class="teaser-stacklist__cta">
-                                <ul class="teaser-tags-list">
-                                    {% for tag in next_article.tags.all %}
-                                        <li class="teaser-tags-list__item">
-                                            #{{ tag.name}}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endif %}
-                    </div>  
-                </div>
-            {% endwith %}
+                    {% if next_article.tags.all.count %}
+                        <div class="teaser-stacklist__cta">
+                            <ul class="teaser-tags-list">
+                                {% for tag in next_article.tags.all %}
+                                    <li class="teaser-tags-list__item">
+                                        #{{ tag.name}}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>  
+            </div>
         </div>
     </div>
 </div>
