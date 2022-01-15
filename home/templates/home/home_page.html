@@ -3,14 +3,5 @@
 
 
 {% block content %}
-    {% if theme.slug == 'ninyampinga' %}
-        ninyampinga
-    {% elif theme.slug == 'springster' %}
-        <div class="content">
-            {% include "./springster/banner.html" %}
-            {% include "./_patterns/article-teasers-listing.html" %}
-        </div>        
-    {% elif theme.slug == 'yegna' %}
-        yegna
-    {% elif theme.slug == 'zathu' %}{% endif %}
+    {% include "./springster/home.html" %} 
 {% endblock content %}

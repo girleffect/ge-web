@@ -1,12 +1,14 @@
 {% load static wagtailuserbar theme_tags i18n %}
 {% get_current_theme as theme %}
+
+{% with THEME_PATH="./"|add:theme.slug|add:"/" %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8" />
     <title>
         {% block title %}
-            {% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' or theme.slug == 'default' %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' %}Zathu | {% endif %}
+            {% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' %}Zathu | {% endif %}
             {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
         {% endblock %}
         {% block title_suffix %}
@@ -18,84 +20,37 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content=" {% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' or theme.slug == 'default' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu.png.png' %}{% endif %}" />
+    <meta name="msapplication-TileImage" content=" {% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu.png.png' %}{% endif %}" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' or theme.slug == 'default' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' or theme.slug == 'default' %}{% static 'img/springster/apple-touch-icon.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' or theme.slug == 'default' %}{% static 'img/springster/springster_icon_192.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' or theme.slug == 'default' %}{% static 'img/springster/springster_icon_96.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' or theme.slug == 'default' %}{% static 'img/springster/favicon-32x32.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' or theme.slug == 'default' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/apple-touch-icon.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_192.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_96.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-32x32.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-    {% if theme.slug == 'ninyampinga' %}
-        ninyampinga
-    {% elif theme.slug == 'springster' or theme.slug == 'default' %}
-        <style>
-            .springster {
-                max-width: 360px;
-                margin: 0 auto;
-                position: relative;
-            }
-
-            .header-wrapper {
-                background-color: #7300ff;
-            }
-
-            .article,
-            .article-page,
-            .article-page-inner,
-            .section-banners,
-            .section-page__inner {
-                background-color: #fff;
-            }
-        </style>
-    {% elif theme.slug == 'yegna' %}
-        yegna
-    {% elif theme.slug == 'zathu' %}
-        <style>
-
-        </style>
-    {% endif %}
-    {% block extra_css %}{% endblock %}
-</head>
-<body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' or theme.slug == 'default' %}springster{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
-    {% wagtailuserbar %}
-    {% block header %}
-        {% if theme.slug == 'ninyampinga' %}
-            ninyampinga
-        {% elif theme.slug == 'springster' or theme.slug == 'default' %}
-            {% include "./springster/header.html" %}
-        {% elif theme.slug == 'yegna' %}
-            yegna
-        {% elif theme.slug == 'zathu' %}
-            {% include "./zathu/header.html" %}
-        {% endif %}
+    <link rel="stylesheet" href="{{STATIC_URL}}css/{{theme.slug}}/base.css">
+    {% block extra_css %}
+        <style></style>
     {% endblock %}
+</head>
+<body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
     
-    {% block content %}{% endblock %}
-
-    {% block footer %}
-        {% if theme.slug == 'ninyampinga' %}
-            ninyampinga
-        {% elif theme.slug == 'springster' or theme.slug == 'default' %}
-            {% include "./springster/footer.html" %}
-        {% elif theme.slug == 'yegna' %}
-            yegna
-        {% elif theme.slug == 'zathu' %}
-            {% include "./zathu/footer.html" %}
-        {% endif %}
+    {% wagtailuserbar %}
+    
+    {% block header %} 
+        {% include THEME_PATH|add:"header.html" %}
     {% endblock %}
         
-    {% if theme.slug == 'ninyampinga' %}
-        <script type="text/javascript" src="{% static '_dist/ninyampinga.bundle.js' %}"></script>
-    {% elif theme.slug == 'springster' or theme.slug == 'default' %}
-        <script type="text/javascript" src="{% static '_dist/springster.bundle.js' %}"></script>
-    {%  elif theme.slug == 'yegna' %}
-        <script type="text/javascript" src="{% static '_dist/yegna.bundle.js' %}"></script>
-    {%  elif theme.slug == 'zathu' %}
-        <script type="text/javascript" src="{% static '_dist/zathu.bundle.js' %}"></script>
-    {% endif %}
-
+    {% block content %}{% endblock %}
+  
+    {% block footer %}
+        {% include THEME_PATH|add:"footer.html" %}
+    {% endblock %}
+   
+    <script type="text/javascript" src="{{STATIC_URL}}_dist/{{theme.slug}}.bundle.js"></script>
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
 </body>
 </html>
+
+{% endwith %}
