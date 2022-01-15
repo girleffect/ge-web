@@ -65,6 +65,10 @@ img.social-media-list__icon {
     vertical-align: middle;
 }
 
+.banner__image {
+    max-width: 360px;
+}
+
 /* MENU */
 .menu {
     overflow: auto;
