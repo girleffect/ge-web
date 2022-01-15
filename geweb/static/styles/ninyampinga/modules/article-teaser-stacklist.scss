@@ -15,16 +15,14 @@
         display: inline-block;
         overflow: hidden;
         margin: 0 30px 0 0;
+        height: 250px;
+        width: 430px;
         &-link {
             display: block;
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
             }
-        }
-        img {
-             height: 250px;
-             width: 430px;
         }
     }
     &__item {
@@ -38,8 +36,7 @@
             overflow: hidden;
             width: 65%;
             margin: 0 5% 20px 0;
-            .teaser-stacklist__thumbnail img, 
-            .teaser-stacklist__images img {
+            .teaser-stacklist__image  {
                 height: auto;
                 width: 100%;
             }

@@ -41,7 +41,7 @@
                     <p class="teaser-stacklist__caption"> 
                         {% for post_field in post.body %}
                             {% if post_field.block_type == 'paragraph' %}
-                                {{ post_field|truncatewords:100 }}
+                                {{ post_field|truncatewords:140 }}
                             {% endif %}
                         {% endfor %}
                     </p>

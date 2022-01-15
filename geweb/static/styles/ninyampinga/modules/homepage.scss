@@ -8,8 +8,8 @@
     }
 
     .teaser-stacklist {
-        &__thumbnail img,
-        &__images img {
+        &__thumbnail,
+        &__images {
             height: 153px;
             width: 272px;
         }
@@ -24,8 +24,8 @@
                 overflow: hidden;
                 width: 65%;
                 margin: 0 5% 20px 0;
-                .teaser-stacklist__thumbnail img, 
-                .teaser-stacklist__images img {
+                .teaser-stacklist__thumbnail, 
+                .teaser-stacklist__images {
                     height: auto;
                     width: 100%;
                 }

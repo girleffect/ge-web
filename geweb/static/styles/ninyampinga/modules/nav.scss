@@ -1,16 +1,3 @@
-.burger-icon {
-    width: 35px;
-    display: inline-block;
-    padding: 0 10px 0 0;
-    span {
-        background-color: #fff;
-        display: block;
-        margin: 6px 0;
-        height: 5px;
-
-    }
-}
-
 .nav {
     align-items: center;
     display: flex;
@@ -45,6 +32,7 @@
         &.is-active {
             background-color: $white;
             color: $pink;
+           
             .burger-icon {
                 display: none;
             }
@@ -54,6 +42,7 @@
                 background-size: 35px;
                 background-repeat: no-repeat;
                 display: block;
+                width: 150px;
             }
         }
     }
@@ -76,6 +65,7 @@
         top: 65px;
     }
     &-profile {
+        margin: 0 0 0 20px;
         &__anchor {
             color: #fff;
             cursor: pointer;

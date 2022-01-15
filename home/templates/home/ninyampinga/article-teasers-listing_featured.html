@@ -1,7 +1,8 @@
 {% load wagtailcore_tags article_tags static theme_tags i18n %}
 
-{% with articles=articlepages|slice:":10" %}
-    {% for post in articles %}
+
+{% for post in articlepages %}
+    {% if post.feature_in_homepage %}
         {% include "../_patterns/article-teasers-listing_inner.html" %}
-    {% endfor %}
-{% endwith %} 
+    {% endif %}
+{% endfor %}
