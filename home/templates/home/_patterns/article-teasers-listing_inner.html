@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags static theme_tags i18n %}
+{% load wagtailcore_tags wagtailimages_tags article_tags static theme_tags i18n %}
 
 {% with post=post.specific %}
     <div class="teaser-stacklist__item{% if theme.slug == 'springster' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' or theme.slug == 'ninyampinga' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
