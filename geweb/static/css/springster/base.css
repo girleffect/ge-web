@@ -1,15 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
+
+html, body {
+    background-color: #a3a7ae;
+}
+
 body {
+    /*font-family: 'Helvetica', sans-serif;*/
+    font-family: 'Signika', sans-serif;
     max-width: 360px;
     margin: 0 auto;
     position: relative;
+}
+
+h1, h2 {
+    font-weight: 600;
+}
+
+h3, h4, h5, h6 {
+    font-weight: 400;
 }
 
 header a {
     color: #e3ccff;
 }
 
-li, ul {
+a {
+    text-decoration: none;
+}
+
+ul, li {
     display: inline-block;
+    text-decoration: none;
 }
 
 img {
@@ -24,12 +48,25 @@ img.logo-center {
     height: 24px;     
 }
 
+img.social-media-list__icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 24px;
+    width: 24px;
+}
+
 /* HEADER */
 .header-wrapper {
     background-color: #7300ff;
     padding: 10px 10px 5px;
     position: relative;
     outline: 0;
+}
+
+#profile {
+    height: 25px;
+    padding: 0;
+    vertical-align: middle;
 }
 
 /* MENU */
@@ -45,6 +82,32 @@ img.logo-center {
     justify-content: space-between;
 }
 
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-list__anchor {
+    color: #e3ccff;
+    border-bottom: 2px solid transparent;
+    display: block;
+    font-weight: normal;
+    font-size: 17x;
+    font-style: normal;
+    text-decoration: none;
+}
+
+
+.search--header .search-radio {
+    visibility: hidden;
+}
+
+.search__bar {
+    display: none;
+}
+
 
 /* CONTENT */
 
@@ -55,4 +118,45 @@ img.logo-center {
 .section-banners,
 .section-page__inner {
     background-color: #fff;
+}
+
+.teaser-stacklist__item {
+    border-bottom: 4px solid #edf0f2;
+    color: #000;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.teaser-stacklist__item--split {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.teaser-stacklist__thumbnail {
+    max-width: 30%;
+    overflow: hidden;
+}
+
+.teaser-stacklist__thumbnail img {
+    width: initial;
+    height: inherit;
+}
+
+.teaser-stacklist__content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 96px;
+}
+
+.teaser-stacklist__content--split {
+    width: 67%;
+}
+
+.teaser-stacklist__title {
+    color: #33373c;
+    font-size: 24px;
 }
