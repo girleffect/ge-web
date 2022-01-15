@@ -3,6 +3,10 @@
 
 
 {% block content %}
+    <!--
+        Ideally should be {% include THEME_PATH|add:"header.html" %} but this does not work.
+    -->
+
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/home.html" %}
     {% elif theme.slug == 'springster' %}
@@ -12,4 +16,5 @@
     {% elif theme.slug == 'zathu' %}
         {% include "./zathu/home.html" %}
     {% endif %} 
+
 {% endblock content %}

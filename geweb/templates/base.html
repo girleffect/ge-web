@@ -1,7 +1,6 @@
 {% load static wagtailuserbar theme_tags i18n %}
 {% get_current_theme as theme %}
 
-{% with THEME_PATH="./"|add:theme.slug|add:"/" %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -35,22 +34,21 @@
     {% endblock %}
 </head>
 <body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
-    
     {% wagtailuserbar %}
+    {% with "./"|add:theme.slug|add:"/" as THEME_PATH %}
+        {% block header %} 
+            {% include THEME_PATH|add:"header.html" %}
+        {% endblock %}
+            
+        {% block content %}{% endblock %}
     
-    {% block header %} 
-        {% include THEME_PATH|add:"header.html" %}
-    {% endblock %}
-        
-    {% block content %}{% endblock %}
-  
-    {% block footer %}
-        {% include THEME_PATH|add:"footer.html" %}
-    {% endblock %}
+        {% block footer %}
+            {% include THEME_PATH|add:"footer.html" %}
+        {% endblock %}
+    {% endwith %}
    
     <script type="text/javascript" src="{{STATIC_URL}}_dist/{{theme.slug}}.bundle.js"></script>
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
 </body>
 </html>
 
-{% endwith %}
