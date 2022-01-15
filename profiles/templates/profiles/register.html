@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% load i18n static wagtailsettings_tags wagtailcore_tags article_tags %}
+{% get_settings %}
+
 
 {% block content %}
   {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
