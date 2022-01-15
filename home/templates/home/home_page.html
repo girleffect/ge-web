@@ -3,5 +3,13 @@
 
 
 {% block content %}
-    {% include "./springster/home.html" %} 
+    {% if theme.slug == 'ninyampinga' %}
+        {% include "./ninyampinga/home.html" %}
+    {% elif theme.slug == 'springster' %}
+        {% include "./springster/home.html" %} 
+    {% elif theme.slug == 'yegna' %}
+        {% include "./yegna/home.html" %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/home.html" %}
+    {% endif %} 
 {% endblock content %}

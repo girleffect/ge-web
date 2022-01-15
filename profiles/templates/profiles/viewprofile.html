@@ -3,26 +3,13 @@
 {% get_settings %}
 
 {% block content %}
-<<<<<<< HEAD
-  {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
-      {% include "./ninyampinga/nn_profile.html" %} 
-  {% elif theme.slug == 'springster' %}
-    {% include "./springster/sp_profile.html" %}
-  {% elif theme.slug == 'yegna' %}
-
-  {% elif theme.slug == 'zathu' %}
-    {% include "./zathu/za_profile.html" %}
-{% endif %}
-=======
   {% if theme.slug == 'ninyampinga' %}
-      Ninyampinga 
-  {% elif theme.slug == 'springster' or theme.slug == 'default' %}
-      {% include "./springster/profile.html" %}
+      {% include "./ninyampinga/profile.html" %} 
+  {% elif theme.slug == 'springster' %}
+    {% include "./springster/profile.html" %}
   {% elif theme.slug == 'yegna' %}
- 
+    {% include "./yegna/profile.html" %}
   {% elif theme.slug == 'zathu' %}
-
-  {% endif %}
-  
->>>>>>> PHASE1-brand-springster-templating-init
+    {% include "./zathu/profile.html" %}
+{% endif %}
 {% endblock %}

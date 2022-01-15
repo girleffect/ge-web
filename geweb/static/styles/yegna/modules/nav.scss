@@ -1,0 +1,13 @@
+.nav {
+    &-list {
+        &__item {
+            display: inline-block;
+            padding: 10px 15px;
+        }
+        &__anchor {
+            color: #000;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    }
+}
