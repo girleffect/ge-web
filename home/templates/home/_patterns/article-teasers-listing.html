@@ -1,7 +1,8 @@
-{% with articles=articlepages|slice:":10" %}
-    {% for post in articles %}
+
+{% for post in articlepages %}
+    {% if post.feature_in_homepage %}
         {% include "./article-teasers-listing_inner.html" %}
-    {% endfor %}
-{% endwith %}    
+    {% endif %}
+{% endfor %}
 
 
