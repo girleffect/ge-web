@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-
 @import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
 
 html, body {
@@ -8,8 +5,7 @@ html, body {
 }
 
 body {
-    /*font-family: 'Helvetica', sans-serif;*/
-    font-family: 'Signika', sans-serif;
+    font-family: 'Signika, Helvetica', sans-serif;
     max-width: 360px;
     margin: 0 auto;
     position: relative;
@@ -37,8 +33,8 @@ ul, li {
 }
 
 img {
-    height: auto;
-    width: 100%;
+    height: inherit;
+    width: initial;
 }
 
 /* LOGO */
@@ -139,9 +135,9 @@ img.social-media-list__icon {
     overflow: hidden;
 }
 
-.teaser-stacklist__thumbnail img {
-    width: initial;
-    height: inherit;
+.teaser-stacklist__thumbnail-link {
+    height: 96px;
+    width: 96px;
 }
 
 .teaser-stacklist__content {
@@ -159,4 +155,16 @@ img.social-media-list__icon {
 .teaser-stacklist__title {
     color: #33373c;
     font-size: 24px;
+}
+
+
+
+.section-banners__inner {
+    align-items: flex-end;
+    display: flex;
+    height: 128px;
+    margin: 0;
+    justify-content: space-between;
+    padding: 0 8px;
+    position: relative;
 }
