@@ -24,12 +24,15 @@
             width: auto;
         }
     }
+    &__image {
+        height: auto;
+        width: 100%;
+    }
     &__thumbnail,
     &__images {
         display: inline-block;
         margin: 0 30px 0 0;
         overflow: hidden;
-       
         @media (min-width: 991px) {
             height: 250px;
             width: 430px;
