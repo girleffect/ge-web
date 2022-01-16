@@ -1,7 +1,12 @@
 .nav {
     align-items: center;
-    display: flex;
-    order: 1;
+    display: inline-flex;
+    vertical-align: middle;
+    
+    @media (min-width: 991px) {
+        display: flex;
+        order: 1;
+    }
    
     &__label {
         align-items: center;
@@ -107,8 +112,12 @@
 
     &-lang-and-search {
         align-items: center;
-        display: flex;
-        order: 3;
+        display: inline-flex;
+        vertical-align: middle;
+        @media (min-width: 991px) {
+            display: flex;
+            order: 3;
+        }
     }
     
     &-list {

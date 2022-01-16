@@ -3,6 +3,7 @@
     &__form {
         margin: 0 auto;
         overflow: auto;
+        position: relative;
         width: 80%;
     }
     &__checkbox {
@@ -10,7 +11,7 @@
         visibility: hidden;
     }
     &__label {
-        color: $white;
+        color: $plum;
         cursor: pointer;
         display: inline-block;
         font-size: $standard;
@@ -19,7 +20,7 @@
         vertical-align: middle;
         word-break: break-word;
         word-wrap: break-word;
-        padding: 10px 5px;
+        padding: 10px;
         height: 45px;
         &:after {
             background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
@@ -38,7 +39,7 @@
         }
         &.is-active {
             background-color: #fff;
-            color: $pink;
+            color: $white;
             &:after {
                 background-position: -17px 9px;
             }
@@ -81,12 +82,12 @@
     }
     
     &__input {
+        appearance: none;
         border: 3px solid #e7357c;
         height: 42px;
         margin: 0;
         padding: 5px 5% 5px 5px;
         width: 100%;
-        appearance: none;
     }
     .label {
         color: #000;
