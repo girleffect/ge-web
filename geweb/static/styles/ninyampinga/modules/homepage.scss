@@ -17,9 +17,20 @@
         display: block;
         padding: 15px;
     }
-    &-column__two {
-        background-color: $bright_orange;
+    &-column {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        &__one {
+            order: 2;
+        }
+        &__two {
+            background-color: $bright_orange;
+            order: 1;
+        }
     }
+    
+    
 
     .teaser-stacklist__item {
         overflow: hidden;
@@ -87,9 +98,9 @@
         // LATEST + ANNOUNCEMENT ARTICLE TEASER LAYOUT
         
         &-column {
-            align-items: flex-start;
-            display: flex;
+            flex-direction: initial;
             &__one {
+                order: 1;
                 width: 75%;
                 .heading--hero {
                     margin: 10px 5%;
@@ -97,6 +108,7 @@
             }
             &__two {
                 padding: 0 15px;
+                order: 2;
                 width: 25%;
                 .heading--hero {
                     margin: 10px -20px;
