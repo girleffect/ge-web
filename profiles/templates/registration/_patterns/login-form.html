@@ -10,15 +10,20 @@
 
   <fieldset>
     <label for="id_username">{% trans "Username" %}</label>
-    {{form.username}}
+    <div class="input-group">
+      {{form.username}}
+    </div>
   </fieldset>
 
   <fieldset>
     <label for="id_password">{% trans "4-digit pin" %}</label>
-    {{form.password}}
-    <span class="input-hint">({% trans "Eg.: 2086" %})</span>
+    <div class="input-group">
+      {{form.password}}
+      <span class="input-hint">({% trans "Eg.: 2086" %})</span>
+    </div>
   </fieldset>
-
-  <input type="submit" value="{% trans 'Log in' %}" class="call-to-action__submit">
-  <input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}/{% endif %}" />
+  <div class="call-to-action">
+    <input type="submit" value="{% trans 'Log in' %}" class="call-to-action__submit">
+    <input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}/{% endif %}" />
+  </div>
 </form>

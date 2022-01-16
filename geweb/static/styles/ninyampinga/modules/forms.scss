@@ -1,3 +1,6 @@
+form {
+   overflow: auto;
+}
 fieldset {
     align-self: flex-start;
     border: none;
@@ -7,9 +10,7 @@ fieldset {
 
 label {
     font-size: $default;
-    width: 25%;
 }
-
 
 input[type="text"],
 input[type="number"],
@@ -27,11 +28,11 @@ select {
     background-color: #fff;
     border-radius: 0;
     border: 2px solid $pink;
-    display: inline-block;
+    display: block;
     font-size: $default;
-    margin: 0 auto;
+    margin: 0;
     padding: 10px 0 10px 5px;
-    width: 73%;
+    width: 75%;
    
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -42,4 +43,14 @@ select {
     &:focus-visible {
         outline: none; 
     }
+}
+
+
+.input-group {
+    width: 75%;
+}
+
+.input-hint {
+    display: block;
+    font-style: italic;
 }

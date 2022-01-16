@@ -1,14 +1,13 @@
 .component {
-    align-self: flex-start;
+    align-items: center;
     padding: 0 0 10px;
     display: flex;
     justify-content: space-between;
     &__super {
-       
-        background-image: url( $staticPath + 'img/ninyampinga/shape-one.svg');
+        background-image: url( $staticPath + 'img/ninyampinga/shape-one-orange.svg');
         background-repeat: no-repeat;
         background-position: 0 0;
-        background-size: 45%;
+        background-size: 90px;
         filter: $orange;
         display: inline-block;
         height: 75px;
@@ -20,8 +19,12 @@
         background-color: $vivid_yellow;
         color: #000;
         font-size: 31px;
+        line-height: 35px;
+        padding: 0 10px;
+        text-transform: uppercase;
     }
     .subtitle {
         display: inline-block;
+        font-size: $medium;
     }
 }

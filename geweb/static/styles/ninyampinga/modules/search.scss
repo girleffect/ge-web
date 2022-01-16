@@ -2,7 +2,7 @@
     overflow: auto;
     &__form {
         margin: 0 auto;
-        position: relative;
+        overflow: auto;
         width: 80%;
     }
     &__checkbox {
@@ -19,6 +19,8 @@
         vertical-align: middle;
         word-break: break-word;
         word-wrap: break-word;
+        padding: 10px 5px;
+        height: 45px;
         &:after {
             background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
             background-repeat: no-repeat;

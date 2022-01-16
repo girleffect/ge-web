@@ -8,7 +8,7 @@
 
 
 .teaser-stacklist {
-    position: relative;
+    overflow: auto;
     &__thumbnail,
     &__images {
         background-color: #ecedef;
