@@ -35,6 +35,7 @@ RUN sed -i 's/www-data;/nginx wagtail;/' /etc/nginx/nginx.conf
 # Install gunicorn
 RUN pip install "gunicorn==20.0.4"
 COPY gunicorn/ /etc/gunicorn/
+RUN mkdir /run/gunicorn && chown wagtail:wagtail /run/gunicorn
 
 EXPOSE 8000
 WORKDIR /app
