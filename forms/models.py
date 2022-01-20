@@ -13,7 +13,7 @@ from django.dispatch import receiver
 from django.http import Http404
 from django.shortcuts import redirect, render
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
 
 from wagtail.admin.edit_handlers import (
@@ -78,39 +78,44 @@ class FormPage(AbstractEmailForm):
         related_name="+",
     )
     description = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
 
     allow_anonymous_submissions = BooleanField(
         default=False,
-        help_text="Check this to allow users who are NOT logged in to complete"
-        " forms.",
+        help_text=_(
+            "Check this to allow users who are NOT logged in to complete" " forms."
+        ),
     )
     allow_multiple_submissions_per_user = BooleanField(
         default=False,
-        help_text="Check this to allow users to complete a form more than" " once.",
+        help_text=_("Check this to allow users to complete a form more than" " once."),
     )
 
     show_results = BooleanField(
         default=False,
-        help_text="Whether to show the form results to the user after they"
-        " have submitted their answer(s).",
+        help_text=_(
+            "Whether to show the form results to the user after they"
+            " have submitted their answer(s)."
+        ),
     )
 
     multi_step = BooleanField(
         default=False,
         verbose_name="Multi-step",
-        help_text="Whether to display the form questions to the user one at"
-        " a time, instead of all at once.",
+        help_text=_(
+            "Whether to display the form questions to the user one at"
+            " a time, instead of all at once."
+        ),
     )
-
     your_words_competition = BooleanField(
         default=False,
         verbose_name="Is YourWords Competition",
-        help_text="This will display the correct template for yourwords",
+        help_text=_("This will display the correct template for yourwords"),
     )
     contact_form = BooleanField(
         default=False,
         verbose_name="Is Contact Form",
-        help_text="This will display the correct template for contact forms",
+        help_text=_("This will display the correct template for contact forms"),
     )
 
     content_panels = forms_models.AbstractForm.content_panels + [
@@ -118,7 +123,8 @@ class FormPage(AbstractEmailForm):
         FieldPanel("introduction", classname="full"),
         ImageChooserPanel("image"),
         StreamFieldPanel("description"),
-        InlinePanel("form_fields", label="Form fields"),
+        InlinePanel("form_fields", label=_("Form fields")),
+        FieldPanel("thank_you_text", classname="full"),
         MultiFieldPanel(
             [
                 FieldRowPanel(
@@ -143,7 +149,7 @@ class FormPage(AbstractEmailForm):
                 FieldPanel("your_words_competition"),
                 FieldPanel("contact_form"),
             ],
-            heading="Form Settings",
+            heading=_("Form Settings"),
         )
     ]
 
@@ -158,9 +164,9 @@ class FormPage(AbstractEmailForm):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
 
-        # If you need to show results only on landing page,
-        # you may need check request.method
-
+        if not self.show_results:
+            # return early, without further processing
+            return context
         results = dict()
         # Get information about form fields
         data_fields = [
@@ -207,16 +213,25 @@ class FormPage(AbstractEmailForm):
             user=form.user,
         )
 
+    @property
+    def session_key_data(self):
+        return "form_data-{}".format(self.pk)
+
+    def load_data(self, request):
+        return json.loads(request.session.get(self.session_key_data, "{}"))
+
+    def save_data(self, request, data):
+        request.session[self.session_key_data] = json.dumps(data, cls=DjangoJSONEncoder)
+
     def serve(self, request, *args, **kwargs):
         if (
-            self.allow_multiple_submissions_per_user is False
+            not self.allow_multiple_submissions_per_user
             and self.get_submission_class()
             .objects.filter(page=self, user__pk=request.user.pk)
             .exists()
         ):
             return render(request, self.template, self.get_context(request))
         if self.multi_step:
-            session_key_data = "form_data-%s" % self.pk
             is_last_step = False
             step_number = request.GET.get("p", 1)
 
@@ -244,9 +259,9 @@ class FormPage(AbstractEmailForm):
                 prev_form = prev_form_class(request.POST, page=self, user=request.user)
                 if prev_form.is_valid():
                     # If data for step is valid, update the session
-                    form_data = request.session.get(session_key_data, {})
+                    form_data = self.load_data(request)
                     form_data.update(prev_form.cleaned_data)
-                    request.session[session_key_data] = form_data
+                    self.save_data(request, form_data)
 
                     if prev_step.has_next():
                         # Create a new form for a following step, if the following step is present
@@ -254,8 +269,9 @@ class FormPage(AbstractEmailForm):
                         form = form_class(page=self, user=request.user)
                     else:
                         # If there is no next step, create form for all fields
+                        data = self.load_data(request)
                         form = self.get_form(
-                            request.session[session_key_data],
+                            data,
                             page=self,
                             user=request.user,
                         )
@@ -265,7 +281,7 @@ class FormPage(AbstractEmailForm):
                             # After successful validation, save data into DB,
                             # and remove from the session.
                             form_submission = self.process_form_submission(form)
-                            del request.session[session_key_data]
+                            del request.session[self.session_key_data]
                             # render the landing page
                             return self.render_landing_page(
                                 request, form_submission, *args, **kwargs

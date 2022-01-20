@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags article_tags i18n comments %}
+{% load wagtailcore_tags article_tags theme_tags i18n %}
 
 {% block body_class %}articlepage{% endblock %}
 {% block content %}
+
+    {% get_current_theme as theme %}
+    <h2>Using theme: {{theme.label}}</h2>
   {% breadcrumbs %}
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}

@@ -17,17 +17,39 @@ from wagtail.admin.edit_handlers import (
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
+from home.themes import THEME_CHOICES
 from articles.models import SectionPage
+from forms.models import FormPage
 
 
 class HomePage(Page):
-    subpage_types = ["articles.SectionIndexPage", "articles.FooterIndexPage"]
+    subpage_types = [
+        "articles.SectionIndexPage",
+        "articles.FooterIndexPage",
+        "forms.FormsIndexPage",
+    ]
+
+    theme = models.CharField(
+        verbose_name=_("theme"),
+        max_length=100,
+        choices=THEME_CHOICES,
+        blank=True,
+        null=True,
+        db_index=True,
+    )
+
+    settings_panels = Page.settings_panels + [
+        FieldPanel("theme"),
+    ]
 
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index
         context = super().get_context(request)
         sections = SectionPage.objects.descendant_of(self).live()
         context["sections"] = sections
+
+        forms = FormPage.objects.descendant_of(self).live()
+        context["forms"] = forms
 
         return context
 

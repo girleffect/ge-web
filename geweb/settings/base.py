@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "articles",
     "search",
     "profiles",
+    "forms",
     "comments",
     "threadedcomments",
     "django_comments",
