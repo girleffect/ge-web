@@ -1,0 +1,16 @@
+{% extends "wagtailadmin/home.html" %}
+{% load i18n admin_urls comments static %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="/admin/threadedcomments/threadedcomment/">{% trans 'Comments' %}</a>
+&rsaquo; {% trans 'Reply' %}
+</div>
+{% endblock %}
+
+{% block content %}
+{{ parent }}
+{% render_comment_form for parent %}
+
+{% endblock %}
