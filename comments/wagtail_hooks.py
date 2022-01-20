@@ -140,7 +140,7 @@ def register_molo_comments_admin_reply_url():
     return [
         path(
             "comment/(<int:parent>)/reply/",
-            AdminCommentReplyView.as_view(extra_context={'parent': '<int:parent>'}),
+            AdminCommentReplyView.as_view(extra_context={"parent": "<int:parent>"}),
             name="comments-admin-reply",
         ),
     ]

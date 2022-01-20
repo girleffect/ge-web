@@ -23,7 +23,7 @@ class AdminCommentReplyView(FormView, ContextMixin):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['parent'] = self.get_form_kwargs()["target_object"]
+        context["parent"] = self.get_form_kwargs()["target_object"]
         return context
 
     def get_form_kwargs(self, *args, **kwargs):
@@ -32,6 +32,7 @@ class AdminCommentReplyView(FormView, ContextMixin):
         kwargs["target_object"] = ThreadedComment.objects.get(pk=self.kwargs["parent"])
         del kwargs["prefix"]
         return kwargs
+
     #
     # def form_valid(self, form):
     #     print("inside form valid")

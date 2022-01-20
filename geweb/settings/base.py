@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-SITE_ID=1
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
-COMMENTS_APP = 'threadedcomments'
+COMMENTS_APP = "threadedcomments"
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
