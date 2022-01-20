@@ -1,11 +1,16 @@
 {% extends "base.html" %}
-{% load i18n static wagtailsettings_tags wagtailcore_tags %}
+{% load i18n static wagtailsettings_tags wagtailcore_tags article_tags %}
 {% get_settings %}
 
 {% block content %}
   <div class="heading">
     <h1 class="heading__profiles">{% trans "Register" %}</h1>
   </div>
+
+  {% section_pages as sections %}
+  {% for section in sections %}
+    <p>{{section.title}}</p>
+  {% endfor %}
 
   <div class="call-to-action call-to-action--profile">
       <h4 class="heading heading--subtitle">
