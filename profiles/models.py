@@ -2,10 +2,14 @@ from django.contrib.auth import hashers
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from wagtail.admin.edit_handlers import (FieldPanel, MultiFieldPanel,
-                                         PageChooserPanel)
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.core.models import Page
+
+from wagtail.admin.edit_handlers import (  # isort:skip
+    FieldPanel,
+    MultiFieldPanel,
+    PageChooserPanel,
+)
 
 
 class Profile(models.Model):
