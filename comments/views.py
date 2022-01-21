@@ -14,7 +14,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from threadedcomments.forms import ThreadedCommentForm
 from threadedcomments.models import ThreadedComment
 from django.views.generic.base import ContextMixin
-from django.contrib import messages
 
 
 class AdminCommentReplyView(FormView, ContextMixin):

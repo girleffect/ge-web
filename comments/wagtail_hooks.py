@@ -4,6 +4,11 @@ from django_comments.models import CommentFlag
 from django.utils.html import format_html
 from django.urls import reverse
 from django.templatetags.static import static
+from django.urls import path
+from .views import AdminCommentReplyView
+from wagtail.core import hooks
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.admin.views.main import ChangeList
 
 
 class CommentAdmin(ModelAdmin):
@@ -128,10 +133,6 @@ class CommentAdmin(ModelAdmin):
 
 
 modeladmin_register(CommentAdmin)
-
-from django.urls import path
-from .views import AdminCommentReplyView
-from wagtail.core import hooks
 
 
 @hooks.register("register_admin_urls")
