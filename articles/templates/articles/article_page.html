@@ -28,7 +28,7 @@
 
     {% render_comment_list for page %}
 
-    <p><a href="{{ page.get_parent.url }}">Return to section</a></p>
+    <p><a href="{{ page.get_parent.url }}">{% trans 'Return to section' %}</a></p>
     {% get_next_article page as next_article %}
     {% if next_article %}
       {% trans 'Next Article: '%}

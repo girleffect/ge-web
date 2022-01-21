@@ -1,19 +1,18 @@
+import django_comments
 from django.conf import settings
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse_lazy
 from django.utils.translation import ugettext as _
-from django.views.generic import FormView, TemplateView, CreateView
-
-import django_comments
-from django_comments.views.moderation import perform_flag
+from django.views.generic import CreateView, FormView, TemplateView
+from django.views.generic.base import ContextMixin
 from django_comments.views.comments import post_comment
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django_comments.views.moderation import perform_flag
 from threadedcomments.forms import ThreadedCommentForm
 from threadedcomments.models import ThreadedComment
-from django.views.generic.base import ContextMixin
 
 
 class AdminCommentReplyView(FormView, ContextMixin):

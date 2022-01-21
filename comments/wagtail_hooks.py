@@ -1,14 +1,14 @@
-from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
-from threadedcomments.models import ThreadedComment
-from django_comments.models import CommentFlag
-from django.utils.html import format_html
-from django.urls import reverse
-from django.templatetags.static import static
-from django.urls import path
-from .views import AdminCommentReplyView
-from wagtail.core import hooks
-from django.contrib.contenttypes.models import ContentType
 from django.contrib.admin.views.main import ChangeList
+from django.contrib.contenttypes.models import ContentType
+from django.templatetags.static import static
+from django.urls import path, reverse
+from django.utils.html import format_html
+from django_comments.models import CommentFlag
+from threadedcomments.models import ThreadedComment
+from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
+from wagtail.core import hooks
+
+from .views import AdminCommentReplyView
 
 
 class CommentAdmin(ModelAdmin):

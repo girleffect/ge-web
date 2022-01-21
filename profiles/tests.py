@@ -1,31 +1,22 @@
 # -*- coding: utf-8 -*-
 from datetime import date
+
 from django.contrib.auth.models import User
-from django.core.cache import cache
-from django.urls import reverse
-from django.http import QueryDict
-from django.test import TestCase, Client
 from django.contrib.auth.tokens import default_token_generator
-from .forms import (
-    ForgotPasswordForm,
-    RegistrationForm,
-    ProfilePasswordChangeForm,
-    EditProfileForm,
-)
-from .models import (
-    SecurityQuestion,
-    SecurityQuestionAnswer,
-    Profile,
-    SecurityQuestionIndexPage,
-    ProfileSettings,
-)
-from home.models import HomePage
-from articles.models import FooterPage, FooterIndexPage
-from wagtail.core.models import Site
-
 from django.contrib.contenttypes.models import ContentType
+from django.core.cache import cache
+from django.http import QueryDict
+from django.test import Client, TestCase
+from django.urls import reverse
+from wagtail.core.models import Page, Site
 
-from wagtail.core.models import Page
+from articles.models import FooterIndexPage, FooterPage
+from home.models import HomePage
+
+from .forms import (EditProfileForm, ForgotPasswordForm,
+                    ProfilePasswordChangeForm, RegistrationForm)
+from .models import (Profile, ProfileSettings, SecurityQuestion,
+                     SecurityQuestionAnswer, SecurityQuestionIndexPage)
 
 
 class ProfilesTestCaseMixin(object):

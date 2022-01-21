@@ -1,21 +1,21 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate
-from django.contrib.auth import login, logout
-from django.contrib.auth.tokens import default_token_generator
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from django.urls import reverse, reverse_lazy
+from django.contrib.auth.tokens import default_token_generator
 from django.http import HttpResponseRedirect
 from django.http.request import QueryDict
 from django.http.response import HttpResponseForbidden
 from django.shortcuts import render
+from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView, UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin
 from wagtail.core.models import Site
 
 from . import forms
-from .models import SecurityQuestionAnswer, Profile, ProfileSettings, SecurityQuestion
+from .models import (Profile, ProfileSettings, SecurityQuestion,
+                     SecurityQuestionAnswer)
 
 
 class RegistrationView(FormView):
