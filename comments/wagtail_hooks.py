@@ -8,13 +8,13 @@ from django.templatetags.static import static
 
 class CommentAdmin(ModelAdmin):
     model = ThreadedComment
-    menu_label = "Comments"  # ditch this to use verbose_name_plural from model
-    # menu_icon = ""  # change as required
-    menu_order = 200  # will put in 3rd place (000 being 1st, 100 2nd)
-    add_to_settings_menu = False  # or True to add your model to the Settings sub-menu
-    exclude_from_explorer = (
-        False  # or True to exclude pages of this type from Wagtail's explorer view
-    )
+    menu_label = "Comments"
+    menu_order = 200
+    add_to_settings_menu = False
+    index_view_extra_js = [
+        "js/admin.js",
+    ]
+    exclude_from_explorer = False
     list_display = (
         "user_name",
         "site",
@@ -24,31 +24,31 @@ class CommentAdmin(ModelAdmin):
         "submit_date",
         "is_public",
         "is_removed",
-        "flagged_count",
+        "flags",
     )
     list_export = (
         "user_name",
         "site",
         "comment",
+        "parent_comment",
+        "moderator_reply",
         "submit_date",
         "is_public",
         "is_removed",
-        "flagged_count",
+        "flags",
     )
     list_filter = ("site", "submit_date", "is_public", "is_removed")
     search_fields = ("user", "comment")
     export_filename = "comments"
 
-    def flagged_count(self, obj):
+    def flags(self, obj):
         return CommentFlag.objects.filter(comment=obj).count()
 
     def moderator_reply(self, obj):
         # We only want to reply to root comments
         if obj.parent is None:
             reply_url = reverse("comments-admin-reply", args=(obj.id,))
-            image_url = static("admin/img/icon_addlink.gif")
-            return '<img src="%s" alt="add" /> <a href="%s">Add reply</a>' % (
-                image_url,
+            return '<a href="%s"><i class="icon icon-fa-plus"></i>Add reply</a>' % (
                 reply_url,
             )
         else:
@@ -98,7 +98,7 @@ class CommentAdmin(ModelAdmin):
                 """
                 Create a content_type map to individual objects through their
                 id's to avoid additional per object queries for generic
-                relation lookup (used in MoloCommentAdmin.content method).
+                relation lookup (used in CommentAdmin.content method).
                 Also create a comment_reply map to avoid additional reply
                 lookups per comment object
                 (used in CommentAdmin.moderator_reply method)
@@ -127,7 +127,6 @@ class CommentAdmin(ModelAdmin):
         return ModeratorChangeList
 
 
-# Now you just need to register your customised ModelAdmin class with Wagtail
 modeladmin_register(CommentAdmin)
 
 from django.urls import path
@@ -136,7 +135,7 @@ from wagtail.core import hooks
 
 
 @hooks.register("register_admin_urls")
-def register_molo_comments_admin_reply_url():
+def register_comments_admin_reply_url():
     return [
         path(
             "comment/(<int:parent>)/reply/",

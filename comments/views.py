@@ -14,12 +14,13 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from threadedcomments.forms import ThreadedCommentForm
 from threadedcomments.models import ThreadedComment
 from django.views.generic.base import ContextMixin
+from django.contrib import messages
 
 
 class AdminCommentReplyView(FormView, ContextMixin):
     form_class = ThreadedCommentForm
     template_name = "admin/reply.html"
-    success_url = "/"
+    success_url = "/admin/threadedcomments/threadedcomment/"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -31,16 +32,10 @@ class AdminCommentReplyView(FormView, ContextMixin):
         kwargs["parent"] = self.kwargs["parent"]
         kwargs["target_object"] = ThreadedComment.objects.get(pk=self.kwargs["parent"])
         del kwargs["prefix"]
+        if "files" in kwargs.keys():
+            del kwargs["files"]
         return kwargs
 
-    #
-    # def form_valid(self, form):
-    #     print("inside form valid")
-    #     self.request.POST = self.request.POST.copy()
-    #     self.request.POST["name"] = ""
-    #     self.request.POST["url"] = ""
-    #     self.request.POST["email"] = ""
-    #     self.request.POST["parent"] = self.kwargs["parent"]
-    #     reply = post_comment(self.request, next=self.success_url)
-    #     messages.success(self.request, _("Reply successfully created."))
-    #     return reply
+    def form_valid(self, form, *args, **kwargs):
+        messages.success(self.request, "Comment Reply Successfully Posted")
+        return super().form_valid(form, *args, **kwargs)

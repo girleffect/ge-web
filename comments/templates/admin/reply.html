@@ -1,16 +1,60 @@
-{% extends "wagtailadmin/home.html" %}
-{% load i18n admin_urls comments static %}
+{% extends "wagtailadmin/generic/form.html" %}
+{% load i18n admin_urls comments static modeladmin_tags wagtailadmin_tags %}
 
-{% block breadcrumbs %}
-<div class="breadcrumbs">
-<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
-&rsaquo; <a href="/admin/threadedcomments/threadedcomment/">{% trans 'Comments' %}</a>
-&rsaquo; {% trans 'Reply' %}
-</div>
+{% block header %}
+  <header>
+      <div class="row nice-padding">
+        <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+        &rsaquo; <a href="/admin/threadedcomments/threadedcomment/">{% trans 'Comments' %}</a>
+        &rsaquo; {% trans 'Reply' %}
+        </div>
+        <br>
+        <div class="left header-left">
+          <div class="col header-title">
+              {% block h1 %}
+                <h1>
+                    {% icon name="openquote" class_name="header-title-icon" %}
+                    {% trans 'Comment Reply' %}
+                </h1>
+              {% endblock %}
+          </div>
+        </div>
+      </div>
+  </header>
 {% endblock %}
 
-{% block content %}
-{{ parent }}
-{% render_comment_form for parent %}
+{% block main_content %}
+    {% get_comment_form for parent as form %}
 
+    <form action="{% url 'comments-admin-reply' parent=parent.pk %}" method="POST">
+        {% csrf_token %}
+        <div class="title-wrapper">
+                <h2>Replying to</h2>
+                <h3>{{ parent }}</h3>
+        </div>
+        <ul class="fields">
+              <li class="required {{ wrapper_classes }} {{ li_classes }} {% if field.errors %}error{% endif %}">
+                <div class="field text textarea">
+                  <div class="field-content">
+                    <label>{% trans 'Reply' %}</label>
+                      <div class="input {{ input_classes }} ">
+                        {{ form.comment }}
+                        {{form.object_pk}}
+                        {{form.content_type}}
+                        {{form.timestamp}}
+                        {{form.security_hash}}
+                        <input type="hidden" name="name" required="" id="id_name" value="Springster Admin">
+                        <input type="hidden" name="email" required="" id="id_email" value="test@email.com">
+                        <input type="hidden" name="parent" required="" id="id_parent" value={{parent.pk}}>                      </div>
+                  </div>
+              </li>
+
+            <li>
+                {% block actions %}
+                    <button type="submit" class="button">{% trans 'Post Reply' %}</button>
+                {% endblock %}
+            </li>
+        </ul>
+    </form>
 {% endblock %}

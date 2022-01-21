@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "wagtail.admin",
     "wagtail.core",
     "wagtail.locales",
+    "wagtailfontawesome",
     "modelcluster",
     "taggit",
     "django.contrib.admin",
