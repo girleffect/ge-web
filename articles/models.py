@@ -51,11 +51,7 @@ class SectionPage(Page):
         articlepages = self.get_children().live().order_by("-first_published_at")
         context["articlepages"] = articlepages
         return context
-
-    def sections(self):
-        # Update context to seperate sectionpages
-        return self.get_parent().get_children().live()
-
+        
 
 class ArticlePageTag(TaggedItemBase):
     content_object = ParentalKey(
