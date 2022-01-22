@@ -1,0 +1,15 @@
+{% load wagtailcore_tags wagtailimages_tags article_tags static %}
+<div class="section-banners">
+  <div class="section-banners__inner section-banners__inner--{{ page.css_color }}">
+    <div class="heading heading--section">
+      <h1 class="heading__primary">{{ page.title }}</h1>
+    </div>
+
+    <div class="section-banners__image">
+      {% if page.image %}
+        {% image page.image width-400 %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
