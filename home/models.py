@@ -54,6 +54,12 @@ class HomePage(Page):
         return context
 
 
+class SocialMediaLinkBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True)
+    link = blocks.CharBlock(required=True)
+    image = ImageChooserBlock()
+
+
 @register_setting
 class SiteSettings(BaseSetting):
     fb_analytics_app_id = models.CharField(
@@ -90,13 +96,10 @@ class SiteSettings(BaseSetting):
         blank=True,
         help_text=_("The Google Search Console verification code"),
     )
-    social_media_links_on_footer_page = StreamField(
-        [
-            ("social_media_site", blocks.URLBlock()),
-        ],
-        null=True,
-        blank=True,
-    )
+    social_media_links_on_footer_page = StreamField([
+        ('social_media_site', SocialMediaLinkBlock()),
+    ], null=True, blank=True)
+
     facebook_sharing = models.BooleanField(
         default=False,
         verbose_name="Facebook",
