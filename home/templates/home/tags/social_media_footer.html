@@ -1,0 +1,10 @@
+{% load wagtailimages_tags i18n %}
+{% if social_media %}
+  <p>{% trans "Find us elsewhere:" %}</p>
+  {% for site in social_media %}
+    <a href="https://{{ site.value.link }}">
+      {% image site.value.image width-24 %}
+      {{ site.value.title }}
+    </a>
+  {% endfor %}
+{% endif %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags article_tags theme_tags i18n %}
+{% load wagtailcore_tags article_tags theme_tags home_tags i18n %}
 
 {% block body_class %}articlepage{% endblock %}
 {% block content %}
@@ -32,4 +32,5 @@
 
     <p><a href="{{ page.get_parent.url }}">{% trans 'Return to section'%}</a></p>
 
+{% social_media_article %}
 {% endblock %}

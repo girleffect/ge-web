@@ -1,7 +1,8 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags home_tags %}
 
 {% for footer in footers %}
     <p>
         <a href="{% pageurl footer %}">{{ footer.title }}</a>
     </p>
 {% endfor %}
+{% social_media_footer %}
