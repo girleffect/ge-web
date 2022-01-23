@@ -225,7 +225,8 @@ class FormPage(AbstractEmailForm):
 
     def serve(self, request, *args, **kwargs):
         if (
-            not self.allow_multiple_submissions_per_user
+            request.user
+            and not self.allow_multiple_submissions_per_user
             and self.get_submission_class()
             .objects.filter(page=self, user__pk=request.user.pk)
             .exists()
