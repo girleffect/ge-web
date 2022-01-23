@@ -1,8 +1,7 @@
 from django import template
 
-from wagtail.core.models import Page
+from wagtail.core.models import Site
 
-from home.models import HomePage
 from home.themes import DEFAULT_THEME, THEMES
 
 register = template.Library()
@@ -11,24 +10,15 @@ register = template.Library()
 @register.simple_tag(takes_context=True)
 def get_current_theme(context):
     """
-    Returns the Theme object for the current request (derived from
-    the ``page`` value in the context).
+    Returns the Theme object for the current request (retrieved from
+    the site root).
     """
-    page = context.get("page")
-    if isinstance(page, Page):
-        if hasattr(page, "_theme"):
-            return page._theme
-        if hasattr(page, "theme"):
-            if page.theme:
-                return get_theme_from_slug(page.theme)
-            return DEFAULT_THEME
-
-        homepage = HomePage.objects.ancestor_of(page).first()
-        if homepage.theme:
-            theme = get_theme_from_slug(homepage.theme)
-            page._theme = theme
-            return theme
-    return DEFAULT_THEME
+    request = context["request"]
+    site = Site.find_for_request(request)
+    theme = DEFAULT_THEME
+    if site:
+        theme = get_theme_from_slug(site.root_page.specific.theme)
+    return theme
 
 
 def get_theme_from_slug(value):
