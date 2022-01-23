@@ -1,5 +1,4 @@
 from django import template
-from articles.models import FooterPage
 from wagtail.core.models import Site
 from home.models import SiteSettings
 
@@ -14,7 +13,6 @@ def social_media_footer(context, page=None):
     data = {
         "social_media": social_media,
         "request": context["request"],
-        "locale_code": locale,
         "page": page,
     }
     return data
@@ -44,7 +42,6 @@ def social_media_article(context, page=None):
         "facebook": facebook,
         "whatsapp": whatsapp,
         "telegram": telegram,
-        "locale_code": locale,
         "request": context["request"],
     }
     return data
