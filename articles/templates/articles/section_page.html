@@ -2,22 +2,16 @@
 
 {% load wagtailcore_tags wagtailimages_tags article_tags theme_tags static %}
 
-{% block body_class %}section-page{% endblock %}
-    {% breadcrumbs %}
-
-    {% block banner %}
-        {% if brand == 'springster' %}
-            {% include "./springster/section-banners.html" %}
-        {% endif %}
-        
-    {% endblock %}
-
-    {% block content %}
-        {% get_current_theme as theme %}
-        <!-- <p>{{theme.slug}}</p> --> 
-
-        {% if brand == 'springster' %}
-            {% include "./springster/section-body.html" %}
-        {% endif %}
-    {% endblock %}
+{% block content %}
+    {% if theme.slug == 'ninyampinga' %}
+        {% include "./ninyampinga/sectionpage.html" %}
+    {% elif theme.slug == 'springster' %}
+        {% include "./springster/section-banners.html" %}
+        {% include "./springster/section.html" %}
+    {% elif theme.slug == 'yegna' %}
+        yegna
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/section.html" %}
+    {% endif %}
+{% endblock %}
 

@@ -1,0 +1,52 @@
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+{% with post=post.specific %}
+    <div class="teaser-stacklist__item{% if theme.slug == 'springster' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
+        {% if post.image %}
+            <div class="teaser-stacklist__thumbnail">
+                {% image post.image fill-360x160 as article_image %}
+                <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
+                    <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
+                </a>
+            </div>
+        {% endif %}
+
+        <div class="teaser-stacklist__content{% if theme.slug == 'springster' %}{% if post.image %} teaser-stacklist__content--split{% endif %}{% endif %}">
+            {% if theme.slug == 'zathu' %}
+                <h4 class="teaser-stacklist-parent">
+                    {% with parent=post.get_parent %}
+                        <a href="{% pageurl parent %}" class="teaser-stacklist-parent__anchor">
+                            {{parent}}
+                        </a>
+                    {% endwith %}
+                </h4>
+            {% endif %}
+            <a href="{% pageurl post %}" class="teaser-stacklist__anchor">
+                <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
+            </a>
+            <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
+            <div class="teaser-stacklist__cta">
+                <ul class="teaser-tags-list">
+                    {% for tag in post.tags.all %}
+                        <li class="teaser-tags-list__item">
+                            #{{ tag.name}}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% if theme.slug == 'ninyampinga' %}
+                <p class="teaser-stacklist__caption"> 
+                    {% for post_field in post.body %}
+                        {% if post_field.block_type == 'paragraph' %}
+                            {{ post_field|truncatewords:10 }}
+                        {% endif %}
+                    {% endfor %}
+                </p>
+                <a href="{% pageurl post %}" class="call-to-action__submit">
+                    {% trans "Click here" %}
+                </a>
+            {% endif %}
+        </div>  
+    </div>
+{% endwith %}
