@@ -419,7 +419,7 @@ class ForgotPasswordViewTest(TestCase, ProfilesTestCaseMixin):
 
     def test_suspended_user_gets_error(self):
         error_message = (
-            "The username and security question(s) combination " "do not match."
+            "The username and security question(s) combination do not match."
         )
         self.user.is_active = False
         self.user.save()
@@ -436,7 +436,7 @@ class ForgotPasswordViewTest(TestCase, ProfilesTestCaseMixin):
 
     def test_incorrect_security_answer_gets_error(self):
         error_message = (
-            "The username and security question(s) combination " "do not match."
+            "The username and security question(s) combination do not match."
         )
         response = self.client.post(
             reverse("forgot_password"),
