@@ -1,0 +1,50 @@
+//ARTICLE TEASER 
+.teaser-tags-list {
+    &__item {
+        color: $violet;
+        display: inline-block;
+        font-family: 'Baton-Medium';
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 8px 0 0;
+        text-transform: lowercase;
+    }
+
+}
+
+//ARTICLE PAGE TAGS
+.tags-list {
+    margin: 0 auto 18px;
+    padding: 10px;
+    &__item {
+        background: $light_gray_variation2;
+        color: #000;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 5px 0;
+        padding: 5px;
+    }
+}
+
+
+
+
+//TAG CLOUD TAGS
+.tag-cloud {
+    text-align: center;
+    &-list {
+        display: inline-block;
+        padding: 2px 5px;
+        &__item {
+            color: $violet;
+            display: inline-block;
+            font-size: 22px;
+            font-family: 'Baton-Medium';
+            margin: 0 5px;
+            text-decoration: none;
+            text-transform: lowercase;
+        }
+    }
+}
