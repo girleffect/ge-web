@@ -41,5 +41,42 @@
                 }
             }
         }
-    }   
-}
+    }  
+    &__link {
+        color: $violet;
+        cursor: pointer;
+        display: block;
+        font-family: 'Baton-Medium';
+        font-size: 16px;
+        margin: 10px auto 5px;
+        text-align: center;
+        text-transform: uppercase;
+        &--inline {
+            display: inline-block;
+        }
+    }
+    &__submit {
+        background-color: transparent;
+        background-image: url($staticPath + 'img/springster/button-sprite.png');
+        background-position: 0 0;
+        background-size: 1880px 330px;
+        background-repeat: no-repeat;
+        border: none;
+        color: #fff;
+        display: block;
+        font-family: 'Baton-Medium';
+        font-size: 18px;
+        font-weight: 400;
+        height: 40px;
+        margin: 15px auto 0;
+        max-width: 344px;
+        max-height: 40px;
+        padding: 10px 0;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+    }
+    &--profiles {
+        padding: 10px 0;
+    }
+} 

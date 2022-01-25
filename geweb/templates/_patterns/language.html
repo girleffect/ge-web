@@ -1,12 +1,22 @@
-{% load static %}
-<div id="language-bar" class="language">
+{% load static i18n wagtailcore_tags %}
+
+{% for translation in page.get_translations.live %}
+  {% get_language_info for language_code as lang %}
+  {% language language_code %}
+    <a href="{% pageurl page.localized %}" rel="alternate" hreflang="{{ language_code }}">
+      {{ lang.name_local }}
+    </a>
+  {% endlanguage %}
+{% endfor %}
+
+<div id="language-bar" class="languages">
     {% if languages|length > 1 %}
-    <div class="languages languages--fixed-header">
-      <ul class="language-list language-list--standard-center">
+    <div class="languages__wrapper languages--fixed-header">
+      <ul class="languages-list languages-list--standard-center">
       {% for language in languages %}
-        <li class="language-list__item language-list__item--standard-center">
-          <a href="{% url 'locale_set' language.locale %}?next={{request.path}}{% if request.GET.urlencode %}?{{ request.GET.urlencode }}{% endif %}" class="language-list__anchor language-list__anchor-standard-center {% if request.LANGUAGE_CODE == language.locale %} is-active {% endif %}">
-            {{language.locale|language_name_local}}
+        <li class="languages-list__item languages-list__item--standard-center">
+          <a href="{% url 'locale_set' language.locale %}?next={{request.path}}{% if request.GET.urlencode %}?{{ request.GET.urlencode }}{% endif %}" class="languages-list__anchor languages-list__anchor-standard-center {% if request.LANGUAGE_CODE == language.locale %} is-active {% endif %}">
+            {{ language.locale }}
           </a>
         </li>
       {% endfor %}
