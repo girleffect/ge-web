@@ -3,11 +3,15 @@
 {% get_settings %}
 
 {% block content %}
-<div class="profiles">
-    <form method="post" action="{% url 'edit_my_profile' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-    <input type="submit" value="{% trans "Save" %}">
-  </form>
-</div>
+  {% if theme.slug == 'ninyampinga' %}
+    {% include "./ninyampinga/nn_edit-profile.html" %}
+  {% elif theme.slug == 'springster' %}
+    {% include "./springster/edit-profile.html" %}
+  {% elif theme.slug == 'yegna' %}
+
+  {% elif theme.slug == 'zathu' %}
+    {% include "./zathu/za_edit-profile.html" %}
+  {% endif %}
+
+
 {% endblock %}

@@ -3,42 +3,13 @@
 {% get_settings %}
 
 {% block content %}
-  <div class="heading">
-    <h1 class="heading__profiles">
-      {% trans "Hello " %} {{ user.username }}
-    </h1>
-  </div>
-  {% get_current_theme as theme %}
-    <h2>Using theme: {{theme.label}}</h2>
-  <div class="profiles">
-    <div class="profiles__account">
-    {% trans "Not set." as defaultText %}
-    <fieldset>
-      <label>{% trans "Date of Birth: " %}</label>
-      <p class="profiles__description profiles__dob">
-        {% if user.profile.date_of_birth %}
-          {{ user.profile.date_of_birth | date:"M d, Y" }}
-        {% else %}{{defaultText}}{% endif %}
-      </p>
-    </fieldset>
-
-    <fieldset>
-      <label for="id_gender">{% trans "Gender:" %}</label>
-      <p class="profiles__description profiles__gender">
-        {{ user.profile.gender | default:defaultText }}
-      </p>
-    </fieldset>
-
-    <fieldset>
-      <label for="id_location">{% trans "Location:" %}</label>
-      <p class="profiles__description profiles__location">{{ user.profile.location | default:defaultText }}</p>
-    </fieldset>
-
-
-  <div class="call-to-action call-to-action--profiles">
-    <a href="{% url 'auth_logout' %}" class="call-to-action__button call-to-action__button--primary">{% trans "log out" %}</a>
-    <a href="{% url 'edit_my_profile' %}" class="call-to-action__button call-to-action__button--primary">{% trans "Edit My Profile" %}</a>
-    <a href="{% url 'profile_password_change' %}" class="call-to-action__button call-to-action__button--primary">{% trans "Change my pin" %}</a>
-  </div>
-</div>
+  {% if theme.slug == 'ninyampinga' %}
+      {% include "./ninyampinga/profile.html" %} 
+  {% elif theme.slug == 'springster' %}
+    {% include "./springster/viewprofile.html" %}
+  {% elif theme.slug == 'yegna' %}
+    {% include "./yegna/profile.html" %}
+  {% elif theme.slug == 'zathu' %}
+    {% include "./zathu/profile.html" %}
+{% endif %}
 {% endblock %}
