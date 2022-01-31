@@ -16,7 +16,8 @@ def get_current_theme(context):
     site = Site.find_for_request(request)
     theme = DEFAULT_THEME
     if site:
-        theme = get_theme_from_slug(site.root_page.specific.theme)
+        if site.root_page.specific.theme:
+            theme = get_theme_from_slug(site.root_page.specific.theme)
     return theme
 
 

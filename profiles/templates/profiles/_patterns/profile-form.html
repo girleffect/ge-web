@@ -1,0 +1,31 @@
+{% load i18n %}
+
+<form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}}>
+{% csrf_token %}
+    <fieldset>
+        <label for="date_of_birth">{% trans "Date of birth" %}</label>
+        <div class="dropdowns">
+            {{ form.date_of_birth }}
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <label for="id_location">{% trans "Gender" %}</label>
+        {{ form.gender }}
+    </fieldset>
+
+    <fieldset>
+        <label for="id_location">{% trans "Location" %}</label>
+        {{form.location}}
+    </fieldset>
+    {% if theme.slug == 'ninyampinga' or theme.slug == 'default' %}
+        Ninyampinga 
+    {% elif theme.slug == 'springster' %}
+        <input type="submit" value="{% trans 'Save' %}" class="call-to-action__submit"/>
+    {% elif theme.slug == 'yegna' %}
+
+    {% elif theme.slug == 'zathu' %}
+        <input type="submit" value="{% trans 'Update' %}" class="call-to-action__submit"/>
+    {% endif %}
+    
+</form>

@@ -1,0 +1,37 @@
+{% load i18n %}
+
+{% trans "Not set." as defaultText %}
+<div class="profiles__account account">
+    <ul class="account-list">
+        <li class="account-list__item">
+            <h3 class="account-list__label">{% trans "Date of Birth: " %}</h3>
+            <p class="account-list__info account-list__info--dob">
+                {% if user.profile.date_of_birth %}
+                    {{ user.profile.date_of_birth | date:"M d, Y" }}
+                {% else %}
+                    {{defaultText}}
+                {% endif %}
+            </p>
+        </li>
+
+        <li class="account-list__item">
+            <h3 class="account-list__label" for="id_gender">{% trans "Gender:" %}</h3>
+            <p class="account-list__info account-list__info--gender">
+                {{ user.profile.gender | default:defaultText }}
+            </p>
+        </li>
+
+        <li class="account-list__item">
+            <h3 class="account-list__label" for="id_location">{% trans "Location:" %}</h3>
+            <p class="account-list__info account-list__info--location">
+                {{ user.profile.location | default:defaultText }}
+            </p>
+        </li>
+    </ul>
+
+    <div class="call-to-action--profiles">
+        <a href="{% url 'auth_logout' %}" class="call-to-action__submit">{% trans "Log out" %}</a>
+        <a href="{% url 'edit_my_profile' %}" class="call-to-action__link">{% trans "Edit My Profile" %}</a>
+        <a href="{% url 'profile_password_change' %}" class="call-to-action__link">{% trans "Change my pin" %}</a>
+    </div>
+</div>
