@@ -289,7 +289,8 @@ class TestTermsAndConditions(TestCase, ProfilesTestCaseMixin):
     def test_terms_and_conditions_linked_to_terms_and_conditions_page(self):
         response = self.client.get(reverse("user_register"))
         self.assertContains(
-            response, '<a href="/en/footers/terms-footer/">terms footer</a>'
+            response,
+            '<a href="/en/footers/terms-footer/" class="terms_and_conditions-link">',
         )
 
 

@@ -3,8 +3,9 @@
 {% get_settings %}
 
 {% block content %}
+{% get_current_theme as theme %}
   {% if theme.slug == 'ninyampinga' %}
-      {% include "./ninyampinga/profile.html" %} 
+      {% include "./ninyampinga/profile.html" %}
   {% elif theme.slug == 'springster' %}
     {% include "./springster/viewprofile.html" %}
   {% elif theme.slug == 'yegna' %}
