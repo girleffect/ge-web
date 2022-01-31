@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags article_tags theme_tags i18n %}
+{% load wagtailcore_tags article_tags theme_tags i18n comments %}
 
-{% block body_class %}articlepage{% endblock %}
+{% block body_class %}article-page{% endblock %}
 {% block content %}
+
+    {% if brand == 'springster' %}
+    <div class="article-page-inner">
+        {% include "./springster/article.html" %}
+
+        {% if page.tags.all.count %}
+            <div class="tags">
+                <ul class="tags-list">
+                    {% for tag in page.tags.all %}
+                        <li class="tags-list__item">{{ tag.name}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
 
     {% get_current_theme as theme %}
     <h2>Using theme: {{theme.label}}</h2>
@@ -12,30 +26,72 @@
     {% if page.subtitle %}
         <p class="meta">{{ page.subtitle }}</p>
     {% endif %}
-
-    {% include_block page.body %}
-
-    {% if page.tags.all.count %}
-        <div class="tags">
-            <h3>SEO Tags</h3>
-            {% for tag in page.tags.all %}
-                #{{ tag.name}}
-            {% endfor %}
-        </div>
+    {% if user.is_authenticated %}
+        {% get_comment_form for page as form %}
+        <form action="{% comment_form_target %}" method="POST">
+        {% csrf_token %}
+        {{ form.comment }}
+        {{ form.content_type }}
+        {{ form.object_pk }}
+        {{ form.security_hash }}
+        {{ form.timestamp }}
+        <input type="hidden" name="next" value="{{ page.url }}" />
+        <input type="hidden" name="email" value="comment@example.com" />
+        <input type="submit" value="Add comment" id="id_submit" />
+        </form>
+    {% else %}
+        <p>Please <a href="{% url 'auth_login' %}">log in</a> to leave a comment.</p>
     {% endif %}
 
-    {% render_comment_form for page %}
+    {% get_comment_count for page as comment_count %}
+    <p>{{ comment_count }} comments have been posted.</p>
 
-    {% render_comment_list for page %}
+    {% get_comment_list for page as comment_list %}
+    {% for comment in comment_list %}
+    <p>Posted by: {{ comment.user_name }}</p>
+    <p>Comment: {{ comment.comment }}</p>
 
-    <p><a href="{{ page.get_parent.url }}">{% trans 'Return to section' %}</a></p>
-    {% get_next_article page as next_article %}
-    {% if next_article %}
-      {% trans 'Next Article: '%}
-      <p><a href="{{ next_article.url }}">{{ next_article.title }}</a></p>
+    {% get_comment_list for comment as threaded_comment_list %}
+    {% get_comment_count for comment as reply_count %}
+    <p>{{ reply_count }} replies have been posted.</p>
+    {% for threaded_comment in threaded_comment_list %}
+      <p>Posted by: {{ threaded_comment.user_name }}</p>
+      <p>Comment: {{ threaded_comment.comment }}</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        {% get_comment_form for comment as form %}
+        <form action="{% comment_form_target %}" method="POST">
+        {% csrf_token %}
+        {{ form.comment }}
+        {{ form.content_type }}
+        {{ form.object_pk }}
+        {{ form.security_hash }}
+        {{ form.timestamp }}
+        <input type="hidden" name="next" value="{{ page.url }}" />
+        <input type="hidden" name="email" value="comment@example.com" />
+        <input type="hidden" name="parent" value="{{comment.pk}}" />
+        <input type="submit" value="Add comment" id="id_submit" />
+        </form>
+    {% else %}
+        <p>Please <a href="{% url 'auth_login' %}">log in</a> to leave a comment.</p>
     {% endif %}
 
+    <p><a href="/comments/flag/{{ comment.id }}/">Flag comment</a></p>
+    {% endfor %}
+        {% if page.tags.all.count %}
+            <div class="tag-cloud">
+                <h3 class="heading heading__micro">Read more about</h3>
+                <ul class="tag-cloud-list">
+                    {% for tag in page.tags.all %}
+                        <li class="tag-cloud-list__item">#{{ tag.name}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
 
-    <p><a href="{{ page.get_parent.url }}">{% trans 'Return to section'%}</a></p>
-
+        {% include "./patterns/article-teasers-recommendations.html" %}
+        {% include "./patterns/breadcrumbs.html" %}
+    </div>
+    {% endif %}
 {% endblock %}
