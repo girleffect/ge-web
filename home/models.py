@@ -3,8 +3,6 @@ from django.utils.translation import gettext_lazy as _
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
-from wagtail.admin.edit_handlers import (FieldPanel, MultiFieldPanel,
-                                         StreamFieldPanel)
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.core import blocks
 from wagtail.core.fields import StreamField
@@ -16,6 +14,12 @@ from wagtail.search import index
 from articles.models import SectionPage
 from forms.models import FormPage
 from home.themes import THEME_CHOICES
+
+from wagtail.admin.edit_handlers import (  # isort:skip
+    FieldPanel,
+    MultiFieldPanel,
+    StreamFieldPanel,
+)
 
 
 class HomePage(Page):

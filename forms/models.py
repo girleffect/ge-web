@@ -15,20 +15,29 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
-from wagtail.admin.edit_handlers import (FieldPanel, FieldRowPanel,
-                                         InlinePanel, MultiFieldPanel,
-                                         PageChooserPanel, StreamFieldPanel)
 from wagtail.contrib.forms import models as forms_models
 from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 from wagtail.contrib.forms.forms import SelectDateForm
-from wagtail.contrib.forms.models import (AbstractEmailForm, AbstractFormField,
-                                          AbstractFormSubmission)
 from wagtail.contrib.forms.views import SubmissionsListView
 from wagtail.core import blocks
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Orderable, Page
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
+
+from wagtail.admin.edit_handlers import (  # isort:skip
+    FieldPanel,
+    FieldRowPanel,
+    InlinePanel,
+    MultiFieldPanel,
+    PageChooserPanel,
+    StreamFieldPanel,
+)
+from wagtail.contrib.forms.models import (  # isort:skip
+    AbstractEmailForm,
+    AbstractFormField,
+    AbstractFormSubmission,
+)
 
 
 class CustomFormSubmission(AbstractFormSubmission):
@@ -179,7 +188,7 @@ class FormPage(AbstractEmailForm):
 
                 if type(answer) is list:
                     # Answer is a list if the field type is 'Checkboxes'
-                    answer = u", ".join(answer)
+                    answer = ", ".join(answer)
 
                 question_stats = results.get(label, {})
                 question_stats[answer] = question_stats.get(answer, 0) + 1

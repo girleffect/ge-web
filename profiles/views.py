@@ -14,8 +14,13 @@ from django.views.generic.edit import FormView, UpdateView
 from wagtail.core.models import Site
 
 from . import forms
-from .models import (Profile, ProfileSettings, SecurityQuestion,
-                     SecurityQuestionAnswer)
+
+from .models import (  # isort:skip
+    Profile,
+    ProfileSettings,
+    SecurityQuestion,
+    SecurityQuestionAnswer,
+)
 
 
 class RegistrationView(FormView):

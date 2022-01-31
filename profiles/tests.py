@@ -13,10 +13,19 @@ from wagtail.core.models import Page, Site
 from articles.models import FooterIndexPage, FooterPage
 from home.models import HomePage
 
-from .forms import (EditProfileForm, ForgotPasswordForm,
-                    ProfilePasswordChangeForm, RegistrationForm)
-from .models import (Profile, ProfileSettings, SecurityQuestion,
-                     SecurityQuestionAnswer, SecurityQuestionIndexPage)
+from .forms import (  # isort:skip
+    EditProfileForm,
+    ForgotPasswordForm,
+    ProfilePasswordChangeForm,
+    RegistrationForm,
+)
+from .models import (  # isort:skip
+    Profile,
+    ProfileSettings,
+    SecurityQuestion,
+    SecurityQuestionAnswer,
+    SecurityQuestionIndexPage,
+)
 
 
 class ProfilesTestCaseMixin(object):
