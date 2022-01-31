@@ -188,7 +188,7 @@ class FormPage(AbstractEmailForm):
 
                 if type(answer) is list:
                     # Answer is a list if the field type is 'Checkboxes'
-                    answer = u", ".join(answer)
+                    answer = ", ".join(answer)
 
                 question_stats = results.get(label, {})
                 question_stats[answer] = question_stats.get(answer, 0) + 1
