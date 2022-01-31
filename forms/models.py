@@ -1,45 +1,34 @@
-import json
 import datetime
+import json
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.core.serializers.json import DjangoJSONEncoder
-from django.urls import reverse
 from django.db import models
 from django.db.models import Q
 from django.db.models.fields import BooleanField, TextField
 from django.dispatch import receiver
 from django.http import Http404
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from modelcluster.fields import ParentalKey
-
-from wagtail.admin.edit_handlers import (
-    FieldPanel,
-    FieldRowPanel,
-    InlinePanel,
-    MultiFieldPanel,
-    PageChooserPanel,
-    StreamFieldPanel,
-)
+from wagtail.admin.edit_handlers import (FieldPanel, FieldRowPanel,
+                                         InlinePanel, MultiFieldPanel,
+                                         PageChooserPanel, StreamFieldPanel)
+from wagtail.contrib.forms import models as forms_models
+from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
+from wagtail.contrib.forms.forms import SelectDateForm
+from wagtail.contrib.forms.models import (AbstractEmailForm, AbstractFormField,
+                                          AbstractFormSubmission)
+from wagtail.contrib.forms.views import SubmissionsListView
 from wagtail.core import blocks
-from wagtail.core.fields import StreamField
-from wagtail.core.fields import RichTextField
+from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Orderable, Page
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
-from wagtail.contrib.forms import models as forms_models
-from wagtail.contrib.forms.models import (
-    AbstractFormField,
-    AbstractEmailForm,
-    AbstractFormSubmission,
-)
-
-from wagtail.contrib.forms.views import SubmissionsListView
-from wagtail.contrib.forms.forms import SelectDateForm
-from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
 
 
 class CustomFormSubmission(AbstractFormSubmission):

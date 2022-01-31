@@ -1,21 +1,16 @@
 from django.db import models
-
-from wagtail.core.models import Page
-
-from modelcluster.fields import ParentalKey
-from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase
-from wagtail.core.fields import StreamField
-from wagtail.images.edit_handlers import ImageChooserPanel
-from wagtail.core import blocks
-from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.edit_handlers import (
-    FieldPanel,
-    MultiFieldPanel,
-    StreamFieldPanel,
-)
-from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
+from modelcluster.contrib.taggit import ClusterTaggableManager
+from modelcluster.fields import ParentalKey
+from taggit.models import TaggedItemBase
+from wagtail.admin.edit_handlers import (FieldPanel, MultiFieldPanel,
+                                         StreamFieldPanel)
+from wagtail.core import blocks
+from wagtail.core.fields import StreamField
+from wagtail.core.models import Page
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
 
 
 class SectionPage(Page):
