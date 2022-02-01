@@ -15,15 +15,6 @@ from wagtail.admin.edit_handlers import (  # isort:skip
     MultiFieldPanel,
     StreamFieldPanel,
 )
-<<<<<<< HEAD
-from wagtail.contrib.settings.models import BaseSetting, register_setting
-from wagtail.search import index
-from django.utils.translation import gettext_lazy as _
-from home.themes import THEME_CHOICES
-from articles.models import SectionPage, ArticlePage
-from forms.models import FormPage
-=======
->>>>>>> main
 
 
 class HomePage(Page):
