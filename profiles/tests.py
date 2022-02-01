@@ -1,31 +1,31 @@
 # -*- coding: utf-8 -*-
 from datetime import date
+
 from django.contrib.auth.models import User
-from django.core.cache import cache
-from django.urls import reverse
-from django.http import QueryDict
-from django.test import TestCase, Client
 from django.contrib.auth.tokens import default_token_generator
-from .forms import (
-    ForgotPasswordForm,
-    RegistrationForm,
-    ProfilePasswordChangeForm,
+from django.contrib.contenttypes.models import ContentType
+from django.core.cache import cache
+from django.http import QueryDict
+from django.test import Client, TestCase
+from django.urls import reverse
+from wagtail.core.models import Page, Site
+
+from articles.models import FooterIndexPage, FooterPage
+from home.models import HomePage
+
+from .forms import (  # isort:skip
     EditProfileForm,
+    ForgotPasswordForm,
+    ProfilePasswordChangeForm,
+    RegistrationForm,
 )
-from .models import (
+from .models import (  # isort:skip
+    Profile,
+    ProfileSettings,
     SecurityQuestion,
     SecurityQuestionAnswer,
-    Profile,
     SecurityQuestionIndexPage,
-    ProfileSettings,
 )
-from home.models import HomePage
-from articles.models import FooterPage, FooterIndexPage
-from wagtail.core.models import Site
-
-from django.contrib.contenttypes.models import ContentType
-
-from wagtail.core.models import Page
 
 
 class ProfilesTestCaseMixin(object):
@@ -289,7 +289,8 @@ class TestTermsAndConditions(TestCase, ProfilesTestCaseMixin):
     def test_terms_and_conditions_linked_to_terms_and_conditions_page(self):
         response = self.client.get(reverse("user_register"))
         self.assertContains(
-            response, '<a href="/en/footer-pages/terms-and-conditions/">Terms and Conditions</a>'
+            response,
+            '<a href="/en/footers/terms-footer/" class="terms_and_conditions-link">',
         )
 
 

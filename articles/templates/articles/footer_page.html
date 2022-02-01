@@ -2,6 +2,7 @@
 {% load article_tags %}
 
 {% block content %}
+{% get_current_theme as theme %}
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/footer.html" %}
     {% elif theme.slug == 'springster' %}

@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-{% load i18n static wagtailsettings_tags wagtailcore_tags article_tags %}
+{% load i18n static wagtailsettings_tags wagtailcore_tags article_tags theme_tags %}
 {% get_settings %}
 
 
 {% block content %}
+  {% get_current_theme as theme %}
   {% if theme.slug == 'ninyampinga' %}
-    {% include "./ninyampinga/nn_register.html" %} 
-  {% elif theme.slug == 'springster'  or theme.slug == 'default'  %}
-    {% include "./springster/sp_register.html" %}
+    {% include "./ninyampinga/nn_register.html" %}
+  {% elif theme.slug == 'springster' %}
+    {% include "./springster/register.html" %}
   {% elif theme.slug == 'yegna' %}
 
   {% elif theme.slug == 'zathu' %}

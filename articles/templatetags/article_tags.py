@@ -1,6 +1,7 @@
 from django import template
-from articles.models import FooterPage, ArticlePage, SectionPage
-from wagtail.core.models import Site, Page
+from wagtail.core.models import Page, Site
+
+from articles.models import ArticlePage, FooterPage, SectionPage
 
 register = template.Library()
 
