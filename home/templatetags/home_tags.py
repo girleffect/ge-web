@@ -1,5 +1,6 @@
 from django import template
 from wagtail.core.models import Site
+
 from home.models import SiteSettings
 
 register = template.Library()
