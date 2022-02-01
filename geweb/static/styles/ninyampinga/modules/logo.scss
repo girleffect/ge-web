@@ -1,0 +1,32 @@
+.logo {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    z-index: 999999999999;
+    @media (min-width: 991px) {
+        order: 2;
+        width: auto;
+    }
+    &__wrapper {
+        position: relative;
+    }
+    &__anchor {
+        background: url($staticPath + 'img/ninyampinga/ninyampinga-logo.svg') no-repeat center 0/100%;
+        display: block;
+        height: 100px;
+        margin: 0 auto;
+        max-height: 100px;
+        overflow: hidden;
+        position: relative;
+        width: 360px;
+    }
+    &__image {
+        display: block;
+        height: auto;
+        margin: 20px auto;
+        position: relative;
+        width: 76%;
+        z-index: -999;
+    }
+}
