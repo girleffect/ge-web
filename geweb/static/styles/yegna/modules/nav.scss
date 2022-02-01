@@ -1,13 +1,65 @@
 .nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+    @media screen and (min-width: 991px) {
+        width: 80%;
+    }
     &-list {
+        display: inline-block;
+
         &__item {
             display: inline-block;
-            padding: 10px 15px;
         }
         &__anchor {
             color: #000;
+            cursor: pointer;
+            display: block;
             font-size: 16px;
             text-decoration: none;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-transform: capitalize;
+            position: relative;
+            &:before {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100%;
+                content: " ";
+                display: inline-block;
+                margin: 0 10px 0 0;
+                height: 40px;
+                vertical-align: middle;
+                width: 37px;
+            }
+            span {
+                border-bottom: 2px solid transparent;
+            }
+            &:hover span {
+                border-bottom-color: #000;
+            }
         }
     }
+}
+
+#menu:before {
+    background-image: url($staticPath + 'img/yegna/icon-burger.svg'); 
+}
+
+#watch:before {
+    background-image: url($staticPath + 'img/yegna/icon-watch.svg');
+    width: 25px;
+}
+
+#cast:before {
+    background-image: url($staticPath + 'img/yegna/icon-cast.svg');
+}
+
+#listen:before {
+    background-image: url($staticPath + 'img/yegna/icon-listen-black.svg');
+}
+
+#search_label:before {
+    background-image: url($staticPath + 'img/yegna/icon-search.svg');
 }

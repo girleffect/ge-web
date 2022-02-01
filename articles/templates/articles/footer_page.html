@@ -4,11 +4,11 @@
 {% block content %}
 {% get_current_theme as theme %}
     {% if theme.slug == 'ninyampinga' %}
-        {% include "./ninyampinga/footerpage.html" %}
+        {% include "./ninyampinga/footer.html" %}
     {% elif theme.slug == 'springster' %}
         {% include "./springster/footer.html" %}
     {% elif theme.slug == 'yegna' %}
-        {% breadcrumbs %}
+        {% include "./yegna/footer.html" %}
     {% elif theme.slug == 'zathu' %}
         {% include "./zathu/footer.html" %}
     {% endif %}

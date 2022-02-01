@@ -1,0 +1,15 @@
+.banner {
+    &__link {
+        display: block;
+    }
+
+    &__image {
+        border-radius: 5px;
+        height: auto;
+        width: 100%;
+        @media (min-width: 991px) {
+            height: 620px;
+        } 
+    }
+
+}
