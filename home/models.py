@@ -103,9 +103,13 @@ class SiteSettings(BaseSetting):
         blank=True,
         help_text=_("The Google Search Console verification code"),
     )
-    social_media_links_on_footer_page = StreamField([
-        ('social_media_site', SocialMediaLinkBlock()),
-    ], null=True, blank=True)
+    social_media_links_on_footer_page = StreamField(
+        [
+            ("social_media_site", SocialMediaLinkBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
 
     facebook_sharing = models.BooleanField(
         default=False,
