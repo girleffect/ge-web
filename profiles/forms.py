@@ -1,17 +1,14 @@
-from django.utils import timezone
-
-import re
 import datetime
+import re
+
 from django import forms
-from django.forms.widgets import SelectDateWidget
-from django.contrib.auth import authenticate
-from django.contrib.auth import get_user_model
-from django.utils.translation import gettext_lazy as _
 from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.forms.widgets import SelectDateWidget
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
-from wagtail.core.models import Site
-from .models import Profile, ProfileSettings
-
+from .models import Profile
 
 User = get_user_model()
 

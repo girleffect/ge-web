@@ -1,0 +1,21 @@
+.languages {
+    background-color: $light_gray;
+    padding: 0 8px;
+    margin: 0 auto;
+    &-bar {
+        position: relative;
+    }
+    &-list {
+        text-align: center;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $dark_gray;
+            &.is-active {
+                color: $strong_cyan;
+            }
+        }
+    }
+}
+

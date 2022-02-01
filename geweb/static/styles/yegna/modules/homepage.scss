@@ -1,0 +1,24 @@
+.homepage {
+    padding: 20px 10px;
+    @media (min-width: 991px) {
+        padding: 20px 8%;
+    } 
+    &__inner {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__column {
+        &-main {
+            @media (min-width: 991px) {
+                margin-right: 5%;
+                width: 60%;
+            } 
+        }
+        &-side {
+            @media (min-width: 991px) {
+                width: 35%;
+            } 
+        }
+    }
+}

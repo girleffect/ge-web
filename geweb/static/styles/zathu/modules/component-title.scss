@@ -1,0 +1,37 @@
+.component {
+    padding: 25px 8px 15px;
+    text-align: center;
+    &__super {
+        .super-title {
+            color: $dark_violet;
+            font-family: "Berfa";
+            font-size: 32px;
+            font-weight: 400;
+        }
+    }
+    &__anchor,
+    &__subtitle {
+        padding: 10px 0 10px;
+    }
+
+    &__anchor {
+        color: $dark_violet;
+        text-decoration: none;
+        :hover {
+            color: #000;
+        }
+    }
+    
+    .subtitle {
+        padding: 10px 0;
+    }
+    .subheading {
+        padding: 25px 0 5px 0;
+    }
+    .call-to-action__link {
+        padding: 25px 10px;
+    }
+    .heading--title {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,14 @@
+.copyright {
+    color: $dark_gray;
+    font-family: 'Baton-Turbo-Regular';
+    font-size: 12px;
+    padding: 15px;
+    text-align: center;
+    &__text {
+        color: $dark_gray;
+    }
+    &__anchor {
+        color: $dark_gray;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,22 @@
+.header {
+    background-color: $yellow;
+    padding: 5px 8px;
+}
+.menu {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    position: relative;
+    &__anchor {
+        display: block;
+    }
+    &__image {
+        height: auto;
+        max-width: 100px;
+        width: 100%;
+    }
+}
+

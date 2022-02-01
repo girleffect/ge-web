@@ -1,0 +1,38 @@
+{% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
+
+
+<div class="component-title">
+    <div class="component-title__super">
+        <h1 class="heading heading--primary">
+            Yegna launched the first ever teen TV Drama in Ethiopia
+        </h1>
+    </div>
+    {% include "./banner.html" %}
+</div>
+
+
+<div class="homepage">
+    <div class="homepage__inner">
+
+        <div class="homepage__column-main">
+            <div class="heading-full">
+                <h2 class="heading__title">Yegna news</h2>
+            </div>
+
+            <div class="article-teasers">
+                {% for post in articlepages %}
+                    {% if post.feature_in_homepage %}
+                        {% include "../_patterns/article-teasers-listing_inner.html" %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="homepage__column-side">
+            <div class="heading-mid">
+                <h2 class="heading__title">Meet the characters</h2>
+            </div>
+        </div>
+
+    </div>
+</div>
