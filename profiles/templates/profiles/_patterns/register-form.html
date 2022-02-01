@@ -6,7 +6,8 @@
     {% for field in form %}
         <fieldset>
             {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
+            {{ field.label_tag }} 
+            {{ field }}
             {% if field.name == "terms_and_conditions" %}
                 {% if settings.profiles.ProfileSettings.terms_and_conditions %}
                     <a href="{% pageurl settings.profiles.ProfileSettings.terms_and_conditions %}" class="terms_and_conditions-link">
@@ -16,6 +17,7 @@
             {% endif %}
         </fieldset>
     {% endfor %}
-
-    <input type="submit" value="{% trans 'Sign up' %}" class="call-to-action__submit" />
+    <div class="call-to-action">
+        <input type="submit" value="{% trans 'Sign up' %}" class="call-to-action__submit" />
+    </div>
   </form>

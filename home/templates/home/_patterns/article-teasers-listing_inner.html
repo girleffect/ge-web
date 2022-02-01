@@ -34,32 +34,6 @@
                     {% endfor %}
                 </ul>
             </div>
-
-
-            {% if theme.slug == 'ninyampinga' %}
-                {% if forloop.first %}
-                    <p class="teaser-stacklist__caption"> 
-                        {% for post_field in post.body %}
-                            {% if post_field.block_type == 'paragraph' %}
-                                {{ post_field|truncatewords:100 }}
-                            {% endif %}
-                        {% endfor %}
-                    </p>
-                {% else %}
-                    <p class="teaser-stacklist__caption"> 
-                        {% for post_field in post.body %}
-                            {% if post_field.block_type == 'paragraph' %}
-                                {{ post_field|truncatewords:10 }}
-                            {% endif %}
-                        {% endfor %}
-                    </p>
-                {% endif %}
-                {% with parent=post.get_parent %}
-                    <a href="{% pageurl parent %}" class="call-to-action__submit">
-                        {% trans "Click here" %}
-                    </a>
-                {% endwith %}
-            {% endif %}
         </div>  
     </div>
 {% endwith %}
