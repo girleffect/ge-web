@@ -46,6 +46,7 @@ class HomePage(Page):
         forms = FormPage.objects.descendant_of(self).live()
         context["forms"] = forms
 
+        #Ninyampinga featured in homepage adjustment
         section_index = self.get_children().live().first()
         context["section_index"] = section_index
 
