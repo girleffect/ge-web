@@ -1,11 +1,16 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n theme_tags %}
 
 {% block content %}
+{% get_current_theme as theme %}
   {% if theme.slug == 'ninyampinga' %}
+<<<<<<< HEAD
     {% include "./ninyampinga/login.html" %} 
+=======
+    {% include "./ninyampinga/nn_login.html" %}
+>>>>>>> main
   {% elif theme.slug == 'springster' %}
-    {% include "./springster/sp_login.html" %}
+    {% include "./springster/login.html" %}
   {% elif theme.slug == 'yegna' %}
 
   {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
