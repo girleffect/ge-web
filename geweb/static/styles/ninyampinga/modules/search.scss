@@ -1,0 +1,96 @@
+.search {
+    overflow: auto;
+    &__form {
+        margin: 0 auto;
+        overflow: auto;
+        position: relative;
+        width: 80%;
+    }
+    &__checkbox {
+        display: none;
+        visibility: hidden;
+    }
+    &__label {
+        color: $plum;
+        cursor: pointer;
+        display: inline-block;
+        font-size: $standard;
+        text-indent: -70px;
+        text-transform: uppercase;
+        vertical-align: middle;
+        word-break: break-word;
+        word-wrap: break-word;
+        padding: 10px;
+        height: 45px;
+        &:after {
+            background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+            background-repeat: no-repeat;
+            background-position: -17px -55px;
+            background-size: 75px;
+            content: " ";
+            display: inline-block;
+            vertical-align: middle;
+            height: 40px;
+            width: 40px;
+        }
+        &:hover:after, 
+        &:focus:after {
+            background-position: -17px 9px;
+        }
+        &.is-active {
+            background-color: #fff;
+            color: $white;
+            &:after {
+                background-position: -17px 9px;
+            }
+        }
+    }
+    
+    &-dropdown {
+        background-color: $white;
+        box-shadow: 1px 10px 15px -10px #000;
+        height: auto;
+        left: 0;
+        margin: 0 auto;
+        padding: 60px 10% 45px 20%;
+        position: absolute;
+        right: 0;
+        top: 65px;
+        &__label {
+            margin: 0 auto;
+            width: 83%;
+            &:before {
+                background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+                background-repeat: no-repeat;
+                background-position: -15px 8px;
+                background-size: 80px;
+                content: " ";
+                display: inline-block;
+                vertical-align: middle;
+                height: 40px;
+                width: 40px;
+            }
+        }
+        &__title {
+            color: #000;
+            display: inline-block;
+            font-size: $medium_large;
+            font-weight: 100;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+    }
+    
+    &__input {
+        appearance: none;
+        border: 3px solid #e7357c;
+        height: 42px;
+        margin: 0;
+        padding: 5px 5% 5px 5px;
+        width: 100%;
+    }
+    .label {
+        color: #000;
+        display: none;
+    }
+}

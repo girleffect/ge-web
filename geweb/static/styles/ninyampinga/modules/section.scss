@@ -1,0 +1,40 @@
+.section-page {
+    overflow: hidden;
+    &__wrapper {
+        padding: 0 5%;
+    }
+    &__caption {
+        color: #000;
+        display: inline-block;
+        position: relative;
+        &::before {
+            background-image: url($staticPath + 'img/ninyampinga/ShapesSprites.png');
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: 100px;
+            content: "";
+            display: block;
+            height: 80px;
+            width: 100px;
+            position: absolute;
+            top: 0;
+            z-index: -999;
+        }
+    }
+    &__title {
+        background-color: $dark_grey;
+        color: $white;
+        font-size: $medium_small;
+        padding: 0 15px;
+        margin: 10px 15px 0;
+    }
+    &__theme {
+        background-color: $dark_grey;
+        padding: 15px 0;
+    }
+    @each $theme, $color in $themes {
+        &__#{$theme} {
+            background-color: $color;
+        }
+    }
+}

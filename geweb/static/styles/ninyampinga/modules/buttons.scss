@@ -1,0 +1,68 @@
+.call-to-action {
+    $block: unquote("#{&}");
+    @media (min-width: 991px) {
+        padding: 0 0 0 27%;
+    }
+    &__submit {
+        background-color: $pink;
+        box-shadow: 9px 9px 0 0 $vivid_yellow;
+        border: none;
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        margin: 25px 15px 15px 0;
+        overflow: hidden;
+        padding: 8px 15px;
+        text-decoration: none;
+        vertical-align: middle;
+        &:after {
+            display: inline-block;
+            border-top: 7px solid transparent;
+            border-left: 15px solid #fff;
+            border-bottom: 7px solid transparent;
+            content: " ";
+            height: 0;
+            margin: 0 0 0 5px;
+            position: inherit;
+            top: 1px;
+            width: 0;
+        }
+        &:hover {
+            box-shadow: none;
+            color: $vivid_yellow;
+            #{$block}:after {
+                border-left-color: $vivid_yellow;
+            }
+        }
+    }
+
+    &__item {
+        &--search {
+            background-color: #e7357c;
+            background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+            background-repeat: no-repeat;
+            background-position: -12px -52px;
+            background-size: 145%;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            height: 42px;
+            position: absolute;
+            text-indent: -100px;
+            top: 0;
+            right: 0;
+            vertical-align: top;
+            text-decoration: underline;
+            text-underline-position: under;
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: normal;
+            width: 50px;
+        }
+    }
+
+    &__link {
+        color: $pink;
+    }
+    
+}

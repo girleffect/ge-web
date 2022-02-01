@@ -1,24 +1,15 @@
 {% extends "base.html" %}
-
-{% load wagtailcore_tags %}
-
-{% block body_class %}articlepage{% endblock %}
+{% load article_tags %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}
-        <p class="meta">{{ page.subtitle }}</p>
+{% get_current_theme as theme %}
+    {% if theme.slug == 'ninyampinga' %}
+        {% include "./ninyampinga/footer.html" %}
+    {% elif theme.slug == 'springster' %}
+        {% include "./springster/footer.html" %}
+    {% elif theme.slug == 'yegna' %}
+        {% include "./yegna/footer.html" %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/footer.html" %}
     {% endif %}
-
-    {% include_block page.body %}
-
-    {% if page.tags.all.count %}
-        <div class="tags">
-            <h3>SEO Tags</h3>
-            {% for tag in page.tags.all %}
-                #{{ tag.name}}
-            {% endfor %}
-        </div>
-    {% endif %}
-
 {% endblock %}

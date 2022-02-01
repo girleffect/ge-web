@@ -1,8 +1,5 @@
-html, body {
-    margin: 0 auto;
-}
-
-body {
-    font-family: Muli,sans-serif;
-    font-weight: 400;
-}
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600|Heebo:400,500&display=swap');
+@import "./utils/_variables.scss";
+@import "./utils/fonts.scss";
+@import "normalize.scss";
+@import "./modules/**/*.scss";

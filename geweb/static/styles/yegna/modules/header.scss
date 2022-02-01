@@ -1,0 +1,23 @@
+.header {
+    background: $lime_green url($staticPath + 'img/yegna/main-bg.svg') no-repeat center/auto;
+    vertical-align: middle;
+    position: relative;
+    margin: 0 auto;
+    z-index: 9999999;
+
+    position: sticky;
+    transform: translate3d(0,0,0);
+    transition: transform .3s ease 3ms;
+
+    @media (min-width: 991px) {
+        height: 135px;
+    }
+
+    &-wrapper {
+        @media (min-width: 991px) {
+            padding: 10px 8%;
+        }
+    
+    }
+    
+}

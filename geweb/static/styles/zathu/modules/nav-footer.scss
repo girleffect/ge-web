@@ -1,0 +1,44 @@
+.footer-wrapper {
+    display: block;
+    padding: 0 15px;
+
+    .nav {
+        display: block;
+        &-list {
+            &__item {
+                display: block;
+                padding: 8px 0;
+            }
+            &__anchor {
+                font-family: Arial,sans-serif;
+                font-size: $larger;
+                font-weight: 600;
+                text-transform: capitalize;
+                &:hover {
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .footer-nav {
+        .nav-list {
+            &__item {
+                padding: 8px 0;
+            }
+            &__anchor {
+                color: $gray;
+                font-size: $larger;
+                font-weight: 200;
+                text-decoration: none;
+                -webkit-font-smoothing: antialiased;
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+
+

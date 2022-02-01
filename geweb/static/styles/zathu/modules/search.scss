@@ -1,0 +1,31 @@
+.search {
+    &__bar {
+        margin: 0 8px 20px;
+    }
+    &__form {
+        padding: 25px 5px 0;
+        position: relative;
+    }
+    &-radio,
+    &__label {
+        display: none;
+        visibility: hidden;
+    }
+    &__cta {
+        background-color: #fff;
+        background-image: url($staticPath + 'img/zathu/search_grey.png');
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: 17px;
+        border: none;
+        cursor: pointer;
+        height: 38px;
+        position: absolute;
+        right: 5%;
+        text-indent: 125%;
+        width: 48px;
+    }
+    &--footer {
+        padding: 0 0 5px;
+    }
+}

@@ -1,0 +1,9 @@
+html, body {
+    font-family: $notoSans;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body.yegna {
+    background: url($staticPath + 'img/yegna/home-bg.svg') no-repeat center/100%;
+}

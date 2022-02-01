@@ -1,0 +1,22 @@
+{% load wagtailcore_tags %}
+
+<div class="nav">
+    <label for="nav_toggle" class="nav__label toggle">
+        <div class="burger-icon"> 
+            <span class="burger-icon__one"></span>
+            <span class="burger-icon__two"></span>
+            <span class="burger-icon__three"></span>
+        </div>
+        Ibirimo
+    </label>
+    <input type="checkbox" value="toggles" name="toggle" id="nav_toggle" class="nav__checkbox"/>
+
+    {% if user.is_authenticated %}
+        <div class="nav-profile">
+            <a href="{% url 'view_my_profile' %}" class="nav-profile__anchor">Profile</a>
+        </div>
+    {% endif %}
+
+    <!-- NAV/MENU DROPDOWN  -->
+    {% include "./_nav-dropdown.html" %}
+</div>
