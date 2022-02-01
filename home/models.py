@@ -6,7 +6,8 @@ from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from articles.models import SectionPage
+# from wagtail.search import index
+from articles.models import SectionPage, ArticlePage
 from forms.models import FormPage
 from home.themes import THEME_CHOICES
 
