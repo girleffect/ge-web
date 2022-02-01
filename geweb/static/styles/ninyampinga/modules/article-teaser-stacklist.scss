@@ -1,30 +1,47 @@
 //HOMEPAGE ARTICLE TEASERs
-.article-stacklist {
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
-    padding: 15px 70px;
+.article {
+    &-stacklist {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        padding: 15px;
+        @media (min-width: 991px) {
+            padding: 15px 70px;
+        }
+    }
+    &-hero {
+        overflow: auto;
+    }
 }
 
 
 .teaser-stacklist {
-    position: relative;
+    overflow: auto;
+    &__thumbnail {
+        width: 50%;
+        @media (min-width: 991px) {
+            width: auto;
+        }
+    }
+    &__image {
+        height: auto;
+        width: 100%;
+    }
     &__thumbnail,
     &__images {
-        background-color: #ecedef;
         display: inline-block;
-        overflow: hidden;
         margin: 0 30px 0 0;
+        overflow: hidden;
+        @media (min-width: 991px) {
+            height: 250px;
+            width: 430px;
+        }
         &-link {
             display: block;
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
             }
-        }
-        img {
-             height: 250px;
-             width: 430px;
         }
     }
     &__item {
@@ -34,14 +51,16 @@
         margin: 0 0 20px 0;
         width: auto;
         &--full-width {
-            float: left;
-            overflow: hidden;
-            width: 65%;
-            margin: 0 5% 20px 0;
-            .teaser-stacklist__thumbnail img, 
-            .teaser-stacklist__images img {
-                height: auto;
-                width: 100%;
+            @media (min-width: 991px) { 
+                float: left;
+                margin: 0 5% 20px 0;
+                overflow: hidden;
+                width: 65%;
+
+                .teaser-stacklist__image  {
+                    height: auto;
+                    width: 100%;
+                }
             }
         }
     }
@@ -60,5 +79,9 @@
     }
     &__content {
         padding: 15px 0;
+        width: 45%;
+        @media (min-width: 991px) {
+            width: auto;
+        }
     }
  }
