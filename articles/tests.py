@@ -1,10 +1,15 @@
-from django.test import TestCase, RequestFactory
-from home.models import HomePage
-from articles.models import SectionPage, SectionIndexPage, ArticlePage
-from wagtail.core.models import Site
 from django.contrib.contenttypes.models import ContentType
-from wagtail.core.models import Page
-from .templatetags.article_tags import get_next_article, breadcrumbs, section_pages
+from django.test import RequestFactory, TestCase
+from wagtail.core.models import Page, Site
+
+from articles.models import ArticlePage, SectionIndexPage, SectionPage
+from home.models import HomePage
+
+from .templatetags.article_tags import (  # isort:skip
+    breadcrumbs,
+    get_next_article,
+    section_pages,
+)
 
 
 class ArticlesTestCaseMixin(object):

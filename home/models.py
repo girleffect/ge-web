@@ -1,25 +1,29 @@
 from django.db import models
-
-from wagtail.core.models import Page
-
-from modelcluster.fields import ParentalKey
-from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase
-from wagtail.core.fields import StreamField
-from wagtail.images.edit_handlers import ImageChooserPanel
+from django.utils.translation import gettext_lazy as _
+from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.core import blocks
-from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.edit_handlers import (
+from wagtail.core.fields import StreamField
+from wagtail.core.models import Page
+from wagtail.images.edit_handlers import ImageChooserPanel
+
+from articles.models import SectionPage
+from forms.models import FormPage
+from home.themes import THEME_CHOICES
+
+from wagtail.admin.edit_handlers import (  # isort:skip
     FieldPanel,
     MultiFieldPanel,
     StreamFieldPanel,
 )
+<<<<<<< HEAD
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.search import index
 from django.utils.translation import gettext_lazy as _
 from home.themes import THEME_CHOICES
 from articles.models import SectionPage, ArticlePage
 from forms.models import FormPage
+=======
+>>>>>>> main
 
 
 class HomePage(Page):
