@@ -107,10 +107,6 @@ class ArticlePage(Page):
         # Get current article section page
         return self.get_parent()
 
-    def article_sections(self):
-        # Get section pages on an article page
-        return self.get_parent().get_parent().get_children().live()
-
 
 class SectionIndexPage(Page):
     subpage_types = ["SectionPage"]
