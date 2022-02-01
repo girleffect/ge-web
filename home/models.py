@@ -53,9 +53,10 @@ class HomePage(Page):
         articlepages = ArticlePage.objects.live().descendant_of(section_index)
         context["articlepages"] = articlepages
 
-        articlepages_in_menu = ArticlePage.objects.live().in_menu().descendant_of(section_index)
+        articlepages_in_menu = (
+            ArticlePage.objects.live().in_menu().descendant_of(section_index)
+        )
         context["articlepages_in_menu"] = articlepages_in_menu
-
 
         return context
 
