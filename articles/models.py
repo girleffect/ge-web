@@ -103,10 +103,6 @@ class ArticlePage(Page):
         MultiFieldPanel([FieldPanel("feature_in_homepage")], "Featured in Homepage"),
     ]
 
-    def article_parent(self):
-        # Get current article section page
-        return self.get_parent()
-
 
 class SectionIndexPage(Page):
     subpage_types = ["SectionPage"]
