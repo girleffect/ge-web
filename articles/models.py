@@ -1,21 +1,20 @@
 from django.db import models
-
-from wagtail.core.models import Page
-
-from modelcluster.fields import ParentalKey
+from django.utils.translation import gettext_lazy as _
 from modelcluster.contrib.taggit import ClusterTaggableManager
+from modelcluster.fields import ParentalKey
 from taggit.models import TaggedItemBase
-from wagtail.core.fields import StreamField
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.core import blocks
+from wagtail.core.fields import StreamField
+from wagtail.core.models import Page
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.edit_handlers import (
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
+
+from wagtail.admin.edit_handlers import (  # isort:skip
     FieldPanel,
     MultiFieldPanel,
     StreamFieldPanel,
 )
-from wagtail.search import index
-from django.utils.translation import gettext_lazy as _
 
 
 class SectionPage(Page):
@@ -103,14 +102,6 @@ class ArticlePage(Page):
     promote_panels = Page.promote_panels + [
         MultiFieldPanel([FieldPanel("feature_in_homepage")], "Featured in Homepage"),
     ]
-
-    def article_parent(self):
-        # Get current article section page
-        return self.get_parent()
-
-    def article_sections(self):
-        # Get section pages on an article page
-        return self.get_parent().get_parent().get_children().live()
 
 
 class SectionIndexPage(Page):
