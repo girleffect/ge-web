@@ -1,0 +1,64 @@
+//HOMEPAGE ARTICLE TEASERs
+.article-stacklist {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 15px 70px;
+}
+
+
+.teaser-stacklist {
+    position: relative;
+    &__thumbnail,
+    &__images {
+        background-color: #ecedef;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0 30px 0 0;
+        &-link {
+            display: block;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        img {
+             height: 250px;
+             width: 430px;
+        }
+    }
+    &__item {
+        align-items: flex-start;
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 0 20px 0;
+        width: auto;
+        &--full-width {
+            float: left;
+            overflow: hidden;
+            width: 65%;
+            margin: 0 5% 20px 0;
+            .teaser-stacklist__thumbnail img, 
+            .teaser-stacklist__images img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+    &__anchor {
+        text-decoration: none;
+    }
+    &__title {
+        color: #000;
+        font-size: $standard;
+        padding: 10px 0;
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        padding: 5px 0 10px;
+        font-size: $standard;
+    }
+    &__content {
+        padding: 15px 0;
+    }
+ }

@@ -6,7 +6,7 @@ from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from articles.models import SectionPage
+from articles.models import ArticlePage, SectionPage
 from forms.models import FormPage
 from home.themes import THEME_CHOICES
 
@@ -45,6 +45,13 @@ class HomePage(Page):
 
         forms = FormPage.objects.descendant_of(self).live()
         context["forms"] = forms
+
+        # Ninyampinga featured in homepage adjustment
+        section_index = self.get_children().live().first()
+        context["section_index"] = section_index
+
+        articlepages = ArticlePage.objects.live().descendant_of(section_index)
+        context["articlepages"] = articlepages
 
         return context
 

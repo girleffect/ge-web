@@ -36,7 +36,6 @@ class SectionPage(Page):
         blank=True,
         help_text=_("CSS color that should be applied to this section"),
     )
-
     content_panels = Page.content_panels + [
         ImageChooserPanel("image"),
     ]

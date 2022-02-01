@@ -1,0 +1,45 @@
+fieldset {
+    align-self: flex-start;
+    border: none;
+    display: flex;
+    justify-content: initial;
+}
+
+label {
+    font-size: $default;
+    width: 25%;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="week"],
+input[type="date"],
+input[type="month"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+select {
+    background-color: #fff;
+    border-radius: 0;
+    border: 2px solid $pink;
+    display: inline-block;
+    font-size: $default;
+    margin: 0 auto;
+    padding: 10px 0 10px 5px;
+    width: 73%;
+   
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-border-radius: 0;
+    
+    &:focus,
+    &:focus-visible {
+        outline: none; 
+    }
+}

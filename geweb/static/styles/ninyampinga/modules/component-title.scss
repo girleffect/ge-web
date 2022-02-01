@@ -1,0 +1,27 @@
+.component {
+    align-self: flex-start;
+    padding: 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+    &__super {
+       
+        background-image: url( $staticPath + 'img/ninyampinga/shape-one.svg');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 45%;
+        filter: $orange;
+        display: inline-block;
+        height: 75px;
+        margin: 15px 0;
+        padding: 20px 5px;
+        text-align: center;
+    }
+    .super-title {
+        background-color: $vivid_yellow;
+        color: #000;
+        font-size: 31px;
+    }
+    .subtitle {
+        display: inline-block;
+    }
+}

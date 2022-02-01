@@ -1,0 +1,26 @@
+.call-to-action {
+    &__item {
+        &--search {
+            background-color: #e7357c;
+            background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+            background-repeat: no-repeat;
+            background-position: -12px -52px;
+            background-size: 145%;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            height: 40px;
+            position: absolute;
+            right: 0;
+            text-indent: -100px;
+            top: 0;
+            vertical-align: top;
+            text-decoration: underline;
+            text-underline-position: under;
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: normal;
+            width: 50px;
+        }
+    }
+}

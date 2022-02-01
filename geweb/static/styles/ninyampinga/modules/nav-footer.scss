@@ -1,0 +1,31 @@
+.footer {
+    .nav {
+        align-items: flex-start;
+        &-list {
+            display: inline-block;
+            max-width: 250px;
+            vertical-align: top;
+      
+            &__item {
+                display: block;
+                padding: 5px;
+            }
+          
+            &__anchor {
+                color: $light_cyan;
+                display: block;
+                font-size: 16px;
+                overflow: auto;
+                text-decoration: underline;
+                text-transform: uppercase;
+                word-wrap: break-word;
+                word-break: initial;
+            }
+        }
+    }
+
+    .search__form {
+        width: 100%;
+    }
+    
+}

@@ -1,0 +1,19 @@
+.profiles {
+    background-color: $white;
+    &:after {
+        background-image: url($staticPath + 'img/zathu/mw_zig_pattern_30.png');
+        background-position: center;
+        background-repeat: repeat-x;
+        content: '';
+        clear: both;
+        display: block;
+        height: 50px;
+        padding: 0 0 10px 0;
+        overflow: visible;
+        width: 100%;
+    }
+    &__inner {
+        margin: 0 10px;
+        background-color: $very_light_gray;
+    }
+}

@@ -1,0 +1,18 @@
+{% load i18n static wagtailsettings_tags wagtailcore_tags %}
+
+<div class="profiles">
+    <div class="component">
+        <h4 class="subheading">
+            {% trans "Thank you for joining!" %}
+        </h4>
+        <div class="component__subtitle">
+            <p class="subtitle"> {% trans "Let us know your birthday to get access to exclusive content." %}</p>
+        </div>
+    </div>
+    <div class="profiles__inner">
+        {% include "../_patterns/profile-form.html" %}
+        <div class="call-to-action--profiles">
+            <a href="{% url 'view_my_profile' %}" class="call-to-action__link">{% trans "Skip" %}</a>
+        </div>
+    </div>
+</div>

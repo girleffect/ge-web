@@ -1,0 +1,121 @@
+.burger-icon {
+    width: 35px;
+    display: inline-block;
+    padding: 0 10px 0 0;
+    span {
+        background-color: #fff;
+        display: block;
+        margin: 6px 0;
+        height: 5px;
+
+    }
+}
+
+.nav {
+    align-items: center;
+    display: flex;
+    order: 1;
+   
+    &__label {
+        align-items: center;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        font-size: $standard;
+        text-transform: uppercase;
+        padding: 10px 20px 10px 15px;
+        height: 45px;
+        &:before {
+            content: "";
+            display: none;
+            height: 40px;
+            vertical-align: middle;
+            width: 45px;
+        }
+        &:hover,
+        &:focus {
+            color: $pink;
+            .burger-icon span {
+                background-color: $pink;
+            }
+            &:before {
+                display: none;
+            }
+        }
+        &.is-active {
+            background-color: $white;
+            color: $pink;
+            .burger-icon {
+                display: none;
+            }
+            &:before {
+                background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+                background-position: 0 -160px;
+                background-size: 35px;
+                background-repeat: no-repeat;
+                display: block;
+            }
+        }
+    }
+   
+    &__checkbox {
+        display: none;
+        visibility: hidden;
+    }
+
+    &-dropdown {
+        background-color: $white;
+        box-shadow: 1px 10px 15px -10px #000;
+        color: $strong_cyan;
+        height: auto;
+        left: 0;
+        margin: 0 auto;
+        padding: 60px 10% 45px 20%;
+        position: absolute;
+        right: 0;
+        top: 65px;
+    }
+    &-profile {
+        &__anchor {
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: $standard;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 15px;
+            height: 45px;
+            &:before {
+                background-image: url($staticPath + '/img/ninyampinga/iconsSprite.png');
+                background-position: 0 -644px;
+                background-size: 93.3px;
+                background-repeat: no-repeat;
+                content: "";
+                display: inline-block;
+                height: 45px;
+                vertical-align: middle;
+                width: 36px;
+            }
+            &:hover, &:focus {
+                color: $pink;
+                &:before {
+                    background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+                    background-position: -5px -140px;
+                    background-size: 44px;
+                }
+            }
+        }
+    }
+    &-list {
+        &__item {
+            margin: 10px 0;
+        }
+        &__anchor {
+            color: #000;
+            font-size: $medium;
+            text-transform: uppercase;
+        }
+    }
+}
+
+

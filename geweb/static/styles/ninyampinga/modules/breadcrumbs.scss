@@ -1,0 +1,38 @@
+.breadcrumbs {
+    padding: 50px 70px 25px;
+    &-list {
+        list-style-type: none;
+        &__item {
+            color: $gray;
+            display: inline-block;
+            margin: 0;
+            font-size: $medium_small;
+            text-transform: capitalize;
+        }
+       
+        &__anchor {
+            color: $pink;
+            cursor: pointer;
+            font-size: $medium_small;
+            margin: 0;
+            text-decoration: underline;
+            text-underline-position: under;
+            text-transform: capitalize;
+            &:after {
+                color: $pink;
+                content: " ≫ ";
+                display: inline-block;
+                padding: 0 5px;
+            }
+        }
+        &__label {
+            color: $pink;
+            cursor: auto;
+            font-size: $medium_small;
+            margin: 0;
+            text-decoration: none;
+            text-underline-position: under;
+            text-transform: capitalize;
+        }
+    }
+}

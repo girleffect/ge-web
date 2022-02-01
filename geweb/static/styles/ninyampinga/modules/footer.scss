@@ -1,0 +1,11 @@
+.footer {
+    align-items: flex-start;
+    background-color: $plum;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    //margin: -1.5em 0;
+    padding: 3em 5% 1em;
+    position: relative;
+    overflow: auto;
+}

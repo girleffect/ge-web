@@ -20,10 +20,42 @@ Static template solution
 
 ### Assumptions 
 - No javascript restrictions for Freebasics platform.
+\
 
 # Getting Started
 ```
-
 cd ge-web/geweb/
 npm i
 npm run build
+```
+\
+\
+
+## Frontend Template Structure - Docu
+
+This is a living documentation about the frontend template approaches taken by the frontend this project.
+
+#### Table of contents
+* Apps templates & dir structure:-
+    * geweb - Base template themes
+    * brands dir folder
+        * Ninyampinga - Country: Rwanda
+        * Springster - Country: Any
+        * Yegna - Country: Ethiopia
+        * Zathu - Country: Malawi
+* CSS/JS setup & config 
+* Website components 
+    * Web pages 
+        * Homepage
+        * Section pages
+        * Article pages
+        * Comment thread pages [x]
+        * Login / Profile pages [x]
+        * Search (results) pages
+    * Web pages Components
+        * Article teasers 
+        * 
+
+#### CMS
+
+CMS: Homepage root page - Title tag setting is the web homepage title.
