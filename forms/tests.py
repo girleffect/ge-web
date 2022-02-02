@@ -49,7 +49,7 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -69,7 +69,7 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -89,7 +89,7 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -101,7 +101,7 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "bad"},
+            {"how_are_you_feeling": "bad"},
             follow=True,
         )
 
@@ -118,7 +118,7 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -143,7 +143,7 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -155,7 +155,7 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -176,7 +176,7 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -188,7 +188,7 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -213,7 +213,7 @@ class TestShowResults(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -234,7 +234,7 @@ class TestShowResults(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -259,7 +259,7 @@ class TestCustomFormSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, self.form.title)
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
 
@@ -306,7 +306,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
 
         response = self.client.post(
             self.form.url,
-            {self.form_field.label.lower().replace(" ", "_"): "well"},
+            {"how_are_you_feeling": "well"},
             follow=True,
         )
         self.assertContains(response, self.form.title)
@@ -316,7 +316,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
 
         response = self.client.post(
             self.form.url,
-            {field2.label.lower().replace(" ", "_"): "less than 1 glass"},
+            {"how_much_water_have_you_drunk": "less than 1 glass"},
             follow=True,
         )
         self.assertContains(response, self.form.title)
@@ -326,7 +326,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
 
         response = self.client.post(
             self.form.url,
-            {field3.label.lower().replace(" ", "_"): "not enough"},
+            {"what_did_you_eat_today": "not enough"},
             follow=True,
         )
         self.assertContains(response, self.form.title)
