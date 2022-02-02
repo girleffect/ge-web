@@ -29,15 +29,17 @@ from wagtail.contrib.forms.models import (  # isort:skip
 
 
 class CustomFormSubmission(AbstractFormSubmission):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
 
     def get_data(self):
         form_data = super().get_data()
-        form_data.update(
-            {
-                "username": self.user.username,
-            }
-        )
+        for key, value in form_data.items():
+            # Convert lists to strings so they display properly in the view
+            if isinstance(value, list):
+                form_data[key] = u', '.join(value)
+        form_data.update({
+            'username': self.user.username if self.user else 'Anonymous',
+        })
 
         return form_data
 
@@ -193,10 +195,11 @@ class FormPage(AbstractEmailForm):
         return CustomFormSubmission
 
     def process_form_submission(self, form):
+        user = form.user if not form.user.is_anonymous else None
         self.get_submission_class().objects.create(
             form_data=json.dumps(form.cleaned_data, cls=DjangoJSONEncoder),
             page=self,
-            user=form.user,
+            user=user,
         )
 
     @property
@@ -288,7 +291,6 @@ class FormPage(AbstractEmailForm):
             context["form"] = form
             context["fields_step"] = step
             return render(request, self.template, context)
-
         return super().serve(request, *args, **kwargs)
 
     def get_form_class_for_step(self, step):
