@@ -45,10 +45,10 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         """
         self.assertFalse(self.form.allow_anonymous_submissions)
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -65,10 +65,10 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.form.allow_anonymous_submissions = True
         self.form.save_revision().publish()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -85,10 +85,10 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.form.allow_anonymous_submissions = True
         self.form.save_revision().publish()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -97,10 +97,10 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, "Thank you")
         self.assertEqual(CustomFormSubmission.objects.count(), 1)
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "bad"},
             follow=True,
         )
@@ -114,10 +114,10 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         self.form.save_revision().publish()
 
         self.login()
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -139,10 +139,10 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.assertFalse(self.form.allow_multiple_submissions_per_user)
         self.login()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -151,10 +151,10 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, "Thank you")
         self.assertEqual(CustomFormSubmission.objects.count(), 1)
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -172,10 +172,10 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.form.save_revision().publish()
         self.login()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -184,10 +184,10 @@ class TestMultipleSubmission(TestCase, FormsTestCaseMixin):
         self.assertContains(response, "Thank you")
         self.assertEqual(CustomFormSubmission.objects.count(), 1)
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -209,10 +209,10 @@ class TestShowResults(TestCase, FormsTestCaseMixin):
         self.assertFalse(self.form.show_results)
         self.login()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -230,10 +230,10 @@ class TestShowResults(TestCase, FormsTestCaseMixin):
         self.form.save_revision().publish()
         self.login()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -255,10 +255,10 @@ class TestCustomFormSubmission(TestCase, FormsTestCaseMixin):
         """
         self.login()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -274,6 +274,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
 
     def test_multi_step_forms_serve_one_page_per_question(self):
         """
+        Failing
         If the flag is set then forms should be served to the user one
         question at a time
         """
@@ -298,14 +299,14 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         self.form.save_revision().publish()
         self.login()
 
-        response = self.client.get(self.form.url)
+        response = self.client.get("/en/forms/health-check/")
         self.assertContains(response, self.form.title)
         self.assertContains(response, self.form_field.label)
         self.assertNotContains(response, field2.label)
         self.assertNotContains(response, field3.label)
 
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -315,7 +316,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         self.assertNotContains(response, field3.label)
 
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"how_much_water_have_you_drunk": "less than 1 glass"},
             follow=True,
         )
@@ -325,7 +326,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         self.assertContains(response, field3.label)
 
         response = self.client.post(
-            self.form.url,
+            "/en/forms/health-check/",
             {"what_did_you_eat_today": "not enough"},
             follow=True,
         )
