@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<div class="profiles">
+    <div class="component">
+        <div class="component__super">
+            <h1 class="super-title">{% trans "Sign up" %}</h1>
+        </div>
+    
+        <div class="component__subtitle">
+            <p class="subtitle">{% trans "Not a member yet? Join us by signing up below." %}</p>
+        </div>
+    </div>
+    <div class="profiles__inner">
+        {% include "./_patterns/za_register-form.html" %}
+        <div class="call-to-action--profiles">
+            <a href="{% url 'auth_login' %}" class="call-to-action__link">{% trans "Already joined?" %}</a>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,10 @@
 {% load wagtailcore_tags article_tags static %}
-<footer class="footer">
-    <div class="footer__springster">
-        {% include "../patterns/search-input.html" with enhance="footer" %}
-        <div class="footer-nav">
-            {% include "../patterns/nav.html" with suffix="springster" %}
-            {% include "../patterns/footer-nav.html" with suffix="springster" %}
+<footer id="footer" class="footer">
+    <div class="footer__inner">
+        {% include "../_patterns/search-input.html" with enhance="footer" %}
+        <div class="footer-menu">
+            {% include "../_patterns/nav.html" with suffix="springster" %}
+            {% include "../_patterns/footer-nav.html" with suffix="springster" %}
         </div>
     </div>
     
@@ -35,7 +35,7 @@
     <div class="copyright">
         <p class="copyright__text">
             © 2021 Springster. All Rights Reserved.
-            <a href="/footer-pages/terms-conditions/" class="copyright__anchor">
+            <a href="/en/footer-pages/terms-and-conditions/" class="copyright__anchor">
                 Terms &amp; Conditions
             </a>
         </p>

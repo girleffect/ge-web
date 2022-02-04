@@ -1,0 +1,20 @@
+.account {
+    padding: 0 10px;
+    text-align: center;
+    &-list {
+        &__item {
+            display: block;
+            margin: 0 0 15px;
+        }
+        &__label {
+            color: $dark_violet;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        &__info {
+            display: inline-block;
+            color: $dark_violet;
+        }
+    }
+}

@@ -1,9 +1,9 @@
 .header {
-    padding: 10px 10px 5px;
+    margin: 0 auto;
+    max-width: 360px;
     &-wrapper {
         background-color: $violet;
-        margin: 0 auto;
-        max-width: 360px;
+        padding: 10px 10px 5px;
         position: relative;
         outline: 0;
     }

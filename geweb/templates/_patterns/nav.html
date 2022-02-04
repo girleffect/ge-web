@@ -1,0 +1,45 @@
+{% load wagtailcore_tags %}
+
+<nav class="nav nav--{{suffix}}">
+    <ul class="nav-list nav-list--{{suffix}}">
+        <li class="nav-list__item nav-list__item--{{suffix}}">
+            <a href="/" class="nav-list__anchor nav-list__{{suffix}} selected">Home</a>
+        </li>
+
+        {% with sections_one=page.get_parent %}
+            {% with sections_two=sections_one.get_parent %}
+                {% with sections_footer=sections_two.get_children.live %}
+                
+                    {% if sections and sections_one|slugify == 'root' %} 
+                        <!-- Homepage Menu => {{ sections }} -->
+                        {% for section in sections %}
+                            {% include "./_sections.html" %}
+                        {% endfor %}
+                    {% elif sections_one|slugify == 'sections'  %} 
+                        <!-- Sectionpage Menu => {{ sections_one|slugify }} + {{ sections_one.get_children.live }}<br/> -->
+                        {% for section in sections_one.get_children.live %}
+                            {% include "./_sections.html" %}
+                        {% endfor %}
+                    {% elif sections_two|slugify == 'sections'  %} 
+                        <!-- Articlepage Menu >:{{ sections_two|slugify }} + {{ sections_two.get_children.live }}<br/> -->
+                        {% for section in sections_two.get_children.live %}
+                            {% include "./_sections.html" %}
+                        {% endfor %}
+                    
+                    {% elif sections_footer.0|slugify == 'sections' %} 
+                        <!-- Footerpage Menu => {{ sections_footer.0.get_children.live }} -->
+                        {% for section in sections_footer.0.get_children.live %}
+                            {% include "./_sections.html" %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- 
+                        Excluded 
+                        * Profile pages 
+                        *
+                    -->
+                {% endwith %} 
+            {% endwith %}
+        {% endwith %}
+    </ul>
+</nav>

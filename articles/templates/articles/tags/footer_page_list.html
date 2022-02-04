@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 
 {% for footer in footers %}
-    <p>
-        <a href="{% pageurl footer %}">{{ footer.title }}</a>
-    </p>
+    <li class="nav-list__item">
+        <a href="{% pageurl footer %}" class="nav-list__anchor">{{ footer.title }}</a>
+    </li>
 {% endfor %}

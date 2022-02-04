@@ -1,57 +1,47 @@
-.article-page {
-    &-inner {
-        background: #fff;
-        padding: 15px 0 20px;
-        max-width: 360px;
-        margin: 0 auto;
+.article {
+    &-heading {
+        font-family: 'Baton-Regular';
+        padding: 25px 8px 15px;
+        text-align: center;
+        .heading__primary {
+            color: $very_dark_gray_blue;
+            font-size: 32px;
+            font-weight: 400;
+        }
     }
-    &__body {
-        background: #fff url($staticPath + 'img/springster/sharpie-underline.png') no-repeat 50% 98%/122px;
-        padding: 0 0 25px;
-    }
-    &__recommendations {
-        padding: 20px 0 0;
-    }
-}
 
-.block-paragraph {
-    font-size: 18px;
-    padding: 10px 10px 20px;
-    p {
-        margin-bottom: 20px;
-        padding: 0 10px;
-    }
-}
-
-
-.tags-list {
-    margin: 0 auto 18px;
-    padding: 10px;
-    &__item {
-        background: $light_gray_variation2;
-        color: #000;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 13px;
-        line-height: 1.5;
-        margin: 5px 0;
-        padding: 5px;
-    }
-}
-
-.tag-cloud {
-    text-align: center;
-    &-list {
-        display: inline-block;
-        padding: 2px 5px;
-        &__item {
-            color: $violet;
-            display: inline-block;
-            font-size: 22px;
-            font-family: 'Baton-Medium';
-            margin: 0 5px;
-            text-decoration: none;
-            text-transform: lowercase;
+    &-page {
+        &-inner {
+            background: #fff;
+            padding: 15px 0 20px;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        &__body {
+            background: #fff url($staticPath + 'img/springster/sharpie-underline.png') no-repeat 50% 99%/122px;
+            padding: 0 0 25px;
+        }
+        &__recommendations {
+            padding: 30px 0 0;
         }
     }
 }
+
+.block {
+    &-paragraph {
+        font-size: 18px;
+        padding: 10px;
+        p {
+            margin: 5px 0;
+        }
+    }
+
+    &-image {
+        overflow: auto;
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }    
+}
+

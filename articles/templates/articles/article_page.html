@@ -2,10 +2,14 @@
 
 {% load wagtailcore_tags article_tags theme_tags i18n comments %}
 
-{% block body_class %}article-page{% endblock %}
 {% block content %}
 
     {% if brand == 'springster' %}
+    {% endif %}
+{% get_current_theme as theme %}
+    {% if theme.slug == 'ninyampinga' %}
+    {% include "./ninyampinga/articlepage.html" %}
+    {% elif theme.slug == 'springster' %}
     <div class="article-page-inner">
         {% include "./springster/article.html" %}
 
@@ -19,8 +23,6 @@
             </div>
         {% endif %}
 
-    {% get_current_theme as theme %}
-    <h2>Using theme: {{theme.label}}</h2>
   {% breadcrumbs %}
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}
@@ -93,5 +95,9 @@
         {% include "./patterns/article-teasers-recommendations.html" %}
         {% include "./patterns/breadcrumbs.html" %}
     </div>
+    {% elif theme.slug == 'yegna' %}
+        {% breadcrumbs %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/article.html" %}
     {% endif %}
 {% endblock %}

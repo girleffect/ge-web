@@ -1,0 +1,15 @@
+.copyright {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 991px) {
+        padding: 10px 8%;
+    } 
+
+    &__text {
+        color: #000;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    
+}
