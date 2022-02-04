@@ -1,6 +1,3 @@
-from django.contrib.admin.views.main import ChangeList
-from django.contrib.contenttypes.models import ContentType
-from django.templatetags.static import static
 from django.urls import path, reverse
 from django.utils.html import format_html
 from django_comments.models import CommentFlag
