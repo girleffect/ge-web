@@ -17,9 +17,8 @@ class CommentAdmin(ModelAdmin):
     menu_order = 200
     add_to_settings_menu = False
     index_view_extra_js = [
-        "js/admin.js",
+        "js/admin/comments_index.js",
     ]
-    exclude_from_explorer = False
     list_display = (
         "user_name",
         "site",
