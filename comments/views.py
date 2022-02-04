@@ -35,5 +35,7 @@ class AdminCommentReplyView(FormView, ContextMixin):
         return kwargs
 
     def form_valid(self, form, *args, **kwargs):
+        comment = form.get_comment_object()
+        comment.save()
         messages.success(self.request, "Comment Reply Successfully Posted")
         return super().form_valid(form, *args, **kwargs)
