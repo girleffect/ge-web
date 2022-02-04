@@ -7,6 +7,7 @@ from django_comments.models import CommentFlag
 from threadedcomments.models import ThreadedComment
 from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
 from wagtail.core import hooks
+from wagtail.admin.edit_handlers import MultiFieldPanel, FieldPanel
 
 from .views import AdminCommentReplyView
 
@@ -44,6 +45,12 @@ class CommentAdmin(ModelAdmin):
     list_filter = ("site", "submit_date", "is_public", "is_removed")
     search_fields = ("user", "comment")
     export_filename = "comments"
+    panels = [
+        MultiFieldPanel([
+            FieldPanel('is_public'),
+            FieldPanel('is_removed'),
+        ])
+    ]
 
     def flags(self, obj):
         return CommentFlag.objects.filter(comment=obj).count()
