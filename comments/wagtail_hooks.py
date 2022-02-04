@@ -2,9 +2,9 @@ from django.urls import path, reverse
 from django.utils.html import format_html
 from django_comments.models import CommentFlag
 from threadedcomments.models import ThreadedComment
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
 from wagtail.core import hooks
-from wagtail.admin.edit_handlers import MultiFieldPanel, FieldPanel
 
 from .views import AdminCommentReplyView
 
