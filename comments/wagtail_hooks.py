@@ -88,55 +88,6 @@ class CommentAdmin(ModelAdmin):
 
     parent_comment.allow_tags = True
 
-    def get_changelist(self, request):
-        class ModeratorChangeList(ChangeList):
-            def get_queryset(self, request):
-                """
-                Used by AdminModeratorMixin.moderate_view to somewhat hackishly
-                limit comments to only those for the object under review, but
-                only if an obj attribute is found on request (which means the
-                mixin is being applied and we are not on the standard
-                changelist_view).
-                """
-                qs = super(ModeratorChangeList, self).get_queryset(request)
-                obj = getattr(request, "obj", None)
-                if obj:
-                    ct = ContentType.objects.get_for_model(obj)
-                    qs = qs.filter(content_type=ct, object_pk=obj.pk)
-                return qs
-
-            def get_results(self, request):
-                """
-                Create a content_type map to individual objects through their
-                id's to avoid additional per object queries for generic
-                relation lookup (used in CommentAdmin.content method).
-                Also create a comment_reply map to avoid additional reply
-                lookups per comment object
-                (used in CommentAdmin.moderator_reply method)
-                """
-                super(ModeratorChangeList, self).get_results(request)
-                comment_ids = []
-                object_pks = []
-
-                results = list(self.result_list)
-                for obj in results:
-                    comment_ids.append(obj.id)
-                    object_pks.append(obj.object_pk)
-
-                ct_map = {}
-                for obj in results:
-                    if obj.content_type not in ct_map:
-                        ct_map.setdefault(obj.content_type, {})
-                        for (
-                            content_obj
-                        ) in obj.content_type.model_class()._default_manager.filter(
-                            pk__in=object_pks
-                        ):
-                            ct_map[obj.content_type][content_obj.id] = content_obj
-                self.model_admin.ct_map = ct_map
-
-        return ModeratorChangeList
-
 
 modeladmin_register(CommentAdmin)
 
@@ -145,7 +96,7 @@ modeladmin_register(CommentAdmin)
 def register_comments_admin_reply_url():
     return [
         path(
-            "comment/(<int:parent>)/reply/",
+            "comment/<int:parent>/reply/",
             AdminCommentReplyView.as_view(extra_context={"parent": "<int:parent>"}),
             name="comments-admin-reply",
         ),
