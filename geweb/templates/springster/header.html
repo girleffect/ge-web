@@ -5,7 +5,7 @@
             <ul class="menu-list">
                 <li id="profile" class="menu-list__item">
                     {% if not user.is_authenticated %}
-                        <a  href="{% url 'auth_login' %}" class="menu-list__anchor">
+                        <a  href="{% url 'user_register' %}" class="menu-list__anchor">
                             Sign up
                         </a>
                     {% else %}

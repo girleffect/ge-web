@@ -32,23 +32,33 @@ const menuLinksFooter = document.querySelectorAll('.footer-nav-list p a')
     })
 
 const menuLinks = document.querySelectorAll('.nav-list__anchor')
-    for(let i = 0; i < menuLinks.length; i++) {
-        menuLinks[i].addEventListener('click', function(e) {
-            //e.preventDefault()
-            const $this = e.target         
-            menuLinks.forEach(function(item, i) {
-                item.classList.remove('selected')    
-                if ($this.classList.length > 1) {
-                    document.querySelectorAll(`.${$this.classList[1]}`).forEach(function(elems, i) {
-                        elems.classList.add('selected')
-                    })
-                } else {
-                    $this.classList.add('selected')
-                }
-            })
-           
+
+let selectedLink = sessionStorage.getItem('curLink')
+
+for(let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', function(e) {
+        const $this = e.target  
+        
+        sessionStorage.setItem('curLink', $this.classList[1])
+        menuLinks.forEach(function(item) {
+            item.classList.remove('selected')
         })
-    }
+    
+    })
+}
+
+if (selectedLink) {
+    if (selectedLink !== 'nav-list__springster') 
+        document.querySelector('.nav-list__springster').classList.remove('selected')
+    document.querySelector(`.${selectedLink}`).classList.add('selected')
+} else {
+    let pathName = window.location.pathname.split('/')    
+    let pathNameFilter = pathName.filter(item => item !== '')
+
+    sessionStorage.setItem('curLink', pathNameFilter[2] ? 'nav-list__' + pathNameFilter[2] : 'nav-list__springster')
+
+    document.querySelector(pathNameFilter[2] ? '.nav-list__' + pathNameFilter[2] : '.nav-list__springster').classList.add('selected')
+}
 
 
 
