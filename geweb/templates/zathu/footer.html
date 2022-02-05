@@ -8,6 +8,19 @@
             {% include "../_patterns/nav.html" with suffix="zathu" %}
             {% include "../_patterns/footer-nav.html" with suffix="zathu" %}
         </div>
+        <div class="nav-list nav-list--footer-profiles">
+            <div class="nav-list__item">
+                <a href="{% url 'auth_login' %}" class="nav-list__anchor">Log in</a>
+            </div>
+            <div class="nav-list__item">
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'user_register' %}" class="nav-list__anchor">Sign up</a>
+                {% else %}
+                    <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">Profile</a>
+                {% endif %}
+            </div>
+           
+        </div>
     </div>
 
     <!-- TO BE DYNAMICALLY PULLED THROUGH -->

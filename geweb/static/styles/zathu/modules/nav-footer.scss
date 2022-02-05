@@ -21,6 +21,7 @@
             }
         }
     }
+
     .footer-nav {
         .nav-list {
             &__item {
@@ -36,8 +37,14 @@
                     color: #000;
                 }
             }
+            &--footer-profiles {
+                .nav-list__item {
+                    display: inline-block;
+                }
+            } 
         }
     }
+
 }
 
 
