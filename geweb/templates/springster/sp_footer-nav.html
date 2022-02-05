@@ -1,0 +1,19 @@
+{% load wagtailcore_tags article_tags static %}
+
+<nav class="footer-nav footer-nav--springster">
+    <ul class="nav-list">
+        {% footer_pages %}
+        {% if not user.is_authenticated %}
+            <li class="nav-list__item">
+                <a href="{% url 'user_register' %}" class="nav-list__anchor">Join us</a>
+            </li>
+        {% else %}
+            <li class="nav-list__item">
+                <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">Profile</a>
+            </li>
+        {% endif %}
+        <li class="nav-list__item">
+            <a href="{% url 'auth_login' %}" class="nav-list__anchor">Log in</a>
+        </li>
+    </ul>
+</nav>
