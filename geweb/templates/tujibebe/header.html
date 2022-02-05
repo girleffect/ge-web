@@ -1,2 +1,37 @@
+{% load wagtailcore_tags article_tags static %}
+
 <!-- LANGUAGES DO NOT WORK IN PROFILES -->
 {% include "../_patterns/language.html" %}
+
+<div id="header" class="header">  
+    <header id="header-wrapper" class="header-wrapper">
+        <div class="menu">
+            <ul class="menu-list">
+                <li id="profile" class="menu-list__item">
+                    {% if not user.is_authenticated %}
+                        <a  href="{% url 'user_register' %}" class="menu-list__anchor">
+                            Sign up
+                        </a>
+                    {% else %}
+                        <a  href="{% url 'view_my_profile' %}" class="menu-list__anchor">
+                            Profile
+                        </a>
+                    {% endif %}
+                </li>
+                <li class="menu-list__item">
+                    <a href="/" class="menu-list__anchor logo logo--center">
+                        <img alt="Tujibebe" src="{% static 'img/tujibebe/tujibebe_white.svg' %}" width="115" height="35"  >
+                    </a>
+                </li>
+                <li id="search" class="menu-list__item">
+                    <a class="menu-list__anchor">
+                        <label for="search-toggle">Search</label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        {% include "../_patterns/search-input.html" with enhance="header" %}
+        {% include "../_patterns/nav.html" with suffix="springster" %}
+    </header>
+</div>

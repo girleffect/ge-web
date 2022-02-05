@@ -1,0 +1,80 @@
+.nav {
+    overflow: auto;
+    padding: 10px 8px 5px;
+    &-list {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &__item {
+            display: inline-block;
+            padding: 0 14px 0 0;
+        }
+        &__anchor {
+            color: $white;
+            border-bottom: 2px solid transparent;
+            display: block;
+            font-weight: normal; 
+            font-size: 18px;
+            font-style: normal;
+            text-decoration: none;
+            &:hover,
+            &.selected {
+                border-bottom-color: $white;
+            }  
+        }
+    }
+}
+
+.menu {
+    overflow: auto;
+    text-align: center;
+    &-list {
+        align-items: center;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $white;
+            display: block;
+            text-decoration: none;
+        }
+    } 
+}
+
+#profile, 
+#search {
+    background-image: url($staticPath + 'img/tujibebe/icon-sprite.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 245px;
+}
+
+#profile {
+    cursor: pointer;
+    height: 25px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    vertical-align: middle;
+    text-indent: 120%;
+    .menu-list__anchor {
+        padding: 10px 0;
+    }
+}
+
+#search {
+    background-position: 0 -177px;
+    cursor: pointer;
+    text-indent: 120%;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    padding: 0;
+    height: 25px;
+}

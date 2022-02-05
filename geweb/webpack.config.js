@@ -8,6 +8,7 @@ module.exports = {
     entry: {
         ninyampinga: path.join(__dirname, 'static/js', 'ninyampinga.js'),
         springster: path.join(__dirname, 'static/js', 'springster.js'),
+        tujibebe: path.join(__dirname, 'static/js', 'tujibebe.js'),
         yegna: path.join(__dirname, 'static/js', 'yegna.js'),
         zathu: path.join(__dirname, 'static/js', 'zathu.js'),
     },
