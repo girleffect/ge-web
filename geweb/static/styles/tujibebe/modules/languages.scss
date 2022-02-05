@@ -1,0 +1,41 @@
+.languages {
+    padding: 5px 8px;
+    margin: 0 auto;
+    &-bar {
+        position: relative;
+    }
+    &-list {
+        text-align: center;
+        &__item {
+            display: inline-block;
+            margin: 0 3px 0;
+        }
+        &__anchor {
+            font-size: 12px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+}
+
+/*
+    CSS TOOGLE LOADED LANGUAGES
+*/
+
+$fr: 'fr';
+$en: 'en';
+
+@if $fr  {
+    .languages-list__anchor[rel=fr]:lang(fr) {
+      
+    }
+} 
+
+@if $en {
+    .languages-list__anchor[rel=en]:lang(en) {
+        
+    }    
+}
+
+
+
