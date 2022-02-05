@@ -11,7 +11,7 @@
             <div class="teaser-stacklist__item{% if next_article.image %} teaser-stacklist__item--split{% endif %}">
                 {% if next_article.image %}
                     <div class="teaser-stacklist__thumbnail">
-                        {% image next_article.image fill-360x160 as article_image %}
+                        {% image next_article.image max-360x200 as article_image %}
                         <a href="{{ next_article.url }}" class="teaser-stacklist__thumbnail-link">
                             <img alt="{{ next_article.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
                         </a>
