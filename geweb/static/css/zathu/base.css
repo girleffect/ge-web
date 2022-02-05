@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@400;500;600;700&display=swap');
 html, body {
     background-color: #333333;
-    font-family: Arial, sans-serif;
+    font-family: 'Signika', Arial, sans-serif;
 }
 
 body.zathu {
@@ -61,7 +62,6 @@ a {
 .nav-list__anchor {
     color: #412a83;
     cursor: pointer;
-    font-family: "Berfa";
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -82,8 +82,7 @@ a {
 .teaser-stacklist__title {
     color: #412a83;
     font-size: 20px;
-    font-family: "Berfa";
-    font-weight: 400;
+    font-weight: 700;
     margin: 0 0 15px 0;
     text-transform: uppercase;
 }
