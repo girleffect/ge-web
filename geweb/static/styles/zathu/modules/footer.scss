@@ -10,9 +10,15 @@
         padding: 0 0 5px;
     }
     &-languages {
+        padding: 0 13px;
+    }
+    .languages {
         padding: 20px 15px 5px;
         &-list {
-            display: inline-block;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
             &__item {
                 display: inline;
             }
@@ -24,10 +30,8 @@
                 color: $dark_gray;
                 font-size: $small;
                 padding: 0 5px 0 0;
-                &.is-active {
-                    color: $strong_cyan;
-                    text-decoration: underline;
-                }
+                text-decoration: none;
+                text-transform: capitalize;
             }
         }
     }

@@ -1,5 +1,13 @@
 import "../styles/zathu/zathu.scss";
 
+const pathName = window.location.pathname.split('/'),   
+    pathNameFilter = pathName.filter(item => item !== ''),
+    urlPathLang = pathNameFilter[0],
+    htmlTag = document.getElementsByTagName('html')[0]
+
+ htmlTag.setAttribute('lang', urlPathLang) 
+
+
 
 /**
  * Forms
