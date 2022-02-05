@@ -1,7 +1,13 @@
 .article-page {
     background-color: $white;
     &__inner {
-        padding: 0 15px;
+        overflow: auto;
+        .heading {
+            padding: 0 15px;
+        }
+        .block-paragraph {
+            padding: 15px;
+        }
     }
     &__recommendations {
         .teaser-stacklist {
@@ -28,3 +34,4 @@
         }
     }
 }
+
