@@ -40,7 +40,7 @@
         cursor: pointer;
         font-weight: 400;
         font-size: 12px;
-        right: 15px;
+        right: 10px;
         height: 30px;
         padding: 0;
         position: absolute;
@@ -50,7 +50,7 @@
     }
     &--header {
         #{$block}__bar { 
-            margin: 15px 0 10px;
+            margin: 15px 15px 10px;
         }
         .search-radio {
             position: absolute;
