@@ -22,3 +22,29 @@ import "../styles/tujibebe/tujibebe.scss";
         //elemHeaderSearchToggle.style.backgroundPosition = '0 -177px'
     }
 })
+
+/**
+ * Menu active class for sections menu across header & footer at once AND footer menu
+ */
+ const menuLinks = document.querySelectorAll('.nav-list__anchor')
+ let selectedLink = sessionStorage.getItem('curLink')
+ 
+ for(let i = 0; i < menuLinks.length; i++) {
+     menuLinks[i].addEventListener('click', function(e) {
+         const $this = e.target  
+         sessionStorage.setItem('curLink', $this.classList[1])
+     })
+ }
+ 
+ if (selectedLink) {
+     if (selectedLink !== 'nav-list__tujibebe') {
+         document.querySelectorAll('.nav-list__tujibebe').forEach(item => item.classList.remove('selected'))
+     }
+     document.querySelectorAll(`.${selectedLink}`).forEach(item => item.classList.add('selected'))
+ } else {
+     let pathName = window.location.pathname.split('/')    
+     let pathNameFilter = pathName.filter(item => item !== '')
+     sessionStorage.setItem('curLink', pathNameFilter[2] ? 'nav-list__' + pathNameFilter[2] : 'nav-list__tujibebe')
+     document.querySelectorAll(pathNameFilter[2] ? '.nav-list__' + pathNameFilter[2] : '.nav-list__springster').forEach(item => item.classList.add('selected'))
+ }
+ 

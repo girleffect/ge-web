@@ -1,0 +1,14 @@
+.copyright {
+    color: $dark_gray_blue;
+    &__text {
+        color: $dark_gray_blue;
+        font-size: 12px;
+        padding: 15px;
+        text-align: center;
+    }
+    &__anchor {
+        color: $very_dark_gray;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}

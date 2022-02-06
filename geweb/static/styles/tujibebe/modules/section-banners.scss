@@ -1,0 +1,50 @@
+.section-banners {
+    background-color: $very_dark_gray_blue;
+    margin: 0 auto;
+    height: 160px;
+    &__inner {
+        align-items: center;
+        background-image: url($staticPath + 'img/tujibebe/sections-bg.png');
+        background-position: 0 0;
+        background-size: inherit;
+        background-repeat: repeat;
+        display: flex;
+        height: 160px;
+        justify-content: center;
+        width: 360px;
+        @each $theme, $pos in $themes_background {
+            &--#{$theme} {
+                background-position: $pos;
+            }
+        }
+        @each $theme, $color in $themes {
+            &--#{$theme} {
+                color: $color;
+            }
+        }
+        @each $theme, $pos in $themes_underline {
+            &--#{$theme} .heading__primary:after {
+                background-position: $pos;
+            }
+        }
+        
+    }
+
+    .heading__primary {
+        font-size: 25px;
+        margin: 0 auto;
+        vertical-align: middle;
+        text-align: center;
+        text-transform: capitalize;
+        &:after {
+            content: "";
+            background-image: url($staticPath + 'img/tujibebe/icon-sprite.png');
+            background-size: 250px;
+            background-repeat: no-repeat;
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px 0;
+            width: 150px;
+        }
+    }
+}

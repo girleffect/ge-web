@@ -18,13 +18,13 @@
     }
     &__title {
         color: $very_dark_gray;
-        font-size: 24px;
-        font-weight: 400;
+        font-size: 20px;
+        font-weight: 500;
     }
     &__subtitle {
         color: $dark_gray_blue;
         display: block;
-        font-size: 16px;
+        font-size: 14px;
         overflow: hidden;
         text-transform: none;
         text-overflow: ellipsis;
@@ -56,7 +56,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 96px;
+        min-height: 120px;
         &--split {
             width: 67%;
         }   

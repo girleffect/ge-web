@@ -1,12 +1,37 @@
+//COLORS
 $white: #ffffff;
 
 $light_gray_blue: #eff3f5;
 $dark_gray_blue: #909497;
-$very_dark_gray: #434343;
+$very_dark_gray_blue: #353638;
+$very_dark_gray: #434343; 
 
 $blue: #003cdc;
 
 $pink: #db007e;
+
+
+//THEMES
+$themes: (
+    my-life: $white,
+    my-body:  $white,
+    my-future: $pink,
+    girl-stories: $white
+);
+
+$themes_background: (
+    my-life: 0 -470px,
+    my-body: 0 -90px,
+    my-future: 0 -100px,
+    girl-stories: 0 0,
+);
+
+$themes_underline: (
+    my-life: -112.5px -397.5px,
+    my-body: -112.5px -397.5px,
+    my-future: -112.5px -397.5px,
+    girl-stories: -112.5px -397.5px,
+);
 
 
 //DIRECTORY

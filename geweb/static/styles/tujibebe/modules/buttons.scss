@@ -1,0 +1,75 @@
+.call-to-action {
+    &--backToTop {
+        background: $light_gray_blue;
+        padding: 20px 0 18px 0;
+    }
+    &__nav {
+        &-item-text {
+            color: $blue;
+            cursor: pointer;
+            display: block;
+            font-size: 16px;
+            padding: 0 0 30px;
+            position: relative;
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+            &--backToTop {
+                color: $blue;
+                cursor: pointer;
+                display: block;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 0;
+                position: relative;
+                text-align: center;
+                text-decoration: underline;
+                text-transform: uppercase;
+                &:after {
+                    background-image: url($staticPath + 'img/tujibebe/icon-sprite-backup.png');
+                    background-repeat: no-repeat;
+                    background-position: -15px -634px;
+                    background-size: 320px;
+                    content: '';
+                    display: inline-block;
+                    height: 30px;
+                    margin-left: 5px;
+                    top: 0;
+                    vertical-align: text-top;
+                    width: 25px;
+                }
+            }
+        }
+    }  
+    &__link {
+        color: $blue;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        margin: 10px auto 5px;
+        text-align: center;
+        text-transform: uppercase;
+        &--inline {
+            display: inline-block;
+        }
+    }
+    &__submit {
+        background-color: $blue;
+        border: none;
+        color: $white;
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        height: 40px;
+        margin: 15px auto 0;
+        max-width: 344px;
+        max-height: 40px;
+        padding: 10px 0;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+    }
+    &--profiles {
+        padding: 10px 0;
+    }
+} 

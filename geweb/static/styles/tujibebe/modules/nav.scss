@@ -2,10 +2,11 @@
     overflow: auto;
     padding: 10px 8px 5px;
     &-list {
-        list-style-type: none;
-        display: flex;
         align-items: center;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+        list-style-type: none;
         &__item {
             display: inline-block;
             padding: 0 8px 0 0;
@@ -15,7 +16,7 @@
             border-bottom: 2px solid transparent;
             display: block;
             font-weight: normal; 
-            font-size: 14px;
+            font-size: 15px;
             font-style: normal;
             text-decoration: none;
             &:after {
