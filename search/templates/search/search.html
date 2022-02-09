@@ -1,19 +1,42 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags theme_tags %}
+{% load wagtailcore_tags i18n %}
 
+{% block title %}{% trans 'Search' %}{% endblock %}
 
-
-{% block title %}{% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}Zathu | {% endif %} Search{% endblock %}
 {% block content %}
-   <div class="content">
-    {% if theme.slug == 'ninyampinga' %}
-        Ninyampinga 
-    {% elif theme.slug == 'springster' %}
-        {% include "./springster/search.html" %}
-    {% elif theme.slug == 'yegna' %}
-    
-    {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
-    
+    <form action="{% url 'search' %}" method="get">
+        <input type="text" name="query" value="{{ search_query }}">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if search_results %}
+        <ul>
+            {% for result in search_results.object_list %}
+                <li>
+                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                        {{ result.title }}
+                        {{ result.subtitle }}
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="pagination">
+         {% if search_results.previous %}
+           {% if search_results.previous.number == 1 and pagelink == request.path %}
+               <a href="/" class="pagination__nav-anchor-previous"></a>
+           {% else %}
+             <a href="{% url 'search' %}?query={{search_query}}&page={{ search_results.previous.number }}" class="pagination__nav-anchor-previous"></a>
+           {% endif %}
+         {% endif %}
+         <span class="pagination__current-page">
+           Page {{ search_results.number }} of {{ search_results.num_pages }}
+         </span>
+         {% if search_results.next %}
+           <a href="{% url 'search' %}?query={{search_query}}&page={{ search_results.next.number }}" class="pagination__nav-anchor-next"></a>
+         {% endif %}
+       </div>
+    {% elif search_query %}
+        {% trans 'Nothing was found matching ' %} {{search_query}}
+    {% else %}
+        Please type something into the search box
     {% endif %}
-    </div>
 {% endblock %}
