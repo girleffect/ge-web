@@ -43,10 +43,12 @@ class CommentAdmin(ModelAdmin):
     search_fields = ("user", "comment")
     export_filename = "comments"
     panels = [
-        MultiFieldPanel([
-            FieldPanel('is_public'),
-            FieldPanel('is_removed'),
-        ])
+        MultiFieldPanel(
+            [
+                FieldPanel("is_public"),
+                FieldPanel("is_removed"),
+            ]
+        )
     ]
 
     def flags(self, obj):
