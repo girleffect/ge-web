@@ -1,0 +1,19 @@
+{% load wagtailsettings_tags i18n %}
+{% get_settings %}
+  <h4>Share:</h4>
+  <ul>
+      <li>
+        {% if settings.home.SiteSettings.facebook_sharing %}
+          <a href="http://www.facebook.com/sharer.php?u=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
+          Facebook
+          </a>
+        {% endif %}
+      </li>
+      <li>
+        {% if settings.home.SiteSettings.twitter_sharing %}
+          <a href="https://twitter.com/share?url=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
+          Twitter
+          </a>
+        {% endif %}
+      </li>
+  </ul>

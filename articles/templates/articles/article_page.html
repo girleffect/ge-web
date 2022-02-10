@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags article_tags theme_tags i18n comments %}
+{% load wagtailcore_tags article_tags theme_tags home_tags i18n comments %}
 
 {% block content %}
 
@@ -100,4 +100,8 @@
     {% elif theme.slug == 'zathu' %}
         {% include "./zathu/article.html" %}
     {% endif %}
+
+    <p><a href="{{ page.get_parent.url }}">{% trans 'Return to section'%}</a></p>
+
+{% social_media_article %}
 {% endblock %}
