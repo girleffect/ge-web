@@ -54,7 +54,7 @@ class TestAnonymousSubmission(TestCase, FormsTestCaseMixin):
         )
 
         self.assertContains(response, self.form.title)
-        self.assertContains(response, "Please log in to take this form")
+        self.assertContains(response, "To fill in the form, you must log in.")
         self.assertEqual(CustomFormSubmission.objects.count(), 0)
 
     def test_anonymous_submissions_allowed(self):
