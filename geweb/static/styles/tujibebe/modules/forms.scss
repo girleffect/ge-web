@@ -1,0 +1,113 @@
+form {
+    overflow: auto;
+}
+
+label {
+    color: $very_dark_gray;
+    padding: 16px 0 10px 0;
+    text-align: center;
+}
+
+fieldset {
+    border: none;
+    text-align: center;
+    .dropdowns {
+        align-items: center;
+        display: flex;
+        margin: 0 0 10px;
+        justify-content: space-between;
+    }
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="week"],
+input[type="date"],
+input[type="month"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+select {
+    border-radius: 0;
+    border: 2px solid $blue;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 10px 0 10px 5px;
+    width: 98%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-border-radius: 0;
+    
+    &:focus,
+    &:focus-visible {
+        outline: none; 
+    }
+}
+
+label[for=id_terms_and_conditions] {
+    display: none;
+    visibility: hidden;
+}
+
+input[type=checkbox]#id_terms_and_conditions {
+    cursor: pointer;
+    display: inline-block;
+    visibility: visible;
+    margin: 0 10px 0 0;
+    
+    &:before {
+        background: #fff;
+        content: "";
+        border: 2px solid $blue;
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+    }
+    // &.is-on:before {
+    //     background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
+    // }
+}
+
+.terms_and_conditions-link {
+    color: $blue;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0 0 0 20px;
+    vertical-align: text-top;
+}
+
+.input-hint {
+    color: $very_dark_gray;
+    font-size: 12px;
+}
+
+#id_date_of_birth_month, 
+#id_date_of_birth_day, 
+#id_date_of_birth_year {
+   margin: 0 5px 0 0;
+}
+
+
+.error {
+    color: #f50;
+    padding: 10px 15px;
+    text-align: center;
+}
+.errorlist,
+.error-list {
+    li,
+    &__item {
+        color: #f50;
+        padding: 10px 15px;
+        text-align: center;
+    }
+}
+
+.security {
+    padding: 10px 0 0;
+}
