@@ -278,24 +278,28 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         If the flag is set then forms should be served to the user one
         question at a time
         """
+        self.form_field.sort_order=1
+        self.form_field.save()
         field2 = FormField.objects.create(
             page=self.form,
             label="How much water have you drunk?",
             field_type="radio",
-            choices=[
-                "less than 1 glass",
-                "1 - 3 glasses",
-                "2 litres",
+            choices=
+                "less than 1 glass,"
+                "1 - 3 glasses,"
+                "2 litres,"
                 "more than 2 litres",
-            ],
             required=True,
+            sort_order=2
         )
         field3 = FormField.objects.create(
             page=self.form,
             label="What did you eat today?",
             field_type="singleline",
             required=True,
+            sort_order=3
         )
+        self.form.multi_step = True
         self.form.save_revision().publish()
         self.login()
 
@@ -306,7 +310,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         self.assertNotContains(response, field3.label)
 
         response = self.client.post(
-            "/en/forms/health-check/",
+            "/en/forms/health-check/?p=2",
             {"how_are_you_feeling": "well"},
             follow=True,
         )
@@ -316,7 +320,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         self.assertNotContains(response, field3.label)
 
         response = self.client.post(
-            "/en/forms/health-check/",
+            "/en/forms/health-check/?p=3",
             {"how_much_water_have_you_drunk": "less than 1 glass"},
             follow=True,
         )
@@ -326,7 +330,7 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         self.assertContains(response, field3.label)
 
         response = self.client.post(
-            "/en/forms/health-check/",
+            "/en/forms/health-check/?p=4",
             {"what_did_you_eat_today": "not enough"},
             follow=True,
         )
