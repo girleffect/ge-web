@@ -4,6 +4,7 @@ from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.core import blocks
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 from articles.models import ArticlePage, SectionPage
@@ -61,6 +62,12 @@ class HomePage(Page):
         return context
 
 
+class SocialMediaLinkBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True)
+    link = blocks.CharBlock(required=True)
+    image = ImageChooserBlock()
+
+
 @register_setting
 class SiteSettings(BaseSetting):
     fb_analytics_app_id = models.CharField(
@@ -99,11 +106,12 @@ class SiteSettings(BaseSetting):
     )
     social_media_links_on_footer_page = StreamField(
         [
-            ("social_media_site", blocks.URLBlock()),
+            ("social_media_site", SocialMediaLinkBlock()),
         ],
         null=True,
         blank=True,
     )
+
     facebook_sharing = models.BooleanField(
         default=False,
         verbose_name="Facebook",

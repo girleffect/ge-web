@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,6 +35,10 @@ INSTALLED_APPS = [
     "search",
     "profiles",
     "forms",
+    "comments",
+    "threadedcomments",
+    "django_comments",
+    "django.contrib.sites",
     "social_django",
     "wagtail.contrib.settings",
     "wagtail.contrib.forms",
@@ -50,6 +54,7 @@ INSTALLED_APPS = [
     "wagtail.admin",
     "wagtail.core",
     "wagtail.locales",
+    "wagtailfontawesome",
     "modelcluster",
     "taggit",
     "django.contrib.admin",
@@ -60,7 +65,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "wagtail.contrib.simple_translation",
 ]
-
+COMMENTS_APP = "threadedcomments"
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
