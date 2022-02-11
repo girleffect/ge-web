@@ -214,8 +214,7 @@ class FormPage(AbstractEmailForm):
 
     def serve(self, request, *args, **kwargs):
         if (
-            request.user
-            and not self.allow_anonymous_submissions
+            not self.allow_anonymous_submissions
             and not self.allow_multiple_submissions_per_user
             and self.get_submission_class()
             .objects.filter(page=self, user__pk=request.user.pk)
