@@ -1,7 +1,8 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags home_tags %}
 
 {% for footer in footers %}
     <li class="nav-list__item">
         <a href="{% pageurl footer %}" class="nav-list__anchor nav-list__{{ footer.title|slugify }}">{{ footer.title }}</a>
     </li>
 {% endfor %}
+{% social_media_footer %}
