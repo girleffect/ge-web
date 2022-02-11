@@ -1,0 +1,16 @@
+{% load article_tags wagtailcore_tags %}
+
+<div class="footer-page">
+    <div class="footer-page__body">
+        <div class="heading">
+            <h1 class="heading__primary">{{ page.title }}</h1>
+        </div>
+
+        {% if page.subtitle %}
+            <p class="subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+
+        {% include_block page.body %}
+    </div>
+    {% include "../_patterns/breadcrumbs.html" %}
+</div>

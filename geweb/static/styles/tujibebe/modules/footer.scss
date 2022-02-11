@@ -2,14 +2,33 @@
     background: $white;
     margin: 0 auto;
     max-width: 360px;
+
     &-page {
         background: $white;
         &__body {
             background: $white; 
             padding: 10px 0;
+            &:after {
+                background: $white url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -425px/245px;
+                content: '';
+                display: block;
+                padding: 20px 0;
+                margin: 0 auto;
+                width: 65%;
+            }
+            .heading {
+                padding: 22px 10px 0;
+                &__primary {
+                    color: $very_dark_gray;
+                    font-size: 25px;
+                    font-weight: 700;
+                    margin: 0;
+                    text-transform: capitalize;
+                }
+            }
             .subtitle {
                 color: #000;
-                padding: 0 10px;
+                padding: 10px;
                 text-transform: inherit;
             }
         }

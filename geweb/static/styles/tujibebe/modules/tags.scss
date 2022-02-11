@@ -3,7 +3,7 @@
     &__item {
         color: $blue;
         display: inline-block;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 500;
         margin: 0 8px 0 0;
         text-transform: lowercase;
@@ -33,13 +33,14 @@
 //TAG CLOUD TAGS
 .tag-cloud {
     text-align: center;
+    padding: 0 15px;
     &-list {
         display: inline-block;
         padding: 2px 5px;
         &__item {
             color: $blue;
             display: inline-block;
-            font-size: 22px;
+            font-size: 17px;
             margin: 0 5px;
             text-decoration: none;
             text-transform: lowercase;
