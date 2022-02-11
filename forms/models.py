@@ -221,6 +221,11 @@ class FormPage(AbstractEmailForm):
             .exists()
         ):
             return render(request, self.template, self.get_context(request))
+        if (
+            not request.user.is_authenticated
+            and not self.allow_anonymous_submissions
+        ):
+            return render(request, self.template, self.get_context(request))
         if self.multi_step:
             is_last_step = False
             step_number = request.GET.get("p", 1)
