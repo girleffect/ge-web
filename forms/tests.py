@@ -2,8 +2,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from wagtail.core.models import Page
 
-from forms.models import (CustomFormSubmission, FormField, FormPage,
-                          FormsIndexPage)
+from forms.models import CustomFormSubmission, FormField, FormPage, FormsIndexPage
 
 
 class FormsTestCaseMixin(object):
@@ -278,26 +277,25 @@ class TestMultiStepForm(TestCase, FormsTestCaseMixin):
         If the flag is set then forms should be served to the user one
         question at a time
         """
-        self.form_field.sort_order=1
+        self.form_field.sort_order = 1
         self.form_field.save()
         field2 = FormField.objects.create(
             page=self.form,
             label="How much water have you drunk?",
             field_type="radio",
-            choices=
-                "less than 1 glass,"
-                "1 - 3 glasses,"
-                "2 litres,"
-                "more than 2 litres",
+            choices="less than 1 glass,"
+            "1 - 3 glasses,"
+            "2 litres,"
+            "more than 2 litres",
             required=True,
-            sort_order=2
+            sort_order=2,
         )
         field3 = FormField.objects.create(
             page=self.form,
             label="What did you eat today?",
             field_type="singleline",
             required=True,
-            sort_order=3
+            sort_order=3,
         )
         self.form.multi_step = True
         self.form.save_revision().publish()
