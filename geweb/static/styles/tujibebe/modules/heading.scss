@@ -1,8 +1,8 @@
 .subheading {
-    color: #4e5358;
+    color: $very_dark_gray_blue;
     display: block;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 600;
     padding: 0 15px;
     text-align: center;
 }
@@ -10,7 +10,7 @@
 .subtitle {
     display: inline-block;
     font-size: 18px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: $very_dark_gray;
 }
 

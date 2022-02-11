@@ -2,7 +2,7 @@
     text-align: center;
     &__super {
         color: $very_dark_gray;
-        padding: 25px 8px 35px;
+        padding: 25px 8px 10px;
         text-align: center;
         .super-title {
             color: $very_dark_gray;
@@ -12,7 +12,7 @@
             padding-bottom: 10px;
             text-transform: capitalize;
             &:after {
-                background: #fff url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -425px/245px;
+                background: #fff url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -440px/245px;
                 content: '';
                 display: block;
                 padding: 10px 0;
@@ -31,5 +31,8 @@
     .call-to-action__link {
         display: inline-block;
         margin: 0;
+        &--left {
+            display: block;
+        }
     }
 }

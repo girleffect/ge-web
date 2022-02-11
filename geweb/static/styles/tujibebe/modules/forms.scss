@@ -3,7 +3,7 @@ form {
 }
 
 label {
-    color: $very_dark_gray;
+    color: $very_dark_gray_blue;
     padding: 16px 0 10px 0;
     text-align: center;
 }
@@ -11,12 +11,6 @@ label {
 fieldset {
     border: none;
     text-align: center;
-    .dropdowns {
-        align-items: center;
-        display: flex;
-        margin: 0 0 10px;
-        justify-content: space-between;
-    }
 }
 
 input[type="text"],
@@ -33,9 +27,9 @@ input[type="datetime-local"],
 input[type="url"],
 select {
     border-radius: 0;
-    border: 2px solid $blue;
-    font-size: 16px;
-    margin: 0 auto;
+    border: 3px solid $blue;
+    font-size: 18px;
+    margin: 10px auto;
     padding: 10px 0 10px 5px;
     width: 98%;
     -webkit-appearance: none;
@@ -49,28 +43,34 @@ select {
     }
 }
 
+select { 
+    background: url($staticPath + 'img/tujibebe/icon-sprite.png') 285px -200px/180px no-repeat;
+   
+}
+
 label[for=id_terms_and_conditions] {
-    display: none;
-    visibility: hidden;
+    // display: none;
+    // visibility: hidden;
+    padding: 25px 0 10px 0;
 }
 
 input[type=checkbox]#id_terms_and_conditions {
     cursor: pointer;
     display: inline-block;
     visibility: visible;
-    margin: 0 10px 0 0;
+    margin: 0 25px 0 0;
     
     &:before {
         background: #fff;
         content: "";
-        border: 2px solid $blue;
+        border: 3px solid $blue;
         display: inline-block;
         height: 24px;
         width: 24px;
     }
-    // &.is-on:before {
-    //     background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
-    // }
+    &.is-on:before {
+        background: $lime url($staticPath + 'img/tujibebe/icon-sprite.png') -120px -50px/180px no-repeat;
+    }
 }
 
 .terms_and_conditions-link {
@@ -89,7 +89,7 @@ input[type=checkbox]#id_terms_and_conditions {
 #id_date_of_birth_month, 
 #id_date_of_birth_day, 
 #id_date_of_birth_year {
-   margin: 0 5px 0 0;
+   margin: 0 5px 10px 0;
 }
 
 

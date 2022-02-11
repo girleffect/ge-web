@@ -48,3 +48,19 @@ import "../styles/tujibebe/tujibebe.scss";
      document.querySelectorAll(pathNameFilter[2] ? '.nav-list__' + pathNameFilter[2] : '.nav-list__springster').forEach(item => item.classList.add('selected'))
  }
  
+
+ /**
+ * Forms
+ */
+
+const terms_input = document.getElementById('id_terms_and_conditions')
+if (terms_input) {
+    terms_input.addEventListener('change', function(e) {
+        if (e.target.checked) {
+            e.target.classList.add('is-on')
+        } else {
+            e.target.classList.remove('is-on')
+        }
+    })
+}
+  
