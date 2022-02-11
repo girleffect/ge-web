@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "wagtail.contrib.simple_translation"
+    "wagtail.contrib.simple_translation",
 ]
 
 MIDDLEWARE = [
