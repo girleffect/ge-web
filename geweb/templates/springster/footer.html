@@ -1,4 +1,5 @@
-{% load wagtailcore_tags article_tags static %}
+{% load wagtailcore_tags article_tags home_tags static theme_tags  %}
+
 <footer id="footer" class="footer">
     <div class="footer__inner">
         {% include "../_patterns/search-input.html" with enhance="footer" %}
@@ -12,15 +13,7 @@
     <h3 class="heading heading__micro">
         Find us elsewhere:
     </h3>
-
-    <div class="social-media-list">
-        <div class="social-media-list__item">
-          <a href="https://facebook.com/heyspringster/" class="social-media-list__anchor">
-            <img class="social-media-list__icon" alt="Facebook" height="24" src="https://springster-english-south-africa-prd.s3.amazonaws.com/images/unnamed.width-24.png" width="24">
-            <span class="social-media-list__label">@HeySpringster</span>
-          </a>
-        </div>
-    </div>
+    {% social_media_footer %}
 
     <a class="footer-logo items selected" href="/">
         <img class="footer-logo__thumbnail" alt="Springster Logo - Footer" src="{% static 'img/springster/sp-footer-logo.png' %}" width="200" height="59">

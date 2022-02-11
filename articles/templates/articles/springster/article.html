@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags i18n %}
+{% load wagtailcore_tags article_tags home_tags i18n %}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -29,6 +29,7 @@
             </ul>
         </div>
     {% endif %}
+    {% social_media_article %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}
 </div>
