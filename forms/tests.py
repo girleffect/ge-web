@@ -2,7 +2,8 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from wagtail.core.models import Page
 
-from forms.models import CustomFormSubmission, FormField, FormPage, FormsIndexPage
+from forms.models import (CustomFormSubmission, FormField, FormPage,
+                          FormsIndexPage)
 
 
 class FormsTestCaseMixin(object):
