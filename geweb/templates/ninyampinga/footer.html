@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags static %}
+{% load article_tags home_tags static wagtailcore_tags %}
 
 <div class="footer">
     <div class="menu">
@@ -66,6 +66,19 @@
             </ul>
         </div>
     </div>
+
+    <div class="middle-column">
+        <div class="social-media">
+            <div class="heading heading--hero">
+                <h3 class=" heading__basic">
+                    Follow us
+                </h3>
+            </div>
+            {% social_media_footer %}
+        </div>
+        
+    </div>
+
 
     <div class="last-column">
         <div class="search">
