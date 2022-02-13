@@ -13,12 +13,11 @@
 
 //ARTICLE PAGE TAGS
 .tags-list {
-    margin: 0 auto 18px;
+    margin: 0 auto 10px;
     padding: 10px;
     &__item {
-        background: $blue;
+        background: $light_gray;
         color: #000;
-        cursor: pointer;
         display: inline-block;
         font-size: 13px;
         line-height: 1.5;
@@ -33,7 +32,9 @@
 //TAG CLOUD TAGS
 .tag-cloud {
     text-align: center;
-    padding: 0 15px;
+    .heading__micro {
+        margin: 0;
+    }
     &-list {
         display: inline-block;
         padding: 2px 5px;
