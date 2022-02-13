@@ -59,6 +59,9 @@
                 height: 21px;
                 width: 21px;   
             }
+            &:hover {
+                opacity: 0.9;
+            }
         }
         &__label {
             display: none;

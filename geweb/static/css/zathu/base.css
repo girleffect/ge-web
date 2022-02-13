@@ -5,14 +5,19 @@ html, body {
 }
 
 body.zathu {
+    background-color: #fff;
     margin: 0 auto;
     width: 320px;
 }
 
 a {
+    color: #412a83;
     text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    color: #412a83;
+}
 /* LANGUAGES */
 .languages {
     background-color: #f3f4f1;
@@ -72,6 +77,17 @@ a {
 
 .homepage {
     background-color: #fff;
+}
+
+.section-page__banner {
+    background-color: #412a83;
+    padding: 10px 8px;
+}
+.section-page__title {
+    color: #ffed00;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 /* ARTICLE TEASERS */
