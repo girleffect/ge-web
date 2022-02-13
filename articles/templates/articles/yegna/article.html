@@ -1,3 +1,5 @@
+{% load article_tags home_tags i18n wagtailcore_tags %}
+
 <div class="article-page">
     {% include "./section-banner.html" %}
     <div class="article-page__inner">
@@ -6,16 +8,6 @@
             <h3 class="heading heading--micro">{{ page.subtitle }}</3>
         {% endif %}
     </div>
-    
-    {% if page.tags.all.count %}
-        <div class="tags">
-            <ul class="tags-list">
-                {% for tag in page.tags.all %}
-                    <li class="tags-list__item">{{ tag.name}}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-    
-    {% include "../_patterns/article-teasers-recommendations.html" %}
+
+    {% social_media_article %}
 </div>

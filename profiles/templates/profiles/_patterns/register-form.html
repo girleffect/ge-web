@@ -4,7 +4,7 @@
 <form method="post" action="{% url 'user_register' %}" class="profiles__form">
     {% csrf_token %}
     {% for field in form %}
-        <fieldset>
+        <fieldset {% if field.name == "terms_and_conditions" %}class="profiles__split"{% endif %}>
             {{ field.errors }}
             {{ field.label_tag }} 
             {{ field }}

@@ -1,7 +1,7 @@
 {% load wagtailcore_tags wagtailimages_tags article_tags static theme_tags i18n %}
 
 {% with post=post.specific %}
-    <div class="teaser-stacklist__item{% if theme.slug == 'springster' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' or theme.slug == 'ninyampinga' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
+    <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' or theme.slug == 'ninyampinga' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
         {% if post.image %}
             <div class="teaser-stacklist__thumbnail">
                 {% image post.image width-400 as article_image %}
@@ -11,7 +11,7 @@
             </div>
         {% endif %}
 
-        <div class="teaser-stacklist__content{% if theme.slug == 'springster' %}{% if post.image %} teaser-stacklist__content--split{% endif %}{% endif %}">
+        <div class="teaser-stacklist__content{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__content--split{% endif %}{% endif %}">
             {% if theme.slug == 'zathu' %}
                 <h4 class="teaser-stacklist-parent">
                     {% with parent=post.get_parent %}

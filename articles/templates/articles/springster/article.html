@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags i18n %}
+{% load wagtailcore_tags article_tags home_tags i18n %}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -19,6 +19,14 @@
 
         {% include_block page.body %}
     </div>
+    {% if page.tags.all.count %}
+        <div class="tags-list">     
+            {% for tag in page.tags.all %}
+                <span class="tags-list__item">#{{ tag.name}}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% social_media_article %}
     {% if page.tags.all.count %}
         <div class="tag-cloud">
             <h3 class="heading heading__micro">Read more about</h3>

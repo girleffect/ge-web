@@ -1,19 +1,50 @@
-{% load wagtailsettings_tags i18n %}
+{% load wagtailsettings_tags wagtailimages_tags i18n %}
 {% get_settings %}
-  <h4>Share:</h4>
-  <ul>
-      <li>
-        {% if settings.home.SiteSettings.facebook_sharing %}
-          <a href="http://www.facebook.com/sharer.php?u=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
-          Facebook
-          </a>
-        {% endif %}
+ 
+  <ul class="social-media-list">
+    <li class="social-media-list__item"> 
+      <label class="social-media-list__label">Share:</label>
+    </li>
+    <li class="social-media-list__item"> 
+      {% if settings.home.SiteSettings.facebook_sharing %}
+        <a class="social-media-list__anchor" href="http://www.facebook.com/sharer.php?u=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
+          {% image facebook width-160 format-png class="social-media-list__anchor-icon" %}
+          <span class="social-media-list__anchor-title">{% trans "Facebook" %}</span>
+        </a>
+      {% endif %}
+    </li>
+    <li class="social-media-list__item"> 
+      {% if settings.home.SiteSettings.twitter_sharing %}
+        <a class="social-media-list__anchor" href="https://twitter.com/share?url=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
+          {% image twitter width-160 format-png class="social-media-list__anchor-icon" %}
+          <span class="social-media-list__anchor-title">{% trans "Twitter" %}</span>
+        </a>
+      {% endif %}
+    </li>
+    {% if settings.home.SiteSettings.whatsapp_sharing %}
+      <li class="social-media-list__item">
+        <a class="social-media-list__anchor" href="whatsapp://send?text=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ path }}" target="_blank" rel="noreferrer">
+          {% image whatsapp width-160 format-png class="social-media-list__anchor-icon" %}
+          <span class="social-media-list__anchor-title">{% trans "Whatsapp" %}<span>
+        </a>
       </li>
-      <li>
-        {% if settings.home.SiteSettings.twitter_sharing %}
-          <a href="https://twitter.com/share?url=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
-          Twitter
-          </a>
-        {% endif %}
+    {% endif %}
+
+    {% if settings.home.SiteSettings.telegram_sharing %}
+      <li class="social-media-list__item">
+        <a class="social-media-list__anchor" href="https://telegram.me/share/url?url=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ path }}" target="_blank" rel="noreferrer" class="social-media__anchor social-media__anchor--telegram">
+          {% image telegram width-160 format-png class="social-media-list__anchor-icon" %}
+          <span class="social-media-list__anchor-title">{% trans "Telegram" %}</span>
+        </a>
       </li>
+    {% endif %}
+
+    {% if settings.home.SiteSettings.viber_sharing %}
+      <li class="social-media-list__item">
+        <a class="social-media-list__anchor" href="viber://forward?text=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ path }}" target="_blank" rel="noreferrer" class="social-media__anchor social-media__anchor--viber">
+          {% image viber width-160 format-png class="social-media-list__anchor-icon" %}
+          <span class="social-media-list__anchor-title">{% trans "Viber" %}</span>
+        </a>
+      </li>
+    {% endif %}
   </ul>

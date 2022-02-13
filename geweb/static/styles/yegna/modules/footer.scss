@@ -15,13 +15,14 @@
     }
 
     .nav-list__anchor {
-        text-decoration: underline;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+            text-underline-position: below;
+        }
         &::before {
             display: none;
             visibility: hidden;
         }
     }
-
-
-    
 }

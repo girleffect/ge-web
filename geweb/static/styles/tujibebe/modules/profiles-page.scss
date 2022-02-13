@@ -1,0 +1,29 @@
+.profiles {
+    background: #fff;
+    padding: 0 0 10px;
+    width: 360px;
+    margin: 0 auto;
+    &__form {
+        padding: 25px 0 20px;
+    }
+    &__split {
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+    &__account {
+        &--passwords {
+            background-color: $light_gray_blue;
+        }
+    }
+   
+    .heading__primary {
+        color: $very_dark_gray;
+        font-size: 25px;
+        text-transform: uppercase;
+    }
+    .component__title {
+        padding: 20px 0 10px;
+    }
+}

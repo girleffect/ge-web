@@ -1,0 +1,105 @@
+.nav {
+    overflow: auto;
+    padding: 10px 8px 5px;
+    &-list {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style-type: none;
+        &__item {
+            display: inline-block;
+            padding: 0 8px 0 0;
+        }
+        &__anchor {
+            color: $white;
+            border-bottom: 2px solid transparent;
+            display: block;
+            font-weight: normal; 
+            font-size: 15px;
+            font-style: normal;
+            text-decoration: none;
+            &:after {
+                background: 0 0;
+                content: "";
+                width: 100%;
+                border-radius: 20px;
+                height: 4px;
+                margin: 0 auto;
+                display: inline-block;
+                position: relative;
+                top: -8px;
+                left: 0;
+                right: 0;
+                -webkit-transition: all .3s;
+                -moz-transition: all .3s;
+                transition: all .3s;
+            }
+            &:hover,
+            &.selected {
+                &:after {
+                    background: #db007e;
+                }
+            }  
+        }
+    }
+}
+
+.menu {
+    overflow: auto;
+    text-align: center;
+    &-list {
+        align-items: center;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $white;
+            display: block;
+            text-decoration: none;
+        }
+    } 
+}
+
+#profile, 
+#search {
+    background-image: url($staticPath + 'img/tujibebe/icon-sprite.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 245px;
+}
+
+#profile {
+    cursor: pointer;
+    height: 25px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    vertical-align: middle;
+    text-indent: 120%;
+    .menu-list__anchor {
+        padding: 10px 0;
+    }
+    &:hover {
+        background-position: 0 -60px;
+    }
+}
+
+#search {
+    background-position: 0 -177px;
+    cursor: pointer;
+    text-indent: 120%;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    padding: 0;
+    height: 25px;
+    &:hover {
+        background-position: 0 -235px;
+    }
+}

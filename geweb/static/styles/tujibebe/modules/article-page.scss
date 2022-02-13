@@ -1,0 +1,74 @@
+.article {
+    &-heading {
+        padding: 25px 8px 15px;
+        text-align: center;
+        .heading__primary {
+            color: $very_dark_gray_blue;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+        }
+    }
+    
+    &-page {
+        background: #fff;
+        &-inner {
+            background: #fff;
+            padding: 15px 0 20px;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        &__body {
+            background: #fff;
+            padding: 0 0 25px;
+            &:after {
+                background: #fff url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -425px/245px;
+                content: '';
+                display: block;
+                padding: 20px 0;
+                margin: 0 auto;
+                width: 65%;
+            }
+        }
+        &__recommendations {
+            padding: 30px 0 0;
+        }
+        &__image {
+            height: 160px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        &__thumbnail {
+            border: 0;
+            height: auto;
+            width: 100%;
+        }
+        .subheading {
+            color: $very_dark_gray_blue;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+   
+}
+
+.block {
+    &-paragraph {
+        font-size: 15px;
+        padding: 10px;
+        p {
+            margin: 5px 0;
+        }
+    }
+
+    &-image {
+        overflow: auto;
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }    
+}
+
