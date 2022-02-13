@@ -3,19 +3,27 @@
  
   <ul class="social-media-list">
     <li class="social-media-list__item"> 
-      <label class="social-media__label">Share:</label>
+      <label class="social-media-list__label">Share:</label>
     </li>
     <li class="social-media-list__item"> 
       {% if settings.home.SiteSettings.facebook_sharing %}
         <a class="social-media-list__anchor" href="http://www.facebook.com/sharer.php?u=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
-          Facebook
+          {% if facebook %}
+            {% image whatsapp width-40 format-png class="social-media__icon" %}
+          {% else %}
+            <span class="social-media__default-icon">{% trans "Facebook" %}<span>
+          {% endif %}
         </a>
       {% endif %}
     </li>
     <li class="social-media-list__item"> 
       {% if settings.home.SiteSettings.twitter_sharing %}
         <a class="social-media-list__anchor" href="https://twitter.com/share?url=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ request.path }}" target="_blank" rel="noreferrer">
-          Twitter
+          {% if twitter %}
+            {% image whatsapp width-40 format-png class="social-media__icon" %}
+          {% else %}
+            <span class="social-media__default-icon">{% trans "Twitter" %}<span>
+          {% endif %}
         </a>
       {% endif %}
     </li>
@@ -42,7 +50,7 @@
         </a>
       </li>
     {% endif %}
-    
+
     {% if settings.home.SiteSettings.viber_sharing %}
       <li class="social-media-list__item">
         <a class="social-media-list__anchor" href="viber://forward?text=http{% if request.is_secure %}s{%endif %}://{{ request.get_host }}{{ path }}" target="_blank" rel="noreferrer" class="social-media__anchor social-media__anchor--viber">

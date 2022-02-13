@@ -1,15 +1,15 @@
 {% load wagtailimages_tags i18n %}
 
 {% if social_media %}
-  <div class="social-media-list">
+  <ul class="social-media-list">
     {% for site in social_media %}
-      <div class="social-media-list__item">
+      <li class="social-media-list__item">
         <a href="https://{{ site.value.link }}" class="social-media-list__anchor">
           {% image site.value.image width-24 as social_image %}
           <img class="social-media-list__icon" alt="Facebook" height="24" src="{{social_image.url}}" width="24">
           <span class="social-media-list__label">{{ site.value.title }}</span>
         </a>
-      </div>
+      </li>
     {% endfor %}
-  </div>
+    </ul>
 {% endif %}
