@@ -18,7 +18,7 @@
             font-size: 20px;
             text-decoration: none;
             &-title {
-                display: none;
+                color: $violet;
             }
             &-icon { 
                 vertical-align: middle;
@@ -26,6 +26,15 @@
                 height: 24px;
                 width: 24px;
             }
+        }
+    }
+}
+
+.article-page { 
+    .social-media-list {
+        &__anchor-title {
+            display: none;
+            visibility: hidden;
         }
     }
 }
