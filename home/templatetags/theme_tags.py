@@ -1,8 +1,6 @@
 from django import template
-from wagtail.core.models import Site
 
-from home.themes import DEFAULT_THEME
-from home.utils import get_theme_from_slug
+from home.utils import get_theme_from_request
 
 register = template.Library()
 
@@ -14,9 +12,4 @@ def get_current_theme(context):
     the site root).
     """
     request = context["request"]
-    site = Site.find_for_request(request)
-    theme = DEFAULT_THEME
-    if site:
-        if site.root_page.specific.theme:
-            theme = get_theme_from_slug(site.root_page.specific.theme)
-    return theme
+    return get_theme_from_request(request)
