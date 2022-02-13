@@ -1,7 +1,8 @@
-{% load wagtailcore_tags article_tags static %}
+{% load article_tags home_tags static wagtailcore_tags %}
 
 <nav class="footer-nav footer-nav--{{suffix}}">
     <ul class="nav-list">
         {% footer_pages %}
+        {% social_media_footer %}
     </ul>
 </nav>
