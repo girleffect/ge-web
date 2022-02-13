@@ -1,6 +1,14 @@
 {% load article_tags i18n wagtailcore_tags wagtailimages_tags  %}
 
 
+{% block extra_css %}
+    <style>
+        body.yegna {
+            background: url('http://127.0.0.1:8000/static/img/yegna/home-bg.svg') no-repeat center/100%;
+        }
+    </style>
+{% endblock %}
+
 <div class="component-title">
     <div class="component-title__super">
         <h1 class="heading heading--primary">

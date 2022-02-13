@@ -1,4 +1,6 @@
-{% load wagtailcore_tags static %}
+{% load article_tags static wagtailcore_tags  %}
+
+{% section_pages as sections %}
 
 <div id="header" class="header">  
     {% include "../_patterns/language.html" %}
@@ -12,34 +14,18 @@
             <nav class="nav">
                 <ul class="nav-list"> 
                     <li class="nav-list__item">
-                        <a class="nav-list__anchor" id="menu" href="#footer">Menu</a>
+                        <a class="nav-list__anchor" id="menu" href="/">Menu</a>
                     </li>
 
-                    {% for section in sections %}
-                        {% if section.title == 'Watch' %}
+                    {% if sections %}
+                        {% for section in sections %}
                             <li class="nav-list__item">
-                                <a class="nav-list__anchor" id="watch" href="#footer">
+                                <a class="nav-list__anchor" id="{{ section.title|slugify }}" href="{% pageurl section %}">
                                     <span>{{section.title}}</span>
                                 </a>
                             </li>
-                        {% endif %}
-
-                        {% if section.title == 'Cast' %}
-                            <li class="nav-list__item">
-                                <a class="nav-list__anchor" id="cast" href="#footer">
-                                    <span>{{section.title}}</span>
-                                </a>
-                            </li>
-                        {% endif %}
-
-                        {% if section.title == 'Listen' %}
-                            <li class="nav-list__item">
-                                <a class="nav-list__anchor" id="listen" href="#footer">
-                                    <span>{{section.title}}</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    {% endif %}
                 </ul>
 
                 <ul class="nav-list nav-list--search"> 
