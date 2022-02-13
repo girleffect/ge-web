@@ -1,4 +1,5 @@
 from wagtail.core.models import Site
+
 from home.themes import DEFAULT_THEME, THEMES
 
 
@@ -12,6 +13,7 @@ def get_theme_from_request(request):
         if site.root_page.specific.theme:
             theme = get_theme_from_slug(site.root_page.specific.theme)
     return theme
+
 
 def get_theme_from_slug(value):
     """
