@@ -1,8 +1,10 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags article_tags static theme_tags %}
+{% load wagtailsettings_tags wagtailcore_tags article_tags static theme_tags %}
+{% get_settings %}
 
 
 {% block content %}
+    {{ settings.home.SiteSettings.facebook_sharing }}
     {% comment %}
         <!--
             Ideally should be {% include THEME_PATH|add:"header.html" %} but this does not work.
