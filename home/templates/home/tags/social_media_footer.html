@@ -6,8 +6,8 @@
       <li class="social-media-list__item">
         <a href="https://{{ site.value.link }}" class="social-media-list__anchor">
           {% image site.value.image width-24 as social_image %}
-          <img class="social-media-list__icon" alt="Facebook" height="24" src="{{social_image.url}}" width="24">
-          <span class="social-media-list__label">{{ site.value.title }}</span>
+          <img class="social-media-list__anchor-icon" alt="Facebook" height="24" src="{{social_image.url}}" width="24">
+          <span class="social-media-list__anchor-title">{{ site.value.title }}</span>
         </a>
       </li>
     {% endfor %}

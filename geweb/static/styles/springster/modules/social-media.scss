@@ -9,20 +9,23 @@
             vertical-align: middle;
             padding: 0 8px 8px 0;
         }
+        &__label {
+            font-weight: 600;
+        }
         &__anchor {
             color: $violet;
             cursor: pointer;
             font-size: 20px;
             text-decoration: none;
-        }
-        &__label {
-            font-weight: 600;
-        }
-        &__icon { 
-            vertical-align: middle;
-            margin-right: 5px;
-            height: 24px;
-            width: 24px;
+            &-title {
+                display: none;
+            }
+            &-icon { 
+                vertical-align: middle;
+                margin-right: 5px;
+                height: 24px;
+                width: 24px;
+            }
         }
     }
 }

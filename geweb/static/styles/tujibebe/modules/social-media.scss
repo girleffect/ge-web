@@ -14,12 +14,16 @@
             cursor: pointer;
             font-size: 16px;
             text-decoration: none;
+            &-title {
+                display: none;
+            }
+            &-icon { 
+                vertical-align: middle;
+                margin-right: 5px;
+                height: 21px;
+                width: 21px;
+            }
         }
-        &__icon { 
-            vertical-align: middle;
-            margin-right: 5px;
-            height: 21px;
-            width: 21px;
-        }
+        
     }
 }
