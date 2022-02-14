@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags static %}
+{% load article_tags home_tags static wagtailcore_tags  %}
 <footer id="footer" class="footer">
     <div class="footer__inner">
         {% include "../_patterns/search-input.html" with enhance="footer" %}
@@ -13,14 +13,7 @@
         Find us elsewhere:
     </h3>
 
-    <div class="social-media-list">
-        <div class="social-media-list__item">
-          <a href="https://facebook.com/tujibebe/" class="social-media-list__anchor">
-            <img class="social-media-list__icon" alt="Tujibebe - Facebook" src="{% static 'img/tujibebe/fb-24.png' %}" width="24" height="24" >
-            <span class="social-media-list__label">Facebook</span>
-          </a>
-        </div>
-    </div>
+    {% social_media_footer %}
 
     <a class="footer-logo items selected" href="/">
         <img class="footer-logo__thumbnail" alt="Tujibebe - Footer" src="{% static 'img/tujibebe/tujibebe-blue.svg' %}" width="200" height="59">

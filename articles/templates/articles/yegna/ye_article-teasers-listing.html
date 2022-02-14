@@ -1,0 +1,8 @@
+{% load wagtailcore_tags article_tags i18n %}
+<div class="article-teaser">
+    <div class="teaser-stacklist teaser-stacklist--{{ page.title|slugify }}">
+        {% for post in articlepages %}
+            {% include "../_patterns/article-teasers.html" %}
+        {% endfor %}
+    </div>
+</div>

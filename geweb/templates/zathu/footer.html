@@ -1,9 +1,9 @@
-{% load i18n wagtailcore_tags static %}
+{% load i18n home_tags static wagtailcore_tags %}
 
 <footer  id="footer" class="footer">
     <div class="footer__inner">
         {% include "../_patterns/search-input.html" with enhance="footer" %}
-        <!-- Social links here -->
+        {% social_media_footer %}
         <div class="footer-wrapper">
             {% include "../_patterns/nav.html" with suffix="zathu" %}
             {% include "../_patterns/footer-nav.html" with suffix="zathu" %}
@@ -23,7 +23,6 @@
         </div>
     </div>
 
-    <!-- TO BE DYNAMICALLY PULLED THROUGH -->
     <div class="footer-languages">
         <ul class="languages-list">
             <li class="languages-list__item">

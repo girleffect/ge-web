@@ -4,36 +4,50 @@
 
 
 .teaser-stacklist {
+    $this: &;
     &__item {
         align-items: flex-start;
         display: flex;
         justify-content: space-between;
     }
     &__thumbnail {
-        aspect-ratio: 3 / 2;
         height: inherit;
-        margin: 0 15px 0 0;
         overflow: hidden;
         width: auto;
         @media (min-width: 991px) {
-            height: 195px;
-            width: 360px;
+            height: 240px;
+            width: 340px;
         } 
         
         &-link {
-            color: #000;
+            color: $vivid_violet;
             display: block;
             text-decoration: none;
         }
     }
+    &__image {
+        height: auto;
+        width: 100%;
+    }
 
     &__title {
-        color: #000;
+        color: $vivid_violet;
         font-size: 32px;
+        margin: 16px 0;
     }
 
     &__anchor {
         display: block;
         text-decoration: none;
+    }
+    &--cast {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        #{$this}__item {
+            flex-direction: column;
+            margin: 0 15px 40px;
+        }
     }
 }
