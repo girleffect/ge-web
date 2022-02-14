@@ -1,0 +1,12 @@
+{% load article_tags static wagtailcore_tags wagtailimages_tags %}
+
+<div class="section-page">
+    <div class="component-title">
+        <div class="component-title__super">
+            <h1 class="heading heading--primary">
+                {{ page.title }}
+            </h1>
+        </div>
+    </div>
+    {% include "./ye_article-teasers-listing.html" %}
+</div>

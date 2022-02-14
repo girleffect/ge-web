@@ -4,9 +4,9 @@
     <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
         {% if post.image %}
             <div class="teaser-stacklist__thumbnail">
-                {% image post.image max-360x200 as article_image %}
+                {% image post.image width-400 as article_image %}
                 <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
-                    <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
+                    <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image" height="400" width="400"/>
                 </a>
             </div>
         {% endif %}
@@ -52,6 +52,11 @@
                 </p>
                 <a href="{% pageurl post %}" class="call-to-action__submit">
                     {% trans "Click here" %}
+                </a>
+            {% endif %}
+            {% if theme.slug == 'yegna' %}
+                <a href="{% pageurl post %}" class="call-to-action__read-more">
+                    {% trans "Read more" %}
                 </a>
             {% endif %}
 

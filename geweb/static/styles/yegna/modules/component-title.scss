@@ -2,12 +2,10 @@
     //background-color: rgba(0,255,255,.1);
     text-align: center;
     @media (min-width: 991px) {
-        padding: 0 8%;
+        padding: 20px 10%;
     } 
 
     &__super {
-        @media (min-width: 991px) {
-            padding: 50px 20% 22px;
-        } 
-    }
+        overflow: auto;
+     }
 }

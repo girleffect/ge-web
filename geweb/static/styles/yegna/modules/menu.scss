@@ -1,5 +1,7 @@
 .menu {
     align-items: center;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 99;
 }

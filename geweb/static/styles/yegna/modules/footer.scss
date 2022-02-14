@@ -1,7 +1,9 @@
 .footer {
+    overflow: auto;
+    width: 100%;
     &-page {
-        background: #000;
-        text-align: center;
+        color: #000;
+        text-align: left;
         @media (min-width: 991px) {
             padding: 20px 8%;
         } 
@@ -11,17 +13,19 @@
         background: $lime_green url($staticPath + 'img/yegna/bg.svg') no-repeat 0 0/auto;
         display: flex;
         justify-content: space-between;
-        padding: 50px 8%; 
+        padding: 50px 10%; 
     }
 
     .nav-list__anchor {
-        text-decoration: underline;
+        text-decoration: none;
+        padding: 10px 15px 0 0;
+        &:hover {
+            text-decoration: underline;
+            text-underline-position: below;
+        }
         &::before {
             display: none;
             visibility: hidden;
         }
     }
-
-
-    
 }
