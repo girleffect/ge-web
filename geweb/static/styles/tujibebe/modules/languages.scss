@@ -1,0 +1,45 @@
+.languages {
+    background-color: $white;
+    padding: 5px 8px;
+    margin: 0 auto;
+    &-bar {
+        position: relative;
+    }
+    &-list {
+        padding: 0 5px;
+        text-align: center;
+        
+        &__item {
+            display: inline-block;    
+            margin: 0 10px;
+        }
+        &__anchor {
+            color: $very_dark_gray;
+            font-size: 14px;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+    }
+}
+
+/*
+    CSS TOOGLE LOADED LANGUAGES
+*/
+
+$fr: 'fr';
+$en: 'en';
+
+@if $fr  {
+    .languages-list__anchor[rel=fr]:lang(fr) {
+        color: $dark_gray_blue;
+    }
+} 
+
+@if $en {
+    .languages-list__anchor[rel=en]:lang(en) {
+        color: $dark_gray_blue;
+    }    
+}
+
+
+

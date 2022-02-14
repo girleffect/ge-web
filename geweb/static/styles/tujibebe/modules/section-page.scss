@@ -1,0 +1,12 @@
+.section-page {
+    /*
+    START:
+        This class is a body class & MUST not be styled
+    END:
+    */
+    &__inner {
+        background: $white;
+        margin: 0 auto;
+    }
+}
+

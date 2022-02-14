@@ -1,0 +1,33 @@
+.breadcrumbs {
+    padding: 30px 0;
+    position: relative;
+    &-list {
+        padding: 0 15px;
+        &__item {
+            display: inline-block;
+        }
+        &__label {
+            color: $blue;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+        &__anchor {
+            color: $dark_gray_blue;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            text-transform: capitalize;
+            &:after {
+                color: $dark_gray_blue;
+                content: " > ";
+                font-weight: 100;
+                margin: 0 2px 0 5px;
+            }
+        }
+    }
+    
+
+    
+}

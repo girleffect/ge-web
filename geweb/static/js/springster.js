@@ -26,16 +26,12 @@ elemHeaderSearchToggle.addEventListener('click', (e) => {
 /**
  * Menu active class for sections menu across header & footer at once AND footer menu
  */
-
-
 const menuLinks = document.querySelectorAll('.nav-list__anchor')
-
 let selectedLink = sessionStorage.getItem('curLink')
 
 for(let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', function(e) {
         const $this = e.target  
-        
         sessionStorage.setItem('curLink', $this.classList[1])
     })
 }
@@ -48,7 +44,6 @@ if (selectedLink) {
 } else {
     let pathName = window.location.pathname.split('/')    
     let pathNameFilter = pathName.filter(item => item !== '')
-
     sessionStorage.setItem('curLink', pathNameFilter[2] ? 'nav-list__' + pathNameFilter[2] : 'nav-list__springster')
     document.querySelectorAll(pathNameFilter[2] ? '.nav-list__' + pathNameFilter[2] : '.nav-list__springster').forEach(item => item.classList.add('selected'))
 }

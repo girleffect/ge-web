@@ -1,0 +1,88 @@
+.call-to-action {
+    padding: 0 10px;
+    &--backToTop {
+        background: $light_gray_blue;
+        padding: 20px 0 18px 0;
+    }
+    &__nav {
+        &-item-text {
+            color: $blue;
+            cursor: pointer;
+            display: block;
+            font-size: 16px;
+            padding: 0 0 30px;
+            position: relative;
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+            &--backToTop {
+                color: $blue;
+                cursor: pointer;
+                display: block;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 0;
+                position: relative;
+                text-align: center;
+                text-decoration: underline;
+                text-transform: uppercase;
+                &:after {
+                    background-image: url($staticPath + 'img/tujibebe/icon-sprite-backup.png');
+                    background-repeat: no-repeat;
+                    background-position: -15px -634px;
+                    background-size: 320px;
+                    content: '';
+                    display: inline-block;
+                    height: 30px;
+                    margin-left: 5px;
+                    top: 0;
+                    vertical-align: text-top;
+                    width: 25px;
+                }
+            }
+        }
+    }  
+    &__link {
+        color: $blue;
+        cursor: pointer;
+        display: block;
+        font-size: 18px;
+        margin: 10px auto 5px;
+        text-align: center;
+        text-decoration: none;
+        &--left {
+            display: block;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-align: left;
+            &:before {
+                background: url($staticPath + 'img/tujibebe/icon-sprite.png') 0 -463px/290px no-repeat;
+                content: "";
+                display: inline-block;
+                height: 20px;
+                transform: rotate(180deg);
+                vertical-align: middle;
+                width: 40px;
+            }
+            
+        }
+    }
+    &__submit {
+        background-color: $blue;
+        border: none;
+        color: $white;
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 15px auto 0;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+    }
+    &--profiles {
+        padding: 10px 15px;
+    }
+} 
