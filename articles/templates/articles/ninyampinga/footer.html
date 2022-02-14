@@ -1,0 +1,16 @@
+{% load article_tags wagtailcore_tags %}
+
+<div class="footerpage">
+    <div class="component">
+        <div class="component__super">
+            <h1 class="super-title">{{ page.title }}</h1>
+        </div>
+    </div>
+    <div class="footerpage__body">
+        {% if page.subtitle %}
+            <p class="subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+
+        {% include_block page.body %}
+    </div>
+</div>

@@ -61,11 +61,33 @@ img.social-media-list__icon {
 }
 
 #profile {
+    background: url('http://127.0.0.1:8000/static/img/springster/avatar.svg') no-repeat 3px 0/auto 95%;
+    cursor: pointer;
     height: 25px;
     padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
     vertical-align: middle;
+    text-indent: 120%;
 }
 
+#search {
+    background: url('http://127.0.0.1:8000/static/img/springster/nav_search.svg') no-repeat 3px 0/auto 95%;
+    cursor: pointer;
+    text-indent: 120%;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 28px;
+    padding: 0;
+    height: 25px;
+}
+
+.banner {
+    background: #e2e5e7;
+    height: 136px;
+}
 .banner__image {
     max-width: 360px;
 }
@@ -163,8 +185,6 @@ img.social-media-list__icon {
     font-size: 24px;
 }
 
-
-
 .section-banners__inner {
     align-items: flex-end;
     display: flex;
@@ -174,7 +194,6 @@ img.social-media-list__icon {
     padding: 0 8px;
     position: relative;
 }
-
 
 .footer__inner {
     background-color: #a4eed2;
@@ -202,4 +221,30 @@ img.social-media-list__icon {
 .footer-menu .nav-list__anchor {
     color: #7300ff;
     display: inline-block;
+}
+
+/*
+    ARTICLE BODY
+*/
+
+.article-heading {
+    padding: 25px 8px 15px;
+    text-align: center;
+}
+
+.subheading {
+    color: #4e5358;
+    display: block;
+    font-weight: 400;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.block-paragraph {
+    padding: 10px;
+}
+
+.comments-counter {
+    margin: 20px 0 0;
+    text-align: center;
 }

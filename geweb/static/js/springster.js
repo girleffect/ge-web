@@ -13,7 +13,8 @@ elemHeaderSearchToggle.addEventListener('click', (e) => {
     if (elemSearchBar.style.display === 'none') {
         elemSearchBar.style.display = 'block'
         elemSearchBar.style.visibility = 'visible'
-        e.target.style.background = 'url("http://127.0.0.1:8000/static/img/springster/dismiss.svg") no-repeat 3px 5px/auto 80%'
+        e.target.style.background = '#7300ff url("http://127.0.0.1:8000/static/img/springster/dismiss.svg") no-repeat 3px 3px/auto 80%'
+        e.target.style.height = '25px'
     } else {
         elemSearchBar.style.display = 'none'
         elemSearchBar.style.visibility = 'hidden'
@@ -26,29 +27,31 @@ elemHeaderSearchToggle.addEventListener('click', (e) => {
  * Menu active class for sections menu across header & footer at once AND footer menu
  */
 
-const menuLinksFooter = document.querySelectorAll('.footer-nav-list p a')
-    menuLinksFooter.forEach(function(elem, i) {
-        elem.classList.add('nav-list__anchor')
-    })
 
 const menuLinks = document.querySelectorAll('.nav-list__anchor')
-    for(let i = 0; i < menuLinks.length; i++) {
-        menuLinks[i].addEventListener('click', function(e) {
-            //e.preventDefault()
-            const $this = e.target         
-            menuLinks.forEach(function(item, i) {
-                item.classList.remove('selected')    
-                if ($this.classList.length > 1) {
-                    document.querySelectorAll(`.${$this.classList[1]}`).forEach(function(elems, i) {
-                        elems.classList.add('selected')
-                    })
-                } else {
-                    $this.classList.add('selected')
-                }
-            })
-           
-        })
+
+let selectedLink = sessionStorage.getItem('curLink')
+
+for(let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', function(e) {
+        const $this = e.target  
+        
+        sessionStorage.setItem('curLink', $this.classList[1])
+    })
+}
+
+if (selectedLink) {
+    if (selectedLink !== 'nav-list__springster') {
+        document.querySelectorAll('.nav-list__springster').forEach(item => item.classList.remove('selected'))
     }
+    document.querySelectorAll(`.${selectedLink}`).forEach(item => item.classList.add('selected'))
+} else {
+    let pathName = window.location.pathname.split('/')    
+    let pathNameFilter = pathName.filter(item => item !== '')
+
+    sessionStorage.setItem('curLink', pathNameFilter[2] ? 'nav-list__' + pathNameFilter[2] : 'nav-list__springster')
+    document.querySelectorAll(pathNameFilter[2] ? '.nav-list__' + pathNameFilter[2] : '.nav-list__springster').forEach(item => item.classList.add('selected'))
+}
 
 
 

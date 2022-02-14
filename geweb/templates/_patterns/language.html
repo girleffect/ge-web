@@ -1,26 +1,11 @@
-{% load static i18n wagtailcore_tags %}
+{% load i18n wagtailcore_tags static %}
 
-{% for translation in page.get_translations.live %}
-  {% get_language_info for language_code as lang %}
-  {% language language_code %}
-    <a href="{% pageurl page.localized %}" rel="alternate" hreflang="{{ language_code }}">
-      {{ lang.name_local }}
-    </a>
-  {% endlanguage %}
-{% endfor %}
-
-<div id="language-bar" class="languages">
-    {% if languages|length > 1 %}
-    <div class="languages__wrapper languages--fixed-header">
-      <ul class="languages-list languages-list--standard-center">
-      {% for language in languages %}
-        <li class="languages-list__item languages-list__item--standard-center">
-          <a href="{% url 'locale_set' language.locale %}?next={{request.path}}{% if request.GET.urlencode %}?{{ request.GET.urlencode }}{% endif %}" class="languages-list__anchor languages-list__anchor-standard-center {% if request.LANGUAGE_CODE == language.locale %} is-active {% endif %}">
-            {{ language.locale }}
-          </a>
-        </li>
-      {% endfor %}
+{% if page %}
+  <div id="language-bar" class="languages">
+    <div class="languages__wrapper">
+      <ul class="languages-list">
+        {% include "./_language-list.html" %}
       </ul>
     </div>
-    {% endif %}
-</div>
+  </div>
+{% endif %}

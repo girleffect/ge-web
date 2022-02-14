@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "wagtail.contrib.simple_translation",
 ]
 COMMENTS_APP = "threadedcomments"
 MIDDLEWARE = [
@@ -159,6 +160,8 @@ WAGTAIL_I18N_ENABLED = True
 USE_L10N = True
 
 USE_TZ = True
+
+WAGTAILSIMPLETRANSLATION_SYNC_PAGE_TREE = True
 
 
 # Static files (CSS, JavaScript, Images)

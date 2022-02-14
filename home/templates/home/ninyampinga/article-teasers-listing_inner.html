@@ -3,7 +3,7 @@
 <div class="teaser-stacklist__item{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}">
     {% if post.image %}
         <div class="teaser-stacklist__thumbnail">
-            {% image post.image fill-360x160 as article_image %}
+            {% image post.image width-400 as article_image %}
             <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
                 <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
             </a>

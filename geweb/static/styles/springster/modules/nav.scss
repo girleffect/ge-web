@@ -5,9 +5,10 @@
         list-style-type: none;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         &__item {
             display: inline-block;
+            padding: 0 14px 0 0;
         }
         &__anchor {
             color: $pale_violet;
@@ -35,9 +36,29 @@
     }
 }
 
+.menu {
+    overflow: auto;
+    text-align: center;
+    &-list {
+        align-items: center;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $white;
+            display: block;
+            text-decoration: none;
+        }
+    } 
+}
+
 
 #profile {
-    background: url($staticPath + 'img/springster/avatar.svg')  no-repeat 3px 0 / auto 95%;;
+    background: url($staticPath + 'img/springster/avatar.svg')  no-repeat 3px 0 / auto 95%;
+    cursor: pointer;
     height: 25px;
     padding: 0;
     overflow: hidden;
@@ -45,6 +66,9 @@
     width: 28px;
     vertical-align: middle;
     text-indent: 120%;
+    .menu-list__anchor {
+        padding: 10px 0;
+    }
 }
 
 #search {

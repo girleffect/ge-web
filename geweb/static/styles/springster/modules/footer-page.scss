@@ -1,0 +1,39 @@
+.footer {
+    background: $white;
+    font-family: 'Baton-Regular';
+    margin: 0 auto;
+    max-width: 360px;
+    &-page {
+        background: $white;
+        &__body {
+            background: $white; 
+            padding: 10px 0;
+            .subtitle {
+                color: #000;
+                font-family: "Baton-Turbo-Regular";
+                padding: 0 10px;
+                text-transform: inherit;
+            }
+        }
+    }
+    &__inner {
+        background: url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100% / contain, url('http://127.0.0.1:8000/static/img/springster/top-div-2@2x.png') no-repeat 0 0 / contain;
+        background-color: $lime_green;
+        padding: 12px 8px;
+    }
+   
+    &-logo {
+        display: inline-block;
+        margin: 18px auto;
+        text-align: center;
+        &__thumbnail {
+            border: 0;
+            height: auto;
+            width: 50%;
+        }
+    }
+    p { //HIGH SPECIFICITY (Make sure you're changing p tag by parent class)
+        margin: 0;
+    }
+}
+

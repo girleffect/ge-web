@@ -8,17 +8,17 @@
     </h4>
     <div class="article-teaser">
         <div class="teaser-stacklist">
-            <div class="teaser-stacklist__item{% if post.image %} teaser-stacklist__item--split{% endif %}">
-                {% if post.image %}
+            <div class="teaser-stacklist__item{% if next_article.image %} teaser-stacklist__item--split{% endif %}">
+                {% if next_article.image %}
                     <div class="teaser-stacklist__thumbnail">
-                        {% image post.image fill-360x160 as article_image %}
-                        <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
-                            <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
+                        {% image next_article.image max-360x200 as article_image %}
+                        <a href="{{ next_article.url }}" class="teaser-stacklist__thumbnail-link">
+                            <img alt="{{ next_article.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
                         </a>
                     </div>
                 {% endif %}
             
-                <div class="teaser-stacklist__content{% if post.image %} teaser-stacklist__content--split{% endif %}">
+                <div class="teaser-stacklist__content{% if next_article.image %} teaser-stacklist__content--split{% endif %}">
                     <a href="{{ next_article.url }}" class="teaser-stacklist__anchor">
                         <h3 class="teaser-stacklist__title">{{ next_article.title }}</h3>
                         <p class="teaser-stacklist__subtitle"> {{ next_article.subtitle }}</p>
