@@ -8,20 +8,18 @@
         }
     </style>
 {% endblock %}
-
-<div class="component-title">
-    <div class="component-title__super">
-        <h1 class="heading heading--primary">
-            {% trans "Yegna launched the first ever teen TV Drama in Ethiopia" %}
-        </h1>
-    </div>
-    {% include "./banner.html" %}
-</div>
-
-
 <div class="homepage">
-    <div class="homepage__inner">
+    
+    <div class="component-title">
+        <div class="component-title__super">
+            <h1 class="heading heading--primary">
+                {% trans "Yegna launched the first ever teen TV Drama in Ethiopia" %}
+            </h1>
+        </div>
+    </div>
 
+    {% include "./banner.html" %}
+    <div class="homepage__inner">
         <div class="homepage__column-main">
             <div class="heading-full">
                 <h2 class="heading__title">{% trans "Yegna news" %}</h2>

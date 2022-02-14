@@ -1,3 +1,6 @@
 .section-page {
-    padding: 40px 6%;
+    padding: 40px 10px;
+    @media (min-width: 991px) {
+        padding: 40px 8%;
+    } 
 }
