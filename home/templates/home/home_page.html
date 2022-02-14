@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags article_tags static theme_tags %}
+{% load wagtailcore_tags article_tags static %}
 
 
 {% block content %}
@@ -8,7 +8,6 @@
             Ideally should be {% include THEME_PATH|add:"header.html" %} but this does not work.
         -->
     {% endcomment %}
-    {% get_current_theme as theme %}
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/home.html" %}
     {% elif theme.slug == 'springster' %}
