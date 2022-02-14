@@ -28,8 +28,16 @@
             padding: 15px;
             width: auto;
         }
-        .heading__title:before {
-            background: url($staticPath + 'img/yegna/icon-diamond.svg') no-repeat center / auto;
+        .heading__title {
+            text-align: left;
+            &:before {
+                background: url($staticPath + 'img/yegna/icon-diamond.svg') no-repeat center / auto;
+                content: "";
+                display: inline-block;
+                height: 20px;
+                margin: 0 10px 0;
+                width: 30px;
+            }
         }
     }
     &-mid {
@@ -43,8 +51,16 @@
             padding: 15px;
             width: auto;
         }
-        .heading__title:before {
-            background: url($staticPath + 'img/yegna/icon-characters.svg') no-repeat  center / auto;
+        .heading__title {
+            text-align: left;
+            &:before {
+                background: url($staticPath + 'img/yegna/icon-characters.svg') no-repeat  center / auto;
+                content: "";
+                display: inline-block;
+                height: 30px;
+                margin: 0 20px 0;
+                width: 30px;
+            }
         }
     }
     

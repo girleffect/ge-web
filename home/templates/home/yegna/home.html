@@ -1,6 +1,5 @@
 {% load i18n %}
 
-
 {% block extra_css %}
     <style>
         body.yegna {
@@ -8,8 +7,8 @@
         }
     </style>
 {% endblock %}
+
 <div class="homepage">
-    
     <div class="component-title">
         <div class="component-title__super">
             <h1 class="heading heading--primary">
@@ -19,6 +18,7 @@
     </div>
 
     {% include "./banner.html" %}
+
     <div class="homepage__inner">
         <div class="homepage__column-main">
             <div class="heading-full">
@@ -26,7 +26,6 @@
             </div>
 
             <div class="article-teasers">
-                {{ articlepages }}
                 {% for post in articlepages %}
                     {% if post.feature_in_homepage %}
                         {{post}}
@@ -38,7 +37,7 @@
 
         <div class="homepage__column-side">
             <div class="heading-mid">
-                <h2 class="heading__title"><h2 class="heading__title">{% trans "Meet the characters" %}</h2>
+                <h2 class="heading__title">{% trans "Meet the characters" %}</h2>
             </div>
         </div>
 

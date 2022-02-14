@@ -25,11 +25,10 @@
             cursor: pointer;
             display: block;
             font-size: 16px;
-            text-decoration: none;
             padding: 10px 15px;
-            text-decoration: none;
-            text-transform: capitalize;
             position: relative;
+            text-transform: capitalize;
+            text-decoration: none;
             &--label {
                 color: $vivid_violet;
             }
@@ -44,10 +43,15 @@
                 vertical-align: middle;
                 width: 37px;
             }
-            span {
+            &:after {
                 border-bottom: 2px solid transparent;
+                content: " ";
+                display: block;
+                float: right;
+                margin: -10px 0 0;
+                width: 45%;
             }
-            &:hover span {
+            &:hover:after {
                 border-bottom-color: #000;
             }
             &.is-active {
