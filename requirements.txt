@@ -6,3 +6,5 @@ psycopg2-binary
 social-auth-app-django
 django-threadedcomments
 wagtailfontawesome
+boto3
+django-storages
