@@ -1,0 +1,140 @@
+form {
+    padding: 25px 15px 10px;
+}
+
+fieldset {
+    border: none;
+    margin: 0 0 10px;
+    padding: 10px 5px;
+    overflow: auto;
+}
+
+label[for=id_terms_and_conditions] {
+    display: inline-block;
+    visibility: visible;
+    &:after {
+        background-color: #fff;
+        border: 1px solid $very_light_gray;
+        content: "";
+        display: inline-block;
+        height: 16px;
+        margin: 0 16px 0 0;
+        padding: 5px;
+        vertical-align: middle;
+        width: 16px;
+    }
+}
+label {
+    color: $dark_violet;
+    display: block;
+    font-weight: 400;
+    padding: 0 0 5px;
+    -webkit-font-smoothing: antialiased;
+
+    //label[for=id_terms_and_conditions] specificity
+    &.is-on:after {
+        background-color: $very_dark_gray;
+        background-image: url($staticPath + 'img/check-box.png');
+        background-position: 0 50%;
+        background-size: 24px;
+        background-repeat: no-repeat;
+    }
+}
+
+.terms_and_conditions {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    &-link {
+        color: $dark_violet;
+        display: inline-block;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}
+
+
+#id_terms_and_conditions {
+    display: none;
+    visibility: hidden;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="week"],
+input[type="date"],
+input[type="month"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="url"],
+select {
+    background-color: $white;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    &:focus {
+        background-color: $light_gray_red;
+        outline: none;
+    }
+}
+
+select {
+    margin: 0 0 5px;
+}
+
+input.search__input {
+    width: 75%;
+}
+
+.input-hint {
+    color: $dark_violet;
+    padding: 0 0 5px;
+}
+
+input[type=submit] {
+    border: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+ }
+
+ .security {
+    margin: 10px 0 0;
+    p {
+        color: $dark_violet;
+    }
+ }
+
+
+.error-list {
+    text-align: left;
+    &__item {
+        align-items: flex-start;
+        background: #fff;
+        color: $light_red;
+        display: flex;
+        font-size: 16px;
+        padding: 8px 10px;
+        &:before {
+            background:url($staticPath + 'img/error.png') no-repeat center / 100%;
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            vertical-align: middle;
+            content: " ";
+            display: inline-block;
+            height: 25px;
+            margin: 0 5px 0 0;
+            padding: 0 5px 0 0;
+            width: 25px;
+        }
+    }
+}

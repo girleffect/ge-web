@@ -1,0 +1,43 @@
+{% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
+{% get_next_article page as next_article %}
+
+{% if next_article %}
+<div class="article-page__recommendations">
+    <h4 class="heading heading--related-up-next">
+        {% trans 'Next up in' %} 
+    </h4>
+    <div class="article-teaser">
+        <div class="teaser-stacklist">
+            <div class="teaser-stacklist__item{% if next_article.image %} teaser-stacklist__item--split{% endif %}">
+                {% if next_article.image %}
+                    <div class="teaser-stacklist__thumbnail">
+                        {% image next_article.image max-360x200 as article_image %}
+                        <a href="{{ next_article.url }}" class="teaser-stacklist__thumbnail-link">
+                            <img alt="{{ next_article.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
+                        </a>
+                    </div>
+                {% endif %}
+            
+                <div class="teaser-stacklist__content{% if next_article.image %} teaser-stacklist__content--split{% endif %}">
+                    <a href="{{ next_article.url }}" class="teaser-stacklist__anchor">
+                        <h3 class="teaser-stacklist__title">{{ next_article.title }}</h3>
+                        <p class="teaser-stacklist__subtitle"> {{ next_article.subtitle }}</p>
+                    </a>
+
+                    {% if next_article.tags.all.count %}
+                        <div class="teaser-stacklist__cta">
+                            <ul class="teaser-tags-list">
+                                {% for tag in next_article.tags.all %}
+                                    <li class="teaser-tags-list__item">
+                                        #{{ tag.name}}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

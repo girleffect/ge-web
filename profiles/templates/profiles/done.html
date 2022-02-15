@@ -1,18 +1,16 @@
 {% extends "base.html" %}
-{% load i18n static wagtailsettings_tags wagtailcore_tags %}
+{% load i18n static wagtailsettings_tags wagtailcore_tags theme_tags%}
 {% get_settings %}
 
 {% block content %}
-    {% trans "Thank you for joining!" %}
-    {{request.user.username}}
-    <h6 >{% trans "Let us know more about yourself." %}</h6>
-    <form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}}>
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <input type="submit" value="{% trans 'Save' %}"/>
-    </form>
-      <a href="{% url 'view_my_profile' %}" >{% trans "Profile" %}</a>
-      <a href="/">{% trans "Home Page" %}</a>
-
+{% get_current_theme as theme %}
+  {% if theme.slug == 'ninyampinga' %}
+    {% include "./ninyampinga/done.html" %}
+  {% elif theme.slug == 'springster' %}
+    {% include "./springster/done.html" %}
+  {% elif theme.slug == 'tujibebe' %}
+    {% include "./tujibebe/done.html" %}
+  {% elif theme.slug == 'zathu' %}
+    {% include "./zathu/za_done.html" %}
+  {% endif %}
 {% endblock %}

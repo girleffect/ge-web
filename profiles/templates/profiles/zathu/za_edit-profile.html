@@ -1,0 +1,11 @@
+{% load i18n %}
+<div class="profiles">
+    <div class="component">
+        <div class="component__super">
+            <h1 class="super-title">{% trans "Edit your profile" %}</h1>
+        </div>
+    </div>
+    <div class="profiles__inner">
+        {% include "../_patterns/profile-form.html" %}
+    </div>
+</div>

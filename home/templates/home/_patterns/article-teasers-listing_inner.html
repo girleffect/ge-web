@@ -1,0 +1,43 @@
+{% load wagtailcore_tags wagtailimages_tags article_tags static theme_tags i18n %}
+
+{% with post=post.specific %}
+    <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' or theme.slug == 'ninyampinga' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
+        {% if post.image %}
+            <div class="teaser-stacklist__thumbnail">
+                {% image post.image width-400 as article_image %}
+                <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
+                    <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
+                </a>
+            </div>
+        {% endif %}
+
+        <div class="teaser-stacklist__content{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__content--split{% endif %}{% endif %}">
+            {% if theme.slug == 'zathu' %}
+                <h4 class="teaser-stacklist-parent">
+                    {% with parent=post.get_parent %}
+                        <a href="{% pageurl parent %}" class="teaser-stacklist-parent__anchor">
+                            {{parent}}
+                        </a>
+                    {% endwith %}
+                </h4>
+            {% endif %}
+            <a href="{% pageurl post %}" class="teaser-stacklist__anchor">
+                <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
+            </a>
+            <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
+            <div class="teaser-stacklist__cta">
+                <ul class="teaser-tags-list">
+                    {% for tag in post.tags.all %}
+                        <li class="teaser-tags-list__item">
+                            #{{ tag.name}}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>  
+    </div>
+{% endwith %}
+
+
+
+

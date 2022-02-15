@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 import environ
 
 env = environ.Env()
@@ -25,7 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -34,6 +35,10 @@ INSTALLED_APPS = [
     "search",
     "profiles",
     "forms",
+    "comments",
+    "threadedcomments",
+    "django_comments",
+    "django.contrib.sites",
     "social_django",
     "wagtail.contrib.settings",
     "wagtail.contrib.forms",
@@ -49,6 +54,7 @@ INSTALLED_APPS = [
     "wagtail.admin",
     "wagtail.core",
     "wagtail.locales",
+    "wagtailfontawesome",
     "modelcluster",
     "taggit",
     "django.contrib.admin",
@@ -57,8 +63,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "wagtail.contrib.simple_translation",
 ]
-
+COMMENTS_APP = "threadedcomments"
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -93,13 +100,16 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "home.context_processors.get_theme",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                "django.template.context_processors.i18n",
                 "wagtail.contrib.settings.context_processors.settings",
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "geweb.context_processors.compress_settings",
             ],
         },
     },
@@ -152,6 +162,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+WAGTAILSIMPLETRANSLATION_SYNC_PAGE_TREE = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -194,3 +206,16 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
 TAGGIT_CASE_INSENSITIVE = True
 
 LOGIN_URL = "/profiles/login/"
+
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "")
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID", "")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "")
+AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = "public-read"
+
+if AWS_STORAGE_BUCKET_NAME and AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY:
+    MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    INSTALLED_APPS += [
+        "storages",
+    ]

@@ -1,19 +1,42 @@
-{% load wagtailcore_tags article_tags i18n %}
+{% load wagtailcore_tags article_tags home_tags i18n %}
 
-<div class="article-page__body">
-    <div class="heading heading--article">
-        <h1 class="heading__primary">{{ page.title }}</h1>
+<div class="article-page">
+    <div class="article-page__body">
+        <div class="article-heading">
+            <h1 class="heading__primary">{{ page.title }}</h1>
+        </div>
+        {% if page.subtitle %}
+            <p class="subheading">{{ page.subtitle }}</p>
+        {% endif %}
+        
+        <!-- START: CURRENTLY STATIC - Needs to be updated to be -->
+        <div class="comments-counter">
+            <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
+                Your thoughts (238)
+            </a>
+        </div>
+        <!-- END: CURRENTLY STATIC -->
+
+        {% include_block page.body %}
     </div>
-    {% if page.subtitle %}
-        <p class="subheading">{{ page.subtitle }}</p>
+    {% if page.tags.all.count %}
+        <div class="tags-list">     
+            {% for tag in page.tags.all %}
+                <span class="tags-list__item">#{{ tag.name}}</span>
+            {% endfor %}
+        </div>
     {% endif %}
-    
-    <!-- CURRENTLY STATIC - Needs to be updated to be -->
-    <div class="comments-counter">
-        <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
-            Your thoughts (238)
-        </a>
-    </div>
-
-    {% include_block page.body %}
+    {% social_media_article %}
+    {% if page.tags.all.count %}
+        <div class="tag-cloud">
+            <h3 class="heading heading__micro">Read more about</h3>
+            <ul class="tag-cloud-list">
+                {% for tag in page.tags.all %}
+                    <li class="tag-cloud-list__item">#{{ tag.name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% include "../_patterns/article-teasers-recommendations.html" %}
+    {% include "../_patterns/breadcrumbs.html" %}
 </div>

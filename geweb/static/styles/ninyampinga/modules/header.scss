@@ -1,0 +1,21 @@
+.header {
+    animation: qs-timer .3s;
+    background-color: $plum;
+    overflow: initial;
+    height: auto;
+    padding: 0 10px;
+    text-align: center;
+    transform: translate3d(0,0,0);
+    transition: transform .3s ease 1ms;
+    z-index: 99999;
+
+    @media (min-width: 991px) {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;   
+        height: 65px;
+        padding: 0 5%;
+    }
+}
+

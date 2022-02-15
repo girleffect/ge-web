@@ -1,0 +1,44 @@
+{% load wagtailcore_tags wagtailimages_tags static i18n %}
+
+<div class="homepage">
+    {% include "./banner.html" %}
+    <div class="homepage-column {% if articlepages_in_menu.count == 0 %} homepage-column--with-side-bar{% endif %}">
+       
+        <div class="homepage-column__one">
+            <div class="heading heading--hero">
+                <h3 class="heading__basic">
+                    Latest articles
+                </h3>
+            </div>
+
+            {% if articlepages %}
+                <div class="article-stacklist">
+                    {% for post in articlepages %}
+                        {% if post.feature_in_homepage %}
+                            {% with post=post.specific %}
+                                {% include "./article-teasers-listing_inner.html" %}
+                            {% endwith %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- feature_in_homepage TAKES PRECEDENCE-->
+        {% for post in articlepages_in_menu %}
+            {% if not post.feature_in_homepage %}
+                <div class="homepage-column__two">
+                    <div class="heading heading--hero">
+                        <h3 class="heading__basic">
+                            Announcement
+                        </h3>
+                    </div>
+                    <div class="article-hero">
+                        {% include "./article-teasers-listing_inner.html" %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+</div>

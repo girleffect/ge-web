@@ -1,0 +1,53 @@
+{% load i18n %}
+
+{% trans "Not set." as defaultText %}
+<div class="profiles__account account">
+    <ul class="account-list">
+        <li class="account-list__item account-list__item--leading">
+            <h3 class="account-list__label">{% trans "When you type comments your name will appear as:" %}</h3>
+            <p class="account-list__info account-list__info--dob">
+                {{ user.username }}
+            </p>
+        </li>
+
+        <li class="account-list__item">
+            <h3 class="account-list__label">{% trans "Date of Birth: " %}</h3>
+            <p class="account-list__info account-list__info--dob">
+                {% if user.profile.date_of_birth %}
+                    {{ user.profile.date_of_birth | date:"M d, Y" }}
+                {% else %}
+                    {{defaultText}}
+                {% endif %}
+            </p>
+        </li>
+
+        <li class="account-list__item">
+            <h3 class="account-list__label" for="id_gender">{% trans "Gender:" %}</h3>
+            <p class="account-list__info account-list__info--gender">
+                {{ user.profile.gender | default:defaultText }}
+            </p>
+        </li>
+
+        <li class="account-list__item">
+            <h3 class="account-list__label" for="id_location">{% trans "Location:" %}</h3>
+            <p class="account-list__info account-list__info--location">
+                {{ user.profile.location | default:defaultText }}
+            </p>
+        </li>
+    </ul>
+
+    <div class="profiles__account--passwords">
+        <div class="component">
+            <div class="component__subtitle">
+                <p class="subtitle">{% trans "Change your pin" %}</p>
+            </div>
+        </div>
+        {% include "../_patterns/change-password-form.html" %}
+    </div>
+
+    <div class="call-to-action--profiles">
+        <a href="/" class="call-to-action__link call-to-action__link--left">
+            {% trans "Home" %}
+        </a>
+    </div>
+</div>

@@ -1,9 +1,8 @@
-from . import views
-
-from django.urls import path
 from django.contrib.auth import views as auth_views
+from django.urls import path
 from django.views.generic import TemplateView
 
+from . import views
 
 urlpatterns = [
     path("logout/", views.logout_page, name="auth_logout"),

@@ -1,0 +1,41 @@
+{% load article_tags i18n wagtailimages_tags home_tags wagtailcore_tags %}
+
+<div class="article-page">
+    <div class="article-page__body">
+        <div class="article-heading">
+            <h1 class="heading__primary">{{ page.title }}</h1>
+        </div>
+        {% if page.subtitle %}
+            <p class="subheading">{{ page.subtitle }}</p>
+        {% endif %}
+
+        {% if page.image %}
+            <div class="article-page__image">
+                {% image page.image max-360x200 as article_image %}
+                <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
+            </div>
+        {% endif %}
+        
+        {% include_block page.body %}
+    </div>
+    {% if page.tags.all.count %}
+        <div class="tags-list">     
+            {% for tag in page.tags.all %}
+                <span class="tags-list__item">#{{ tag.name}}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% social_media_article %}
+    {% if page.tags.all.count %}
+        <div class="tag-cloud">
+            <h3 class="heading heading__micro">Read more about</h3>
+            <ul class="tag-cloud-list">
+                {% for tag in page.tags.all %}
+                    <li class="tag-cloud-list__item">#{{ tag.name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% include "../_patterns/article-teasers-recommendations.html" %}
+    {% include "../_patterns/breadcrumbs.html" %}
+</div>

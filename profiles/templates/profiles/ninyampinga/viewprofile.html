@@ -1,0 +1,11 @@
+{% load i18n wagtailsettings_tags %}
+<div class="profiles">
+    <div class="profiles__inner">
+        <div class="component">
+            <div class="component__super">
+                <h1 class="super-title">{% trans "Hello " %} {{ user.username }}</h1>
+            </div>
+        </div>
+        {% include "./nn_account.html" %}
+    </div>
+</div>

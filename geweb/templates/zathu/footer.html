@@ -1,0 +1,41 @@
+{% load i18n home_tags static wagtailcore_tags %}
+
+<footer  id="footer" class="footer">
+    <div class="footer__inner">
+        {% include "../_patterns/search-input.html" with enhance="footer" %}
+        {% social_media_footer %}
+        <div class="footer-wrapper">
+            {% include "../_patterns/nav.html" with suffix="zathu" %}
+            {% include "../_patterns/footer-nav.html" with suffix="zathu" %}
+        </div>
+        <div class="nav-list footer-profiles">
+            <div class="nav-list__item">
+                <a href="{% url 'auth_login' %}" class="nav-list__anchor">Log in</a>
+            </div>
+            <div class="nav-list__item">
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'user_register' %}" class="nav-list__anchor">Sign up</a>
+                {% else %}
+                    <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">Profile</a>
+                {% endif %}
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="footer-languages">
+        <ul class="languages-list">
+            <li class="languages-list__item">
+                <label  class="languages-list__label">Languages:</label>
+            </li>
+            {% include "../_patterns/_language-list.html" %}
+        </ul>
+    </div>
+
+    <div class="copyright">
+        <p class="copyright__text">
+            © {% now "Y" %} Zathu. All Rights Reserved.
+        </p>
+    </div>
+    
+</footer>

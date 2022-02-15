@@ -1,0 +1,65 @@
+.heading {
+    color: $vivid_violet;
+
+    &__title {
+        color: $vivid_violet;
+        display: block;
+        font-size: 27px;
+        padding: 15px 0;
+        text-align: center;
+    }
+    &--primary {
+        color: $vivid_violet;
+        font-size: 32px;
+    }
+    &--micro {
+        color: $black;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    &-full {
+        &:before {
+            background: url($staticPath + 'img/yegna/divider.svg') no-repeat center 0/cover;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 20px;
+            content: "";
+            display: block;
+            margin: 15px 0 0;
+            padding: 15px;
+            width: auto;
+        }
+        .heading__title:before {
+            background: url($staticPath + 'img/yegna/icon-diamond.svg') no-repeat center / auto;
+        }
+    }
+    &-mid {
+        &:before {
+            background: url($staticPath + 'img/yegna/divider.svg') no-repeat  25px -45px/auto;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 20px;
+            content: "";
+            display: block;
+            margin: 15px 0 0;
+            padding: 15px;
+            width: auto;
+        }
+        .heading__title:before {
+            background: url($staticPath + 'img/yegna/icon-characters.svg') no-repeat  center / auto;
+        }
+    }
+    
+    .subheading {
+        color: $black;
+        display: inline-block;
+        font-size: 27px;
+        padding: 15px 0;
+        &:before {
+            content: "";
+            display: inline-block;
+            height: 40px;
+            margin: 0 0.5em 0 0;
+            vertical-align: middle;
+            width: 30px;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{% load i18n wagtailcore_tags static %}
+
+{% if page %}
+  <div id="language-bar" class="languages">
+    <div class="languages__wrapper">
+      <ul class="languages-list">
+        {% include "./_language-list.html" %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

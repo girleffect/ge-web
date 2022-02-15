@@ -1,0 +1,11 @@
+.component-title {
+    //background-color: rgba(0,255,255,.1);
+    text-align: center;
+    @media (min-width: 991px) {
+        padding: 20px 10%;
+    } 
+
+    &__super {
+        overflow: auto;
+     }
+}

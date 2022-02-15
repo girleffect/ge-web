@@ -1,25 +1,21 @@
 from django.db import models
-
-from wagtail.core.models import Page
-
-from modelcluster.fields import ParentalKey
-from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase
-from wagtail.core.fields import StreamField
-from wagtail.images.edit_handlers import ImageChooserPanel
+from django.utils.translation import gettext_lazy as _
+from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.core import blocks
+from wagtail.core.fields import StreamField
+from wagtail.core.models import Page
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.edit_handlers import (
+from wagtail.images.edit_handlers import ImageChooserPanel
+
+from articles.models import ArticlePage, SectionPage
+from forms.models import FormPage
+from home.themes import THEME_CHOICES
+
+from wagtail.admin.edit_handlers import (  # isort:skip
     FieldPanel,
     MultiFieldPanel,
     StreamFieldPanel,
 )
-from wagtail.contrib.settings.models import BaseSetting, register_setting
-from wagtail.search import index
-from django.utils.translation import gettext_lazy as _
-from home.themes import THEME_CHOICES
-from articles.models import SectionPage
-from forms.models import FormPage
 
 
 class HomePage(Page):
@@ -51,7 +47,25 @@ class HomePage(Page):
         forms = FormPage.objects.descendant_of(self).live()
         context["forms"] = forms
 
+        # Ninyampinga featured in homepage adjustment
+        section_index = self.get_children().live().first()
+        context["section_index"] = section_index
+
+        articlepages = ArticlePage.objects.live().descendant_of(section_index)
+        context["articlepages"] = articlepages
+
+        articlepages_in_menu = (
+            ArticlePage.objects.live().in_menu().descendant_of(section_index)
+        )
+        context["articlepages_in_menu"] = articlepages_in_menu
+
         return context
+
+
+class SocialMediaLinkBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True)
+    link = blocks.CharBlock(required=True)
+    image = ImageChooserBlock()
 
 
 @register_setting
@@ -92,11 +106,12 @@ class SiteSettings(BaseSetting):
     )
     social_media_links_on_footer_page = StreamField(
         [
-            ("social_media_site", blocks.URLBlock()),
+            ("social_media_site", SocialMediaLinkBlock()),
         ],
         null=True,
         blank=True,
     )
+
     facebook_sharing = models.BooleanField(
         default=False,
         verbose_name="Facebook",

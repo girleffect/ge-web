@@ -1,3 +1,4 @@
+//AMMED CSS SELECTORS
 .breadcrumbs {
     font-family: 'Baton-Regular';
     padding: 10px 0;
@@ -17,7 +18,7 @@
             text-decoration: none;
             text-transform: capitalize;
             &:after {
-                color: $dark_grayish_blue; //#868b95
+                color: $dark_gray_blue; //#868b95
                 content: " / ";
                 font-weight: 100;
                 margin: 0 2px 0 5px;

@@ -4,21 +4,22 @@ $white: #ffffff;
 $light_gray: #f0f3f5;
 $light_gray_variation2: #ebebeb; 
 $light_gray_blue: #edf0f2;
-$dark_grayish_blue: #a3a7ae;
+$dark_gray_blue: #a3a7ae;
 $dark_gray: #656d78;
-$very_dark_grayish_blue: #33373c;
+$very_dark_gray_blue: #33373c;
 
-$soft_cyan: #0fbfbf;
+$soft_cyan: #6be6e6;
 $strong_cyan: #0fbfbf;
 $lime_green: #a4eed2;
-
-$light_yellow: #edbf40;
 
 $pale_red: #ffa4b8;
 $soft_red: #ef5274;
 
-$bright_orange: #edbf40;
-$light_orange: #ff9f73;
+$light_yellow: #ffe654;
+$gold: #edbf40;
+
+$light_orange: #ff9f73; 
+$strong_orange: #f96f96;
 $light_orange_variation2: #ff9966;
 
 $pale_violet: #e3ccff;
@@ -30,20 +31,25 @@ $themes: (
     light_gray: $light_gray,
     light_gray_variation2: $light_gray_variation2,
     light_gray_blue: $light_gray_blue,
-    dark_grayish_blue: $dark_grayish_blue,
+    dark_gray_blue: $dark_gray_blue,
     dark_gray: $dark_gray,
-    very_dark_grayish_blue: $very_dark_grayish_blue,
+    very_dark_gray_blue: $very_dark_gray_blue,
     soft_cyan: $soft_cyan,
-    strong_cyan: $strong_cyan,
+    cyan: $strong_cyan,
     lime_green: $lime_green,
     light_yellow: $light_yellow,
     pale_red: $pale_red,
     soft_red: $soft-red,
-    bright_orange: $bright_orange,
+    gold: $gold,
     light_orange: $light_orange,
-    light_orange_variation2: $light_orange_variation2,
+    orange: $light_orange_variation2,
     pale_violet: $pale_violet,
-    violet: $violet
+    violet: $violet,
+
+    my-life: $soft_cyan,
+    my-body: $light_yellow,
+    my-future: $light_orange,
+    girl-stories: $pale_red
 );
 
 //DIRECTORY

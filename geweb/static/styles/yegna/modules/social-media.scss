@@ -1,0 +1,45 @@
+.social-media {
+    &-list {
+        background-color: $very_light_gray;
+        display: block;
+        text-align: right;
+        margin: 15px auto;
+        padding: 15px;
+        @media (min-width: 991px) {
+            padding: 25px 15px;
+        }
+        &__item {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 8px;
+        }
+        &__anchor {
+            color: $black;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            &-title {
+                color: $black;
+            }
+            &-icon { 
+                vertical-align: middle;
+                margin-right: 5px;
+                height: 21px;
+                width: 21px;
+            }
+        }
+        &__label {
+            font-weight: bold;
+        }
+        
+    }
+}
+
+.article-page { 
+    .social-media-list {
+        &__anchor-title {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}

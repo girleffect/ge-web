@@ -1,0 +1,32 @@
+{% load article_tags home_tags i18n wagtailcore_tags wagtailimages_tags %}
+
+<div class="article-page{% if page.get_parent|slugify  == 'cast' %} article-page--cast{% endif %}">
+    <div class="component-title">
+        <div class="component-title__super">
+            <h1 class="heading heading--primary">{% if page.get_parent|slugify  == 'cast' %}{% trans "Meet the Yegna cast" %} {% endif %} {{ page.title }}</h1>
+        </div>
+    </div>
+
+    <div class="article-page__inner">
+        {% if page.image %}
+            <div class="article-page__image">
+                {% image page.image max-360x200 as article_image %}
+                <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
+            </div>
+        {% endif %}
+        <h2 class="subheading">{{ page.title }}</h2>
+        
+
+        {% if page.subtitle %}
+            <h3 class="heading heading--micro">{{ page.subtitle }}</h3>
+        {% endif %}
+        {% include_block page.body %}
+    </div>
+
+    {% social_media_article %}
+    <div class="call-to-action">
+        <a href="{{ page.get_parent.url }}" class="call-to-action__back">
+            {% trans "Go back to" %} {{page.get_parent}}
+        </a>
+    </div>
+</div>

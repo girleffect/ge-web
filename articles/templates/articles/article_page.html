@@ -1,45 +1,18 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags article_tags theme_tags i18n %}
+{% load wagtailcore_tags article_tags theme_tags home_tags i18n comments %}
 
-{% block body_class %}article-page{% endblock %}
-{% block content %}
-   
-    {% if brand == 'springster' %}
-    <div class="article-page-inner">
-        {% include "./springster/article.html" %}
-        
-        {% if page.tags.all.count %}
-            <div class="tags">
-                <ul class="tags-list">
-                    {% for tag in page.tags.all %}
-                        <li class="tags-list__item">{{ tag.name}}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
+{% block content %} 
     {% get_current_theme as theme %}
-    <h2>Using theme: {{theme.label}}</h2>
-  {% breadcrumbs %}
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}
-        <p class="meta">{{ page.subtitle }}</p>
-    {% endif %}
-
-        {% if page.tags.all.count %}
-            <div class="tag-cloud">
-                <h3 class="heading heading__micro">Read more about</h3>
-                <ul class="tag-cloud-list">
-                    {% for tag in page.tags.all %}
-                        <li class="tag-cloud-list__item">#{{ tag.name}}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-
-        {% include "./patterns/article-teasers-recommendations.html" %}
-        {% include "./patterns/breadcrumbs.html" %}
-    </div>
+    {% if theme.slug == 'ninyampinga' %}
+    {% include "./ninyampinga/article.html" %}
+    {% elif theme.slug == 'springster' %}
+        {% include "./springster/article.html" %}
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/article.html" %}
+    {% elif theme.slug == 'yegna' %}
+        {% include "./yegna/article.html" %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/article.html" %}
     {% endif %}
 {% endblock %}

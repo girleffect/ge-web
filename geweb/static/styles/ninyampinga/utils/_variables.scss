@@ -1,0 +1,56 @@
+//COLORS
+$white: #ffffff;
+
+$gray: #b4b4b4;
+
+$dark_grey: #333333;
+
+$light_cyan: #b3dcde;
+
+$strong_cyan: #00a8b7;
+
+$vivid_red: #dc0d15;
+
+$pink: #e7357c;
+
+$vivid_pink: #ed018c;
+
+$plum: #711343;
+
+$yellow: #fdd400;
+
+$vivid_yellow: #ffe82c;
+
+$orange: #f59c00;
+
+$bright_orange: #ed6f26;
+
+$lime_green: #2cb359;
+
+//THEMES
+$themes: (
+    white: $white,
+    dark_grey: $dark_grey,
+    light_cyan: $light_cyan,
+    strong_cyan: $strong_cyan,
+    vivid_red: $vivid_red,
+    pink: $pink,
+    vivid_pink: $vivid_pink,
+    plum: $plum,
+    yellow: $yellow,
+    orange: $orange,
+    lime_green: $lime_green
+);
+
+
+//DIRECTORY
+$staticPath: 'http://127.0.0.1:8000/static/';
+
+
+//FONTSIZES
+$default: 16px;
+$standard: 17px;
+$medium: 18px;
+$medium_small: 19px;
+$medium_large: 22.88px;
+$larger: 25px;
