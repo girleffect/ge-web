@@ -28,7 +28,9 @@ class Command(BaseCommand):
                     locale=locale,
                 )
                 if "image_filename" in articles[article].keys():
-                    if Image.objects.filter(filename=articles[article]["image_filename"]).exists():
+                    if Image.objects.filter(
+                        filename=articles[article]["image_filename"]
+                    ).exists():
                         article_page.image = Image.objects.get(
                             filename=articles[article]["image_filename"]
                         )
