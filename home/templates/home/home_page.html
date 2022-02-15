@@ -1,8 +1,6 @@
 {% extends "base.html" %}
-{% load theme_tags %}
 
 {% block content %}
-    {% get_current_theme as theme %}
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/home.html" %}
     {% elif theme.slug == 'springster' %}
