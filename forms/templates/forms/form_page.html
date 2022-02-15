@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if theme.slug == 'ninyampinga' %}
-        {% include "./ninyampinga/home.html" %}
-    {% elif theme.slug == 'springster' %}
+    {% if theme.slug == 'springster' %}
         {% if page.title|slugify == 'polls' %}
             {% include "./springster/polls/form.html" %}
         {% endif %}
+        
+        {% if page.title|slugify == 'yourwords' %}
+            {% include "./springster/yourwords/form.html" %}
+        {% endif %}
+
     {% elif theme.slug == 'tujibebe' %}
-        {% include "./tujibebe/home.html" %}
-    {% elif theme.slug == 'yegna' %}
-        {% include "./yegna/home.html" %}
-    {% elif theme.slug == 'zathu' %}
-        {% include "./zathu/home.html" %}
+        {% if page.title|slugify == 'polls' %}
+            {% include "./tujibebe/polls/form.html" %}
+        {% endif %}
+
+        {% if page.title|slugify == 'yourwords' %}
+            {% include "./tujibebe/yourwords/form.html" %}
+        {% endif %}
     {% endif %}
 {% endblock content %}
