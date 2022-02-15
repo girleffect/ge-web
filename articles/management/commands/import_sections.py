@@ -25,9 +25,9 @@ class Command(BaseCommand):
                         title=sections[section]["title"],
                         slug=sections[section]["slug"],
                     )
-                    if sections[section]["image_name"]:
-                        if Image.objects.filter(title="image_name").exists():
-                            new_section.image = Image.objects.get(title="image_name")
+                    if "image_filename" in sections[section].keys():
+                        if Image.objects.filter(filename=sections[section]["image_filename"]).exists():
+                            new_section.image = Image.objects.get(sections[section]["image_filename"])
                     if "translation_pks" in sections[section].keys():
                         trans_pks = sections[section]["translation_pks"]
                         trans_slug = sections[str(trans_pks[0])]["slug"]

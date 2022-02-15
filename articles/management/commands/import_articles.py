@@ -27,10 +27,10 @@ class Command(BaseCommand):
                     body=body,
                     locale=locale,
                 )
-                if "image_file_name" in articles[article].keys():
-                    if Image.objects.filter(filename="image_file_name").exists():
+                if "image_filename" in articles[article].keys():
+                    if Image.objects.filter(filename=articles[article]["image_filename"]).exists():
                         article_page.image = Image.objects.get(
-                            filename="image_file_name"
+                            filename=articles[article]["image_filename"]
                         )
 
                 if "translation_pks" in articles[article].keys():
