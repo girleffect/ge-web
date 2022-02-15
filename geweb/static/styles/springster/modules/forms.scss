@@ -142,7 +142,11 @@ input[type=checkbox]#id_terms_and_conditions {
         font-size: 16px;
     }
     &__feedback {
-        font-size: 15px;
+        color: $soft_red;
+        font-family: 'Baton-Regular';
+        font-size: 21px;
+        font-weight: 400;
+        padding: 0 15px 20px;
     }
 
     //FOR TEMPLATE form.as.p

@@ -20,12 +20,12 @@
                                 <label for="{{ field.id_for_label }}">{{ field.label|capfirst }}</label>
                                 {% for value, text in field.field.choices %}
                                     <div class="input-group">
-                                        <input name="{{ field.name }}" id="value-{{ field.id_for_label }}-{{ forloop.counter }}" type="radio" value="{{field.value}}"/>            
-                                        <label for="value-{{ field.id_for_label }}-{{ forloop.counter }}">{{ field.label|capfirst }}</label>          
+                                        <input name="{{ field.name }}" id="{{ value.id_for_label }}-{{ forloop.counter }}" type="radio" value="{{value}}"/>            
+                                        <label for="{{ field.id_for_label }}-{{ forloop.counter }}">{{ value|capfirst }}</label>          
                                     </div>
                                 {% endfor %}
                             {% else %}
-                            
+
                             <label for="{{ field.id_for_label }}">{{ field.label|capfirst }}</label>
                             {{field}}
                             {% endif %}
