@@ -1,8 +1,11 @@
 import json
+
 from django.core.management.base import BaseCommand
+from wagtail.core.models import Locale
+from wagtail.images.models import Image
+
 from articles.models import SectionPage
 from home.models import HomePage
-from wagtail.core.models import Locale
 
 
 class Command(BaseCommand):

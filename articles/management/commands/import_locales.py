@@ -1,8 +1,10 @@
 import json
+
 from django.core.management.base import BaseCommand
 from wagtail.core.models import Locale
-from home.models import HomePage
+
 from articles.models import SectionIndexPage
+from home.models import HomePage
 
 
 class Command(BaseCommand):
