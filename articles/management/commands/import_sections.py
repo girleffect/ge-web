@@ -37,7 +37,7 @@ class Command(BaseCommand):
                                 slug=trans_slug, locale__language_code=trans_locale
                             )
                             new_section.translation_key = trans_section.translation_key
-                        except:
+                        except SectionPage.DoesNotExist:
                             pass
                     if "section_parent_pk" in sections[section].keys():
                         parent_slug = sections[sections[section]["section_parent_pk"]][

@@ -1,7 +1,5 @@
 import json
 
-import boto3
-from django.conf import settings
 from django.core.management.base import BaseCommand
 from wagtail.admin.rich_text.converters.editor_html import EditorHTMLConverter
 from wagtail.core.models import Locale
@@ -14,11 +12,6 @@ from articles.models import ArticlePage, SectionPage
 class Command(BaseCommand):
     def handle(self, *args, **options):
         with open("articles.json", "r", encoding="utf-8") as f:
-            s3 = boto3.client(
-                "s3",
-                aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-                aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-            )
             articles = json.load(f)
             ArticlePage.objects.all().delete()
             for article in articles.keys():
@@ -34,19 +27,11 @@ class Command(BaseCommand):
                     body=body,
                     locale=locale,
                 )
-                if "image_name" in articles[article].keys():
-                    if Image.objects.filter(title="image_name").exists():
-                        article_page.image = Image.objects.get(title="image_name")
-                    else:
-                        img_file = s3.download_file(
-                            settings.AWS_STORAGE_BUCKET_NAME,
-                            articles[article]["image_name"],
-                            articles[article]["image_name"],
+                if "image_file_name" in articles[article].keys():
+                    if Image.objects.filter(filename="image_file_name").exists():
+                        article_page.image = Image.objects.get(
+                            filename="image_file_name"
                         )
-                        img_obj = Image.objects.create(
-                            title=articles[article]["image_name"], file=img_file
-                        )
-                        article_page.image = img_obj
 
                 if "translation_pks" in articles[article].keys():
                     trans_pks = articles[article]["translation_pks"]
@@ -57,7 +42,7 @@ class Command(BaseCommand):
                             slug=trans_slug, locale__language_code=trans_locale
                         )
                         article_page.translation_key = trans_article.translation_key
-                    except:
+                    except ArticlePage.DoesNotExist:
                         pass
                 if "parent_section_slug" in articles[article].keys():
                     parent = SectionPage.objects.get(
