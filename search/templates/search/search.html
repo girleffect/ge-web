@@ -19,6 +19,7 @@
                 </li>
             {% endfor %}
         </ul>
+        
         <div class="pagination">
          {% if search_results.previous %}
            {% if search_results.previous.number == 1 and pagelink == request.path %}
@@ -34,6 +35,7 @@
            <a href="{% url 'search' %}?query={{search_query}}&page={{ search_results.next.number }}" class="pagination__nav-anchor-next"></a>
          {% endif %}
        </div>
+
     {% elif search_query %}
         {% trans 'Nothing was found matching ' %} {{search_query}}
     {% else %}

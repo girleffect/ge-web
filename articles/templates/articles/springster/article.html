@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags home_tags i18n %}
+{% load comments home_tags i18n wagtailcore_tags article_tags %}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -10,9 +10,10 @@
         {% endif %}
         
         <!-- START: CURRENTLY STATIC - Needs to be updated to be -->
+        {% get_comment_count for page as comment_count %}
         <div class="comments-counter">
             <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
-                Your thoughts (238)
+                {% trans 'Your thoughts' %} ({{ comment_count }})
             </a>
         </div>
         <!-- END: CURRENTLY STATIC -->
@@ -37,6 +38,7 @@
             </ul>
         </div>
     {% endif %}
+    {% include "./commenting.html" %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}
 </div>

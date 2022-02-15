@@ -1,3 +1,5 @@
+{% load comments wagtailcore_tags %}
+
 <div class="homepage">
     <div class="content">
         {% include "./sp_banner.html" with urlString='/' imagePos='one' altString='Big Sis on Springster' %}
@@ -7,7 +9,7 @@
         {% endfor %}
     
         {% include "./sp_banner.html" with urlString='/' imagePos='two' altString='Celebrate girls - Read inspiring stories' %}
-   
+
         {% for post in articlepages|slice:"5:" %} 
             {% include "../_patterns/article-teasers-listing.html" %}
         {% endfor %}
