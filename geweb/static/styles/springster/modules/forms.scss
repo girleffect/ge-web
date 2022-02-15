@@ -173,10 +173,10 @@ input[type=checkbox]#id_terms_and_conditions {
                 width: 85%;
             }
             input[type="radio"] {
-                display: none;
+               // display: none;
                 position: absolute;
                 left: 0;
-                visibility: hidden;
+                //visibility: hidden;
             }
         }
     }
