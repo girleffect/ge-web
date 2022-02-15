@@ -114,3 +114,71 @@ input[type=checkbox]#id_terms_and_conditions {
 .security {
     padding: 10px 0 0;
 }
+
+
+
+/*
+    FORMS
+*/
+
+.forms {
+    text-align: left;
+    &__title {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 23px;
+        margin: 0 0 20px;
+        padding: 0 15px;
+    }
+    &__subtitle {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 24px;
+        font-weight: 400;
+        margin: 0 0 10px;
+        padding: 0 15px;
+    }
+    &__paragraph {
+        font-size: 16px;
+    }
+    &__feedback {
+        font-size: 15px;
+    }
+
+    //FOR TEMPLATE form.as.p
+    fieldset {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+        label {
+            font-size: 18px;
+            text-align: left;
+        }
+        .input-group {
+            align-items: center;
+            background-color: $white;
+            cursor: pointer;
+            display: flex;
+            margin: 15px 0;
+            padding: 0 15px;
+            text-align: left;
+            &:before {
+                background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
+                content: '';
+                height: 25px;
+                margin: 0 10px 10px 0;
+                width: 10%;
+            }
+            label {
+                width: 85%;
+            }
+            input[type="radio"] {
+                display: none;
+                position: absolute;
+                left: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+}

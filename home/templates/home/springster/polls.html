@@ -1,0 +1,20 @@
+{% load wagtailcore_tags %}
+
+<div class="polls polls--banner">
+    <div class="polls__icon">
+        <p class="polls__label">Cast Your Vote!</p>
+    </div>
+    <div class="polls__inner">
+        <h1 class="forms__title">{{form.title}}</h1>
+        
+        {% if form.introduction %}
+            <h2 class="forms__subtitle">{{form.introduction|safe}}</h3>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <a href="{% pageurl form %}" class="call-to-action__submit">Enter</a>
+        {% else %}
+            <a href="{% url 'auth_login' %}" class="call-to-action__submit">Log in to answer</a>
+        {% endif %}
+    </div>
+</div>

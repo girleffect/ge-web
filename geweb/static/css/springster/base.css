@@ -248,3 +248,57 @@ img.social-media-list__icon {
     margin: 20px 0 0;
     text-align: center;
 }
+
+
+
+
+
+/*
+    PROFILES
+*/
+
+.profiles {
+    background: #fff;
+    padding: 0 0 10px;
+    width: 360px;
+    margin: 0 auto;
+}
+
+profiles__form {
+    padding: 25px 0 20px;
+}
+
+fieldset {
+    border: none;
+    text-align: center;
+}
+
+label {
+    color: #656d78;
+    padding: 16px 0 10px 0;
+    text-align: center;
+}
+
+input[type=text], 
+input[type=number], 
+input[type=password], 
+input[type=email], 
+input[type=tel], 
+input[type=search], 
+input[type=week], 
+input[type=date], 
+input[type=month], 
+input[type=datetime], 
+input[type=datetime-local], 
+input[type=url], select {
+    border-radius: 0;
+    border: 2px solid #7300ff;
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 10px 0 10px 5px;
+    width: 98%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-border-radius: 0;
+}

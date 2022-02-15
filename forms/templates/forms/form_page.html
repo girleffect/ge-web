@@ -1,24 +1,17 @@
-{% load wagtailcore_tags i18n %}
-<html>
-    <head>
-        <title>{{ page.title }}</title>
-    </head>
-    <body>
-        <h1>{{ page.title }}</h1>
+{% extends "base.html" %}
 
-        {% if user.is_authenticated and user.is_active or request.is_preview or page.allow_anonymous_submissions %}
-            {% if form %}
-                <div>{{ page.intro|richtext }}</div>
-                <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:"1" }}{% endif %}" method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit">{% trans "Submit" %}</button>
-                </form>
-            {% else %}
-                <div>You can fill in the from only one time.</div>
-            {% endif %}
-        {% else %}
-            <div>{% trans "To fill in the form, you must log in." %}</div>
+{% block content %}
+    {% if theme.slug == 'ninyampinga' %}
+        {% include "./ninyampinga/home.html" %}
+    {% elif theme.slug == 'springster' %}
+        {% if page.title|slugify == 'polls' %}
+            {% include "./springster/polls/form.html" %}
         {% endif %}
-    </body>
-</html>
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/home.html" %}
+    {% elif theme.slug == 'yegna' %}
+        {% include "./yegna/home.html" %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/home.html" %}
+    {% endif %}
+{% endblock content %}
