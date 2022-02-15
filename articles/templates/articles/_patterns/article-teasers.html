@@ -1,4 +1,4 @@
-{% load wagtailcore_tags wagtailimages_tags i18n %}
+{% load comments wagtailcore_tags wagtailimages_tags i18n %}
 
 {% with post=post.specific %}
     <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
@@ -40,6 +40,12 @@
                         </li>
                     {% endfor %}
                 </ul>
+                <div class="commenting">
+                    {% get_comment_count for page as comment_count %}
+                    <a href="{% pageurl post %}" class="commenting__counter">
+                        {{ comment_count }}
+                    </a>
+                </div>
             </div>
 
             {% if theme.slug == 'ninyampinga' %}
@@ -54,6 +60,7 @@
                     {% trans "Click here" %}
                 </a>
             {% endif %}
+
             {% if theme.slug == 'yegna' %}
                 <a href="{% pageurl post %}" class="call-to-action__read-more">
                     {% trans "Read more" %}

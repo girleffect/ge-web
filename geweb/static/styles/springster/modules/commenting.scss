@@ -1,0 +1,22 @@
+.commenting {
+    padding: 0 15px;
+    &__counter {
+        color: $dark_gray;
+        font-size: 16px;
+       &:before {
+            background: url($staticPath + 'img/springster/comment.svg') no-repeat 0 0/20px;
+            content: '';
+            display: inline-block;
+            height: 20px;
+            margin: 0 auto;
+            vertical-align: middle;
+            width: 20px;
+       }
+    }
+    &__label {
+        color: $dark_gray;
+        display: inline-block;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+}

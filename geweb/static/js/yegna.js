@@ -4,19 +4,29 @@ import "../styles/yegna/yegna.scss";
 /**
  * Header search from toggle 
  */
- const elemHeaderSearchToggle = document.getElementById('search'),
- elemSearchBar = document.querySelector('.search--header > .search__bar')
-elemSearchBar.style.display = 'none'
-elemSearchBar.style.visibility = 'hidden'
-elemHeaderSearchToggle.addEventListener('click', (e) => { 
+const searchToggle = document.getElementById('search'),
+    searchBarDropdown = document.getElementById('searchBar')
 
- if (elemSearchBar.style.display === 'none') {
-     elemSearchBar.style.display = 'block'
-     elemSearchBar.style.visibility = 'visible'
-     e.target.style.background = '#fff'
- } else {
-     elemSearchBar.style.display = 'none'
-     elemSearchBar.style.visibility = 'hidden'
-     e.target.style.background = 'transparent'
- }
-})
+    searchBarDropdown.style.display = 'none'
+    toggleCheck(searchToggle, searchBarDropdown)
+
+const menuToggle = document.getElementById('menu'),
+    navDropdown = document.querySelector('.nav__dropdown')
+    
+    navDropdown.style.display = 'none'
+    toggleCheck(menuToggle, navDropdown)
+
+function toggleCheck(elem, target ) {
+    elem.addEventListener('click', function(e) {
+        e.preventDefault();
+        const $this = e.target
+    
+        if(target.style.display === 'none') {
+            target.style.display = 'flex';
+            $this.classList.add('is-active');
+        } else {
+            target.style.display = 'none';
+            $this.classList.remove('is-active');
+        }
+    })
+}

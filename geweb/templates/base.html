@@ -35,6 +35,7 @@
 </head>
 <body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'tujibebe' %}tujibebe{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
     {% wagtailuserbar %}
+    
     {% with "./"|add:theme.slug|add:"/" as THEME_PATH %}
         {% block header %} 
             {% include THEME_PATH|add:"header.html" %}

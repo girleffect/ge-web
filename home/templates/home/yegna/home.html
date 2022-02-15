@@ -1,5 +1,4 @@
-{% load article_tags i18n wagtailcore_tags wagtailimages_tags  %}
-
+{% load i18n %}
 
 {% block extra_css %}
     <style>
@@ -9,26 +8,24 @@
     </style>
 {% endblock %}
 
-<div class="component-title">
-    <div class="component-title__super">
-        <h1 class="heading heading--primary">
-            {% trans "Yegna launched the first ever teen TV Drama in Ethiopia" %}
-        </h1>
-    </div>
-    {% include "./banner.html" %}
-</div>
-
-
 <div class="homepage">
-    <div class="homepage__inner">
+    <div class="component-title">
+        <div class="component-title__super">
+            <h1 class="heading heading--primary">
+                {% trans "Yegna launched the first ever teen TV Drama in Ethiopia" %}
+            </h1>
+        </div>
+    </div>
 
+    {% include "./banner.html" %}
+
+    <div class="homepage__inner">
         <div class="homepage__column-main">
             <div class="heading-full">
                 <h2 class="heading__title">{% trans "Yegna news" %}</h2>
             </div>
 
             <div class="article-teasers">
-                {{ articlepages }}
                 {% for post in articlepages %}
                     {% if post.feature_in_homepage %}
                         {{post}}
@@ -40,7 +37,7 @@
 
         <div class="homepage__column-side">
             <div class="heading-mid">
-                <h2 class="heading__title"><h2 class="heading__title">{% trans "Meet the characters" %}</h2>
+                <h2 class="heading__title">{% trans "Meet the characters" %}</h2>
             </div>
         </div>
 
