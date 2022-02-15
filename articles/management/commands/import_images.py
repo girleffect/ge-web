@@ -15,7 +15,7 @@ class Command(BaseCommand):
                 aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
             )
             images = json.load(f)
-            for image in images.keys():
+            for image in images:
                 try:
                     Image.objects.get(filename=image["filename"])
                 except Image.DoesNotExist:
