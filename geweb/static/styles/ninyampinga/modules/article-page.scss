@@ -9,6 +9,15 @@
             padding: 15px 15%;
         }
     }
+    &__recommendations {
+        padding: 15px 10px;
+        @media screen and (min-width: 991px) {
+            padding: 15px 8%;
+        }
+        .article-teaser {
+            padding: 20px 0;
+        }
+    }
 }
 
 
