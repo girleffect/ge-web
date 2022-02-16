@@ -3,6 +3,12 @@
         background: $light_gray;
         padding: 20px 0 18px 0;
     }
+    &--forms {
+        background-color: $pale_violet;
+        font-size: 16px;
+        margin: 10px 0;
+        padding: 8px 8px 5px;
+    }
     &__nav {
         &-item-text {
             color: $violet;
