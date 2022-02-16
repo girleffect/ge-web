@@ -1,6 +1,26 @@
-<div class="yourwords yourwords--banner">
-    <div class="yourwords__icon"> </div>
+{% load i18n wagtailcore_tags %}
+<div class="yourwords yourwords--page">
+    <div class="yourwords__icon"></div>
     <div class="yourwords__inner">
         <h1 class="forms__title">{{page.title}}</h1>
+        {% if form.introduction %}
+            <h2 class="forms__subtitle">{{form.introduction|safe}}</h3>
+        {% endif %}
+        <p class="forms__paragraph">{{ page.intro|richtext }}</p>
+
+        {% if user.is_authenticated and user.is_active or request.is_preview or page.allow_anonymous_submissions %}
+           
+            {% if form %}
+                <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:'1' }}{% endif %}" method="POST"  class="forms">
+                {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="call-to-action__submit">{% trans "Submit" %}</button>
+                </form>
+            {% else %}
+                <p class="forms__feedback">You can fill in the from only one time.</p>
+            {% endif %}
+        {% else %}
+            <h2 class="forms__subtitle">{% trans "To fill in the form, you must log in." %}</h2>
+        {% endif %}
     </div>
 </div>
