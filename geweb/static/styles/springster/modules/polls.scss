@@ -33,10 +33,15 @@
         background: $very_soft_cyan url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100%/contain;
         margin-top: -45px;
         padding: 60px 0 8px;
+        &--results {
+            text-align: center;
+        }
     }
     &--banner {
         text-align: center;
     }
-
+    .forms {
+        padding: 20px 10px;
+    }
 }
 

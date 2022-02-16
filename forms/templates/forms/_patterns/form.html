@@ -1,0 +1,17 @@
+
+{% load article_tags home_tags i18n wagtailcore_tags %}
+
+
+{% if user.is_authenticated and user.is_active or request.is_preview or page.allow_anonymous_submissions %}
+    {% if form %}
+        <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:'1' }}{% endif %}" method="POST"  class="forms">
+        {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="call-to-action__submit">{% trans "Submit" %}</button>
+        </form>
+    {% else %}
+        <p class="forms__feedback">You can fill in the from only one time.</p>
+    {% endif %}
+{% else %}
+    <h2 class="forms__subtitle">{% trans "To fill in the form, you must log in." %}</h2>
+{% endif %}

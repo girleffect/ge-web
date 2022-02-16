@@ -1,15 +1,17 @@
-{% load article_tags home_tags i18n wagtailcore_tags %}
+{% load i18n wagtailcore_tags %}
 
 <div class="polls">
     <div class="polls__icon">
-        <p class="polls__label">Cast Your Vote!</p>
+        <p class="polls__label"> {% trans "Cast Your Vote!" %}</p>
     </div>
-    <div class="polls__inner">
+    <div class="polls__inner polls__inner--results">
         <h1 class="forms__title">{{page.title}}</h1>
-        {% if page.thank_you_text %}
-            {{ page.thank_you_text|richtext }}
-        {% else %}
-            {% trans "Thank you" %}
-        {% endif %}
+        <p class="forms__subtitle">
+            {% if page.thank_you_text %}
+                {{ page.thank_you_text|richtext }}
+            {% else %}
+                {% trans "Thank you" %}
+            {% endif %}
+        </p>
     </div>
 </div>

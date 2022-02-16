@@ -1,16 +1,30 @@
 {% extends "base.html" %}
 
+{% load article_tags %}
+
 {% block content %}
-    {% lif theme.slug == 'springster' %}
+    {% if theme.slug == 'springster' %}
+
         {% if page.title|slugify == 'polls' %}
-            {% include "./springster/polls/form.html" %}
+            {% include "./springster/polls/thank-you.html" %}
         {% endif %}
 
         {% if page.title|slugify == 'yourwords' %}
-            {% include "./springster/yourwords/form.html" %}
+            {% include "./springster/yourwords/thank-you.html" %}
         {% endif %}
 
     {% elif theme.slug == 'tujibebe' %}
-        {% include "./tujibebe/home.html" %}
-    {% endif %}
+
+        {% if page.title|slugify == 'polls' %}
+            {% include "./springster/polls/thank-you.html" %}
+        {% endif %}
+
+        {% if page.title|slugify == 'yourwords' %}
+            {% include "./springster/yourwords/thank-you.html" %}
+        {% endif %}
+
+     {% endif %}
+     <div class="breadcrumbs">
+        {% breadcrumbs %}
+    </div>
 {% endblock content %}

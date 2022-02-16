@@ -3,20 +3,20 @@
 {% block content %}
     {% if theme.slug == 'springster' %}
         {% if page.title|slugify == 'polls' %}
-            {% include "./springster/polls/form.html" %}
+            {% include "./springster/polls/form-page.html" %}
         {% endif %}
         
         {% if page.title|slugify == 'yourwords' %}
-            {% include "./springster/yourwords/form.html" %}
+            {% include "./springster/yourwords/form-page.html" %}
         {% endif %}
 
     {% elif theme.slug == 'tujibebe' %}
         {% if page.title|slugify == 'polls' %}
-            {% include "./tujibebe/polls/form.html" %}
+            {% include "./tujibebe/polls/form-page.html" %}
         {% endif %}
 
         {% if page.title|slugify == 'yourwords' %}
-            {% include "./tujibebe/yourwords/form.html" %}
+            {% include "./tujibebe/yourwords/form-page.html" %}
         {% endif %}
     {% endif %}
 {% endblock content %}

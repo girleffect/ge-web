@@ -93,30 +93,6 @@ input[type=checkbox]#id_terms_and_conditions {
    margin: 0 5px 0 0;
 }
 
-
-.error {
-    color: #f50;
-    font-family: 'Baton-Medium';
-    padding: 10px 15px;
-    text-align: center;
-}
-.errorlist,
-.error-list {
-    li,
-    &__item {
-        color: #f50;
-        font-family: 'Baton-Medium';
-        padding: 10px 15px;
-        text-align: center;
-    }
-}
-
-.security {
-    padding: 10px 0 0;
-}
-
-
-
 /*
     FORMS
 */
@@ -150,12 +126,33 @@ input[type=checkbox]#id_terms_and_conditions {
         padding: 0 15px 20px;
     }
 
-    //FOR TEMPLATE form.as.p
+    p, label {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 18px;
+        text-align: left;
+    }
+
+    ul {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+        li {
+            align-items: center;
+            background-color: $white;
+            cursor: pointer;
+            display: flex;
+            margin: 15px 0;
+            padding: 0 15px;
+            text-align: left;
+        }
+    }
     fieldset {
         display: block;
         margin: 15px 0;
         text-align: left;
         label {
+            color: $dark_grayish;
             font-size: 18px;
             text-align: left;
         }
@@ -178,12 +175,50 @@ input[type=checkbox]#id_terms_and_conditions {
                 width: 85%;
             }
             input[type="radio"] {
-               // display: none;
                 position: absolute;
                 left: 0;
-                //visibility: hidden;
             }
         }
     }
-
+    .errorlist,
+    .error-list {
+        margin: 10px 0 0;
+        li,
+        &__item {
+            background-color: transparent;
+            margin: 15px 0 0;
+            padding: 0;
+        }
+    }
 }
+
+.helptext {
+    color: $dark_gray;
+    display: block;
+    font-family: 'Baton-Regular';
+    font-size: 18px;
+}
+
+.error {
+    color: #f50;
+    font-family: 'Baton-Medium';
+    padding: 10px 15px;
+    text-align: center;
+}
+.errorlist,
+.error-list {
+    li,
+    &__item {
+        background-color: transparent;
+        color: #f50;
+        font-family: 'Baton-Medium';
+        padding: 10px 15px;
+        text-align: center;
+    }
+}
+
+.security {
+    padding: 10px 0 0;
+}
+
+
