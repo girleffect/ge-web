@@ -1,5 +1,9 @@
 .commenting {
     padding: 0 15px;
+    &--on-article {
+        border-top: 4px solid $light_gray_blue;
+        margin: 8px 0;
+    }
     &__counter {
         color: $dark_gray;
         font-size: 16px;
