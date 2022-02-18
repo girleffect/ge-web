@@ -64,12 +64,14 @@ class RegistrationView(FormView):
     def get_form_kwargs(self):
         kwargs = super(RegistrationView, self).get_form_kwargs()
         site = Site.find_for_request(self.request)
-        self.questions = random.sample(
-            list(
-                SecurityQuestion.objects.descendant_of(site.root_page).live().filter()
-            ),
-            2,
-        )
+        qs = SecurityQuestion.objects.descendant_of(site.root_page).live()
+        if qs.count() > 2:
+            self.questions = random.sample(
+                list(qs),
+                2,
+            )
+        else:
+            self.questions = qs
         kwargs["questions"] = self.questions
         kwargs["request"] = self.request
         return kwargs
