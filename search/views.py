@@ -7,7 +7,7 @@ from articles.models import ArticlePage
 
 
 def search(request):
-    search_query = request.GET.get("query", None)
+    search_query = request.GET.get("q", None)
     if search_query:
         site = Site.find_for_request(request)
         results = (
@@ -26,7 +26,7 @@ def search(request):
     page_obj = search_results.get_page(page_number)
     return render(
         request,
-        "search_results.html",
+        "search/search.html",
         {
             "search_query": search_query,
             "search_results": page_obj,
