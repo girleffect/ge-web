@@ -77,6 +77,8 @@ class SiteSettings(BaseSetting):
         blank=True,
         help_text=_("The tracking ID to be used to view Facebook Analytics"),
     )
+    fb_enable_chat_bot = models.BooleanField(
+        default=False, help_text='Activate chat-bot for facebook messenger.')
     ga_tag_manager = models.CharField(
         verbose_name=_("Local GA Tag Manager"),
         max_length=255,
@@ -177,8 +179,9 @@ class SiteSettings(BaseSetting):
         MultiFieldPanel(
             [
                 FieldPanel("fb_analytics_app_id"),
+                FieldPanel('fb_enable_chat_bot'),
             ],
-            heading="Facebook Analytics Settings",
+            heading="Facebook Settings",
         ),
         MultiFieldPanel(
             [
