@@ -10,6 +10,8 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
+from .utils import paginate
+
 from wagtail.admin.edit_handlers import (  # isort:skip
     FieldPanel,
     MultiFieldPanel,
@@ -46,7 +48,9 @@ class SectionPage(Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
+        page = request.GET.get("page", 1)
         articlepages = self.get_children().live().order_by("-first_published_at")
+        articlepages = paginate(articlepages, page)
         context["articlepages"] = articlepages
         return context
 
