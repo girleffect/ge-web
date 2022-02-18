@@ -29,7 +29,7 @@
            {% endif %}
          {% endif %}
          <span class="pagination__current-page">
-           Page {{ search_results.number }} of {{ search_results.end_index }}
+           Page {{ search_results.number }} of {{ search_results.paginator.num_pages }}
          </span>
          {% if search_results.has_next %}
            <a href="{% url 'search' %}?q={{search_query}}&page={{ search_results.next_page_number }}" class="pagination__nav-anchor-next">Next</a>

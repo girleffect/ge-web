@@ -10,7 +10,7 @@
      {% endif %}
    {% endif %}
    <span class="pagination__current-page">
-     Page {{ results.number }} of {{ results.end_index }}
+     Page {{ results.number }} of {{ results.paginator.num_pages }}
    </span>
    {% if results.has_next %}
      <a href="{{page.url}}?page={{ results.next_page_number }}" class="pagination__nav-anchor-next">Next</a>
