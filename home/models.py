@@ -23,6 +23,7 @@ class HomePage(Page):
         "articles.SectionIndexPage",
         "articles.FooterIndexPage",
         "forms.FormsIndexPage",
+        "profiles.SecurityQuestionIndexPage",
     ]
 
     theme = models.CharField(

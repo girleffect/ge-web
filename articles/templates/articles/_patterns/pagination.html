@@ -1,0 +1,19 @@
+{% load home_tags i18n wagtailcore_tags article_tags %}
+{% if results %}
+  <div class="pagination">
+
+   {% if results.has_previous %}
+     {% if results.previous_page_number == 1 and pagelink == request.path %}
+         <a href="/" class="pagination__nav-anchor-previous"></a>
+     {% else %}
+       <a href="{{page.url}}?page={{ results.previous_page_number }}" class="pagination__nav-anchor-previous">Previous</a>
+     {% endif %}
+   {% endif %}
+   <span class="pagination__current-page">
+     Page {{ results.number }} of {{ results.end_index }}
+   </span>
+   {% if results.has_next %}
+     <a href="{{page.url}}?page={{ results.next_page_number }}" class="pagination__nav-anchor-next">Next</a>
+   {% endif %}
+  </div>
+{% endif %}

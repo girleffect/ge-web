@@ -2,7 +2,7 @@
 
 <div class="commenting">
 {% if user.is_authenticated %}
-        {% get_comment_form for comment as form %}
+        {% get_comment_form for page as form %}
         <form action="{% comment_form_target %}" method="POST">
         {% csrf_token %}
         {{ form.comment }}
