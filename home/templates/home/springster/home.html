@@ -1,15 +1,28 @@
+<<<<<<< HEAD
 {% load wagtailcore_tags %}
+=======
+{% load comments wagtailcore_tags i18n %}
+>>>>>>> main
 
 <div class="homepage">
     <div class="content">
+      {% if page %}
+        {% for translation in page.get_translations.live %}
+            {% get_language_info for translation.locale.language_code as lang %}
+            <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ language_code }}">
+                {{ lang.name_local }}
+            </a>
+        {% endfor %}
+      {% endif %}
         {% include "./sp_banner.html" with urlString='/' imagePos='one' altString='Big Sis on Springster' %}
-        
-        {% for post in articlepages|slice:":5" %} 
+
+        {% for post in articlepages|slice:":5" %}
             {% include "../_patterns/article-teasers-listing.html" %}
         {% endfor %}
-    
+
         {% include "./sp_banner.html" with urlString='/' imagePos='two' altString='Celebrate girls - Read inspiring stories' %}
 
+<<<<<<< HEAD
         {% for form in forms %}
             {% if form.title|slugify == 'polls' %}
                 {% include "./polls.html" %}
@@ -21,7 +34,10 @@
         {% endfor %}
        
         {% for post in articlepages|slice:"5:" %} 
+=======
+        {% for post in articlepages|slice:"5:" %}
+>>>>>>> main
             {% include "../_patterns/article-teasers-listing.html" %}
         {% endfor %}
-    </div>  
+    </div>
 </div>

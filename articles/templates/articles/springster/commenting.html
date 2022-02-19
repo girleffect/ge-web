@@ -1,5 +1,6 @@
 {% load wagtailcore_tags article_tags theme_tags home_tags i18n comments %}
 
+<<<<<<< HEAD
 
 <div id="comments" class="commenting commenting--on-article">
     <div class="heading heading--component">
@@ -10,6 +11,12 @@
     {% get_comment_form for page as form %}
     {% if user.is_authenticated %}
         <form action="{% comment_form_target %}" method="POST" class="commenting-form">
+=======
+<div class="commenting">
+{% if user.is_authenticated %}
+        {% get_comment_form for page as form %}
+        <form action="{% comment_form_target %}" method="POST">
+>>>>>>> main
         {% csrf_token %}
            {{ form.comment }}
             {{ form.content_type }}
