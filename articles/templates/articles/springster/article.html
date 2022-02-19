@@ -11,11 +11,13 @@
         
         <!-- START: CURRENTLY STATIC - Needs to be updated to be -->
         {% get_comment_count for page as comment_count %}
-        <div class="comments-counter">
-            <a href="#comments" class="call-to-action__nav-item-text">
-                {% trans 'Your thoughts' %} ({{ comment_count }})
-            </a>
-        </div>
+        {% if comment_count > 0 %}
+            <div class="comments-counter">
+                <a href="#comments" class="call-to-action__nav-item-text">
+                    {% trans 'Your thoughts' %} ({{ comment_count }})
+                </a>
+            </div>
+        {% endif %}
         <!-- END: CURRENTLY STATIC -->
 
         {% include_block page.body %}

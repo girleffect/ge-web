@@ -44,7 +44,7 @@
                 </ul>
                 {% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}
                     <div class="commenting">
-                        {% get_comment_count for page as comment_count %}
+                        {% get_comment_count for post as comment_count %}
                         <a href="{% pageurl post %}" class="commenting__counter">
                             {{ comment_count }}
                         </a>

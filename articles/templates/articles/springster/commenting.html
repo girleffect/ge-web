@@ -11,7 +11,7 @@
     {% if user.is_authenticated %}
         <form action="{% comment_form_target %}" method="POST" class="commenting-form">
         {% csrf_token %}
-            {{ form.comment }}
+           {{ form.comment }}
             {{ form.content_type }}
             {{ form.object_pk }}
             {{ form.security_hash }}
@@ -30,26 +30,33 @@
         </div>
     {% endif %}
 
-    
-
     {% get_comment_list for page as comment_list %}
     {% if comment_list %}
         <div class="commenting__list">
             <div class="heading heading--component">
                 <h1 class="heading__component-title">{% trans 'Your feedback' %}</h1>
             </div>
+           
             {% for comment in comment_list %}
                 <div class="commenting__list-item">
                     <div class="commenting-thread">
-                        <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
-                        <p class="commenting-thread__msg">{{ comment.comment }}</p>
+                        {% if comment.is_removed %}
+                            <h6 class="commenting-thread__alias-removed">{% trans '
+                                This comment has been deleted. Please read our platform rules.' %}</h6>
+                        {% else %}
+                            <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
+                            <p class="commenting-thread__msg">{{ comment.comment }}</p>
+                            
+                            <p class="commenting-thread__publish-date">{{ comment.submit_date }}
+                        {% endif %}
                        
+
                         {% get_comment_list for comment as threaded_comment_list %}
                         {% get_comment_count for comment as reply_count %}
                         <div class="commenting-cta">
                             <div class="commenting-cta__left">
                                 <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">Report</a> 
-                                <a href="/admin/threadedcomments/threadedcomment/" class="commenting-cta__label">{% trans 'Comments' %}</a>
+                                <a href="/comments/{{ page.id }}/reply" class="commenting-cta__label">{% trans 'Reply' %}</a>
                             </div>
                             <div class="commenting-cta__right">
                                 <a href="/comments/{{ comment.id }}/#comment_reply" class="commenting-cta__label">
@@ -59,6 +66,8 @@
                         </div>
 
                         {% if threaded_comment_list %}
+
+                        {{ threaded_comment_list }} - {{ reply_count }}
                             <div class="commenting-replies">
                                 <h5 class="commenting-replies-title">Latest Reply</h5>
                                 {% for threaded_comment in threaded_comment_list %}
@@ -69,9 +78,7 @@
                         {% endif %}
                     </div>
                 </div>
-           
-           
-        {% endfor %}
+            {% endfor %}
         </div>
         
     {% endif %}
