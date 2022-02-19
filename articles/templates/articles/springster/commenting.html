@@ -1,14 +1,14 @@
 {% load wagtailcore_tags article_tags theme_tags home_tags i18n comments %}
 
 
-<div class="commenting commenting--on-article">
+<div id="comments" class="commenting commenting--on-article">
     <div class="heading heading--component">
         <h1 class="heading__component-title">{% trans 'Share your feedback' %}</h1>
     </div>
-    {% get_comment_form for comment as form %}
+   
+    <!-- THREADED COMMENTS -->
+    {% get_comment_form for page as form %}
     {% if user.is_authenticated %}
-        
-        
         <form action="{% comment_form_target %}" method="POST" class="commenting-form">
         {% csrf_token %}
             {{ form.comment }}
@@ -33,17 +33,48 @@
     
 
     {% get_comment_list for page as comment_list %}
-    {% for comment in comment_list %}
-        <p>Posted by: {{ comment.user_name }}</p>
-        <p>Comment: {{ comment.comment }}</p>
-        {% get_comment_list for comment as threaded_comment_list %}
-        {% get_comment_count for comment as reply_count %}
-        <p>{{ reply_count }} replies have been posted.</p>
-        {% for threaded_comment in threaded_comment_list %}
-            <p>Posted by: {{ threaded_comment.user_name }}</p>
-            <p>Comment: {{ threaded_comment.comment }}</p>
+    {% if comment_list %}
+        <div class="commenting__list">
+            <div class="heading heading--component">
+                <h1 class="heading__component-title">{% trans 'Your feedback' %}</h1>
+            </div>
+            {% for comment in comment_list %}
+                <div class="commenting__list-item">
+                    <div class="commenting-thread">
+                        <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
+                        <p class="commenting-thread__msg">{{ comment.comment }}</p>
+                       
+                        {% get_comment_list for comment as threaded_comment_list %}
+                        {% get_comment_count for comment as reply_count %}
+                        <div class="commenting-cta">
+                            <div class="commenting-cta__left">
+                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">Report</a> 
+                                <a href="/admin/threadedcomments/threadedcomment/" class="commenting-cta__label">{% trans 'Comments' %}</a>
+                            </div>
+                            <div class="commenting-cta__right">
+                                <a href="/comments/{{ comment.id }}/#comment_reply" class="commenting-cta__label">
+                                    {{ reply_count }} {% if reply_count > 0 %}Replies{% else %}Reply{% endif %}
+                                </a>
+                            </div>
+                        </div>
+
+                        {% if threaded_comment_list %}
+                            <div class="commenting-replies">
+                                <h5 class="commenting-replies-title">Latest Reply</h5>
+                                {% for threaded_comment in threaded_comment_list %}
+                                    <h6 class="commenting-thread__alias">{{ threaded_comment.user_name }}</h6>
+                                    <p class="commenting-thread__msg">{{ threaded_comment.comment }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+           
+           
         {% endfor %}
-        <a href="/comments/flag/{{ comment.id }}/">Flag comment</a> 
-    {% endfor %}
+        </div>
+        
+    {% endif %}
+    
 
 </div>

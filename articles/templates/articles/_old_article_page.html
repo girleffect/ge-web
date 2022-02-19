@@ -31,11 +31,13 @@
         <p>{{ comment_count }} comments have been posted.</p>
 
         {% get_comment_list for page as comment_list %}
+        
         {% for comment in comment_list %}
         <p>Posted by: {{ comment.user_name }}</p>
         <p>Comment: {{ comment.comment }}</p>
 
         {% get_comment_list for comment as threaded_comment_list %}
+
         {% get_comment_count for comment as reply_count %}
         <p>{{ reply_count }} replies have been posted.</p>
         {% for threaded_comment in threaded_comment_list %}

@@ -1,5 +1,5 @@
 form {
-    overflow: auto;
+    overflow: inherit;
 }
 
 label {
@@ -47,6 +47,17 @@ select {
     &:focus-visible {
         outline: none; 
     }
+}
+
+textarea {
+    border-radius: 0;
+    border: 2px solid $violet;
+    display: block;
+    font-size: 16px;
+    margin: 10px auto;
+    padding: 10px 0 10px 5px;
+    width: 98%;
+    -webkit-appearance: none;
 }
 
 label[for=id_terms_and_conditions] {

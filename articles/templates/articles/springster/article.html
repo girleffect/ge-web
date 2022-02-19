@@ -12,7 +12,7 @@
         <!-- START: CURRENTLY STATIC - Needs to be updated to be -->
         {% get_comment_count for page as comment_count %}
         <div class="comments-counter">
-            <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
+            <a href="#comments" class="call-to-action__nav-item-text">
                 {% trans 'Your thoughts' %} ({{ comment_count }})
             </a>
         </div>
@@ -38,6 +38,7 @@
             </ul>
         </div>
     {% endif %}
+
     {% include "./commenting.html" %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}
