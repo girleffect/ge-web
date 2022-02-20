@@ -10,7 +10,6 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     @media (min-width: 768px) {
-        align-items: center;
         flex-direction: row;
     } 
     &__item {
@@ -28,7 +27,8 @@
         @media (min-width: 991px) {
             height: auto;
             margin: 0 0 10px;
-            max-height: 410px;
+           // max-height: 410px;
+           max-height: inherit;
             width: 300px;
         }
         
