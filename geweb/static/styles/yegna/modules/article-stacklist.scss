@@ -40,6 +40,9 @@
         display: block;
         text-decoration: none;
     }
+    &__content {
+        width: 100%;
+    }
     &--cast {
         align-items: center;
         display: flex;
