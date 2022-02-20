@@ -30,4 +30,21 @@
             width: 25px;
         }
     }
+    &__button {
+        background-color: #000;
+        color: $white;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px;
+        text-decoration: none;
+        &:before {
+            background: url($staticPath + '/img/yegna/icon-watch-white.svg') no-repeat center center/100%;
+            content: "";
+            display: inline-block;
+            height: 19px;
+            margin: 0 10px 0 0px;
+            vertical-align: middle;
+            width: 14px;
+        }
+    }
 }

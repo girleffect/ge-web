@@ -2,22 +2,35 @@
     overflow: auto;
 }
 
-
 .teaser-stacklist {
     $this: &;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @media (min-width: 768px) {
+        align-items: center;
+        flex-direction: row;
+    } 
     &__item {
-        align-items: flex-start;
-        display: flex;
-        justify-content: space-between;
-    }
-    &__thumbnail {
-        height: inherit;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        margin: 0 10px 10px;
         overflow: hidden;
-        width: auto;
-        @media (min-width: 991px) {
-            height: 240px;
-            width: 340px;
+        width: 100;
+        padding: 25px;
+        @media (min-width: 768px) {
+            height: 410px;
+            width: 220px;
         } 
+        @media (min-width: 991px) {
+            height: auto;
+            margin: 0 0 10px;
+            max-height: 410px;
+            width: 300px;
+        }
         
         &-link {
             color: $vivid_violet;
@@ -25,32 +38,51 @@
             text-decoration: none;
         }
     }
-    &__image {
+    &__thumbnail {
+        display: flex;
         height: auto;
+        overflow: hidden;
         width: 100%;
+        @media (min-width: 768px) {
+            min-height: 270px;
+            max-height: 270px;
+        } 
+    }
+    &__image {
+        height: 100%;
+        object-fit: cover;
+        object-position: left top;
+        width: 100%;
+        @media (min-width: 768px) {
+            width: fit-content;
+        } 
     }
 
     &__title {
         color: $vivid_violet;
         font-size: 32px;
-        margin: 16px 0;
+        margin: 5px 0 16px;
     }
 
     &__anchor {
         display: block;
         text-decoration: none;
     }
+    &__label {
+        color: #000;
+        display: block;
+        font-size: 12px;
+    }
     &__content {
         width: 100%;
     }
-    &--cast {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        #{$this}__item {
-            flex-direction: column;
-            margin: 0 15px 40px;
+    &--featured-main {
+        .teaser-stacklist__item:first-child {
+            width: 100%;
+            padding: 0 25px 25px;
+            .teaser-stacklist__image {
+                width: 100%;
+            }
         }
     }
 }

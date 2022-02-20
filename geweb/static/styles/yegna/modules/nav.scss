@@ -89,22 +89,15 @@
                     color: $vivid_violet;
                     padding: 0 15px 15px 0;
                 }
-                &:before {
+                &:before,
+                &:after {
                     display: none;
                 }
+                &:hover {
+                    color: $vivid_violet;
+                    text-decoration: underline;
+                }
             }
-            // &--sections {
-            //     .nav-list__item {
-            //         &:nth-child(odd) {
-            //             display: none;
-            //             visibility: hidden;
-            //         }
-            //         &:first-child {
-            //             display: block;
-            //             visibility: visible;
-            //         }
-            //     }
-            // }
         }
 
     }

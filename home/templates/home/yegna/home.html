@@ -25,11 +25,11 @@
                 <h2 class="heading__title">{% trans "Yegna news" %}</h2>
             </div>
 
-            <div class="teaser-stacklist">
+            <div class="teaser-stacklist teaser-stacklist--featured-main">
                 {% for post in articlepages %}
-                    {% if post.get_parent|slugify != 'cast' %}
+                    {% if not post.get_parent|slugify == 'cast' %}
                         {% if post.feature_in_homepage %}
-                            {% include "./yeg_article-teasers-listing_inner.html" %}
+                            {% include "./yeg_article-teasers.html" %}
                         {% endif %}
                     {% endif %}
                 {% endfor %}
@@ -44,7 +44,9 @@
                 {% for post in articlepages %}
                     {% if post.get_parent|slugify == 'cast' %}
                         {% if post.feature_in_homepage %}
-                            {% include "./yeg_article-teasers-listing_inner.html" %}
+                            {% with post=post.specific %}
+                                {% include "./yeg_article-teasers.html" %}
+                            {% endwith %}
                         {% endif %}
                     {% endif %}
                 {% endfor %}

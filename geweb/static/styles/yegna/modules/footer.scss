@@ -22,10 +22,10 @@
         &:hover {
             text-decoration: underline;
             text-underline-position: below;
-        }
-        &::before {
-            display: none;
-            visibility: hidden;
+            .nav-list__anchor:before {
+                display: none;
+                visibility: hidden;
+            }
         }
     }
 }
