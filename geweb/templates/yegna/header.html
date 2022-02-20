@@ -1,4 +1,4 @@
-{% load article_tags i18n static wagtailcore_tags %}
+{% load article_tags i18n home_tags static wagtailcore_tags %}
 
 {% section_pages as sections %}
 
@@ -16,11 +16,10 @@
                     <li class="nav-list__item">
                         <a class="nav-list__anchor" id="menu" href="/">{% trans "Menu" %}</a>
                     </li>
-
                     {% if sections %}
                         <!-- PARENT SECTION -->
                         {% for section in sections %}
-                            {% if section.get_parent|slugify == 'section-index' %}
+                            {% if section.get_parent|slugify == 'section-index' or section.get_parent|slugify == 'sections' %}
                                 <li class="nav-list__item">
                                     <a class="nav-list__anchor" id="{{ section.title|slugify }}" href="{% pageurl section %}">
                                         {{section.title}}
@@ -42,37 +41,75 @@
         </div>
         {% include "../_patterns/search-input.html" with enhance="header" %}
 
-        <!-- SECTION WITH CHILD SECTION -->
+        <!-- OTHER SECTIONS WITH NO CHILD SECTIONS -->
         <div class="nav__dropdown">
-            {% if footer_pages %}
-                <ul class="nav-list">
-                    <li class="nav-list__item ">
-                        <span class="nav-list__anchor nav-list__anchor-parent">
-                            {% trans "Our story" %} 
-                        </span>
-                    </li>
-                    {% footer_pages %}
-                </ul>
-            {% endif %}
+            <ul class="nav-list">
+                <li class="nav-list__item">
+                    {% footer_pages %} 
+                </li>
+                {% for section in sections %}
+                    {% if section.get_parent|slugify == 'section-index' or section.get_parent|slugify == 'sections' %}
+                        {% if not section|slugify == 'watch' and not section|slugify == 'listen' %}
+                            <li class="nav-list__item">
+                                <a href="{% pageurl section %}" class="nav-list__anchor">
+                                    {{ section }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+               
+          
 
+            <!-- WATCH - SECTION WITH CHILD SECTIONS -->
             {% if sections %}
                 <ul class="nav-list nav-list--sections">
                     {% for section in sections %}
-                        {% if not section.get_parent|slugify == 'section-index' %}
-                            <li class="nav-list__item ">
-                                <span class="nav-list__anchor nav-list__anchor-parent">
-                                    {{section.get_parent}}
-                                </span>
-                            </li>
-                            <li class="nav-list__item">
-                                <a class="nav-list__anchor" id="{{ section.title|slugify }}" href="{% pageurl section %}">
-                                    {{section.title}}
-                                </a>
-                            </li>
+                        {% if section.get_parent|slugify == 'section-index' or section.get_parent|slugify == 'sections' %}
+                            {% if section|slugify == 'watch' %}
+                                <li class="nav-list__item ">
+                                    <span class="nav-list__anchor nav-list__anchor-parent">
+                                        {{section}}
+                                    </span>
+                                </li>
+                                {% for subsection in section.get_children %}
+                                    <li class="nav-list__item">
+                                        <a class="nav-list__anchor" id="{{ subsection|slugify }}" href="{% pageurl subsection %}">
+                                            {{ subsection }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </ul>
             {% endif %}
+
+            <!-- LISTEN - SECTION WITH CHILD SECTIONS -->
+            {% if sections %}
+                <ul class="nav-list nav-list--sections">
+                    {% for section in sections %}
+                        {% if section.get_parent|slugify == 'section-index' or section.get_parent|slugify == 'sections' %}
+                            {% if section|slugify == 'listen' %}
+                                <li class="nav-list__item ">
+                                    <span class="nav-list__anchor nav-list__anchor-parent">
+                                        {{section}}
+                                    </span>
+                                </li>
+                                {% for subsection in section.get_children %}
+                                    <li class="nav-list__item">
+                                        <a class="nav-list__anchor" id="{{ subsection|slugify }}" href="{% pageurl subsection %}">
+                                            {{ subsection }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
         </div>
     </header>
 </div>
