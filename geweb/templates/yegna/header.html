@@ -1,4 +1,4 @@
-{% load article_tags static wagtailcore_tags  %}
+{% load article_tags i18n static wagtailcore_tags %}
 
 {% section_pages as sections %}
 
@@ -14,7 +14,7 @@
             <nav class="nav">
                 <ul class="nav-list"> 
                     <li class="nav-list__item">
-                        <a class="nav-list__anchor" id="menu" href="/">Menu</a>
+                        <a class="nav-list__anchor" id="menu" href="/">{% trans "Menu" %}</a>
                     </li>
 
                     {% if sections %}
@@ -34,7 +34,7 @@
                 <ul class="nav-list nav-list--search"> 
                     <li id="search" class="nav-list__item">
                         <label class="nav-list__anchor" id="search_label">
-                            Search
+                            {% trans "Search" %} 
                         </label>
                     </li>
                 </ul>
@@ -48,7 +48,7 @@
                 <ul class="nav-list">
                     <li class="nav-list__item ">
                         <span class="nav-list__anchor nav-list__anchor-parent">
-                            Our story
+                            {% trans "Our story" %} 
                         </span>
                     </li>
                     {% footer_pages %}
