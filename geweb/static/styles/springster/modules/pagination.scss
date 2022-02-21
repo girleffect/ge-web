@@ -1,0 +1,42 @@
+.pagination {
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    text-align: center;
+    &__item {
+        position: relative;
+    }
+    &__anchor {
+        color: $violet;
+        cursor: pointer;
+        display: block;
+        font-family: 'Baton-Medium';
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        &--prev:before,
+        &--next:after  {
+            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: auto 100%;
+            content: '';
+            display: inline-block;
+            height: 24px;
+            vertical-align: bottom;
+            width: 24px;
+        }
+        &--prev:before {
+            transform: rotate(270deg);
+        }
+        &--next:after {
+            transform: rotate(90deg);
+        }
+    }
+}
+

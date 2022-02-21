@@ -46,3 +46,8 @@ def social_media_article(context, page=None):
         "request": context["request"],
     }
     return data
+
+
+@register.filter(name="field_type")
+def field_type(field):
+    return field.field.widget.__class__.__name__

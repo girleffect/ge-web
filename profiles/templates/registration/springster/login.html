@@ -7,14 +7,14 @@
         </div>
 
         <div class="component__subtitle">
-            <p class="subtitle">Not a member yet?</p>
+            <p class="subtitle">{% trans "Not a member yet?" %}</p>
             <a href="/profiles/register/" class="call-to-action__link">
-                Sign up here
+                {% trans "Sign up here" %} 
             </a>
         </div>
     </div>
     {% include "../_patterns/login-form.html" %}
     <a href="/profiles/forgot-password/" class="call-to-action__link">
-        Forgot PIN?
+        {% trans "Forgot PIN?" %}
     </a>
 </div>

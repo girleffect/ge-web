@@ -1,5 +1,9 @@
 .commenting {
-    padding: 0 15px;
+    //padding: 0 15px;
+    &--on-article {
+        border-top: 4px solid $light_gray_blue;
+        margin: 8px 0;
+    }
     &__counter {
         color: $dark_gray;
         font-size: 16px;
@@ -18,5 +22,76 @@
         display: inline-block;
         font-size: 18px;
         text-transform: uppercase;
+    }
+
+    &__list {
+        position: relative;
+        &__item {
+            background-color: $white;
+            display: block;
+        }
+    }
+    &-form {
+        padding: 0 10px;
+    }
+    &-thread {
+        padding: 10px 0 0;
+        border-bottom: 4px solid $lime_green;
+        &__alias {
+            color: $dark_gray_blue;
+            font-family: 'Baton-Medium';
+            font-size: 15px;
+            font-weight: 700;
+            padding: 5px 10px;
+            &-removed {
+                color: $dark_gray;
+                padding: 10px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+        &__msg {
+            color: $very_dark_gray_blue;
+            font-size: 16px; 
+            padding: 5px 10px;
+        }
+        &__publish-date {
+            color: $dark_gray_blue;
+            font-size: 12px;
+            padding: 5px 5px 0 10px;
+            font-weight: 700;
+        }
+    }
+    &-cta {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 10px 10px;
+        &__label {
+            color: $violet;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Baton-Medium';
+            font-weight: 500;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    }
+    
+    &-replies {
+        background-color: #f8fafd;
+        padding: 10px 0 0;
+        &-title {
+            color: $dark_gray;
+            font-family: 'Baton-Regular';
+            font-size: 18px;
+            font-weight: 400;
+            padding: 8px 10px 10px;
+        }
+        &__feedback {
+            color: $dark_gray_blue;
+            display: block;
+        }
     }
 }

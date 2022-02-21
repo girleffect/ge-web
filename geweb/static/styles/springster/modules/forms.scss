@@ -1,5 +1,5 @@
 form {
-    overflow: auto;
+    overflow: inherit;
 }
 
 label {
@@ -49,6 +49,17 @@ select {
     }
 }
 
+textarea {
+    border-radius: 0;
+    border: 2px solid $violet;
+    display: block;
+    font-size: 16px;
+    margin: 10px auto;
+    padding: 10px 0 10px 5px;
+    width: 98%;
+    -webkit-appearance: none;
+}
+
 label[for=id_terms_and_conditions] {
     display: none;
     visibility: hidden;
@@ -93,6 +104,111 @@ input[type=checkbox]#id_terms_and_conditions {
    margin: 0 5px 0 0;
 }
 
+/*
+    FORMS
+*/
+
+.forms {
+    text-align: left;
+    &__title {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 23px;
+        margin: 0 0 20px;
+        padding: 0 15px;
+    }
+    &__subtitle {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 24px;
+        font-weight: 400;
+        margin: 0 0 10px;
+        padding: 0 15px;
+        
+    }
+    &__paragraph {
+        font-size: 16px;
+    }
+    &__feedback {
+        color: $soft_red;
+        font-family: 'Baton-Regular';
+        font-size: 21px;
+        font-weight: 400;
+        padding: 0 15px 20px;
+    }
+
+    p, label {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 18px;
+        text-align: left;
+    }
+
+    ul {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+        li {
+            align-items: center;
+            background-color: $white;
+            cursor: pointer;
+            display: flex;
+            margin: 15px 0;
+            padding: 0 15px;
+            text-align: left;
+        }
+    }
+    fieldset {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+        label {
+            color: $dark_grayish;
+            font-size: 18px;
+            text-align: left;
+        }
+        .input-group {
+            align-items: center;
+            background-color: $white;
+            cursor: pointer;
+            display: flex;
+            margin: 15px 0;
+            padding: 0 15px;
+            text-align: left;
+            &:before {
+                background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
+                content: '';
+                height: 25px;
+                margin: 0 10px 10px 0;
+                width: 10%;
+            }
+            label {
+                width: 85%;
+            }
+            input[type="radio"] {
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+    .errorlist,
+    .error-list {
+        margin: 10px 0 0;
+        li,
+        &__item {
+            background-color: transparent;
+            margin: 15px 0 0;
+            padding: 0;
+        }
+    }
+}
+
+.helptext {
+    color: $dark_gray;
+    display: block;
+    font-family: 'Baton-Regular';
+    font-size: 18px;
+}
 
 .error {
     color: #f50;
@@ -104,6 +220,7 @@ input[type=checkbox]#id_terms_and_conditions {
 .error-list {
     li,
     &__item {
+        background-color: transparent;
         color: #f50;
         font-family: 'Baton-Medium';
         padding: 10px 15px;
@@ -114,3 +231,5 @@ input[type=checkbox]#id_terms_and_conditions {
 .security {
     padding: 10px 0 0;
 }
+
+

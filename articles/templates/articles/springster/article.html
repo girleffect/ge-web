@@ -11,11 +11,13 @@
         
         <!-- START: CURRENTLY STATIC - Needs to be updated to be -->
         {% get_comment_count for page as comment_count %}
-        <div class="comments-counter">
-            <a href="/sections/my-body/how-safely-use-condoms/#comments" class="call-to-action__nav-item-text">
-                {% trans 'Your thoughts' %} ({{ comment_count }})
-            </a>
-        </div>
+        {% if comment_count > 0 %}
+            <div class="comments-counter">
+                <a href="#comments" class="call-to-action__nav-item-text">
+                    {% trans "Your thoughts" %} ({{ comment_count }})
+                </a>
+            </div>
+        {% endif %}
         <!-- END: CURRENTLY STATIC -->
 
         {% include_block page.body %}
@@ -30,7 +32,7 @@
     {% social_media_article %}
     {% if page.tags.all.count %}
         <div class="tag-cloud">
-            <h3 class="heading heading__micro">Read more about</h3>
+            <h3 class="heading heading__micro">{% trans "Read more about" %}</h3>
             <ul class="tag-cloud-list">
                 {% for tag in page.tags.all %}
                     <li class="tag-cloud-list__item">#{{ tag.name}}</li>
@@ -38,6 +40,7 @@
             </ul>
         </div>
     {% endif %}
+
     {% include "./commenting.html" %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}

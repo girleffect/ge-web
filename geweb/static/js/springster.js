@@ -26,8 +26,14 @@ elemHeaderSearchToggle.addEventListener('click', (e) => {
 /**
  * Menu active class for sections menu across header & footer at once AND footer menu
  */
-const menuLinks = document.querySelectorAll('.nav-list__anchor')
-let selectedLink = sessionStorage.getItem('curLink')
+const menuLinks = document.querySelectorAll('.nav-list__anchor'),
+    linkPathName = window.location.pathname.split('/'),
+    pathArrayCheck = linkPathName.filter(item => item != '' )
+
+
+if (pathArrayCheck.length <= 1) {
+    sessionStorage.setItem('curLink', 'nav-list__springster')
+}
 
 for(let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', function(e) {
@@ -36,16 +42,14 @@ for(let i = 0; i < menuLinks.length; i++) {
     })
 }
 
-if (selectedLink) {
-    if (selectedLink !== 'nav-list__springster') {
+if (sessionStorage.getItem('curLink')) {
+    if (sessionStorage.getItem('curLink') !== 'nav-list__springster') {
         document.querySelectorAll('.nav-list__springster').forEach(item => item.classList.remove('selected'))
     }
-    document.querySelectorAll(`.${selectedLink}`).forEach(item => item.classList.add('selected'))
+    document.querySelectorAll(`.${sessionStorage.getItem('curLink')}`).forEach(item => item.classList.add('selected'))
 } else {
-    let pathName = window.location.pathname.split('/')    
-    let pathNameFilter = pathName.filter(item => item !== '')
-    sessionStorage.setItem('curLink', pathNameFilter[2] ? 'nav-list__' + pathNameFilter[2] : 'nav-list__springster')
-    document.querySelectorAll(pathNameFilter[2] ? '.nav-list__' + pathNameFilter[2] : '.nav-list__springster').forEach(item => item.classList.add('selected'))
+    sessionStorage.setItem('curLink', linkPathName[2] ? 'nav-list__' + linkPathName[2] : 'nav-list__springster')
+    document.querySelectorAll(linkPathName[2] ? '.nav-list__' + linkPathName[2] : '.nav-list__springster').forEach(item => item.classList.add('selected'))
 }
 
 

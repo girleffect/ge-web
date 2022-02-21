@@ -1,0 +1,22 @@
+.footerpage {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: flex-start;
+    @media screen and (min-width: 991px) {
+        padding: 50px 8% 30px;
+    }
+    .component {
+        align-self: flex-start;
+    }
+}
+
+.block-image {
+    padding: 10px 0;
+}
+.block-paragraph {
+    p {
+        padding: 10px 0; 
+    }
+}

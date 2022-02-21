@@ -1,0 +1,98 @@
+.polls {
+    background-color: $white;
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+    width: 100%;
+
+    &__icon {
+        margin: 20px 0 0;
+        text-align: center;
+        &:before {
+            background: url($staticPath + 'img/springster/poll@2x.png') no-repeat 0 0/100px;
+            content: '';
+            display: block;
+            height: 88px;
+            left: 0;
+            margin: 0 auto;
+            padding: 2px 5px;
+            position: absolute;
+            right: 0;
+            width: 100px;
+        }
+    }
+    &__label {
+        color: $dark_gray;
+        display: inline-block;
+        font-family: 'Baton-Medium';
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-top: 100px;
+    }
+    &__inner {
+        background: $very_soft_cyan url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100%/contain;
+        margin-top: -45px;
+        padding: 60px 0 8px;
+        &--results {
+            text-align: center;
+        }
+    }
+    &__results {
+        padding: 0 10px;
+        fieldset {
+            display: block;
+            margin: 15px 0;
+            text-align: left;
+            .input-group {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin: 15px 0;
+                padding: 0 15px;
+                text-align: left;
+                &__percent {
+                    background-color: $white;
+                    border-radius: 20px;
+                    width: 100%;
+                    &-bar {
+                        background-color: $pale_yellow;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        padding: 5px;
+                    }
+                }
+                .label {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    &--banner {
+        text-align: center;
+    }
+
+    .forms {
+        padding: 20px 10px;
+    }
+
+    .call-to-action__link {
+        display: inline-block;
+        margin: 0;
+        padding: 0 0 5px;
+        text-decoration: underline;
+        &:before {
+            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: 25px;
+            content: "";
+            display: inline-block;
+            height: 24px;
+            margin: 0 0 0 10px;
+            transform: rotate(270deg);
+            vertical-align: middle;
+            width: 24px;
+        }
+    }
+}
+

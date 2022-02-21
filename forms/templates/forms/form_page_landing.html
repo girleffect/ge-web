@@ -1,22 +1,30 @@
-{% load wagtailcore_tags i18n %}
-<html>
-    <head>
-        <title>{{ page.title }}</title>
-    </head>
-    <body>
-        <h1>{{ page.title }}</h1>
-        {% if page.thank_you_text %}
-            {{ page.thank_you_text|richtext }}
-        {% else %}
-            {% trans "Thank you" %}
+{% extends "base.html" %}
+
+{% load article_tags %}
+
+{% block content %}
+    {% if theme.slug == 'springster' %}
+
+        {% if page.title|slugify == 'polls' %}
+            {% include "./springster/polls/thank-you.html" %}
         {% endif %}
-        
-        {% if results %}
-            <h2>Results</h2>
-            {% for question, answers in results.items %}
-                <h3>{{ question }}</h3>
-                {% for answer, count in answers.items %}
-                    <div>{{ answer }}: {{ count }}</div>
-                {% endfor %}
-            {% endfor %}
+
+        {% if page.title|slugify == 'yourwords' %}
+            {% include "./springster/yourwords/thank-you.html" %}
         {% endif %}
+
+    {% elif theme.slug == 'tujibebe' %}
+
+        {% if page.title|slugify == 'polls' %}
+            {% include "./springster/polls/thank-you.html" %}
+        {% endif %}
+
+        {% if page.title|slugify == 'yourwords' %}
+            {% include "./springster/yourwords/thank-you.html" %}
+        {% endif %}
+
+     {% endif %}
+     <div class="breadcrumbs">
+        {% breadcrumbs %}
+    </div>
+{% endblock content %}
