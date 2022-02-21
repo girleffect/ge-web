@@ -1,44 +1,44 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags i18n %}
+{% load i18n wagtailcore_tags %}
 
-{% block title %}{% trans 'Search' %}{% endblock %}
+{% block title %}{% trans "Search" %}{% endblock %}
 
 {% block content %}
     <form action="{% url 'search' %}" method="get">
-        <input type="text" name="q" value="{{ search_query }}">
-        <input type="submit" value="Search">
+      <input type="text" name="q" value="{{ search_query }}">
+      <input type="submit" value="{% trans 'search' %}">
     </form>
 
     {% if search_results %}
-        <ul>
-            {% for result in search_results.object_list %}
-                <li>
-                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
-                        {{ result.title }}
-                        {{ result.subtitle }}
-                </li>
-            {% endfor %}
-        </ul>
+      <ul>
+        {% for result in search_results.object_list %}
+          <li>
+            <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+            {{ result.title }}
+            {{ result.subtitle }}
+          </li>
+        {% endfor %}
+      </ul>
 
         <div class="pagination">
          {% if search_results.has_previous %}
            {% if search_results.previous_page_number == 1 and pagelink == request.path %}
                <a href="/" class="pagination__nav-anchor-previous"></a>
            {% else %}
-             <a href="{% url 'search' %}?q={{search_query}}&page={{ search_results.previous_page_number }}" class="pagination__nav-anchor-previous">Previous</a>
+             <a href="{% url 'search' %}?q={{search_query}}&page={{ search_results.previous_page_number }}" class="pagination__nav-anchor-previous">{% trans "Previous" %}</a>
            {% endif %}
          {% endif %}
          <span class="pagination__current-page">
-           Page {{ search_results.number }} of {{ search_results.paginator.num_pages }}
+          {% trans "Page" %} {{ search_results.number }} of {{ search_results.paginator.num_pages }}
          </span>
          {% if search_results.has_next %}
-           <a href="{% url 'search' %}?q={{search_query}}&page={{ search_results.next_page_number }}" class="pagination__nav-anchor-next">Next</a>
+           <a href="{% url 'search' %}?q={{search_query}}&page={{ search_results.next_page_number }}" class="pagination__nav-anchor-next">{% trans "Next" %}</a>
          {% endif %}
        </div>
 
     {% elif search_query %}
-        {% trans 'Nothing was found matching ' %} {{search_query}}
+        {% trans "Nothing was found matching" %} {{search_query}}
     {% else %}
-        Please type something into the search box
+      {% trans "Please type something into the search box" %}
     {% endif %}
 {% endblock %}

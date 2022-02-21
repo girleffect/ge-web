@@ -1,12 +1,11 @@
 {% load wagtailcore_tags article_tags theme_tags home_tags i18n comments %}
 
-
 <div id="comments" class="commenting commenting--on-article">
     <div class="heading heading--component">
-        <h1 class="heading__component-title">{% trans 'Share your feedback' %}</h1>
+        <h1 class="heading__component-title">{% trans "Share your feedback" %}</h1>
     </div>
    
-    <!-- THREADED COMMENTS -->
+    {# <!-- ========== start THREADED COMMENTS ========== --> #}
     {% get_comment_form for page as form %}
     {% if user.is_authenticated %}
         <form action="{% comment_form_target %}" method="POST" class="commenting-form">
@@ -23,10 +22,10 @@
         </form>
     {% else %}
         <div class="heading heading--component">
-            <h1 class="heading__component-title">{% trans 'Your thoughts' %}</h1>
+            <h1 class="heading__component-title">{% trans "Your thoughts" %}</h1>
         </div>
         <div class="call-to-action">
-            <a href="{% url 'auth_login' %}" class="call-to-action__submit">Log in to leave a comment</a>
+            <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
         </div>
     {% endif %}
 
@@ -34,33 +33,40 @@
     {% if comment_list %}
         <div class="commenting__list">
             <div class="heading heading--component">
-                <h1 class="heading__component-title">{% trans 'Your feedback' %}</h1>
+                <h1 class="heading__component-title">{% trans "Your feedback" %}</h1>
             </div>
            
             {% for comment in comment_list %}
                 <div class="commenting__list-item">
                     <div class="commenting-thread">
                         {% if comment.is_removed %}
-                            <h6 class="commenting-thread__alias-removed">{% trans '
-                                This comment has been deleted. Please read our platform rules.' %}</h6>
+                            <h6 class="commenting-thread__alias-removed">
+                                {% trans "This comment has been deleted. Please read our platform rules."" %}
+                            </h6>
                         {% else %}
                             <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
                             <p class="commenting-thread__msg">{{ comment.comment }}</p>
-                            
                             <p class="commenting-thread__publish-date">{{ comment.submit_date }}
                         {% endif %}
                        
-
                         {% get_comment_list for comment as threaded_comment_list %}
                         {% get_comment_count for comment as reply_count %}
                         <div class="commenting-cta">
                             <div class="commenting-cta__left">
-                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">Report</a> 
-                                <a href="/comments/{{ page.id }}/reply" class="commenting-cta__label">{% trans 'Reply' %}</a>
+                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a> 
+                                <!-- 
+                                    NEEDS A REPLY CALL TO ACTION URL 
+                                    e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment-block
+                                -->
+                                <a href="/comments/{{ page.id }}/reply" class="commenting-cta__label">{% trans "Reply" %}</a>
                             </div>
                             <div class="commenting-cta__right">
+                                <!-- 
+                                    NEEDS A REPLIES FORM - CALL TO ACTION URL
+                                    e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment_reply
+                                -->
                                 <a href="/comments/{{ comment.id }}/#comment_reply" class="commenting-cta__label">
-                                    {{ reply_count }} {% if reply_count > 0 %}Replies{% else %}Reply{% endif %}
+                                    {{ reply_count }} {% if reply_count > 0 %}{% trans "Replies" %}{% else %}{% trans "Reply" %}{% endif %}
                                 </a>
                             </div>
                         </div>

@@ -1,8 +1,8 @@
-{% load article_tags home_tags i18n wagtailcore_tags %}
+{% load article_tags i18n home_tags wagtailcore_tags %}
 
 <div class="polls polls--banner">
     <div class="polls__icon">
-        <p class="polls__label">Cast Your Vote!</p>
+        <p class="polls__label">{% trans "Cast Your Vote!" %}</p>
     </div>
     <div class="polls__inner">
         <h1 class="forms__title">{{page.title}}</h1>
@@ -34,7 +34,9 @@
                     <button type="submit" class="call-to-action__submit">{% trans "Submit" %}</button>
                 </form>
             {% else %}
-                <p class="forms__feedback">You can fill in the from only one time.</p>
+                <p class="forms__feedback">
+                    {% trans "You can fill in the from only one time." %} 
+                </p>
             {% endif %}
         {% else %}
             <h2 class="forms__subtitle">

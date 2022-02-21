@@ -14,7 +14,7 @@
         {% if comment_count > 0 %}
             <div class="comments-counter">
                 <a href="#comments" class="call-to-action__nav-item-text">
-                    {% trans 'Your thoughts' %} ({{ comment_count }})
+                    {% trans "Your thoughts" %} ({{ comment_count }})
                 </a>
             </div>
         {% endif %}
@@ -32,7 +32,7 @@
     {% social_media_article %}
     {% if page.tags.all.count %}
         <div class="tag-cloud">
-            <h3 class="heading heading__micro">{% trans 'Read more about' %}</h3>
+            <h3 class="heading heading__micro">{% trans "Read more about" %}</h3>
             <ul class="tag-cloud-list">
                 {% for tag in page.tags.all %}
                     <li class="tag-cloud-list__item">#{{ tag.name}}</li>

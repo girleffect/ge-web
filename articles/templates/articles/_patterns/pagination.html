@@ -7,7 +7,7 @@
         {% if results.previous_page_number == 1 and pagelink == request.path %}
           <a href="/" class="pagination__anchor"></a>
         {% else %}
-          <a href="{{page.url}}?page={{ results.previous_page_number }}" class="pagination__anchor pagination__anchor--prev">{% trans 'Prev' %}</a>
+          <a href="{{page.url}}?page={{ results.previous_page_number }}" class="pagination__anchor pagination__anchor--prev">{% trans "Prev" %}</a>
         {% endif %}
       {% endif %}
     </div>
@@ -19,7 +19,7 @@
     </div>
     <div class="pagination__item">
       {% if results.has_next %}
-        <a href="{{page.url}}?page={{ results.next_page_number }}" class="pagination__anchor pagination__anchor--next">{% trans 'Next' %}</a>
+        <a href="{{page.url}}?page={{ results.next_page_number }}" class="pagination__anchor pagination__anchor--next">{% trans "Next" %}</a>
       {% endif %}
   </div>
   </div>

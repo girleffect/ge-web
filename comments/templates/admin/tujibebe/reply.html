@@ -6,9 +6,9 @@
   <header>
       <div class="row nice-padding">
         <div class="breadcrumbs">
-          <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
-          &rsaquo; <a href="/admin/threadedcomments/threadedcomment/">{% trans 'Comments' %}</a>
-          &rsaquo; {% trans 'Reply' %}
+          <a href="{% url 'admin:index' %}">{% trans "Home" %}</a>
+          &rsaquo; <a href="/admin/threadedcomments/threadedcomment/">{% trans "Comments" %}</a>
+          &rsaquo; {% trans "Reply" %}
         </div>
         <br>
         <div class="left header-left">
@@ -16,7 +16,7 @@
             {% block h1 %}
               <h1>
                 {% icon name="openquote" class_name="header-title-icon" %}
-                {% trans 'Comment Reply' %}
+                {% trans "Comment Reply" %}
               </h1>
             {% endblock %}
           </div>
@@ -31,14 +31,14 @@
   <form action="{% url 'comments-admin-reply' parent=parent.pk %}" method="POST">
       {% csrf_token %}
       <div class="title-wrapper">
-        <h2>{% trans 'Replying to' %}</h2>
+        <h2>{% trans "Replying to" %}</h2>
         <h3>{{ parent }}</h3>
       </div>
       <ul class="fields">
         <li class="required {{ wrapper_classes }} {{ li_classes }} {% if field.errors %}error{% endif %}">
           <div class="field">
             <div class="field-content">
-              <label>{% trans 'Reply' %}</label>
+              <label>{% trans "Reply" %}</label>
                 <div class="input {{ input_classes }} ">
                   {{ form.comment }}
                   {{form.object_pk}}
@@ -54,7 +54,7 @@
         </li>
         <li>
             {% block actions %}
-                <button type="submit" class="button">{% trans 'Post Reply' %}</button>
+                <button type="submit" class="button">{% trans "Post Reply" %}</button>
             {% endblock %}
         </li>
       </ul>
