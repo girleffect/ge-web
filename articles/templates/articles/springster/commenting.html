@@ -53,7 +53,7 @@
                         {% get_comment_count for comment as reply_count %}
                         <div class="commenting-cta">
                             <div class="commenting-cta__left">
-                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">Report</a> 
+                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a> 
                                 <!-- 
                                     NEEDS A REPLY CALL TO ACTION URL 
                                     e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment-block
@@ -66,7 +66,7 @@
                                     e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment_reply
                                 -->
                                 <a href="/comments/{{ comment.id }}/#comment_reply" class="commenting-cta__label">
-                                    {{ reply_count }} {% if reply_count > 0 %}Replies{% else %}Reply{% endif %}
+                                    {{ reply_count }} {% if reply_count > 0 %}{% trans "Replies" %}{% else %}{% trans "Reply" %}{% endif %}
                                 </a>
                             </div>
                         </div>
