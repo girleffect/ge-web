@@ -1,4 +1,4 @@
-{% load wagtailcore_tags %}
+{% load i18n wagtailcore_tags %}
 
 <div class="yourwords yourwords--banner">
     <div class="yourwords__icon"></div>
@@ -10,9 +10,9 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-            <a href="{% pageurl form %}" class="call-to-action__submit">Enter</a>
+            <a href="{% pageurl form %}" class="call-to-action__submit">{% trans "Enter" %}</a>
         {% else %}
-            <a href="{% url 'auth_login' %}" class="call-to-action__submit">Log in to answer</a>
+            <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to answer" %}</a>
         {% endif %}
     </div>
 </div>

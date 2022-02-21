@@ -13,7 +13,7 @@
 
         <div class="teaser-stacklist__content{% if theme.slug == 'springster' or theme.slug == 'tujibebe'  %}{% if post.image %} teaser-stacklist__content--split{% endif %}{% endif %}">
             
-            <!-- ========== start ZATHU ======== -->
+            {# <!-- ========== start ZATHU ======== --> #}
             {% if theme.slug == 'zathu' %}
                 <h4 class="teaser-stacklist-parent">
                     {% with parent=post.get_parent %}
@@ -23,7 +23,7 @@
                     {% endwith %}
                 </h4>
             {% endif %}
-            <!-- ========== end ======== -->
+            {# <!-- ========== end ======== --> #}
             
             <a href="{% pageurl post %}" class="teaser-stacklist__anchor">
                 <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
@@ -52,7 +52,7 @@
                 {% endif %}
             </div>
 
-            <!-- ========== start NINYAMPINGA ======== -->
+            {# <!-- ========== start NINYAMPINGA ======== --> #}
             {% if theme.slug == 'ninyampinga' %}
                 <p class="teaser-stacklist__caption"> 
                     {% for post_field in post.body %}
@@ -65,16 +65,15 @@
                     {% trans "Click here" %}
                 </a>
             {% endif %}
-            <!-- ========== end ======== -->
+            {# <!-- ========== end ======== --> #}
 
-            <!-- ========== start YEGNA ======== -->
+            {# <!-- ========== start YEGNA ======== --> #}
             {% if theme.slug == 'yegna' %}
                 <a href="{% pageurl post %}" class="call-to-action__read-more">
                     {% trans "Read more" %}
                 </a>
             {% endif %}
-            <!-- ========== end ======== -->
-
+            {# <!-- ========== end ======== --> #}
         </div>  
     </div>
 {% endwith %}
