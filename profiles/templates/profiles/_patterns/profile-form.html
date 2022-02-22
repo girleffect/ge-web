@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}}>
+<form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}} class="profiles__form">
 {% csrf_token %}
     <fieldset>
         <label for="date_of_birth">{% trans "Date of birth" %}</label>
