@@ -1,12 +1,14 @@
 .header {
     animation: qs-timer .3s;
     background-color: $plum;
-    overflow: initial;
     height: auto;
+    overflow: initial;
     padding: 0 10px;
+    position: absolute;
     text-align: center;
     transform: translate3d(0,0,0);
     transition: transform .3s ease 1ms;
+    width: 100%;
     z-index: 99999;
 
     @media (min-width: 991px) {
@@ -16,6 +18,9 @@
         justify-content: space-between;   
         height: 65px;
         padding: 0 5%;
+        position: relative;
+        overflow: inherit;
+        width: inherit;
     }
 }
 

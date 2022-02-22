@@ -12,7 +12,10 @@
 
 .homepage {
     overflow: auto;
-    padding: 0;
+    padding: 165px 0 0 0;
+    @media (min-width: 991px) {
+       padding: 0;
+    }
     .article-stacklist {
         display: block;
         padding: 15px;
