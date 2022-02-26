@@ -1,9 +1,8 @@
 {% extends "base.html" %}
-{% load i18n wagtailsettings_tags theme_tags %}
+{% load i18n wagtailsettings_tags %}
 {% get_settings %}
 
 {% block content %}
-{% get_current_theme as theme %}
   {% if theme.slug == 'ninyampinga' %}
       {% include "./ninyampinga/viewprofile.html" %}
   {% elif theme.slug == 'springster' %}

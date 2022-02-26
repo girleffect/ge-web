@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% get_current_theme as theme %}
+ 
   {% if theme.slug == 'ninyampinga' %}
     {% include "./ninyampinga/search.html" %}
   {% elif theme.slug == 'springster' %}
