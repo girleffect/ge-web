@@ -1,0 +1,117 @@
+.commenting {
+    &--on-article {
+       padding: 20px 0;
+        margin: 8px 0;
+        &:before {
+            content: "";
+            background: url($staticPath + 'img/tujibebe/illustrations.png') no-repeat 0 -24em/150px;
+            height: 105px;
+            overflow: auto;
+            margin: 0 auto;
+            width: 150px;
+            display: block;
+        }
+        .heading__component-title {
+            color: $very_dark_gray;
+            font-size: 22px;
+            font-weight: 600;
+            padding: 1.5em 1em;
+            margin: 0;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+    &__counter {
+        color: $very_dark_gray;
+        font-size: 16px;
+        text-decoration: none;
+       
+       &:before {
+            background: url($staticPath + 'img/tujibebe/checkbox-icons.png') no-repeat -15px -75px/50px;
+            content: '';
+            display: inline-block;
+            height: 20px;
+            margin: 0 auto;
+            vertical-align: middle;
+            width: 20px;
+       }
+    }
+    &__label {
+        color: $dark_gray_blue;
+        display: inline-block;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        position: relative;
+        &__item {
+            background-color: $white;
+            display: block;
+        }
+    }
+    &-form {
+        padding: 0 15px;
+    }
+    &-thread {
+        padding: 10px 0 0;
+        border-top: 3px solid $blue;
+        &:first-child {
+            border-top: none;
+        }
+        &__alias {
+            color: $very_dark_gray_blue;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 5px 10px;
+            text-transform: capitalize;
+            &-removed {
+                color: $very_dark_gray;
+                padding: 10px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+        &__msg {
+            color: $dark_gray_blue;
+            font-size: 16px; 
+            padding: 5px 10px;
+        }
+        &__publish-date {
+            color: #666;
+            font-size: 12px;
+            padding: 5px 5px 0 10px;
+            font-weight: 700;
+        }
+    }
+    &-cta {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 10px 10px;
+        &__label {
+            color: $blue;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    }
+    
+    &-replies {
+        background-color: #f8fafd;
+        padding: 10px 0 0;
+        &-title {
+            color: $very_dark_gray;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 8px 10px 10px;
+        }
+        &__feedback {
+            color: $dark_gray_blue;
+            display: block;
+        }
+    }
+}
