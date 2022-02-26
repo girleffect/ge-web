@@ -1,4 +1,4 @@
-{% load comments home_tags i18n wagtailcore_tags article_tags %}
+{% load article_tags comments home_tags i18n wagtailcore_tags %}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -9,7 +9,6 @@
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
         
-        <!-- START: CURRENTLY STATIC - Needs to be updated to be -->
         {% get_comment_count for page as comment_count %}
         {% if comment_count > 0 %}
             <div class="comments-counter">
@@ -18,8 +17,7 @@
                 </a>
             </div>
         {% endif %}
-        <!-- END: CURRENTLY STATIC -->
-
+        
         {% include_block page.body %}
     </div>
     {% if page.tags.all.count %}
@@ -41,7 +39,7 @@
         </div>
     {% endif %}
 
-    {% include "./commenting.html" %}
+    {% include "../_patterns/commenting.html" %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}
 </div>

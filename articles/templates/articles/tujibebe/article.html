@@ -1,4 +1,4 @@
-{% load article_tags i18n wagtailimages_tags home_tags wagtailcore_tags %}
+{% load article_tags comments home_tags i18n wagtailcore_tags wagtailimages_tags%}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -7,6 +7,15 @@
         </div>
         {% if page.subtitle %}
             <p class="subheading">{{ page.subtitle }}</p>
+        {% endif %}
+
+        {% get_comment_count for page as comment_count %}
+        {% if comment_count > 0 %}
+            <div class="comments-counter">
+                <a href="#comments" class="call-to-action__nav-item-text">
+                    {% trans "Your thoughts" %} ({{ comment_count }})
+                </a>
+            </div>
         {% endif %}
 
         {% if page.image %}
@@ -36,6 +45,8 @@
             </ul>
         </div>
     {% endif %}
+
+    {% include "../_patterns/commenting.html" %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}
 </div>

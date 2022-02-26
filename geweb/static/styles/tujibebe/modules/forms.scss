@@ -45,7 +45,14 @@ select {
 
 select { 
     background: url($staticPath + 'img/tujibebe/icon-sprite.png') 285px -200px/180px no-repeat;
-   
+}
+
+textarea {
+    border: 3px solid #003cdc;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    width: 300px;
 }
 
 label[for=id_terms_and_conditions] {
