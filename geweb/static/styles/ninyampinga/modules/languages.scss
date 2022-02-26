@@ -37,8 +37,22 @@
             @media (min-width: 991px) {
                 background-color: $white;
             }
+            &:before {
+                background-position: 0 -115px;
+                background-size: 25px;  
+                //display: block;
+                height: 20px;
+                padding: 5px;
+                width: 25px;
+                @media (min-width: 991px) {
+                    background-position: 0 -155px;
+                    background-size: 35px;
+                    height: 40px;
+                    padding: initial;
+                    width: 45px;
+                }
+            }
         }
-
     }
     &__checkbox {
         display: none;
@@ -63,9 +77,20 @@
     }
     
     &-list {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        @media (min-width: 991px) {
+            flex-direction: row;
+        } 
         &__item {
             display: inline-block;
             padding: 5px;
+            &:nth-child(2) > .languages-list__anchor {
+                color: $dark_grey !important;
+                opacity: .7 !important;
+            }
         }
         &__label {
             padding-right: 35px;
@@ -91,6 +116,13 @@
         }
         &__anchor {
             color: $pink;
+            display: inline-block;
+            font-size: $medium_small;
+            font-weight: 700;
+            opacity: 1;
+            text-decoration: underline;
+            text-underline-position: under;
+            text-transform: uppercase;
             .is-active {
                 color: $dark_grey;
             }
