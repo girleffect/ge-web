@@ -1,15 +1,13 @@
 {% extends "base.html" %}
-{% load i18n wagtailsettings_tags %}
-{% get_settings %}
 
 {% block content %}
-  {% if theme.slug == 'ninyampinga' %}
-      {% include "./ninyampinga/viewprofile.html" %}
-  {% elif theme.slug == 'springster' %}
-    {% include "./springster/viewprofile.html" %}
-  {% elif theme.slug == 'tujibebe' %}
-    {% include "./tujibebe/viewprofile.html" %}
-  {% elif theme.slug == 'zathu' %}
-    {% include "./zathu/profile.html" %}
-{% endif %}
+    {% if theme.slug == 'ninyampinga' %}
+        {% include "./ninyampinga/viewprofile.html" %}
+    {% elif theme.slug == 'springster' %}
+        {% include "./springster/viewprofile.html" %}
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/viewprofile.html" %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/profile.html" %}
+    {% endif %}
 {% endblock %}
