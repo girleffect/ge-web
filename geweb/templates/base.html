@@ -129,13 +129,15 @@
         {% endblock %}
     {% endwith %}
 
-    <script>
-        if (!navigator.serviceWorker.controller) {
-            navigator.serviceWorker.register("/serviceworker.js").then(function(reg) {
-                console.log("Service worker has been registered: " + reg.scope);
-            });
-        }
-    </script>
+    {% if theme.slug == 'springster' %}
+        <script>
+            if (!navigator.serviceWorker.controller) {
+                navigator.serviceWorker.register("/serviceworker.js").then(function(reg) {
+                    console.log("Service worker has been registered: " + reg.scope);
+                });
+            }
+        </script>
+    {% endif %}
     <script type="text/javascript" src="{{STATIC_URL}}_dist/{{theme.slug}}.bundle.js"></script>
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
 </body>
