@@ -62,7 +62,6 @@
     </div>
   {% endif %}
     {% wagtailuserbar %}
-
     {% with "./"|add:theme.slug|add:"/" as THEME_PATH %}
         {% block header %}
             {% include THEME_PATH|add:"header.html" %}
