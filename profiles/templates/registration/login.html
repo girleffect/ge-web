@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load i18n %}
 
 {% block content %}
   {% if theme.slug == 'ninyampinga' %}
@@ -8,9 +7,7 @@
     {% include "./springster/login.html" %}
   {% elif theme.slug == 'tujibebe' %}
     {% include "./tujibebe/login.html" %}
-  {% elif theme.slug == 'yegna' %}
-
-  {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
-    {% include "./zathu/za_login.html" %}
+  {% elif theme.slug == 'zathu' %}
+    {% include "./zathu/login.html" %}
   {% endif %}
 {% endblock %}
