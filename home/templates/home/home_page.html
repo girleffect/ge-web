@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-{% load wagtailsettings_tags %}
-{% get_settings %}
 
-{% block content %}
-    {{ settings.home.SiteSettings.facebook_sharing }}   
+{% block content %} 
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/home.html" %}
     {% elif theme.slug == 'springster' %}

@@ -8,15 +8,15 @@
             {% include "../_patterns/article-teasers-listing.html" %}
         {% endfor %}
 
-        {% include "./sp_banner.html" with urlString='/' imagePos='two' altString='Celebrate girls - Read inspiring stories' %}
+        {% include "./_banner.html" with urlString='/' imagePos='two' altString='Celebrate girls - Read inspiring stories' %}
 
         {% for form in forms %}
             {% if form.title|slugify == 'polls' %}
-                {% include "./polls.html" %}
+                {% include "./_polls.html" %}
             {% endif %}
 
             {% if form.title|slugify == 'yourwords' %}
-                {% include "./yourwords.html" %}
+                {% include "./_yourwords.html" %}
             {% endif %}
         {% endfor %}
        

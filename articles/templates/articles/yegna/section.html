@@ -20,7 +20,7 @@
 
                 {% for post in articlepages %}
                     {% if post.content_type.app_labeled_name == 'articles | article page' %}
-                        {% include "./yeg_article-teasers.html" %}
+                        {% include "./_article-teasers.html" %}
                     {% endif %}
                 {% endfor %}
             </div>
@@ -34,7 +34,7 @@
                             </div>
                             <div class="teaser-stacklist">
                                 {% for post in subsection.get_children %}
-                                {% include "./yeg_article-teasers.html" %}
+                                {% include "./_article-teasers.html" %}
                                 {% endfor %}
                             </div>
                         {% endif %}
@@ -45,6 +45,6 @@
 
 
     {% else %}
-        {% include "./ye_article-teasers-listing.html" %}
+        {% include "./_article-teasers-listing.html" %}
     {% endif %}
 </div>

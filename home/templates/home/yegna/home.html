@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    {% include "./yeg_banner.html" %}
+    {% include "./_banner.html" %}
 
     <div class="homepage__inner">
         <div class="homepage__column-main">
@@ -29,7 +29,7 @@
                 {% for post in articlepages %}
                     {% if not post.get_parent|slugify == 'cast' %}
                         {% if post.feature_in_homepage %}
-                            {% include "./yeg_article-teasers.html" %}
+                            {% include "./_article-teasers.html" %}
                         {% endif %}
                     {% endif %}
                 {% endfor %}
@@ -45,7 +45,7 @@
                     {% if post.get_parent|slugify == 'cast' %}
                         {% if post.feature_in_homepage %}
                             {% with post=post.specific %}
-                                {% include "./yeg_article-teasers.html" %}
+                                {% include "./_article-teasers.html" %}
                             {% endwith %}
                         {% endif %}
                     {% endif %}
