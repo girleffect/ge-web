@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% get_settings %}
 
 {% block content %}
+    {{ settings.home.SiteSettings.facebook_sharing }}   
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/home.html" %}
     {% elif theme.slug == 'springster' %}
