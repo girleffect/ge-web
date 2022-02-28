@@ -330,7 +330,7 @@ ul, ol, li {
 }
 @media (min-width: 991px) {
   .header-wrapper {
-    padding: 0 8% 10px;
+    padding: 40px 8% 10px;
   }
 }
 
