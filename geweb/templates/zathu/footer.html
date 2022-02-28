@@ -1,4 +1,4 @@
-{% load i18n home_tags static wagtailcore_tags %}
+{% load article_tags i18n home_tags static wagtailcore_tags %}
 
 <footer  id="footer" class="footer">
     <div class="footer__inner">
@@ -28,7 +28,7 @@
             <li class="languages-list__item">
                 <label  class="languages-list__label">Languages:</label>
             </li>
-            {% include "../_patterns/_language-list.html" %}
+            {# {% include "../_patterns/_language-list.html" %} #}
         </ul>
     </div>
 
