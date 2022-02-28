@@ -23,6 +23,7 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+  word-wrap: break-word;
 }
 
 ul, ol, li {
@@ -658,6 +659,11 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.pagination {
+  color: #412a83;
+  padding: 10px 0 20px;
+}
+
 .profiles {
   background-color: #fff;
 }
@@ -676,6 +682,38 @@ input[type=submit] {
 .profiles__inner {
   margin: 0 10px;
   background-color: #dadada;
+}
+
+.search-page {
+  text-align: center;
+}
+.search-page:after {
+  background-image: url("http://127.0.0.1:8000/static/img/zathu/mw_zig_pattern_30.png");
+  background-position: center;
+  background-repeat: repeat-x;
+  content: "";
+  clear: both;
+  display: block;
+  height: 50px;
+  margin: 0 0 10px 0;
+  overflow: visible;
+  width: 100%;
+}
+.search-page .heading--primary {
+  padding: 15px 15px 5px;
+}
+.search-page .article-teaser {
+  padding: 50px 0 10px;
+}
+.search-page .teaser-stacklist {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 8px;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .search__bar {
@@ -702,6 +740,30 @@ input[type=submit] {
   right: 5%;
   text-indent: 125%;
   width: 48px;
+}
+.search--inner {
+  background-color: #dadada;
+  padding: 10px 5px 10px;
+  margin: 15px 15px 0;
+}
+.search--inner .search__cta,
+.search--inner input[type=submit] {
+  background-color: #412a83;
+  background-image: none;
+  color: #ffed00;
+  font-family: "TwCenMTStd-Bold";
+  font-size: 18px;
+  font-weight: normal;
+  margin: 10px auto 10px;
+  padding: 10px 24px;
+  position: relative;
+  text-overflow: inherit;
+  text-transform: uppercase;
+  text-indent: unset;
+  width: 50%;
+}
+.search--inner input.search__input {
+  width: 80%;
 }
 .search--footer {
   padding: 0 0 5px;
@@ -755,9 +817,11 @@ input[type=submit] {
   padding: 0 5px 0px;
 }
 .social-media-list__anchor-icon {
+  height: auto;
   margin-right: 5px;
-  height: 25px;
-  width: 25px;
+  max-height: 25px;
+  max-width: 25px;
+  width: 100%;
 }
 
 .article-page .social-media-list__anchor {
@@ -784,8 +848,8 @@ input[type=submit] {
   width: 1px;
 }
 .article-page .social-media-list__anchor-icon {
-  height: 21px;
-  width: 21px;
+  max-height: 21px;
+  max-width: 21px;
 }
 .article-page .social-media-list__anchor:hover {
   opacity: 0.9;

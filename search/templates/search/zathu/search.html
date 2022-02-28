@@ -6,10 +6,11 @@
     {% if search_results %}
         <p class="subtitle">{{ search_results|length }} {% trans "results found for" %} "{{search_query}}".</p>
        
+        {% include "../_patterns/search-input.html" with enhance="inner" %}
         <div class="article-teaser">
             <div class="teaser-stacklist">
                 {% for post in search_results.object_list %}
-                    {% include "../_patterns/article-teasers.html" %}
+                    {% include "./article-teasers.html" %}
                 {% endfor %}
             </div>
         </div>
@@ -39,9 +40,9 @@
        
     {% elif search_query %}
         <h2 class="heading__subheading">{% trans "Nothing was found matching" %} {{search_query}}</h2>
-        {% include "../_patterns/search-input.html" %}
+        {% include "../_patterns/search-input.html" with enhance="inner"  %}
     {% else %}
         <h2 class="heading__subheading">{% trans "Please type something into the search box" %}</h2>
-        {% include "../_patterns/search-input.html" %}
+        {% include "../_patterns/search-input.html" with enhance="inner"  %}
     {% endif %}
 </div>
