@@ -7,7 +7,8 @@
     &__counter {
         color: $dark_gray;
         font-size: 16px;
-       &:before {
+        text-decoration: none;
+        &:before {
             background: url($staticPath + 'img/springster/comment.svg') no-repeat 0 0/20px;
             content: '';
             display: inline-block;
@@ -15,7 +16,7 @@
             margin: 0 auto;
             vertical-align: middle;
             width: 20px;
-       }
+        }
     }
     &__label {
         color: $dark_gray;

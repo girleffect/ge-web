@@ -11,7 +11,7 @@
 
         {% get_comment_count for page as comment_count %}
         {% if comment_count > 0 %}
-            <div class="comments-counter">
+            <div class="article-page__commenting-counter">
                 <a href="#comments" class="call-to-action__nav-item-text">
                     {% trans "Your thoughts" %} ({{ comment_count }})
                 </a>

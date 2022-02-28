@@ -62,8 +62,6 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_96.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-32x32.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-  
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{{STATIC_URL}}_dist/{{theme.slug}}.css">
 
     {% block extra_css %}{% endblock %}
