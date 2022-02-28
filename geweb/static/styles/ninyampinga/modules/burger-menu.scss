@@ -1,12 +1,19 @@
 .burger-icon {
-    width: 35px;
     display: inline-block;
-    padding: 0 10px 0 0;
+    margin: 0 10px 0 0;
+    width: 23px;
+    @media (min-width: 991px) {
+        width: 35px;
+    }
     span {
         background-color: #fff;
         display: block;
         margin: 6px 0;
-        height: 5px;
-        width: 35px;
+        height: 4px;
+        width: 23px;
+        @media (min-width: 991px) {
+            height: 5px;
+            width: 35px;
+        }
     }
 }

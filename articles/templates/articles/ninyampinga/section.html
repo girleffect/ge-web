@@ -1,7 +1,7 @@
-<div class="section-page section-page--{{ page.css_color }}">
-    <div class="section-page__theme section-page__{{ page.css_color }}"></div>
+<div class="section-page{% if page.css_color %} section-page--{{ page.css_color }}{% endif %}">
+    <div class="section-page__theme{% if page.css_color %} section-page__{{ page.css_color }}{% endif %}"></div>
     <div class="section-page__wrapper">
-        <div class="heading heading--primary heading--{{ page.css_color }}">
+        <div class="heading heading--primary{% if page.css_color %} heading--{{ page.css_color }}{% endif %}">
             <div class="section-page__caption">
                 <h1 class="section-page__title">{{self.title}}</h1>
             </div>

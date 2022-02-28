@@ -1,0 +1,13 @@
+.account {
+    &-list {
+        &__label,
+        &__info {
+            display: inline-block;
+        }
+    }
+    
+    .call-to-action__submit {
+        display: block;
+        width: fit-content;
+    }
+}

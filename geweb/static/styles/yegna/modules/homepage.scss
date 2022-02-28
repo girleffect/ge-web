@@ -4,21 +4,42 @@
         padding: 40px 8%;
     } 
     &__inner {
-        align-items: flex-start;
+        align-items: center;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        @media (min-width: 991px) {
+            align-items: flex-start;
+            flex-direction: row;
+        } 
     }
     &__column {
         &-main {
+            width: 80%;
             @media (min-width: 991px) {
                 margin-right: 5%;
                 width: 60%;
             } 
         }
         &-side {
+            width: 80%;
             @media (min-width: 991px) {
                 width: 35%;
             } 
+            .teaser-stacklist {
+                &__item {
+                    background-color: $very_light_gray;
+                }
+                &__content {
+                    .call-to-action__read-more {
+                        float: right;
+                    }
+                }
+                &__title {
+                    font-size: 20px;
+                    margin: 0;
+                }
+            }
         }
     }
 }

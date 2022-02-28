@@ -38,8 +38,11 @@
             background-position: -17px 9px;
         }
         &.is-active {
-            background-color: #fff;
-            color: $white;
+            text-decoration: underline;
+            @media (min-width: 991px) {
+                background-color: #fff;
+                color: $white;
+            }
             &:after {
                 background-position: -17px 9px;
             }
@@ -52,10 +55,14 @@
         height: auto;
         left: 0;
         margin: 0 auto;
-        padding: 60px 10% 45px 20%;
+        padding: 15px;
         position: absolute;
         right: 0;
-        top: 65px;
+        top: 165px;
+        @media (min-width: 991px) {
+            padding: 60px 10% 45px 20%;
+            top: 65px;
+        }
         &__label {
             margin: 0 auto;
             width: 83%;

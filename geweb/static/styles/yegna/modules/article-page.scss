@@ -12,13 +12,28 @@
         object-fit: cover;
         object-position: left top;
     }
-    &--cast {
-        text-align: center;
-        padding: 40px;
+    &__inner {
         margin: 0 auto;
         @media (min-width: 991px) {
             width: 60%;
         }
+    }
+    &--cast {
+        text-align: left;
+        padding: 40px;
+        .subheading::before {
+            display: none;
+        }
+    }
+    .call-to-action {
+        margin: 0 auto;
+        @media (min-width: 991px) {
+            width: 60%;
+        }
+    }
+    .subheading:before {
+        display: none;
+        visibility: hidden;
     }
 }
 

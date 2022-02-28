@@ -29,25 +29,33 @@
         </ul>
       </div>
 
-      <div class="nav-primary-column nav-primary-column-two">
-        <h4 class="nav__title">Featured:</h4>
-        <ul class="nav-list nav-list--column-three">
-         
-        </ul>
-      </div>
-     
-      <div class="nav-primary-column nav-primary-column-three">
-        <h4 class="nav__title">News and stories:</h4>
-        <ul class="nav-list">
-          {% if sections %}
-            {% for section_cat in sections %}
-              <li class="nav-list__item">
-                <a href="{% pageurl section_cat.specific %}" class="nav-list__anchor">{{section_cat.title}}</a>
-              </li>
+      {% if sections %}
+        <div class="nav-primary-column nav-primary-column-two">
+          <h4 class="nav__title">Featured:</h4>
+          <ul class="nav-list nav-list--column-three">
+            {% for section in sections %}
+              {% if section.show_in_menus == True %}
+                <li class="nav-list__item">
+                  <a href="{% pageurl section.specific %}" class="nav-list__anchor">{{section.title}}</a>
+                </li>
+              {% endif %}
             {% endfor %}
-          {% endif %}
-        </ul>
-      </div>
+          </ul>
+        </div>
+        
+        <div class="nav-primary-column nav-primary-column-three">
+          <h4 class="nav__title">News and stories:</h4>
+          <ul class="nav-list">
+            {% for section in sections %}
+              {% if section.show_in_menus == False %}
+                <li class="nav-list__item">
+                  <a href="{% pageurl section.specific %}" class="nav-list__anchor">{{section.title}}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
     
     </div>
   </div> 

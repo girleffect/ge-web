@@ -3,4 +3,61 @@
     @media (min-width: 991px) {
         padding: 40px 8%;
     } 
+    &__inner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media (min-width: 991px) {
+            align-items: flex-start;
+            flex-direction: row;
+        } 
+    }
+    &__column {
+        &-main {
+            width: 80%;
+            @media (min-width: 991px) {
+                margin-right: 5%;
+                width: 60%;
+            } 
+             //ARTICLE TEASER OVERRIDE - MAIN PANEL
+            .teaser-stacklist {
+                &__item {
+                    background-color: #0ff;
+                    width: 90%;
+                }
+                &__title {
+                    color: #000;
+                }
+            }
+        }
+        &-side {
+            width: 80%;
+            @media (min-width: 991px) {
+                width: 35%;
+            } 
+
+
+            //ARTICLE TEASER OVERRIDE - SIDE PANEL
+            .call-to-action {
+                margin-top: 10px;
+            }
+            .teaser-stacklist {
+                &__item {
+                    background-color: $very_light_gray;
+                }
+                &__content {
+                    background-color: #0ff;
+                    padding: 10px 10px 30px 10px;
+                    width: auto;
+                }
+                &__title {
+                    color: #000;
+                    font-size: 20px;
+                }
+            }
+            
+        }
+    }
+   
 }

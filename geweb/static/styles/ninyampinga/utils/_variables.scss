@@ -28,6 +28,101 @@ $bright_orange: #ed6f26;
 $lime_green: #2cb359;
 
 //THEMES
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} Desired value
+
+@function map-deep-get($map, $keys...) {
+    $value: $map;
+    @each $key in $keys {
+      $value: map-get($value, $key);
+    }
+    @return $value;
+  }
+  @function color($group, $color) {
+    $clr: map-deep-get($color_group, $group, $color);
+    @return $clr;
+  }
+  
+$color_group: (
+  greyscale: (
+    gray-very-dark          :     #333,
+    gray-super-light        :     #f5f5f5,
+    gray-dark-blue          :     #9b9fa2,
+    gray-light-blue         :     #ecedef,
+  ),
+  brand: (
+    cyan_1-strong           :     #03b8ad,
+    cyan_2-strong           :     #00A8B7,
+    cyan_light_grayish      :     #b3dcde,
+    cyan-dark               :     #02938A,
+    cyan-very-dark          :     #006D62,
+    cyan-moderate           :     #5bc5bb,
+    pink-very-dark          :     #711343,
+    pink-bright             :     #E7357C,
+    pink-vivid              :     #ed018c,
+    yellow-pure             :     #FDD400,
+    yellow-soft             :     #FDF6B4,
+    yellow-bright           :     #f9e435,
+    yellow-gorse            :     #ffe82c,
+    orange-bright           :     #ED6F26,
+    orange-dark-moderate    :     #965A46,
+    orange-gray             :     #E8DACD,
+    orange-pure             :     #f59c00,
+    red-very-soft           :     #F4A3B0,
+    red-strong              :     #D32027,
+    red-very-dark           :     #66202B,
+    red-vivid               :     #dc0d15,
+    red-dark-moderate       :     #AA4751,
+    red-gray                :     #D4B5AF,
+    blue-very-dark          :     #292663,
+    green-lime              :     #2CB359,
+    magenta-black           :     #1F1A20,
+
+  )
+);
+
+$color-gray                 :     color(greyscale, gray-very-dark);
+$color-gray-dark            :     color(greyscale, gray-dark-blue);
+$color-gray-light           :     color(greyscale, gray-light-blue);
+$color-gray-super-light     :     color(greyscale, gray-super-light);
+
+$color-cyan_shade1          :     color(brand, cyan_1-strong);
+$color-cyan_shade1          :     color(brand, cyan_2-strong);
+$color-cyan_light_grayish   :     color(brand, cyan_light_grayish);
+$color-cyan_dark            :     color(brand, cyan-dark);
+$color-cyan_very_dark       :     color(brand, cyan-very-dark);
+$color-cyan_moderate        :     color(brand, cyan-moderate);
+
+$color-pink                 :     color(brand, pink-vivid);
+$color-pink-very-dark       :     color(brand, pink-very-dark);
+$color-pink-bright          :     color(brand, pink-bright);
+
+$color-yellow               :     color(brand, yellow-pure);
+$color-yellow-soft          :     color(brand, yellow-soft);
+$color-yellow-bright        :     color(brand, yellow-bright);
+$color-yellow-gorse         :     color(brand, yellow-gorse);
+
+$color-orange               :     color(brand, orange-pure);
+$color-orange-bright        :     color(brand, orange-bright);
+$color-orange-moderate      :     color(brand, orange-dark-moderate);
+$color-orange-gray          :     color(brand, orange-gray);
+
+$color-red                  :     color(brand, red-vivid );
+$color-red-soft             :     color(brand, red-very-soft);
+$color-red-gray             :     color(brand, red-gray);
+$color-red-strong           :     color(brand, red-strong);
+$color-red-very-dark        :     color(brand, red-very-dark);
+$color-red-dark-moderate    :     color(brand, red-dark-moderate);
+
+
+$color-blue-very-dark       :     color(brand, blue-very-dark);
+$color-green-lime           :     color(brand, green-lime);
+$color-magenta-black        :     color(brand, magenta-black);
+
 $themes: (
     white: $white,
     dark_grey: $dark_grey,
@@ -41,6 +136,168 @@ $themes: (
     orange: $orange,
     lime_green: $lime_green
 );
+
+$section_themes: (
+  river-aqua: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='113px' height='97px' viewBox='0 0 113 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-River_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpolygon id='Shape' points='100.71125 62.1619718 92.9425 0 43.505 62.1619718 35.73625 0 0 48.6366197 0 71.0422535 25.28375 37.2971831 35.73625 97 82.49 37.2971831 92.9425 97 113 71.0422535 113 48.6366197'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-orange,
+    text_color: #fff
+  ),
+  river-yellow: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='113px' height='97px' viewBox='0 0 113 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-River_1' fill='%23FDD400' fill-rule='nonzero'%3E%3Cpolygon id='Shape' points='100.71125 62.1619718 92.9425 0 43.505 62.1619718 35.73625 0 0 48.6366197 0 71.0422535 25.28375 37.2971831 35.73625 97 82.49 37.2971831 92.9425 97 113 71.0422535 113 48.6366197'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-red,
+    text_color: #fff
+  ),
+  river-green: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='113px' height='97px' viewBox='0 0 113 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-River_1' fill='%232CB359' fill-rule='nonzero'%3E%3Cpolygon id='Shape' points='100.71125 62.1619718 92.9425 0 43.505 62.1619718 35.73625 0 0 48.6366197 0 71.0422535 25.28375 37.2971831 35.73625 97 82.49 37.2971831 92.9425 97 113 71.0422535 113 48.6366197'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink,
+    text_color: #fff
+  ),
+  river-orange: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='113px' height='97px' viewBox='0 0 113 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-River_1' fill='%23EC6E26' fill-rule='nonzero'%3E%3Cpolygon id='Shape' points='100.71125 62.1619718 92.9425 0 43.505 62.1619718 35.73625 0 0 48.6366197 0 71.0422535 25.28375 37.2971831 35.73625 97 82.49 37.2971831 92.9425 97 113 71.0422535 113 48.6366197'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-yellow,
+    text_color: #fff
+  ),
+  river-aqua_2: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='113px' height='97px' viewBox='0 0 113 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-River_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpolygon id='Shape' points='100.71125 62.1619718 92.9425 0 43.505 62.1619718 35.73625 0 0 48.6366197 0 71.0422535 25.28375 37.2971831 35.73625 97 82.49 37.2971831 92.9425 97 113 71.0422535 113 48.6366197'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink-very-dark,
+    text_color: #fff
+  ),
+  river-red: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='113px' height='97px' viewBox='0 0 113 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-River_1' fill='%23D32027' fill-rule='nonzero'%3E%3Cpolygon id='Shape' points='100.71125 62.1619718 92.9425 0 43.505 62.1619718 35.73625 0 0 48.6366197 0 71.0422535 25.28375 37.2971831 35.73625 97 82.49 37.2971831 92.9425 97 113 71.0422535 113 48.6366197'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-green-lime,
+    text_color: #fff
+  ),
+
+
+  field-aqua: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='100px' height='97px' viewBox='0 0 100 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Field_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M67.7944862,96.2406015 L75.9398496,90.726817 L81.4536341,81.0776942 L63.5338346,93.2330827 L67.7944862,96.2406015 Z M59.7744361,90.6015038 L86.0902256,72.8070175 L91.60401,63.1578947 L55.5137845,87.593985 L59.7744361,90.6015038 Z M99.122807,47.1177945 L47.6190476,82.0802005 L51.8796992,85.0877193 L96.3659148,55.0125313 L100,48.6215539 L99.122807,47.1177945 Z M94.6115288,39.3483709 L39.7243108,76.4411028 L43.9849624,79.4486216 L97.1177945,43.6090226 L94.6115288,39.3483709 Z M89.9749373,31.4536341 L31.7042607,70.802005 L35.9649123,73.8095238 L92.481203,35.5889724 L89.9749373,31.4536341 Z M85.4636591,23.5588972 L23.8095238,65.2882206 L28.0701754,68.2957393 L87.8446115,27.8195489 L85.4636591,23.5588972 Z M80.8270677,15.6641604 L15.914787,59.6491228 L20.1754386,62.6566416 L83.3333333,19.924812 L80.8270677,15.6641604 Z M76.3157895,7.89473684 L7.89473684,54.1353383 L12.1553885,57.1428571 L78.6967419,12.1553885 L76.3157895,7.89473684 Z M71.8045113,0 L0,48.4962406 L4.26065163,51.5037594 L74.1854637,4.26065163 L71.8045113,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-orange,
+    text_color: #fff
+  ),
+  field-yellow: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='100px' height='97px' viewBox='0 0 100 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Field_1' fill='%23FDD400' fill-rule='nonzero'%3E%3Cpath d='M67.7944862,96.2406015 L75.9398496,90.726817 L81.4536341,81.0776942 L63.5338346,93.2330827 L67.7944862,96.2406015 Z M59.7744361,90.6015038 L86.0902256,72.8070175 L91.60401,63.1578947 L55.5137845,87.593985 L59.7744361,90.6015038 Z M99.122807,47.1177945 L47.6190476,82.0802005 L51.8796992,85.0877193 L96.3659148,55.0125313 L100,48.6215539 L99.122807,47.1177945 Z M94.6115288,39.3483709 L39.7243108,76.4411028 L43.9849624,79.4486216 L97.1177945,43.6090226 L94.6115288,39.3483709 Z M89.9749373,31.4536341 L31.7042607,70.802005 L35.9649123,73.8095238 L92.481203,35.5889724 L89.9749373,31.4536341 Z M85.4636591,23.5588972 L23.8095238,65.2882206 L28.0701754,68.2957393 L87.8446115,27.8195489 L85.4636591,23.5588972 Z M80.8270677,15.6641604 L15.914787,59.6491228 L20.1754386,62.6566416 L83.3333333,19.924812 L80.8270677,15.6641604 Z M76.3157895,7.89473684 L7.89473684,54.1353383 L12.1553885,57.1428571 L78.6967419,12.1553885 L76.3157895,7.89473684 Z M71.8045113,0 L0,48.4962406 L4.26065163,51.5037594 L74.1854637,4.26065163 L71.8045113,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-red,
+    text_color: #fff
+  ),
+  field-green: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='100px' height='97px' viewBox='0 0 100 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Field_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M67.7944862,96.2406015 L75.9398496,90.726817 L81.4536341,81.0776942 L63.5338346,93.2330827 L67.7944862,96.2406015 Z M59.7744361,90.6015038 L86.0902256,72.8070175 L91.60401,63.1578947 L55.5137845,87.593985 L59.7744361,90.6015038 Z M99.122807,47.1177945 L47.6190476,82.0802005 L51.8796992,85.0877193 L96.3659148,55.0125313 L100,48.6215539 L99.122807,47.1177945 Z M94.6115288,39.3483709 L39.7243108,76.4411028 L43.9849624,79.4486216 L97.1177945,43.6090226 L94.6115288,39.3483709 Z M89.9749373,31.4536341 L31.7042607,70.802005 L35.9649123,73.8095238 L92.481203,35.5889724 L89.9749373,31.4536341 Z M85.4636591,23.5588972 L23.8095238,65.2882206 L28.0701754,68.2957393 L87.8446115,27.8195489 L85.4636591,23.5588972 Z M80.8270677,15.6641604 L15.914787,59.6491228 L20.1754386,62.6566416 L83.3333333,19.924812 L80.8270677,15.6641604 Z M76.3157895,7.89473684 L7.89473684,54.1353383 L12.1553885,57.1428571 L78.6967419,12.1553885 L76.3157895,7.89473684 Z M71.8045113,0 L0,48.4962406 L4.26065163,51.5037594 L74.1854637,4.26065163 L71.8045113,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink,
+    text_color: #fff
+  ),
+  field-orange: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='100px' height='97px' viewBox='0 0 100 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Field_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M67.7944862,96.2406015 L75.9398496,90.726817 L81.4536341,81.0776942 L63.5338346,93.2330827 L67.7944862,96.2406015 Z M59.7744361,90.6015038 L86.0902256,72.8070175 L91.60401,63.1578947 L55.5137845,87.593985 L59.7744361,90.6015038 Z M99.122807,47.1177945 L47.6190476,82.0802005 L51.8796992,85.0877193 L96.3659148,55.0125313 L100,48.6215539 L99.122807,47.1177945 Z M94.6115288,39.3483709 L39.7243108,76.4411028 L43.9849624,79.4486216 L97.1177945,43.6090226 L94.6115288,39.3483709 Z M89.9749373,31.4536341 L31.7042607,70.802005 L35.9649123,73.8095238 L92.481203,35.5889724 L89.9749373,31.4536341 Z M85.4636591,23.5588972 L23.8095238,65.2882206 L28.0701754,68.2957393 L87.8446115,27.8195489 L85.4636591,23.5588972 Z M80.8270677,15.6641604 L15.914787,59.6491228 L20.1754386,62.6566416 L83.3333333,19.924812 L80.8270677,15.6641604 Z M76.3157895,7.89473684 L7.89473684,54.1353383 L12.1553885,57.1428571 L78.6967419,12.1553885 L76.3157895,7.89473684 Z M71.8045113,0 L0,48.4962406 L4.26065163,51.5037594 L74.1854637,4.26065163 L71.8045113,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: #000,
+    text_color: #fff
+  ),
+  field-aqua_2: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='100px' height='97px' viewBox='0 0 100 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Field_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M67.7944862,96.2406015 L75.9398496,90.726817 L81.4536341,81.0776942 L63.5338346,93.2330827 L67.7944862,96.2406015 Z M59.7744361,90.6015038 L86.0902256,72.8070175 L91.60401,63.1578947 L55.5137845,87.593985 L59.7744361,90.6015038 Z M99.122807,47.1177945 L47.6190476,82.0802005 L51.8796992,85.0877193 L96.3659148,55.0125313 L100,48.6215539 L99.122807,47.1177945 Z M94.6115288,39.3483709 L39.7243108,76.4411028 L43.9849624,79.4486216 L97.1177945,43.6090226 L94.6115288,39.3483709 Z M89.9749373,31.4536341 L31.7042607,70.802005 L35.9649123,73.8095238 L92.481203,35.5889724 L89.9749373,31.4536341 Z M85.4636591,23.5588972 L23.8095238,65.2882206 L28.0701754,68.2957393 L87.8446115,27.8195489 L85.4636591,23.5588972 Z M80.8270677,15.6641604 L15.914787,59.6491228 L20.1754386,62.6566416 L83.3333333,19.924812 L80.8270677,15.6641604 Z M76.3157895,7.89473684 L7.89473684,54.1353383 L12.1553885,57.1428571 L78.6967419,12.1553885 L76.3157895,7.89473684 Z M71.8045113,0 L0,48.4962406 L4.26065163,51.5037594 L74.1854637,4.26065163 L71.8045113,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink-very-dark,
+    text_color: #fff
+  ),
+  field-red: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='100px' height='97px' viewBox='0 0 100 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Field_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M67.7944862,96.2406015 L75.9398496,90.726817 L81.4536341,81.0776942 L63.5338346,93.2330827 L67.7944862,96.2406015 Z M59.7744361,90.6015038 L86.0902256,72.8070175 L91.60401,63.1578947 L55.5137845,87.593985 L59.7744361,90.6015038 Z M99.122807,47.1177945 L47.6190476,82.0802005 L51.8796992,85.0877193 L96.3659148,55.0125313 L100,48.6215539 L99.122807,47.1177945 Z M94.6115288,39.3483709 L39.7243108,76.4411028 L43.9849624,79.4486216 L97.1177945,43.6090226 L94.6115288,39.3483709 Z M89.9749373,31.4536341 L31.7042607,70.802005 L35.9649123,73.8095238 L92.481203,35.5889724 L89.9749373,31.4536341 Z M85.4636591,23.5588972 L23.8095238,65.2882206 L28.0701754,68.2957393 L87.8446115,27.8195489 L85.4636591,23.5588972 Z M80.8270677,15.6641604 L15.914787,59.6491228 L20.1754386,62.6566416 L83.3333333,19.924812 L80.8270677,15.6641604 Z M76.3157895,7.89473684 L7.89473684,54.1353383 L12.1553885,57.1428571 L78.6967419,12.1553885 L76.3157895,7.89473684 Z M71.8045113,0 L0,48.4962406 L4.26065163,51.5037594 L74.1854637,4.26065163 L71.8045113,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-green-lime,
+    text_color: #fff
+  ),
+
+
+  plant-aqua: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='66px' height='98px' viewBox='0 0 66 98' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Plant_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M33.8684211,98 L24.6879699,44.0075472 L48.6315789,96.027673 L42.056391,35.9949686 L66,88.0150943 L57.0676692,0 C57.0676692,0 15.6315789,4.19119497 0,35.9949686 C0,35.9949686 33.8684211,98 33.8684211,98 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-orange,
+    text_color: #fff
+  ),
+  plant-yellow: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='66px' height='98px' viewBox='0 0 66 98' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Plant_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M33.8684211,98 L24.6879699,44.0075472 L48.6315789,96.027673 L42.056391,35.9949686 L66,88.0150943 L57.0676692,0 C57.0676692,0 15.6315789,4.19119497 0,35.9949686 C0,35.9949686 33.8684211,98 33.8684211,98 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-red,
+    text_color: #fff
+  ),
+  plant-green: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='66px' height='98px' viewBox='0 0 66 98' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Plant_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M33.8684211,98 L24.6879699,44.0075472 L48.6315789,96.027673 L42.056391,35.9949686 L66,88.0150943 L57.0676692,0 C57.0676692,0 15.6315789,4.19119497 0,35.9949686 C0,35.9949686 33.8684211,98 33.8684211,98 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink,
+    text_color: #fff
+  ),
+  plant-orange: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='66px' height='98px' viewBox='0 0 66 98' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Plant_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M33.8684211,98 L24.6879699,44.0075472 L48.6315789,96.027673 L42.056391,35.9949686 L66,88.0150943 L57.0676692,0 C57.0676692,0 15.6315789,4.19119497 0,35.9949686 C0,35.9949686 33.8684211,98 33.8684211,98 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-yellow,
+    text_color: #fff
+  ),
+  plant-aqua_2: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='66px' height='98px' viewBox='0 0 66 98' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Plant_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M33.8684211,98 L24.6879699,44.0075472 L48.6315789,96.027673 L42.056391,35.9949686 L66,88.0150943 L57.0676692,0 C57.0676692,0 15.6315789,4.19119497 0,35.9949686 C0,35.9949686 33.8684211,98 33.8684211,98 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink-very-dark,
+    text_color: #fff
+  ),
+  plant-red: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='66px' height='98px' viewBox='0 0 66 98' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Plant_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M33.8684211,98 L24.6879699,44.0075472 L48.6315789,96.027673 L42.056391,35.9949686 L66,88.0150943 L57.0676692,0 C57.0676692,0 15.6315789,4.19119497 0,35.9949686 C0,35.9949686 33.8684211,98 33.8684211,98 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-green-lime,
+    text_color: #fff
+  ),
+
+
+  water-aqua: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='59px' height='96px' viewBox='0 0 59 96' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Water_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M37,59 L59,59 L59,37 L37,37 L37,59 Z M0,78 L22,78 L22,56 L0,56 L0,78 Z M37,96 L59,96 L59,74 L37,74 L37,96 Z M0,41 L22,41 L22,19 L0,19 L0,41 Z M37,0 L37,22 L59,22 L59,0 L37,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-orange,
+    text_color: #fff
+  ),
+  water-yellow: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='59px' height='96px' viewBox='0 0 59 96' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Water_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M37,59 L59,59 L59,37 L37,37 L37,59 Z M0,78 L22,78 L22,56 L0,56 L0,78 Z M37,96 L59,96 L59,74 L37,74 L37,96 Z M0,41 L22,41 L22,19 L0,19 L0,41 Z M37,0 L37,22 L59,22 L59,0 L37,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-red,
+    text_color: #fff
+  ),
+  water-green: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='59px' height='96px' viewBox='0 0 59 96' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Water_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M37,59 L59,59 L59,37 L37,37 L37,59 Z M0,78 L22,78 L22,56 L0,56 L0,78 Z M37,96 L59,96 L59,74 L37,74 L37,96 Z M0,41 L22,41 L22,19 L0,19 L0,41 Z M37,0 L37,22 L59,22 L59,0 L37,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink,
+    text_color: #fff
+  ),
+  water-orange: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='59px' height='96px' viewBox='0 0 59 96' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Water_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M37,59 L59,59 L59,37 L37,37 L37,59 Z M0,78 L22,78 L22,56 L0,56 L0,78 Z M37,96 L59,96 L59,74 L37,74 L37,96 Z M0,41 L22,41 L22,19 L0,19 L0,41 Z M37,0 L37,22 L59,22 L59,0 L37,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-yellow,
+    text_color: #fff
+  ),
+  water-aqua_2: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='59px' height='96px' viewBox='0 0 59 96' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Water_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M37,59 L59,59 L59,37 L37,37 L37,59 Z M0,78 L22,78 L22,56 L0,56 L0,78 Z M37,96 L59,96 L59,74 L37,74 L37,96 Z M0,41 L22,41 L22,19 L0,19 L0,41 Z M37,0 L37,22 L59,22 L59,0 L37,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink-very-dark,
+    text_color: #fff
+  ),
+  water-red: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='59px' height='96px' viewBox='0 0 59 96' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Water_1' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M37,59 L59,59 L59,37 L37,37 L37,59 Z M0,78 L22,78 L22,56 L0,56 L0,78 Z M37,96 L59,96 L59,74 L37,74 L37,96 Z M0,41 L22,41 L22,19 L0,19 L0,41 Z M37,0 L37,22 L59,22 L59,0 L37,0 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-green-lime,
+    text_color: #fff
+  ),
+
+
+  mountain-aqua: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='99px' height='97px' viewBox='0 0 99 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Mountains_1' transform='translate(-1.000000, 0.000000)' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M50.6722054,0 L1,48.5 L1,57.4380665 L50.6722054,9.81722054 L99.3187311,57.2915408 L99.3187311,48.3534743 L50.6722054,0 Z M1,68.2809668 L1,77.2190332 L50.6722054,29.744713 L99.3187311,77.2190332 L99.3187311,68.2809668 L50.6722054,19.7809668 L1,68.2809668 Z M1,88.0619335 L1,97 L50.6722054,49.5256798 L99.3187311,97 L99.3187311,88.0619335 L50.6722054,39.5619335 L1,88.0619335 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-orange,
+    text_color: #fff
+  ),
+  mountain-yellow: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='99px' height='97px' viewBox='0 0 99 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Mountains_1' transform='translate(-1.000000, 0.000000)' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M50.6722054,0 L1,48.5 L1,57.4380665 L50.6722054,9.81722054 L99.3187311,57.2915408 L99.3187311,48.3534743 L50.6722054,0 Z M1,68.2809668 L1,77.2190332 L50.6722054,29.744713 L99.3187311,77.2190332 L99.3187311,68.2809668 L50.6722054,19.7809668 L1,68.2809668 Z M1,88.0619335 L1,97 L50.6722054,49.5256798 L99.3187311,97 L99.3187311,88.0619335 L50.6722054,39.5619335 L1,88.0619335 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-red,
+    text_color: #fff
+  ),
+  mountain-green: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='99px' height='97px' viewBox='0 0 99 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Mountains_1' transform='translate(-1.000000, 0.000000)' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M50.6722054,0 L1,48.5 L1,57.4380665 L50.6722054,9.81722054 L99.3187311,57.2915408 L99.3187311,48.3534743 L50.6722054,0 Z M1,68.2809668 L1,77.2190332 L50.6722054,29.744713 L99.3187311,77.2190332 L99.3187311,68.2809668 L50.6722054,19.7809668 L1,68.2809668 Z M1,88.0619335 L1,97 L50.6722054,49.5256798 L99.3187311,97 L99.3187311,88.0619335 L50.6722054,39.5619335 L1,88.0619335 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink,
+    text_color: #fff
+  ),
+  mountain-orange: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='99px' height='97px' viewBox='0 0 99 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Mountains_1' transform='translate(-1.000000, 0.000000)' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M50.6722054,0 L1,48.5 L1,57.4380665 L50.6722054,9.81722054 L99.3187311,57.2915408 L99.3187311,48.3534743 L50.6722054,0 Z M1,68.2809668 L1,77.2190332 L50.6722054,29.744713 L99.3187311,77.2190332 L99.3187311,68.2809668 L50.6722054,19.7809668 L1,68.2809668 Z M1,88.0619335 L1,97 L50.6722054,49.5256798 L99.3187311,97 L99.3187311,88.0619335 L50.6722054,39.5619335 L1,88.0619335 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-yellow,
+    text_color: #fff
+  ),
+  mountain-aqua_2: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='99px' height='97px' viewBox='0 0 99 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Mountains_1' transform='translate(-1.000000, 0.000000)' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M50.6722054,0 L1,48.5 L1,57.4380665 L50.6722054,9.81722054 L99.3187311,57.2915408 L99.3187311,48.3534743 L50.6722054,0 Z M1,68.2809668 L1,77.2190332 L50.6722054,29.744713 L99.3187311,77.2190332 L99.3187311,68.2809668 L50.6722054,19.7809668 L1,68.2809668 Z M1,88.0619335 L1,97 L50.6722054,49.5256798 L99.3187311,97 L99.3187311,88.0619335 L50.6722054,39.5619335 L1,88.0619335 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-pink-very-dark,
+    text_color: #fff
+  ),
+  mountain-red: (
+    background_img: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='99px' height='97px' viewBox='0 0 99 97' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com --%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Desktop-/-Headers-/-Mountains_1' transform='translate(-1.000000, 0.000000)' fill='%2301A9B8' fill-rule='nonzero'%3E%3Cpath d='M50.6722054,0 L1,48.5 L1,57.4380665 L50.6722054,9.81722054 L99.3187311,57.2915408 L99.3187311,48.3534743 L50.6722054,0 Z M1,68.2809668 L1,77.2190332 L50.6722054,29.744713 L99.3187311,77.2190332 L99.3187311,68.2809668 L50.6722054,19.7809668 L1,68.2809668 Z M1,88.0619335 L1,97 L50.6722054,49.5256798 L99.3187311,97 L99.3187311,88.0619335 L50.6722054,39.5619335 L1,88.0619335 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    background_color: $color-green-lime,
+    text_color: #fff
+  )
+);
+
 
 
 //DIRECTORY

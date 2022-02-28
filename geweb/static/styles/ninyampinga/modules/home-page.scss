@@ -12,7 +12,10 @@
 
 .homepage {
     overflow: auto;
-    padding: 0;
+    padding: 165px 0 0 0;
+    @media (min-width: 991px) {
+       padding: 0;
+    }
     .article-stacklist {
         display: block;
         padding: 15px;
@@ -30,14 +33,11 @@
         }
     }
     
-    
-
     .teaser-stacklist__item {
-        overflow: hidden;
+        overflow: initial;
     }
 
     .teaser-stacklist__item--full-width > .teaser-stacklist__content {
-        //white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         height: 125px;
@@ -83,7 +83,7 @@
                         overflow: hidden;
                         margin: 0 5px;
                         height: 750px;
-                        margin: 0 30px 20px 0;
+                        padding: 0 30px 20px 0;
                         width: 65%;
                         .teaser-stacklist__thumbnail, 
                         .teaser-stacklist__images {
