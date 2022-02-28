@@ -30,6 +30,7 @@ ul, ol, li {
 }
 
 a {
+  color: #000;
   overflow: auto;
   word-break: break-word;
   word-wrap: break-word;
@@ -110,6 +111,12 @@ a {
   height: auto;
   width: 100%;
 }
+@media (min-width: 991px) {
+  .teaser-stacklist__image {
+    min-width: 430px;
+    max-width: 430px;
+  }
+}
 .teaser-stacklist__thumbnail, .teaser-stacklist__images {
   display: inline-block;
   margin: 0 30px 0 0;
@@ -149,6 +156,7 @@ a {
   }
 }
 .teaser-stacklist__anchor {
+  display: block;
   text-decoration: none;
 }
 .teaser-stacklist__title {
@@ -526,7 +534,7 @@ input[type=search].search__input {
     padding: 0 5%;
     position: relative;
     overflow: inherit;
-    width: inherit;
+    width: auto;
   }
 }
 
@@ -675,7 +683,7 @@ input[type=search].search__input {
   .homepage .teaser-stacklist__item--full-width {
     float: left;
     overflow: hidden;
-    margin: 0 5px;
+    margin: 0 5px 20px;
     height: 750px;
     padding: 0 30px 20px 0;
     width: 65%;
@@ -920,6 +928,7 @@ input[type=search].search__input {
 }
 @media (min-width: 991px) {
   .nav {
+    background-color: transparent;
     display: flex;
     float: inherit;
     order: 1;

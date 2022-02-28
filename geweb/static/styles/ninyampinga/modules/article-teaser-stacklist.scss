@@ -26,6 +26,10 @@
     &__image {
         height: auto;
         width: 100%;
+        @media (min-width: 991px) {
+            min-width: 430px;
+            max-width: 430px;
+        }
     }
     &__thumbnail,
     &__images {
@@ -66,6 +70,7 @@
         }
     }
     &__anchor {
+        display: block;
         text-decoration: none;
     }
     &__title {
