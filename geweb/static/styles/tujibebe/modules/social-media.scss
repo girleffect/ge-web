@@ -18,10 +18,12 @@
                 color: $blue;
             }
             &-icon { 
-                vertical-align: middle;
+                height: auto;
                 margin-right: 5px;
-                height: 21px;
-                width: 21px;
+                max-height: 21px;
+                max-width: 21px;
+                vertical-align: middle;
+                width: 100%;
             }
         }
         

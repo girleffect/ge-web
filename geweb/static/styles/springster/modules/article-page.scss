@@ -24,7 +24,11 @@
         &__recommendations {
             padding: 30px 0 0;
         }
-       
+        &__commenting-counter {
+            .call-to-action__nav-item-text {
+                padding: 20px 0 30px;
+            }
+        }
     }
 }
 

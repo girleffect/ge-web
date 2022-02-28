@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags article_tags theme_tags static %}
-
 {% block content %}
-    {% get_current_theme as theme %}
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/section.html" %}
     {% elif theme.slug == 'springster' %}

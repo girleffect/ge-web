@@ -2,4 +2,23 @@ html, body {
     font-family: $notoSans;
     font-size: 16px;
     font-weight: 400;
+    margin: 0 auto;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+ul, ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+//!! IMPORTANT RULE
+.yegna {
+    background-color: $white;
+    width: 100%;
 }

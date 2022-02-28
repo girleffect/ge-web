@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
- 
-  {% if theme.slug == 'ninyampinga' %}
-    {% include "./ninyampinga/search.html" %}
-  {% elif theme.slug == 'springster' %}
-    {% include "./springster/search.html" %}
-  {% elif theme.slug == 'tujibebe' %}
-    {% include "./tujibebe/search.html" %}
-  {% elif theme.slug == 'yegna' %}
-    {% include "./yegna/search.html" %}
-  {% elif theme.slug == 'zathu' %}
-    {% include "./zathu/search.html" %}
-  {% endif %}
+    {% if theme.slug == 'ninyampinga' %}
+        {% include "./ninyampinga/search.html" %}
+    {% elif theme.slug == 'springster' %}
+        {% include "./springster/search.html" %}
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/search.html" %}
+    {% elif theme.slug == 'yegna' %}
+        {% include "./yegna/search.html" %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/search.html" %}
+    {% endif %}
 {% endblock %}

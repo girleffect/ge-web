@@ -5,6 +5,7 @@
     float: left;
     vertical-align: middle;
     @media (min-width: 991px) {
+        background-color: transparent;
         display: flex;
         float: inherit;
         order: 1;

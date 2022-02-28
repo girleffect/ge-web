@@ -2,15 +2,17 @@
     animation: qs-timer .3s;
     background-color: $plum;
     height: auto;
+    left: 0;
+    margin: 0 auto;
     overflow: initial;
     padding: 0 10px;
     position: absolute;
+    right: 0;
     text-align: center;
     transform: translate3d(0,0,0);
     transition: transform .3s ease 1ms;
-    width: 100%;
+    width: auto;
     z-index: 99999;
-
     @media (min-width: 991px) {
         align-items: flex-start;
         display: flex;
@@ -20,7 +22,7 @@
         padding: 0 5%;
         position: relative;
         overflow: inherit;
-        width: inherit;
+        width: auto;
     }
 }
 
