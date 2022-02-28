@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags theme_tags home_tags i18n comments %}
+{% load article_tags comments home_tags i18n wagtailcore_tags theme_tags %}
 
 <div id="comments" class="commenting commenting--on-article">
     <div class="heading heading--component">
@@ -21,9 +21,6 @@
             <input type="submit" value="Add comment" id="id_submit" class="call-to-action__submit" />
         </form>
     {% else %}
-        <div class="heading heading--component">
-            <h1 class="heading__component-title">{% trans "Your thoughts" %}</h1>
-        </div>
         <div class="call-to-action">
             <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
         </div>
@@ -33,7 +30,7 @@
     {% if comment_list %}
         <div class="commenting__list">
             <div class="heading heading--component">
-                <h1 class="heading__component-title">{% trans "Your feedback" %}</h1>
+                <h1 class="heading__component-title">{% trans "Your thoughts" %}</h1>
             </div>
            
             {% for comment in comment_list %}
@@ -41,7 +38,7 @@
                     <div class="commenting-thread">
                         {% if comment.is_removed %}
                             <h6 class="commenting-thread__alias-removed">
-                                {% trans "This comment has been deleted. Please read our platform rules."" %}
+                                {% trans "This comment has been deleted. Please read our platform rules." %}
                             </h6>
                         {% else %}
                             <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>

@@ -1,0 +1,1969 @@
+/*!*****************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./static/styles/ninyampinga/ninyampinga.scss ***!
+  \*****************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Muli:400,600|Heebo:400,500&display=swap);
+/*!*********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./static/styles/ninyampinga/ninyampinga.scss (1) ***!
+  \*********************************************************************************************************************************************************************/
+@charset "UTF-8";
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Muli", sans-serif;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+ul, ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #000;
+  overflow: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.ninyampinga {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.account-list__label, .account-list__info {
+  display: inline-block;
+}
+.account .call-to-action__submit {
+  display: block;
+  width: fit-content;
+}
+
+.article-page__body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  justify-content: center;
+}
+@media screen and (min-width: 991px) {
+  .article-page__body {
+    padding: 15px 15%;
+  }
+}
+.article-page__recommendations {
+  padding: 15px 10px;
+}
+@media screen and (min-width: 991px) {
+  .article-page__recommendations {
+    padding: 15px 8%;
+  }
+}
+.article-page__recommendations .article-teaser {
+  padding: 20px 0;
+}
+
+.block-image {
+  padding: 10px 0;
+}
+
+.block-paragraph p {
+  padding: 10px 0;
+}
+
+.article-stacklist {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding: 15px;
+}
+@media (min-width: 991px) {
+  .article-stacklist {
+    padding: 15px 70px;
+  }
+}
+.article-hero {
+  overflow: auto;
+  padding: 0 15px;
+}
+@media (min-width: 991px) {
+  .article-hero {
+    padding: 0;
+  }
+}
+
+.teaser-stacklist {
+  overflow: auto;
+}
+.teaser-stacklist__thumbnail {
+  width: auto;
+}
+.teaser-stacklist__image {
+  height: auto;
+  width: 100%;
+}
+@media (min-width: 991px) {
+  .teaser-stacklist__image {
+    min-width: 430px;
+    max-width: 430px;
+  }
+}
+.teaser-stacklist__thumbnail, .teaser-stacklist__images {
+  display: inline-block;
+  margin: 0 30px 0 0;
+  overflow: hidden;
+}
+@media (min-width: 991px) {
+  .teaser-stacklist__thumbnail, .teaser-stacklist__images {
+    height: 250px;
+    width: 430px;
+  }
+}
+.teaser-stacklist__thumbnail-link, .teaser-stacklist__images-link {
+  display: block;
+  text-decoration: none;
+}
+.teaser-stacklist__thumbnail-link:hover, .teaser-stacklist__images-link:hover {
+  text-decoration: underline;
+}
+.teaser-stacklist__item {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+  width: auto;
+}
+@media (min-width: 991px) {
+  .teaser-stacklist__item--full-width {
+    float: left;
+    margin: 0 5% 20px 0;
+    overflow: hidden;
+    width: 65%;
+  }
+  .teaser-stacklist__item--full-width .teaser-stacklist__image {
+    height: auto;
+    width: 100%;
+  }
+}
+.teaser-stacklist__anchor {
+  display: block;
+  text-decoration: none;
+}
+.teaser-stacklist__title {
+  color: #000;
+  font-size: 17px;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+.teaser-stacklist__subtitle {
+  padding: 5px 0 10px;
+  font-size: 17px;
+}
+.teaser-stacklist__content {
+  padding: 15px 0;
+  width: auto;
+}
+@media (min-width: 991px) {
+  .teaser-stacklist__content {
+    width: 45%;
+  }
+}
+
+.article-teaser {
+  overflow: auto;
+}
+
+.banner {
+  height: 280px;
+  overflow: hidden;
+}
+@media (min-width: 991px) {
+  .banner {
+    height: 326px;
+    overflow: initial;
+  }
+}
+.banner__image {
+  height: 280px;
+  width: auto;
+}
+@media (min-width: 991px) {
+  .banner__image {
+    height: auto;
+    width: 100%;
+  }
+}
+.banner__link {
+  display: block;
+}
+
+.breadcrumbs {
+  padding: 50px 70px 25px;
+}
+.breadcrumbs-list {
+  list-style-type: none;
+}
+.breadcrumbs-list__item {
+  color: #b4b4b4;
+  display: inline-block;
+  margin: 0;
+  font-size: 19px;
+  text-transform: capitalize;
+}
+.breadcrumbs-list__anchor {
+  color: #e7357c;
+  cursor: pointer;
+  font-size: 19px;
+  margin: 0;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-transform: capitalize;
+}
+.breadcrumbs-list__anchor:after {
+  color: #e7357c;
+  content: " ≫ ";
+  display: inline-block;
+  padding: 0 5px;
+}
+.breadcrumbs-list__label {
+  color: #e7357c;
+  cursor: auto;
+  font-size: 19px;
+  margin: 0;
+  text-decoration: none;
+  text-underline-position: under;
+  text-transform: capitalize;
+}
+
+.burger-icon {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 23px;
+}
+@media (min-width: 991px) {
+  .burger-icon {
+    width: 35px;
+  }
+}
+.burger-icon span {
+  background-color: #fff;
+  display: block;
+  margin: 6px 0;
+  height: 4px;
+  width: 23px;
+}
+@media (min-width: 991px) {
+  .burger-icon span {
+    height: 5px;
+    width: 35px;
+  }
+}
+
+@media (min-width: 991px) {
+  .call-to-action {
+    padding: 0 0 0 27%;
+  }
+}
+.call-to-action__submit {
+  background-color: #e7357c;
+  box-shadow: 9px 9px 0 0 #ffe82c;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  margin: 25px 15px 15px 0;
+  overflow: hidden;
+  padding: 8px 15px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.call-to-action__submit:after {
+  display: inline-block;
+  border-top: 7px solid transparent;
+  border-left: 15px solid #fff;
+  border-bottom: 7px solid transparent;
+  content: " ";
+  height: 0;
+  margin: 0 0 0 5px;
+  position: inherit;
+  top: 1px;
+  width: 0;
+}
+.call-to-action__submit:hover {
+  box-shadow: none;
+  color: #ffe82c;
+}
+.call-to-action__submit:hover .call-to-action:after {
+  border-left-color: #ffe82c;
+}
+.call-to-action__item--search {
+  background-color: #e7357c;
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/header-icons.png");
+  background-repeat: no-repeat;
+  background-position: -12px -52px;
+  background-size: 145%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 42px;
+  position: absolute;
+  text-indent: -100px;
+  top: 0;
+  right: 0;
+  vertical-align: top;
+  text-decoration: underline;
+  text-underline-position: under;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: normal;
+  width: 50px;
+}
+.call-to-action__link {
+  color: #e7357c;
+}
+
+.component {
+  align-items: center;
+  padding: 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.component__super {
+  background-image: url("http://127.0.0.1:8000/static/img/ninyampinga/shape-one-orange.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 90px;
+  filter: #f59c00;
+  display: inline-block;
+  height: 75px;
+  margin: 15px 0;
+  padding: 20px 5px;
+  text-align: center;
+}
+.component .super-title {
+  background-color: #ffe82c;
+  color: #000;
+  font-size: 31px;
+  line-height: 35px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+.component .subtitle {
+  display: inline-block;
+  font-size: 18px;
+}
+
+.footer {
+  align-items: flex-start;
+  background-color: #711343;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3em 5% 1em;
+  overflow: auto;
+  overflow: auto;
+}
+.footer .nav {
+  align-items: flex-start;
+}
+.footer .nav-list {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  max-width: 250px;
+  vertical-align: top;
+}
+.footer .nav-list__item {
+  display: block;
+  padding: 5px;
+}
+.footer .nav-list__anchor {
+  background-color: transparent;
+  border: none;
+  color: #b3dcde;
+  display: block;
+  font-size: 16px;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  text-decoration: underline;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  word-break: initial;
+}
+.footer .search__form {
+  width: 100%;
+}
+
+.footerpage {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 991px) {
+  .footerpage {
+    padding: 50px 8% 30px;
+  }
+}
+.footerpage .component {
+  align-self: flex-start;
+}
+
+.block-image {
+  padding: 10px 0;
+}
+
+.block-paragraph p {
+  padding: 10px 0;
+}
+
+form {
+  overflow: auto;
+}
+
+fieldset {
+  align-self: flex-start;
+  border: none;
+  display: flex;
+  justify-content: initial;
+}
+
+label {
+  font-size: 16px;
+}
+
+input[type=text],
+input[type=number],
+input[type=password],
+input[type=email],
+input[type=tel],
+input[type=search],
+input[type=week],
+input[type=date],
+input[type=month],
+input[type=datetime],
+input[type=datetime-local],
+input[type=url],
+select {
+  background-color: #fff;
+  border-radius: 0;
+  border: 2px solid #e7357c;
+  display: block;
+  font-size: 16px;
+  margin: 0;
+  padding: 10px 0 10px 5px;
+  width: 75%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-border-radius: 0;
+}
+input[type=text]:focus, input[type=text]:focus-visible,
+input[type=number]:focus,
+input[type=number]:focus-visible,
+input[type=password]:focus,
+input[type=password]:focus-visible,
+input[type=email]:focus,
+input[type=email]:focus-visible,
+input[type=tel]:focus,
+input[type=tel]:focus-visible,
+input[type=search]:focus,
+input[type=search]:focus-visible,
+input[type=week]:focus,
+input[type=week]:focus-visible,
+input[type=date]:focus,
+input[type=date]:focus-visible,
+input[type=month]:focus,
+input[type=month]:focus-visible,
+input[type=datetime]:focus,
+input[type=datetime]:focus-visible,
+input[type=datetime-local]:focus,
+input[type=datetime-local]:focus-visible,
+input[type=url]:focus,
+input[type=url]:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: none;
+}
+
+input[type=search].search__input {
+  width: 100%;
+}
+
+.input-group {
+  width: 75%;
+}
+
+.input-hint {
+  display: block;
+  font-style: italic;
+}
+
+.header {
+  animation: qs-timer 0.3s;
+  background-color: #711343;
+  height: auto;
+  left: 0;
+  margin: 0 auto;
+  overflow: initial;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease 1ms;
+  width: auto;
+  z-index: 99999;
+}
+@media (min-width: 991px) {
+  .header {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    height: 65px;
+    padding: 0 5%;
+    position: relative;
+    overflow: inherit;
+    width: auto;
+  }
+}
+
+.heading {
+  text-transform: uppercase;
+}
+.heading__basic {
+  color: #000;
+  background-color: #fdd400;
+  font-size: 23px;
+  margin: 0 0 0 10px;
+  padding: 0 15px;
+}
+.heading--hero {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/ShapesSprites.png");
+  background-repeat: no-repeat;
+  background-position: -10px -4074px;
+  background-size: 125px;
+  height: 55px;
+  display: inline-block;
+  padding: 25px 22px;
+  margin: 10px -15px;
+  text-align: center;
+}
+@media (min-width: 991px) {
+  .heading--hero {
+    margin: 10px 0;
+  }
+}
+.heading--primary {
+  font-family: "Heebo", sans-serif;
+  margin: 10px 0 25px;
+  padding: 15px 0;
+  position: relative;
+}
+.heading--white .section-page__title {
+  background-color: #ffffff;
+}
+.heading--dark_grey .section-page__title {
+  background-color: #333333;
+}
+.heading--light_cyan .section-page__title {
+  background-color: #b3dcde;
+}
+.heading--strong_cyan .section-page__title {
+  background-color: #00a8b7;
+}
+.heading--vivid_red .section-page__title {
+  background-color: #dc0d15;
+}
+.heading--pink .section-page__title {
+  background-color: #e7357c;
+}
+.heading--vivid_pink .section-page__title {
+  background-color: #ed018c;
+}
+.heading--plum .section-page__title {
+  background-color: #711343;
+}
+.heading--yellow .section-page__title {
+  background-color: #fdd400;
+}
+.heading--orange .section-page__title {
+  background-color: #f59c00;
+}
+.heading--lime_green .section-page__title {
+  background-color: #2cb359;
+}
+
+.subheading {
+  font-size: 19px;
+  padding: 0 0 15px;
+  text-transform: uppercase;
+}
+
+/**
+    THE STYLESHEET HEAVILY TWEAKS THE ARTICLE TEASER TO ACHIEVE THE FOLLOWING UI
+    - When appropriately display homepage article teaser for Latest Articles WITHOU announcement article.
+    - When appropriately display homepage article teaser for Latest Articles WITH announcement article.
+
+    !!NB
+        Please make sure you have throurougly tested your UI change.
+        Make sure you have tested all layout scenarios
+
+*/
+.homepage {
+  overflow: auto;
+  padding: 165px 0 0 0;
+}
+@media (min-width: 991px) {
+  .homepage {
+    padding: 0;
+  }
+}
+.homepage .article-stacklist {
+  display: block;
+  padding: 15px;
+}
+.homepage .teaser-stacklist__content {
+  width: auto;
+}
+.homepage .teaser-stacklist__item {
+  flex-direction: column;
+}
+@media (min-width: 991px) {
+  .homepage .teaser-stacklist__item {
+    flex-direction: row;
+  }
+}
+.homepage .teaser-stacklist__item--full-width > .teaser-stacklist__content {
+  min-width: 100%;
+  max-width: 100%;
+  padding: 15px 0;
+}
+@media (min-width: 991px) {
+  .homepage .teaser-stacklist__item--full-width > .teaser-stacklist__content {
+    padding: 15px 0;
+    overflow: hidden;
+    min-width: 430px;
+    max-width: 430px;
+  }
+}
+.homepage-column {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.homepage-column__one {
+  order: 2;
+}
+.homepage-column__two {
+  background-color: #ed6f26;
+  order: 1;
+}
+
+@media (min-width: 991px) {
+  .homepage .article-stacklist {
+    padding: 15px 5px 15px 70px;
+  }
+  .homepage .teaser-stacklist__thumbnail, .homepage .teaser-stacklist__images {
+    height: 153px;
+    width: 272px;
+  }
+  .homepage .teaser-stacklist__item {
+    display: inline-block;
+    list-style: none;
+    margin: 0 10px;
+    vertical-align: text-top;
+    margin: 0 25px 20px 0;
+    width: 30%;
+  }
+  .homepage .teaser-stacklist__item:nth-child(2), .homepage .teaser-stacklist__item:nth-child(3) {
+    height: 360px;
+    margin: 0;
+    width: 240px;
+  }
+  .homepage .teaser-stacklist__item--full-width {
+    float: left;
+    overflow: hidden;
+    margin: 0 5px 20px;
+    height: 750px;
+    padding: 0 30px 20px 0;
+    width: 65%;
+  }
+  .homepage .teaser-stacklist__item--full-width .teaser-stacklist__thumbnail,
+.homepage .teaser-stacklist__item--full-width .teaser-stacklist__images {
+    height: auto;
+    width: 100%;
+  }
+  .homepage-column {
+    flex-direction: initial;
+  }
+  .homepage-column__one {
+    order: 1;
+    width: 75%;
+  }
+  .homepage-column__one .heading--hero {
+    margin: 10px 5%;
+  }
+  .homepage-column__two {
+    padding: 0 15px;
+    order: 2;
+    width: 25%;
+  }
+  .homepage-column__two .heading--hero {
+    margin: 10px -20px;
+  }
+  .homepage-column__two .article-hero > .teaser-stacklist__item {
+    height: auto;
+    width: 95%;
+  }
+  .homepage-column--with-side-bar {
+    justify-content: center;
+  }
+  .homepage-column--with-side-bar .homepage-column__one {
+    width: 100%;
+  }
+  .homepage-column--with-side-bar .article-stacklist {
+    padding: 15px 70px;
+  }
+  .homepage-column--with-side-bar .teaser-stacklist__thumbnail,
+.homepage-column--with-side-bar .teaser-stacklist__images {
+    width: 430px;
+  }
+  .homepage-column--with-side-bar .teaser-stacklist__item:nth-child(2),
+.homepage-column--with-side-bar .teaser-stacklist__item:nth-child(3) {
+    width: 30%;
+  }
+  .homepage-column--with-side-bar .teaser-stacklist__item--full-width {
+    height: auto;
+    margin: 0 5% 20px 0;
+    width: 65%;
+  }
+  .homepage-column .teaser-stacklist__item--full-width > .teaser-stacklist__content {
+    white-space: initial;
+    overflow: initial;
+    text-overflow: initial;
+    height: auto;
+  }
+}
+.languages__label {
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+@media (min-width: 991px) {
+  .languages__label {
+    padding: 10px 20px;
+    height: 45px;
+  }
+}
+.languages__label:before {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/header-icons.png");
+  background-position: 0 -45px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+  width: 35px;
+}
+@media (min-width: 991px) {
+  .languages__label:before {
+    background-position: 0 -75px;
+    background-size: 45px;
+    height: 50px;
+    width: 50px;
+  }
+}
+.languages__label:hover, .languages__label:focus {
+  color: #e7357c;
+}
+.languages__label.is-active {
+  color: #e7357c;
+  text-decoration: underline;
+}
+@media (min-width: 991px) {
+  .languages__label.is-active {
+    background-color: #ffffff;
+  }
+}
+.languages__label.is-active:before {
+  background-position: 0 -115px;
+  background-size: 25px;
+  height: 20px;
+  padding: 5px;
+  width: 25px;
+}
+@media (min-width: 991px) {
+  .languages__label.is-active:before {
+    background-position: 0 -155px;
+    background-size: 35px;
+    height: 40px;
+    padding: initial;
+    width: 45px;
+  }
+}
+.languages__checkbox {
+  display: none;
+  visibility: hidden;
+}
+.languages-dropdown {
+  background-color: #ffffff;
+  box-shadow: 1px 10px 15px -10px #000;
+  color: #00a8b7;
+  height: auto;
+  left: 0;
+  margin: 0 auto;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 165px;
+}
+@media (min-width: 991px) {
+  .languages-dropdown {
+    padding: 60px 10% 45px 20%;
+    top: 65px;
+  }
+}
+.languages-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 991px) {
+  .languages-list {
+    flex-direction: row;
+  }
+}
+.languages-list__item {
+  display: inline-block;
+  padding: 5px;
+}
+.languages-list__item:nth-child(2) > .languages-list__anchor {
+  color: #333333 !important;
+  opacity: 0.7 !important;
+}
+.languages-list__label {
+  padding-right: 35px;
+}
+.languages-list__label:before {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/header-icons.png");
+  background-position: 0 -75px;
+  background-size: 45px;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  height: 50px;
+  vertical-align: middle;
+  width: 50px;
+}
+.languages-list__title {
+  color: #000;
+  display: inline-block;
+  font-size: 22.88px;
+  font-weight: 100;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.languages-list__anchor {
+  color: #e7357c;
+  display: inline-block;
+  font-size: 19px;
+  font-weight: 700;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-transform: uppercase;
+}
+.languages-list__anchor .is-active {
+  color: #333333;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  z-index: 999999999999;
+}
+@media (min-width: 991px) {
+  .logo {
+    order: 2;
+    width: auto;
+  }
+}
+.logo__wrapper {
+  position: relative;
+}
+.logo__anchor {
+  background: url("http://127.0.0.1:8000/static/img/ninyampinga/ninyampinga-logo.svg") no-repeat center 0/100%;
+  display: block;
+  height: 100px;
+  margin: 0 auto;
+  max-height: 100px;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+}
+.logo__image {
+  display: block;
+  height: auto;
+  margin: 20px auto;
+  position: relative;
+  width: 76%;
+  z-index: -999;
+}
+
+.nav {
+  align-items: center;
+  background-color: #711343;
+  display: inline-flex;
+  float: left;
+  vertical-align: middle;
+}
+@media (min-width: 991px) {
+  .nav {
+    background-color: transparent;
+    display: flex;
+    float: inherit;
+    order: 1;
+  }
+}
+.nav__label {
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+@media (min-width: 991px) {
+  .nav__label {
+    font-size: 17px;
+    padding: 10px 20px 10px 15px;
+    height: 45px;
+  }
+}
+.nav__label:before {
+  content: "";
+  display: none;
+  vertical-align: middle;
+}
+@media (min-width: 991px) {
+  .nav__label:before {
+    height: 40px;
+    width: 45px;
+  }
+}
+.nav__label:hover, .nav__label:focus {
+  color: #e7357c;
+}
+.nav__label:hover .burger-icon span, .nav__label:focus .burger-icon span {
+  background-color: #e7357c;
+}
+.nav__label:hover:before, .nav__label:focus:before {
+  display: none;
+}
+.nav__label.is-active {
+  color: #e7357c;
+  text-decoration: underline;
+}
+@media (min-width: 991px) {
+  .nav__label.is-active {
+    background-color: #ffffff;
+  }
+}
+.nav__label.is-active .burger-icon {
+  display: none;
+}
+.nav__label.is-active:before {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/header-icons.png");
+  background-position: 0 -115px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 20px;
+  padding: 5px;
+  width: 25px;
+}
+@media (min-width: 991px) {
+  .nav__label.is-active:before {
+    background-position: 0 -155px;
+    background-size: 35px;
+    height: 40px;
+    padding: initial;
+    width: 45px;
+  }
+}
+.nav__checkbox {
+  display: none;
+  visibility: hidden;
+}
+.nav__title {
+  color: #000;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: left;
+}
+@media (min-width: 991px) {
+  .nav__title {
+    padding: 0 0 25px;
+  }
+}
+.nav-dropdown {
+  background-color: #ffffff;
+  box-shadow: 1px 10px 15px -10px #000;
+  color: #00a8b7;
+  height: auto;
+  left: 0;
+  margin: 0 auto;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 165px;
+}
+@media (min-width: 991px) {
+  .nav-dropdown {
+    padding: 60px 10% 45px 20%;
+    top: 65px;
+  }
+}
+.nav-profile {
+  margin: 0 0 0 20px;
+}
+.nav-profile__anchor {
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px;
+}
+@media (min-width: 991px) {
+  .nav-profile__anchor {
+    font-size: 17px;
+    padding: 10px 15px;
+    height: 45px;
+  }
+}
+.nav-profile__anchor:before {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/iconsSprite.png");
+  background-position: 0 -405px;
+  background-size: 60px;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  height: 45px;
+  vertical-align: middle;
+  width: 36px;
+}
+@media (min-width: 991px) {
+  .nav-profile__anchor:before {
+    background-position: 0 -644px;
+    background-size: 93.3px;
+  }
+}
+.nav-profile__anchor:hover, .nav-profile__anchor:focus {
+  color: #e7357c;
+}
+.nav-profile__anchor:hover:before, .nav-profile__anchor:focus:before {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/header-icons.png");
+  background-position: 0 -90px;
+  background-size: 30px;
+}
+@media (min-width: 991px) {
+  .nav-profile__anchor:hover:before, .nav-profile__anchor:focus:before {
+    background-position: -5px -140px;
+    background-size: 44px;
+  }
+}
+.nav-lang-and-search {
+  align-items: center;
+  background-color: #711343;
+  display: inline-flex;
+  float: right;
+  vertical-align: middle;
+}
+@media (min-width: 991px) {
+  .nav-lang-and-search {
+    display: flex;
+    float: inherit;
+    order: 3;
+  }
+}
+.nav-list {
+  text-align: left;
+}
+.nav-list__item {
+  margin: 10px 0;
+}
+.nav-list__anchor {
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+@media (min-width: 991px) {
+  .nav-list__anchor {
+    font-size: 18px;
+  }
+}
+.nav-primary {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@media (min-width: 991px) {
+  .nav-primary {
+    flex-direction: row;
+    min-height: 333px;
+  }
+}
+@media (min-width: 991px) {
+  .nav-primary-column {
+    min-height: 333px;
+  }
+}
+.nav-primary-column-one {
+  padding: 0 0 15px;
+}
+.nav-primary-column-one .nav-list__anchor {
+  color: #000;
+}
+@media (min-width: 991px) {
+  .nav-primary-column-one {
+    padding: 0 30px 0 0;
+    border-right: 3px solid #000;
+  }
+}
+.nav-primary-column-two {
+  padding: 0 0 15px;
+  text-align: left;
+}
+@media (min-width: 991px) {
+  .nav-primary-column-two {
+    padding: 0 30px;
+  }
+}
+.nav-primary-column-two .nav-list__anchor {
+  color: #00a8b7;
+}
+.nav-primary-column-three {
+  padding: 0 0 15px;
+}
+@media (min-width: 991px) {
+  .nav-primary-column-three {
+    padding: 0 30px;
+  }
+}
+.nav-primary-column-three .nav-list__anchor {
+  color: #00a8b7;
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-items: center;
+}
+.pagination__num {
+  color: #e7357c;
+}
+
+.profiles {
+  background: #00a8b7;
+  padding: 15px;
+}
+@media (min-width: 991px) {
+  .profiles {
+    padding: 5% 15%;
+  }
+}
+.profiles__inner {
+  background-color: #fff;
+  padding: 15px 10px;
+}
+@media (min-width: 991px) {
+  .profiles__inner {
+    padding: 15px 30px;
+  }
+}
+.profiles__form label {
+  width: 25%;
+}
+
+@media (min-width: 991px) {
+  .search-page {
+    padding: 5% 10%;
+  }
+}
+.search-page .heading--component {
+  color: #000;
+  display: inline-block;
+  position: relative;
+}
+.search-page .heading--component:before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27113px%27%20height=%2797px%27%20viewBox=%270%200%20113%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-River_1%27%20fill=%27%23EC6E26%27%20fill-rule=%27nonzero%27%3E%3Cpolygon%20id=%27Shape%27%20points=%27100.71125%2062.1619718%2092.9425%200%2043.505%2062.1619718%2035.73625%200%200%2048.6366197%200%2071.0422535%2025.28375%2037.2971831%2035.73625%2097%2082.49%2037.2971831%2092.9425%2097%20113%2071.0422535%20113%2048.6366197%27%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 85px;
+  content: "";
+  display: block;
+  height: 80px;
+  width: 90px;
+  position: absolute;
+  top: -15px;
+  z-index: -999;
+}
+.search-page .heading--component .heading__component-title {
+  background-color: #ffe82c;
+  font-size: 31px;
+  padding: 0 15px;
+}
+.search-page .component {
+  padding: 30px 0 10px;
+}
+
+.search {
+  overflow: auto;
+}
+.search__form {
+  margin: 0 auto;
+  overflow: auto;
+  position: relative;
+  width: 80%;
+}
+.search__checkbox {
+  display: none;
+  visibility: hidden;
+}
+.search__label {
+  color: #711343;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  text-indent: -70px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  word-break: break-word;
+  word-wrap: break-word;
+  padding: 10px;
+  height: 45px;
+}
+.search__label:after {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/header-icons.png");
+  background-repeat: no-repeat;
+  background-position: -17px -55px;
+  background-size: 75px;
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+}
+.search__label:hover:after, .search__label:focus:after {
+  background-position: -17px 9px;
+}
+.search__label.is-active {
+  text-decoration: underline;
+}
+@media (min-width: 991px) {
+  .search__label.is-active {
+    background-color: #fff;
+    color: #ffffff;
+  }
+}
+.search__label.is-active:after {
+  background-position: -17px 9px;
+}
+.search-dropdown {
+  background-color: #ffffff;
+  box-shadow: 1px 10px 15px -10px #000;
+  height: auto;
+  left: 0;
+  margin: 0 auto;
+  padding: 15px;
+  position: absolute;
+  right: 0;
+  top: 165px;
+}
+@media (min-width: 991px) {
+  .search-dropdown {
+    padding: 60px 10% 45px 20%;
+    top: 65px;
+  }
+}
+.search-dropdown__label {
+  margin: 0 auto;
+  width: 83%;
+}
+.search-dropdown__label:before {
+  background-image: url("http://127.0.0.1:8000/static//img/ninyampinga/header-icons.png");
+  background-repeat: no-repeat;
+  background-position: -15px 8px;
+  background-size: 80px;
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+}
+.search-dropdown__title {
+  color: #000;
+  display: inline-block;
+  font-size: 22.88px;
+  font-weight: 100;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.search__input {
+  appearance: none;
+  border: 3px solid #e7357c;
+  height: 42px;
+  margin: 0;
+  padding: 5px 5% 5px 5px;
+  width: 100%;
+}
+.search .label {
+  color: #000;
+  display: none;
+}
+
+.section-page {
+  overflow: hidden;
+}
+.section-page__wrapper {
+  padding: 0 5%;
+}
+.section-page__caption {
+  color: #000;
+  display: inline-block;
+  position: relative;
+}
+.section-page__caption::before {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 85px;
+  content: "";
+  display: block;
+  height: 80px;
+  width: 90px;
+  position: absolute;
+  top: 0;
+  z-index: -999;
+}
+.section-page__title {
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 19px;
+  padding: 0 15px;
+  margin: 10px 15px 0;
+}
+.section-page__theme {
+  background-color: #333333;
+  padding: 15px 0;
+}
+.section-page__river-aqua {
+  background-color: #f59c00;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--river-aqua .section-page__title {
+  background-color: #f59c00;
+  color: #fff;
+}
+.section-page .heading--river-aqua .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27113px%27%20height=%2797px%27%20viewBox=%270%200%20113%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-River_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpolygon%20id=%27Shape%27%20points=%27100.71125%2062.1619718%2092.9425%200%2043.505%2062.1619718%2035.73625%200%200%2048.6366197%200%2071.0422535%2025.28375%2037.2971831%2035.73625%2097%2082.49%2037.2971831%2092.9425%2097%20113%2071.0422535%20113%2048.6366197%27%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__river-yellow {
+  background-color: #dc0d15;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--river-yellow .section-page__title {
+  background-color: #dc0d15;
+  color: #fff;
+}
+.section-page .heading--river-yellow .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27113px%27%20height=%2797px%27%20viewBox=%270%200%20113%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-River_1%27%20fill=%27%23FDD400%27%20fill-rule=%27nonzero%27%3E%3Cpolygon%20id=%27Shape%27%20points=%27100.71125%2062.1619718%2092.9425%200%2043.505%2062.1619718%2035.73625%200%200%2048.6366197%200%2071.0422535%2025.28375%2037.2971831%2035.73625%2097%2082.49%2037.2971831%2092.9425%2097%20113%2071.0422535%20113%2048.6366197%27%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__river-green {
+  background-color: #ed018c;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--river-green .section-page__title {
+  background-color: #ed018c;
+  color: #fff;
+}
+.section-page .heading--river-green .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27113px%27%20height=%2797px%27%20viewBox=%270%200%20113%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-River_1%27%20fill=%27%232CB359%27%20fill-rule=%27nonzero%27%3E%3Cpolygon%20id=%27Shape%27%20points=%27100.71125%2062.1619718%2092.9425%200%2043.505%2062.1619718%2035.73625%200%200%2048.6366197%200%2071.0422535%2025.28375%2037.2971831%2035.73625%2097%2082.49%2037.2971831%2092.9425%2097%20113%2071.0422535%20113%2048.6366197%27%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__river-orange {
+  background-color: #FDD400;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--river-orange .section-page__title {
+  background-color: #FDD400;
+  color: #fff;
+}
+.section-page .heading--river-orange .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27113px%27%20height=%2797px%27%20viewBox=%270%200%20113%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-River_1%27%20fill=%27%23EC6E26%27%20fill-rule=%27nonzero%27%3E%3Cpolygon%20id=%27Shape%27%20points=%27100.71125%2062.1619718%2092.9425%200%2043.505%2062.1619718%2035.73625%200%200%2048.6366197%200%2071.0422535%2025.28375%2037.2971831%2035.73625%2097%2082.49%2037.2971831%2092.9425%2097%20113%2071.0422535%20113%2048.6366197%27%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__river-aqua_2 {
+  background-color: #711343;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--river-aqua_2 .section-page__title {
+  background-color: #711343;
+  color: #fff;
+}
+.section-page .heading--river-aqua_2 .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27113px%27%20height=%2797px%27%20viewBox=%270%200%20113%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-River_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpolygon%20id=%27Shape%27%20points=%27100.71125%2062.1619718%2092.9425%200%2043.505%2062.1619718%2035.73625%200%200%2048.6366197%200%2071.0422535%2025.28375%2037.2971831%2035.73625%2097%2082.49%2037.2971831%2092.9425%2097%20113%2071.0422535%20113%2048.6366197%27%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__river-red {
+  background-color: #2CB359;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--river-red .section-page__title {
+  background-color: #2CB359;
+  color: #fff;
+}
+.section-page .heading--river-red .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27113px%27%20height=%2797px%27%20viewBox=%270%200%20113%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-River_1%27%20fill=%27%23D32027%27%20fill-rule=%27nonzero%27%3E%3Cpolygon%20id=%27Shape%27%20points=%27100.71125%2062.1619718%2092.9425%200%2043.505%2062.1619718%2035.73625%200%200%2048.6366197%200%2071.0422535%2025.28375%2037.2971831%2035.73625%2097%2082.49%2037.2971831%2092.9425%2097%20113%2071.0422535%20113%2048.6366197%27%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__field-aqua {
+  background-color: #f59c00;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--field-aqua .section-page__title {
+  background-color: #f59c00;
+  color: #fff;
+}
+.section-page .heading--field-aqua .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27100px%27%20height=%2797px%27%20viewBox=%270%200%20100%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Field_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M67.7944862,96.2406015%20L75.9398496,90.726817%20L81.4536341,81.0776942%20L63.5338346,93.2330827%20L67.7944862,96.2406015%20Z%20M59.7744361,90.6015038%20L86.0902256,72.8070175%20L91.60401,63.1578947%20L55.5137845,87.593985%20L59.7744361,90.6015038%20Z%20M99.122807,47.1177945%20L47.6190476,82.0802005%20L51.8796992,85.0877193%20L96.3659148,55.0125313%20L100,48.6215539%20L99.122807,47.1177945%20Z%20M94.6115288,39.3483709%20L39.7243108,76.4411028%20L43.9849624,79.4486216%20L97.1177945,43.6090226%20L94.6115288,39.3483709%20Z%20M89.9749373,31.4536341%20L31.7042607,70.802005%20L35.9649123,73.8095238%20L92.481203,35.5889724%20L89.9749373,31.4536341%20Z%20M85.4636591,23.5588972%20L23.8095238,65.2882206%20L28.0701754,68.2957393%20L87.8446115,27.8195489%20L85.4636591,23.5588972%20Z%20M80.8270677,15.6641604%20L15.914787,59.6491228%20L20.1754386,62.6566416%20L83.3333333,19.924812%20L80.8270677,15.6641604%20Z%20M76.3157895,7.89473684%20L7.89473684,54.1353383%20L12.1553885,57.1428571%20L78.6967419,12.1553885%20L76.3157895,7.89473684%20Z%20M71.8045113,0%20L0,48.4962406%20L4.26065163,51.5037594%20L74.1854637,4.26065163%20L71.8045113,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__field-yellow {
+  background-color: #dc0d15;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--field-yellow .section-page__title {
+  background-color: #dc0d15;
+  color: #fff;
+}
+.section-page .heading--field-yellow .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27100px%27%20height=%2797px%27%20viewBox=%270%200%20100%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Field_1%27%20fill=%27%23FDD400%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M67.7944862,96.2406015%20L75.9398496,90.726817%20L81.4536341,81.0776942%20L63.5338346,93.2330827%20L67.7944862,96.2406015%20Z%20M59.7744361,90.6015038%20L86.0902256,72.8070175%20L91.60401,63.1578947%20L55.5137845,87.593985%20L59.7744361,90.6015038%20Z%20M99.122807,47.1177945%20L47.6190476,82.0802005%20L51.8796992,85.0877193%20L96.3659148,55.0125313%20L100,48.6215539%20L99.122807,47.1177945%20Z%20M94.6115288,39.3483709%20L39.7243108,76.4411028%20L43.9849624,79.4486216%20L97.1177945,43.6090226%20L94.6115288,39.3483709%20Z%20M89.9749373,31.4536341%20L31.7042607,70.802005%20L35.9649123,73.8095238%20L92.481203,35.5889724%20L89.9749373,31.4536341%20Z%20M85.4636591,23.5588972%20L23.8095238,65.2882206%20L28.0701754,68.2957393%20L87.8446115,27.8195489%20L85.4636591,23.5588972%20Z%20M80.8270677,15.6641604%20L15.914787,59.6491228%20L20.1754386,62.6566416%20L83.3333333,19.924812%20L80.8270677,15.6641604%20Z%20M76.3157895,7.89473684%20L7.89473684,54.1353383%20L12.1553885,57.1428571%20L78.6967419,12.1553885%20L76.3157895,7.89473684%20Z%20M71.8045113,0%20L0,48.4962406%20L4.26065163,51.5037594%20L74.1854637,4.26065163%20L71.8045113,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__field-green {
+  background-color: #ed018c;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--field-green .section-page__title {
+  background-color: #ed018c;
+  color: #fff;
+}
+.section-page .heading--field-green .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27100px%27%20height=%2797px%27%20viewBox=%270%200%20100%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Field_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M67.7944862,96.2406015%20L75.9398496,90.726817%20L81.4536341,81.0776942%20L63.5338346,93.2330827%20L67.7944862,96.2406015%20Z%20M59.7744361,90.6015038%20L86.0902256,72.8070175%20L91.60401,63.1578947%20L55.5137845,87.593985%20L59.7744361,90.6015038%20Z%20M99.122807,47.1177945%20L47.6190476,82.0802005%20L51.8796992,85.0877193%20L96.3659148,55.0125313%20L100,48.6215539%20L99.122807,47.1177945%20Z%20M94.6115288,39.3483709%20L39.7243108,76.4411028%20L43.9849624,79.4486216%20L97.1177945,43.6090226%20L94.6115288,39.3483709%20Z%20M89.9749373,31.4536341%20L31.7042607,70.802005%20L35.9649123,73.8095238%20L92.481203,35.5889724%20L89.9749373,31.4536341%20Z%20M85.4636591,23.5588972%20L23.8095238,65.2882206%20L28.0701754,68.2957393%20L87.8446115,27.8195489%20L85.4636591,23.5588972%20Z%20M80.8270677,15.6641604%20L15.914787,59.6491228%20L20.1754386,62.6566416%20L83.3333333,19.924812%20L80.8270677,15.6641604%20Z%20M76.3157895,7.89473684%20L7.89473684,54.1353383%20L12.1553885,57.1428571%20L78.6967419,12.1553885%20L76.3157895,7.89473684%20Z%20M71.8045113,0%20L0,48.4962406%20L4.26065163,51.5037594%20L74.1854637,4.26065163%20L71.8045113,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__field-orange {
+  background-color: #000;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--field-orange .section-page__title {
+  background-color: #000;
+  color: #fff;
+}
+.section-page .heading--field-orange .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27100px%27%20height=%2797px%27%20viewBox=%270%200%20100%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Field_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M67.7944862,96.2406015%20L75.9398496,90.726817%20L81.4536341,81.0776942%20L63.5338346,93.2330827%20L67.7944862,96.2406015%20Z%20M59.7744361,90.6015038%20L86.0902256,72.8070175%20L91.60401,63.1578947%20L55.5137845,87.593985%20L59.7744361,90.6015038%20Z%20M99.122807,47.1177945%20L47.6190476,82.0802005%20L51.8796992,85.0877193%20L96.3659148,55.0125313%20L100,48.6215539%20L99.122807,47.1177945%20Z%20M94.6115288,39.3483709%20L39.7243108,76.4411028%20L43.9849624,79.4486216%20L97.1177945,43.6090226%20L94.6115288,39.3483709%20Z%20M89.9749373,31.4536341%20L31.7042607,70.802005%20L35.9649123,73.8095238%20L92.481203,35.5889724%20L89.9749373,31.4536341%20Z%20M85.4636591,23.5588972%20L23.8095238,65.2882206%20L28.0701754,68.2957393%20L87.8446115,27.8195489%20L85.4636591,23.5588972%20Z%20M80.8270677,15.6641604%20L15.914787,59.6491228%20L20.1754386,62.6566416%20L83.3333333,19.924812%20L80.8270677,15.6641604%20Z%20M76.3157895,7.89473684%20L7.89473684,54.1353383%20L12.1553885,57.1428571%20L78.6967419,12.1553885%20L76.3157895,7.89473684%20Z%20M71.8045113,0%20L0,48.4962406%20L4.26065163,51.5037594%20L74.1854637,4.26065163%20L71.8045113,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__field-aqua_2 {
+  background-color: #711343;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--field-aqua_2 .section-page__title {
+  background-color: #711343;
+  color: #fff;
+}
+.section-page .heading--field-aqua_2 .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27100px%27%20height=%2797px%27%20viewBox=%270%200%20100%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Field_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M67.7944862,96.2406015%20L75.9398496,90.726817%20L81.4536341,81.0776942%20L63.5338346,93.2330827%20L67.7944862,96.2406015%20Z%20M59.7744361,90.6015038%20L86.0902256,72.8070175%20L91.60401,63.1578947%20L55.5137845,87.593985%20L59.7744361,90.6015038%20Z%20M99.122807,47.1177945%20L47.6190476,82.0802005%20L51.8796992,85.0877193%20L96.3659148,55.0125313%20L100,48.6215539%20L99.122807,47.1177945%20Z%20M94.6115288,39.3483709%20L39.7243108,76.4411028%20L43.9849624,79.4486216%20L97.1177945,43.6090226%20L94.6115288,39.3483709%20Z%20M89.9749373,31.4536341%20L31.7042607,70.802005%20L35.9649123,73.8095238%20L92.481203,35.5889724%20L89.9749373,31.4536341%20Z%20M85.4636591,23.5588972%20L23.8095238,65.2882206%20L28.0701754,68.2957393%20L87.8446115,27.8195489%20L85.4636591,23.5588972%20Z%20M80.8270677,15.6641604%20L15.914787,59.6491228%20L20.1754386,62.6566416%20L83.3333333,19.924812%20L80.8270677,15.6641604%20Z%20M76.3157895,7.89473684%20L7.89473684,54.1353383%20L12.1553885,57.1428571%20L78.6967419,12.1553885%20L76.3157895,7.89473684%20Z%20M71.8045113,0%20L0,48.4962406%20L4.26065163,51.5037594%20L74.1854637,4.26065163%20L71.8045113,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__field-red {
+  background-color: #2CB359;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--field-red .section-page__title {
+  background-color: #2CB359;
+  color: #fff;
+}
+.section-page .heading--field-red .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%27100px%27%20height=%2797px%27%20viewBox=%270%200%20100%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Field_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M67.7944862,96.2406015%20L75.9398496,90.726817%20L81.4536341,81.0776942%20L63.5338346,93.2330827%20L67.7944862,96.2406015%20Z%20M59.7744361,90.6015038%20L86.0902256,72.8070175%20L91.60401,63.1578947%20L55.5137845,87.593985%20L59.7744361,90.6015038%20Z%20M99.122807,47.1177945%20L47.6190476,82.0802005%20L51.8796992,85.0877193%20L96.3659148,55.0125313%20L100,48.6215539%20L99.122807,47.1177945%20Z%20M94.6115288,39.3483709%20L39.7243108,76.4411028%20L43.9849624,79.4486216%20L97.1177945,43.6090226%20L94.6115288,39.3483709%20Z%20M89.9749373,31.4536341%20L31.7042607,70.802005%20L35.9649123,73.8095238%20L92.481203,35.5889724%20L89.9749373,31.4536341%20Z%20M85.4636591,23.5588972%20L23.8095238,65.2882206%20L28.0701754,68.2957393%20L87.8446115,27.8195489%20L85.4636591,23.5588972%20Z%20M80.8270677,15.6641604%20L15.914787,59.6491228%20L20.1754386,62.6566416%20L83.3333333,19.924812%20L80.8270677,15.6641604%20Z%20M76.3157895,7.89473684%20L7.89473684,54.1353383%20L12.1553885,57.1428571%20L78.6967419,12.1553885%20L76.3157895,7.89473684%20Z%20M71.8045113,0%20L0,48.4962406%20L4.26065163,51.5037594%20L74.1854637,4.26065163%20L71.8045113,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__plant-aqua {
+  background-color: #f59c00;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--plant-aqua .section-page__title {
+  background-color: #f59c00;
+  color: #fff;
+}
+.section-page .heading--plant-aqua .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2766px%27%20height=%2798px%27%20viewBox=%270%200%2066%2098%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Plant_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M33.8684211,98%20L24.6879699,44.0075472%20L48.6315789,96.027673%20L42.056391,35.9949686%20L66,88.0150943%20L57.0676692,0%20C57.0676692,0%2015.6315789,4.19119497%200,35.9949686%20C0,35.9949686%2033.8684211,98%2033.8684211,98%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__plant-yellow {
+  background-color: #dc0d15;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--plant-yellow .section-page__title {
+  background-color: #dc0d15;
+  color: #fff;
+}
+.section-page .heading--plant-yellow .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2766px%27%20height=%2798px%27%20viewBox=%270%200%2066%2098%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Plant_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M33.8684211,98%20L24.6879699,44.0075472%20L48.6315789,96.027673%20L42.056391,35.9949686%20L66,88.0150943%20L57.0676692,0%20C57.0676692,0%2015.6315789,4.19119497%200,35.9949686%20C0,35.9949686%2033.8684211,98%2033.8684211,98%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__plant-green {
+  background-color: #ed018c;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--plant-green .section-page__title {
+  background-color: #ed018c;
+  color: #fff;
+}
+.section-page .heading--plant-green .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2766px%27%20height=%2798px%27%20viewBox=%270%200%2066%2098%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Plant_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M33.8684211,98%20L24.6879699,44.0075472%20L48.6315789,96.027673%20L42.056391,35.9949686%20L66,88.0150943%20L57.0676692,0%20C57.0676692,0%2015.6315789,4.19119497%200,35.9949686%20C0,35.9949686%2033.8684211,98%2033.8684211,98%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__plant-orange {
+  background-color: #FDD400;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--plant-orange .section-page__title {
+  background-color: #FDD400;
+  color: #fff;
+}
+.section-page .heading--plant-orange .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2766px%27%20height=%2798px%27%20viewBox=%270%200%2066%2098%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Plant_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M33.8684211,98%20L24.6879699,44.0075472%20L48.6315789,96.027673%20L42.056391,35.9949686%20L66,88.0150943%20L57.0676692,0%20C57.0676692,0%2015.6315789,4.19119497%200,35.9949686%20C0,35.9949686%2033.8684211,98%2033.8684211,98%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__plant-aqua_2 {
+  background-color: #711343;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--plant-aqua_2 .section-page__title {
+  background-color: #711343;
+  color: #fff;
+}
+.section-page .heading--plant-aqua_2 .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2766px%27%20height=%2798px%27%20viewBox=%270%200%2066%2098%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Plant_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M33.8684211,98%20L24.6879699,44.0075472%20L48.6315789,96.027673%20L42.056391,35.9949686%20L66,88.0150943%20L57.0676692,0%20C57.0676692,0%2015.6315789,4.19119497%200,35.9949686%20C0,35.9949686%2033.8684211,98%2033.8684211,98%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__plant-red {
+  background-color: #2CB359;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--plant-red .section-page__title {
+  background-color: #2CB359;
+  color: #fff;
+}
+.section-page .heading--plant-red .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2766px%27%20height=%2798px%27%20viewBox=%270%200%2066%2098%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Plant_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M33.8684211,98%20L24.6879699,44.0075472%20L48.6315789,96.027673%20L42.056391,35.9949686%20L66,88.0150943%20L57.0676692,0%20C57.0676692,0%2015.6315789,4.19119497%200,35.9949686%20C0,35.9949686%2033.8684211,98%2033.8684211,98%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__water-aqua {
+  background-color: #f59c00;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--water-aqua .section-page__title {
+  background-color: #f59c00;
+  color: #fff;
+}
+.section-page .heading--water-aqua .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2759px%27%20height=%2796px%27%20viewBox=%270%200%2059%2096%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Water_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M37,59%20L59,59%20L59,37%20L37,37%20L37,59%20Z%20M0,78%20L22,78%20L22,56%20L0,56%20L0,78%20Z%20M37,96%20L59,96%20L59,74%20L37,74%20L37,96%20Z%20M0,41%20L22,41%20L22,19%20L0,19%20L0,41%20Z%20M37,0%20L37,22%20L59,22%20L59,0%20L37,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__water-yellow {
+  background-color: #dc0d15;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--water-yellow .section-page__title {
+  background-color: #dc0d15;
+  color: #fff;
+}
+.section-page .heading--water-yellow .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2759px%27%20height=%2796px%27%20viewBox=%270%200%2059%2096%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Water_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M37,59%20L59,59%20L59,37%20L37,37%20L37,59%20Z%20M0,78%20L22,78%20L22,56%20L0,56%20L0,78%20Z%20M37,96%20L59,96%20L59,74%20L37,74%20L37,96%20Z%20M0,41%20L22,41%20L22,19%20L0,19%20L0,41%20Z%20M37,0%20L37,22%20L59,22%20L59,0%20L37,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__water-green {
+  background-color: #ed018c;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--water-green .section-page__title {
+  background-color: #ed018c;
+  color: #fff;
+}
+.section-page .heading--water-green .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2759px%27%20height=%2796px%27%20viewBox=%270%200%2059%2096%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Water_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M37,59%20L59,59%20L59,37%20L37,37%20L37,59%20Z%20M0,78%20L22,78%20L22,56%20L0,56%20L0,78%20Z%20M37,96%20L59,96%20L59,74%20L37,74%20L37,96%20Z%20M0,41%20L22,41%20L22,19%20L0,19%20L0,41%20Z%20M37,0%20L37,22%20L59,22%20L59,0%20L37,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__water-orange {
+  background-color: #FDD400;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--water-orange .section-page__title {
+  background-color: #FDD400;
+  color: #fff;
+}
+.section-page .heading--water-orange .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2759px%27%20height=%2796px%27%20viewBox=%270%200%2059%2096%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Water_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M37,59%20L59,59%20L59,37%20L37,37%20L37,59%20Z%20M0,78%20L22,78%20L22,56%20L0,56%20L0,78%20Z%20M37,96%20L59,96%20L59,74%20L37,74%20L37,96%20Z%20M0,41%20L22,41%20L22,19%20L0,19%20L0,41%20Z%20M37,0%20L37,22%20L59,22%20L59,0%20L37,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__water-aqua_2 {
+  background-color: #711343;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--water-aqua_2 .section-page__title {
+  background-color: #711343;
+  color: #fff;
+}
+.section-page .heading--water-aqua_2 .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2759px%27%20height=%2796px%27%20viewBox=%270%200%2059%2096%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Water_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M37,59%20L59,59%20L59,37%20L37,37%20L37,59%20Z%20M0,78%20L22,78%20L22,56%20L0,56%20L0,78%20Z%20M37,96%20L59,96%20L59,74%20L37,74%20L37,96%20Z%20M0,41%20L22,41%20L22,19%20L0,19%20L0,41%20Z%20M37,0%20L37,22%20L59,22%20L59,0%20L37,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__water-red {
+  background-color: #2CB359;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--water-red .section-page__title {
+  background-color: #2CB359;
+  color: #fff;
+}
+.section-page .heading--water-red .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2759px%27%20height=%2796px%27%20viewBox=%270%200%2059%2096%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Water_1%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M37,59%20L59,59%20L59,37%20L37,37%20L37,59%20Z%20M0,78%20L22,78%20L22,56%20L0,56%20L0,78%20Z%20M37,96%20L59,96%20L59,74%20L37,74%20L37,96%20Z%20M0,41%20L22,41%20L22,19%20L0,19%20L0,41%20Z%20M37,0%20L37,22%20L59,22%20L59,0%20L37,0%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__mountain-aqua {
+  background-color: #f59c00;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--mountain-aqua .section-page__title {
+  background-color: #f59c00;
+  color: #fff;
+}
+.section-page .heading--mountain-aqua .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2799px%27%20height=%2797px%27%20viewBox=%270%200%2099%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Mountains_1%27%20transform=%27translate%28-1.000000,%200.000000%29%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M50.6722054,0%20L1,48.5%20L1,57.4380665%20L50.6722054,9.81722054%20L99.3187311,57.2915408%20L99.3187311,48.3534743%20L50.6722054,0%20Z%20M1,68.2809668%20L1,77.2190332%20L50.6722054,29.744713%20L99.3187311,77.2190332%20L99.3187311,68.2809668%20L50.6722054,19.7809668%20L1,68.2809668%20Z%20M1,88.0619335%20L1,97%20L50.6722054,49.5256798%20L99.3187311,97%20L99.3187311,88.0619335%20L50.6722054,39.5619335%20L1,88.0619335%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__mountain-yellow {
+  background-color: #dc0d15;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--mountain-yellow .section-page__title {
+  background-color: #dc0d15;
+  color: #fff;
+}
+.section-page .heading--mountain-yellow .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2799px%27%20height=%2797px%27%20viewBox=%270%200%2099%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Mountains_1%27%20transform=%27translate%28-1.000000,%200.000000%29%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M50.6722054,0%20L1,48.5%20L1,57.4380665%20L50.6722054,9.81722054%20L99.3187311,57.2915408%20L99.3187311,48.3534743%20L50.6722054,0%20Z%20M1,68.2809668%20L1,77.2190332%20L50.6722054,29.744713%20L99.3187311,77.2190332%20L99.3187311,68.2809668%20L50.6722054,19.7809668%20L1,68.2809668%20Z%20M1,88.0619335%20L1,97%20L50.6722054,49.5256798%20L99.3187311,97%20L99.3187311,88.0619335%20L50.6722054,39.5619335%20L1,88.0619335%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__mountain-green {
+  background-color: #ed018c;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--mountain-green .section-page__title {
+  background-color: #ed018c;
+  color: #fff;
+}
+.section-page .heading--mountain-green .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2799px%27%20height=%2797px%27%20viewBox=%270%200%2099%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Mountains_1%27%20transform=%27translate%28-1.000000,%200.000000%29%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M50.6722054,0%20L1,48.5%20L1,57.4380665%20L50.6722054,9.81722054%20L99.3187311,57.2915408%20L99.3187311,48.3534743%20L50.6722054,0%20Z%20M1,68.2809668%20L1,77.2190332%20L50.6722054,29.744713%20L99.3187311,77.2190332%20L99.3187311,68.2809668%20L50.6722054,19.7809668%20L1,68.2809668%20Z%20M1,88.0619335%20L1,97%20L50.6722054,49.5256798%20L99.3187311,97%20L99.3187311,88.0619335%20L50.6722054,39.5619335%20L1,88.0619335%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__mountain-orange {
+  background-color: #FDD400;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--mountain-orange .section-page__title {
+  background-color: #FDD400;
+  color: #fff;
+}
+.section-page .heading--mountain-orange .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2799px%27%20height=%2797px%27%20viewBox=%270%200%2099%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Mountains_1%27%20transform=%27translate%28-1.000000,%200.000000%29%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M50.6722054,0%20L1,48.5%20L1,57.4380665%20L50.6722054,9.81722054%20L99.3187311,57.2915408%20L99.3187311,48.3534743%20L50.6722054,0%20Z%20M1,68.2809668%20L1,77.2190332%20L50.6722054,29.744713%20L99.3187311,77.2190332%20L99.3187311,68.2809668%20L50.6722054,19.7809668%20L1,68.2809668%20Z%20M1,88.0619335%20L1,97%20L50.6722054,49.5256798%20L99.3187311,97%20L99.3187311,88.0619335%20L50.6722054,39.5619335%20L1,88.0619335%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__mountain-aqua_2 {
+  background-color: #711343;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--mountain-aqua_2 .section-page__title {
+  background-color: #711343;
+  color: #fff;
+}
+.section-page .heading--mountain-aqua_2 .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2799px%27%20height=%2797px%27%20viewBox=%270%200%2099%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Mountains_1%27%20transform=%27translate%28-1.000000,%200.000000%29%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M50.6722054,0%20L1,48.5%20L1,57.4380665%20L50.6722054,9.81722054%20L99.3187311,57.2915408%20L99.3187311,48.3534743%20L50.6722054,0%20Z%20M1,68.2809668%20L1,77.2190332%20L50.6722054,29.744713%20L99.3187311,77.2190332%20L99.3187311,68.2809668%20L50.6722054,19.7809668%20L1,68.2809668%20Z%20M1,88.0619335%20L1,97%20L50.6722054,49.5256798%20L99.3187311,97%20L99.3187311,88.0619335%20L50.6722054,39.5619335%20L1,88.0619335%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+.section-page__mountain-red {
+  background-color: #2CB359;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto;
+}
+.section-page .heading--mountain-red .section-page__title {
+  background-color: #2CB359;
+  color: #fff;
+}
+.section-page .heading--mountain-red .section-page__caption::before {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%3Csvg%20width=%2799px%27%20height=%2797px%27%20viewBox=%270%200%2099%2097%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%3C%21--%20Generator:%20Sketch%2055.2%20%2878181%29%20-%20https://sketchapp.com%20--%3E%3Ctitle%3EShape%3C/title%3E%3Cdesc%3ECreated%20with%20Sketch.%3C/desc%3E%3Cg%20id=%27Symbols%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%3Cg%20id=%27Desktop-/-Headers-/-Mountains_1%27%20transform=%27translate%28-1.000000,%200.000000%29%27%20fill=%27%2301A9B8%27%20fill-rule=%27nonzero%27%3E%3Cpath%20d=%27M50.6722054,0%20L1,48.5%20L1,57.4380665%20L50.6722054,9.81722054%20L99.3187311,57.2915408%20L99.3187311,48.3534743%20L50.6722054,0%20Z%20M1,68.2809668%20L1,77.2190332%20L50.6722054,29.744713%20L99.3187311,77.2190332%20L99.3187311,68.2809668%20L50.6722054,19.7809668%20L1,68.2809668%20Z%20M1,88.0619335%20L1,97%20L50.6722054,49.5256798%20L99.3187311,97%20L99.3187311,88.0619335%20L50.6722054,39.5619335%20L1,88.0619335%20Z%27%20id=%27Shape%27%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: "";
+  margin-top: -10px;
+}
+
+.social-media-list {
+  display: block;
+  margin: 0;
+  padding: 15px;
+}
+.social-media-list__item {
+  display: block;
+  padding: 0 8px 8px 0;
+}
+.social-media-list__label {
+  font-weight: 600;
+}
+.social-media-list__anchor {
+  color: #b3dcde;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.social-media-list__anchor-title {
+  color: #b3dcde;
+}
+.social-media-list__anchor-icon {
+  vertical-align: middle;
+  height: auto;
+  margin-right: 5px;
+  max-height: 50px;
+  max-width: 50px;
+  width: 100%;
+}
+.social-media-list__anchor:hover {
+  text-decoration: none;
+}
+
+.article-page .social-media-list {
+  border-top: 3px solid #e7357c;
+  margin: 5% auto 0;
+  padding: 40px 5.5% 20px;
+  text-align: center;
+  width: 60%;
+}
+.article-page .social-media-list__label {
+  display: block;
+  font-size: 22px;
+  padding: 0 0 10px;
+  text-transform: uppercase;
+}
+.article-page .social-media-list__item {
+  display: inline-block;
+}
+.article-page .social-media-list__item:first-child {
+  display: block;
+}
+.article-page .social-media-list__anchor-title {
+  display: none;
+  visibility: hidden;
+}
+
+.teaser-tags-list__item {
+  color: #e7357c;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 8px 0 0;
+  text-transform: lowercase;
+}
+
+.tags-list {
+  margin: 0 auto 10px;
+  padding: 10px;
+}
+.tags-list__item {
+  background: #e7357c;
+  color: #000;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.tag-cloud {
+  text-align: center;
+  margin: 5% auto 0;
+  padding: 40px 5.5% 20px;
+  width: 60%;
+}
+.tag-cloud .heading__micro {
+  margin: 0;
+}
+.tag-cloud-list {
+  display: inline-block;
+  padding: 2px 5px;
+}
+.tag-cloud-list__item {
+  color: #e7357c;
+  display: inline-block;
+  font-size: 17px;
+  margin: 0 5px;
+  text-decoration: none;
+  text-transform: lowercase;
+}

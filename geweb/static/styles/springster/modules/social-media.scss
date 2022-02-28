@@ -21,10 +21,12 @@
                 color: $violet;
             }
             &-icon { 
-                vertical-align: middle;
+                height: auto;
                 margin-right: 5px;
-                height: 24px;
-                width: 24px;
+                max-height: 24px;
+                max-width: 24px;
+                vertical-align: middle;
+                width: 100%;
             }
         }
     }
