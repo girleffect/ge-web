@@ -10,9 +10,23 @@ body {
     position: relative;
 }
 
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
 a {
     overflow: auto;
     word-break: break-word;
     word-wrap: break-word;
 }
 
+//!! IMPORTANT RULE
+.ninyampinga {
+    width: 100%;
+}

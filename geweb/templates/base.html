@@ -64,7 +64,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
   
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-    <link rel="stylesheet" href="{{STATIC_URL}}css/{{theme.slug}}/base.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}_dist/{{theme.slug}}.css">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -122,7 +122,9 @@
             {% include THEME_PATH|add:"header.html" %}
         {% endblock %}
 
-        {% block content %}{% endblock %}
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
 
         {% block footer %}
             {% include THEME_PATH|add:"footer.html" %}
