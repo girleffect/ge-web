@@ -201,6 +201,10 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("en", "English"),
     ("fr", "French"),
     ("es", "Spanish"),
+    ("tl", "Tagalog"),
+    ('sw-tz', 'Tanzanian Swahili'),
+    ('ha', 'Hausa'),
+    ('rw', 'Kinyarwanda'),
 ]
 
 TAGGIT_CASE_INSENSITIVE = True
