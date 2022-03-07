@@ -200,12 +200,14 @@ BASE_URL = "http://example.com"
 WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("en", "English"),
     ("fr", "French"),
-    ("es", "Spanish"),
-    ("tl", "Tagalog"),
     ('sw-tz', 'Tanzanian Swahili'),
     ('ha', 'Hausa'),
     ('rw', 'Kinyarwanda'),
     ('id', 'Indonesian'),
+    ('pt', 'Portuguese'),
+    ('sw', 'Swahili'),
+    ('bn', 'Bengali'),
+    ('ur', 'Urdu'),
 ]
 
 TAGGIT_CASE_INSENSITIVE = True
