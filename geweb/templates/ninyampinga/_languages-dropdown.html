@@ -1,3 +1,5 @@
+{% load i18n wagtailcore_tags %}
+
 <div class="languages">
     <label for="languages_toggle" class="languages__label toggle">
         Languages
@@ -12,18 +14,17 @@
                     <h1 class="languages-list__title">Indimi:</h1>
                 </div>
             </li>
-            {% for language in languages %}
-                <li class="languages-list__item">
-                    <a rel="alternate" hreflang="{{ language_name_local}}" href="{% url 'locale_set' language.locale %}?next={{request.path}}{% if request.GET.urlencode %}?{{ request.GET.urlencode }}{% endif %}" class="languages-list__anchor{% if request.LANGUAGE_CODE == language.locale %} is-active{% endif %}">
-                        {{ language.locale }}
-                    </a>
-                </li>
+            {% for language_code, language_name in LANGUAGES %}
+            
+                {% get_language_info for language_code as lang %}
+                {% language language_code %}
+                    <li class="languages-list__item">
+                        <a rel="{{ language_code }}" hreflang="{{ language_code }}" href="{% pageurl page.localized %}" class="languages-list__anchor">
+                            {{ lang.name_local }}
+                        </a>
+                    </li>
+                {% endlanguage %}
             {% endfor %}
         </ul>
     </div>
-
-    {{languages}}
-    {% if languages|length > 1 %}
-
-    {% endif %}
   </div>

@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n wagtailcore_tags %}
 
 {% block extra_css %}
     <style>
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    {% include "./banner.html" %}
+    {% include "./_banner.html" %}
 
     <div class="homepage__inner">
         <div class="homepage__column-main">
@@ -25,11 +25,12 @@
                 <h2 class="heading__title">{% trans "Yegna news" %}</h2>
             </div>
 
-            <div class="article-teasers">
+            <div class="teaser-stacklist teaser-stacklist--featured-main">
                 {% for post in articlepages %}
-                    {% if post.feature_in_homepage %}
-                        {{post}}
-                        {% include "../_patterns/article-teasers-listing_inner.html" %}
+                    {% if not post.get_parent|slugify == 'cast' %}
+                        {% if post.feature_in_homepage %}
+                            {% include "./_article-teasers.html" %}
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
             </div>
@@ -38,6 +39,17 @@
         <div class="homepage__column-side">
             <div class="heading-mid">
                 <h2 class="heading__title">{% trans "Meet the characters" %}</h2>
+            </div>
+            <div class="teaser-stacklist">
+                {% for post in articlepages %}
+                    {% if post.get_parent|slugify == 'cast' %}
+                        {% if post.feature_in_homepage %}
+                            {% with post=post.specific %}
+                                {% include "./_article-teasers.html" %}
+                            {% endwith %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
 

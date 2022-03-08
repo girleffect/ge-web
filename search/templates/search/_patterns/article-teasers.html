@@ -1,7 +1,7 @@
 {% load comments i18n wagtailimages_tags wagtailcore_tags %}
 
 {% with post=post.specific %}
-    <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
+    <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}">
         {% if post.image %}
             <div class="teaser-stacklist__thumbnail">
                 {% image post.image width-400 as article_image %}
@@ -12,19 +12,6 @@
         {% endif %}
 
         <div class="teaser-stacklist__content{% if theme.slug == 'springster' or theme.slug == 'tujibebe'  %}{% if post.image %} teaser-stacklist__content--split{% endif %}{% endif %}">
-            
-            {# <!-- ========== start ZATHU ======== --> #}
-            {% if theme.slug == 'zathu' %}
-                <h4 class="teaser-stacklist-parent">
-                    {% with parent=post.get_parent %}
-                        <a href="{% pageurl parent %}" class="teaser-stacklist-parent__anchor">
-                            {{parent}}
-                        </a>
-                    {% endwith %}
-                </h4>
-            {% endif %}
-            {# <!-- ========== end ======== --> #}
-            
             <a href="{% pageurl post %}" class="teaser-stacklist__anchor">
                 <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
             </a>
@@ -45,9 +32,11 @@
                 {% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}
                     <div class="commenting">
                         {% get_comment_count for post as comment_count %}
-                        <a href="{% pageurl post %}" class="commenting__counter">
-                            {{ comment_count }}
-                        </a>
+                        {% if comment_count > 0 %}
+                            <a href="{% pageurl post %}" class="commenting__counter">
+                                {{ comment_count }}
+                            </a>
+                        {% endif %}
                     </div>
                 {% endif %}
             </div>

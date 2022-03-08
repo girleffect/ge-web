@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="footer">
     <div class="footer__inner">
         {% include "../_patterns/footer-nav.html" with suffix="yegna" %}
@@ -5,7 +7,7 @@
 
     <div class="copyright">
         <p class="copyright__text">
-            © {% now "Y" %} Yegna. All Rights Reserved.
+            © {% now "Y" %} Yegna. {% trans "All Rights Reserved." %} 
         </p>
         <p class="copyright__text">Girl Effect</p>
     </div>

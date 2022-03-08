@@ -72,7 +72,10 @@
         @media screen and (min-width: 991px) {
             padding: 30px 8% 30px 19.5%;
         }
-       
+        .nav-list__our-story {
+            color: $vivid_violet;
+            padding: 0 15px 15px 0;
+        }
         .nav-list {
             margin: 0 5% 0 0;
             &__item {
@@ -85,22 +88,14 @@
                 &-parent {
                     color: $vivid_violet;
                     padding: 0 15px 15px 0;
-                    cursor: auto;
                 }
-                &:before {
+                &:before,
+                &:after {
                     display: none;
                 }
-            }
-            &--sections {
-                .nav-list__item {
-                    &:nth-child(odd) {
-                        display: none;
-                        visibility: hidden;
-                    }
-                    &:first-child {
-                        display: block;
-                        visibility: visible;
-                    }
+                &:hover {
+                    color: $vivid_violet;
+                    text-decoration: underline;
                 }
             }
         }

@@ -7,6 +7,7 @@
         padding: 15px;
         @media (min-width: 991px) {
             padding: 25px 15px;
+            width: 60%;
         }
         &__item {
             display: inline-block;
@@ -20,26 +21,28 @@
             text-decoration: none;
             &-title {
                 color: $black;
+                display: inline-block;
+                font-size: 13px;
+                visibility: visible;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
             &-icon { 
                 vertical-align: middle;
                 margin-right: 5px;
-                height: 21px;
-                width: 21px;
+                height: auto;
+                max-height: 20px;
+                width: 25px;
+                & ~ .social-media-list__anchor-title {
+                    display: none;
+                    visibility: hidden;
+                }
             }
         }
         &__label {
             font-weight: bold;
         }
         
-    }
-}
-
-.article-page { 
-    .social-media-list {
-        &__anchor-title {
-            display: none;
-            visibility: hidden;
-        }
     }
 }

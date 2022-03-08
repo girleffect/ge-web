@@ -1,0 +1,31 @@
+.search-page {
+    text-align: center;
+    &:after {
+        background-image: url($staticPath + 'img/zathu/mw_zig_pattern_30.png');
+        background-position: center;
+        background-repeat: repeat-x;
+        content: '';
+        clear: both;
+        display: block;
+        height: 50px;
+        margin: 0 0 10px 0;
+        overflow: visible;
+        width: 100%;
+    }
+    .heading--primary {
+       padding: 15px 15px 5px;
+    }
+    .article-teaser {
+        padding: 50px 0 10px;
+    }
+    .teaser-stacklist {
+        align-items: flex-start;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        overflow: hidden;
+        padding: 0 8px;
+        justify-content: space-between;
+        text-align: left;
+    }
+}

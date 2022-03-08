@@ -54,3 +54,8 @@ def get_next_article(context, article):
         .order_by("path")
         .first()
     )
+
+
+@register.filter
+def verbose_name(instance):
+    return instance._meta.verbose_name

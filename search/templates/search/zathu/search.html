@@ -1,0 +1,48 @@
+{% load i18n static wagtailcore_tags wagtailimages_tags %}
+
+<div class="search-page">
+    <h1 class="heading heading--primary">{% trans "Search" %}</h1>
+    
+    {% if search_results %}
+        <p class="subtitle">{{ search_results|length }} {% trans "results found for" %} "{{search_query}}".</p>
+       
+        {% include "../_patterns/search-input.html" with enhance="inner" %}
+        <div class="article-teaser">
+            <div class="teaser-stacklist">
+                {% for post in search_results.object_list %}
+                    {% include "./article-teasers.html" %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="pagination">
+            
+            <div class="pagination__item">
+                {% if search_results.has_previous %}
+                    <a href="{% url 'search' %}?q={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}" class="pagination__anchor pagination__anchor--prev">
+                        {% trans "Prev" %}
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="pagination__item">
+                <p class="pagination__num">Page {{ search_results.number }} of {{ search_results.paginator.num_pages }}</p>
+            </div>
+
+            <div class="pagination__item">
+                {% if search_results.has_next %}
+                    <a href="{% url 'search' %}?q={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}" class="pagination__anchor pagination__anchor--next">
+                        {% trans "Next" %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+       
+    {% elif search_query %}
+        <h2 class="heading__subheading">{% trans "Nothing was found matching" %} {{search_query}}</h2>
+        {% include "../_patterns/search-input.html" with enhance="inner"  %}
+    {% else %}
+        <h2 class="heading__subheading">{% trans "Please type something into the search box" %}</h2>
+        {% include "../_patterns/search-input.html" with enhance="inner"  %}
+    {% endif %}
+</div>

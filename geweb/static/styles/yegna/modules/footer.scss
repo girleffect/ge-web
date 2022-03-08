@@ -22,8 +22,12 @@
         &:hover {
             text-decoration: underline;
             text-underline-position: below;
+            .nav-list__anchor:before {
+                display: none;
+                visibility: hidden;
+            }
         }
-        &::before {
+        &:before {
             display: none;
             visibility: hidden;
         }

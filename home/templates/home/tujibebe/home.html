@@ -3,13 +3,13 @@
 <div class="homepage">
     <div class="content">
         
-        {% include "./tu_banner.html" with urlString='/' imagePos='one' altString='Celebrate girls - Read inspiring stories' %}
+        {% include "./_banner.html" with urlString='/' imagePos='one' altString='Celebrate girls - Read inspiring stories' %}
         
         {% for post in articlepages|slice:":5" %} 
             {% include "../_patterns/article-teasers-listing.html" %}
         {% endfor %}
     
-        {% include "./tu_banner.html" with urlString='/' imagePos='two' altString='Join us on Facebook' %}
+        {% include "./_banner.html" with urlString='/' imagePos='two' altString='Join us on Facebook' %}
     
         {% for post in articlepages|slice:"5:" %} 
             {% include "../_patterns/article-teasers-listing.html" %}
