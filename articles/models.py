@@ -10,6 +10,7 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
+from .blocks import GEMediaBlock
 from .utils import paginate
 
 from wagtail.admin.edit_handlers import (  # isort:skip
@@ -89,6 +90,7 @@ class ArticlePage(Page):
         [
             ("paragraph", blocks.RichTextBlock()),
             ("image", ImageChooserBlock()),
+            ("media", GEMediaBlock(icon="media")),
         ],
         blank=True,
         null=True,
