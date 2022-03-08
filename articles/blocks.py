@@ -1,6 +1,5 @@
 from django.forms.utils import flatatt
 from django.utils.html import format_html, format_html_join
-
 from wagtailmedia.blocks import AbstractMediaChooserBlock
 
 
