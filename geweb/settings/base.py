@@ -209,6 +209,7 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("sw", "Swahili"),
     ("bn", "Bengali"),
     ("ur", "Urdu"),
+    ("ny", "Chichewa"),
 ]
 
 TAGGIT_CASE_INSENSITIVE = True
