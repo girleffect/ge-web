@@ -7,7 +7,7 @@ from wagtail.core.models import Page
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from articles.models import ArticlePage, SectionPage, SectionIndexPage
+from articles.models import ArticlePage, SectionIndexPage, SectionPage
 from forms.models import FormPage
 from home.themes import THEME_CHOICES
 
