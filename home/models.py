@@ -7,7 +7,7 @@ from wagtail.core.models import Page
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-from articles.models import ArticlePage, SectionPage
+from articles.models import ArticlePage, SectionIndexPage, SectionPage
 from forms.models import FormPage
 from home.themes import THEME_CHOICES
 
@@ -49,7 +49,7 @@ class HomePage(Page):
         context["forms"] = forms
 
         # Ninyampinga featured in homepage adjustment
-        section_index = self.get_children().live().first()
+        section_index = SectionIndexPage.objects.descendant_of(self).live().first()
         context["section_index"] = section_index
 
         articlepages = ArticlePage.objects.live().descendant_of(section_index)

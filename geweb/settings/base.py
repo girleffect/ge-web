@@ -14,6 +14,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 import environ
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()
 
@@ -228,3 +230,13 @@ if AWS_STORAGE_BUCKET_NAME and AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY:
     INSTALLED_APPS += [
         "storages",
     ]
+
+SENTRY_DSN = os.environ.get("SENTRY_DSN", os.environ.get("RAVEN_DSN", ""))
+
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        send_default_pii=True,
+        traces_sample_rate=float(os.environ.get("SENTRY_TRACES_SAMPLE_RATE", 0.0)),
+    )

@@ -9,3 +9,4 @@ wagtailfontawesome
 boto3
 django-storages
 wagtailmedia
+sentry-sdk
