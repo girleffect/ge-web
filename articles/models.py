@@ -78,7 +78,7 @@ class ArticlePage(Page):
     )
 
     # Web page setup
-    subtitle = models.CharField(max_length=200, blank=True, null=True)
+    subtitle = models.CharField(max_length=600, blank=True, null=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
