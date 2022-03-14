@@ -29,7 +29,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 SITE_ID = 1
-# Application definition
 
 INSTALLED_APPS = [
     "home",
@@ -120,10 +119,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "geweb.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -131,9 +126,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -151,9 +143,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -165,11 +154,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-WAGTAILSIMPLETRANSLATION_SYNC_PAGE_TREE = True
+WAGTAILSIMPLETRANSLATION_SYNC_PAGE_TREE = False
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
