@@ -2,13 +2,13 @@ import "../styles/springster/springster.scss";
 
 
 /**
- * Header search from toggle 
+ * Header search from toggle
  */
 const elemHeaderSearchToggle = document.getElementById('search'),
     elemSearchBar = document.querySelector('.search--header > .search__bar')
 elemSearchBar.style.display = 'none'
 elemSearchBar.style.visibility = 'hidden'
-elemHeaderSearchToggle.addEventListener('click', (e) => { 
+elemHeaderSearchToggle.addEventListener('click', (e) => {
 
     if (elemSearchBar.style.display === 'none') {
         elemSearchBar.style.display = 'block'
@@ -37,7 +37,7 @@ if (pathArrayCheck.length <= 1) {
 
 for(let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', function(e) {
-        const $this = e.target  
+        const $this = e.target
         sessionStorage.setItem('curLink', $this.classList[1])
     })
 }
@@ -68,6 +68,3 @@ if (terms_input) {
         }
     })
 }
-    
-  
-    

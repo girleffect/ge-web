@@ -67,7 +67,7 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'tujibebe' %}tujibebe{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
-    <!-- Google Tag Manager (noscript) 
+    <!-- Google Tag Manager (noscript)
         OUTSTANDING:
         - client_session_id
     -->
@@ -129,15 +129,6 @@
         {% endblock %}
     {% endwith %}
 
-    {% if theme.slug == 'springster' %}
-        <script>
-            if (!navigator.serviceWorker.controller) {
-                navigator.serviceWorker.register("/serviceworker.js").then(function(reg) {
-                    console.log("Service worker has been registered: " + reg.scope);
-                });
-            }
-        </script>
-    {% endif %}
     <script type="text/javascript" src="{{STATIC_URL}}_dist/{{theme.slug}}.bundle.js"></script>
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
 </body>
