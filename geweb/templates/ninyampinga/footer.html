@@ -91,18 +91,7 @@
             {% include "./_search-form.html" %}
         </div>
 
-        {% if languages|length > 1 %}
-            <div class="languages languages--footer">
-                <p class="languages__label">Languages:</p>
-                {% for language in languages %}
-                    <a href="{% url 'locale_set' language.locale %}?next={{request.path}}{% if request.GET.urlencode %}?{{ request.GET.urlencode }}{% endif %}" class="languages__anchor {% if request.LANGUAGE_CODE == language.locale %} is-active{% endif %}">
-                        {{ language }}
-                    </a>
-                {% endfor %}
-            </div>
-        {% endif %}
-        
-        
+
         <div class="copyright">
             <p class="copyright__disclaimer">
                 &copy; {% now "Y" %} Girl Effect. All Rights Reserved.

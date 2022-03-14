@@ -16,8 +16,7 @@ import os
 
 import environ
 import sentry_sdk
-from django.conf import locale
-from django.conf import global_settings
+from django.conf import global_settings, locale
 from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()

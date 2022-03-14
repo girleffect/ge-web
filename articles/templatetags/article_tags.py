@@ -29,7 +29,9 @@ def section_pages(context):
     request = context["request"]
     pages = []
     site = Site.find_for_request(request)
-    section_index = SectionIndexPage.objects.descendant_of(site.root_page.localized).first()
+    section_index = SectionIndexPage.objects.descendant_of(
+        site.root_page.localized
+    ).first()
     if site and section_index:
         pages = SectionPage.objects.child_of(section_index).live()
     return pages
