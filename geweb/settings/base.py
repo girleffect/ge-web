@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+import django.conf.locale
 import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -201,6 +202,35 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("am", "Amharic"),
 ]
 
+EXTRA_LANG_INFO = {
+    "rw": {
+        "bidi": False,
+        "code": "rw",
+        "name": "Kinyarwanda",
+        "name_local": "Kinyarwanda",
+    },
+    "ha": {"bidi": False, "code": "ha", "name": "Hausa", "name_local": "Hausa"},
+    "bn": {"bidi": False, "code": "bn", "name": "Bengali", "name_local": "বাংলা"},
+    "ny": {
+        "bidi": False,
+        "code": "ny",
+        "name": "Chichewa",
+        "name_local": "Chichewa",
+    },
+    "am": {
+        "bidi": False,
+        "code": "am",
+        "name": "Amharic",
+        "name_local": "አማርኛ",
+    },
+    "sw-tz": {
+        "bidi": False,
+        "code": "sw-tz",
+        "name": "Tanzanian Swahili",
+        "name_local": "Kiswahili",
+    },
+}
+django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 TAGGIT_CASE_INSENSITIVE = True
 
 LOGIN_URL = "/profiles/login/"
