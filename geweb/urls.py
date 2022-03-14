@@ -19,6 +19,7 @@ urlpatterns = [
     path("comments/", include(comments_urls), name="comments"),
     path("", include("social_django.urls", namespace="social")),
     path("health/", views.health, name="health"),
+    path("i18n/", include("django.conf.urls.i18n")),
 ]
 
 

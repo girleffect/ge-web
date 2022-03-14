@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for geweb project.
 
@@ -13,9 +14,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-import django.conf.locale
 import environ
 import sentry_sdk
+from django.conf import locale
+from django.conf.global_settings import LANGUAGES
 from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()
@@ -144,7 +146,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = "UTC"
 
@@ -187,9 +189,7 @@ WAGTAIL_SITE_NAME = "geweb"
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = "http://example.com"
 
-WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
-    ("en", "English"),
-    ("fr", "French"),
+LANGUAGES = LANGUAGES + [
     ("sw-tz", "Tanzanian Swahili"),
     ("ha", "Hausa"),
     ("rw", "Kinyarwanda"),
@@ -230,7 +230,11 @@ EXTRA_LANG_INFO = {
         "name_local": "Kiswahili",
     },
 }
-django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+locale.LANG_INFO.update(EXTRA_LANG_INFO)
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, "locale"),
+]
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES
 TAGGIT_CASE_INSENSITIVE = True
 
 LOGIN_URL = "/profiles/login/"
