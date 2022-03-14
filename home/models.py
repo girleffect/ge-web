@@ -42,15 +42,14 @@ class HomePage(Page):
     def get_context(self, request):
         # Update context to seperate sectionpages and tag index
         context = super().get_context(request)
-        sections = SectionPage.objects.descendant_of(self).live()
+        section_index = SectionIndexPage.objects.descendant_of(self).live().first()
+        context["section_index"] = section_index
+
+        sections = SectionPage.objects.child_of(section_index).live()
         context["sections"] = sections
 
         forms = FormPage.objects.descendant_of(self).live()
         context["forms"] = forms
-
-        # Ninyampinga featured in homepage adjustment
-        section_index = SectionIndexPage.objects.descendant_of(self).live().first()
-        context["section_index"] = section_index
 
         articlepages = ArticlePage.objects.live().descendant_of(section_index)
         context["articlepages"] = articlepages

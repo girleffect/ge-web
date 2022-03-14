@@ -1,7 +1,7 @@
 from django import template
 from wagtail.core.models import Page, Site
 
-from articles.models import ArticlePage, FooterPage, SectionPage
+from articles.models import ArticlePage, FooterPage, SectionIndexPage, SectionPage
 
 register = template.Library()
 
@@ -12,7 +12,7 @@ def footer_pages(context):
     pages = []
     site = Site.find_for_request(request)
     if site:
-        pages = FooterPage.objects.descendant_of(site.root_page)
+        pages = FooterPage.objects.descendant_of(site.root_page).live()
     return {
         "request": request,
         "footers": pages,
@@ -24,8 +24,9 @@ def section_pages(context):
     request = context["request"]
     pages = []
     site = Site.find_for_request(request)
-    if site:
-        pages = SectionPage.objects.descendant_of(site.root_page)
+    section_index = SectionIndexPage.objects.descendant_of(site.root_page).first()
+    if site and section_index:
+        pages = SectionPage.objects.child_of(section_index).live()
     return pages
 
 

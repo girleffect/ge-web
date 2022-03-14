@@ -50,7 +50,9 @@ class SectionPage(Page):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
         page = request.GET.get("page", 1)
-        articlepages = self.get_children().live().order_by("-first_published_at")
+        articlepages = (
+            ArticlePage.objects.child_of(self).live().order_by("-first_published_at")
+        )
         articlepages = paginate(articlepages, page)
         context["articlepages"] = articlepages
         return context
