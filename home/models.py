@@ -51,7 +51,11 @@ class HomePage(Page):
         forms = FormPage.objects.descendant_of(self).live()
         context["forms"] = forms
 
-        articlepages = ArticlePage.objects.live().descendant_of(section_index)
+        articlepages = (
+            ArticlePage.objects.filter(feature_in_homepage=True)
+            .live()
+            .descendant_of(section_index)
+        )
         context["articlepages"] = articlepages
 
         articlepages_in_menu = (
