@@ -80,7 +80,7 @@ ul, ol, li {
   margin: 0 auto;
 }
 .article-page__body {
-  background: #fff url("http://127.0.0.1:8000/static/img/springster/sharpie-underline.png") no-repeat 50% 99%/122px;
+  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/sharpie-underline.png") no-repeat 50% 99%/122px;
   padding: 0 0 25px;
 }
 .article-page__recommendations {
@@ -251,7 +251,7 @@ ul, ol, li {
   text-transform: uppercase;
 }
 .call-to-action__nav-item-text--backToTop:after {
-  background-image: url("http://127.0.0.1:8000/static/img/springster/up-arrow.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: auto 100%;
@@ -277,7 +277,7 @@ ul, ol, li {
 }
 .call-to-action__submit {
   background-color: transparent;
-  background-image: url("http://127.0.0.1:8000/static/img/springster/button-sprite.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/button-sprite.png");
   background-position: 0 0;
   background-size: 1880px 330px;
   background-repeat: no-repeat;
@@ -312,7 +312,7 @@ ul, ol, li {
   text-decoration: none;
 }
 .commenting__counter:before {
-  background: url("http://127.0.0.1:8000/static/img/springster/comment.svg") no-repeat 0 0/20px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/comment.svg") no-repeat 0 0/20px;
   content: "";
   display: inline-block;
   height: 20px;
@@ -400,13 +400,13 @@ ul, ol, li {
   text-align: center;
 }
 .component__super {
-  background: #7300ff url("http://127.0.0.1:8000/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
+  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
   color: #656d78;
   padding: 25px 8px 35px;
   text-align: center;
 }
 .component__super .super-title {
-  background: url("http://127.0.0.1:8000/static/img/springster/skewed-underline.png") no-repeat 50% 100%/200px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/skewed-underline.png") no-repeat 50% 100%/200px;
   color: #fff;
   font-family: "Baton-Medium";
   font-size: 32px;
@@ -414,7 +414,7 @@ ul, ol, li {
   text-transform: uppercase;
 }
 .component__title {
-  background: url("http://127.0.0.1:8000/static/img/springster/zig-zag-underline.png") no-repeat 50% 100%/145px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 50% 100%/145px;
   margin: 0 8px 20px;
   padding: 20px 0 30px;
 }
@@ -466,7 +466,7 @@ ul, ol, li {
   text-transform: inherit;
 }
 .footer__inner {
-  background: url("http://127.0.0.1:8000/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain, url("http://127.0.0.1:8000/static/img/springster/top-div-2@2x.png") no-repeat 0 0/contain;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain, url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/top-div-2@2x.png") no-repeat 0 0/contain;
   background-color: #a4eed2;
   padding: 12px 8px;
 }
@@ -588,7 +588,7 @@ input[type=checkbox]#id_terms_and_conditions:before {
   width: 24px;
 }
 input[type=checkbox]#id_terms_and_conditions.is-on:before {
-  background: #7300ff url("http://127.0.0.1:8000/static/img/check-box.png") 0 50%/24px no-repeat;
+  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
 }
 
 .terms_and_conditions-link {
@@ -682,7 +682,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-align: left;
 }
 .forms fieldset .input-group:before {
-  background: url("http://127.0.0.1:8000/static/img/springster/select@2x.png") 0 0/24px no-repeat;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
   content: "";
   height: 25px;
   margin: 0 10px 10px 0;
@@ -801,7 +801,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-align: center;
 }
 .heading--component:after {
-  background: url("http://127.0.0.1:8000/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
   content: "";
   height: 10px;
   margin: 0 auto;
@@ -1029,7 +1029,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 
 #profile {
-  background: url("http://127.0.0.1:8000/static/img/springster/avatar.svg") no-repeat 3px 0/auto 95%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/avatar.svg") no-repeat 3px 0/auto 95%;
   cursor: pointer;
   height: 25px;
   padding: 0;
@@ -1044,7 +1044,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 
 #search {
-  background: url("http://127.0.0.1:8000/static/img/springster/nav_search.svg") no-repeat 3px 0/auto 95%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/nav_search.svg") no-repeat 3px 0/auto 95%;
   cursor: pointer;
   text-indent: 120%;
   vertical-align: middle;
@@ -1079,7 +1079,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-transform: uppercase;
 }
 .pagination__anchor--prev:before, .pagination__anchor--next:after {
-  background-image: url("http://127.0.0.1:8000/static/img/springster/up-arrow.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: auto 100%;
@@ -1108,7 +1108,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-align: center;
 }
 .polls__icon:before {
-  background: url("http://127.0.0.1:8000/static/img/springster/poll@2x.png") no-repeat 0 0/100px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/poll@2x.png") no-repeat 0 0/100px;
   content: "";
   display: block;
   height: 88px;
@@ -1128,7 +1128,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   margin-top: 100px;
 }
 .polls__inner {
-  background: #d1f6e8 url("http://127.0.0.1:8000/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
+  background: #d1f6e8 url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
   margin-top: -45px;
   padding: 60px 0 8px;
 }
@@ -1178,7 +1178,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-decoration: underline;
 }
 .polls .call-to-action__link:before {
-  background-image: url("http://127.0.0.1:8000/static/img/springster/up-arrow.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 25px;
@@ -1248,7 +1248,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 .search__cta {
   background-color: transparent;
-  background-image: url("http://127.0.0.1:8000/static//img/springster/search.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/search.svg");
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: auto 98%;
@@ -1483,7 +1483,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   width: 100%;
 }
 .yourwords__icon:before {
-  background: url("http://127.0.0.1:8000/static/img/springster/think_purple.png") no-repeat 0 0/95px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/think_purple.png") no-repeat 0 0/95px;
   content: "";
   display: block;
   height: 88px;
@@ -1502,7 +1502,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-transform: uppercase;
 }
 .yourwords .forms__title:after {
-  background: url("http://127.0.0.1:8000/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
   content: "";
   height: 10px;
   margin: 0 auto;

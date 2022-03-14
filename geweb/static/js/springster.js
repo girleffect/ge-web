@@ -13,12 +13,12 @@ elemHeaderSearchToggle.addEventListener('click', (e) => {
     if (elemSearchBar.style.display === 'none') {
         elemSearchBar.style.display = 'block'
         elemSearchBar.style.visibility = 'visible'
-        e.target.style.background = '#7300ff url("http://127.0.0.1:8000/static/img/springster/dismiss.svg") no-repeat 3px 3px/auto 80%'
+        e.target.style.background = '#7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/dismiss.svg") no-repeat 3px 3px/auto 80%'
         e.target.style.height = '25px'
     } else {
         elemSearchBar.style.display = 'none'
         elemSearchBar.style.visibility = 'hidden'
-        e.target.style.background = 'url("http://127.0.0.1:8000/static/img/springster/nav_search.svg") no-repeat 3px 0/auto 95%'
+        e.target.style.background = 'url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/nav_search.svg") no-repeat 3px 0/auto 95%'
     }
 })
 

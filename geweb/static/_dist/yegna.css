@@ -197,7 +197,7 @@ ul, ol, li {
   text-decoration: none;
 }
 .call-to-action__read-more:after {
-  background: url("http://127.0.0.1:8000/static//img/yegna/icon-readmore.svg") no-repeat center center/100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 15px;
@@ -212,7 +212,7 @@ ul, ol, li {
   float: left;
 }
 .call-to-action__back:before {
-  background: url("http://127.0.0.1:8000/static//img/yegna/icon-readmore.svg") no-repeat center center/100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 15px;
@@ -230,7 +230,7 @@ ul, ol, li {
   text-decoration: none;
 }
 .call-to-action__button:before {
-  background: url("http://127.0.0.1:8000/static//img/yegna/icon-watch-white.svg") no-repeat center center/100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-watch-white.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 19px;
@@ -288,7 +288,7 @@ ul, ol, li {
 }
 .footer__inner {
   align-items: center;
-  background: #00ff00 url("http://127.0.0.1:8000/static/img/yegna/bg.svg") no-repeat 0 0/auto;
+  background: #00ff00 url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/bg.svg") no-repeat 0 0/auto;
   display: flex;
   justify-content: space-between;
   padding: 50px 10%;
@@ -311,7 +311,7 @@ ul, ol, li {
 }
 
 .header {
-  background: #00ff00 url("http://127.0.0.1:8000/static/img/yegna/main-bg.svg") no-repeat center/auto;
+  background: #00ff00 url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/main-bg.svg") no-repeat center/auto;
   vertical-align: middle;
   position: relative;
   margin: 0 auto;
@@ -357,7 +357,7 @@ ul, ol, li {
   padding: 10px 0;
 }
 .heading-full:before {
-  background: url("http://127.0.0.1:8000/static/img/yegna/divider.svg") no-repeat center 0/cover;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/divider.svg") no-repeat center 0/cover;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 20px;
   content: "";
@@ -370,7 +370,7 @@ ul, ol, li {
   text-align: left;
 }
 .heading-full .heading__title:before {
-  background: url("http://127.0.0.1:8000/static/img/yegna/icon-diamond.svg") no-repeat center/auto;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-diamond.svg") no-repeat center/auto;
   content: "";
   display: inline-block;
   height: 20px;
@@ -381,7 +381,7 @@ ul, ol, li {
   padding: 10px 0;
 }
 .heading-mid:before {
-  background: url("http://127.0.0.1:8000/static/img/yegna/divider.svg") no-repeat 25px -45px/auto;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/divider.svg") no-repeat 25px -45px/auto;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 20px;
   content: "";
@@ -394,7 +394,7 @@ ul, ol, li {
   text-align: left;
 }
 .heading-mid .heading__title:before {
-  background: url("http://127.0.0.1:8000/static/img/yegna/icon-characters.svg") no-repeat center/auto;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-characters.svg") no-repeat center/auto;
   content: "";
   display: inline-block;
   height: 30px;
@@ -619,24 +619,24 @@ ul, ol, li {
 }
 
 #menu:before {
-  background-image: url("http://127.0.0.1:8000/static/img/yegna/icon-burger.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-burger.svg");
 }
 
 #watch:before {
-  background-image: url("http://127.0.0.1:8000/static/img/yegna/icon-watch.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-watch.svg");
   width: 25px;
 }
 
 #cast:before {
-  background-image: url("http://127.0.0.1:8000/static/img/yegna/icon-cast.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-cast.svg");
 }
 
 #listen:before {
-  background-image: url("http://127.0.0.1:8000/static/img/yegna/icon-listen-black.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-listen-black.svg");
 }
 
 #search_label:before {
-  background-image: url("http://127.0.0.1:8000/static/img/yegna/icon-search.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-search.svg");
 }
 
 .pagination {

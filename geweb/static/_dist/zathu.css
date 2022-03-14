@@ -165,7 +165,7 @@ a {
   width: 100%;
 }
 .teaser-stacklist__item--full-width:after {
-  background-image: url("http://127.0.0.1:8000/static/img/zathu/mw_zig_pattern_30.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/zathu/mw_zig_pattern_30.png");
   background-position: center;
   background-repeat: repeat-x;
   content: "";
@@ -340,7 +340,7 @@ label {
 }
 label.is-on:after {
   background-color: #333333;
-  background-image: url("http://127.0.0.1:8000/static/img/check-box.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png");
   background-position: 0 50%;
   background-size: 24px;
   background-repeat: no-repeat;
@@ -441,7 +441,7 @@ input[type=submit] {
   padding: 8px 10px;
 }
 .error-list__item:before {
-  background: url("http://127.0.0.1:8000/static/img/error.png") no-repeat center/100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/error.png") no-repeat center/100%;
   background-size: 16px;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -646,7 +646,7 @@ input[type=submit] {
   display: inline-block;
 }
 #search .nav-list__anchor {
-  background: url("http://127.0.0.1:8000/static/img/zathu/search_purple.png") no-repeat center/70%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/zathu/search_purple.png") no-repeat center/70%;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -668,7 +668,7 @@ input[type=submit] {
   background-color: #fff;
 }
 .profiles:after {
-  background-image: url("http://127.0.0.1:8000/static/img/zathu/mw_zig_pattern_30.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/zathu/mw_zig_pattern_30.png");
   background-position: center;
   background-repeat: repeat-x;
   content: "";
@@ -688,7 +688,7 @@ input[type=submit] {
   text-align: center;
 }
 .search-page:after {
-  background-image: url("http://127.0.0.1:8000/static/img/zathu/mw_zig_pattern_30.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/zathu/mw_zig_pattern_30.png");
   background-position: center;
   background-repeat: repeat-x;
   content: "";
@@ -729,7 +729,7 @@ input[type=submit] {
 }
 .search__cta {
   background-color: #fff;
-  background-image: url("http://127.0.0.1:8000/static/img/zathu/search_grey.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/zathu/search_grey.png");
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: 17px;

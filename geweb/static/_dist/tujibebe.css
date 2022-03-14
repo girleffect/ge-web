@@ -86,7 +86,7 @@ ul, ol, li {
   padding: 0 0 25px;
 }
 .article-page__body:after {
-  background: #fff url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
+  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
   content: "";
   display: block;
   padding: 20px 0;
@@ -262,7 +262,7 @@ ul, ol, li {
   text-transform: uppercase;
 }
 .call-to-action__nav-item-text--backToTop:after {
-  background-image: url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite-backup.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite-backup.png");
   background-repeat: no-repeat;
   background-position: -15px -634px;
   background-size: 320px;
@@ -292,7 +292,7 @@ ul, ol, li {
   text-align: left;
 }
 .call-to-action__link--left:before {
-  background: url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
   content: "";
   display: inline-block;
   height: 20px;
@@ -324,7 +324,7 @@ ul, ol, li {
 }
 .commenting--on-article:before {
   content: "";
-  background: url("http://127.0.0.1:8000/static/img/tujibebe/illustrations.png") no-repeat 0 -24em/150px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/illustrations.png") no-repeat 0 -24em/150px;
   height: 105px;
   overflow: auto;
   margin: 0 auto;
@@ -346,7 +346,7 @@ ul, ol, li {
   text-decoration: none;
 }
 .commenting__counter:before {
-  background: url("http://127.0.0.1:8000/static/img/tujibebe/checkbox-icons.png") no-repeat -15px -75px/50px;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/checkbox-icons.png") no-repeat -15px -75px/50px;
   content: "";
   display: inline-block;
   height: 20px;
@@ -448,7 +448,7 @@ ul, ol, li {
   text-transform: capitalize;
 }
 .component__super .super-title:after {
-  background: #fff url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
+  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
   content: "";
   display: block;
   padding: 10px 0;
@@ -498,7 +498,7 @@ ul, ol, li {
   padding: 10px 0;
 }
 .footer-page__body:after {
-  background: #ffffff url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
+  background: #ffffff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
   content: "";
   display: block;
   padding: 20px 0;
@@ -609,7 +609,7 @@ select:focus-visible {
 }
 
 select {
-  background: url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png") 285px -200px/180px no-repeat;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 285px -200px/180px no-repeat;
 }
 
 textarea {
@@ -639,7 +639,7 @@ input[type=checkbox]#id_terms_and_conditions:before {
   width: 24px;
 }
 input[type=checkbox]#id_terms_and_conditions.is-on:before {
-  background: #00d79b url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png") -120px -50px/180px no-repeat;
+  background: #00d79b url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") -120px -50px/180px no-repeat;
 }
 
 .terms_and_conditions-link {
@@ -875,7 +875,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 
 #profile,
 #search {
-  background-image: url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 245px;
@@ -976,7 +976,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-transform: capitalize;
 }
 .search-page .heading__component-title:after {
-  background: #fff url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
+  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
   content: "";
   display: block;
   padding: 10px 0;
@@ -1023,7 +1023,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 .search__cta {
   background-color: transparent;
-  background-image: url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
   background-repeat: no-repeat;
   background-position: 0 -112px;
   background-size: 235px;
@@ -1063,7 +1063,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 .section-banners__inner {
   align-items: center;
-  background-image: url("http://127.0.0.1:8000/static/img/tujibebe/sections-bg2.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/sections-bg2.png");
   background-position: -110px 5px;
   background-size: inherit;
   background-repeat: repeat;
@@ -1117,7 +1117,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 .section-banners .heading__primary:after {
   content: "";
-  background-image: url("http://127.0.0.1:8000/static/img/tujibebe/icon-sprite.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
   background-size: 250px;
   background-repeat: no-repeat;
   display: block;
