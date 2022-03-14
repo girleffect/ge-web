@@ -71,6 +71,14 @@
         OUTSTANDING:
         - client_session_id
     -->
+    {% if self %}
+        {% for translation in self.get_translations.live %}
+            {% get_language_info for translation.locale.language_code as lang %}
+            <a href="{% pageurl translation.specific %}" rel="alternate" hreflang="{{ language_code }}">
+                {{ lang.name_local }}
+            </a>
+        {% endfor %}
+    {% endif %}
     {% if settings.home.SiteSettings.ga_tag_manager %}
      <noscript>
        <iframe src="//www.googletagmanager.com/ns.html?id={{settings.home.SiteSettings.ga_tag_manager}}&client_session_id={{request.session.MOLO_GA_SESSION_FOR_NOSCRIPT}}&page_title={% if self.seo_title %}{{ self.seo_title|urlencode }}{% else %}{{ self.title|urlencode }}{% endif %}"
