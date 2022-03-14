@@ -17,7 +17,7 @@ import os
 import environ
 import sentry_sdk
 from django.conf import locale
-from django.conf.global_settings import LANGUAGES
+from django.conf import global_settings
 from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()
@@ -189,7 +189,7 @@ WAGTAIL_SITE_NAME = "geweb"
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = "http://example.com"
 
-LANGUAGES = LANGUAGES + [
+LANGUAGES = global_settings.LANGUAGES + [
     ("sw-tz", "Tanzanian Swahili"),
     ("ha", "Hausa"),
     ("rw", "Kinyarwanda"),

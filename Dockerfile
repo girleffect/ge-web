@@ -1,5 +1,5 @@
 # Use an official Python runtime based on Debian 10 "buster" as a parent image.
-FROM python:3.8.1-slim-buster
+FROM python:3.10-buster
 
 # Create the user and group first as they shouldn't change often.
 # Specify the UID/GIDs so that they do not change somehow and mess with the
@@ -25,6 +25,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
     nginx \
     gosu \
+    gettext \
  && rm -rf /var/lib/apt/lists/*
 
 # Add nginx user to wagtail group so that Nginx can read/write to gunicorn socket
