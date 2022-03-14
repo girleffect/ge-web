@@ -4,15 +4,14 @@
 <div id="header" class="header">
     <header id="header-wrapper" class="header-wrapper">
         <div class="menu">
-          {% for language_code, language_name in LANGUAGES %}
-              {% get_language_info for language_code as lang %}
-
-              {% language language_code %}
-                  <a href="{% pageurl page.localized %}" rel="alternate" hreflang="{{ language_code }}">
+          {% if page %}
+              {% for translation in page.get_translations.live %}
+                  {% get_language_info for translation.locale.language_code as lang %}
+                  <a href="{% pageurl translation.specific %}" rel="alternate" hreflang="{{ language_code }}">
                       {{ lang.name_local }}
                   </a>
-              {% endlanguage %}
-          {% endfor %}
+              {% endfor %}
+          {% endif %}
             <div class="logo">
                 <a href="/" class="logo__anchor">
                     <img src="{% static 'img/zathu/zathu.png' %}" class="logo__image">
