@@ -1,0 +1,820 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-14 19:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: articles/models.py:40
+msgid "CSS color that should be applied to this section"
+msgstr ""
+
+#: articles/models.py:77
+msgid ""
+"Whether this article should appear with other featured articles at the top "
+"of the home page"
+msgstr ""
+
+#: articles/templates/articles/_patterns/article-teasers-recommendations.html:7
+#: articles/templates/articles/ninyampinga/article-teasers-recommendations.html:7
+msgid "Next up in"
+msgstr ""
+
+#: articles/templates/articles/_patterns/article-teasers.html:68
+#: home/templates/home/ninyampinga/article-teasers-listing_inner.html:54
+#: search/templates/search/_patterns/article-teasers.html:54
+msgid "Click here"
+msgstr ""
+
+#: articles/templates/articles/_patterns/article-teasers.html:76
+#: home/templates/home/yegna/_article-teasers.html:20
+#: search/templates/search/_patterns/article-teasers.html:62
+msgid "Read more"
+msgstr ""
+
+#: articles/templates/articles/_patterns/commenting.html:5
+msgid "Share your feedback"
+msgstr ""
+
+#: articles/templates/articles/_patterns/commenting.html:25
+msgid "Log in to leave a comment."
+msgstr ""
+
+#: articles/templates/articles/_patterns/commenting.html:33
+#: articles/templates/articles/springster/article.html:16
+#: articles/templates/articles/tujibebe/article.html:16
+msgid "Your thoughts"
+msgstr ""
+
+#: articles/templates/articles/_patterns/commenting.html:41
+msgid "This comment has been deleted. Please read our platform rules."
+msgstr ""
+
+#: articles/templates/articles/_patterns/commenting.html:53
+msgid "Report"
+msgstr ""
+
+#: articles/templates/articles/_patterns/commenting.html:58
+#: articles/templates/articles/_patterns/commenting.html:66
+#: comments/templates/admin/springster/reply.html:11
+#: comments/templates/admin/springster/reply.html:41
+#: comments/templates/admin/tujibebe/reply.html:11
+#: comments/templates/admin/tujibebe/reply.html:41
+msgid "Reply"
+msgstr ""
+
+#: articles/templates/articles/_patterns/commenting.html:66
+msgid "Replies"
+msgstr ""
+
+#: articles/templates/articles/_patterns/pagination.html:10
+#: search/templates/search/ninyampinga/search.html:24
+#: search/templates/search/springster/search.html:25
+#: search/templates/search/tujibebe/search.html:25
+#: search/templates/search/zathu/search.html:23
+msgid "Prev"
+msgstr ""
+
+#: articles/templates/articles/_patterns/pagination.html:22
+#: search/templates/search/ninyampinga/search.html:36
+#: search/templates/search/springster/search.html:37
+#: search/templates/search/tujibebe/search.html:37
+#: search/templates/search/zathu/search.html:35
+msgid "Next"
+msgstr ""
+
+#: articles/templates/articles/ninyampinga/article-teasers-recommendations.html:39
+msgid "Read article"
+msgstr ""
+
+#: articles/templates/articles/ninyampinga/article.html:17
+#: articles/templates/articles/springster/article.html:38
+msgid "Read more about"
+msgstr ""
+
+#: articles/templates/articles/tags/breadcrumbs.html:7
+#: comments/templates/admin/springster/reply.html:9
+#: comments/templates/admin/tujibebe/reply.html:9
+#: geweb/templates/_patterns/_nav.html:7 geweb/templates/_patterns/nav.html:8
+#: profiles/templates/profiles/tujibebe/account.html:50
+msgid "Home"
+msgstr ""
+
+#: articles/templates/articles/yegna/_article-teasers.html:26
+#: search/templates/search/yegna/search.html:31
+msgid "See more"
+msgstr ""
+
+#: articles/templates/articles/yegna/article.html:6
+msgid "Meet the Yegna cast"
+msgstr ""
+
+#: articles/templates/articles/yegna/article.html:29
+msgid "Go back to"
+msgstr ""
+
+#: articles/templates/articles/yegna/section.html:18
+msgid "Featured episode"
+msgstr ""
+
+#: comments/templates/admin/springster/reply.html:10
+#: comments/templates/admin/tujibebe/reply.html:10
+msgid "Comments"
+msgstr ""
+
+#: comments/templates/admin/springster/reply.html:19
+#: comments/templates/admin/tujibebe/reply.html:19
+msgid "Comment Reply"
+msgstr ""
+
+#: comments/templates/admin/springster/reply.html:34
+#: comments/templates/admin/tujibebe/reply.html:34
+msgid "Replying to"
+msgstr ""
+
+#: comments/templates/admin/springster/reply.html:57
+#: comments/templates/admin/tujibebe/reply.html:57
+msgid "Post Reply"
+msgstr ""
+
+#: forms/models.py:72
+msgid "Check this to allow users who are NOT logged in to complete forms."
+msgstr ""
+
+#: forms/models.py:77
+msgid "Check this to allow users to complete a form more than once."
+msgstr ""
+
+#: forms/models.py:83
+msgid ""
+"Whether to show the form results to the user after they have submitted their "
+"answer(s)."
+msgstr ""
+
+#: forms/models.py:92
+msgid ""
+"Whether to display the form questions to the user one at a time, instead of "
+"all at once."
+msgstr ""
+
+#: forms/models.py:99
+msgid "This will display the correct template for yourwords"
+msgstr ""
+
+#: forms/models.py:104
+msgid "This will display the correct template for contact forms"
+msgstr ""
+
+#: forms/models.py:112
+msgid "Form fields"
+msgstr ""
+
+#: forms/models.py:138
+msgid "Form Settings"
+msgstr ""
+
+#: forms/templates/forms/_patterns/form.html:10
+#: forms/templates/forms/springster/polls/_form-page-input-type-checks.html:34
+msgid "Submit"
+msgstr ""
+
+#: forms/templates/forms/_patterns/form.html:13
+#: forms/templates/forms/springster/polls/_form-page-input-type-checks.html:38
+msgid "You can fill in the from only one time."
+msgstr ""
+
+#: forms/templates/forms/_patterns/form.html:16
+#: forms/templates/forms/springster/polls/_form-page-input-type-checks.html:43
+msgid "To fill in the form, you must log in."
+msgstr ""
+
+#: forms/templates/forms/springster/polls/_form-page-input-type-checks.html:5
+#: forms/templates/forms/springster/polls/form-page.html:6
+#: forms/templates/forms/springster/polls/thank-you.html:5
+#: forms/templates/forms/tujibebe/polls/form-page.html:6
+#: forms/templates/forms/tujibebe/polls/thank-you.html:5
+#: home/templates/home/springster/_polls.html:5
+msgid "Cast Your Vote!"
+msgstr ""
+
+#: forms/templates/forms/springster/polls/thank-you.html:13
+#: forms/templates/forms/springster/yourwords/thank-you.html:11
+#: forms/templates/forms/tujibebe/polls/thank-you.html:13
+#: forms/templates/forms/tujibebe/yourwords/thank-you.html:11
+msgid "Thank you"
+msgstr ""
+
+#: forms/templates/forms/springster/polls/thank-you.html:38
+msgid "Back"
+msgstr ""
+
+#: geweb/templates/_patterns/search-input.html:7
+#: geweb/templates/_patterns/search-input.html:8
+#: geweb/templates/_patterns/search-input.html:9
+#: geweb/templates/yegna/header.html:36
+#: search/templates/search/_patterns/search-input.html:6
+#: search/templates/search/_patterns/search-input.html:7
+#: search/templates/search/_patterns/search-input.html:8
+#: search/templates/search/ninyampinga/search.html:5
+#: search/templates/search/springster/search.html:5
+#: search/templates/search/tujibebe/search.html:5
+#: search/templates/search/zathu/search.html:4
+msgid "Search"
+msgstr ""
+
+#: geweb/templates/yegna/footer.html:10
+msgid "All Rights Reserved."
+msgstr ""
+
+#: geweb/templates/yegna/header.html:17
+msgid "Menu"
+msgstr ""
+
+#: home/models.py:30
+msgid "theme"
+msgstr ""
+
+#: home/models.py:78
+msgid "Facebook Analytics App ID"
+msgstr ""
+
+#: home/models.py:82
+msgid "The tracking ID to be used to view Facebook Analytics"
+msgstr ""
+
+#: home/models.py:88
+msgid "Local GA Tag Manager"
+msgstr ""
+
+#: home/models.py:93
+msgid ""
+"Local GA Tag Manager tracking code (e.g GTM-XXX) to be used to view "
+"analytics on this site only"
+msgstr ""
+
+#: home/models.py:98
+msgid "Global GA Tag Manager"
+msgstr ""
+
+#: home/models.py:103
+msgid ""
+"Global GA Tag Manager tracking code (e.g GTM-XXX) to be used to view "
+"analytics on more than one site globally"
+msgstr ""
+
+#: home/models.py:108
+msgid "Google Search Console"
+msgstr ""
+
+#: home/models.py:112
+msgid "The Google Search Console verification code"
+msgstr ""
+
+#: home/templates/home/springster/_polls.html:15
+#: home/templates/home/springster/_yourwords.html:13
+msgid "Enter"
+msgstr ""
+
+#: home/templates/home/springster/_polls.html:17
+#: home/templates/home/springster/_yourwords.html:15
+msgid "Log in to answer"
+msgstr ""
+
+#: home/templates/home/tags/social_media_article.html:12
+msgid "Facebook"
+msgstr ""
+
+#: home/templates/home/tags/social_media_article.html:20
+msgid "Twitter"
+msgstr ""
+
+#: home/templates/home/tags/social_media_article.html:28
+msgid "Whatsapp"
+msgstr ""
+
+#: home/templates/home/tags/social_media_article.html:37
+msgid "Telegram"
+msgstr ""
+
+#: home/templates/home/tags/social_media_article.html:46
+msgid "Viber"
+msgstr ""
+
+#: home/templates/home/yegna/home.html:15
+msgid "Yegna launched the first ever teen TV Drama in Ethiopia"
+msgstr ""
+
+#: home/templates/home/yegna/home.html:25
+msgid "Yegna news"
+msgstr ""
+
+#: home/templates/home/yegna/home.html:41
+msgid "Meet the characters"
+msgstr ""
+
+#: home/templates/wagtailadmin/login.html:5
+msgid "Signing in…"
+msgstr ""
+
+#: home/templates/wagtailadmin/login.html:5
+msgid "Sign in"
+msgstr ""
+
+#: profiles/forms.py:67 profiles/forms.py:237
+#: profiles/templates/registration/_patterns/login-form.html:12
+msgid "Username"
+msgstr ""
+
+#: profiles/forms.py:70 profiles/forms.py:240
+msgid "This value must contain only letters, numbers and underscores."
+msgstr ""
+
+#: profiles/forms.py:84 profiles/forms.py:214 profiles/forms.py:276
+#: profiles/forms.py:291
+msgid "This value must contain only numbers."
+msgstr ""
+
+#: profiles/forms.py:86 profiles/forms.py:278
+#: profiles/templates/profiles/reset_password.html:25
+msgid "PIN"
+msgstr ""
+
+#: profiles/forms.py:119 profiles/forms.py:126
+msgid ""
+"Sorry, but that is an invalid username. Please don't use your phone number "
+"or email address in your username."
+msgstr ""
+
+#: profiles/forms.py:136 profiles/forms.py:150
+msgid "Date of Birth"
+msgstr ""
+
+#: profiles/forms.py:154
+#: profiles/templates/profiles/_patterns/profile-form.html:13
+msgid "Gender"
+msgstr ""
+
+#: profiles/forms.py:156
+#: profiles/templates/profiles/_patterns/profile-form.html:20
+msgid "Location"
+msgstr ""
+
+#: profiles/forms.py:179 profiles/forms.py:196
+msgid "This value must contain only           numbers."
+msgstr ""
+
+#: profiles/forms.py:183
+msgid "Old Password"
+msgstr ""
+
+#: profiles/forms.py:200
+msgid "New Password"
+msgstr ""
+
+#: profiles/forms.py:216
+msgid "Confirm Password"
+msgstr ""
+
+#: profiles/forms.py:225
+msgid "New passwords do not match."
+msgstr ""
+
+#: profiles/forms.py:293 profiles/templates/profiles/reset_password.html:31
+msgid "Confirm PIN"
+msgstr ""
+
+#: profiles/models.py:17
+msgid "Female"
+msgstr ""
+
+#: profiles/models.py:18
+msgid "Male"
+msgstr ""
+
+#: profiles/models.py:19
+msgid "Transgender"
+msgstr ""
+
+#: profiles/models.py:20
+msgid "Non-conforming/Non-binary"
+msgstr ""
+
+#: profiles/models.py:21
+msgid "Other"
+msgstr ""
+
+#: profiles/models.py:22
+msgid "Not comfortable sharing"
+msgstr ""
+
+#: profiles/models.py:78
+msgid "Prevent phone number in username / display name"
+msgstr ""
+
+#: profiles/models.py:84
+msgid "Prevent email in username / display name"
+msgstr ""
+
+#: profiles/models.py:89
+msgid "Number of security questions asked for password recovery"
+msgstr ""
+
+#: profiles/models.py:93
+msgid "Max number of password recovery retries before lockout"
+msgstr ""
+
+#: profiles/models.py:101
+msgid "Choose a Terms and Conditions page"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/change-password-form.html:25
+msgid "Old pin"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/change-password-form.html:28
+#: profiles/templates/profiles/reset_password.html:27
+msgid "(e.g. 2086)"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/change-password-form.html:34
+msgid "New pin"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/change-password-form.html:42
+msgid "Confirm New pin"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/change-password-form.html:49
+#: profiles/templates/profiles/_patterns/profile-form.html:26
+msgid "Save"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/forgot-password-form.html:19
+msgid "Security question"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/forgot-password-form.html:20
+msgid "Please answer the following security question."
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/forgot-password-form.html:26
+#: profiles/templates/profiles/ninyampinga/forgot_password.html:7
+#: profiles/templates/profiles/springster/forgot_password.html:6
+#: profiles/templates/profiles/tujibebe/forgot_password.html:6
+msgid "Forgot PIN"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/profile-form.html:6
+msgid "Date of birth"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/profile-form.html:26
+msgid "Update"
+msgstr ""
+
+#: profiles/templates/profiles/_patterns/register-form.html:21
+#: profiles/templates/profiles/zathu/_patterns/register-form.html:49
+#: profiles/templates/profiles/zathu/register.html:6
+msgid "Sign up"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/account.html:3
+#: profiles/templates/profiles/springster/account.html:3
+#: profiles/templates/profiles/tujibebe/account.html:3
+#: profiles/templates/profiles/zathu/account.html:3
+msgid "Not set."
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/account.html:7
+#: profiles/templates/profiles/springster/account.html:7
+#: profiles/templates/profiles/tujibebe/account.html:14
+#: profiles/templates/profiles/zathu/account.html:18
+msgid "Date of Birth: "
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/account.html:18
+#: profiles/templates/profiles/springster/account.html:18
+#: profiles/templates/profiles/tujibebe/account.html:25
+#: profiles/templates/profiles/zathu/account.html:29
+msgid "Gender:"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/account.html:25
+#: profiles/templates/profiles/springster/account.html:25
+#: profiles/templates/profiles/tujibebe/account.html:32
+#: profiles/templates/profiles/zathu/account.html:36
+msgid "Location:"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/account.html:33
+#: profiles/templates/profiles/springster/account.html:33
+#: profiles/templates/profiles/tujibebe/viewprofile.html:11
+#: profiles/templates/profiles/zathu/profile.html:8
+msgid "Log out"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/account.html:34
+#: profiles/templates/profiles/springster/account.html:34
+msgid "Edit My Profile"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/account.html:35
+#: profiles/templates/profiles/springster/account.html:35
+msgid "Change my pin"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/change-password-success.html:7
+#: profiles/templates/profiles/springster/change-password-success.html:6
+#: profiles/templates/profiles/tujibebe/change-password-success.html:6
+#: profiles/templates/profiles/zathu/change-password-success.html:5
+msgid "PIN Changed"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/change-password-success.html:11
+#: profiles/templates/profiles/ninyampinga/change-password-success.html:15
+#: profiles/templates/profiles/springster/change-password-success.html:10
+#: profiles/templates/profiles/springster/change-password-success.html:14
+#: profiles/templates/profiles/tujibebe/change-password-success.html:10
+#: profiles/templates/profiles/tujibebe/change-password-success.html:14
+#: profiles/templates/profiles/zathu/change-password-success.html:9
+#: profiles/templates/profiles/zathu/change-password-success.html:13
+msgid "Your PIN has been changed sucessfully."
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/change-password-success.html:18
+#: profiles/templates/profiles/springster/change-password-success.html:17
+#: profiles/templates/profiles/tujibebe/change-password-success.html:17
+#: profiles/templates/profiles/zathu/change-password-success.html:16
+msgid "Continue to Sign In"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/done.html:7
+#: profiles/templates/profiles/springster/done.html:6
+#: profiles/templates/profiles/tujibebe/done.html:6
+#: profiles/templates/profiles/zathu/done.html:6
+msgid "Thank you for joining!"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/done.html:10
+#: profiles/templates/profiles/springster/done.html:9
+#: profiles/templates/profiles/tujibebe/done.html:9
+msgid "Let us know more about yourself."
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/done.html:15
+#: profiles/templates/profiles/springster/done.html:14
+#: profiles/templates/profiles/tujibebe/done.html:14
+msgid "Profile"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/done.html:16
+#: profiles/templates/profiles/springster/done.html:15
+#: profiles/templates/profiles/tujibebe/done.html:15
+msgid "Home Page"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/edit-profile.html:6
+#: profiles/templates/profiles/springster/edit-profile.html:5
+#: profiles/templates/profiles/tujibebe/edit-profile.html:5
+msgid "My profile"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/password.html:7
+#: profiles/templates/profiles/springster/password.html:6
+#: profiles/templates/profiles/tujibebe/password.html:6
+#: profiles/templates/profiles/zathu/password.html:6
+msgid "Change Pin"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/register.html:6
+#: profiles/templates/registration/ninyampinga/login.html:14
+msgid "Register"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/register.html:10
+msgid "Already a member?"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/register.html:12
+msgid "Login"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/register.html:17
+#: profiles/templates/profiles/springster/register.html:16
+#: profiles/templates/profiles/tujibebe/register.html:16
+msgid "Please complete this form to join"
+msgstr ""
+
+#: profiles/templates/profiles/ninyampinga/viewprofile.html:6
+#: profiles/templates/profiles/springster/viewprofile.html:5
+#: profiles/templates/profiles/tujibebe/viewprofile.html:5
+#: profiles/templates/profiles/zathu/profile.html:6
+msgid "Hello "
+msgstr ""
+
+#: profiles/templates/profiles/reset_password.html:6
+#: profiles/templates/profiles/reset_password.html:34
+msgid "Reset PIN"
+msgstr ""
+
+#: profiles/templates/profiles/springster/register.html:5
+msgid "Join Springster"
+msgstr ""
+
+#: profiles/templates/profiles/springster/register.html:9
+#: profiles/templates/profiles/tujibebe/register.html:9
+msgid "Already Joined?"
+msgstr ""
+
+#: profiles/templates/profiles/springster/register.html:11
+#: profiles/templates/profiles/tujibebe/register.html:11
+msgid "Login in here"
+msgstr ""
+
+#: profiles/templates/profiles/tujibebe/account.html:7
+msgid "When you type comments your name will appear as:"
+msgstr ""
+
+#: profiles/templates/profiles/tujibebe/account.html:42
+msgid "Change your pin"
+msgstr ""
+
+#: profiles/templates/profiles/tujibebe/register.html:5
+msgid "Join Tujibebe"
+msgstr ""
+
+#: profiles/templates/profiles/tujibebe/viewprofile.html:8
+#: profiles/templates/profiles/zathu/profile.html:10
+msgid "Your profile"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/_patterns/register-form.html:9
+msgid "Choose a username"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/_patterns/register-form.html:11
+msgid ""
+"Please do not use your real name, phone number or email address as it's "
+"unsafe."
+msgstr ""
+
+#: profiles/templates/profiles/zathu/_patterns/register-form.html:19
+msgid "Display name"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/_patterns/register-form.html:21
+msgid ""
+"Girl Effect values your online security, therefore we hide your username and "
+"allow you to comment and interact with the site anonymously. If you would "
+"like to interact with other people, like your friends to be able to see you "
+"as a username and not anonymous, update your username here"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/_patterns/register-form.html:29
+msgid "Choose a 4-digit pin"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/_patterns/register-form.html:43
+msgid " I accept the Terms and Conditions"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/account.html:7
+msgid "When you type comments your name will appear as: "
+msgstr ""
+
+#: profiles/templates/profiles/zathu/account.html:44
+msgid "Update Profile"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/done.html:9
+msgid "Let us know your birthday to get access to exclusive content."
+msgstr ""
+
+#: profiles/templates/profiles/zathu/done.html:15
+msgid "Skip"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/edit-profile.html:5
+msgid "Edit your profile"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/forgot_password.html:6
+#: profiles/templates/registration/tujibebe/login.html:18
+msgid "Forgot Pin"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/forgot_password.html:10
+#: profiles/templates/profiles/zathu/register.html:10
+msgid "Not a member yet? Join us by signing up below."
+msgstr ""
+
+#: profiles/templates/profiles/zathu/profile.html:18
+msgid "Change Your Password"
+msgstr ""
+
+#: profiles/templates/profiles/zathu/register.html:16
+msgid "Already joined?"
+msgstr ""
+
+#: profiles/templates/registration/_patterns/login-form.html:7
+msgid "Your username and pin do not match. Please try again."
+msgstr ""
+
+#: profiles/templates/registration/_patterns/login-form.html:19
+msgid "4-digit pin"
+msgstr ""
+
+#: profiles/templates/registration/_patterns/login-form.html:22
+msgid "Eg.: 2086"
+msgstr ""
+
+#: profiles/templates/registration/_patterns/login-form.html:26
+#: profiles/templates/registration/ninyampinga/login.html:8
+#: profiles/templates/registration/springster/login.html:6
+#: profiles/templates/registration/tujibebe/login.html:6
+#: profiles/templates/registration/zathu/login.html:6
+msgid "Log in"
+msgstr ""
+
+#: profiles/templates/registration/ninyampinga/login.html:12
+#: profiles/templates/registration/springster/login.html:10
+#: profiles/templates/registration/tujibebe/login.html:10
+msgid "Not a member yet?"
+msgstr ""
+
+#: profiles/templates/registration/springster/login.html:12
+#: profiles/templates/registration/tujibebe/login.html:12
+msgid "Sign up here"
+msgstr ""
+
+#: profiles/templates/registration/springster/login.html:18
+msgid "Forgot PIN?"
+msgstr ""
+
+#: profiles/templates/registration/zathu/login.html:11
+msgid "Are you not a member yet? Sign up"
+msgstr ""
+
+#: profiles/templates/registration/zathu/login.html:19
+msgid "Forgotten your pin?"
+msgstr ""
+
+#: profiles/views.py:43
+msgid "Sorry, but that is an invalid username."
+msgstr ""
+
+#: profiles/views.py:128
+msgid "The old password is incorrect."
+msgstr ""
+
+#: profiles/views.py:152
+msgid "Too many attempts. Please try again later."
+msgstr ""
+
+#: profiles/views.py:161
+msgid "The details you have entered are invalid. Please try again."
+msgstr ""
+
+#: profiles/views.py:182
+msgid "There are no security questions stored against your profile."
+msgstr ""
+
+#: profiles/views.py:271
+msgid "The two PINs that you entered do not match. Please try again."
+msgstr ""
+
+#: search/templates/search/ninyampinga/search.html:9
+#: search/templates/search/springster/search.html:9
+#: search/templates/search/tujibebe/search.html:9
+#: search/templates/search/zathu/search.html:7
+msgid "results found for"
+msgstr ""
+
+#: search/templates/search/ninyampinga/search.html:43
+#: search/templates/search/springster/search.html:44
+#: search/templates/search/tujibebe/search.html:44
+#: search/templates/search/yegna/search.html:58
+#: search/templates/search/zathu/search.html:42
+msgid "Nothing was found matching"
+msgstr ""
+
+#: search/templates/search/ninyampinga/search.html:46
+#: search/templates/search/springster/search.html:47
+#: search/templates/search/tujibebe/search.html:47
+#: search/templates/search/yegna/search.html:61
+#: search/templates/search/zathu/search.html:45
+msgid "Please type something into the search box"
+msgstr ""
