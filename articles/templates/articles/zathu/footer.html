@@ -1,11 +1,16 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 <div class="footer-page">
     <h3 class="heading heading--title">{{ page.title }}</h3>
     {% if page.subtitle %}
         <p class="subtitle">{{ page.subtitle }}</p>
     {% endif %}
-
+    {% if page.image %}
+        <div class="article-page__image">
+            {% image page.image max-360x200 as article_image %}
+            <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
+        </div>
+    {% endif %}
     {% include_block page.body %}
 
     {% if page.tags.all.count %}

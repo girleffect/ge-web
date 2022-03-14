@@ -6,9 +6,9 @@
     </div>
     <div class="polls__inner">
         <h1 class="forms__title">{{form.title}}</h1>
-        
+
         {% if form.introduction %}
-            <h2 class="forms__subtitle">{{form.introduction|safe}}</h3>
+            <h3 class="forms__subtitle">{{form.introduction|safe}}</h3>
         {% endif %}
 
         {% if user.is_authenticated %}

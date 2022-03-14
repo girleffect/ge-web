@@ -1,4 +1,4 @@
-{% load article_tags comments home_tags i18n wagtailcore_tags wagtailimages_tags%}
+{% load article_tags comments home_tags i18n wagtailcore_tags wagtailimages_tags %}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -24,11 +24,11 @@
                 <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
             </div>
         {% endif %}
-        
+
         {% include_block page.body %}
     </div>
     {% if page.tags.all.count %}
-        <div class="tags-list">     
+        <div class="tags-list">
             {% for tag in page.tags.all %}
                 <span class="tags-list__item">#{{ tag.name}}</span>
             {% endfor %}
