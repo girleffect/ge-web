@@ -1,7 +1,12 @@
 from django import template
 from wagtail.core.models import Page, Site
 
-from articles.models import ArticlePage, FooterPage, SectionIndexPage, SectionPage
+from articles.models import (  # isort:skip
+    ArticlePage,
+    FooterPage,
+    SectionIndexPage,
+    SectionPage,
+)
 
 register = template.Library()
 
