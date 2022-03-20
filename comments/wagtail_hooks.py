@@ -13,8 +13,11 @@ class CommentAdmin(ModelAdmin):
     model = ThreadedComment
     menu_label = "Comments"
     menu_order = 200
+    menu_icon = "comment"
     add_to_settings_menu = False
     list_per_page = 25
+    inspect_view_enabled = True
+    empty_value_display = 'None'
     index_view_extra_js = [
         "js/admin/comments_index.js",
     ]
@@ -29,6 +32,7 @@ class CommentAdmin(ModelAdmin):
         "flags",
     )
     list_export = (
+        "wagtail_site",
         "user_name",
         "comment",
         "parent_comment",
@@ -41,7 +45,6 @@ class CommentAdmin(ModelAdmin):
     list_filter = (
         "submit_date",
         "is_removed",
-        "wagtail_site",
     )
     search_fields = (
         "user",
