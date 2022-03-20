@@ -29,7 +29,6 @@ class CommentAdmin(ModelAdmin):
         "flags",
     )
     list_export = (
-        "wagtail_site",
         "user_name",
         "comment",
         "parent_comment",
