@@ -9,6 +9,7 @@ from wagtail.core.models import Page
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
+from wagtailmedia.edit_handlers import MediaChooserPanel
 
 from .blocks import GEMediaBlock
 from .utils import paginate
@@ -88,6 +89,13 @@ class ArticlePage(Page):
         on_delete=models.SET_NULL,
         related_name="+",
     )
+    featured_media = models.ForeignKey(
+        "wagtailmedia.Media",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
     body = StreamField(
         [
             ("paragraph", blocks.RichTextBlock()),
@@ -100,6 +108,7 @@ class ArticlePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("subtitle"),
         ImageChooserPanel("image"),
+        MediaChooserPanel("featured_media"),
         StreamFieldPanel("body"),
         FieldPanel("tags"),
     ]
