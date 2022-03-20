@@ -14,23 +14,23 @@ class CommentAdmin(ModelAdmin):
     menu_label = "Comments"
     menu_order = 200
     add_to_settings_menu = False
+    list_per_page = 25
     index_view_extra_js = [
         "js/admin/comments_index.js",
     ]
     list_display = (
+        "wagtail_site",
         "user_name",
-        "site",
         "comment",
         "parent_comment",
         "moderator_reply",
         "submit_date",
-        "is_public",
         "is_removed",
         "flags",
     )
     list_export = (
+        "wagtail_site",
         "user_name",
-        "site",
         "comment",
         "parent_comment",
         "moderator_reply",
@@ -39,9 +39,16 @@ class CommentAdmin(ModelAdmin):
         "is_removed",
         "flags",
     )
-    list_filter = ("site", "submit_date", "is_public", "is_removed")
-    search_fields = ("user", "comment")
-    export_filename = "comments"
+    list_filter = (
+        "submit_date",
+        "is_removed",
+        "wagtail_site",
+    )
+    search_fields = (
+        "user",
+        "comment",
+    )
+    export_filename = "Comments Export"
     panels = [
         MultiFieldPanel(
             [
@@ -53,6 +60,9 @@ class CommentAdmin(ModelAdmin):
 
     def flags(self, obj):
         return CommentFlag.objects.filter(comment=obj).count()
+
+    def wagtail_site(self, obj):
+        return obj.content_object.get_site().site_name
 
     def moderator_reply(self, obj):
         # We only want to reply to root comments
