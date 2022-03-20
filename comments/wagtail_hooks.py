@@ -17,7 +17,7 @@ class CommentAdmin(ModelAdmin):
     add_to_settings_menu = False
     list_per_page = 25
     inspect_view_enabled = True
-    empty_value_display = 'None'
+    empty_value_display = "None"
     index_view_extra_js = [
         "js/admin/comments_index.js",
     ]
