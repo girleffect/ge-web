@@ -33,12 +33,9 @@ class CommentAdmin(ModelAdmin):
         "flags",
     )
     list_export = (
-        "wagtail_site",
         "user_name",
         "comment",
         "submit_date",
-        "is_removed",
-        "flags",
     )
     list_filter = (
         "submit_date",
