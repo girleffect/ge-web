@@ -124,17 +124,17 @@ $color-green-lime           :     color(brand, green-lime);
 $color-magenta-black        :     color(brand, magenta-black);
 
 $themes: (
-    white: $white,
-    dark_grey: $dark_grey,
-    light_cyan: $light_cyan,
-    strong_cyan: $strong_cyan,
-    vivid_red: $vivid_red,
-    pink: $pink,
-    vivid_pink: $vivid_pink,
-    plum: $plum,
-    yellow: $yellow,
-    orange: $orange,
-    lime_green: $lime_green
+  white: $white,
+  dark_grey: $dark_grey,
+  light_cyan: $light_cyan,
+  strong_cyan: $strong_cyan,
+  vivid_red: $vivid_red,
+  pink: $pink,
+  vivid_pink: $vivid_pink,
+  plum: $plum,
+  yellow: $yellow,
+  orange: $orange,
+  lime_green: $lime_green
 );
 
 $section_themes: (
@@ -301,7 +301,7 @@ $section_themes: (
 
 
 //DIRECTORY
-$staticPath: 'http://127.0.0.1:8000/static/';
+$staticPath: 'https://standard-wagtail.prd-hub.ie.gehosting.org/static/';
 
 
 //FONTSIZES

@@ -1,4 +1,4 @@
-{% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
+{% load wagtailcore_tags wagtailimages_tags article_tags i18n home_tags %}
 
 <div class="homepage">
     <div class="article-teaser">
@@ -8,7 +8,7 @@
                     {% include "../_patterns/article-teasers-listing_inner.html" %}
                 {% endif %}
             {% endfor %}
-            
+
             <div class="teaser-stacklist-wrapper">
                 {% for post in articlepages %}
                     {% if not forloop.counter == 1 %}

@@ -25,6 +25,30 @@
         text-indent: 125%;
         width: 48px;
     }
+    &--inner {
+        background-color: $very_light_gray;
+        padding: 10px 5px 10px;
+        margin: 15px 15px 0;
+        .search__cta,
+        input[type=submit] {
+            background-color: $dark_violet;
+            background-image: none;
+            color: $yellow;
+            font-family: "TwCenMTStd-Bold";
+            font-size: 18px;
+            font-weight: normal;
+            margin: 10px auto 10px;
+            padding: 10px 24px;
+            position: relative;
+            text-overflow: inherit;
+            text-transform: uppercase;
+            text-indent: unset;
+            width: 50%;   
+        }
+        input.search__input {
+            width: 80%;
+        }
+    }
     &--footer {
         padding: 0 0 5px;
     }

@@ -1,4 +1,4 @@
-{% load comments home_tags i18n wagtailcore_tags article_tags %}
+{% load article_tags comments threadedcomments_tags home_tags i18n wagtailcore_tags wagtailimages_tags %}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -8,22 +8,25 @@
         {% if page.subtitle %}
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
-        
-        <!-- START: CURRENTLY STATIC - Needs to be updated to be -->
+
         {% get_comment_count for page as comment_count %}
         {% if comment_count > 0 %}
-            <div class="comments-counter">
+            <div class="article-page__commenting-counter">
                 <a href="#comments" class="call-to-action__nav-item-text">
                     {% trans "Your thoughts" %} ({{ comment_count }})
                 </a>
             </div>
         {% endif %}
-        <!-- END: CURRENTLY STATIC -->
-
+        {% if page.image %}
+            <div class="article-page__image">
+                {% image page.image max-360x200 as article_image %}
+                <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
+            </div>
+        {% endif %}
         {% include_block page.body %}
     </div>
     {% if page.tags.all.count %}
-        <div class="tags-list">     
+        <div class="tags-list">
             {% for tag in page.tags.all %}
                 <span class="tags-list__item">#{{ tag.name}}</span>
             {% endfor %}
@@ -41,7 +44,7 @@
         </div>
     {% endif %}
 
-    {% include "./commenting.html" %}
+    {% include "../_patterns/commenting.html" %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}
 </div>

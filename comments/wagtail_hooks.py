@@ -5,6 +5,7 @@ from threadedcomments.models import ThreadedComment
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
 from wagtail.core import hooks
+from wagtail.core.models import Site
 
 from .views import AdminCommentReplyView
 
@@ -13,35 +14,38 @@ class CommentAdmin(ModelAdmin):
     model = ThreadedComment
     menu_label = "Comments"
     menu_order = 200
+    menu_icon = "comment-large"
     add_to_settings_menu = False
+    list_per_page = 25
+    inspect_view_enabled = True
+    empty_value_display = "None"
     index_view_extra_js = [
         "js/admin/comments_index.js",
     ]
     list_display = (
+        "wagtail_site",
         "user_name",
-        "site",
         "comment",
         "parent_comment",
         "moderator_reply",
         "submit_date",
-        "is_public",
         "is_removed",
         "flags",
     )
     list_export = (
         "user_name",
-        "site",
         "comment",
-        "parent_comment",
-        "moderator_reply",
         "submit_date",
-        "is_public",
-        "is_removed",
-        "flags",
     )
-    list_filter = ("site", "submit_date", "is_public", "is_removed")
-    search_fields = ("user", "comment")
-    export_filename = "comments"
+    list_filter = (
+        "submit_date",
+        "is_removed",
+    )
+    search_fields = (
+        "user",
+        "comment",
+    )
+    export_filename = "Comments Export"
     panels = [
         MultiFieldPanel(
             [
@@ -53,6 +57,17 @@ class CommentAdmin(ModelAdmin):
 
     def flags(self, obj):
         return CommentFlag.objects.filter(comment=obj).count()
+
+    def wagtail_site(self, obj):
+        return obj.content_object.get_site().site_name
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        site = Site.find_for_request(request)
+        if site:
+            # Only show comments for specific wagtail site
+            return qs.filter(title=site.hostname)
+        return qs
 
     def moderator_reply(self, obj):
         # We only want to reply to root comments

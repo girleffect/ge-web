@@ -13,7 +13,7 @@
         <div class="nav">
             <ul class="nav-list nav-list--column1">
                 <li class="nav-list__item">
-                  <a href="/" class="nav-list__anchor{% if request.path == '/' %} is-selected{% endif %}">Home</a>
+                    <a href="/" class="nav-list__anchor{% if request.path == '/' %} is-selected{% endif %}">Home</a>
                 </li>
                 {% if sections %}
                     {% for section in sections|slice:":4" %}
@@ -60,8 +60,8 @@
                     </li>
                     <li class="nav-list__item">
                         <form method="post" action="{{ LOGOUT_URL }}" novalidate>
-                            {% csrf_token %}
-                            <input class="nav-list__anchor" value="Log out" type="submit">
+                        {% csrf_token %}
+                            <input class="nav-list__anchor" value="Log out" type="submit" />
                         </form>
                     </li>
                 {% endif %}
@@ -78,7 +78,6 @@
             </div>
             {% social_media_footer %}
         </div>
-        
     </div>
 
 
@@ -92,18 +91,7 @@
             {% include "./_search-form.html" %}
         </div>
 
-        {% if languages|length > 1 %}
-            <div class="languages languages--footer">
-                <p class="languages__label">Languages:</p>
-                {% for language in languages %}
-                    <a href="{% url 'locale_set' language.locale %}?next={{request.path}}{% if request.GET.urlencode %}?{{ request.GET.urlencode }}{% endif %}" class="languages__anchor {% if request.LANGUAGE_CODE == language.locale %} is-active{% endif %}">
-                        {{ language }}
-                    </a>
-                {% endfor %}
-            </div>
-        {% endif %}
-        
-        
+
         <div class="copyright">
             <p class="copyright__disclaimer">
                 &copy; {% now "Y" %} Girl Effect. All Rights Reserved.

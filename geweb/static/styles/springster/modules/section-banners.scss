@@ -11,6 +11,7 @@
         justify-content: space-between;
         padding: 0 8px;
         position: relative;
+        overflow: hidden;
         @each $theme, $color in $themes {
             &--#{$theme} {
                 background-color: $color;

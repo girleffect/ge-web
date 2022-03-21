@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for geweb project.
 
@@ -14,6 +15,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 import environ
+import sentry_sdk
+from django.conf import global_settings, locale
+from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()
 
@@ -27,7 +31,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY") or DEFAULT_SECRET_KEY
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 SITE_ID = 1
-# Application definition
 
 INSTALLED_APPS = [
     "home",
@@ -55,6 +58,7 @@ INSTALLED_APPS = [
     "wagtail.core",
     "wagtail.locales",
     "wagtailfontawesome",
+    "wagtailmedia",
     "modelcluster",
     "taggit",
     "django.contrib.admin",
@@ -63,18 +67,19 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     "wagtail.contrib.simple_translation",
 ]
 COMMENTS_APP = "threadedcomments"
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
-    "django.middleware.locale.LocaleMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
@@ -117,10 +122,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "geweb.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -128,9 +129,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -148,10 +146,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
-
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en"
 
 TIME_ZONE = "UTC"
 
@@ -162,11 +157,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-WAGTAILSIMPLETRANSLATION_SYNC_PAGE_TREE = True
+WAGTAILSIMPLETRANSLATION_SYNC_PAGE_TREE = False
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -197,12 +189,52 @@ WAGTAIL_SITE_NAME = "geweb"
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = "http://example.com"
 
-WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
-    ("en", "English"),
-    ("fr", "French"),
-    ("es", "Spanish"),
+LANGUAGES = global_settings.LANGUAGES + [
+    ("sw-tz", "Tanzanian Swahili"),
+    ("ha", "Hausa"),
+    ("rw", "Kinyarwanda"),
+    ("id", "Indonesian"),
+    ("pt", "Portuguese"),
+    ("sw", "Swahili"),
+    ("bn", "Bengali"),
+    ("ur", "Urdu"),
+    ("ny", "Chichewa"),
+    ("am", "Amharic"),
 ]
 
+EXTRA_LANG_INFO = {
+    "rw": {
+        "bidi": False,
+        "code": "rw",
+        "name": "Kinyarwanda",
+        "name_local": "Kinyarwanda",
+    },
+    "ha": {"bidi": False, "code": "ha", "name": "Hausa", "name_local": "Hausa"},
+    "bn": {"bidi": False, "code": "bn", "name": "Bengali", "name_local": "বাংলা"},
+    "ny": {
+        "bidi": False,
+        "code": "ny",
+        "name": "Chichewa",
+        "name_local": "Chichewa",
+    },
+    "am": {
+        "bidi": False,
+        "code": "am",
+        "name": "Amharic",
+        "name_local": "አማርኛ",
+    },
+    "sw-tz": {
+        "bidi": False,
+        "code": "sw-tz",
+        "name": "Tanzanian Swahili",
+        "name_local": "Kiswahili",
+    },
+}
+locale.LANG_INFO.update(EXTRA_LANG_INFO)
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, "locale"),
+]
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES
 TAGGIT_CASE_INSENSITIVE = True
 
 LOGIN_URL = "/profiles/login/"
@@ -219,3 +251,13 @@ if AWS_STORAGE_BUCKET_NAME and AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY:
     INSTALLED_APPS += [
         "storages",
     ]
+
+SENTRY_DSN = os.environ.get("SENTRY_DSN", os.environ.get("RAVEN_DSN", ""))
+
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        send_default_pii=True,
+        traces_sample_rate=float(os.environ.get("SENTRY_TRACES_SAMPLE_RATE", 0.0)),
+    )

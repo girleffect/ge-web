@@ -1,0 +1,1215 @@
+/*!***********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./static/styles/tujibebe/tujibebe.scss ***!
+  \***********************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap);
+/*!***************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./static/styles/tujibebe/tujibebe.scss (1) ***!
+  \***************************************************************************************************************************************************************/
+html, body {
+  background: #909497;
+  position: relative;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  margin: 0 auto;
+  line-height: 1.3;
+  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+ul, ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tujibebe {
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 360px;
+}
+
+.account-list {
+  text-align: center;
+}
+.account-list__item {
+  margin: 0 0 10px;
+}
+.account-list__item--leading {
+  display: inline-block;
+}
+.account-list__label {
+  color: #434343;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px 0 10px 0;
+}
+.account-list__info {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.article-heading {
+  padding: 25px 8px 15px;
+  text-align: center;
+}
+.article-heading .heading__primary {
+  color: #353638;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+.article-page {
+  background: #fff;
+}
+.article-page-inner {
+  background: #fff;
+  padding: 15px 0 20px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.article-page__body {
+  background: #fff;
+  padding: 0 0 25px;
+}
+.article-page__body:after {
+  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
+  content: "";
+  display: block;
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 65%;
+}
+.article-page__recommendations {
+  padding: 30px 0 0;
+}
+.article-page__image {
+  height: 160px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.article-page__thumbnail {
+  border: 0;
+  height: auto;
+  width: 100%;
+}
+.article-page .subheading {
+  color: #353638;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+.article-page .call-to-action__nav-item-text {
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+.block-paragraph {
+  font-size: 15px;
+  padding: 10px;
+}
+.block-paragraph p {
+  margin: 5px 0;
+}
+.block-image {
+  overflow: auto;
+}
+.block-image img {
+  height: auto;
+  width: 100%;
+}
+
+.article-teasers {
+  position: relative;
+}
+
+.teaser-stacklist {
+  overflow: auto;
+}
+.teaser-stacklist__item {
+  border-bottom: 4px solid #eff3f5;
+  color: #000;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+.teaser-stacklist__item--split {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+.teaser-stacklist__title {
+  color: #434343;
+  font-size: 20px;
+  font-weight: 500;
+}
+.teaser-stacklist__subtitle {
+  color: #909497;
+  display: block;
+  font-size: 14px;
+  overflow: hidden;
+  text-transform: none;
+  text-overflow: ellipsis;
+}
+.teaser-stacklist__anchor {
+  cursor: pointer;
+  text-decoration: none;
+}
+.teaser-stacklist__anchor:hover {
+  outline: none;
+}
+.teaser-stacklist__thumbnail {
+  max-width: 30%;
+  overflow: hidden;
+}
+.teaser-stacklist__thumbnail img {
+  width: initial;
+  height: inherit;
+}
+.teaser-stacklist__thumbnail-link {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 96px;
+  width: 96px;
+}
+.teaser-stacklist__content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+}
+.teaser-stacklist__content--split {
+  width: 67%;
+}
+.teaser-stacklist__cta {
+  position: relative;
+}
+
+.breadcrumbs {
+  padding: 30px 0;
+  position: relative;
+}
+.breadcrumbs-list {
+  padding: 0 15px;
+}
+.breadcrumbs-list__item {
+  display: inline-block;
+}
+.breadcrumbs-list__label {
+  color: #003cdc;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.breadcrumbs-list__anchor {
+  color: #909497;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.breadcrumbs-list__anchor:after {
+  color: #909497;
+  content: " > ";
+  font-weight: 100;
+  margin: 0 2px 0 5px;
+}
+
+.call-to-action {
+  padding: 0 10px;
+}
+.call-to-action--backToTop {
+  background: #eff3f5;
+  padding: 20px 0 18px 0;
+}
+.call-to-action__nav-item-text {
+  color: #003cdc;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  padding: 0 0 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.call-to-action__nav-item-text--backToTop {
+  color: #003cdc;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.call-to-action__nav-item-text--backToTop:after {
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite-backup.png");
+  background-repeat: no-repeat;
+  background-position: -15px -634px;
+  background-size: 320px;
+  content: "";
+  display: inline-block;
+  height: 30px;
+  margin-left: 5px;
+  top: 0;
+  vertical-align: text-top;
+  width: 25px;
+}
+.call-to-action__link {
+  color: #003cdc;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  margin: 10px auto 5px;
+  text-align: center;
+  text-decoration: none;
+}
+.call-to-action__link--left {
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+}
+.call-to-action__link--left:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  transform: rotate(180deg);
+  vertical-align: middle;
+  width: 40px;
+}
+.call-to-action__submit {
+  background-color: #003cdc;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 15px auto 0;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+.call-to-action--profiles {
+  padding: 10px 15px;
+}
+
+.commenting--on-article {
+  padding: 20px 0;
+  margin: 8px 0;
+}
+.commenting--on-article:before {
+  content: "";
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/illustrations.png") no-repeat 0 -24em/150px;
+  height: 105px;
+  overflow: auto;
+  margin: 0 auto;
+  width: 150px;
+  display: block;
+}
+.commenting--on-article .heading__component-title {
+  color: #434343;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 1.5em 1em;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+.commenting__counter {
+  color: #434343;
+  font-size: 16px;
+  text-decoration: none;
+}
+.commenting__counter:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/checkbox-icons.png") no-repeat -15px -75px/50px;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  margin: 0 auto;
+  vertical-align: middle;
+  width: 20px;
+}
+.commenting__label {
+  color: #909497;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.commenting__list {
+  position: relative;
+}
+.commenting__list__item {
+  background-color: #ffffff;
+  display: block;
+}
+.commenting-form {
+  padding: 0 15px;
+}
+.commenting-thread {
+  padding: 10px 0 0;
+  border-top: 3px solid #003cdc;
+}
+.commenting-thread:first-child {
+  border-top: none;
+}
+.commenting-thread__alias {
+  color: #353638;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 5px 10px;
+  text-transform: capitalize;
+}
+.commenting-thread__alias-removed {
+  color: #434343;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.commenting-thread__msg {
+  color: #909497;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+.commenting-thread__publish-date {
+  color: #666;
+  font-size: 12px;
+  padding: 5px 5px 0 10px;
+  font-weight: 700;
+}
+.commenting-cta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px 10px;
+}
+.commenting-cta__label {
+  color: #003cdc;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.commenting-replies {
+  background-color: #f8fafd;
+  padding: 10px 0 0;
+}
+.commenting-replies-title {
+  color: #434343;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 10px 10px;
+}
+.commenting-replies__feedback {
+  color: #909497;
+  display: block;
+}
+
+.component {
+  text-align: center;
+}
+.component__super {
+  color: #434343;
+  padding: 25px 8px 10px;
+  text-align: center;
+}
+.component__super .super-title {
+  color: #434343;
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 10px;
+  text-transform: capitalize;
+}
+.component__super .super-title:after {
+  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
+  content: "";
+  display: block;
+  padding: 10px 0;
+  margin: 0 auto;
+  width: 65%;
+}
+.component__title {
+  margin: 0 8px 20px;
+  padding: 20px 0 30px;
+}
+.component__subtitle {
+  margin: 20px 0;
+}
+.component .call-to-action__link {
+  display: inline-block;
+  margin: 0;
+}
+.component .call-to-action__link--left {
+  display: block;
+}
+
+.copyright {
+  color: #909497;
+}
+.copyright__text {
+  color: #909497;
+  font-size: 12px;
+  padding: 15px;
+  text-align: center;
+}
+.copyright__anchor {
+  color: #434343;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.footer {
+  background: #ffffff;
+  margin: 0 auto;
+  max-width: 360px;
+}
+.footer-page {
+  background: #ffffff;
+}
+.footer-page__body {
+  background: #ffffff;
+  padding: 10px 0;
+}
+.footer-page__body:after {
+  background: #ffffff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
+  content: "";
+  display: block;
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 65%;
+}
+.footer-page__body .heading {
+  padding: 22px 10px 0;
+}
+.footer-page__body .heading__primary {
+  color: #434343;
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: capitalize;
+}
+.footer-page__body .subtitle {
+  color: #000;
+  padding: 10px;
+  text-transform: inherit;
+}
+.footer__inner {
+  background: #eff3f5;
+  padding: 12px 8px;
+}
+.footer-logo {
+  display: block;
+  margin: 18px auto;
+  text-align: center;
+}
+.footer-logo__thumbnail {
+  border: 0;
+  height: auto;
+  width: 50%;
+}
+.footer p {
+  margin: 0;
+}
+.footer .search__input {
+  width: 95%;
+}
+
+form {
+  overflow: auto;
+}
+
+label {
+  color: #353638;
+  padding: 16px 0 10px 0;
+  text-align: center;
+}
+
+fieldset {
+  border: none;
+  text-align: center;
+}
+
+input[type=text],
+input[type=number],
+input[type=password],
+input[type=email],
+input[type=tel],
+input[type=search],
+input[type=week],
+input[type=date],
+input[type=month],
+input[type=datetime],
+input[type=datetime-local],
+input[type=url],
+select {
+  border-radius: 0;
+  border: 3px solid #003cdc;
+  font-size: 18px;
+  margin: 10px auto;
+  padding: 10px 0 10px 5px;
+  width: 98%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-border-radius: 0;
+}
+input[type=text]:focus, input[type=text]:focus-visible,
+input[type=number]:focus,
+input[type=number]:focus-visible,
+input[type=password]:focus,
+input[type=password]:focus-visible,
+input[type=email]:focus,
+input[type=email]:focus-visible,
+input[type=tel]:focus,
+input[type=tel]:focus-visible,
+input[type=search]:focus,
+input[type=search]:focus-visible,
+input[type=week]:focus,
+input[type=week]:focus-visible,
+input[type=date]:focus,
+input[type=date]:focus-visible,
+input[type=month]:focus,
+input[type=month]:focus-visible,
+input[type=datetime]:focus,
+input[type=datetime]:focus-visible,
+input[type=datetime-local]:focus,
+input[type=datetime-local]:focus-visible,
+input[type=url]:focus,
+input[type=url]:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: none;
+}
+
+select {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 285px -200px/180px no-repeat;
+}
+
+textarea {
+  border: 3px solid #003cdc;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  width: 300px;
+}
+
+label[for=id_terms_and_conditions] {
+  padding: 25px 0 10px 0;
+}
+
+input[type=checkbox]#id_terms_and_conditions {
+  cursor: pointer;
+  display: inline-block;
+  visibility: visible;
+  margin: 0 25px 0 0;
+}
+input[type=checkbox]#id_terms_and_conditions:before {
+  background: #fff;
+  content: "";
+  border: 3px solid #003cdc;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+input[type=checkbox]#id_terms_and_conditions.is-on:before {
+  background: #00d79b url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") -120px -50px/180px no-repeat;
+}
+
+.terms_and_conditions-link {
+  color: #003cdc;
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 0 0 20px;
+  vertical-align: text-top;
+}
+
+.input-hint {
+  color: #434343;
+  font-size: 12px;
+}
+
+#id_date_of_birth_month,
+#id_date_of_birth_day,
+#id_date_of_birth_year {
+  margin: 0 5px 10px 0;
+}
+
+.error {
+  color: #f50;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.errorlist li, .errorlist__item,
+.error-list li,
+.error-list__item {
+  color: #f50;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.security {
+  padding: 10px 0 0;
+}
+
+.header {
+  background-color: #003cdc;
+  padding: 10px 10px 5px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.subheading {
+  color: #353638;
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #434343;
+}
+
+.heading__primary {
+  color: #ffffff;
+  font-size: 40px;
+}
+.heading__micro {
+  color: #434343;
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 18px 0 0;
+  padding: 15px 0 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.heading--section {
+  color: #ffffff;
+}
+.heading--related-up-next {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.heading--label {
+  overflow: auto;
+}
+
+.homepage {
+  background: #ffffff;
+  margin: 0 auto;
+}
+
+.languages {
+  background-color: #ffffff;
+  padding: 5px 8px;
+  margin: 0 auto;
+}
+.languages-bar {
+  position: relative;
+}
+.languages-list {
+  padding: 0 5px;
+  text-align: center;
+}
+.languages-list__item {
+  display: inline-block;
+  margin: 0 10px;
+}
+.languages-list__anchor {
+  color: #434343;
+  font-size: 14px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+/*
+    CSS TOOGLE LOADED LANGUAGES
+*/
+.languages-list__anchor[rel=fr]:lang(fr) {
+  color: #909497;
+}
+
+.languages-list__anchor[rel=en]:lang(en) {
+  color: #909497;
+}
+
+.footer-menu {
+  align-items: flex-start;
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+  text-align: left;
+}
+.footer-menu .nav {
+  padding: 0;
+}
+.footer-menu .nav-list {
+  display: block;
+}
+.footer-menu .nav-list__item {
+  display: block;
+  margin: 0;
+  padding: 6px 0;
+}
+.footer-menu .nav-list__anchor {
+  color: #353638;
+  border-bottom: none;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 0.8;
+}
+.footer-menu .nav-list__anchor:after {
+  display: none;
+}
+.footer-menu .nav-list__anchor:hover {
+  border-color: #353638;
+}
+.footer-menu .nav-list__anchor.selected {
+  border-color: #353638;
+  color: #003cdc;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.footer-nav {
+  padding: 0 10px;
+}
+
+.nav {
+  overflow: auto;
+  padding: 10px 8px 5px;
+}
+.nav-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+}
+.nav-list__item {
+  display: inline-block;
+  padding: 0 8px 0 0;
+}
+.nav-list__anchor {
+  color: #ffffff;
+  border-bottom: 2px solid transparent;
+  display: block;
+  font-weight: normal;
+  font-size: 15px;
+  font-style: normal;
+  text-decoration: none;
+}
+.nav-list__anchor:after {
+  background: 0 0;
+  content: "";
+  width: 100%;
+  border-radius: 20px;
+  height: 4px;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  top: -8px;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.nav-list__anchor:hover:after, .nav-list__anchor.selected:after {
+  background: #db007e;
+}
+
+.menu {
+  overflow: auto;
+  text-align: center;
+}
+.menu-list {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+.menu-list__item {
+  display: inline-block;
+}
+.menu-list__anchor {
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+}
+
+#profile,
+#search {
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 245px;
+}
+
+#profile {
+  cursor: pointer;
+  height: 25px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 28px;
+  vertical-align: middle;
+  text-indent: 120%;
+}
+#profile .menu-list__anchor {
+  padding: 10px 0;
+}
+#profile:hover {
+  background-position: 0 -60px;
+}
+
+#search {
+  background-position: 0 -177px;
+  cursor: pointer;
+  text-indent: 120%;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 28px;
+  padding: 0;
+  height: 25px;
+}
+#search:hover {
+  background-position: 0 -235px;
+}
+
+.pagination {
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  text-align: center;
+}
+.pagination__item {
+  position: relative;
+}
+.pagination__anchor {
+  background-color: #003cdc;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.profiles {
+  background: #fff;
+  padding: 0 0 10px;
+  width: 360px;
+  margin: 0 auto;
+}
+.profiles__form {
+  padding: 25px 0 20px;
+}
+.profiles__split {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.profiles__account--passwords {
+  background-color: #eff3f5;
+}
+.profiles .heading__primary {
+  color: #434343;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.profiles .component__title {
+  padding: 20px 0 10px;
+}
+
+.search-page {
+  background-color: #ffffff;
+}
+.search-page .heading__component-title {
+  color: #434343;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 25px 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+.search-page .heading__component-title:after {
+  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
+  content: "";
+  display: block;
+  padding: 10px 0;
+  margin: 0 auto;
+  width: 65%;
+}
+.search-page .subheading {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 15px 15px;
+}
+
+.search {
+  position: relative;
+}
+.search-radio {
+  margin: 0 15px 0 10px;
+  position: absolute;
+  right: -5px;
+  opacity: 0.8;
+  visibility: hidden;
+}
+.search__label {
+  color: #fff;
+  display: none;
+  visibility: hidden;
+}
+.search__bar {
+  overflow: auto;
+}
+.search__form {
+  position: relative;
+}
+.search__input {
+  color: #909497;
+  border: 3px solid #003cdc;
+  box-sizing: border-box;
+  display: block;
+  font-size: 18px;
+  margin: 0 auto;
+  padding: 8px 5px;
+  position: relative;
+  width: 100%;
+}
+.search__cta {
+  background-color: transparent;
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0 -112px;
+  background-size: 235px;
+  border: none;
+  border-radius: 3px;
+  color: #909497;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  right: 15px;
+  height: 30px;
+  padding: 0;
+  position: absolute;
+  top: 20px;
+  text-indent: -99em;
+  width: 27px;
+}
+.search--header .search__bar {
+  margin: 15px 15px 10px;
+}
+.search--header .search-radio {
+  position: absolute;
+  top: -25px;
+  z-index: -999;
+}
+.search--footer {
+  margin: 15px 0 10px;
+}
+.search--footer .search-radio {
+  top: 10px;
+}
+
+.section-banners {
+  background-color: #353638;
+  margin: 0 auto;
+  height: 160px;
+}
+.section-banners__inner {
+  align-items: center;
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/sections-bg2.png");
+  background-position: -110px 5px;
+  background-size: inherit;
+  background-repeat: repeat;
+  display: flex;
+  height: 160px;
+  justify-content: center;
+  width: 360px;
+}
+.section-banners__inner--my-life {
+  background-position: -530px -330px;
+}
+.section-banners__inner--my-body {
+  background-position: 0 -590px;
+}
+.section-banners__inner--my-future {
+  background-position: -530px -880px;
+}
+.section-banners__inner--girl-stories {
+  background-position: 0 -3px;
+}
+.section-banners__inner--my-life {
+  color: #ffffff;
+}
+.section-banners__inner--my-body {
+  color: #ffffff;
+}
+.section-banners__inner--my-future {
+  color: #db007e;
+}
+.section-banners__inner--girl-stories {
+  color: #ffffff;
+}
+.section-banners__inner--my-life .heading__primary:after {
+  background-position: -112.5px -397.5px;
+}
+.section-banners__inner--my-body .heading__primary:after {
+  background-position: -112.5px -397.5px;
+}
+.section-banners__inner--my-future .heading__primary:after {
+  background-position: -112.5px -397.5px;
+}
+.section-banners__inner--girl-stories .heading__primary:after {
+  background-position: -112.5px -397.5px;
+}
+.section-banners .heading__primary {
+  font-size: 25px;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: capitalize;
+}
+.section-banners .heading__primary:after {
+  content: "";
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
+  background-size: 250px;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 0;
+  width: 150px;
+}
+
+.section-page {
+  /*
+  START:
+      This class is a body class & MUST not be styled
+  END:
+  */
+}
+.section-page__inner {
+  background: #ffffff;
+  margin: 0 auto;
+}
+
+.social-media-list {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 15px;
+}
+.social-media-list__item {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 8px;
+}
+.social-media-list__anchor {
+  color: #003cdc;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+.social-media-list__anchor-title {
+  color: #003cdc;
+}
+.social-media-list__anchor-icon {
+  height: auto;
+  margin-right: 5px;
+  max-height: 21px;
+  max-width: 21px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.article-page .social-media-list__anchor-title {
+  display: none;
+  visibility: hidden;
+}
+
+.teaser-tags-list__item {
+  color: #003cdc;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 8px 0 0;
+  text-transform: lowercase;
+}
+
+.tags-list {
+  margin: 0 auto 10px;
+  padding: 10px;
+}
+.tags-list__item {
+  background: #ebebeb;
+  color: #000;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.tag-cloud {
+  text-align: center;
+}
+.tag-cloud .heading__micro {
+  margin: 0;
+}
+.tag-cloud-list {
+  display: inline-block;
+  padding: 2px 5px;
+}
+.tag-cloud-list__item {
+  color: #003cdc;
+  display: inline-block;
+  font-size: 17px;
+  margin: 0 5px;
+  text-decoration: none;
+  text-transform: lowercase;
+}

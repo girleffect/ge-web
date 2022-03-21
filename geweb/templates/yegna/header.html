@@ -2,8 +2,7 @@
 
 {% section_pages as sections %}
 
-<div id="header" class="header">  
-    {% include "../_patterns/language.html" %}
+<div id="header" class="header">
     <header id="header-wrapper" class="header-wrapper">
         <div class="menu">
             <div class="logo">
@@ -12,7 +11,7 @@
                 </a>
             </div>
             <nav class="nav">
-                <ul class="nav-list"> 
+                <ul class="nav-list">
                     <li class="nav-list__item">
                         <a class="nav-list__anchor" id="menu" href="/">{% trans "Menu" %}</a>
                     </li>
@@ -30,10 +29,10 @@
                     {% endif %}
                 </ul>
 
-                <ul class="nav-list nav-list--search"> 
+                <ul class="nav-list nav-list--search">
                     <li id="search" class="nav-list__item">
                         <label class="nav-list__anchor" id="search_label">
-                            {% trans "Search" %} 
+                            {% trans "Search" %}
                         </label>
                     </li>
                 </ul>
@@ -45,7 +44,7 @@
         <div class="nav__dropdown">
             <ul class="nav-list">
                 <li class="nav-list__item">
-                    {% footer_pages %} 
+                    {% footer_pages %}
                 </li>
                 {% for section in sections %}
                     {% if section.get_parent|slugify == 'section-index' or section.get_parent|slugify == 'sections' %}
@@ -59,8 +58,8 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-               
-          
+
+
 
             <!-- WATCH - SECTION WITH CHILD SECTIONS -->
             {% if sections %}
@@ -113,5 +112,3 @@
         </div>
     </header>
 </div>
-
-

@@ -36,6 +36,7 @@
             {% endif %}
             <div class="teaser-stacklist__cta">
                 <ul class="teaser-tags-list">
+                    {{tag.counter}}
                     {% for tag in post.tags.all %}
                         <li class="teaser-tags-list__item">
                             #{{ tag.name}}
@@ -45,9 +46,11 @@
                 {% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}
                     <div class="commenting">
                         {% get_comment_count for post as comment_count %}
-                        <a href="{% pageurl post %}" class="commenting__counter">
-                            {{ comment_count }}
-                        </a>
+                        {% if comment_count > 0 %}
+                            <a href="{% pageurl post %}" class="commenting__counter">
+                                {{ comment_count }}
+                            </a>
+                        {% endif %}
                     </div>
                 {% endif %}
             </div>
