@@ -26,13 +26,21 @@
         </div>
     {% endif %}
 
-    {% get_comment_list for page.specific as comment_list root_only %}
+    {% get_comment_list for page.specific as comment_list %}
     {% if comment_list %}
         <div class="commenting__list">
             <div class="heading heading--component">
                 <h1 class="heading__component-title">{% trans "Your thoughts" %}</h1>
             </div>
+            {% for comment in comment_list|fill_tree|annotate_tree %}
+                {% ifchanged comment.parent_id %}{% else %}</li>{% endifchanged %}
+                {% if not comment.open and not comment.close %}</li>{% endif %}
+                {% if comment.open %}<ul>{% endif %}
 
+                <li id="c{{ comment.id }}">
+                    ...
+                {% for close in comment.close %}</li></ul>{% endfor %}
+            {% endfor %}
             {% for comment in comment_list %}
                 <div class="commenting__list-item">
                     <div class="commenting-thread">
