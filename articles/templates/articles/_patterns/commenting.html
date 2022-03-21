@@ -65,7 +65,7 @@
                             </div>
                         </div>
 
-                        {% if comment.children.all.count > 1 %}
+                        {% if comment.children.all.count > 0 %}
                             <div class="commenting-replies">
                                 <h5 class="commenting-replies-title">Latest Reply</h5>
                                 {% for threaded_comment in comment.children.all %}
