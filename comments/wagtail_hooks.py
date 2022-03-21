@@ -36,10 +36,7 @@ class CommentAdmin(ModelAdmin):
         "wagtail_site",
         "user_name",
         "comment",
-        "parent_comment",
-        "moderator_reply",
         "submit_date",
-        "is_public",
         "is_removed",
         "flags",
     )
