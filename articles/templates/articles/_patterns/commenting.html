@@ -1,10 +1,10 @@
-{% load article_tags comments home_tags i18n wagtailcore_tags theme_tags %}
+{% load article_tags home_tags i18n wagtailcore_tags theme_tags threadedcomments_tags %}
 
 <div id="comments" class="commenting commenting--on-article">
     <div class="heading heading--component">
         <h1 class="heading__component-title">{% trans "Share your feedback" %}</h1>
     </div>
-   
+
     {# <!-- ========== start THREADED COMMENTS ========== --> #}
     {% get_comment_form for page as form %}
     {% if user.is_authenticated %}
@@ -26,13 +26,13 @@
         </div>
     {% endif %}
 
-    {% get_comment_list for page as comment_list %}
+    {% get_comment_list for page.specific as comment_list root_only %}
     {% if comment_list %}
         <div class="commenting__list">
             <div class="heading heading--component">
                 <h1 class="heading__component-title">{% trans "Your thoughts" %}</h1>
             </div>
-           
+
             {% for comment in comment_list %}
                 <div class="commenting__list-item">
                     <div class="commenting-thread">
@@ -45,20 +45,20 @@
                             <p class="commenting-thread__msg">{{ comment.comment }}</p>
                             <p class="commenting-thread__publish-date">{{ comment.submit_date }}
                         {% endif %}
-                       
+
                         {% get_comment_list for comment as threaded_comment_list %}
                         {% get_comment_count for comment as reply_count %}
                         <div class="commenting-cta">
                             <div class="commenting-cta__left">
-                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a> 
-                                <!-- 
-                                    NEEDS A REPLY CALL TO ACTION URL 
+                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a>
+                                <!--
+                                    NEEDS A REPLY CALL TO ACTION URL
                                     e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment-block
                                 -->
                                 <a href="/comments/{{ page.id }}/reply" class="commenting-cta__label">{% trans "Reply" %}</a>
                             </div>
                             <div class="commenting-cta__right">
-                                <!-- 
+                                <!--
                                     NEEDS A REPLIES FORM - CALL TO ACTION URL
                                     e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment_reply
                                 -->
@@ -69,8 +69,6 @@
                         </div>
 
                         {% if threaded_comment_list %}
-
-                        {{ threaded_comment_list }} - {{ reply_count }}
                             <div class="commenting-replies">
                                 <h5 class="commenting-replies-title">Latest Reply</h5>
                                 {% for threaded_comment in threaded_comment_list %}
