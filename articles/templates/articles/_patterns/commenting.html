@@ -26,38 +26,15 @@
         </div>
     {% endif %}
 
-    {% get_comment_list for page.specific as comment_list %}
+    {% get_comment_list for page as comment_list root_only %}
     {% if comment_list %}
         <div class="commenting__list">
             <div class="heading heading--component">
                 <h1 class="heading__component-title">{% trans "Your thoughts" %}</h1>
             </div>
-            {% for comment in comment_list|fill_tree|annotate_tree %}
-        {% if comment.open %}
-            <ul>
-        {% else %}
-            </li>
-        {% endif %}
-        <li class="comment_li" id="c{{ comment.id }}">{# c## is used by the absolute URL of the Comment model, so keep that as it is. #}
-            <div class="comment">
-                <div class="comment_info">
-                    <div class="comment_user">{{ comment.user_name }}</div>
-                    <div class="comment_data">
-                        {{ comment.submit_date|date:"d M Y, H:i" }}
-                        | <a href="#c{{ comment.id }}" data-comment-id="{{ comment.id }}" class="comment_reply_link">Reply</a>
-                    </div>
-                </div>
-                <div class="comment_text">
-                    {{ comment.comment }}
-                </div>
-            </div>
-            {% for close in comment.close %}</li></ul>{% endfor %}
-
-    {% endfor %}
             {% for comment in comment_list %}
                 <div class="commenting__list-item">
                     <div class="commenting-thread">
-                      {% get_comment_count for comment as reply_count %}
                         {% if comment.is_removed %}
                             <h6 class="commenting-thread__alias-removed">
                                 {% trans "This comment has been deleted. Please read our platform rules." %}
@@ -66,11 +43,8 @@
                             <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
                             <p class="commenting-thread__msg">{{ comment.comment }}</p>
                             <p class="commenting-thread__publish-date">{{ comment.submit_date }}</p>
-                            <p class="commenting-thread__publish-date">{{ reply_count }}</p>
                         {% endif %}
 
-                        {% get_comment_list for comment as threaded_comment_list %}
-                        {% get_comment_count for comment as reply_count %}
                         <div class="commenting-cta">
                             <div class="commenting-cta__left">
                                 <a href="/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a>
@@ -86,15 +60,15 @@
                                     e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment_reply
                                 -->
                                 <a href="/comments/{{ comment.id }}/#comment_reply" class="commenting-cta__label">
-                                    {{ reply_count }} {% if reply_count > 0 %}{% trans "Replies" %}{% else %}{% trans "Reply" %}{% endif %}
+                                    {{ comment.children.all.count }} {% if comment.children.all.count > 0 %}{% trans "Replies" %}{% else %}{% trans "Reply" %}{% endif %}
                                 </a>
                             </div>
                         </div>
 
-                        {% if threaded_comment_list %}
+                        {% if comment.children.all.count > 1 %}
                             <div class="commenting-replies">
                                 <h5 class="commenting-replies-title">Latest Reply</h5>
-                                {% for threaded_comment in threaded_comment_list %}
+                                {% for threaded_comment in comment.children.all %}
                                     <h6 class="commenting-thread__alias">{{ threaded_comment.user_name }}</h6>
                                     <p class="commenting-thread__msg">{{ threaded_comment.comment }}</p>
                                 {% endfor %}
