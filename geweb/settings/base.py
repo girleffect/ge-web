@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     "wagtail.contrib.simple_translation",
 ]
 COMMENTS_APP = "threadedcomments"
