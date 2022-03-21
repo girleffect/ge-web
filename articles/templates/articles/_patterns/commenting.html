@@ -36,6 +36,7 @@
             {% for comment in comment_list %}
                 <div class="commenting__list-item">
                     <div class="commenting-thread">
+                      {% get_comment_count for comment as reply_count %}
                         {% if comment.is_removed %}
                             <h6 class="commenting-thread__alias-removed">
                                 {% trans "This comment has been deleted. Please read our platform rules." %}
@@ -43,7 +44,8 @@
                         {% else %}
                             <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
                             <p class="commenting-thread__msg">{{ comment.comment }}</p>
-                            <p class="commenting-thread__publish-date">{{ comment.submit_date }}
+                            <p class="commenting-thread__publish-date">{{ comment.submit_date }}</p>
+                            <p class="commenting-thread__publish-date">{{ reply_count }}</p>
                         {% endif %}
 
                         {% get_comment_list for comment as threaded_comment_list %}
