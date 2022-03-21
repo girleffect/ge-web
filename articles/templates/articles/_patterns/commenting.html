@@ -1,4 +1,4 @@
-{% load article_tags home_tags i18n wagtailcore_tags theme_tags threadedcomments_tags %}
+{% load article_tags comments home_tags i18n wagtailcore_tags theme_tags threadedcomments_tags %}
 
 <div id="comments" class="commenting commenting--on-article">
     <div class="heading heading--component">
@@ -50,7 +50,7 @@
                         {% get_comment_count for comment as reply_count %}
                         <div class="commenting-cta">
                             <div class="commenting-cta__left">
-                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a>
+                                <a href="/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a>
                                 <!--
                                     NEEDS A REPLY CALL TO ACTION URL
                                     e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment-block
