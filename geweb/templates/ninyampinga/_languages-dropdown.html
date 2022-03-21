@@ -14,17 +14,9 @@
                     <h1 class="languages-list__title">Indimi:</h1>
                 </div>
             </li>
-            {% for language_code, language_name in LANGUAGES %}
-            
-                {% get_language_info for language_code as lang %}
-                {% language language_code %}
-                    <li class="languages-list__item">
-                        <a rel="{{ language_code }}" hreflang="{{ language_code }}" href="{% pageurl page.localized %}" class="languages-list__anchor">
-                            {{ lang.name_local }}
-                        </a>
-                    </li>
-                {% endlanguage %}
-            {% endfor %}
+            {% if self %}
+                {% include "../patterns/_language-list.html" %}
+            {% endif %}
         </ul>
     </div>
   </div>

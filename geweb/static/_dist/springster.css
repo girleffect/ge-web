@@ -814,6 +814,52 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   margin: 0 auto;
 }
 
+.languages {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.languages__wrapper {
+  padding: 3px 0;
+}
+.languages-list {
+  text-align: center;
+}
+.languages-list__item {
+  display: inline-block;
+  padding: 0 5px 0;
+}
+.languages-list__label {
+  color: #656d78;
+  display: inline-block;
+  font-family: "Baton-Medium";
+  font-size: 16px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.languages-list__anchor {
+  color: #000;
+  font-size: 12px;
+  text-decoration: none;
+  text-underline-position: under;
+}
+.languages-list__anchor .is-active, .languages-list__anchor:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+.languages--bottom {
+  padding: 5px 0 20px;
+}
+.languages--bottom .languages-list__anchor {
+  color: #7300ff;
+  display: inline-block;
+  font-family: "Baton-Medium";
+  font-size: 16px;
+  margin-right: 10px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
 .footer-menu {
   align-items: flex-start;
   display: flex;
