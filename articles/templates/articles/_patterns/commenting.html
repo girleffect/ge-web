@@ -1,4 +1,4 @@
-{% load article_tags comments home_tags i18n wagtailcore_tags theme_tags threadedcomments_tags %}
+{% load article_tags home_tags i18n wagtailcore_tags theme_tags threadedcomments_tags %}
 
 <div id="comments" class="commenting commenting--on-article">
     <div class="heading heading--component">
@@ -8,7 +8,7 @@
     {# <!-- ========== start THREADED COMMENTS ========== --> #}
     {% get_comment_form for page as form %}
     {% if user.is_authenticated %}
-        <form action="{% comment_form_target %}" method="POST" class="commenting-form">
+        <form action="{{form.action}}" method="POST" class="commenting-form">
         {% csrf_token %}
            {{ form.comment }}
             {{ form.content_type }}
