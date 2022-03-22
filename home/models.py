@@ -9,6 +9,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 
 from articles.models import ArticlePage, SectionIndexPage, SectionPage
 from forms.models import FormPage
+from home.blocks import BannerBlock
 from home.themes import THEME_CHOICES
 
 from wagtail.admin.edit_handlers import (  # isort:skip
@@ -25,7 +26,13 @@ class HomePage(Page):
         "forms.FormsIndexPage",
         "profiles.SecurityQuestionIndexPage",
     ]
-
+    banners = StreamField(
+        [
+            ("banner", BannerBlock()),
+        ],
+        blank=True,
+        null=True,
+    )
     theme = models.CharField(
         verbose_name=_("theme"),
         max_length=100,
@@ -35,6 +42,9 @@ class HomePage(Page):
         db_index=True,
     )
 
+    content_panels = Page.content_panels + [
+        StreamFieldPanel("banners"),
+    ]
     settings_panels = Page.settings_panels + [
         FieldPanel("theme"),
     ]
