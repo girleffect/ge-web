@@ -596,6 +596,9 @@ iframe {
 .forms-page--main .forms-page__inner {
   padding: 0 5%;
 }
+.forms-page--main .forms-page__inner p {
+  font-size: 18px;
+}
 .forms-page--main .forms-page__title {
   text-align: center;
   padding-bottom: 40px;
@@ -613,6 +616,7 @@ iframe {
 .forms-page--main .forms {
   background-color: #fffec5;
   padding: 10px 15px;
+  margin: 10px 0;
 }
 .forms-page--main .forms__title {
   text-align: center;
@@ -622,6 +626,22 @@ iframe {
   position: absolute;
   right: 0;
   width: 150px;
+}
+.forms-page--main .forms input[type=text],
+.forms-page--main .forms input[type=number],
+.forms-page--main .forms input[type=password],
+.forms-page--main .forms input[type=email],
+.forms-page--main .forms input[type=tel],
+.forms-page--main .forms input[type=search],
+.forms-page--main .forms input[type=week],
+.forms-page--main .forms input[type=date],
+.forms-page--main .forms input[type=month],
+.forms-page--main .forms input[type=datetime],
+.forms-page--main .forms input[type=datetime-local],
+.forms-page--main .forms input[type=url],
+.forms-page--main .forms select,
+.forms-page--main .forms textarea {
+  margin: 10px 0;
 }
 .forms-page--main .forms label {
   font-size: 20px;

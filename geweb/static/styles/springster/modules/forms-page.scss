@@ -74,6 +74,10 @@
         }
         #{$this}__inner {
             padding: 0 5%;
+            //WSYWIG
+            p {
+                font-size: 18px;
+            }
         }
         #{$this}__title {
             text-align: center;
@@ -96,6 +100,7 @@
         .forms {
             background-color: $pale_yellow;
             padding: 10px 15px;
+            margin: 10px 0;
             &__title {
                 text-align: center;
                 &:after {
@@ -106,6 +111,22 @@
                 }
             }
             //WSYWIG
+            input[type=text], 
+            input[type=number], 
+            input[type=password], 
+            input[type=email], 
+            input[type=tel], 
+            input[type=search], 
+            input[type=week], 
+            input[type=date], 
+            input[type=month], 
+            input[type=datetime], 
+            input[type=datetime-local], 
+            input[type=url],
+            select,
+            textarea {
+                margin: 10px 0;
+            }
             label {
                 font-size: 20px;
             }

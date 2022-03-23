@@ -7,7 +7,7 @@
         {% if page.introduction %}
             <h2 class="forms-page__subtitle">{{page.introduction|safe}}</h3>
         {% endif %}
-        <p class="forms-page__paragraph">{{ page.intro|richtext }}</p>
+        <p class="forms-page__paragraph">{{ page.description|richtext }}</p>
     </div>
     {% include "./form.html" %}
 </div>
