@@ -20,6 +20,20 @@ ul, ol, li {
     padding: 0;
 }
 
+img {
+    height: auto;
+    width: 100%;
+}
+
+a {
+    text-decoration: underline;
+}
+
+iframe {
+    min-height: 200px;
+    min-width: 340px;
+}
+
 //!! IMPORTANT RULE
 .springster {
     background-color: $white;

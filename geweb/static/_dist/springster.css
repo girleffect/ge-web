@@ -44,6 +44,20 @@ ul, ol, li {
   padding: 0;
 }
 
+img {
+  height: auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: underline;
+}
+
+iframe {
+  min-height: 200px;
+  min-width: 340px;
+}
+
 .springster {
   background-color: #ffffff;
   margin: 0 auto;
@@ -294,9 +308,31 @@ ul, ol, li {
   max-width: 344px;
   max-height: 40px;
   padding: 10px 0;
+  position: relative;
   text-align: center;
   text-decoration: none;
   width: 100%;
+}
+.call-to-action__submit:after {
+  background-color: #7300ff;
+  border-radius: 5px;
+  content: "";
+  display: block;
+  height: 40px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.call-to-action__label {
+  display: block;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  z-index: 10;
 }
 .call-to-action--profiles {
   padding: 10px 0;
@@ -482,6 +518,61 @@ ul, ol, li {
 }
 .footer p {
   margin: 0;
+}
+
+.forms-page {
+  background-color: #fffc78;
+  margin: 10px 0;
+  padding: 10px 15px 0;
+  position: relative;
+}
+.forms-page__inner {
+  position: relative;
+  padding: 20px 0 0;
+}
+.forms-page__icon {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+}
+.forms-page__icon:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/think_purple.png") no-repeat 0 0/85px;
+  content: "";
+  display: block;
+  height: 88px;
+  padding: 5px;
+  width: 100px;
+}
+.forms-page__results {
+  background-color: #fffec5;
+  padding: 20px 10px;
+}
+.forms-page__title {
+  color: #4e5358;
+  font-family: "Baton-Regular";
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.forms-page__title:after {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
+  content: "";
+  display: block;
+  height: 10px;
+  margin: 5px 0 20px 0;
+  width: 100%;
+}
+.forms-page__subtitle {
+  color: #4e5358;
+  font-family: "Baton-Regular";
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+.forms-page__subtitle p {
+  text-transform: capitalize;
 }
 
 form {
@@ -1509,80 +1600,4 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   margin: 0 5px;
   text-decoration: none;
   text-transform: lowercase;
-}
-
-.yourwords {
-  background-color: #ffffff;
-  margin: 0;
-  padding: 10px 0 0;
-  position: relative;
-  overflow: auto;
-}
-.yourwords__inner {
-  position: relative;
-}
-.yourwords__icon {
-  display: flex;
-  height: 100px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-}
-.yourwords__icon:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/think_purple.png") no-repeat 0 0/95px;
-  content: "";
-  display: block;
-  height: 88px;
-  padding: 5px;
-  position: absolute;
-  right: 0;
-  width: 100px;
-}
-.yourwords__results {
-  background-color: #fffec5;
-  padding: 20px 10px;
-}
-.yourwords .forms__title {
-  font-family: "Baton-Medium";
-  font-size: 24px;
-  text-transform: uppercase;
-}
-.yourwords .forms__title:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
-  content: "";
-  height: 10px;
-  margin: 0 auto;
-  display: block;
-  width: 100%;
-}
-.yourwords .forms__title__subtitle p {
-  text-transform: capitalize;
-}
-.yourwords--banner {
-  background-color: #fffc78;
-  padding: 10px 10px 0;
-}
-.yourwords--page {
-  padding: 20px 0;
-}
-.yourwords--page .yourwords__icon {
-  margin-bottom: 30px;
-}
-.yourwords--page .yourwords__icon:before {
-  left: 0;
-  margin: 0 auto;
-  right: 0;
-}
-.yourwords--page .forms {
-  background-color: #fffec5;
-  padding: 20px 10px;
-}
-.yourwords--page .forms__title {
-  text-align: center;
-}
-.yourwords--page .forms__title:after {
-  left: 0;
-  position: absolute;
-  right: 0;
-  width: 150px;
 }

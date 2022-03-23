@@ -1,0 +1,81 @@
+.forms-page {
+    background-color: $vivid_yellow;
+    margin: 10px 0;
+    padding: 10px 15px 0;
+    position: relative;
+    &__inner {
+        position: relative;
+        padding: 20px 0 0;
+    }
+    &__icon {
+        align-items: center;
+        display: flex;
+        height: 100px;
+        position: relative;
+        justify-content: center;
+        width: 100%;
+        &:before {
+            background: url($staticPath + 'img/springster/think_purple.png') no-repeat 0 0/85px;
+            content: '';
+            display: block;
+            height: 88px;
+            padding: 5px;
+            width: 100px;
+        }
+    }
+    &__results {
+        background-color: $pale_yellow;
+        padding: 20px 10px;
+    }
+
+    &__title {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 24px;
+        text-transform: uppercase;
+        &:after {
+            background: url($staticPath + 'img/springster/zig-zag-underline.png') no-repeat 0 0/145px;
+            content: '';
+            display: block;
+            height: 10px;
+            margin: 5px 0 20px 0;
+            width: 100%;
+        }
+    }
+
+    &__subtitle {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0 0 10px;
+        p {
+            text-transform: capitalize;
+        }
+    }
+
+    // &--page {
+    //     padding: 20px 0;
+    //     .yourwords__icon {
+    //         margin-bottom: 30px;
+    //         &:before {
+    //             left: 0;
+    //             margin: 0 auto;
+    //             right: 0;
+    //         }
+    //     }
+    //     .forms {
+    //         background-color: $pale_yellow;
+    //         padding: 20px 10px;
+    //         &__title {
+    //             text-align: center;
+    //             &:after {
+    //                 left: 0;
+    //                 position: absolute;
+    //                 right: 0;
+    //                 width: 150px;
+    //             }
+    //         }
+    //     }
+    // }
+}

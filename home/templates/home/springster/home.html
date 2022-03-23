@@ -11,13 +11,9 @@
         {% include "./_banner.html" with urlString='/' imagePos='two' altString='Celebrate girls - Read inspiring stories' %}
 
         {% for form in forms %}
-            {% if form.title|slugify == 'polls' %}
-                {% include "./_polls.html" %}
-            {% endif %}
-
-            {% if form.title|slugify == 'yourwords' %}
-                {% include "./_yourwords.html" %}
-            {% endif %}
+           
+            {% include "./_forms-page.html" %}
+           
         {% endfor %}
        
         {% for post in articlepages|slice:"5:" %} 
