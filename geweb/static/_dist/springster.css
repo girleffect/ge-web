@@ -290,6 +290,7 @@ iframe {
   display: inline-block;
 }
 .call-to-action__submit {
+  align-items: center;
   background-color: transparent;
   background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/button-sprite.png");
   background-position: 0 0;
@@ -299,15 +300,15 @@ iframe {
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  display: block;
+  display: flex;
   font-family: "Baton-Medium";
   font-size: 18px;
   font-weight: 400;
   height: 40px;
+  justify-content: center;
   margin: 15px auto 0;
   max-width: 344px;
   max-height: 40px;
-  padding: 10px 0;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -318,13 +319,16 @@ iframe {
   border-radius: 5px;
   content: "";
   display: block;
-  height: 40px;
+  height: 35px;
   left: 0;
   margin: 0 auto;
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
+  width: 98%;
+}
+.call-to-action__submit:hover .call-to-action__label, .call-to-action__submit:focus .call-to-action__label {
+  text-decoration: underline;
 }
 .call-to-action__label {
   display: block;
@@ -521,9 +525,9 @@ iframe {
 }
 
 .forms-page {
-  background-color: #fffc78;
+  background-color: #ffffff;
   margin: 10px 0;
-  padding: 10px 15px 0;
+  padding: 10px 10px 0;
   position: relative;
 }
 .forms-page__inner {
@@ -571,8 +575,59 @@ iframe {
   font-weight: 400;
   margin: 0 0 10px;
 }
-.forms-page__subtitle p {
+.forms-page__subtitle h1, .forms-page__subtitle h2, .forms-page__subtitle h3, .forms-page__subtitle h4, .forms-page__subtitle h5, .forms-page__subtitle h5, .forms-page__subtitle p {
   text-transform: capitalize;
+}
+.forms-page__paragraph {
+  color: #000;
+  font-size: 18px;
+}
+.forms-page--banner {
+  background-color: #fffc78;
+  padding: 10px 15px;
+}
+.forms-page--main {
+  padding: 20px 0;
+}
+.forms-page--main .forms-page__icon {
+  background-size: 100px;
+  margin-bottom: 30px;
+}
+.forms-page--main .forms-page__inner {
+  padding: 0 5%;
+}
+.forms-page--main .forms-page__title {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.forms-page--main .forms-page__title:after {
+  left: 0;
+  margin: 5px auto;
+  position: absolute;
+  right: 0;
+  width: 145px;
+}
+.forms-page--main .forms-page__subtitle h1, .forms-page--main .forms-page__subtitle h2, .forms-page--main .forms-page__subtitle h3, .forms-page--main .forms-page__subtitle h4, .forms-page--main .forms-page__subtitle h5, .forms-page--main .forms-page__subtitle h5, .forms-page--main .forms-page__subtitle p {
+  font-size: 24px;
+}
+.forms-page--main .forms {
+  background-color: #fffec5;
+  padding: 10px 15px;
+}
+.forms-page--main .forms__title {
+  text-align: center;
+}
+.forms-page--main .forms__title:after {
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 150px;
+}
+.forms-page--main .forms label {
+  font-size: 20px;
+}
+.forms-page--main .forms p, .forms-page--main .forms div {
+  padding: 5px 0;
 }
 
 form {

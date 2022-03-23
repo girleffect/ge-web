@@ -1,13 +1,13 @@
-
 {% load article_tags i18n home_tags wagtailcore_tags %}
-
 
 {% if user.is_authenticated and user.is_active or request.is_preview or page.allow_anonymous_submissions %}
     {% if form %}
         <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:'1' }}{% endif %}" method="POST"  class="forms">
         {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="call-to-action__submit">{% trans "Submit" %}</button>
+            <button type="submit" class="call-to-action__submit">
+                <span class="call-to-action__label">{% trans "Submit" %}</span>
+            </button>
         </form>
     {% else %}
         <p class="forms__feedback">{% trans "You can fill in the from only one time." %}</p>

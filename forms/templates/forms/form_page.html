@@ -1,25 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if theme.slug == 'springster' %}
-        {% if page.title|slugify == 'polls' %}
-            {% include "./springster/polls/form-page.html" %}
-        {% endif %}
-        
-        {% if page.title|slugify == 'yourwords' %}
-            {% include "./springster/yourwords/form-page.html" %}
-        {% endif %}
-
-    {% elif theme.slug == 'tujibebe' %}
-        {% if page.title|slugify == 'polls' %}
-            {% include "./tujibebe/polls/form-page.html" %}
-        {% endif %}
-
-        {% if page.title|slugify == 'yourwords' %}
-            {% include "./tujibebe/yourwords/form-page.html" %}
-        {% endif %}
+    {% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}
+        {% include "./_patterns/form-page.html" %}
     {% endif %}
-    <div class="breadcrumbs">
-        {% breadcrumbs %}
-    </div>
 {% endblock content %}

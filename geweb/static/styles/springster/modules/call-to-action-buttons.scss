@@ -62,6 +62,7 @@
         }
     }
     &__submit {
+        align-items: center;
         background-color: transparent;
         background-image: url($staticPath + 'img/springster/button-sprite.png');
         background-position: 0 0;
@@ -71,15 +72,15 @@
         border-radius: 5px;
         color: #fff;
         cursor: pointer;
-        display: block;
+        display: flex;
         font-family: 'Baton-Medium';
         font-size: 18px;
         font-weight: 400;
         height: 40px;
+        justify-content: center;
         margin: 15px auto 0;
         max-width: 344px;
         max-height: 40px;
-        padding: 10px 0;
         position: relative;
         text-align: center;
         text-decoration: none;
@@ -96,6 +97,10 @@
             right: 0;
             top: 0;
             width: 98%;
+        }
+        &:hover .call-to-action__label, 
+        &:focus .call-to-action__label {
+            text-decoration: underline;
         }
     }
     &__label {

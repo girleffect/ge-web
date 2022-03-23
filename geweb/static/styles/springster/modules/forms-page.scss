@@ -1,8 +1,9 @@
 .forms-page {
-    background-color: $vivid_yellow;
+    background-color: $white;
     margin: 10px 0;
-    padding: 10px 15px 0;
+    padding: 10px 10px 0;
     position: relative;
+    $this: unquote("#{&}");
     &__inner {
         position: relative;
         padding: 20px 0 0;
@@ -49,33 +50,68 @@
         font-size: 20px;
         font-weight: 400;
         margin: 0 0 10px;
-        p {
+        //WSYWIG
+        h1, h2, h3, h4, h5, h5, p {
             text-transform: capitalize;
         }
     }
 
-    // &--page {
-    //     padding: 20px 0;
-    //     .yourwords__icon {
-    //         margin-bottom: 30px;
-    //         &:before {
-    //             left: 0;
-    //             margin: 0 auto;
-    //             right: 0;
-    //         }
-    //     }
-    //     .forms {
-    //         background-color: $pale_yellow;
-    //         padding: 20px 10px;
-    //         &__title {
-    //             text-align: center;
-    //             &:after {
-    //                 left: 0;
-    //                 position: absolute;
-    //                 right: 0;
-    //                 width: 150px;
-    //             }
-    //         }
-    //     }
-    // }
+    &__paragraph {
+        color: #000;
+        font-size: 18px;
+    }
+
+    &--banner {
+        background-color: $vivid_yellow;
+        padding: 10px 15px;
+    }
+
+    &--main {
+        padding: 20px 0;
+        #{$this}__icon {
+            background-size: 100px;
+            margin-bottom: 30px;
+        }
+        #{$this}__inner {
+            padding: 0 5%;
+        }
+        #{$this}__title {
+            text-align: center;
+            padding-bottom: 40px;
+            &:after {
+                left: 0;
+                margin: 5px auto;
+                position: absolute;
+                right: 0;
+                width: 145px;
+            }
+        }
+        #{$this}__subtitle {
+            //WSYWIG
+            h1, h2, h3, h4, h5, h5, p {
+                font-size: 24px;
+            }
+        }
+
+        .forms {
+            background-color: $pale_yellow;
+            padding: 10px 15px;
+            &__title {
+                text-align: center;
+                &:after {
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    width: 150px;
+                }
+            }
+            //WSYWIG
+            label {
+                font-size: 20px;
+            }
+            p, div {
+                padding: 5px 0;
+            }
+        }
+    }
 }
