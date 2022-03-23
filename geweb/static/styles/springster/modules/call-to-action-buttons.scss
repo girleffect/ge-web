@@ -85,18 +85,20 @@
         text-align: center;
         text-decoration: none;
         width: 100%;
-        &:after {
-            background-color: $violet;
-            border-radius: 5px;
-            content: '';
-            display: block;
-            height: 35px;
-            left: 0;
-            margin: 0 auto;
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 98%;
+        &--enhanced {
+            &:after {
+                background-color: $violet;
+                border-radius: 5px;
+                content: '';
+                display: block;
+                height: 35px;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 98%;
+            }
         }
         &:hover .call-to-action__label, 
         &:focus .call-to-action__label {
@@ -110,6 +112,35 @@
         position: absolute;
         right: 0;
         z-index: 10;
+    }
+    &__back {
+        color: $violet;
+        cursor: pointer;
+        display: block;
+        font-family: 'Baton-Medium';
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0;
+        position: relative;
+        text-align: left;
+        text-decoration: underline;
+        text-transform: uppercase;
+        &:before {
+            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: auto 100%;
+            content: '';
+            display: inline-block;
+            height: 24px;
+            width: 24px;
+            transform: rotate(-90deg);
+            margin-left: 10px;
+        }
+    }   
+    &--full {
+        background-color: #f1e5ff;
+        padding: 10px 5px 10px 15px;
     }
     &--profiles {
         padding: 10px 0;

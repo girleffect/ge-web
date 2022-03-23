@@ -25,8 +25,11 @@
         }
     }
     &__results {
-        background-color: $pale_yellow;
-        padding: 20px 10px;
+        background-color: $white;
+        padding: 20px 15px;
+        p {
+            font-size: 18px;
+        }
     }
 
     &__title {

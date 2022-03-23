@@ -10,11 +10,11 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-            <a href="{% pageurl form %}" class="call-to-action__submit">
+            <a href="{% pageurl form %}" class="call-to-action__submit call-to-action__submit--enhanced">
                 <span class="call-to-action__label">{% trans "Enter" %}</span>
             </a>
         {% else %}
-            <a href="{% url 'auth_login' %}" class="call-to-action__submit">
+            <a href="{% url 'auth_login' %}" class="call-to-action__submit call-to-action__submit--enhanced">
                 <span class="call-to-action__label">{% trans "Log in to answer" %}</span>
             </a>
         {% endif %}

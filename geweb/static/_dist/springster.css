@@ -314,7 +314,7 @@ iframe {
   text-decoration: none;
   width: 100%;
 }
-.call-to-action__submit:after {
+.call-to-action__submit--enhanced:after {
   background-color: #7300ff;
   border-radius: 5px;
   content: "";
@@ -337,6 +337,35 @@ iframe {
   position: absolute;
   right: 0;
   z-index: 10;
+}
+.call-to-action__back {
+  color: #7300ff;
+  cursor: pointer;
+  display: block;
+  font-family: "Baton-Medium";
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.call-to-action__back:before {
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: auto 100%;
+  content: "";
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  transform: rotate(-90deg);
+  margin-left: 10px;
+}
+.call-to-action--full {
+  background-color: #f1e5ff;
+  padding: 10px 5px 10px 15px;
 }
 .call-to-action--profiles {
   padding: 10px 0;
@@ -551,8 +580,11 @@ iframe {
   width: 100px;
 }
 .forms-page__results {
-  background-color: #fffec5;
-  padding: 20px 10px;
+  background-color: #ffffff;
+  padding: 20px 15px;
+}
+.forms-page__results p {
+  font-size: 18px;
 }
 .forms-page__title {
   color: #4e5358;
@@ -806,7 +838,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   font-family: "Baton-Regular";
   font-size: 21px;
   font-weight: 400;
-  padding: 0 15px 20px;
+  padding: 10px 15px 20px;
 }
 .forms p, .forms label {
   color: #4e5358;

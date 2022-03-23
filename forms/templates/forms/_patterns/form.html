@@ -5,7 +5,7 @@
         <form action="{% pageurl page %}{% if page.multi_step %}?p={{ fields_step.number|add:'1' }}{% endif %}" method="POST"  class="forms">
         {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="call-to-action__submit">
+            <button type="submit" class="call-to-action__submit call-to-action__submit--enhanced">
                 <span class="call-to-action__label">{% trans "Submit" %}</span>
             </button>
         </form>
