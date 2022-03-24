@@ -133,9 +133,11 @@
             content: '';
             display: inline-block;
             height: 24px;
-            width: 24px;
-            transform: rotate(-90deg);
             margin-left: 10px;
+            transform: rotate(-90deg);
+            vertical-align: middle;
+            width: 24px;
+            
         }
     }   
     &--full {

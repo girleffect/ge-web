@@ -1,4 +1,4 @@
-{% load i18n wagtailcore_tags %}
+{% load article_tags i18n wagtailcore_tags %}
 
 <div class="forms-page forms-page--main">
     <div class="forms-page__icon"></div>
@@ -18,5 +18,7 @@
             {% trans "Back home" %} 
         </a>
     </div>
-
+</div>
+<div class="breadcrumbs">
+    {% breadcrumbs %}
 </div>

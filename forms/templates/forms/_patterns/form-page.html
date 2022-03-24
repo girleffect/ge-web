@@ -1,4 +1,4 @@
-{% load wagtailcore_tags %}
+{% load article_tags wagtailcore_tags %}
 
 <div class="forms-page forms-page--main">
     <div class="forms-page__icon"></div>
@@ -11,4 +11,6 @@
     </div>
     {% include "./form.html" %}
 </div>
-
+<div class="breadcrumbs">
+    {% breadcrumbs %}
+</div>

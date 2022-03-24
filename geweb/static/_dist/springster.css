@@ -359,9 +359,10 @@ iframe {
   content: "";
   display: inline-block;
   height: 24px;
-  width: 24px;
-  transform: rotate(-90deg);
   margin-left: 10px;
+  transform: rotate(-90deg);
+  vertical-align: middle;
+  width: 24px;
 }
 .call-to-action--full {
   background-color: #f1e5ff;
@@ -686,12 +687,6 @@ form {
   overflow: inherit;
 }
 
-label {
-  color: #656d78;
-  padding: 16px 0 10px 0;
-  text-align: center;
-}
-
 fieldset {
   border: none;
   text-align: center;
@@ -701,6 +696,17 @@ fieldset .dropdowns {
   display: flex;
   margin: 0 0 10px;
   justify-content: space-between;
+}
+
+label {
+  color: #656d78;
+  padding: 16px 0 10px 0;
+  text-align: center;
+}
+
+label[for=id_terms_and_conditions] {
+  display: none;
+  visibility: hidden;
 }
 
 input[type=text],
@@ -755,6 +761,12 @@ select:focus-visible {
   outline: none;
 }
 
+select {
+  background: #fafafa url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/drop-down@2x.png") 0 0/20px no-repeat;
+  padding: 10px 30px 10px 5px;
+  width: 100%;
+}
+
 textarea {
   border-radius: 0;
   border: 2px solid #7300ff;
@@ -766,18 +778,16 @@ textarea {
   -webkit-appearance: none;
 }
 
-label[for=id_terms_and_conditions] {
-  display: none;
-  visibility: hidden;
-}
-
-input[type=checkbox]#id_terms_and_conditions {
+input[type=checkbox] {
   cursor: pointer;
   display: inline-block;
   visibility: visible;
   margin: 0 10px 0 0;
+  height: 24px;
+  vertical-align: middle;
+  width: 24px;
 }
-input[type=checkbox]#id_terms_and_conditions:before {
+input[type=checkbox]:before {
   background: #fff;
   content: "";
   border: 2px solid #7300ff;
@@ -785,8 +795,32 @@ input[type=checkbox]#id_terms_and_conditions:before {
   height: 24px;
   width: 24px;
 }
-input[type=checkbox]#id_terms_and_conditions.is-on:before {
+input[type=checkbox].is-on:before {
   background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
+}
+
+input[type=radio] {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  visibility: visible;
+  margin: 0 10px 0 0;
+  height: 24px;
+  vertical-align: middle;
+  width: 24px;
+}
+input[type=radio]:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
+  content: "";
+  display: inline-block;
+  height: 24px;
+  margin: 0 10px 10px 0;
+  width: 24px;
+}
+input[type=radio] ~ label {
+  background-color: #fff;
+  opacity: 0.8;
+  padding: 16px 10px 16px 54px;
 }
 
 .terms_and_conditions-link {
@@ -810,7 +844,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 
 /*
-    FORMS
+     FORMS
 */
 .forms {
   text-align: left;
@@ -878,13 +912,6 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   margin: 15px 0;
   padding: 0 15px;
   text-align: left;
-}
-.forms fieldset .input-group:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
-  content: "";
-  height: 25px;
-  margin: 0 10px 10px 0;
-  width: 10%;
 }
 .forms fieldset .input-group label {
   width: 85%;
