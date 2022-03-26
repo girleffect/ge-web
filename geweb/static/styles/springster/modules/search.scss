@@ -48,6 +48,9 @@
         text-indent: -99em;
         width: 21px;
     }
+    .search-radio {
+        visibility: hidden;
+    }
     &--header {
         #{$block}__bar { 
             margin: 15px 0 10px;

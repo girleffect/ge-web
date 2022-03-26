@@ -795,32 +795,54 @@ input[type=checkbox]:before {
   height: 24px;
   width: 24px;
 }
-input[type=checkbox].is-on:before {
+input[type=checkbox]:checked:before {
+  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
+}
+
+.typeCheckbox {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 0 0;
+  width: 100%;
+}
+.typeCheckbox.is-on input[type=checkbox]:before {
   background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
 }
 
 input[type=radio] {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
+  display: inline-block;
+}
+
+.typeRadio {
+  background-color: #fff;
   cursor: pointer;
   display: inline-block;
-  visibility: visible;
-  margin: 0 10px 0 0;
-  height: 24px;
-  vertical-align: middle;
-  width: 24px;
+  opacity: 0.8;
+  width: 100%;
 }
-input[type=radio]:before {
+.typeRadio:before {
   background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
   content: "";
   display: inline-block;
   height: 24px;
-  margin: 0 10px 10px 0;
+  margin: 0 10px 0 20px;
+  vertical-align: middle;
   width: 24px;
 }
-input[type=radio] ~ label {
-  background-color: #fff;
-  opacity: 0.8;
-  padding: 16px 10px 16px 54px;
+.typeRadio:hover, .typeRadiofocus {
+  opacity: 1;
+}
+.typeRadio.selected {
+  opacity: 1;
+}
+.typeRadio.selected:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/selected@2x.png") 0 0/24px no-repeat;
+  content: "";
+}
+.typeRadio input[type=radio] {
+  margin: 0;
+  visibility: hidden;
+  width: auto;
 }
 
 .terms_and_conditions-link {
@@ -1483,6 +1505,12 @@ input[type=radio] ~ label {
 .search-page {
   background-color: #ffffff;
 }
+.search-page .search {
+  padding: 0 10px 15px;
+}
+.search-page .heading__subheading {
+  padding: 10px 15px 15px;
+}
 .search-page .subheading {
   padding: 0 15px 15px;
 }
@@ -1536,6 +1564,9 @@ input[type=radio] ~ label {
   top: 8px;
   text-indent: -99em;
   width: 21px;
+}
+.search .search-radio {
+  visibility: hidden;
 }
 .search--header .search__bar {
   margin: 15px 0 10px;

@@ -71,8 +71,6 @@ textarea {
     -webkit-appearance: none;
 }
 
-
-
 input[type=checkbox] {
     cursor: pointer;
     display: inline-block;
@@ -89,32 +87,60 @@ input[type=checkbox] {
         height: 24px;
         width: 24px;
     }
-    &.is-on:before {
+
+    // & + label {
+    //     &:before {
+    //         background-color: $colorWhite;
+    //         border: 1px solid $colorWhite;
+    //     }
+    // }
+    &:checked:before {
+        background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
+    }
+}
+.typeCheckbox {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 0 0;
+    width: 100%;
+    &.is-on input[type=checkbox]:before {
         background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
     }
 }
 
 input[type=radio] {
-    background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
+    display: inline-block;
+}
+//DEFAULT input[type=radio] MODIFIER
+.typeRadio {
+    background-color: #fff;
     cursor: pointer;
     display: inline-block;
-    visibility: visible;
-    margin: 0 10px 0 0;
-    height: 24px;
-    vertical-align: middle;
-    width: 24px;
+    opacity: .8;
+    width: 100%;
     &:before {
         background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
         content: '';
         display: inline-block;
         height: 24px;
-        margin: 0 10px 10px 0;
+        margin: 0 10px 0 20px;
+        vertical-align: middle;
         width: 24px;
     }
-    & ~ label {
-        background-color: #fff;
-        opacity: .8;
-        padding: 16px 10px 16px 54px;
+    &:hover, &focus {
+        opacity: 1;
+    }
+    &.selected {
+        opacity: 1;
+        &:before {
+            background: url($staticPath + 'img/springster/selected@2x.png') 0 0/24px no-repeat;
+            content: '';
+        }
+    }
+    input[type=radio] {
+        margin: 0;
+        visibility: hidden;
+        width: auto;
     }
 }
 

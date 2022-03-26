@@ -1,8 +1,10 @@
 {% load i18n static theme_tags wagtailuserbar wagtailsettings_tags wagtailcore_tags %}
 {% get_current_theme as theme %}
 {% get_settings %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% get_current_language as LANGUAGE %}
 <!DOCTYPE html>
-<html>
+<html dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" lang="{{ LANGUAGE }}">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

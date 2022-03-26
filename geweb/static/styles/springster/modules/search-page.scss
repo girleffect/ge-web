@@ -1,6 +1,12 @@
 .search-page {
     background-color: $white;
-
+    
+    .search {
+        padding: 0 10px 15px;
+    }
+    .heading__subheading {
+        padding: 10px 15px 15px;
+    }
     .subheading {
         padding: 0 15px 15px;
     }
