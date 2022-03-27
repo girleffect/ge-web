@@ -274,6 +274,24 @@ ul, ol, li {
   vertical-align: text-top;
   width: 25px;
 }
+.call-to-action__back {
+  color: #003cdc;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  margin: 10px auto 5px;
+  text-align: left;
+  text-decoration: none;
+}
+.call-to-action__back:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  transform: rotate(180deg);
+  vertical-align: middle;
+  width: 40px;
+}
 .call-to-action__link {
   color: #003cdc;
   cursor: pointer;
@@ -285,7 +303,6 @@ ul, ol, li {
 }
 .call-to-action__link--left {
   display: block;
-  text-align: left;
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
@@ -1124,6 +1141,7 @@ input[type=radio]:checked:before {
 }
 .profiles__account--passwords {
   background-color: #eff3f5;
+  padding: 10px 0 0;
 }
 .profiles .heading__primary {
   color: #434343;
