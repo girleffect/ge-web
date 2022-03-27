@@ -17,10 +17,6 @@
         overflow: auto;
         display: block;
         visibility: visible;
-        &.loading {
-            display: none;
-            visibility: hidden;
-        }
     }
     &__hidden {
         display: none;
@@ -66,6 +62,10 @@
     &--header {
         #{$block}__bar { 
             margin: 15px 0 10px;
+            &.loading {
+                display: none;
+                visibility: hidden;
+            }
         }
         .search-radio {
             position: absolute;
