@@ -8,8 +8,7 @@
         position: relative;
     }
     &__anchor {
-        background-color: $blue;
-        color: $white;
+        color: $blue;
         cursor: pointer;
         display: block;
         font-size: 16px;
@@ -19,6 +18,26 @@
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
+        &--prev:before,
+        &--next:after {
+            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: auto 100%;
+            content: '';
+            display: inline-block;
+            margin: 0 auto;
+            height: 24px;
+            padding: 10px 0;
+            vertical-align: middle;
+            width: 24px;
+        }
+        &--prev:before {
+            transform: rotate(-90deg);
+        }
+        &--next:after {
+            transform: rotate(90deg);
+        }
     }
 }
 

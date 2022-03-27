@@ -1122,8 +1122,7 @@ input[type=radio]:checked:before {
   position: relative;
 }
 .pagination__anchor {
-  background-color: #003cdc;
-  color: #ffffff;
+  color: #003cdc;
   cursor: pointer;
   display: block;
   font-size: 16px;
@@ -1133,6 +1132,25 @@ input[type=radio]:checked:before {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+.pagination__anchor--prev:before, .pagination__anchor--next:after {
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: auto 100%;
+  content: "";
+  display: inline-block;
+  margin: 0 auto;
+  height: 24px;
+  padding: 10px 0;
+  vertical-align: middle;
+  width: 24px;
+}
+.pagination__anchor--prev:before {
+  transform: rotate(-90deg);
+}
+.pagination__anchor--next:after {
+  transform: rotate(90deg);
 }
 
 .profiles {
@@ -1186,6 +1204,10 @@ input[type=radio]:checked:before {
   font-size: 16px;
   font-weight: normal;
   padding: 10px 15px 15px;
+}
+.search-page .search,
+.search-page .heading__subheading {
+  padding: 0 10px;
 }
 
 .search {
