@@ -20,23 +20,20 @@
         text-transform: uppercase;
         &--prev:before,
         &--next:after {
-            background-image: url($staticPath + 'img/springster/up-arrow.svg');
-            background-repeat: no-repeat;
-            background-position: 0 0;
-            background-size: auto 100%;
+            background: url($staticPath + 'img/tujibebe/icon-sprite.png') -10px -455px/290px no-repeat;
             content: '';
             display: inline-block;
             margin: 0 auto;
-            height: 24px;
+            height: 15px;
             padding: 10px 0;
             vertical-align: middle;
-            width: 24px;
+            width: 30px;
         }
         &--prev:before {
-            transform: rotate(-90deg);
+            transform: rotate(-180deg);
         }
         &--next:after {
-            transform: rotate(90deg);
+            transform: rotate(0deg);
         }
     }
 }

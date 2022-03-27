@@ -1134,23 +1134,20 @@ input[type=radio]:checked:before {
   text-transform: uppercase;
 }
 .pagination__anchor--prev:before, .pagination__anchor--next:after {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: auto 100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") -10px -455px/290px no-repeat;
   content: "";
   display: inline-block;
   margin: 0 auto;
-  height: 24px;
+  height: 15px;
   padding: 10px 0;
   vertical-align: middle;
-  width: 24px;
+  width: 30px;
 }
 .pagination__anchor--prev:before {
-  transform: rotate(-90deg);
+  transform: rotate(-180deg);
 }
 .pagination__anchor--next:after {
-  transform: rotate(90deg);
+  transform: rotate(0deg);
 }
 
 .profiles {
