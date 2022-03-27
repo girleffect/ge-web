@@ -49,13 +49,18 @@ img {
   width: 100%;
 }
 
-a {
-  text-decoration: underline;
+iframe,
+video,
+audio {
+  width: 100%;
 }
 
 iframe {
-  min-height: 200px;
-  min-width: 340px;
+  min-height: 240px;
+}
+
+a {
+  text-decoration: underline;
 }
 
 .springster {
@@ -111,12 +116,23 @@ iframe {
 .block-paragraph p {
   margin: 5px 0;
 }
+.block-paragraph ul {
+  padding: 0 20px;
+}
+.block-paragraph ul li {
+  list-style: disc;
+}
+.block-paragraph ol {
+  padding: 0 20px;
+}
+.block-paragraph ol li {
+  list-style: decimal;
+}
 .block-image {
   overflow: auto;
 }
-.block-image img {
-  height: auto;
-  width: 100%;
+.block-media {
+  padding: 10px;
 }
 
 .article-teasers {
