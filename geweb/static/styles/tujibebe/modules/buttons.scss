@@ -97,7 +97,14 @@
         padding: 15px 0;
         text-align: center;
         text-decoration: none;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
         width: 100%;
+        &:hover, 
+        &:focus {
+            background-color: $dark_blue;
+        }
     }
     &--profiles {
         padding: 10px 15px;

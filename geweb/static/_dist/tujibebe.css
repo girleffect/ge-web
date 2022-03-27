@@ -329,7 +329,13 @@ ul, ol, li {
   padding: 15px 0;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
   width: 100%;
+}
+.call-to-action__submit:hover, .call-to-action__submit:focus {
+  background-color: #120c68;
 }
 .call-to-action--profiles {
   padding: 10px 15px;
