@@ -20,6 +20,9 @@
                 display: inline-block;
                 font-size: 15px;
                 line-height: 0.8;
+                -webkit-transition: all .3s;
+                -moz-transition: all .3s;
+                transition: all .3s;
                 &:after {
                     display: none;
                 }

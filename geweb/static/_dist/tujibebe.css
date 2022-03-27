@@ -985,6 +985,9 @@ input[type=radio]:checked:before {
   display: inline-block;
   font-size: 15px;
   line-height: 0.8;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .footer-menu .nav-list__anchor:after {
   display: none;
