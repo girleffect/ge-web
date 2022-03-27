@@ -326,7 +326,7 @@ ul, ol, li {
   font-size: 16px;
   font-weight: 400;
   margin: 15px auto 0;
-  padding: 15px 0;
+  padding: 14px 0;
   text-align: center;
   text-decoration: none;
   -webkit-transition: all 0.3s;
@@ -989,8 +989,10 @@ input[type=radio]:checked:before {
 .footer-menu .nav-list__anchor:after {
   display: none;
 }
-.footer-menu .nav-list__anchor:hover {
+.footer-menu .nav-list__anchor:hover, .footer-menu .nav-list__anchorfocus {
+  color: #003cdc;
   border-color: #353638;
+  text-decoration: underline;
 }
 .footer-menu .nav-list__anchor.selected {
   border-color: #353638;
