@@ -2,7 +2,7 @@
 
 <div id="searchBar" class="search search--{{enhance}}">
     <input class="search-radio" type="checkbox" id="search-toggle">
-    <div class="search__bar">
+    <div class="search__bar loading">
         <form class="search__form" action="{% url 'search' %}" novalidate>
             <label class="search__label" for="search_top">{% trans "Search" %}</label>
             <input class="search__input" aria-label="Search Input" placeholder="{% trans 'Search' %}" name="q" type="text">

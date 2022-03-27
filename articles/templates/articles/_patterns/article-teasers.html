@@ -26,14 +26,23 @@
             {# <!-- ========== end ======== --> #}
             
             <a href="{% pageurl post %}" class="teaser-stacklist__anchor">
-                <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
+                {% if theme.slug == 'springster' or theme.slug == 'tujibebe' or theme.slug == 'zathu'  %}
+                    <h3 class="teaser-stacklist__title">{{ post.title|truncatewords:20 }}</h3>
+                {% else %}
+                    <h3 class="teaser-stacklist__title">{{ post.title }}</h3>
+                {% endif %}
             </a>
             
             {% if post.subtitle %}
-                <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
+                {% if theme.slug == 'springster' or theme.slug == 'tujibebe' or theme.slug == 'zathu'  %}
+                    <p class="teaser-stacklist__subtitle"> {{ post.subtitle|truncatewords:20 }}</p>
+                {% else %}
+                    <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
+                {% endif %}
             {% else %}
-                <p class="teaser-stacklist__subtitle"> ... </p>
+                <p class="teaser-stacklist__subtitle"> - </p>
             {% endif %}
+
             <div class="teaser-stacklist__cta">
                 <ul class="teaser-tags-list">
                     {{tag.counter}}

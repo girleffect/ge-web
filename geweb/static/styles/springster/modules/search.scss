@@ -15,6 +15,16 @@
     }
     &__bar {
         overflow: auto;
+        display: block;
+        visibility: visible;
+        &.loading {
+            display: none;
+            visibility: hidden;
+        }
+    }
+    &__hidden {
+        display: none;
+        visibility: hidden;
     }
     &__form {
         position: relative;

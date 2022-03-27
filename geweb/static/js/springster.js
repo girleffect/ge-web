@@ -5,20 +5,17 @@ import "../styles/springster/springster.scss";
  * Header search from toggle
  */
 const elemHeaderSearchToggle = document.getElementById('search'),
-    elemSearchBar = document.querySelector('.search--header > .search__bar')
-elemSearchBar.style.display = 'none'
-elemSearchBar.style.visibility = 'hidden'
-elemHeaderSearchToggle.addEventListener('click', (e) => {
+    elemSearchBar = document.querySelector('.search--header > .search__bar');
 
-    if (elemSearchBar.style.display === 'none') {
-        elemSearchBar.style.display = 'block'
-        elemSearchBar.style.visibility = 'visible'
-        e.target.style.background = '#7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/dismiss.svg") no-repeat 3px 3px/auto 80%'
-        e.target.style.height = '25px'
+elemSearchBar.classList.add('search__hidden')
+elemHeaderSearchToggle.addEventListener('click', (e) => {
+    console.log(e.target.parentElement)
+    if (elemSearchBar.classList.contains('search__hidden')) {
+        elemSearchBar.classList.remove('search__hidden', 'loading') 
+        e.target.parentElement.classList.add('close')
     } else {
-        elemSearchBar.style.display = 'none'
-        elemSearchBar.style.visibility = 'hidden'
-        e.target.style.background = 'url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/nav_search.svg") no-repeat 3px 0/auto 95%'
+        elemSearchBar.classList.add('search__hidden')
+        e.target.parentElement.classList.remove('close')
     }
 })
 
