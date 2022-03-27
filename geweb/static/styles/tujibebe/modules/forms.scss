@@ -31,7 +31,7 @@ select {
     font-size: 18px;
     margin: 10px auto;
     padding: 10px 0 10px 5px;
-    width: 98%;
+    width: 95%;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -45,6 +45,14 @@ select {
 
 select { 
     background: url($staticPath + 'img/tujibebe/icon-sprite.png') 285px -200px/180px no-repeat;
+    width: 98%;
+}
+
+select[multiple] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
 }
 
 textarea {
@@ -56,17 +64,22 @@ textarea {
 }
 
 label[for=id_terms_and_conditions] {
-    // display: none;
-    // visibility: hidden;
     padding: 25px 0 10px 0;
 }
 
-input[type=checkbox]#id_terms_and_conditions {
+//label.typeCheckbox for input[type=checkbox]
+.typeCheckbox {
     cursor: pointer;
+    display: block;
+    padding: 10px 0 0;
+    text-align: left;
+    width: 100%;
+}
+input[type=checkbox] {
     display: inline-block;
     visibility: visible;
     margin: 0 25px 0 0;
-    
+    vertical-align: super;
     &:before {
         background: #fff;
         content: "";
@@ -75,8 +88,39 @@ input[type=checkbox]#id_terms_and_conditions {
         height: 24px;
         width: 24px;
     }
-    &.is-on:before {
+    &:checked:before {
         background: $lime url($staticPath + 'img/tujibebe/icon-sprite.png') -120px -50px/180px no-repeat;
+    }
+}
+
+
+//label.typeRadio for input[type=radio]
+.typeRadio {
+    cursor: pointer;
+    display: block;
+    padding: 10px 0 0;
+    text-align: left;
+    width: 100%;
+}
+
+input[type=radio] {
+    display: inline-block;
+    height: 24px;
+    vertical-align: middle;
+    width: 24px;
+    &:before {
+        background: #fff;
+        border-radius: 100%;
+        border: 3px solid $blue;
+        content: "";
+        display: inline-block;
+        height: 24px;
+        margin: -5px 5px 5px -5px;
+        width: 24px;
+    }
+    &:checked:before {
+        background: $blue;
+        border-color: $lime;
     }
 }
 

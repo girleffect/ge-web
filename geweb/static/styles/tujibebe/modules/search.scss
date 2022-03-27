@@ -15,6 +15,16 @@
     }
     &__bar {
         overflow: auto;
+        display: block;
+        visibility: visible;
+        &.loading {
+            display: none;
+            visibility: hidden;
+        }
+    }
+    &__hidden {
+        display: none;
+        visibility: hidden;
     }
     &__form {
         position: relative;
@@ -50,9 +60,12 @@
         text-indent: -99em;
         width: 27px;
     }
+    .search-radio {
+        visibility: hidden;
+    }
     &--header {
         #{$block}__bar { 
-            margin: 15px 15px 10px;
+            margin: 15px 0 10px;
         }
         .search-radio {
             position: absolute;
