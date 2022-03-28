@@ -3,13 +3,9 @@
 {% load article_tags %}
 
 {% block content %}
-    {% if theme.slug == 'springster' %}
-
+    {% if theme.slug == 'yegna' %}
+        -
+    {% else %}
         {% include "./_patterns/form-page-thank-you.html" %}
-
-    {% elif theme.slug == 'tujibebe' %}
-
-        {% include "./_patterns/form-page-thank-you.html" %}
-
     {% endif %}
 {% endblock content %}

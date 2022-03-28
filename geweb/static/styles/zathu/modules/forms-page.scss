@@ -20,5 +20,24 @@
         font-family: "TwCenMTStd-Bold";
         padding: 10px 0;
     }
+    .forms {
+        background-color: $very_light_gray;
+        margin: 15px 8px 10px;
+        & > p,
+        & > div {
+            margin: 10px 0 0;
+        }
+        textarea {
+            border-color: $white;
+        }
+    }
+
+    &__results {
+        padding: 0 8px; 
+        p {
+            color: $dark_violet;
+            font-family: "TwCenMTStd-Bold";
+        }
+    }
 
 }

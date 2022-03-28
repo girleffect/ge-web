@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}
+    {% if theme.slug == 'yegna' %}
+        -
+    {% else %}
         {% include "./_patterns/form-page.html" %}
     {% endif %}
 {% endblock content %}
