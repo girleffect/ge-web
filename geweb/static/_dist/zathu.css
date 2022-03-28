@@ -116,6 +116,38 @@ a {
 .article-page__recommendations .teaser-stacklist__content {
   padding: 0 15px 0 15px;
 }
+.article-page audio {
+  background-color: #412a83;
+  color: #fff;
+  padding: 20px;
+  width: 87%;
+}
+
+.block-paragraph {
+  font-size: 16px;
+  padding: 10px;
+}
+.block-paragraph p {
+  margin: 5px 0;
+}
+.block-paragraph ul {
+  padding: 0 20px;
+}
+.block-paragraph ul li {
+  list-style: disc;
+}
+.block-paragraph ol {
+  padding: 0 20px;
+}
+.block-paragraph ol li {
+  list-style: decimal;
+}
+.block-image {
+  overflow: auto;
+}
+.block-media {
+  padding: 10px;
+}
 
 .article-teaser {
   overflow: auto;
@@ -229,6 +261,102 @@ a {
   padding: 10px 10px 20px;
 }
 
+.commenting {
+  padding: 10px 0;
+}
+.commenting--on-article {
+  margin: 8px 0 35px;
+}
+.commenting--on-article:before {
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/zathu/mw_zig_pattern_30.png");
+  background-position: center;
+  background-repeat: repeat-x;
+  content: "";
+  clear: both;
+  display: block;
+  height: 50px;
+  margin: 0 0 10px 0;
+  overflow: visible;
+  width: 100%;
+}
+.commenting__counter {
+  color: #7a7a7a;
+  font-size: 16px;
+  text-decoration: none;
+}
+.commenting__label {
+  color: #7a7a7a;
+  display: inline-block;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.commenting__list {
+  position: relative;
+}
+.commenting__list__item {
+  background-color: #fff;
+  display: block;
+}
+.commenting-form {
+  padding: 0 10px;
+}
+.commenting-thread {
+  padding: 10px 0 0;
+  border-bottom: 4px solid #00b8ae;
+}
+.commenting-thread__alias {
+  color: #7a7a7a;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+.commenting-thread__alias-removed {
+  color: #5c5c5c;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.commenting-thread__msg {
+  color: #5c5c5c;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+.commenting-thread__publish-date {
+  color: #5c5c5c;
+  font-size: 12px;
+  padding: 5px 5px 0 10px;
+  font-weight: 700;
+}
+.commenting-cta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px 10px;
+}
+.commenting-cta__label {
+  color: #412a83;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.commenting-replies {
+  background-color: #f8fafd;
+  padding: 10px 0 0;
+}
+.commenting-replies-title {
+  color: #7a7a7a;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 10px 10px;
+}
+.commenting-replies__feedback {
+  color: #5c5c5c;
+  display: block;
+}
+
 .component {
   padding: 25px 8px 15px;
   text-align: center;
@@ -263,14 +391,14 @@ a {
 }
 
 .copyright {
-  padding: 10px 15px 5px;
+  padding: 5px 8px 5px;
 }
 .copyright__text {
-  color: #7a7a7a;
+  color: #a3a3a3;
   font-size: 12px;
 }
 .copyright__anchor {
-  color: #7a7a7a;
+  color: #a3a3a3;
   text-decoration: underline;
 }
 
@@ -290,7 +418,9 @@ a {
   padding: 0 13px;
 }
 .footer .languages {
-  padding: 20px 15px 5px;
+  background: transparent;
+  padding: 20px 0 5px;
+  margin-left: -8px;
 }
 .footer .languages-list {
   align-items: center;
@@ -304,6 +434,10 @@ a {
 .footer .languages-list__label {
   color: #5c5c5c;
   font-size: 20px;
+}
+.footer .languages-list__label:after {
+  content: ":";
+  display: inline-block;
 }
 .footer .languages-list__anchor {
   color: #7a7a7a;
@@ -321,7 +455,6 @@ fieldset {
   border: none;
   margin: 0 0 10px;
   padding: 10px 5px;
-  overflow: auto;
 }
 
 label[for=id_terms_and_conditions] {
@@ -390,7 +523,7 @@ select {
   color: #000;
   font-size: 16px;
   padding: 10px;
-  width: 100%;
+  width: 90%;
 }
 input[type=text]:focus,
 input[type=number]:focus,
@@ -411,6 +544,13 @@ select:focus {
 
 select {
   margin: 0 0 5px;
+  width: 95%;
+}
+
+textarea {
+  border: 1px solid #412a83;
+  border-radius: 0;
+  width: 98%;
 }
 
 input.search__input {
@@ -489,6 +629,13 @@ input[type=submit] {
 .heading {
   color: #412a83;
 }
+.heading__micro {
+  color: #412a83;
+}
+.heading__component-title {
+  font-family: "Berfa";
+  font-size: 26px;
+}
 .heading--primary, .heading--related-up-next {
   font-family: "Berfa";
   font-size: 26px;
@@ -513,9 +660,9 @@ input[type=submit] {
   font-size: 18.72px;
   padding: 15px 15px 10px;
 }
-
-.heading__micro {
-  color: #412a83;
+.heading--component {
+  padding: 10px 0;
+  text-align: center;
 }
 
 .subtitle {
@@ -554,16 +701,9 @@ input[type=submit] {
   text-transform: uppercase;
   text-decoration: none;
 }
-
-/*
-    CSS TOOGLE LOADED LANGUAGES
-*/
-.languages-list__anchor[rel=fr]:lang(fr) {
+.languages-list__anchor:hover, .languages-list__anchor focus {
   color: #00b8ae;
-}
-
-.languages-list__anchor[rel=en]:lang(en) {
-  color: #00b8ae;
+  text-decoration: underline;
 }
 
 .footer-wrapper {
