@@ -34,6 +34,25 @@ ul, ol, li {
   padding: 0;
 }
 
+img {
+  height: auto;
+  width: 100%;
+}
+
+iframe,
+video,
+audio {
+  width: 100%;
+}
+
+iframe {
+  min-height: 240px;
+}
+
+a {
+  text-decoration: underline;
+}
+
 .tujibebe {
   background-color: #ffffff;
   margin: 0 auto;
@@ -124,12 +143,23 @@ ul, ol, li {
 .block-paragraph p {
   margin: 5px 0;
 }
+.block-paragraph ul {
+  padding: 0 20px;
+}
+.block-paragraph ul li {
+  list-style: disc;
+}
+.block-paragraph ol {
+  padding: 0 20px;
+}
+.block-paragraph ol li {
+  list-style: decimal;
+}
 .block-image {
   overflow: auto;
 }
-.block-image img {
-  height: auto;
-  width: 100%;
+.block-media {
+  padding: 10px;
 }
 
 .article-teasers {
@@ -274,6 +304,24 @@ ul, ol, li {
   vertical-align: text-top;
   width: 25px;
 }
+.call-to-action__back {
+  color: #003cdc;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  margin: 10px auto 5px;
+  text-align: left;
+  text-decoration: none;
+}
+.call-to-action__back:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  transform: rotate(180deg);
+  vertical-align: middle;
+  width: 40px;
+}
 .call-to-action__link {
   color: #003cdc;
   cursor: pointer;
@@ -285,7 +333,6 @@ ul, ol, li {
 }
 .call-to-action__link--left {
   display: block;
-  text-align: left;
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
@@ -309,10 +356,16 @@ ul, ol, li {
   font-size: 16px;
   font-weight: 400;
   margin: 15px auto 0;
-  padding: 15px 0;
+  padding: 14px 0;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
   width: 100%;
+}
+.call-to-action__submit:hover, .call-to-action__submit:focus {
+  background-color: #120c68;
 }
 .call-to-action--profiles {
   padding: 10px 15px;
@@ -558,6 +611,131 @@ ul, ol, li {
   width: 95%;
 }
 
+.forms-page {
+  background-color: #ffffff;
+  margin: 10px 0;
+  padding: 10px 10px 0;
+  position: relative;
+}
+.forms-page__inner {
+  position: relative;
+  padding: 20px 0 0;
+}
+.forms-page__icon {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+}
+.forms-page__icon:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/illustrations.png") no-repeat 0 -360px/100px;
+  content: "";
+  display: block;
+  height: 88px;
+  padding: 5px;
+  width: 100px;
+}
+.forms-page__results {
+  background-color: #ffffff;
+  padding: 20px 15px;
+}
+.forms-page__results p {
+  font-size: 18px;
+}
+.forms-page__title {
+  color: #434343;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.forms-page__title:after {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -105px -440px/245px;
+  content: "";
+  display: block;
+  height: 20px;
+  margin: 5px auto 20px;
+  width: 140px;
+}
+.forms-page__subtitle {
+  color: #434343;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+.forms-page__subtitle h1, .forms-page__subtitle h2, .forms-page__subtitle h3, .forms-page__subtitle h4, .forms-page__subtitle h5, .forms-page__subtitle h5, .forms-page__subtitle p {
+  text-transform: capitalize;
+}
+.forms-page__paragraph {
+  color: #000;
+  font-size: 18px;
+}
+.forms-page--banner {
+  padding: 10px 15px;
+}
+.forms-page--main {
+  padding: 20px 0;
+}
+.forms-page--main .forms-page__icon {
+  background-size: 100px;
+  margin-bottom: 30px;
+}
+.forms-page--main .forms-page__inner {
+  padding: 0 5%;
+}
+.forms-page--main .forms-page__inner p {
+  font-size: 18px;
+}
+.forms-page--main .forms-page__title {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.forms-page--main .forms-page__title:after {
+  left: 0;
+  margin: 5px auto;
+  position: absolute;
+  right: 0;
+  width: 145px;
+}
+.forms-page--main .forms-page__subtitle h1, .forms-page--main .forms-page__subtitle h2, .forms-page--main .forms-page__subtitle h3, .forms-page--main .forms-page__subtitle h4, .forms-page--main .forms-page__subtitle h5, .forms-page--main .forms-page__subtitle h5, .forms-page--main .forms-page__subtitle p {
+  font-size: 24px;
+}
+.forms-page--main .forms {
+  padding: 10px 15px;
+  margin: 10px 0;
+}
+.forms-page--main .forms__title {
+  text-align: center;
+}
+.forms-page--main .forms__title:after {
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 150px;
+}
+.forms-page--main .forms input[type=text],
+.forms-page--main .forms input[type=number],
+.forms-page--main .forms input[type=password],
+.forms-page--main .forms input[type=email],
+.forms-page--main .forms input[type=tel],
+.forms-page--main .forms input[type=search],
+.forms-page--main .forms input[type=week],
+.forms-page--main .forms input[type=date],
+.forms-page--main .forms input[type=month],
+.forms-page--main .forms input[type=datetime],
+.forms-page--main .forms input[type=datetime-local],
+.forms-page--main .forms input[type=url],
+.forms-page--main .forms select,
+.forms-page--main .forms textarea {
+  margin: 10px 0;
+}
+.forms-page--main .forms label {
+  font-size: 20px;
+}
+.forms-page--main .forms p, .forms-page--main .forms div {
+  padding: 5px 0;
+}
+
 form {
   overflow: auto;
 }
@@ -591,7 +769,7 @@ select {
   font-size: 18px;
   margin: 10px auto;
   padding: 10px 0 10px 5px;
-  width: 98%;
+  width: 95%;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -627,6 +805,14 @@ select:focus-visible {
 
 select {
   background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 285px -200px/180px no-repeat;
+  width: 98%;
+}
+
+select[multiple] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
 }
 
 textarea {
@@ -641,13 +827,21 @@ label[for=id_terms_and_conditions] {
   padding: 25px 0 10px 0;
 }
 
-input[type=checkbox]#id_terms_and_conditions {
+.typeCheckbox {
   cursor: pointer;
+  display: block;
+  padding: 10px 0 0;
+  text-align: left;
+  width: 100%;
+}
+
+input[type=checkbox] {
   display: inline-block;
   visibility: visible;
   margin: 0 25px 0 0;
+  vertical-align: super;
 }
-input[type=checkbox]#id_terms_and_conditions:before {
+input[type=checkbox]:before {
   background: #fff;
   content: "";
   border: 3px solid #003cdc;
@@ -655,8 +849,37 @@ input[type=checkbox]#id_terms_and_conditions:before {
   height: 24px;
   width: 24px;
 }
-input[type=checkbox]#id_terms_and_conditions.is-on:before {
+input[type=checkbox]:checked:before {
   background: #00d79b url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") -120px -50px/180px no-repeat;
+}
+
+.typeRadio {
+  cursor: pointer;
+  display: block;
+  padding: 10px 0 0;
+  text-align: left;
+  width: 100%;
+}
+
+input[type=radio] {
+  display: inline-block;
+  height: 24px;
+  vertical-align: middle;
+  width: 24px;
+}
+input[type=radio]:before {
+  background: #fff;
+  border-radius: 100%;
+  border: 3px solid #003cdc;
+  content: "";
+  display: inline-block;
+  height: 24px;
+  margin: -5px 5px 5px -5px;
+  width: 24px;
+}
+input[type=radio]:checked:before {
+  background: #003cdc;
+  border-color: #00d79b;
 }
 
 .terms_and_conditions-link {
@@ -701,6 +924,9 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   padding: 10px 10px 5px;
   position: relative;
   margin: 0 auto;
+}
+.header .logo--center img {
+  width: 115px;
 }
 
 .subheading {
@@ -773,6 +999,30 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-transform: capitalize;
   text-decoration: none;
 }
+.languages--bottom {
+  padding: 5px 0 20px;
+}
+.languages--bottom .languages-list__item {
+  margin: 0;
+}
+.languages--bottom .languages-list__label {
+  color: #003cdc;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  margin-right: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.languages--bottom .languages-list__label:after {
+  display: inline-block;
+  content: ":";
+}
+.languages--bottom .languages-list__anchor {
+  font-size: 15px;
+  color: #909497;
+  text-decoration: underline;
+}
 
 /*
     CSS TOOGLE LOADED LANGUAGES
@@ -809,12 +1059,17 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   display: inline-block;
   font-size: 15px;
   line-height: 0.8;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .footer-menu .nav-list__anchor:after {
   display: none;
 }
-.footer-menu .nav-list__anchor:hover {
+.footer-menu .nav-list__anchor:hover, .footer-menu .nav-list__anchorfocus {
+  color: #003cdc;
   border-color: #353638;
+  text-decoration: underline;
 }
 .footer-menu .nav-list__anchor.selected {
   border-color: #353638;
@@ -941,8 +1196,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   position: relative;
 }
 .pagination__anchor {
-  background-color: #003cdc;
-  color: #ffffff;
+  color: #003cdc;
   cursor: pointer;
   display: block;
   font-size: 16px;
@@ -952,6 +1206,22 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+.pagination__anchor--prev:before, .pagination__anchor--next:after {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") -10px -455px/290px no-repeat;
+  content: "";
+  display: inline-block;
+  margin: 0 auto;
+  height: 15px;
+  padding: 10px 0;
+  vertical-align: middle;
+  width: 30px;
+}
+.pagination__anchor--prev:before {
+  transform: rotate(-180deg);
+}
+.pagination__anchor--next:after {
+  transform: rotate(0deg);
 }
 
 .profiles {
@@ -971,6 +1241,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 .profiles__account--passwords {
   background-color: #eff3f5;
+  padding: 10px 0 0;
 }
 .profiles .heading__primary {
   color: #434343;
@@ -1005,6 +1276,10 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   font-weight: normal;
   padding: 10px 15px 15px;
 }
+.search-page .search,
+.search-page .heading__subheading {
+  padding: 0 10px;
+}
 
 .search {
   position: relative;
@@ -1023,6 +1298,12 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 .search__bar {
   overflow: auto;
+  display: block;
+  visibility: visible;
+}
+.search__hidden {
+  display: none;
+  visibility: hidden;
 }
 .search__form {
   position: relative;
@@ -1058,8 +1339,15 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   text-indent: -99em;
   width: 27px;
 }
+.search .search-radio {
+  visibility: hidden;
+}
 .search--header .search__bar {
-  margin: 15px 15px 10px;
+  margin: 15px 0 10px;
+}
+.search--header .search__bar.loading {
+  display: none;
+  visibility: hidden;
 }
 .search--header .search-radio {
   position: absolute;

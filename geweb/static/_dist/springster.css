@@ -1571,10 +1571,6 @@ input[type=radio] {
   display: block;
   visibility: visible;
 }
-.search__bar.loading {
-  display: none;
-  visibility: hidden;
-}
 .search__hidden {
   display: none;
   visibility: hidden;
@@ -1616,6 +1612,10 @@ input[type=radio] {
 }
 .search--header .search__bar {
   margin: 15px 0 10px;
+}
+.search--header .search__bar.loading {
+  display: none;
+  visibility: hidden;
 }
 .search--header .search-radio {
   position: absolute;

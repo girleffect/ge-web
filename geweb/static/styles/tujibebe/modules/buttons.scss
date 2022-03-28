@@ -42,6 +42,24 @@
             }
         }
     }  
+    &__back {
+        color: $blue;
+        cursor: pointer;
+        display: block;
+        font-size: 18px;
+        margin: 10px auto 5px;
+        text-align: left;
+        text-decoration: none;
+        &:before {
+            background: url($staticPath + 'img/tujibebe/icon-sprite.png') 0 -463px/290px no-repeat;
+            content: "";
+            display: inline-block;
+            height: 20px;
+            transform: rotate(180deg);
+            vertical-align: middle;
+            width: 40px;
+        }
+    }
     &__link {
         color: $blue;
         cursor: pointer;
@@ -52,7 +70,6 @@
         text-decoration: none;
         &--left {
             display: block;
-            text-align: left;
             font-size: 15px;
             font-weight: 500;
             text-transform: uppercase;
@@ -66,7 +83,6 @@
                 vertical-align: middle;
                 width: 40px;
             }
-            
         }
     }
     &__submit {
@@ -78,10 +94,17 @@
         font-size: 16px;
         font-weight: 400;
         margin: 15px auto 0;
-        padding: 15px 0;
+        padding: 14px 0;
         text-align: center;
         text-decoration: none;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
         width: 100%;
+        &:hover, 
+        &:focus {
+            background-color: $dark_blue;
+        }
     }
     &--profiles {
         padding: 10px 15px;
