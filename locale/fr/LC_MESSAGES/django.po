@@ -7,89 +7,93 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-04 15:39+0200\n"
-"PO-Revision-Date: 2019-07-09 13:10+0000\n"
-"Last-Translator: Agnes <agnes.kaminska@girleffect.org>\n"
+"PO-Revision-Date: 2018-01-17 14:25+0000\n"
+"Last-Translator: Ayanda <ayanda@praekelt.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: swa_TZ\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1562677859.230287\n"
+"X-POOTLE-MTIME: 1516199155.876889\n"
 
 #: gem/constants.py:6 gem/constants.py:9
 msgid "male"
-msgstr "mwanaume"
+msgstr "masculin"
 
 #: gem/constants.py:7 gem/constants.py:10
 msgid "female"
-msgstr "Mwanamke"
+msgstr "féminin"
 
 #: gem/constants.py:8 gem/constants.py:11
 msgid "don't want to answer"
-msgstr "sitaki kujibu"
+msgstr "ne souhaite pas répondre"
 
 #: gem/forms.py:35
 msgid ""
 "Sorry, but that is an invalid display name. Please don't use your email "
 "address or phone number in your display name."
 msgstr ""
-"Samahani, lakini jina hilo la onyesho si sahihi. Tafadhali tumia anwani yako "
-"ya barua pepe au nambari ya simu katika jina lako la onyesho."
+"Désolé, mais le nom d'affichage est invalide. Veuillez ne pas utiliser votre "
+"adresse électronique ou votre numéro de téléphone dans votre nom d'affichage."
 
 #: gem/forms.py:57
 msgid ""
 "Sorry, the name you have used is not allowed. Please, use a different name "
 "for your display name."
 msgstr ""
-"Samahani, jina ulilotumia haliruhusiwi. Tafadhali, tumia jina tofauti kwa "
-"jina lako la onyesho."
+"Désolé, le nom que vous utilisez est invalide. Veuillez utiliser un nom "
+"différent pour votre nom d'affichage."
 
 #: gem/forms.py:84 gem/forms.py:153 gem/forms.py:164
 #: gem/templates/springster/wagtailadmin/edit_handlers/inline_panel.html:90
 msgid "Gender"
-msgstr "Jinsia"
+msgstr "Sexe"
 
 #: gem/forms.py:97 gem/forms.py:145
 #: gem/templates/chhaajaa/profiles/done.html:32
 #: gem/templates/rwanda/profiles/done.html:32
 msgid "Display Name"
-msgstr "Jina la Onyesho"
+msgstr "Nom d'affichage"
 
 #: gem/forms.py:99 gem/forms.py:147
 msgid "This value must contain only letters, numbers and underscores."
-msgstr "Lazima thamani hii iwe na heruﬁ, nambari na mistari chini pekee."
+msgstr ""
+"Cette valeur ne peut contenir que des lettres, des chiffres et des tirets "
+"bas."
 
 #: gem/forms.py:110
 msgid ""
 "Sorry, but that is an invalid username. Please don't use your email address "
 "or phone number in your username."
 msgstr ""
-"Samahani, jina hilo la mtumiaji si sahihi. Tafadhali usitumie anwani yako ya "
-"barua pepe au nambari ya simu katika sehemu ya jina lako la mtumiaji."
+"Désolé, mais le nom d'utilisateur est invalide. Veuillez ne pas utiliser "
+"votre adresse électronique ou votre numéro de téléphone dans votre nom "
+"d'utilisateur."
 
 #: gem/forms.py:172
 msgid "Spam"
-msgstr "Barua taka"
+msgstr ""
 
 #: gem/forms.py:173
 msgid "Offensive Language"
-msgstr "Lugha ya matusi"
+msgstr "Langue du site :"
 
 #: gem/forms.py:174
 msgid "Bullying"
-msgstr "Uonevu"
+msgstr ""
 
 #: gem/forms.py:175
 msgid "Other"
-msgstr "Nyingine"
+msgstr ""
 
+# please note there is a typo on the word permission (missing 'i')
 #: gem/middleware.py:320
 #, fuzzy
 #| msgid "You do not have permssion to access this site."
 msgid "You do not have the permissions to access {}."
-msgstr "Huna kibali cha kufikia tovuti hii."
+msgstr "Vous n'êtes pas autorisé à accéder à ce site."
 
 #: gem/models.py:195
 msgid "{}: Admin site invitation"
@@ -129,7 +133,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Not set"
 msgid "Not equal"
-msgstr " Haijawekwa"
+msgstr "Non défini."
 
 #: gem/rules.py:85
 msgid "Older than"
@@ -177,10 +181,8 @@ msgid "Profile Data Rule"
 msgstr ""
 
 #: gem/rules.py:141
-#, fuzzy
-#| msgid "This field is required."
 msgid "This field is required"
-msgstr "Sehemu hii ni ya lazima."
+msgstr ""
 
 #: gem/rules.py:151
 #, python-format
@@ -224,19 +226,19 @@ msgstr ""
 #, fuzzy
 #| msgid "Moderator"
 msgid "operator"
-msgstr "Msimamizi"
+msgstr "Modérateur"
 
 #: gem/rules.py:401
 #, fuzzy
 #| msgid "Comment replies"
 msgid "Comment count rule"
-msgstr "Majibu ya Maoni"
+msgstr "Réponses aux commentaires"
 
 #: gem/rules.py:424
 #, fuzzy
 #| msgid "Type your comment here..."
 msgid "These users commented"
-msgstr "Andika maoni yako hapa..."
+msgstr "Entrez vos commentaires ici..."
 
 #: gem/rules.py:425
 msgid "{} {} times"
@@ -251,15 +253,15 @@ msgstr ""
 #: gem/templates/springster/patterns/basics/forms/forms-modules/form.html:83
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/form.html:75
 msgid "Log in to vote"
-msgstr "Ingia ili upige kura"
+msgstr "Connecte-toi pour voter."
 
 #: gem/settings/base.py:452
 msgid "That username already exits. Please try another one."
-msgstr "Jina hilo la mtumiaji tayari lipo. Tafadhali jaribu lingine."
+msgstr "Nom d'utilisateur déjà utilisé. Veuillez en choisir un autre."
 
 #: gem/settings/base.py:453
 msgid "The old password is incorrect."
-msgstr "Nenosiri la zamani si sahihi."
+msgstr "L'ancien mot de passe est incorrect."
 
 #: gem/settings/base.py:454 gem/templates/base/forms/form.html:60
 #: gem/templates/chhaajaa/forms/form.html:84
@@ -273,7 +275,7 @@ msgstr "Nenosiri la zamani si sahihi."
 #: gem/templates/springster/patterns/basics/forms/forms-modules/form.html:77
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/form.html:69
 msgid "Vote"
-msgstr "Piga kura"
+msgstr "Voter"
 
 #: gem/settings/base.py:455 gem/templates/base/forms/forms_list.html:42
 #: gem/templates/base/forms/molo_form_page.html:49
@@ -284,24 +286,25 @@ msgstr "Piga kura"
 #: gem/templates/springster/patterns/basics/forms/forms-modules/forms-feeback.html:5
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/surveys-feeback.html:5
 msgid "Show Results"
-msgstr "Onyesha Matokeo"
+msgstr "Afficher les résultats"
 
 #: gem/settings/base.py:456
 msgid "You voted: "
-msgstr "Ulipiga kura:"
+msgstr "Tu as voté :"
 
+# I chose to translate as if the user is a female, hence "née" ("né" for male)
 #: gem/settings/base.py:457
 msgid "Name of the city you were born in"
-msgstr "Jina la mji uliozaliwa"
+msgstr "Nom de la ville où vous êtes née."
 
 #: gem/settings/base.py:458
 msgid "Name of your primary school"
-msgstr "Jina la shule yako ya msingi"
+msgstr "Nom de votre école primaire."
 
 #: gem/settings/base.py:459 gem/templates/springster/profiles/register.html:31
 #: gem/templates/tanzania/profiles/register.html:32
 msgid "Please complete this form to join"
-msgstr "Tafadhali kamilisha fomu hii ili ujiunge"
+msgstr "Veuillez remplir ce formulaire pour vous inscrire."
 
 #: gem/templates/admin/frontend_users_age_filter.html:8
 #, python-format
@@ -363,7 +366,7 @@ msgstr ""
 #: mote/projects/gem/website/src/patterns/basics/menu/element.html:13
 #: mote/projects/gem/website/src/patterns/basics/search/element.html:7
 msgid "Search"
-msgstr "Tafuta"
+msgstr "Rechercher"
 
 #: gem/templates/admin/frontend_users_age_filter.html:14
 msgid "Clear"
@@ -383,12 +386,12 @@ msgstr ""
 #: gem/templates/springster/403_csrf.html:5
 #: gem/templates/tanzania/403_csrf.html:5 gem/templates/yegna/403_csrf.html:7
 msgid "Unable to Login"
-msgstr "Haiwezi Kuingia"
+msgstr "Connexion impossible"
 
 #: gem/templates/base/403_csrf.html:11 gem/templates/springster/403_csrf.html:7
 #: gem/templates/tanzania/403_csrf.html:7
 msgid "Hi Girl"
-msgstr "Mambo Dada!"
+msgstr "Bonjour jeune fille"
 
 #: gem/templates/base/403_csrf.html:12 gem/templates/springster/403_csrf.html:8
 #: gem/templates/tanzania/403_csrf.html:8
@@ -398,40 +401,40 @@ msgid ""
 "Basics app for now. To login or register for a profile, visit our free "
 "mobisite through your mobile browser at"
 msgstr ""
-"Samahani, unapata tatizo la kufungua kipengele hiki! Kwa sababu ya tatizo la "
-"kiufundi la muda mfupi, kuingia na sajili hazipatikani kwenye programu ya "
-"Free Basics kwa sasa. Ili kuingia au kusajili upate wasifu, tembelea "
-"mobisite yetu ya bila malipo kupitia kivinjari chako cha simu ya mkononi "
-"kwenye"
+"Désolé, vous avez des difficultés à accéder à cette fonction ! En raison "
+"d'un problème technique, l'accès aux pages de connexion et d'inscription est "
+"temporairement indisponible sur l'appli Free Basics. Pour vous connecter ou "
+"créer votre profil, allez sur notre site web mobile gratuit à l'aide de "
+"votre navigateur mobile "
 
 #: gem/templates/base/403_csrf.html:12 gem/templates/chhaajaa/403_csrf.html:8
 #: gem/templates/rwanda/403_csrf.html:7
 #: gem/templates/springster/403_csrf.html:11
 #: gem/templates/tanzania/403_csrf.html:11 gem/templates/yegna/403_csrf.html:11
 msgid " We're working hard to get this problem resolved. Thank you."
-msgstr "Tunafanya kila tuwezalo ili kutatua tatizo hili. Asante."
+msgstr "Nous nous efforçons de résoudre ce problème. Merci."
 
 #: gem/templates/base/403_csrf.html:14 gem/templates/malawi/403_csrf.html:13
 #: gem/templates/springster/403_csrf.html:13
 #: gem/templates/tanzania/403_csrf.html:13
 msgid "XO"
-msgstr "Tunawependa"
+msgstr "Bises"
 
 #: gem/templates/base/403_csrf.html:15
 msgid "Girl Effect"
-msgstr "Girl Effect"
+msgstr "L'Action des Filles"
 
 #: gem/templates/base/404.html:8 gem/templates/chhaajaa/404.html:5
 #: gem/templates/rwanda/404.html:5 gem/templates/springster/404.html:5
 #: gem/templates/yegna/404.html:6
 msgid "Page not found"
-msgstr "Ukurasa haukupatikana"
+msgstr "Page non trouvée"
 
 #: gem/templates/base/404.html:9 gem/templates/chhaajaa/404.html:6
 #: gem/templates/rwanda/404.html:6 gem/templates/springster/404.html:6
 #: gem/templates/yegna/404.html:7
 msgid "Sorry, this page could not be found."
-msgstr "Samahani, ukurasa huu haukuweza kupatikana."
+msgstr "Page introuvable"
 
 #: gem/templates/base/500.html:9 gem/templates/base/500.html:14
 #: gem/templates/chhaajaa/500.html:10 gem/templates/chhaajaa/500.html:15
@@ -439,20 +442,19 @@ msgstr "Samahani, ukurasa huu haukuweza kupatikana."
 #: gem/templates/springster/500.html:10 gem/templates/springster/500.html:15
 #: gem/templates/yegna/500.html:10 gem/templates/yegna/500.html:29
 msgid "Internal server error"
-msgstr "Hitilafu ya seva ya ndani"
+msgstr "Erreur serveur interne"
 
 #: gem/templates/base/500.html:15 gem/templates/chhaajaa/500.html:16
 #: gem/templates/rwanda/500.html:16 gem/templates/springster/500.html:16
 #: gem/templates/yegna/500.html:31
 msgid "Sorry, there seems to be an error. Please try again soon."
-msgstr ""
-"Samahani, inaonekana kuna hitilafu. Tafadhali jaribu tena hivi karibuni."
+msgstr "Une erreur est survenue. Réessaye plus tard."
 
 #: gem/templates/base/base.html:146 gem/templates/chhaajaa/base.html:138
 #: gem/templates/malawi/base.html:133 gem/templates/rwanda/base.html:114
 #: gem/templates/yegna/base.html:146
 msgid "Menu"
-msgstr "Menyu"
+msgstr "Menu"
 
 #: gem/templates/base/base.html:148 gem/templates/base/profiles/register.html:8
 #: gem/templates/base/profiles/register.html:138
@@ -463,7 +465,7 @@ msgstr "Menyu"
 #: gem/templates/tanzania/base.html:143
 #: gem/templates/tanzania/profiles/register.html:145
 msgid "Sign up"
-msgstr "Jiandikishe"
+msgstr "Signer"
 
 #: gem/templates/base/base.html:150 gem/templates/base/base.html:208
 #: gem/templates/chhaajaa/base.html:190
@@ -478,13 +480,13 @@ msgstr "Jiandikishe"
 #: gem/templates/springster/patterns/basics/menu/sp_variations/menu-full_with-icons.html:11
 #: gem/templates/tanzania/base.html:147 gem/templates/tanzania/base.html:243
 msgid "Profile"
-msgstr "Wasifu"
+msgstr "Plugin"
 
 #: gem/templates/base/base.html:170 gem/templates/malawi/base.html:155
 #: gem/templates/springster/base.html:305 gem/templates/tanzania/base.html:284
 #: gem/templates/yegna/core/tags/social_media_footer.html:15
 msgid "Back to Top"
-msgstr "Rudi Juu"
+msgstr "Haut de la page"
 
 #: gem/templates/base/base.html:181
 #: gem/templates/base/core/tags/breadcrumbs.html:5
@@ -500,15 +502,15 @@ msgstr "Rudi Juu"
 #: gem/templates/springster/patterns/basics/navigation/sp_variations/navigation-category_full.html:6
 #: gem/templates/tanzania/base.html:175 gem/templates/tanzania/base.html:216
 msgid "Home"
-msgstr "Ukurasa wa mwanzo"
+msgstr "Accueil"
 
 #: gem/templates/base/base.html:182
 msgid "Categories"
-msgstr "Kategoria"
+msgstr "Catégories"
 
 #: gem/templates/base/base.html:195
 msgid "Sign Up"
-msgstr "Jiandikishe"
+msgstr "Signer"
 
 #: gem/templates/base/base.html:201
 #: gem/templates/base/registration/login.html:7
@@ -527,7 +529,7 @@ msgstr "Jiandikishe"
 #: gem/templates/springster/registration/password_reset_complete.html:7
 #: gem/templates/tanzania/base.html:237
 msgid "Log in"
-msgstr "Ingia"
+msgstr "Connexion"
 
 #: gem/templates/base/base.html:215
 #: gem/templates/base/profiles/viewprofile.html:14
@@ -541,14 +543,14 @@ msgstr "Ingia"
 #: gem/templates/springster/wagtailadmin/shared/main_nav.html:28
 #: gem/templates/tanzania/base.html:249
 msgid "Log out"
-msgstr "Toka"
+msgstr "Déconnexion"
 
 #: gem/templates/base/base.html:230 gem/templates/malawi/base.html:210
 #: gem/templates/rwanda/base.html:343 gem/templates/springster/base.html:317
 #: gem/templates/springster/patterns/basics/copyright/copyright-terms.html:4
 #: gem/templates/tanzania/base.html:297 gem/templates/yegna/base.html:226
 msgid "All Rights Reserved."
-msgstr "Haki Zote Zimehifadhiwa."
+msgstr "Tous droits réservés"
 
 #: gem/templates/base/comments/comment.html:9
 #: gem/templates/chhaajaa/comments/comment.html:8
@@ -570,7 +572,7 @@ msgstr "Haki Zote Zimehifadhiwa."
 #: gem/templates/springster/comments/reply.html:112
 #: gem/templates/springster/notifications/notice.html:11
 msgid "Big Sister"
-msgstr "Dada Mkubwa"
+msgstr "Grande soeur"
 
 #: gem/templates/base/comments/comment.html:12
 #: gem/templates/base/comments/comment.html:15
@@ -608,7 +610,7 @@ msgstr "Dada Mkubwa"
 #: gem/templates/springster/comments/reply.html:121
 #: gem/templates/springster/notifications/notice.html:17
 msgid "Anonymous"
-msgstr "Pasipo Jina lako"
+msgstr "Anonyme"
 
 #: gem/templates/base/comments/comment.html:23
 #: gem/templates/chhaajaa/comments/comment.html:23
@@ -626,7 +628,8 @@ msgid ""
 "This comment has been removed by the community. Please read our platform "
 "rules."
 msgstr ""
-"Maoni haya yameondolewa na jamii. Tafadhali soma sheria zetu za jukwaa."
+"Ce commentaire a été supprimé par la communauté. Lis les règles de notre "
+"plateforme."
 
 #: gem/templates/base/comments/comment.html:30
 #: gem/templates/chhaajaa/comments/comment.html:36
@@ -648,7 +651,7 @@ msgstr ""
 #: gem/templates/springster/comments/reply.html:142
 #: gem/templates/springster/notifications/notice.html:26
 msgid "ago"
-msgstr "iliyopita"
+msgstr "avant"
 
 #: gem/templates/base/comments/comment.html:32
 #: gem/templates/chhaajaa/comments/comment.html:41
@@ -667,7 +670,7 @@ msgstr "iliyopita"
 #: gem/templates/springster/comments/reply.html:57
 #: gem/templates/springster/comments/reply.html:147
 msgid "Report"
-msgstr "Ripoti"
+msgstr "Signaler"
 
 #: gem/templates/base/comments/comment.html:38
 #: gem/templates/base/comments/comment.html:42
@@ -707,7 +710,7 @@ msgstr "Ripoti"
 #: gem/templates/springster/notifications/reply_list.html:13
 #: gem/templates/springster/notifications/tags/notification_banner.html:6
 msgid "Reply"
-msgstr "Jibu"
+msgstr "Répondre"
 
 #: gem/templates/base/comments/comment.html:42
 #: gem/templates/base/comments/comment.html:46
@@ -736,7 +739,7 @@ msgstr "Jibu"
 #: gem/templates/springster/notifications/reply_list.html:15
 #: gem/templates/springster/notifications/tags/notification_banner.html:8
 msgid "Replies"
-msgstr "Majibu"
+msgstr "Les réponses"
 
 #: gem/templates/base/comments/comment_block.html:9
 #: gem/templates/springster/patterns/basics/comment-counter/centered-comment-counter.html:8
@@ -744,13 +747,14 @@ msgstr "Majibu"
 #: gem/templates/springster/patterns/components/article-page/sp_variations/main-article-page.html:24
 msgid "comment"
 msgid_plural "comments"
-msgstr[0] "Maoni"
+msgstr[0] "Commentaires"
+msgstr[1] "Commentaires"
 
 #: gem/templates/base/comments/comment_block.html:16
 #: gem/templates/chhaajaa/comments/comment_block.html:19
 #: gem/templates/springster/comments/comment_block.html:13
 msgid "Log in to comment"
-msgstr "Ingia ili utoe maoni"
+msgstr "Connecte-toi pour commenter."
 
 #: gem/templates/base/comments/comment_block.html:19
 #: gem/templates/chhaajaa/comments/reply.html:243
@@ -758,11 +762,11 @@ msgstr "Ingia ili utoe maoni"
 #: gem/templates/springster/comments/comment_block.html:17
 #: gem/templates/springster/comments/reply.html:237
 msgid "Commenting on this article is currently disabled"
-msgstr "Kutoa maoni kuhusu makala hii kumezuiwa  kwa sasa"
+msgstr "Les commentaires sont désactivés pour cet article."
 
 #: gem/templates/base/comments/comment_block.html:35
 msgid "View more comments"
-msgstr "angalia maoni zaidi"
+msgstr "lire plus de commentaires"
 
 #: gem/templates/base/comments/comments.html:3
 #: gem/templates/base/comments/comments.html:6
@@ -775,7 +779,7 @@ msgstr "angalia maoni zaidi"
 #: gem/templates/rwanda/comments/reply.html:9
 #: gem/templates/springster/comments/comments.html:3
 msgid "Comments"
-msgstr "Maoni"
+msgstr "Commentaires"
 
 #: gem/templates/base/comments/comments.html:27
 #: gem/templates/base/comments/reply.html:6
@@ -802,7 +806,7 @@ msgstr "Maoni"
 #: gem/templates/springster/comments/report_response.html:17
 #: gem/templates/springster/comments/user_has_already_reported.html:14
 msgid "Back to article"
-msgstr "Rudi kwenye makala"
+msgstr "Retourne vers l'article."
 
 #: gem/templates/base/comments/form.html:5
 #: gem/templates/chhaajaa/comments/form.html:5
@@ -815,7 +819,7 @@ msgstr "Rudi kwenye makala"
 #: gem/templates/springster/comments/preview.html:18
 #: gem/templates/springster/comments/reply.html:205
 msgid "Please correct the error below"
-msgstr "Tafadhali sahihisha kosa hapa chini"
+msgstr "Please correct the error below"
 
 #: gem/templates/base/comments/form.html:9
 #: gem/templates/base/search/search_block.html:6
@@ -825,7 +829,7 @@ msgstr "Tafadhali sahihisha kosa hapa chini"
 #: gem/templates/springster/patterns/basics/forms/forms-modules/form.html:76
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/form.html:68
 msgid "Submit"
-msgstr "Wasilisha"
+msgstr "Soumettre"
 
 #: gem/templates/base/comments/form.html:10
 #: gem/templates/chhaajaa/comments/preview.html:24
@@ -834,22 +838,22 @@ msgstr "Wasilisha"
 #: gem/templates/springster/comments/preview.html:24
 #: gem/templates/springster/comments/reply.html:211
 msgid "Comment Anonymously"
-msgstr "Toa maoni Bila Jina lako"
+msgstr "Commente anonymement."
 
 #: gem/templates/base/comments/preview.html:19
 #: gem/templates/base/comments/reply.html:40
 msgid "Please "
-msgstr "Tafadhali"
+msgstr "S'il-te-plaît"
 
 #: gem/templates/base/comments/preview.html:19
 #: gem/templates/base/comments/reply.html:40
 msgid "log in"
-msgstr "ingia"
+msgstr "Connexion"
 
 #: gem/templates/base/comments/preview.html:19
 #: gem/templates/base/comments/reply.html:40
 msgid " to leave a comment."
-msgstr "kutoa maoni."
+msgstr "pour commenter."
 
 #: gem/templates/base/comments/reply.html:14
 #: gem/templates/chhaajaa/comments/reply.html:98
@@ -861,14 +865,14 @@ msgstr "kutoa maoni."
 #: gem/templates/rwanda/comments/reply.html:170
 #: gem/templates/springster/comments/reply.html:99
 msgid "Recent replies"
-msgstr "Majibu ya hivi karibuni"
+msgstr "Réponses récentes"
 
 #: gem/templates/base/comments/reply.html:16
 #: gem/templates/chhaajaa/comments/reply.html:100
 #: gem/templates/rwanda/comments/reply.html:103
 #: gem/templates/springster/comments/reply.html:101
 msgid "Earlier replies"
-msgstr "Majibu ya awali"
+msgstr "Réponses précédentes"
 
 #: gem/templates/base/comments/reply.html:28
 #: gem/templates/chhaajaa/comments/reply.html:194
@@ -882,8 +886,9 @@ msgstr "Majibu ya awali"
 #: gem/templates/springster/patterns/basics/pagination/pagination-comments.html:6
 #: gem/templates/yegna/forms/molo_form_page.html:111
 msgid "Page"
-msgstr "Ukurasa"
+msgstr "Page"
 
+# term difficult to translate without context; it can be translated by de or d', or another term, depending on what is next.
 #: gem/templates/base/comments/reply.html:28
 #: gem/templates/chhaajaa/comments/comments.html:106
 #: gem/templates/chhaajaa/comments/reply.html:194
@@ -902,32 +907,32 @@ msgstr "Ukurasa"
 #: gem/templates/yegna/forms/molo_form_page.html:113
 #: gem/templates/yegna/search/search_results.html:93
 msgid "of"
-msgstr "ya"
+msgstr "de"
 
 #: gem/templates/base/comments/report_comment.html:7
 #: gem/templates/chhaajaa/comments/report_comment.html:9
 #: gem/templates/springster/comments/report_comment.html:10
 msgid "Please let us know why you are reporting this comment?"
-msgstr "Tafadhali tufahamishe kwa nini unaripoti maoni haya?"
+msgstr "Veuillez indiquer pourquoi vous avez écrit ce commentaire."
 
 #: gem/templates/base/comments/report_comment.html:14
 #: gem/templates/chhaajaa/comments/report_comment.html:32
 #: gem/templates/rwanda/comments/report_comment.html:40
 #: gem/templates/springster/comments/report_comment.html:32
 msgid "Report Comment"
-msgstr "Ripoti Maoni"
+msgstr "Signaler un commentaire."
 
 #: gem/templates/base/comments/report_response.html:7
 #: gem/templates/chhaajaa/comments/report_response.html:8
 #: gem/templates/springster/comments/report_response.html:6
 msgid "Thanks!"
-msgstr "Asante!"
+msgstr "Merci !"
 
 #: gem/templates/base/comments/report_response.html:10
 #: gem/templates/chhaajaa/comments/report_response.html:13
 #: gem/templates/springster/comments/report_response.html:9
 msgid "This comment has been reported."
-msgstr "Maoni haya yameripotiwa."
+msgstr "Ce commentaire a été signalé."
 
 #: gem/templates/base/comments/report_response.html:11
 #: gem/templates/chhaajaa/comments/report_response.html:17
@@ -936,15 +941,15 @@ msgid ""
 "It will be reviewed by the moderation team and may be removed if it breaks "
 "our Platform rules"
 msgstr ""
-"Itapitiwa na timu ya usimamizi na inaweza kuondolewa iwapo inakiuka sheria "
-"zetu za Jukwaa"
+"Il sera modéré par l'équipe de modération et peut être supprimé s'il ne "
+"respecte pas les règles de la plateforme."
 
 #: gem/templates/base/comments/user_has_already_reported.html:7
 #: gem/templates/chhaajaa/comments/user_has_already_reported.html:9
 #: gem/templates/rwanda/comments/user_has_already_reported.html:13
 #: gem/templates/springster/comments/user_has_already_reported.html:6
 msgid "You have already reported this comment"
-msgstr "Tayari umekwisharipoti maoni haya"
+msgstr "Vous avez déjà signalé ce commentaire"
 
 #: gem/templates/base/comments/user_has_already_reported.html:10
 #: gem/templates/chhaajaa/comments/user_has_already_reported.html:13
@@ -953,8 +958,8 @@ msgid ""
 "The comment will be reviewed by the moderation team and may be removed if it "
 "breaks our Platform rules"
 msgstr ""
-"Maoni yatapitiwa na timu ya usimamizi na yanaweza kuondolewa ikiwa yanakiuka "
-"kanuni za Jukwaa letu"
+"Le commentaire sera examiné par l'équipe de modérateurs et peut être "
+"supprimé s'il enfreint les règles de notre plateforme"
 
 #: gem/templates/base/core/article_intro_partial.html:43
 #: gem/templates/chhaajaa/comments/comment.html:30
@@ -973,7 +978,7 @@ msgstr ""
 #: gem/templates/yegna/core/tags/section_listing_homepage.html:157
 #: gem/templates/yegna/search/search_results.html:79
 msgid "Read more"
-msgstr "Soma zaidi"
+msgstr "En savoir plus"
 
 #: gem/templates/base/core/article_page.html:30
 #: gem/templates/base/core/article_page.html:60
@@ -984,7 +989,7 @@ msgstr "Soma zaidi"
 #: gem/templates/rwanda/core/footer_page.html:22
 #: gem/templates/rwanda/core/footer_page.html:56
 msgid "Download Video"
-msgstr "Pakua Video"
+msgstr "Télécharge la vidéo"
 
 #: gem/templates/base/core/article_page.html:36
 #: gem/templates/base/core/tags/media_listing_homepage.html:16
@@ -1006,7 +1011,7 @@ msgstr "Pakua Video"
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:16
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:17
 msgid "Click to watch on youtube!"
-msgstr "Bofya hapa ili kutazama kwenye YouTube"
+msgstr "Clique ici pour regarder sur YouTube"
 
 #: gem/templates/base/core/article_page.html:38
 #: gem/templates/base/core/tags/media_listing_homepage.html:18
@@ -1021,7 +1026,9 @@ msgstr "Bofya hapa ili kutazama kwenye YouTube"
 #: gem/templates/yegna/core/footer_page.html:38
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:20
 msgid "Media will be played externally in a new window"
-msgstr "Midia itachezwa nje katika dirisha jipya"
+msgstr ""
+"La lecture des fichiers médias s'effectuera de façon externe dans une "
+"nouvelle fenêtre"
 
 #: gem/templates/base/core/article_page.html:55
 #: gem/templates/base/core/tags/media_listing_homepage.html:29
@@ -1039,7 +1046,7 @@ msgstr "Midia itachezwa nje katika dirisha jipya"
 #: gem/templates/yegna/core/tags/hero_article.html:28
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:32
 msgid "Your browser does not support the video tag."
-msgstr "Kivinjari chako hakikubali utambulisho wavideo."
+msgstr "Ton navigateur ne supporte pas la balise vidéo."
 
 #: gem/templates/base/core/article_page.html:66
 #: gem/templates/base/core/tags/media_listing_homepage.html:35
@@ -1054,7 +1061,7 @@ msgstr "Kivinjari chako hakikubali utambulisho wavideo."
 #: gem/templates/yegna/core/footer_page.html:68
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:39
 msgid "Click here to download video"
-msgstr "Bofya hapa ili upakue video"
+msgstr "Clique ici pour télécharger"
 
 #: gem/templates/base/core/article_page.html:68
 #: gem/templates/base/core/tags/media_listing_homepage.html:37
@@ -1069,7 +1076,7 @@ msgstr "Bofya hapa ili upakue video"
 #: gem/templates/yegna/core/footer_page.html:70
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:41
 msgid "Video files will not be played, you can download them"
-msgstr "Mafaili ya video hayawezi kufunguka, unaweza     kupakua"
+msgstr ""
 
 #: gem/templates/base/core/article_page.html:85
 #: gem/templates/base/core/tags/media_listing_homepage.html:48
@@ -1087,14 +1094,14 @@ msgstr "Mafaili ya video hayawezi kufunguka, unaweza     kupakua"
 #: gem/templates/yegna/core/tags/latest_listing_homepage.html:92
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:53
 msgid "Your browser does not support the audio tag."
-msgstr "Kivinjari chako hakikubali utambulisho wa sauti."
+msgstr "Ton navigateur ne supporte pas la balise vidéo."
 
 #: gem/templates/base/core/article_page.html:90
 #: gem/templates/malawi/core/article_page.html:88
 #: gem/templates/rwanda/core/article_page.html:128
 #: gem/templates/rwanda/core/footer_page.html:88
 msgid "Download Audio"
-msgstr "Pakua Sauti"
+msgstr "Télécharge le contenu audio"
 
 #: gem/templates/base/core/article_page.html:96
 #: gem/templates/base/core/tags/media_listing_homepage.html:54
@@ -1109,7 +1116,7 @@ msgstr "Pakua Sauti"
 #: gem/templates/yegna/core/footer_page.html:100
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:60
 msgid "Click here to download audio"
-msgstr "Bofya hapa ili upakue"
+msgstr "Clique ici pour télécharger"
 
 #: gem/templates/base/core/article_page.html:98
 #: gem/templates/base/core/tags/media_listing_homepage.html:56
@@ -1124,34 +1131,34 @@ msgstr "Bofya hapa ili upakue"
 #: gem/templates/yegna/core/footer_page.html:102
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:62
 msgid "Audio files will not be played, you can download them"
-msgstr " Mafaili ya sauti hayawezi kucheza unaweza kuyapakua"
+msgstr ""
 
 #: gem/templates/base/core/language_block.html:3
 #: gem/templates/springster/base.html:291 gem/templates/tanzania/base.html:270
 #: mote/projects/gem/website/src/patterns/basics/languages/variations/language-list-dropdown/element.html:7
 msgid "Language"
-msgstr "Lugha"
+msgstr "Langue"
 
 #: gem/templates/base/core/main.html:18
 msgid ""
 "This site is free for all MTN subscribers. If you are an Airtel or TIGO "
 "subscriber, you can access this site for free by going to "
 msgstr ""
-"Tovuti hii ni Bure kwa waliojiunga na MTN.Kama unatumia mtandao WA airtel "
-"auTigo,unaweza kupata huduma hii Bure kwa kwenda"
+"Ce site est gratuit pour tous les abonnés MTN. Si vous êtes abonné à Airtel, "
+"vous pouvez accéder gratuitement au site en allant sur"
 
 #: gem/templates/base/core/related-article-list.html:7
 #: gem/templates/malawi/core/related-article-list.html:7
 #: gem/templates/springster/core/article_page.html:117
 #: gem/templates/springster/patterns/basics/articles/sp_variations/related-article-teasers_up-next.html:5
 msgid "Next up in"
-msgstr "Inayofuata katika"
+msgstr "La prochaine étape dans"
 
 #: gem/templates/base/core/related-article-list.html:29
 #: gem/templates/malawi/core/related-article-list.html:29
 #: gem/templates/yegna/core/related-article-list.html:105
 msgid "Recommended"
-msgstr "Inayopendekezwa"
+msgstr "Recommandé"
 
 #: gem/templates/base/core/tags/media_listing_homepage.html:64
 #: gem/templates/chhaajaa/core/footer_page.html:26
@@ -1175,11 +1182,11 @@ msgstr "Inayopendekezwa"
 #: gem/templates/yegna/core/tags/latest_listing_homepage.html:99
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:73
 msgid "Download"
-msgstr "Pakua "
+msgstr "Télécharge la vidéo"
 
 #: gem/templates/base/forms/form.html:59
 msgid "Done"
-msgstr "Imekamilika"
+msgstr "finir"
 
 #: gem/templates/base/forms/form.html:70
 #: gem/templates/chhaajaa/forms/form.html:96
@@ -1188,18 +1195,18 @@ msgstr "Imekamilika"
 #: gem/templates/springster/patterns/basics/forms/forms-modules/form.html:90
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/form.html:80
 msgid "Next Question"
-msgstr "Swali linalofuata"
+msgstr "Question suivante"
 
 #: gem/templates/base/forms/form.html:87
 #: gem/templates/springster/patterns/basics/forms/forms-modules/forms-feeback.html:3
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/surveys-feeback.html:3
 msgid "You have already completed this"
-msgstr "Tayari umekamilisha utafiti huu."
+msgstr "Vous avez déjà complété ce questionnaire"
 
 #: gem/templates/base/forms/form.html:90
 #: gem/templates/base/forms/molo_form_page_success.html:89
 msgid "Back to Home page"
-msgstr "Rudi kwenye Ukurasa wa mwanzo"
+msgstr "Retour à la page d'accueil"
 
 #: gem/templates/base/forms/forms_list.html:10
 #: gem/templates/base/forms/molo_form_page.html:8
@@ -1210,30 +1217,30 @@ msgstr "Rudi kwenye Ukurasa wa mwanzo"
 #: gem/templates/rwanda/forms/molo_form_page.html:8
 #: gem/templates/rwanda/forms/molo_form_page_success.html:8
 msgid "Share your story"
-msgstr "Shiriki stori yako"
+msgstr "Partager mon histoire."
 
 #: gem/templates/base/forms/forms_list.html:20
 msgid "Write your story"
-msgstr "Andika hadithi yako"
+msgstr "Écris ton histoire."
 
 #: gem/templates/base/forms/forms_list.html:25
 #: gem/templates/base/forms/forms_list.html:69
 #: gem/templates/base/forms/forms_list.html:92
 msgid "Log in to Enter"
-msgstr "Ingia"
+msgstr "Connecte-toi pour accéder."
 
 #: gem/templates/base/forms/forms_list.html:32
 #: gem/templates/base/forms/molo_form_page.html:38
 #: gem/templates/base/forms/molo_form_page_success.html:27
 msgid "What's your opinion?"
-msgstr "Una maoni gani?"
+msgstr "Quel est ton avis ?"
 
 #: gem/templates/base/forms/forms_list.html:39
 #: gem/templates/base/forms/molo_form_page.html:46
 #: gem/templates/chhaajaa/forms/form_modules/_polls.html:28
 #: gem/templates/chhaajaa/forms/form_modules/rq_form.html:46
 msgid "You have already completed this poll."
-msgstr "Tayari umekamilisha utafiti huu."
+msgstr "Vous avez déjà complété ce questionnaire"
 
 #: gem/templates/base/forms/forms_list.html:46
 #: gem/templates/base/forms/molo_form_page.html:53
@@ -1254,88 +1261,87 @@ msgstr "Tayari umekamilisha utafiti huu."
 #: gem/templates/yegna/core/article_tags.html:37
 #: gem/templates/yegna/forms/molo_form_page_success.html:30
 msgid "Back home"
-msgstr "Rudi mwanzo"
+msgstr "Retour à l'Accueil"
 
 #: gem/templates/base/forms/forms_list.html:64
 #, fuzzy
 #| msgid "Start"
 msgid "Start Poll"
-msgstr "Anza"
+msgstr "Commencer"
 
 #: gem/templates/base/forms/forms_list.html:87
 #, fuzzy
 #| msgid "Submit Survey"
 msgid "Start Survey"
-msgstr "Wasilisha Utafiti"
+msgstr "Emettre un questionnaire"
 
 #: gem/templates/base/forms/molo_form_page.html:67
 #: gem/templates/chhaajaa/forms/molo_form_page.html:72
 #: gem/templates/rwanda/forms/molo_form_page.html:58
-#, fuzzy, python-format
-#| msgid "This survey has %(pages)s pages"
+#, python-format
 msgid "This survey has %(pages)s pages"
-msgstr "Utafiti huu una asilimia % (ukurasa)kurasa"
+msgstr ""
 
 #: gem/templates/base/forms/molo_form_page.html:75
 msgid "Log in to take survey"
-msgstr "Ingia ili ufanye utafiti"
+msgstr "Conntez vous pour récupérer le questionnaire"
 
 #: gem/templates/base/forms/molo_form_page_success.html:17
 msgid "Thank you!"
-msgstr "Asante!"
+msgstr "Merci !"
 
 #: gem/templates/base/forms/molo_form_page_success.html:23
 msgid ""
 "Thanks for submitting your story! You’ll find out soon if you’re a winner!"
 msgstr ""
-"Asante kwa kuwasilisha stori yako! Utafahamu hivi karibuni kama wewe ni "
-"mshindi!"
+"Merci d'avoir soumis ton histoire ! Tu sauras bientôt si tu as remporté le "
+"concours !"
 
 #: gem/templates/base/forms/molo_form_page_success.html:51
 msgid "Thank you for submitting poll!"
-msgstr "Asante kwa kuwasilisha utafiti"
+msgstr "Merci d'avoir voté !"
 
 #: gem/templates/base/forms/molo_form_page_success.html:63
 #, fuzzy
 #| msgid "Thank you for submitting "
 msgid "Thank you for submitting the form."
-msgstr "Asante kwa kuwasilisha"
+msgstr "Merci d'avoir voté !"
 
 #: gem/templates/base/forms/molo_form_page_success.html:68
 #, fuzzy
 #| msgid "has been completed successfully!"
 msgid "The form has been completed successfully."
-msgstr "Imekamilika vyema"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/base/forms/molo_form_page_success.html:72
 msgid "Survey Results"
-msgstr "Matokeo ya Utafiti"
+msgstr "Résultats du questionnaire"
 
 #: gem/templates/base/forms/molo_form_page_success.html:77
 msgid "Thank you for submitting survey!"
-msgstr "Asante kwa kuwasilisha Utafiti huu."
+msgstr "Merci de votre témoignage !"
 
 #: gem/templates/base/forms/molo_form_page_success.html:82
 msgid "Your survey has been completed successfully."
-msgstr "Utafiti wako umekamilika vyema"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/base/profiles/change_password.html:22
 #: gem/templates/base/profiles/viewprofile.html:82
 msgid "Old Password:"
-msgstr "Nenosiri la Zamani:"
+msgstr "Ancien mot de passe :"
 
 #: gem/templates/base/profiles/change_password.html:27
 #: gem/templates/base/profiles/viewprofile.html:87
 msgid "New Password:"
-msgstr "Nenosiri Jipya:"
+msgstr "Nouveau mot de passe :"
 
 #: gem/templates/base/profiles/change_password.html:32
 msgid "Confirm New Password:"
-msgstr "Thibitisha Nenosiri Jipya:"
+msgstr "Confirme le nouveau mot de passe."
 
 #: gem/templates/base/profiles/change_password.html:36
 msgid "Change Password"
-msgstr "Badilisha Nenosiri"
+msgstr "Change le mot de passe"
 
 #: gem/templates/base/profiles/done.html:8
 #: gem/templates/chhaajaa/profiles/done.html:9
@@ -1343,7 +1349,7 @@ msgstr "Badilisha Nenosiri"
 #: gem/templates/springster/profiles/done.html:6
 #: gem/templates/tanzania/profiles/done.html:6
 msgid "Thank you for joining!"
-msgstr "Asante kwa kujiunga!"
+msgstr "Merci de t'être inscrite !"
 
 #: gem/templates/base/profiles/done.html:9
 #: gem/templates/base/profiles/register.html:62
@@ -1355,12 +1361,12 @@ msgstr "Asante kwa kujiunga!"
 #: gem/templates/tanzania/profiles/done.html:18
 #: gem/templates/tanzania/profiles/register.html:82
 msgid "Let us know your birthday to get access to exclusive content."
-msgstr "Tufahamishe siku yako ya kuzaliwa ili uweze kupata maudhui ya kipekee."
+msgstr "Indique ta date d'anniversaire pour avoir accès à un contenu exclusif."
 
 #: gem/templates/base/profiles/done.html:15
 #: gem/templates/base/profiles/editprofile.html:15
 msgid "Nickname:"
-msgstr "Jina la utani:"
+msgstr "Pseudonyme :"
 
 #: gem/templates/base/profiles/done.html:16
 #: gem/templates/base/profiles/editprofile.html:16
@@ -1372,15 +1378,15 @@ msgid ""
 "Please do not use your real name, phone number or email address as it's "
 "unsafe."
 msgstr ""
-"Tafadhali usitumie jina lako halisi, nambari ya simu au anwani yako sahihi "
-"ya barua pepe kwani sio salama."
+"N'utilise pas ton vrai nom, ton numéro de téléphone ou ton adresse e-mail : "
+"ce n'est pas sécurisé."
 
 #: gem/templates/base/profiles/done.html:24
 #: gem/templates/base/profiles/editprofile.html:23
 #: gem/templates/base/profiles/viewprofile.html:28
 #: gem/templates/springster/profiles/editprofile.html:32
 msgid "Date of birth:"
-msgstr "Tarehe ya kuzaliwa:"
+msgstr "Date de naissance :"
 
 #: gem/templates/base/profiles/done.html:31
 #: gem/templates/base/profiles/editprofile.html:29
@@ -1390,7 +1396,7 @@ msgstr "Tarehe ya kuzaliwa:"
 #: gem/templates/springster/profiles/editprofile.html:41
 #: gem/templates/springster/profiles/viewprofile.html:73
 msgid "Gender:"
-msgstr "Jinsia"
+msgstr "Sexe :"
 
 #: gem/templates/base/profiles/done.html:39
 #: gem/templates/base/profiles/editprofile.html:59
@@ -1398,39 +1404,39 @@ msgstr "Jinsia"
 #: gem/templates/rwanda/profiles/editprofile.html:46
 #: gem/templates/springster/profiles/editprofile.html:51
 msgid "Update your Education Level:"
-msgstr "Sasisha Kiwango chako cha Elimu:"
+msgstr "Entrez votre niveau d'éducation :"
 
 #: gem/templates/base/profiles/done.html:44
 #: gem/templates/springster/profiles/done.html:72
 #: gem/templates/tanzania/profiles/done.html:72
 msgid "Update"
-msgstr "Sasisha"
+msgstr "Mettre à jour."
 
 #: gem/templates/base/profiles/done.html:45
 #: gem/templates/springster/profiles/done.html:73
 #: gem/templates/tanzania/profiles/done.html:73
 msgid "Skip"
-msgstr "Ruka"
+msgstr "Sauter"
 
 #: gem/templates/base/profiles/editprofile.html:8
 msgid "Edit your Profile"
-msgstr "Hariri Wasifu wako"
+msgstr "Édite ton profil."
 
 #: gem/templates/base/profiles/editprofile.html:36
 #: gem/templates/chhaajaa/profiles/editprofile.html:54
 #: gem/templates/rwanda/profiles/editprofile.html:54
 msgid "Update your mobile number:"
-msgstr "sasisha nambari yako ya simu ya mkononi"
+msgstr "Entre ton numéro de portable."
 
 #: gem/templates/base/profiles/editprofile.html:39
 msgid "(e.g. 0914556789)"
-msgstr "(mfn. 0914556789)"
+msgstr "(par ex : 09 14 55 67 89)"
 
 #: gem/templates/base/profiles/editprofile.html:44
 #: gem/templates/chhaajaa/profiles/editprofile.html:62
 #: gem/templates/rwanda/profiles/editprofile.html:62
 msgid "Update your email address:"
-msgstr "Sasisha anwani yako ya barua pepe:"
+msgstr "Entrez votre adresse électronique :"
 
 #: gem/templates/base/profiles/editprofile.html:47
 #: gem/templates/base/profiles/register.html:80
@@ -1439,18 +1445,18 @@ msgstr "Sasisha anwani yako ya barua pepe:"
 #: gem/templates/rwanda/profiles/editprofile.html:65
 #: gem/templates/rwanda/profiles/register.html:81
 msgid "(e.g. example@foo.com)"
-msgstr "(mfn. example@foo.com)"
+msgstr "(par ex : exemple@foo.com)"
 
 #: gem/templates/base/profiles/editprofile.html:52
 #: gem/templates/chhaajaa/profiles/editprofile.html:38
 #: gem/templates/rwanda/profiles/editprofile.html:38
 msgid "Update where you live:"
-msgstr "Sasisha unapoishi:"
+msgstr "Entrez votre domicile :"
 
 #: gem/templates/base/profiles/editprofile.html:64
 #: gem/templates/springster/profiles/editprofile.html:58
 msgid "Update profile"
-msgstr "Sasisha wasifu"
+msgstr "Mettre le profil à jour."
 
 #: gem/templates/base/profiles/forgot_password.html:6
 #: gem/templates/base/profiles/forgot_password.html:29
@@ -1466,34 +1472,34 @@ msgstr "Sasisha wasifu"
 #: gem/templates/springster/profiles/forgot_password.html:46
 #: gem/templates/springster/registration/login.html:27
 msgid "Forgot PIN"
-msgstr "Umesahau PIN"
+msgstr "Code PIN oublié"
 
 #: gem/templates/base/profiles/forgot_password.html:25
 #: gem/templates/chhaajaa/profiles/forgot_password.html:25
 #: gem/templates/rwanda/profiles/forgot_password.html:25
 msgid "Security question"
-msgstr "Swali la kiusalama"
+msgstr "Question de sécurité"
 
 #: gem/templates/base/profiles/forgot_password.html:26
 #: gem/templates/chhaajaa/profiles/forgot_password.html:27
 #: gem/templates/rwanda/profiles/forgot_password.html:27
 #: gem/templates/springster/profiles/forgot_password.html:38
 msgid "Please answer the following security question."
-msgstr "Tafadhali jibu swali la kiusalama lifuatalo."
+msgstr "Réponds à la question de sécurité suivante."
 
 #: gem/templates/base/profiles/register.html:13
 msgid "Not a member yet? Join us by signing up below."
-msgstr "Je bado wewe si mwanachama? Jiunge nasi kwa kujiandikisha hapa chini."
+msgstr "Pas encore membre ? Rejoins-nous en t'inscrivant ci-dessous."
 
 #: gem/templates/base/profiles/register.html:20
 #: gem/templates/springster/profiles/register.html:43
 #: gem/templates/tanzania/profiles/register.html:44
 msgid "Please correct the indicated errors."
-msgstr "Tafadhali sahihisha makosa yalionyeshwa."
+msgstr "Corrige les erreurs indiquées"
 
 #: gem/templates/base/profiles/register.html:25
 msgid "Choose a username"
-msgstr "Chagua jina la mtumiaji"
+msgstr "Choisis un nom d'utilisateur."
 
 #: gem/templates/base/profiles/register.html:35
 #: gem/templates/springster/profiles/done.html:31
@@ -1501,8 +1507,9 @@ msgstr "Chagua jina la mtumiaji"
 #: gem/templates/tanzania/profiles/done.html:31
 #: gem/templates/tanzania/profiles/register.html:60
 msgid "Display name"
-msgstr "Jina linaloonekana "
+msgstr "Nom d'affichage"
 
+# Please note that I have deliberately not translated Girl Effect
 #: gem/templates/base/profiles/register.html:36
 #: gem/templates/chhaajaa/profiles/register.html:45
 #: gem/templates/rwanda/profiles/register.html:41
@@ -1512,21 +1519,21 @@ msgid ""
 "like to interact with other people, like your friends to be able to see you "
 "as a username and not anonymous, update your username here"
 msgstr ""
-"Girl Effect inathamini usalama wako wa mtandaoni, kwa hivyo tunaﬁcha jina "
-"lako la mtumiaji na kukuruhusu kutoa maoni na kuchangamana katika tovuti hii "
-"bila kujulikana. Ikiwa ungependa kuchangamana na watu wengine, kama maraﬁki "
-"zako au ungependa waweze kukuona kwa jina la mtumiaji na wala sio kama mtu "
-"asiyejulikana, sasisha jina lako la mtumiaji hapa"
+"Girl Effect veille au respect de votre sécurité en ligne, ainsi votre nom "
+"d'utilisateur est masqué pour vous permettre de commenter et d'interagir "
+"avec le site de manière anonyme. Pour communiquer avec d'autres personnes, "
+"telles que vos amis sous votre nom d'utilisateur et non de manière anonyme, "
+"mettez à jour votre nom d'utilisateur ici"
 
 #: gem/templates/base/profiles/register.html:43
 #: gem/templates/springster/profiles/register.html:68
 #: gem/templates/tanzania/profiles/register.html:69
 msgid "Choose a 4-digit pin"
-msgstr "Chagua pin yenye tarakimu 4"
+msgstr "Choisis un code PIN à 4 chiffres."
 
 #: gem/templates/base/profiles/register.html:50
 msgid "I identify my gender as"
-msgstr "Jinsia yangu ni"
+msgstr "Je suis de sexe"
 
 #: gem/templates/base/profiles/register.html:53
 #: gem/templates/base/profiles/register.html:98
@@ -1549,7 +1556,7 @@ msgstr "Jinsia yangu ni"
 #: gem/templates/rwanda/profiles/register.html:65
 #: gem/templates/rwanda/profiles/register.html:89
 msgid "Only you will see this"
-msgstr "Ni wewe tu utakayeiona"
+msgstr "Tu es la seule à pouvoir le voir."
 
 #: gem/templates/base/profiles/register.html:59
 #: gem/templates/chhaajaa/profiles/register.html:50
@@ -1559,23 +1566,23 @@ msgstr "Ni wewe tu utakayeiona"
 #: gem/templates/tanzania/profiles/done.html:42
 #: gem/templates/tanzania/profiles/register.html:78
 msgid "Select Date of Birth"
-msgstr "Chagua tarehe ya kuzaliwa"
+msgstr "Date de naissance :"
 
 #: gem/templates/base/profiles/register.html:68
 #: gem/templates/chhaajaa/profiles/register.html:74
 #: gem/templates/rwanda/profiles/register.html:70
 msgid "Enter your mobile number"
-msgstr "Ingiza nambari yako ya simu ya mkononi"
+msgstr "Entre ton numéro de portable."
 
 #: gem/templates/base/profiles/register.html:71
 msgid "(e.g. 0900000013)"
-msgstr "(mfn. 0900000013)"
+msgstr "(par ex. 0900000013)"
 
 #: gem/templates/base/profiles/register.html:77
 #: gem/templates/chhaajaa/profiles/register.html:82
 #: gem/templates/rwanda/profiles/register.html:78
 msgid "Enter your email address"
-msgstr "Ingiza  anwani yako ya barua pepe"
+msgstr "Entrez votre adresse électronique :"
 
 #: gem/templates/base/profiles/register.html:86
 #: gem/templates/chhaajaa/profiles/register.html:90
@@ -1585,7 +1592,7 @@ msgstr "Ingiza  anwani yako ya barua pepe"
 #: gem/templates/tanzania/profiles/done.html:65
 #: gem/templates/tanzania/profiles/register.html:100
 msgid "What is your highest level of education?"
-msgstr "Je, Kiwango chako cha elimu cha juu ni kipi? "
+msgstr ""
 
 #: gem/templates/base/profiles/register.html:89
 #: gem/templates/springster/profiles/done.html:69
@@ -1594,42 +1601,43 @@ msgstr "Je, Kiwango chako cha elimu cha juu ni kipi? "
 #: gem/templates/tanzania/profiles/done.html:69
 #: gem/templates/tanzania/profiles/register.html:104
 msgid "Only you will see this."
-msgstr "Ni wewe tu utakayeiona"
+msgstr "Tu es la seule à pouvoir le voir."
 
 #: gem/templates/base/profiles/register.html:95
 msgid "Where do you live?"
-msgstr "Unaishi wapi?"
+msgstr "Entrez votre domicile :"
 
 #: gem/templates/base/profiles/register.html:103
 #: gem/templates/springster/profiles/forgot_password.html:30
 #: gem/templates/springster/profiles/register.html:108
 #: gem/templates/tanzania/profiles/register.html:109
 msgid "Security questions"
-msgstr "Maswali ya usalama"
+msgstr "Questions de sécurité"
 
 #: gem/templates/base/profiles/register.html:104
 msgid ""
 "Please answer the following security questions. You'll have to provide these "
 "answers if you ever need to reset your password."
 msgstr ""
-"Tafadhali jibu maswali ya kiusalama yafuatayo. Utalazimika kuwasilisha "
-"majibu haya iwapo utataka kuweka upya nenosiri lako."
+"Réponds aux questions de sécurité suivantes. Tu dois y répondre si tu "
+"souhaites modifier ton mot de passe."
 
 #: gem/templates/base/profiles/register.html:119
 #: gem/templates/springster/profiles/register.html:140
 #: gem/templates/tanzania/profiles/register.html:141
 msgid ""
 "Please accept the terms and conditions in order to complete registration"
-msgstr "Tafadhali kubali Sheria na Masharti ili ukamilishe usajili"
+msgstr ""
+"Veuillez accepter les termes et conditions afin de finaliser l'inscription"
 
 #: gem/templates/base/profiles/register.html:129
 #: gem/templates/base/profiles/register.html:133
 msgid "I accept the terms and conditions"
-msgstr "Ninakubali Sheria na Masharti"
+msgstr "Je suis d'accord avec les termes et conditions ci-dessus"
 
 #: gem/templates/base/profiles/register.html:140
 msgid "already joined?"
-msgstr "Umejiunga tayari?"
+msgstr "Déjà inscrit(e) ?"
 
 #: gem/templates/base/profiles/reset_password.html:6
 #: gem/templates/base/profiles/reset_password.html:26
@@ -1640,11 +1648,11 @@ msgstr "Umejiunga tayari?"
 #: gem/templates/springster/profiles/reset_password.html:6
 #: gem/templates/springster/profiles/reset_password.html:43
 msgid "Reset PIN"
-msgstr "Weka PIN upya"
+msgstr "Réinitialiser"
 
 #: gem/templates/base/profiles/reset_password.html:15
 msgid "error"
-msgstr "Kosa"
+msgstr ""
 
 #: gem/templates/base/profiles/reset_password.html:22
 #: gem/templates/chhaajaa/profiles/reset_password.html:21
@@ -1658,102 +1666,105 @@ msgstr "PIN"
 #: gem/templates/rwanda/profiles/reset_password.html:27
 #: gem/templates/springster/profiles/reset_password.html:39
 msgid "Confirm PIN"
-msgstr "Thibitisha PIN"
+msgstr "Confirmer le code PIN"
 
 #: gem/templates/base/profiles/reset_password_success.html:6
 #: gem/templates/chhaajaa/profiles/reset_password_success.html:6
 #: gem/templates/rwanda/profiles/reset_password_success.html:6
 #: gem/templates/springster/profiles/reset_password_success.html:6
 msgid "PIN Changed"
-msgstr "PIN imebadilishwa"
+msgstr "PIN modifié"
 
 #: gem/templates/base/profiles/reset_password_success.html:9
 #: gem/templates/springster/profiles/reset_password_success.html:15
 msgid "Your PIN was changed successfully."
-msgstr "PIN yako imefanikiwa kubadilishwa."
+msgstr "Changement de PIN effectué avec succès."
 
 #: gem/templates/base/profiles/reset_password_success.html:11
 #: gem/templates/chhaajaa/profiles/reset_password_success.html:13
 #: gem/templates/rwanda/profiles/reset_password_success.html:13
 #: gem/templates/springster/profiles/reset_password_success.html:24
 msgid "Continue to Sign In"
-msgstr "Endelea Kuingia"
+msgstr "Poursuis la connexion."
 
 #: gem/templates/base/profiles/viewprofile.html:9
 #: gem/templates/chhaajaa/profiles/viewprofile.html:8
 #: gem/templates/rwanda/profiles/viewprofile.html:8
 #: gem/templates/springster/profiles/viewprofile.html:7
 msgid "Hello"
-msgstr "Mambo"
+msgstr "Bonjour"
 
 #: gem/templates/base/profiles/viewprofile.html:20
 msgid "Not set"
-msgstr " Haijawekwa"
+msgstr "Non défini."
 
 #: gem/templates/base/profiles/viewprofile.html:21
 #: gem/templates/springster/profiles/viewprofile.html:40
 msgid "Your Profile"
-msgstr "Wasifu Wako"
+msgstr "Votre profil"
 
 #: gem/templates/base/profiles/viewprofile.html:23
 #: gem/templates/chhaajaa/profiles/viewprofile.html:15
 #: gem/templates/rwanda/profiles/viewprofile.html:15
 #: gem/templates/springster/profiles/viewprofile.html:53
 msgid "When you type comments your name will appear as:"
-msgstr "Wakati unapoandika maoni jina lako litatokea kama:"
+msgstr "Lorsque tu entres des commentaires, le nom qui apparait est :"
 
 #: gem/templates/base/profiles/viewprofile.html:38
 #: gem/templates/chhaajaa/profiles/viewprofile.html:31
 #: gem/templates/rwanda/profiles/viewprofile.html:31
 msgid "Mobile number:"
-msgstr "Nambari ya Simu ya Mkononi:"
+msgstr "Téléphone portable :"
 
 #: gem/templates/base/profiles/viewprofile.html:43
 #: gem/templates/chhaajaa/profiles/viewprofile.html:64
 #: gem/templates/rwanda/profiles/viewprofile.html:64
 msgid "Email Address:"
-msgstr "Anwani ya Barua pepe:"
+msgstr "Adresse électronique :"
 
+# lack of context
 #: gem/templates/base/profiles/viewprofile.html:48
 #: gem/templates/chhaajaa/profiles/viewprofile.html:48
 #: gem/templates/rwanda/profiles/viewprofile.html:48
 msgid "Location:"
-msgstr "Eneo:"
+msgstr "Emplacement :"
 
 #: gem/templates/base/profiles/viewprofile.html:53
 #: gem/templates/chhaajaa/profiles/viewprofile.html:56
 #: gem/templates/rwanda/profiles/viewprofile.html:56
 #: gem/templates/springster/profiles/viewprofile.html:80
 msgid "Education Level:"
-msgstr "Kiwango cha Elimu:"
+msgstr "Niveau d'éducation :"
 
 #: gem/templates/base/profiles/viewprofile.html:57
 #: gem/templates/springster/profiles/viewprofile.html:87
 msgid "Update Profile"
-msgstr "Sasisha wasifu"
+msgstr "Mettre le profil à jour."
 
 #: gem/templates/base/profiles/viewprofile.html:66
 msgid "Change Your Password"
-msgstr "Badilisha Nenosiri Lako"
+msgstr "Change le mot de passe."
 
 #: gem/templates/base/profiles/viewprofile.html:92
 msgid "Confirm Password:"
-msgstr "Thibitisha Nenosiri:"
+msgstr "Confirme le mot de passe :"
 
 #: gem/templates/base/profiles/viewprofile.html:96
 #: gem/templates/springster/profiles/viewprofile.html:130
 msgid "Change"
-msgstr "Badilisha"
+msgstr "Modifier"
 
 #: gem/templates/base/registration/login.html:13
 msgid "Are you not a member yet"
-msgstr "Je bado haujawa  mwanachama?"
+msgstr "Pas encore membre ?"
 
 #: gem/templates/base/registration/login.html:19
 #: gem/templates/malawi/registration/login.html:18
 #: gem/templates/springster/registration/login.html:13
 msgid "Your username and password do not match. Please try again."
-msgstr "Jina lako la mtumiaji na nenosiri hazilingani. Tafadhali jaribu tena."
+msgstr ""
+"Votre nom d'utilisateur et votre mot de passe ne correspondent pas. Veuillez "
+"réessayez."
 
 #: gem/templates/base/registration/login.html:22
 #: gem/templates/chhaajaa/registration/login.html:30
@@ -1763,7 +1774,7 @@ msgstr "Jina lako la mtumiaji na nenosiri hazilingani. Tafadhali jaribu tena."
 #: gem/templates/springster/registration/login.html:17
 #: gem/templates/tanzania/profiles/register.html:49
 msgid "Username"
-msgstr "Jina la mtumiaji"
+msgstr "Nom d'utilisateur"
 
 #: gem/templates/base/registration/login.html:26
 #: gem/templates/chhaajaa/registration/login.html:34
@@ -1771,28 +1782,28 @@ msgstr "Jina la mtumiaji"
 #: gem/templates/rwanda/registration/login.html:31
 #: gem/templates/springster/registration/login.html:21
 msgid "4-digit pin"
-msgstr "Pin yenye dijiti 4"
+msgstr "Pin à 4 chiffres"
 
 #: gem/templates/base/search/search_block.html:3
 #: gem/templates/rwanda/search/search_block.html:2
 msgid "looking for something?"
-msgstr "Je, unatafuta kitu?"
+msgstr "Que recherches-tu ?"
 
 #: gem/templates/base/search/search_results.html:13
 #: gem/templates/rwanda/search/search_results.html:10
 #: gem/templates/springster/search/search_results.html:21
 msgid "results found for"
-msgstr "matokeo yamepatikana ya"
+msgstr "résultats trouvés pour"
 
 #: gem/templates/base/search/search_results.html:93
 #: gem/templates/springster/search/search_results.html:116
 msgid "No search results for "
-msgstr "Hakuna matokeo ya utafutaji ya"
+msgstr "Aucun résultat trouvé pour"
 
 #: gem/templates/base/search/search_results.html:96
 #: gem/templates/rwanda/search/search_results.html:118
 msgid "I am looking for"
-msgstr "Ninatafuta"
+msgstr "Je recherche"
 
 #: gem/templates/base/wagtailadmin/shared/main_nav.html:8
 #: gem/templates/malawi/wagtailadmin/shared/main_nav.html:8
@@ -1800,16 +1811,15 @@ msgstr "Ninatafuta"
 #, fuzzy
 #| msgid "Edit your Profile"
 msgid "Edit your account"
-msgstr "Hariri Wasifu wako"
+msgstr "Édite ton profil."
 
 #: gem/templates/base/wagtailadmin/shared/main_nav.html:22
 #: gem/templates/malawi/wagtailadmin/shared/main_nav.html:22
 #: gem/templates/springster/wagtailadmin/shared/main_nav.html:22
-#, fuzzy
-#| msgid "count matching users"
 msgid "Account settings"
-msgstr "Hesabu watumiaji wanaofanana"
+msgstr ""
 
+# Lack of context
 #: gem/templates/base/wagtailforms/list_submissions.html:12
 #: gem/templates/chhaajaa/wagtailforms/list_submissions.html:12
 #: gem/templates/malawi/wagtailforms/list_submissions.html:12
@@ -1820,7 +1830,7 @@ msgstr "Hesabu watumiaji wanaofanana"
 #, fuzzy
 #| msgid "Location"
 msgid "Actions"
-msgstr "Eneo"
+msgstr "Emplacement"
 
 #: gem/templates/base/wagtailforms/list_submissions.html:13
 #: gem/templates/base/wagtailforms/list_submissions.html:34
@@ -1859,7 +1869,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Back to article"
 msgid "Convert to Article"
-msgstr "Rudi kwenye makala"
+msgstr "Retourne vers l'article."
 
 #: gem/templates/chhaajaa/403.html:11 gem/templates/chhaajaa/403_csrf.html:6
 msgid "Hi ChhaaJaa Ladki!"
@@ -1877,11 +1887,11 @@ msgid ""
 "technical issue, log in and registrations are not available for now. We're "
 "working hard to get this problem resolved. Thank you."
 msgstr ""
-"Samahani, unapata tatizo la kufungua kipengele hiki! Kwa sababu ya tatizo la "
-"kiufundi la muda mfupi, kuingia na sajili hazipatikani kwenye programu ya "
-"Free Basics kwa sasa. Ili kuingia au kusajili upate wasifu, tembelea "
-"mobisite yetu ya bila malipo kupitia kivinjari chako cha simu ya mkononi "
-"kwenye"
+"Désolé, vous avez des difficultés à accéder à cette fonction ! En raison "
+"d'un problème technique, l'accès aux pages de connexion et d'inscription est "
+"temporairement indisponible sur l'appli Free Basics. Pour vous connecter ou "
+"créer votre profil, allez sur notre site web mobile gratuit à l'aide de "
+"votre navigateur mobile "
 
 #: gem/templates/chhaajaa/403_csrf.html:7
 msgid "Sorry, you are having trouble accessing this feature."
@@ -1891,19 +1901,19 @@ msgstr ""
 #, fuzzy
 #| msgid "Log in"
 msgid "Log In"
-msgstr "Ingia"
+msgstr "Connexion"
 
 #: gem/templates/chhaajaa/base.html:238
 #, fuzzy
 #| msgid "All Rights Reserved."
 msgid " All Rights Reserved."
-msgstr "Haki Zote Zimehifadhiwa."
+msgstr "Tous droits réservés"
 
 #: gem/templates/chhaajaa/base.html:245
 #, fuzzy
 #| msgid "Back to Top"
 msgid "Go to top"
-msgstr "Rudi Juu"
+msgstr "Haut de la page"
 
 #: gem/templates/chhaajaa/comments/comment.html:10
 #: gem/templates/chhaajaa/comments/comment_block.html:53
@@ -1921,7 +1931,7 @@ msgstr "Rudi Juu"
 #: gem/templates/springster/comments/reply.html:25
 #: gem/templates/springster/comments/reply.html:115
 msgid "Moderator"
-msgstr "Msimamizi"
+msgstr "Modérateur"
 
 #: gem/templates/chhaajaa/comments/comment.html:72
 #: gem/templates/chhaajaa/comments/comment_block.html:112
@@ -1934,7 +1944,7 @@ msgstr "Msimamizi"
 #: gem/templates/springster/comments/reply.html:92
 #: gem/templates/springster/comments/reply.html:177
 msgid "Recent Replies"
-msgstr "Majibu ya hivi karibuni"
+msgstr "Réponses récentes"
 
 #: gem/templates/chhaajaa/comments/comment_block.html:10
 #: gem/templates/chhaajaa/comments/comment_block.html:15
@@ -1953,7 +1963,7 @@ msgstr "Majibu ya hivi karibuni"
 #: gem/templates/springster/comments/preview.html:23
 #: gem/templates/springster/comments/reply.html:210
 msgid "Comment"
-msgstr "Maoni"
+msgstr "Commentaires"
 
 #: gem/templates/chhaajaa/comments/comment_block.html:17
 msgid "Commenting requires you to be logged in."
@@ -1963,19 +1973,19 @@ msgstr ""
 #, fuzzy
 #| msgid "Commenting on this article is currently disabled"
 msgid "Commenting on this article is currently disabled."
-msgstr "Kutoa maoni kuhusu makala hii kumezuiwa  kwa sasa"
+msgstr "Les commentaires sont désactivés pour cet article."
 
 #: gem/templates/chhaajaa/comments/comment_block.html:40
 #, fuzzy
 #| msgid "Comments"
 msgid "The Comments"
-msgstr "Maoni"
+msgstr "Commentaires"
 
 #: gem/templates/chhaajaa/comments/comment_block.html:40
 #, fuzzy
 #| msgid "Comment"
 msgid "The Comment"
-msgstr "Maoni"
+msgstr "Commentaires"
 
 #: gem/templates/chhaajaa/comments/comment_block.html:72
 #: gem/templates/springster/comments/comment.html:30
@@ -1984,19 +1994,19 @@ msgstr "Maoni"
 #: gem/templates/springster/comments/reply.html:46
 #: gem/templates/springster/comments/reply.html:136
 msgid "Read More"
-msgstr "Soma zaidi"
+msgstr "En savoir plus"
 
 #: gem/templates/chhaajaa/comments/comment_block.html:121
 #: gem/templates/springster/comments/comment_block.html:109
 msgid "Read more comments"
-msgstr "Soma maoni zaidi"
+msgstr "lire plus de commentaires"
 
 #: gem/templates/chhaajaa/comments/comments.html:9
 #: gem/templates/chhaajaa/comments/reply.html:8
 #, fuzzy
 #| msgid "Your comment"
 msgid "Your Comments"
-msgstr "Maoni yako"
+msgstr "Vos commentaires"
 
 #: gem/templates/chhaajaa/comments/comments.html:106
 #: gem/templates/chhaajaa/core/section_page.html:312
@@ -2007,12 +2017,12 @@ msgstr "Maoni yako"
 #, fuzzy
 #| msgid "Page"
 msgid "Pages"
-msgstr "Ukurasa"
+msgstr "Page"
 
 #: gem/templates/chhaajaa/comments/preview.html:37
 #: gem/templates/springster/comments/preview.html:38
 msgid "Please Log in here to leave a comment."
-msgstr "Tafadhali ingia hapa ili uweke maoni yako"
+msgstr "pour commenter."
 
 #: gem/templates/chhaajaa/comments/reply.html:206
 #: gem/templates/chhaajaa/comments/reply.html:240
@@ -2020,13 +2030,14 @@ msgstr "Tafadhali ingia hapa ili uweke maoni yako"
 #: gem/templates/springster/comments/reply.html:198
 #: gem/templates/springster/comments/reply.html:234
 msgid "Add your reply"
-msgstr "Weka jibu lako"
+msgstr "Ajoute ta réponse"
 
 #: gem/templates/chhaajaa/comments/reply.html:233
 #: gem/templates/springster/comments/reply.html:225
 msgid "Please log in to leave a comment."
-msgstr "Tafadhali ingia ili uweze kutoka maoni"
+msgstr "pour commenter."
 
+# lack of context
 #: gem/templates/chhaajaa/core/article_page-service-finder.html:38
 #: gem/templates/chhaajaa/core/article_page.html:58
 #: gem/templates/chhaajaa/core/section_page.html:93
@@ -2036,7 +2047,7 @@ msgstr "Tafadhali ingia ili uweze kutoka maoni"
 #: gem/templates/springster/patterns/basics/social-media/social-media_with-label.html:6
 #: gem/templates/yegna/core/tags/social_media_article.html:7
 msgid "Share"
-msgstr "Shiriki"
+msgstr "Partager"
 
 #: gem/templates/chhaajaa/core/article_page-service-finder.html:80
 msgid "Up Next services"
@@ -2081,7 +2092,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Show results"
 msgid "Show more"
-msgstr "Onyesha Matokeo"
+msgstr "Afficher les résultats"
 
 #: gem/templates/chhaajaa/forms/form.html:102
 #: gem/templates/chhaajaa/forms/form.html:130
@@ -2090,7 +2101,7 @@ msgstr "Onyesha Matokeo"
 #: gem/templates/rwanda/forms/molo_form_page.html:189
 #: gem/templates/springster/forms/form_modules/form.html:139
 msgid "competition"
-msgstr "Shindano"
+msgstr "Concurrence"
 
 #: gem/templates/chhaajaa/forms/form.html:104
 msgid "contact"
@@ -2101,7 +2112,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Another question"
 msgid "question"
-msgstr "Swali linguine"
+msgstr "Question de sécurité"
 
 #: gem/templates/chhaajaa/forms/form.html:108
 #: gem/templates/chhaajaa/forms/form.html:138
@@ -2110,12 +2121,12 @@ msgstr "Swali linguine"
 #: gem/templates/rwanda/forms/molo_form_page.html:189
 #: gem/templates/springster/forms/form_modules/form.html:147
 msgid "survey"
-msgstr "Chunguza"
+msgstr ""
 
 #: gem/templates/chhaajaa/forms/form.html:128
 #: gem/templates/rwanda/forms/molo_form_page.html:170
 msgid "You have already completed this "
-msgstr "Tayari umekamilisha."
+msgstr "Vous avez déjà complété ce questionnaire"
 
 #: gem/templates/chhaajaa/forms/form.html:132
 #: gem/templates/chhaajaa/forms/molo_form_page.html:82
@@ -2124,7 +2135,7 @@ msgstr "Tayari umekamilisha."
 #: gem/templates/springster/forms/form_modules/form.html:141
 #: gem/templates/springster/forms/molo_form_page_success.html:64
 msgid "poll"
-msgstr "Uchaguzi"
+msgstr ""
 
 #: gem/templates/chhaajaa/forms/form.html:134
 msgid "contact form"
@@ -2136,19 +2147,19 @@ msgstr ""
 #: gem/templates/springster/patterns/basics/forms/forms-list_gcn.html:15
 #: gem/templates/springster/patterns/basics/surveys/surveys-list_gcn.html:15
 msgid "Take GCN competition"
-msgstr "Shiriki sindano la GCN"
+msgstr "Concurrence"
 
 #: gem/templates/chhaajaa/forms/forms_list.html:68
 #: gem/templates/springster/forms/forms_list.html:87
 msgid "Take The Survey"
-msgstr "Shiriki katika Utaﬁti"
+msgstr "Remplir un questionnaire"
 
 #: gem/templates/chhaajaa/forms/molo_form_page.html:20
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:25
 #, fuzzy
 #| msgid "Next Question"
 msgid "Reaction Questions"
-msgstr "Swali linalofuata"
+msgstr "Question suivante"
 
 #: gem/templates/chhaajaa/forms/molo_form_page.html:22
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:27
@@ -2164,23 +2175,22 @@ msgstr ""
 #: gem/templates/springster/forms/form_modules/form.html:21
 #: gem/templates/yegna/forms/molo_form_page.html:123
 msgid "Read:"
-msgstr "Soma"
+msgstr "Lire tout dans "
 
 #: gem/templates/chhaajaa/forms/molo_form_page.html:69
 #: gem/templates/rwanda/forms/molo_form_page.html:55
-#, fuzzy, python-format
-#| msgid "This competition has %(pages)s pages "
+#, python-format
 msgid ""
 "\n"
 "                    This competition has %(pages)s pages "
-msgstr "Shindano hili Lina % kurasa"
+msgstr ""
 
 #: gem/templates/chhaajaa/forms/molo_form_page.html:82
 #: gem/templates/rwanda/forms/molo_form_page.html:189
 #: gem/templates/springster/patterns/basics/forms/forms-modules/forms-cta.html:2
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/surveys-cta.html:2
 msgid "Log in to take"
-msgstr "Ingia ili upige kura"
+msgstr "Connecte-toi pour voter."
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:39
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:43
@@ -2191,134 +2201,138 @@ msgstr "Ingia ili upige kura"
 #, fuzzy, python-format
 #| msgid "Your %(wordSetting)s has been completed successfully. See results"
 msgid "Your %(wordSetting)s has been completed successfully. See results"
-msgstr "Mpangilio % wako wa maneno umekamilika vyema angalia matokeo"
+msgstr ""
+"Questionnaire rempli avec succès. Veuillez consulter vos résultats ci-"
+"dessous."
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:75
 #: gem/templates/rwanda/forms/molo_form_page_success.html:62
 #, fuzzy
 #| msgid "Thank you!"
 msgid "Thank you"
-msgstr "Asante!"
+msgstr "Merci !"
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:80
 #: gem/templates/springster/forms/molo_form_page_success.html:100
 #, fuzzy
 #| msgid "Your %(wordSetting)s has been completed successfully!"
 msgid "Your GCN competition has been completed successfully!"
-msgstr "Mpangilio% wako wa maneno  umefanikiwa kukamilika"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:82
 #, fuzzy
 #| msgid "has been completed successfully!"
 msgid "Your poll has been completed successfully!"
-msgstr "Imekamilika vyema"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:84
 #, fuzzy
 #| msgid "has been completed successfully!"
 msgid "The form has been completed successfully!"
-msgstr "Imekamilika vyema"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:86
 #, fuzzy
 #| msgid "Your survey has been completed successfully."
 msgid "Your survey has been completed successfully!"
-msgstr "Utafiti wako umekamilika vyema"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:91
 #, fuzzy
 #| msgid "Thank you for submitting this %(wordSetting)s!"
 msgid "Thank you for submitting this GCN competition!"
-msgstr "Asante kwa kuwasilisha Mpagilio % huu WA maneno"
+msgstr "Merci d'avoir partagé vos paroles !"
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:93
 #, fuzzy
 #| msgid "Thank you for submitting poll!"
 msgid "Thank you for submitting this poll!"
-msgstr "Asante kwa kuwasilisha utafiti"
+msgstr "Merci d'avoir voté !"
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:95
 #, fuzzy
 #| msgid "Thank you for submitting "
 msgid "Thank you for submitting this form"
-msgstr "Asante kwa kuwasilisha"
+msgstr "Merci d'avoir voté !"
 
 #: gem/templates/chhaajaa/forms/molo_form_page_success.html:97
 #, fuzzy
 #| msgid "Thank you for submitting survey!"
 msgid "Thank you for submitting this survey!"
-msgstr "Asante kwa kuwasilisha Utafiti huu."
+msgstr "Merci de votre témoignage !"
 
 #: gem/templates/chhaajaa/notifications/notice.html:23
 #: gem/templates/springster/notifications/notice.html:23
 #, fuzzy
 #| msgid "replied to your comment on: "
 msgid "Reply comment on "
-msgstr "alijibu maoni yako mnamo:"
+msgstr "a répondu à votre commentaire sur :"
 
 #: gem/templates/chhaajaa/notifications/notice.html:33
 #: gem/templates/springster/notifications/notice.html:33
 #, fuzzy
 #| msgid "Log in to comment"
 msgid "Original comment"
-msgstr "Ingia ili utoe maoni"
+msgstr "Connecte-toi pour commenter."
 
 #: gem/templates/chhaajaa/notifications/notice.html:37
 #: gem/templates/springster/notifications/notice.html:37
 msgid "A Reply"
-msgstr "Jibu"
+msgstr "Une réponse"
 
 #: gem/templates/chhaajaa/notifications/reply_list.html:7
 #: gem/templates/springster/notifications/reply_list.html:6
 msgid "Comment Replies"
-msgstr "Majibu ya Maoni"
+msgstr "Réponses aux commentaires"
 
+# Lack of context
 #: gem/templates/chhaajaa/notifications/reply_list.html:12
 #: gem/templates/rwanda/notifications/reply_list.html:14
 #: gem/templates/springster/notifications/reply_list.html:11
 msgid "You have"
-msgstr "Una"
+msgstr "Vous avez"
 
+# Lack of context. It could also be "Non lu"
 #: gem/templates/chhaajaa/notifications/reply_list.html:12
 #: gem/templates/rwanda/notifications/reply_list.html:15
 #: gem/templates/springster/notifications/reply_list.html:11
 msgid "unread"
-msgstr "haijasomwa"
+msgstr "Non lus"
 
 #: gem/templates/chhaajaa/notifications/tags/notification_banner.html:4
 #: gem/templates/rwanda/notifications/tags/notification_banner.html:5
 #: gem/templates/springster/notifications/tags/notification_banner.html:4
 #: gem/templates/springster/wagtailadmin/pages/create.html:15
 msgid "New"
-msgstr "Mpya"
+msgstr "Nouveau"
 
 #: gem/templates/chhaajaa/profiles/change_password.html:6
 #: gem/templates/rwanda/profiles/change_password.html:6
 #: gem/templates/springster/profiles/change_password.html:52
 msgid "Change Pin"
-msgstr "Badilisha Pin"
+msgstr "Changer le code secret"
 
 #: gem/templates/chhaajaa/profiles/change_password.html:26
 #: gem/templates/rwanda/profiles/change_password.html:26
 msgid "Old pin"
-msgstr "Pin ya zamani"
+msgstr "Ancien code secret"
 
 #: gem/templates/chhaajaa/profiles/change_password.html:29
 #: gem/templates/chhaajaa/profiles/reset_password.html:24
 #: gem/templates/rwanda/profiles/change_password.html:29
 #: gem/templates/rwanda/profiles/reset_password.html:24
 msgid "(e.g. 2086)"
-msgstr "(mfn. 2086)"
+msgstr "(par ex. 2086)"
 
 #: gem/templates/chhaajaa/profiles/change_password.html:33
 #: gem/templates/rwanda/profiles/change_password.html:33
 msgid "New pin"
-msgstr "Pin mpya"
+msgstr "Nouveau code secret"
 
 #: gem/templates/chhaajaa/profiles/change_password.html:38
 #: gem/templates/rwanda/profiles/change_password.html:38
 msgid "Confirm New pin"
-msgstr "Thibitisha Pin Mpya"
+msgstr "Confirme ton nouveau code secret"
 
 #: gem/templates/chhaajaa/profiles/change_password.html:43
 #: gem/templates/chhaajaa/profiles/done.html:70
@@ -2329,19 +2343,17 @@ msgstr "Thibitisha Pin Mpya"
 #: gem/templates/springster/wagtailusers/users/edit.html:41
 #: gem/templates/springster/wagtailusers/users/edit.html:57
 msgid "Save"
-msgstr "Hifadhi"
+msgstr "Enregistrer"
 
 #: gem/templates/chhaajaa/profiles/done.html:16
 #: gem/templates/rwanda/profiles/done.html:16
 msgid "Let us know more about yourself to get access to exclusive content."
-msgstr ""
-"Tufahamishe mengi zaidi kuhusu wewe ili kupata fursa ya kuona maudhui ya "
-"kipekee."
+msgstr "Indique ta date d'anniversaire pour avoir accès à un contenu exclusif."
 
 #: gem/templates/chhaajaa/profiles/done.html:23
 #: gem/templates/rwanda/profiles/done.html:23
 msgid "Select Date Of Birth"
-msgstr "Chagua tarehe ya kuzaliwa"
+msgstr "Date de naissance :"
 
 #: gem/templates/chhaajaa/profiles/done.html:35
 #: gem/templates/chhaajaa/profiles/editprofile.html:18
@@ -2351,28 +2363,28 @@ msgid ""
 "We value your online security, therefore we hide your username and allow you "
 "to comment and interact with the site with a display name."
 msgstr ""
-"Tunathamini usalama wako mtandaoni, kwa hivyo tunaﬁcha jina lako la mtumiaji "
-"na kukuruhusu utoe maoni na uchangamane katika tovuti hii kwa kutumia jina "
-"la onyesho."
+"Nous veillons au respect de votre sécurité en ligne, ainsi votre nom "
+"d'utilisateur est masqué pour vous permettre de commenter et d’interagir "
+"avec le site à l'aide d'un nom d'affichage."
 
 #: gem/templates/chhaajaa/profiles/done.html:41
 #: gem/templates/chhaajaa/profiles/register.html:58
 #: gem/templates/rwanda/profiles/done.html:41
 #: gem/templates/rwanda/profiles/register.html:54
 msgid "I Identify My Gender As:"
-msgstr "Jinsia yangu ni"
+msgstr "Je suis de sexe"
 
 #: gem/templates/chhaajaa/profiles/done.html:51
 #: gem/templates/chhaajaa/profiles/register.html:66
 #: gem/templates/rwanda/profiles/done.html:51
 #: gem/templates/rwanda/profiles/register.html:62
 msgid "Where Do You Live?"
-msgstr "Unaishi wapi?"
+msgstr ""
 
 #: gem/templates/chhaajaa/profiles/done.html:62
 #: gem/templates/rwanda/profiles/done.html:62
 msgid "What Is Your Highest Level Of Education?"
-msgstr "Kiwango chako cha elimu cha juu ni kipi?"
+msgstr ""
 
 #: gem/templates/chhaajaa/profiles/done.html:74
 #: gem/templates/chhaajaa/profiles/login_success.html:12
@@ -2380,27 +2392,27 @@ msgstr "Kiwango chako cha elimu cha juu ni kipi?"
 #: gem/templates/rwanda/profiles/login_success.html:12
 #: gem/templates/tanzania/profiles/done.html:91
 msgid "Home Page"
-msgstr "Ukurasa wa Mwanzo"
+msgstr "Page d'accueil"
 
 #: gem/templates/chhaajaa/profiles/editprofile.html:8
 #: gem/templates/rwanda/profiles/editprofile.html:8
 msgid "Edit Profile"
-msgstr "Hariri Wasifu wako"
+msgstr "Édite ton profil."
 
 #: gem/templates/chhaajaa/profiles/editprofile.html:15
 #: gem/templates/rwanda/profiles/editprofile.html:15
 msgid "Update your display name:"
-msgstr "Sasisha jina lako la onyesho:"
+msgstr "Entrez votre nom d'affichage : "
 
 #: gem/templates/chhaajaa/profiles/editprofile.html:23
 #: gem/templates/rwanda/profiles/editprofile.html:23
 msgid "Update your date of birth:"
-msgstr "Sasisha tarehe yako ya kuzaliwa:"
+msgstr "Entrez votre date de naissance :"
 
 #: gem/templates/chhaajaa/profiles/editprofile.html:30
 #: gem/templates/rwanda/profiles/editprofile.html:30
 msgid "Update your gender:"
-msgstr "Sasisha jinsia yako:"
+msgstr "Entrez votre genre :"
 
 #: gem/templates/chhaajaa/profiles/editprofile.html:57
 #: gem/templates/chhaajaa/profiles/register.html:77
@@ -2409,17 +2421,17 @@ msgstr "Sasisha jinsia yako:"
 #, fuzzy
 #| msgid "(e.g. 0914556789)"
 msgid "(e.g. 0754556789)"
-msgstr "(mfn. 0914556789)"
+msgstr "(par ex : 09 14 55 67 89)"
 
 #: gem/templates/chhaajaa/profiles/login_success.html:7
 #: gem/templates/rwanda/profiles/login_success.html:7
 msgid "Login Success"
-msgstr "Umefanikiwa Kuingia"
+msgstr "Connexion effectuée avec succès"
 
 #: gem/templates/chhaajaa/profiles/login_success.html:10
 #: gem/templates/rwanda/profiles/login_success.html:10
 msgid "Welcome Back!"
-msgstr "Karibu Tena!"
+msgstr "Content de vous revoir !"
 
 #: gem/templates/chhaajaa/profiles/register.html:9
 #: gem/templates/chhaajaa/profiles/register.html:128
@@ -2428,12 +2440,12 @@ msgstr "Karibu Tena!"
 #: gem/templates/rwanda/profiles/register.html:124
 #: gem/templates/rwanda/registration/login.html:11
 msgid "Register"
-msgstr "Jisajili"
+msgstr "Inscription"
 
 #: gem/templates/chhaajaa/profiles/register.html:12
 #: gem/templates/rwanda/profiles/register.html:12
 msgid "Already a member?"
-msgstr "Je, wewe ni mwanachama tayari?"
+msgstr "Déjà membre ?"
 
 #: gem/templates/chhaajaa/profiles/register.html:13
 #: gem/templates/chhaajaa/registration/login.html:16
@@ -2441,7 +2453,7 @@ msgstr "Je, wewe ni mwanachama tayari?"
 #: gem/templates/rwanda/registration/login.html:16
 #: gem/templates/wagtailadmin/social_login.html:43
 msgid "Login"
-msgstr "Ingia"
+msgstr "Connexion"
 
 #: gem/templates/chhaajaa/profiles/register.html:16
 #: gem/templates/chhaajaa/registration/login.html:9
@@ -2449,12 +2461,12 @@ msgstr "Ingia"
 #: gem/templates/rwanda/registration/login.html:9
 #: gem/templates/springster/registration/login.html:6
 msgid "Not a member yet?"
-msgstr "Je bado wewe si mwanachama?"
+msgstr "Pas encore membre"
 
 #: gem/templates/chhaajaa/profiles/register.html:19
 #: gem/templates/rwanda/profiles/register.html:18
 msgid "Join us by signing up below."
-msgstr "Jiunge nasi kwa kujiandikisha hapa chini."
+msgstr "Rejoins-nous en t'inscrivant ci-dessous."
 
 #: gem/templates/chhaajaa/profiles/register.html:22
 #: gem/templates/chhaajaa/registration/login.html:20
@@ -2466,7 +2478,7 @@ msgstr ""
 #: gem/templates/chhaajaa/profiles/register.html:27
 #: gem/templates/rwanda/profiles/register.html:23
 msgid "Choose A Username"
-msgstr "Chagua jina la mtumiaji"
+msgstr "Choisis un nom d'utilisateur."
 
 #: gem/templates/chhaajaa/profiles/register.html:31
 #: gem/templates/rwanda/profiles/register.html:27
@@ -2474,23 +2486,23 @@ msgid ""
 "This name you will use to log in and won't appear to other users. Only you "
 "will see this"
 msgstr ""
-"Jina hili utalitumia kuingia katika akaunti yako na halitaonekana kwa "
-"watumiaji wengine isipokuwa wewe pekee"
+"Le nom que vous utiliserez pour vous identifier ne sera pas visible des "
+"autres utilisateurs. Vous serez le seul à le voir."
 
 #: gem/templates/chhaajaa/profiles/register.html:35
 #: gem/templates/rwanda/profiles/register.html:31
 msgid "Choose A 4-Digit PIN"
-msgstr "Chagua pin ya dijiti 4"
+msgstr "Choisis un code PIN à 4 chiffres."
 
 #: gem/templates/chhaajaa/profiles/register.html:38
 #: gem/templates/rwanda/profiles/register.html:34
 msgid "e.g. 2086"
-msgstr "mfn. 2086"
+msgstr "par ex. 2086"
 
 #: gem/templates/chhaajaa/profiles/register.html:42
 #: gem/templates/rwanda/profiles/register.html:38
 msgid "Choose A Display Name"
-msgstr "Chagua Jina litakaloonekana"
+msgstr "Nom d'affichage"
 
 #: gem/templates/chhaajaa/profiles/register.html:113
 #: gem/templates/chhaajaa/profiles/register.html:118
@@ -2501,75 +2513,77 @@ msgstr "Chagua Jina litakaloonekana"
 #: gem/templates/tanzania/profiles/register.html:131
 #: gem/templates/tanzania/profiles/register.html:135
 msgid "I accept the Terms and Conditions"
-msgstr "Ninakubali Sheria na Masharti"
+msgstr "J'accepte les conditions."
 
 #: gem/templates/chhaajaa/profiles/register.html:123
 #: gem/templates/rwanda/profiles/register.html:119
 msgid "Please accept the T&amp;Cs in order to complete the registration"
-msgstr "Tafadhali kubali Sheria na Masharti ili ukamilishe usajili"
+msgstr "Accepte les conditions pour poursuivre l'inscription."
 
 #: gem/templates/chhaajaa/profiles/reset_password_success.html:10
 #: gem/templates/rwanda/profiles/reset_password_success.html:10
 msgid "Your PIN has been changed sucessfully."
-msgstr "PIN yako imefanikiwa kubadilishwa."
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/chhaajaa/profiles/viewprofile.html:20
 #: gem/templates/rwanda/profiles/viewprofile.html:20
 #: gem/templates/springster/profiles/viewprofile.html:48
 msgid "Not set."
-msgstr "Haijawekwa."
+msgstr "Non défini."
 
 #: gem/templates/chhaajaa/profiles/viewprofile.html:22
 #: gem/templates/rwanda/profiles/viewprofile.html:22
 #: gem/templates/springster/profiles/viewprofile.html:64
 msgid "Date of Birth: "
-msgstr "Tarehe ya Kuzaliwa:"
+msgstr "Date de naissance :"
 
 #: gem/templates/chhaajaa/profiles/viewprofile.html:70
 #: gem/templates/rwanda/profiles/viewprofile.html:70
 msgid "Edit My Profile"
-msgstr "Hariri Wasifu wangu"
+msgstr "Édite ton profil."
 
 #: gem/templates/chhaajaa/profiles/viewprofile.html:71
 #: gem/templates/rwanda/profiles/viewprofile.html:71
 msgid "Change my pin"
-msgstr "Badilisha pin"
+msgstr "Changer le code secret"
 
 #: gem/templates/chhaajaa/profiles/viewprofile.html:74
 #: gem/templates/rwanda/profiles/viewprofile.html:74
 #: gem/templates/springster/patterns/basics/buttons/sp_variations/text-dir-arrow_logout.html:3
 msgid "log out"
-msgstr "Toka"
+msgstr "Déconnexion"
 
 #: gem/templates/chhaajaa/registration/login.html:18
 #: gem/templates/rwanda/registration/login.html:18
 #, fuzzy
 #| msgid "Join us by signing up below."
 msgid "By signing in below."
-msgstr "Jiunge nasi kwa kujiandikisha hapa chini."
+msgstr "Rejoins-nous en t'inscrivant ci-dessous."
 
 #: gem/templates/chhaajaa/registration/login.html:26
 #: gem/templates/rwanda/registration/login.html:23
 msgid "Your username and pin do not match. Please try again."
-msgstr "Jina lako la mtumiaji na nenosiri haziendani. Tafadhali jaribu tena."
+msgstr ""
+"Votre nom d'utilisateur et votre mot de passe ne correspondent pas. Veuillez "
+"réessayez."
 
 #: gem/templates/chhaajaa/registration/login.html:37
 #: gem/templates/rwanda/registration/login.html:34
 msgid "Eg.: 2086"
-msgstr "Mfn. 2086"
+msgstr "Par ex. : 2086"
 
 #: gem/templates/chhaajaa/search/search_results.html:9
 #, fuzzy
 #| msgid "Show Results"
 msgid "Search Results"
-msgstr "Onyesha Matokeo"
+msgstr "Afficher les résultats"
 
 #: gem/templates/chhaajaa/search/search_results.html:12
 #: gem/templates/yegna/search/search_results.html:14
 #, fuzzy
 #| msgid "results found for"
 msgid "Results found for"
-msgstr "matokeo yamepatikana ya"
+msgstr "résultats trouvés pour"
 
 #: gem/templates/chhaajaa/search/search_results.html:76
 #: gem/templates/rwanda/comments/comments.html:101
@@ -2597,7 +2611,7 @@ msgstr ""
 #: gem/templates/rwanda/search/search_results.html:113
 #: gem/templates/yegna/search/search_results.html:115
 msgid "No search results for"
-msgstr "Hakuna matokeo ya utafutaji ya"
+msgstr "Aucun résultat trouvé pour"
 
 #: gem/templates/chhaajaa/search/search_results.html:99
 #: gem/templates/yegna/search/search_results.html:117
@@ -2609,7 +2623,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Back to Home page"
 msgid "Go to homepage"
-msgstr "Rudi kwenye Ukurasa wa mwanzo"
+msgstr "Retour à la page d'accueil"
 
 #: gem/templates/chhaajaa/search/search_results.html:107
 msgid "Seach"
@@ -2617,7 +2631,7 @@ msgstr ""
 
 #: gem/templates/malawi/403_csrf.html:11 gem/templates/yegna/403_csrf.html:10
 msgid "Hi"
-msgstr "Mambo"
+msgstr "Bonjour"
 
 #: gem/templates/malawi/403_csrf.html:12
 msgid ""
@@ -2626,26 +2640,27 @@ msgid ""
 "app for now. To login or register for a profile, visit our free mobisite "
 "through your mobile browser at:"
 msgstr ""
-"Samahani tunapata shida kufungua kipengele hiki kutokana na sababu za "
-"kiufundi huwezi kujiunga au kujisajili kupitia app ya free basics kwa Sasa, "
-"hivyo jiunge au jiandikishe kwa tembelea Tovuti yetu kupitia simu yako "
-"katika."
+"Désolé! Nous avons des problèmes à accéder à cet article! A cause d'un "
+"problème technique temporaire, il est impossible de se connecter et de "
+"s'inscrire sur l'appli Free Basics en ce moment. Pour te connecter ou "
+"t'inscrire et créer un profil, visite notre site mobile gratuit sur le "
+"navigateur de ton téléphone à:"
 
 #: gem/templates/malawi/403_csrf.html:12
 msgid " We’re working hard to get this problem resolved. Thank you."
-msgstr "Tunafanya kila tuwezalo ili kutatua tatizo hili. Asante."
+msgstr "Nous nous efforçons de résoudre ce problème. Merci."
 
 #: gem/templates/malawi/403_csrf.html:14
 msgid "Zathu"
-msgstr "Zathu"
+msgstr ""
 
 #: gem/templates/malawi/base.html:180
 msgid "Log in / Sign up"
-msgstr "Ingia / Jisajili"
+msgstr "S'identifier / S'inscrire"
 
 #: gem/templates/malawi/registration/login.html:13
 msgid "Are you not a member yet? Sign up"
-msgstr "Je bado haujawa  mwanachama? Jiandikishe"
+msgstr "Pas encore membre ? Inscrivez-vous"
 
 #: gem/templates/rwanda/403_csrf.html:5
 msgid ""
@@ -2654,10 +2669,11 @@ msgid ""
 "Basics app for now. To login or register for a profile, visit our free "
 "mobisite through your mobile browser at"
 msgstr ""
-"Samahani, una tatizo la kuﬁkia kipengele hiki! Kwa sababu ya tatizo la muda "
-"la kiufundi, kuingia na kusajili haipatikani kwenye program ya FreeBasics "
-"kwasasa. Ili kuingia au kusajili upate wasifu, tembelea mobisite yetu ya "
-"bila malipo kupitia kivinjari chako cha simu ya mkononi kwenye"
+"Désolé, vous avez des difficultés à accéder à cette fonction ! En raison "
+"d'un problème technique, l'accès aux pages de connexion et d'inscription est "
+"temporairement indisponible sur l'appli Free Basics. Pour vous connecter ou "
+"créer votre profil, allez sur notre site web mobile gratuit à l'aide de "
+"votre navigateur mobile "
 
 #: gem/templates/rwanda/base.html:156
 msgid "Featured"
@@ -2667,14 +2683,14 @@ msgstr ""
 #, fuzzy
 #| msgid "Latest stories"
 msgid "News and stories"
-msgstr "Stori za hivi karibuni"
+msgstr "Catégories"
 
 #: gem/templates/rwanda/base.html:202 gem/templates/rwanda/base.html:210
 #: gem/templates/rwanda/base.html:336
 #, fuzzy
 #| msgid "Language"
 msgid "Languages"
-msgstr "Lugha"
+msgstr "Langue"
 
 #: gem/templates/rwanda/base.html:247
 msgid "Links"
@@ -2684,13 +2700,13 @@ msgstr ""
 #: gem/templates/springster/patterns/basics/menu/sp_variations/menu-column.html:20
 #: gem/templates/tanzania/base.html:232
 msgid "Join us"
-msgstr "Jiunge nasi"
+msgstr "Rejoignez-nous !"
 
 #: gem/templates/rwanda/base.html:346 gem/templates/springster/base.html:320
 #: gem/templates/springster/patterns/basics/copyright/copyright-terms.html:7
 #: gem/templates/tanzania/base.html:300 gem/templates/yegna/base.html:229
 msgid "Terms &amp; Conditions"
-msgstr "Sheria na Masharti"
+msgstr "Réponses aux commentaires"
 
 #: gem/templates/rwanda/comments/comment.html:15
 #: gem/templates/rwanda/comments/reply.html:40
@@ -2699,7 +2715,8 @@ msgid ""
 "This comment has been removed by the community. Please read our platform "
 "rules"
 msgstr ""
-"Maoni haya yameondolewa na wanajamii Tafadhali Soma sheria za jukwaa letu."
+"Ce commentaire a été supprimé par la communauté. Lis les règles de notre "
+"plateforme."
 
 #: gem/templates/rwanda/comments/comment.html:36
 #: gem/templates/rwanda/comments/comment.html:41
@@ -2719,7 +2736,7 @@ msgstr ""
 #: gem/templates/rwanda/notifications/reply_list.html:16
 #: gem/templates/rwanda/notifications/tags/notification_banner.html:5
 msgid "reply"
-msgstr "Jibu"
+msgstr "Répondre"
 
 #: gem/templates/rwanda/comments/comment.html:41
 #: gem/templates/rwanda/comments/comment.html:47
@@ -2734,13 +2751,13 @@ msgstr "Jibu"
 #: gem/templates/rwanda/notifications/reply_list.html:17
 #: gem/templates/rwanda/notifications/tags/notification_banner.html:5
 msgid "replies"
-msgstr "majibu"
+msgstr "Les réponses"
 
 #: gem/templates/rwanda/comments/comment_block.html:8
 #, fuzzy
 #| msgid "Your comment"
 msgid "Post a comment"
-msgstr "Maoni yako"
+msgstr "Vos commentaires"
 
 #: gem/templates/rwanda/comments/comment_block.html:16
 msgid "To post a comment you must log in or create an account"
@@ -2752,7 +2769,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Please log in to leave a comment"
 msgid "Please log in to comment"
-msgstr "Tafadhali ingia ili kutoka maoni"
+msgstr "pour commenter."
 
 #: gem/templates/rwanda/comments/comment_block.html:70
 #, fuzzy
@@ -2765,71 +2782,72 @@ msgid ""
 "                      Please read our platform rules\n"
 "                    "
 msgstr ""
-"Maoni haya yameondolewa na wanajamii Tafadhali Soma sheria za jukwaa letu."
+"Ce commentaire a été supprimé par la communauté. Lis les règles de notre "
+"plateforme."
 
 #: gem/templates/rwanda/comments/comment_block.html:79
 #, fuzzy
 #| msgid "Read more"
 msgid "See more"
-msgstr "Soma zaidi"
+msgstr "En savoir plus"
 
 #: gem/templates/rwanda/comments/comment_block.html:131
 #, fuzzy
 #| msgid "Share a Comment"
 msgid "See all comments"
-msgstr "Toa  Maoni"
+msgstr "Laisser un commentaire"
 
 #: gem/templates/rwanda/comments/form.html:14
 #: gem/templates/rwanda/comments/preview.html:37
 #: gem/templates/rwanda/comments/reply.html:211
 msgid "Comment anonymously"
-msgstr "Toa maoni Bila Jina lako"
+msgstr "Commente anonymement."
 
 #: gem/templates/rwanda/comments/report_comment.html:9
 #, fuzzy
 #| msgid "Report Comment"
 msgid "Report comment"
-msgstr "Ripoti Maoni"
+msgstr "Signaler un commentaire."
 
 #: gem/templates/rwanda/comments/report_comment.html:13
 msgid "Please let us know why you are reporting this comment"
-msgstr "Tafadhali tufahamishe kwa nini unaripoti maoni haya?"
+msgstr "Veuillez indiquer pourquoi vous avez écrit ce commentaire."
 
 #: gem/templates/rwanda/comments/report_response.html:8
 msgid "Thanks"
-msgstr "Asante!"
+msgstr "Merci !"
 
 #: gem/templates/rwanda/comments/report_response.html:11
 msgid "This comment has been reported"
-msgstr "Maoni haya yameripotiwa."
+msgstr "Ce commentaire a été signalé."
 
 #: gem/templates/rwanda/comments/report_response.html:14
 msgid ""
 "It will be reviewed by the moderation team and may be removed if it breaks "
 "our platform rules"
 msgstr ""
-"Itapitiwa na timu yetu ya wasimamizi na inaweza    kuondolewa kama itakiuka "
-"sheria za jukwaa letu "
+"Il sera modéré par l'équipe de modération et peut être supprimé s'il ne "
+"respecte pas les règles de la plateforme."
 
 #: gem/templates/rwanda/comments/user_has_already_reported.html:9
 #, fuzzy
 #| msgid "Report Comment"
 msgid "Reported comment"
-msgstr "Ripoti Maoni"
+msgstr "Signaler un commentaire."
 
 #: gem/templates/rwanda/comments/user_has_already_reported.html:16
 msgid ""
 "The comment will be reviewed by the moderation team and may be removed if it "
 "breaks our platform rules"
 msgstr ""
-"Itapitiwa na timu yetu ya wasimamizi na inaweza kuondolewa kama itakiuka "
-"sheria za jukwaa letu"
+"Le commentaire sera examiné par l'équipe de modérateurs et peut être "
+"supprimé s'il enfreint les règles de notre plateforme"
 
 #: gem/templates/rwanda/core/article_page.html:175
 #, fuzzy
 #| msgid "Back to article"
 msgid "Share article"
-msgstr "Rudi kwenye makala"
+msgstr "Retourne vers l'article."
 
 #: gem/templates/rwanda/core/article_tags.html:77
 #: gem/templates/rwanda/core/related-article-list.html:82
@@ -2842,7 +2860,7 @@ msgstr "Rudi kwenye makala"
 #, fuzzy
 #| msgid "Back to article"
 msgid "Read article"
-msgstr "Rudi kwenye makala"
+msgstr "Retourne vers l'article."
 
 #: gem/templates/rwanda/core/article_tags.html:162
 #: gem/templates/springster/core/article_tags.html:172
@@ -2856,7 +2874,7 @@ msgstr "Rudi kwenye makala"
 #: gem/templates/springster/patterns/components/article-teasers/sp_variations/grid-teaser-listing.html:67
 #: gem/templates/springster/registration/password_reset_done.html:15
 msgid "Read All"
-msgstr "Soma Zote"
+msgstr "Lire tout dans "
 
 #: gem/templates/rwanda/core/banner_page.html:31
 #: gem/templates/rwanda/core/banner_page.html:35
@@ -2873,35 +2891,35 @@ msgstr "Soma Zote"
 #: gem/templates/yegna/core/banner_page.html:31
 #: gem/templates/yegna/core/banner_page.html:35
 #, fuzzy
-#| msgid "Click here to download"
+#| msgid "Click here to download video"
 msgid "Click here for more"
-msgstr "Bofya hapa ili upakue"
+msgstr "Clique ici pour télécharger"
 
 #: gem/templates/rwanda/core/main.html:12
 msgid ""
 "This site is free for all MTN subscribers. If you are an Airtel or TIGO "
 "subscriber, you can access this site for free by going to"
 msgstr ""
-"Tovuti hii ni Bure kwa waliojiunga na MTN. Kama unatumia mtandao wa airtel "
-"au Tigo, unaweza kupata huduma hii Bure kwa kwenda"
+"Ce site est gratuit pour tous les abonnés MTN. Si vous êtes abonné à Airtel, "
+"vous pouvez accéder gratuitement au site en allant sur"
 
 #: gem/templates/rwanda/core/related-article-list.html:15
 #, fuzzy
 #| msgid "Read more"
 msgid "Read next"
-msgstr "Soma zaidi"
+msgstr "En savoir plus"
 
 #: gem/templates/rwanda/core/related-article-list.html:103
 #, fuzzy
 #| msgid "Recommended"
 msgid "Recommended stories"
-msgstr "Inayopendekezwa"
+msgstr "Recommandé"
 
 #: gem/templates/rwanda/core/section_page.html:112
 #, fuzzy
 #| msgid "Categories"
 msgid "Article categories"
-msgstr "Kategoria"
+msgstr "Catégories"
 
 #: gem/templates/rwanda/core/tags/footerpage.html:16
 msgid "Contact us"
@@ -2915,7 +2933,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Latest stories"
 msgid "Latest articles"
-msgstr "Stori za hivi karibuni"
+msgstr "Catégories"
 
 #: gem/templates/rwanda/core/tags/media_listing_homepage.html:71
 #: gem/templates/yegna/core/tags/media_listing_homepage.html:73
@@ -2935,26 +2953,28 @@ msgstr ""
 #: gem/templates/springster/forms/forms_list.html:16
 #: gem/templates/springster/patterns/components/banners/join-banner.html:9
 msgid "Share your opinions and stories, take polls, win fun prizes."
-msgstr "Shirikisha maoni na stori zako, piga kura, shinda zawadi Bomba. "
+msgstr ""
+"Partagez vos opinions et histoires, prendre des sondages, gagner des prix "
+"amusants."
 
 #: gem/templates/rwanda/forms/forms_list.html:28
 #: gem/templates/springster/forms/forms_list.html:19
 #: gem/templates/springster/patterns/components/banners/join-banner.html:12
 msgid "Join"
-msgstr "Jiunge"
+msgstr "S'inscrire"
 
 #: gem/templates/rwanda/forms/forms_list.html:99
 #: gem/templates/springster/forms/form_modules/_polls.html:27
 msgid "You have already completed this poll"
-msgstr "Tayari umekamilisha utafiti huu."
+msgstr "Vous avez déjà complété ce questionnaire"
 
 #: gem/templates/rwanda/forms/forms_list.html:104
 msgid "Show results"
-msgstr "Onyesha Matokeo"
+msgstr "Afficher les résultats"
 
 #: gem/templates/rwanda/forms/forms_list.html:144
 msgid "Take the survey"
-msgstr "Shiriki katika Utaﬁti"
+msgstr "Remplir un questionnaire"
 
 #: gem/templates/rwanda/forms/molo_form_page_success.html:69
 #: gem/templates/rwanda/forms/molo_form_page_success.html:77
@@ -2962,7 +2982,7 @@ msgstr "Shiriki katika Utaﬁti"
 #, fuzzy, python-format
 #| msgid "Your %(wordSetting)s has been completed successfully!"
 msgid "Your %(wordSetting)s has been completed successfully!"
-msgstr "Mpangilio% wako wa maneno  umefanikiwa kukamilika"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/templates/rwanda/forms/molo_form_page_success.html:71
 #: gem/templates/rwanda/forms/molo_form_page_success.html:79
@@ -2970,41 +2990,40 @@ msgstr "Mpangilio% wako wa maneno  umefanikiwa kukamilika"
 #, fuzzy, python-format
 #| msgid "Thank you for submitting this %(wordSetting)s!"
 msgid "Thank you for submitting this %(wordSetting)s!"
-msgstr "Asante kwa kuwasilisha Mpagilio % huu WA maneno"
+msgstr "Merci d'avoir partagé vos paroles !"
 
 #: gem/templates/rwanda/notifications/notice.html:9
 msgid "replied to your comment on: "
-msgstr "alijibu maoni yako mnamo:"
+msgstr "a répondu à votre commentaire sur :"
 
 #: gem/templates/rwanda/notifications/notice.html:17
 msgid "Your comment"
-msgstr "Maoni yako"
+msgstr "Vos commentaires"
 
 #: gem/templates/rwanda/notifications/notice.html:23
 msgid "A reply"
-msgstr "Jibu"
+msgstr "Une réponse"
 
 #: gem/templates/rwanda/notifications/reply_list.html:8
 msgid "Comment replies"
-msgstr "Majibu ya Maoni"
+msgstr "Réponses aux commentaires"
 
 #: gem/templates/rwanda/notifications/reply_list.html:24
 msgid "Read replies"
-msgstr "Soma majibu"
+msgstr "Lire les réponses :"
 
+# Sorry, but I could not find the word anywhere. Maybe with the context, I could find out.
 #: gem/templates/springster/403_csrf.html:14
 #: gem/templates/springster/base.html:146
 #: gem/templates/springster/patterns/basics/images/sp_variations/logo.html:6
-#, fuzzy
-#| msgid "Big Sister"
 msgid "Springster"
-msgstr "Dada Mkubwa"
+msgstr "Springster"
 
 #: gem/templates/springster/admin/question_results.html:28
 #, fuzzy
 #| msgid "Download"
 msgid "Download CSV"
-msgstr "Pakua "
+msgstr "Télécharge la vidéo"
 
 #: gem/templates/springster/base.html:285
 msgid "Springster Logo - Footer"
@@ -3012,7 +3031,7 @@ msgstr ""
 
 #: gem/templates/springster/comments/comment_block.html:6
 msgid "Share your thoughts"
-msgstr "Shiriki mawazo yako"
+msgstr "Partage tes opinions"
 
 #: gem/templates/springster/comments/comment_block.html:24
 #: gem/templates/springster/comments/comments.html:11
@@ -3020,17 +3039,17 @@ msgstr "Shiriki mawazo yako"
 #: gem/templates/springster/core/article_page.html:25
 #: gem/templates/springster/patterns/basics/articles/sp_variations/article-comment-counter.html:5
 msgid "Your thoughts"
-msgstr "Mawazo yako"
+msgstr "Tes opinions"
 
 #: gem/templates/springster/core/article_page.html:96
 #: gem/templates/springster/patterns/basics/article-tags/sp_article-page-tag.html:8
 msgid "Read more about"
-msgstr "Soma zaidi kuhusu"
+msgstr "En savoir plus sur"
 
 #: gem/templates/springster/core/article_page.html:192
 #: gem/templates/springster/patterns/basics/articles/sp_variations/related-article-teasers_might-like.html:6
 msgid "You might like"
-msgstr "Pia unaweza kupenda"
+msgstr "Vous aimez peut être"
 
 #: gem/templates/springster/core/article_tags.html:90
 #: gem/templates/springster/core/article_tags_for_paging.html:78
@@ -3042,30 +3061,30 @@ msgstr "Pia unaweza kupenda"
 #: gem/templates/springster/search/search_results.html:110
 #: gem/templates/springster/search/search_results_for_paging.html:99
 msgid "Load more"
-msgstr "Pakia zaidi"
+msgstr "En savoir plus"
 
 #: gem/templates/springster/core/tags/social_media_footer.html:4
 msgid "Find us elsewhere:"
-msgstr "Tupate sehemu nyingine"
+msgstr "Trouve-nous ailleurs"
 
 #: gem/templates/springster/forms/form_modules/_polls.html:7
 #: gem/templates/springster/forms/molo_form_page_success.html:22
 #: gem/templates/springster/patterns/basics/forms/forms-list_polls.html:6
 #: gem/templates/springster/patterns/basics/surveys/surveys-list_polls.html:6
 msgid "Take a vote!"
-msgstr "Piga kura!"
+msgstr "Vote sur ça"
 
 #: gem/templates/springster/forms/form_modules/_reaction-questions.html:19
 #, fuzzy
 #| msgid "Log in to take"
 msgid "Log in to like"
-msgstr "Ingia ili upige kura"
+msgstr "Connecte-toi pour voter."
 
 #: gem/templates/springster/forms/form_modules/_yourwords.html:29
 #, fuzzy
 #| msgid "Log in to take"
 msgid "Log in to take competition"
-msgstr "Ingia ili upige kura"
+msgstr "Connecte-toi pour voter."
 
 #: gem/templates/springster/forms/form_modules/form.html:143
 msgid "form"
@@ -3079,202 +3098,193 @@ msgstr ""
 #, fuzzy
 #| msgid "You have already completed this"
 msgid "You have already completed"
-msgstr "Tayari umekamilisha utafiti huu."
+msgstr "Vous avez déjà complété ce questionnaire"
 
 #: gem/templates/springster/forms/form_modules/form.html:172
 #, fuzzy
 #| msgid "competition"
 msgid "this competition."
-msgstr "Shindano"
+msgstr "Concurrence"
 
 #: gem/templates/springster/forms/form_modules/form.html:174
 #: gem/templates/springster/forms/molo_form_page_success.html:105
 msgid "this poll."
-msgstr "utafiti huu"
+msgstr ""
 
 #: gem/templates/springster/forms/form_modules/form.html:176
-#, fuzzy
-#| msgid "this poll."
 msgid "this form."
-msgstr "utafiti huu"
+msgstr ""
 
 #: gem/templates/springster/forms/form_modules/form.html:178
 #, fuzzy
 #| msgid "You have already submitted a response for this article."
 msgid "a response for this article."
-msgstr "Tayari umewasilisha jibu la makala haya."
+msgstr "Tu as déjà soumis une réponse pour cet article."
 
 #: gem/templates/springster/forms/form_modules/form.html:180
 #, fuzzy
-#| msgid "this survey!"
+#| msgid "Another survey"
 msgid "this survey."
-msgstr "Utafiti huu"
+msgstr "Conntez vous pour récupérer le questionnaire"
 
 #: gem/templates/springster/forms/molo_form_page_success.html:60
 msgid "Your"
-msgstr "Yako"
+msgstr ""
 
 #: gem/templates/springster/forms/molo_form_page_success.html:62
 msgid "GCN competition"
-msgstr "Shindano LA GCN"
+msgstr "Concurrence"
 
 #: gem/templates/springster/forms/molo_form_page_success.html:66
 msgid "survey!"
-msgstr "Utafiti"
+msgstr ""
 
 #: gem/templates/springster/forms/molo_form_page_success.html:68
 msgid "has been completed successfully. See results"
-msgstr "Umekamilika. Tazama matokeo                        "
+msgstr ""
+"Questionnaire rempli avec succès. Veuillez consulter vos résultats ci-"
+"dessous."
 
 #: gem/templates/springster/forms/molo_form_page_success.html:103
 #, fuzzy
 #| msgid "Thank you for submitting "
 msgid "Thank you for submitting"
-msgstr "Asante kwa kuwasilisha"
+msgstr "Merci d'avoir voté !"
 
 #: gem/templates/springster/forms/molo_form_page_success.html:107
-#, fuzzy
-#| msgid "this survey!"
 msgid "this form!"
-msgstr "Utafiti huu"
+msgstr ""
 
 #: gem/templates/springster/forms/molo_form_page_success.html:109
 #, fuzzy
 #| msgid "You have already submitted a response for this article."
 msgid "a response for this article"
-msgstr "Tayari umewasilisha jibu la makala haya."
+msgstr "Tu as déjà soumis une réponse pour cet article."
 
 #: gem/templates/springster/forms/molo_form_page_success.html:111
 msgid "this survey!"
-msgstr "Utafiti huu"
+msgstr ""
 
 #: gem/templates/springster/forms/molo_form_page_success.html:142
 #, fuzzy
 #| msgid "Back to article"
 msgid "Back to Article"
-msgstr "Rudi kwenye makala"
+msgstr "Retourne vers l'article."
 
 #: gem/templates/springster/patterns/basics/buttons/sp_variations/text-tag-back_button.html:3
 msgid "Back"
-msgstr "Nyuma"
+msgstr "Retour"
 
 #: gem/templates/springster/patterns/basics/forms/forms-list_generic.html:25
 #: gem/templates/springster/patterns/basics/surveys/surveys-list_generic.html:25
 msgid "Take Survey"
-msgstr "Fanya Utafiti"
+msgstr "Remplir le questionnaire"
 
 #: gem/templates/springster/patterns/basics/forms/forms-modules/forms-results.html:5
 #: gem/templates/springster/patterns/basics/forms/forms-modules/forms-results.html:37
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/surveys-results.html:5
 #: gem/templates/springster/patterns/basics/surveys/surveys-modules/surveys-results.html:37
 msgid "Your "
-msgstr "Yako"
+msgstr ""
 
 #: gem/templates/springster/patterns/components/article-tags/sp_variations/sp_tags-menu.html:11
 msgid "Read stories about"
-msgstr "Soma stori kuhusu"
+msgstr "Lire des histoires sur"
 
 #: gem/templates/springster/profiles/change_password.html:6
 #: gem/templates/springster/profiles/viewprofile.html:99
 msgid "Change Your Pin"
-msgstr "Badilisha Pin yako"
+msgstr "Change ton code secret"
 
 #: gem/templates/springster/profiles/change_password.html:33
 #: gem/templates/springster/profiles/viewprofile.html:116
 msgid "Old Pin:"
-msgstr "Pin ya zamani"
+msgstr "Ancien code secret"
 
 #: gem/templates/springster/profiles/change_password.html:40
 #: gem/templates/springster/profiles/viewprofile.html:121
 msgid "New Pin:"
-msgstr "Pin mpya"
+msgstr "Nouveau code secret"
 
 #: gem/templates/springster/profiles/change_password.html:47
 msgid "Confirm New Pin:"
-msgstr "Thibitisha Pin Mpya"
+msgstr "Confirme ton nouveau code secret"
 
 #: gem/templates/springster/profiles/done.html:35
 #: gem/templates/springster/profiles/register.html:63
-#, fuzzy
-#| msgid ""
-#| "Tujibebe values your online security, therefore we hide your username and "
-#| "allow you to comment and interact with the site anonymously. If you would "
-#| "like to interact with other people, like your friends to be able to see "
-#| "you as a username and not anonymous, update your username here"
 msgid ""
 "Springster values your online security, therefore we hide your username and "
 "allow you to comment and interact with the site anonymously. If you would "
 "like to interact with other people, like your friends to be able to see you "
 "as a username and not anonymous, update your username here"
 msgstr ""
-"Tujibebe inathamini usalama wako wa mtandaoni, kwa hivyo tunaficha jina lako "
-"la mtumiaji na kukuruhusu kutoa maoni na kuingiliana na tovuti hii bila "
-"kujulikana. Ikiwa ungependa kutangamana na watu wengine, kama marafiki zako "
-"kuweza kukuona kama jina la mtumiaji na wala sio mtu asiyejulikana, sasisha "
-"jina lako la mtumiaji hapa"
+"Springster veille au respect de votre sécurité en ligne, ainsi votre nom "
+"d'utilisateur est masqué pour vous permettre de commenter et d'interagir "
+"avec le site de manière anonyme. Pour communiquer avec d'autres personnes, "
+"telles que vos amis sous votre nom d'utilisateur et non de manière anonyme, "
+"mettez à jour votre nom d'utilisateur ici"
 
 #: gem/templates/springster/profiles/done.html:52
 #: gem/templates/springster/profiles/register.html:87
 #: gem/templates/tanzania/profiles/done.html:52
 #: gem/templates/tanzania/profiles/register.html:88
 msgid "I identify as"
-msgstr "Jinsia yangu ni"
+msgstr "Je m'identifie comme"
 
 #: gem/templates/springster/profiles/done.html:57
 #: gem/templates/springster/profiles/register.html:92
 #: gem/templates/tanzania/profiles/done.html:57
 #: gem/templates/tanzania/profiles/register.html:93
 msgid "Only you will see this, but it's not mandatory to tell us"
-msgstr "Ni wewe tu utakayeona hii, lakini sio lazima utueleze"
+msgstr ""
+"Vous serez la seule à le voir, mais vous n'êtes pas obligée de nous le "
+"communiquer."
 
 #: gem/templates/springster/profiles/done.html:78
 #: gem/templates/tanzania/profiles/done.html:78
 msgid ""
 "Update profile to let us know your birthday to get access to exclusive "
 "content."
-msgstr ""
-"Sasisha wasifu                                                           "
+msgstr "Indique ta date d'anniversaire pour avoir accès à un contenu exclusif."
 
 #: gem/templates/springster/profiles/done.html:88
 #: gem/templates/tanzania/profiles/done.html:88
 msgid "My Profile"
-msgstr "Wasifu wangu"
+msgstr "Plugin"
 
 #: gem/templates/springster/profiles/done.html:91
 #: gem/templates/springster/profiles/viewprofile.html:132
 #, fuzzy
 #| msgid "Home Page"
 msgid "Homepage"
-msgstr "Ukurasa wa Mwanzo"
+msgstr "Page d'accueil"
 
 #: gem/templates/springster/profiles/editprofile.html:20
 msgid "Display name:"
-msgstr "Jina la Litakaloonekana"
+msgstr "Nom d'affichage :"
 
 #: gem/templates/springster/profiles/register.html:9
-#, fuzzy
-#| msgid "Big Sister"
 msgid "Join Springster"
-msgstr "Dada Mkubwa"
+msgstr "Rejoindre Springster"
 
 #: gem/templates/springster/profiles/register.html:18
 #: gem/templates/springster/profiles/register.html:149
 #: gem/templates/tanzania/profiles/register.html:18
 #: gem/templates/tanzania/profiles/register.html:150
 msgid "Already joined?"
-msgstr "Umejiunga tayari?"
+msgstr "Déjà inscrit(e) ?"
 
 #: gem/templates/springster/profiles/register.html:19
 #: gem/templates/springster/profiles/register.html:150
 #: gem/templates/tanzania/profiles/register.html:19
 #: gem/templates/tanzania/profiles/register.html:151
 msgid "Log in here"
-msgstr "Ingia hapa"
+msgstr "Identifiez-vous ici"
 
 #: gem/templates/springster/profiles/register.html:72
 #: gem/templates/tanzania/profiles/register.html:73
 msgid "For example: 2048"
-msgstr "Kwa mfano: 2048"
+msgstr "Par exemple : 2048"
 
 #: gem/templates/springster/profiles/register.html:120
 #: gem/templates/tanzania/profiles/register.html:121
@@ -3282,92 +3292,94 @@ msgid ""
 "Please answer the above security questions. You'll have to provide these "
 "answers if you ever need to reset your password."
 msgstr ""
-"Tafadhali jibu swali lifuatalo la usalama. Utatakiwa kuwasilisha majibu haya "
-"iwapo utataka kuweka upya nenosiri lako"
+"Veuillez répondre aux questions de sécurité ci-dessus. Vous devrez fournir "
+"ces réponses si vous avez besoin de réinitialiser votre mot de passe."
 
 #: gem/templates/springster/profiles/viewprofile.html:57
 msgid ""
 "You haven't set a display name, so your comments will appear as 'anonymous'"
 msgstr ""
-"Hujaweka jina la kuonyesha, kwa hivyo maoni yako yataoneka kama 'yasiokuwa "
-"na jina'"
+"Tu n'as pas indiqué de nom d'utilisateur, alors tes commentaires "
+"apparaîtront comme \"anonyme\""
 
 #: gem/templates/springster/profiles/viewprofile.html:126
 msgid "Confirm Pin:"
-msgstr "Thibitisha PIN"
+msgstr "Confirmer le code PIN"
 
 #: gem/templates/springster/registration/login.html:7
 msgid "Sign up here"
-msgstr "Jiandikishe hapa"
+msgstr "Inscrivez-vous ici"
 
 #: gem/templates/springster/registration/password_reset_complete.html:4
 msgid "Your password has been set. You may go ahead and log in now."
-msgstr "Nenosiri lako limewekwa. Unaweza kuendelea na uingie sasa."
+msgstr "Votre mot de passe a été créé. Vous pouvez maintenant vous connecter."
 
 #: gem/templates/springster/registration/password_reset_confirm.html:5
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
-"Tafadhali ingiza nenosiri lako jipya mara mbili ili tuweze kuthibitisha "
-"uliliandika vizuri."
+"Veuillez entrer deux fois votre nouveau mot de passe afin de vérifier que "
+"vous l'avez saisi correctement."
 
 #: gem/templates/springster/registration/password_reset_confirm.html:10
 msgid "New password:"
-msgstr "Nenosiri Jipya:"
+msgstr "Nouveau mot de passe :"
 
 #: gem/templates/springster/registration/password_reset_confirm.html:15
 msgid "Confirm password:"
-msgstr "Thibitisha Nenosiri:"
+msgstr "Confirme le mot de passe :"
 
 #: gem/templates/springster/registration/password_reset_confirm.html:19
 msgid "Change my password"
-msgstr "Badilisha Nenosiri langu"
+msgstr "Change le mot de passe"
 
 #: gem/templates/springster/registration/password_reset_confirm.html:22
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
 msgstr ""
-"Kiungo cha kuweka upya nenosiri hakikuwa sahihi, pengine ni kwa sababu "
-"kimetumika tayari. Tafadhali omba kiungo kipya cha kuweka upya nenosiri."
+"Le lien de réinitialisation du mot de passe était invalide, peut être parce "
+"qu'il a déjà été utilisé. Veuillez demander une nouvelle réinitialisation de "
+"votre mot de passe."
 
 #: gem/templates/springster/registration/password_reset_done.html:6
 msgid ""
 "We've emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
-"Tumekutumia barua pepe yenye maagizo ya kuweka nenosiri lako, ikiwa akaunti "
-"hiyo inayotumia barua pepe uliyoingiza. Unapaswa kuyapokea baada ya muda "
-"mfupi."
+"Nous vous avons envoyé par e-mail les instructions à suivre pour créer votre "
+"mot de passe, si un compte a déjà été créé avec l'adresse électronique que "
+"vous avez entrée. Vous devriez les recevoir prochainement."
 
 #: gem/templates/springster/registration/password_reset_done.html:10
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
-"Usipopokea barua pepe, tafadhali hakikisha umeingiza anwani uliyojisajili "
-"nayo, na ukague folda yako ya barua taka."
+"Si vous ne recevez pas d'e-mail, assurez-vous que vous avez bien saisi "
+"l'adresse avec laquelle vous vous êtes inscrite, et vérifiez qu'il ne figure "
+"par dans vos courriers indésirables."
 
 #: gem/templates/springster/registration/password_reset_form.html:4
 msgid "Forgotten your password?"
-msgstr "Je, umesahau nenosiri lako?"
+msgstr "Mot de passe oublié ?"
 
 #: gem/templates/springster/registration/password_reset_form.html:7
 msgid ""
 "Enter your email address below, and we'll email instructions for setting a "
 "new one."
 msgstr ""
-"Ingiza anwani yako ya barua pepe hapa chini, na tutakutumia maagizo ya "
-"kuweka nyingine mpya."
+"Saisissez votre adresse électronique ci-dessous et nous vous enverrons les "
+"instructions à suivre pour en créer un nouveau."
 
 #: gem/templates/springster/registration/password_reset_form.html:12
 msgid "Email address:"
-msgstr "Anwani ya barua pepe:"
+msgstr "Courrier électronique :"
 
 #: gem/templates/springster/registration/password_reset_form.html:16
 msgid "Reset my password"
-msgstr "Weka upya nenosiri langu"
+msgstr "Réinitialiser mon mot de passe"
 
 #: gem/templates/springster/wagtailadmin/edit_handlers/inline_panel.html:7
 #, python-format
@@ -3569,10 +3581,8 @@ msgid "New %(page_type)s"
 msgstr ""
 
 #: gem/templates/springster/wagtailadmin/pages/create.html:30
-#, fuzzy
-#| msgid "Saving..."
 msgid "Saving…"
-msgstr "Kuhifadhi"
+msgstr ""
 
 #: gem/templates/springster/wagtailadmin/pages/create.html:30
 #: gem/templates/springster/wagtailadmin/pages/edit.html:42
@@ -3593,7 +3603,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Submit your story"
 msgid "Submit for moderation"
-msgstr "Wasilisha hadithi yako"
+msgstr "Soumettez votre témoignage"
 
 #: gem/templates/springster/wagtailadmin/pages/create.html:52
 #: gem/templates/springster/wagtailadmin/pages/edit.html:87
@@ -3621,7 +3631,7 @@ msgstr ""
 
 #: gem/templates/springster/wagtailadmin/pages/edit.html:42
 msgid "Saving..."
-msgstr "Kuhifadhi"
+msgstr ""
 
 #: gem/templates/springster/wagtailadmin/pages/edit.html:42
 msgid "Page locked"
@@ -3663,10 +3673,8 @@ msgstr ""
 
 #: gem/templates/springster/wagtailusers/users/edit.html:2
 #: gem/templates/springster/wagtailusers/users/edit.html:5
-#, fuzzy
-#| msgid "Edit"
 msgid "Editing"
-msgstr "Rekebisha "
+msgstr ""
 
 #: gem/templates/springster/wagtailusers/users/edit.html:9
 msgid "Account"
@@ -3683,7 +3691,7 @@ msgstr ""
 
 #: gem/templates/tanzania/403_csrf.html:14
 msgid "Tujibebe"
-msgstr "Tujibebe"
+msgstr ""
 
 #: gem/templates/tanzania/base.html:264
 msgid "Tujibebe Logo - Footer"
@@ -3691,21 +3699,29 @@ msgstr ""
 
 #: gem/templates/tanzania/profiles/done.html:35
 #: gem/templates/tanzania/profiles/register.html:64
+#, fuzzy
+#| msgid ""
+#| "Springster values your online security, therefore we hide your username "
+#| "and allow you to comment and interact with the site anonymously. If you "
+#| "would like to interact with other people, like your friends to be able to "
+#| "see you as a username and not anonymous, update your username here"
 msgid ""
 "Tujibebe values your online security, therefore we hide your username and "
 "allow you to comment and interact with the site anonymously. If you would "
 "like to interact with other people, like your friends to be able to see you "
 "as a username and not anonymous, update your username here"
 msgstr ""
-"Tujibebe inathamini usalama wako wa mtandaoni, kwa hivyo tunaficha jina lako "
-"la mtumiaji na kukuruhusu kutoa maoni na kuingiliana na tovuti hii bila "
-"kujulikana. Ikiwa ungependa kutangamana na watu wengine, kama marafiki zako "
-"kuweza kukuona kama jina la mtumiaji na wala sio mtu asiyejulikana, sasisha "
-"jina lako la mtumiaji hapa"
+"Springster veille au respect de votre sécurité en ligne, ainsi votre nom "
+"d'utilisateur est masqué pour vous permettre de commenter et d'interagir "
+"avec le site de manière anonyme. Pour communiquer avec d'autres personnes, "
+"telles que vos amis sous votre nom d'utilisateur et non de manière anonyme, "
+"mettez à jour votre nom d'utilisateur ici"
 
 #: gem/templates/tanzania/profiles/register.html:9
+#, fuzzy
+#| msgid "Join us"
 msgid "Join Tujibebe"
-msgstr "Jiunge na Tujibebe"
+msgstr "Rejoignez-nous !"
 
 #: gem/templates/wagtailadmin/social_login.html:16
 #, fuzzy, python-format
@@ -3715,19 +3731,21 @@ msgid ""
 "              Your %(username_field)s and password didn't match.\n"
 "              Please try again.\n"
 "            "
-msgstr "Jina lako la mtumiaji na nenosiri hazilingani. Tafadhali jaribu tena."
+msgstr ""
+"Votre nom d'utilisateur et votre mot de passe ne correspondent pas. Veuillez "
+"réessayez."
 
 #: gem/templates/wagtailadmin/social_login.html:37
 #, fuzzy
 #| msgid "Log in to take"
 msgid "Sign in to Wagtail"
-msgstr "Ingia ili upige kura"
+msgstr "Connecte-toi pour voter."
 
 #: gem/templates/wagtailadmin/social_login.html:49
 #, fuzzy
 #| msgid "Old Password"
 msgid "Password"
-msgstr "Nenosiri la Zamani:"
+msgstr "Ancien mot de passe :"
 
 #: gem/templates/wagtailadmin/social_login.html:58
 msgid "Remember me"
@@ -3737,33 +3755,34 @@ msgstr ""
 #, fuzzy
 #| msgid "Sign in"
 msgid "Signing in…"
-msgstr "Ingia"
+msgstr "Connexion"
 
 #: gem/templates/wagtailadmin/social_login.html:67
 msgid "Sign in"
-msgstr "Ingia"
+msgstr "Connexion"
 
 #: gem/templates/wagtailadmin/social_login.html:85
 #, fuzzy
 #| msgid "Reset my password"
 msgid "Reset your password"
-msgstr "Weka upya nenosiri langu"
+msgstr "Réinitialiser mon mot de passe"
 
 #: gem/templates/wagtailadmin/social_login.html:85
 #, fuzzy
 #| msgid "Forgot PIN"
 msgid "Forgotten it?"
-msgstr "Umesahau PIN"
+msgstr "Code PIN oublié"
 
 #: gem/templates/yegna/403.html:7
 msgid "Access Denied"
-msgstr "Hakuna Ruhusa"
+msgstr "Accès refusé"
 
+# please note there is a typo on the word permission (missing 'i')
 #: gem/templates/yegna/403.html:8
 #, fuzzy
 #| msgid "You do not have permssion to access this site."
 msgid "You do not have permission to access this site."
-msgstr "Huna kibali cha kufikia tovuti hii."
+msgstr "Vous n'êtes pas autorisé à accéder à ce site."
 
 #: gem/templates/yegna/403.html:10
 msgid "Try again"
@@ -3776,10 +3795,11 @@ msgid ""
 "Basics app for now. To login or register for a profile, visit our free "
 "mobisite through your mobile browser at"
 msgstr ""
-"Samahani, una tatizo la kufikia kipengele hiki! Kwa sababu ya tatizo la muda "
-"la kiufundi, kuingia na sajili hazipatikani kwenye programu ya Free Basics "
-"kwa sasa. Ili kuingia au kusajili upate wasifu, tembelea mobisite yetu bila "
-"malipo kupitia kivinjari chako cha simu ya mkononi kwenye"
+"Désolé, vous avez des difficultés à accéder cette fonction. En raison d'un "
+"problème technique, l'accès aux pages de connexion et d'inscription est "
+"temporairement indisponible sur l'appli Free Basics. Pour vous connecter ou "
+"créer votre profil, allez sur notre site web mobile gratuit à l'aide de "
+"votre navigateur mobile"
 
 #: gem/templates/yegna/base.html:198
 #: gem/templates/yegna/search/search_block.html:2
@@ -3787,7 +3807,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Search"
 msgid "Search Yegna"
-msgstr "Tafuta"
+msgstr "Rechercher"
 
 #: gem/templates/yegna/base.html:199
 #: gem/templates/yegna/search/search_block.html:6
@@ -3795,10 +3815,11 @@ msgstr "Tafuta"
 msgid "Go"
 msgstr ""
 
+# incomplete (e.g. if "latest news": "dernières nouvelles")
 #: gem/templates/yegna/core/article_page.html:31
 #: gem/templates/yegna/core/section_page.html:453
 msgid "Latest"
-msgstr "Mpya zaidi"
+msgstr "Actualités"
 
 #: gem/templates/yegna/core/article_page.html:34
 #: gem/templates/yegna/core/section_page.html:491
@@ -3809,7 +3830,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Back to"
 msgid "Go back to"
-msgstr "Rudi kwenye"
+msgstr "Retour à "
 
 #: gem/templates/yegna/core/article_tags.html:33
 #: gem/templates/yegna/core/tags/section_listing_homepage.html:77
@@ -3875,482 +3896,368 @@ msgstr ""
 #, fuzzy
 #| msgid "Next up"
 msgid "Next"
-msgstr "Inayofuata"
+msgstr "La prochaine étape dans"
 
 #: gem/templates/yegna/forms/molo_form_page.html:100
 #, fuzzy
 #| msgid "Submit"
 msgid "Submit Message"
-msgstr "Wasilisha"
+msgstr "Soumettre"
 
 #: gem/templates/yegna/forms/molo_form_page_success.html:25
 #, fuzzy
 #| msgid "Your survey has been completed successfully."
 msgid "Thank you, your email has been sent successfully"
-msgstr "Utafiti wako umekamilika vyema"
+msgstr "Mot de passe modifié avec succès."
 
 #: gem/views.py:231
 msgid ""
 "This comment has been removed as it contains profanity, contact information "
 "or other inappropriate content. "
 msgstr ""
-"Maoni haya yameondolewa kwa kuwa yana matusi, maelezo ya mawasiliano au "
-"maudhui mengine yasiyofaa."
+"Ce commentaire a été supprimé car il contient des obscénités, des "
+"informations de contact ou du contenu inapproprié."
 
 #: mote/projects/gem/website/src/patterns/basics/article-list/variations/recommend/element.html:17
 msgid "More"
-msgstr "zaidi"
+msgstr "Déplacer"
 
 #: mote/projects/gem/website/src/patterns/basics/article-list/variations/up-next-and-recommended/element.html:4
 msgid "Next up in [category]:"
-msgstr "kinachofuata (Kipengele) "
+msgstr "La prochaine étape dans"
 
 #: mote/projects/gem/website/src/patterns/basics/article-list/variations/up-next-and-recommended/element.html:12
 msgid "Recommended:"
-msgstr "Inayopendekezwa:"
+msgstr "Recommandé"
 
 #: mote/projects/gem/website/src/patterns/basics/languages/variations/language-list-dropdown/element.html:11
 #: mote/projects/gem/website/src/patterns/basics/languages/variations/language-list-dropdown_footer/element.html:8
 msgid "Change Language"
-msgstr "Badilisha Lugha"
+msgstr "Changer de langue "
 
 #: mote/projects/gem/website/src/patterns/basics/search/element.html:6
 msgid "Looking for something?"
-msgstr "Je, unatafuta kitu?"
+msgstr "Que recherches-tu ?"
 
+#~| msgid "Thank you! Your response has already been submitted."
 #~ msgid "Your response has already been submitted."
-#~ msgstr "Majibu yako yamewasilishwa tayari"
+#~ msgstr "Merci ! Votre réponse a déjà été envoyée."
+
+#~ msgid "Thank you for voting!"
+#~ msgstr "Merci d'avoir voté !"
+
+#~ msgid "BACK"
+#~ msgstr "RETOUR"
 
 #~ msgid "HOME"
-#~ msgstr "Ukurasa wa mwanzo"
+#~ msgstr "ACCUEIL "
 
 #~ msgid "Title of your story"
-#~ msgstr "Kichwa cha habari cha stori yako"
+#~ msgstr "Titre de l'histoire"
 
 #~ msgid "Tell us your story here"
-#~ msgstr "Tueleze stori yako hapa"
+#~ msgstr "Raconte-nous ton histoire ici."
+
+#~ msgid "Share my story anonymously"
+#~ msgstr "Partager mon histoire anonymement."
 
 #~ msgid "Thanks for submitting your story!"
-#~ msgstr "Asante kwa kuwasilisha stori yako!"
+#~ msgstr "Merci de votre témoignage !"
 
+#~| msgid "Download Video"
+#~ msgid "Download video"
+#~ msgstr "Télécharge la vidéo"
+
+#~| msgid "Download Audio"
+#~ msgid "Download audio"
+#~ msgstr "Télécharge le contenu audio"
+
+#~| msgid "Find us elsewhere:"
 #~ msgid "Find us elsewhere"
-#~ msgstr "Tutafute mahali kwingine"
+#~ msgstr "Trouve-nous ailleurs"
 
 #~ msgid "Enter"
-#~ msgstr "Ingia "
+#~ msgstr "Entrer"
+
+#~ msgid "Thank you! Your response has already been submitted."
+#~ msgstr "Merci ! Votre réponse a déjà été envoyée."
+
+#~ msgid "Thank you for sharing your words!"
+#~ msgstr "Merci d'avoir partagé vos paroles !"
 
 #~ msgid "Title of your story (max 60 characters)"
-#~ msgstr "Kichwa cha stori yako (vibambo zisivyozidi 60)"
+#~ msgstr "Titre de votre témoignage (60 caractère max)"
 
 #~ msgid "Email address"
-#~ msgstr "Anwani ya barua pepe"
+#~ msgstr "Adresse électronique"
 
 #~ msgid "URL"
 #~ msgstr "URL"
 
 #~ msgid "Name"
-#~ msgstr "Jina"
+#~ msgstr "Nom"
+
+# Cannot translate as such. For example, 10 years ago : il y a 10 ans
+#~ msgid "Ago"
+#~ msgstr "Il y a "
+
+#~ msgid "view more comments"
+#~ msgstr "lire plus de commentaires"
 
 #~ msgid "Your comment has been successfully posted"
-#~ msgstr "Maoni yako yamefanikiwa kuchapishwa"
+#~ msgstr "Votre commentaire a été envoyé avec succès"
 
 #~ msgid ""
 #~ "It will be reviewed by the team and may be removed if it breaks our "
 #~ "Platform rules"
 #~ msgstr ""
-#~ "Itapitiwa na timu na inaweza kuondolewa ikiwa inakiuka kanuni za Jukwaa "
-#~ "letu"
+#~ "Il sera examiné par l'équipe et peut être supprimé s'il enfreint les "
+#~ "règles de notre plateforme"
 
+#~| msgid "Your comment"
 #~ msgid "Your comment:"
-#~ msgstr "Maoni yako"
+#~ msgstr "Vos commentaires"
 
-#~ msgid "The comment has been reported."
-#~ msgstr "Maoni haya yameripotiwa."
-
-#~ msgid "Reply successfully created."
-#~ msgstr "Jibu limefanikiwa kuundwa."
-
-#~ msgid "You didn't select a choice"
-#~ msgstr "Hukuchagua chaguo"
-
-#~ msgid "Answer options"
-#~ msgstr "Machaguo ya majibu"
-
-#~ msgid ""
-#~ "Checkbox must include only 2 Answer Options. True and False in that order."
-#~ msgstr ""
-#~ "Kisanduku kinapaswa kuwa na Machaguo 2 tu ya majibu Ndio naHapana katika "
-#~ "mtiririko huo"
-
-#~ msgid "End of survey"
-#~ msgstr "Mwisho WA Utafiti"
-
-#~ msgid "Maximum: {max_length}"
-#~ msgstr "Kiwango cha juu: {kiwango cha juu urefu}"
-
-#~ msgid "This field can not be more than {max_length} characters long"
-#~ msgstr "Taarifa hii haiwezi kuzidi zaidi ya {urefu wa maneno} "
-
-#~ msgid "Your CSV file does not appear to contain any usernames."
-#~ msgstr "Faili lako LA CSV halina Jina lako la utumiaji"
-
-#~ msgid ""
-#~ "Please make sure your file contains valid data. Those usernames do not "
-#~ "exist: \"%s\"."
-#~ msgstr ""
-#~ "Tafadhali hakikisha Faili lako lina taarifa sahihi. Majina hayo ya "
-#~ "mtumiaji hayapo"
-
-#~ msgid "Cannot select a survey with a segment."
-#~ msgstr "Haiwezi kuchagua utafiti wenye kipande cha utafiti."
-
-#~ msgid "Add group with CSV file"
-#~ msgstr "Weka Faili za kikundi cha CSV"
-
-#~ msgid "Add group"
-#~ msgstr "Ongeza kikundi"
-
-#~ msgid "Please log in to take this survey"
-#~ msgstr "Tafadhali Ingia ili ushiriki kwenye huu utaﬁti"
-
-#~ msgid "Competition"
-#~ msgstr "Shindano"
-
-#~ msgid "Thank you for voting!"
-#~ msgstr "Asante kwa kupiga kura!"
-
-#~ msgid "BACK"
-#~ msgstr "NYUMA"
-
-#~ msgid "Share my story anonymously"
-#~ msgstr "Shiriki stori yangu bila jina"
-
-#~ msgid "Click Here"
-#~ msgstr "Bofya hapa"
-
-#~ msgid "Download video"
-#~ msgstr "Pakua Video"
-
-#~ msgid "Download audio"
-#~ msgstr "Pakua Sauti"
-
-#~ msgid "Topic of the Day"
-#~ msgstr "Mada ya siku"
-
-#~ msgid "Thank you! Your response has already been submitted."
-#~ msgstr "Asante! Majibu yako yamewasilishwa tayari."
-
-#~ msgid "Thank you for sharing your words!"
-#~ msgstr "Asante kwa kutushirikisha maneno yako!"
-
-#~ msgid "Ago"
-#~ msgstr "Iliyopita"
-
-#~ msgid "view more comments"
-#~ msgstr "angalia maoni zaidi"
-
+#~| msgid "Reply"
 #~ msgid "Reply:"
-#~ msgstr "Jibu"
+#~ msgstr "Répondre"
 
 #~ msgid "Read replies:"
-#~ msgstr "Soma majibu:"
+#~ msgstr "Lire les réponses :"
 
 #~ msgid "Notification:"
-#~ msgstr "Taarifa:"
+#~ msgstr "Notification :"
 
 #~ msgid "Reporting comment replies is not allowed."
-#~ msgstr "Kuripoti majibu ya maoni hakuruhusiwi."
+#~ msgstr "Il n'est pas permis de communiquer les réponses aux commentaires."
+
+#~ msgid "The comment has been reported."
+#~ msgstr "Ce commentaire a été signalé."
+
+#~ msgid "Reply successfully created."
+#~ msgstr "Réponse créée avec succès."
+
+#~ msgid "You didn't select a choice"
+#~ msgstr "Vous n'avez pas saisi de choix"
 
 #~ msgid "Your answers:"
-#~ msgstr "Majibu yako:"
+#~ msgstr "Vos réponses :"
 
 #~ msgid "Site Language:"
-#~ msgstr "Lugha ya Tovuti:"
+#~ msgstr "Langue du site :"
 
+#~| msgid "Next Question"
 #~ msgid "Next default question"
-#~ msgstr "chaguo msingi linalofuata"
+#~ msgstr "Question suivante"
 
-#~ msgid "Another survey"
-#~ msgstr "Utafiti mwingine"
-
+#~| msgid "Please log in to take this survey"
 #~ msgid "Please select a survey."
-#~ msgstr "Tadhali chagua utafiti"
+#~ msgstr "Conntez vous pour récupérer le questionnaire"
 
+#~| msgid "Please answer the following security question."
 #~ msgid "Please select a question."
-#~ msgstr "Tafadhali chagua swali"
+#~ msgstr "Réponds à la question de sécurité suivante."
 
-#~ msgid "And"
-#~ msgstr "Na"
-
-#~ msgid "Or"
-#~ msgstr "Au"
-
-#~ msgid "No limit"
-#~ msgstr "Hakuna kikomo"
-
-#~ msgid "CSV file"
-#~ msgstr "Faili LA CSV"
-
-#~ msgid ""
-#~ "Please attach a CSV file with the first column containing usernames of "
-#~ "users that you want to be added to this group."
-#~ msgstr ""
-#~ "Tafadhali weka faili LA CSV katika kisanduku cha kwanza kilicho na majina "
-#~ "ya watumiaji ili kuunganishwa na kundi hili"
-
-#~ msgid "Uploaded file does not appear to be in CSV format."
-#~ msgstr "Faili ulilopakia linaonekana sio LA mfumo WA CSV "
-
-#~ msgid "Checkbox type questions must have 2 Answer Options: a True and False"
-#~ msgstr ""
-#~ "Maswali ya ndani ya kisandu yanapaswakuwa na majibu ya aina 2 au si kweli"
-
-#~ msgid "Cannot skip to self, please select a different survey."
-#~ msgstr ""
-#~ "Haiwezi kuruka kwenda kipengele kingine Tafadhali chagua utafiti tofauti"
-
-#~ msgid "Cannot link to a question with a different segment."
-#~ msgstr "Haiwezi kuunganisha kwenda kwenye swali kipengele tofauti"
-
-#~ msgid "Cannot select a survey with a different segment."
-#~ msgstr "Haiwezi kuchagua utafiti kwa kipengele tofauti"
-
-#~ msgid "Add group via CSV file"
-#~ msgstr "Ongeza Kundi kupitia faili LA CSV"
-
-#~ msgid "counting..."
-#~ msgstr "Idadi"
-
-#~ msgid "Users matching static rules:"
-#~ msgstr "Sheria kwa yale yanaofanana ya watumiaji"
+#~| msgid "Add your reply"
+#~ msgid "Add group"
+#~ msgstr "Ajoute ta réponse"
 
 #~ msgid "You have already completed this survey."
-#~ msgstr "Tayari umekamilisha utaﬁti huu."
+#~ msgstr "Vous avez déjà complété ce questionnaire"
+
+#~ msgid "Please log in to take this survey"
+#~ msgstr "Conntez vous pour récupérer le questionnaire"
 
 #~ msgid ""
 #~ "Your survey has been completed successfully. Please see your submission "
 #~ "results below."
 #~ msgstr ""
-#~ "Utafiti wako umekamilika vizuri. Tafadhali tazama matokeo ya uwasilishaji "
-#~ "wako hapa chini."
+#~ "Questionnaire rempli avec succès. Veuillez consulter vos résultats ci-"
+#~ "dessous."
 
-#~ msgid "Group '{0}' created. Imported {1} user(s)."
-#~ msgstr "Kundi {0} limetengenezwa {1}. Mtumiaji wameingizwa "
+#~ msgid "Competition"
+#~ msgstr "Concurrence"
 
-#~ msgid "The group could not be created due to errors."
-#~ msgstr "Kundi limeshindwa kutengenezwa kutokana na makosa yaliyopo."
+#~ msgid "Answer to Security Question"
+#~ msgstr "Réponds à la question de sécurité."
+
+#~ msgid "Submit Your Story"
+#~ msgstr "Soumets ton histoire"
+
+#~ msgid "Please"
+#~ msgstr "S'il-te-plaît"
+
+#~ msgid "to leave a comment."
+#~ msgstr "pour commenter."
+
+#~ msgid "Continue to sign in"
+#~ msgstr "Poursuivre la connexion"
+
+#~ msgid "Log in to take Survey"
+#~ msgstr "Identifiez-vous pour remplir le questionnaire"
+
+#~ msgid "Too many attempts. Please try again later."
+#~ msgstr "Trop de tentatives Réessaye plus tard."
+
+#~ msgid ""
+#~ "The username that you entered appears to be invalid. Please try again."
+#~ msgstr "Le nom d'utilisateur entré est invalide. Réessaye"
+
+#~ msgid "unread replies"
+#~ msgstr "réponses non lues"
 
 #~ msgid "Get content"
-#~ msgstr "Pata maudhui"
+#~ msgstr "Chercher du contenu"
+
+#~ msgid "Your username and password does not match. Please try again."
+#~ msgstr "Le nom et le mot de passe ne correspondent pas. Réessaye"
+
+#~ msgid "Your password has been set.  You may go ahead and log in now."
+#~ msgstr ""
+#~ "Votre mot de passe a été créé. Vous pouvez maintenant vous connecter."
+
+#~ msgid "Username already exists."
+#~ msgstr "Ce nom existe déjà"
+
+#~ msgid "New Password"
+#~ msgstr "Nouveau mot de passe :"
+
+#~ msgid "Confirm Password"
+#~ msgstr "Confirme le mot de passe :"
+
+#~ msgid "I IDENTIFY MY GENDER AS:"
+#~ msgstr "Je suis de sexe"
+
+#~ msgid "WHAT IS YOUR HIGHEST LEVEL OF EDUCATION?"
+#~ msgstr "QUEL EST VOTRE PLUS HAUT NIVEAU D’ÉDUCATION ?"
+
+#~ msgid "CHOOSE A DISPLAY NAME"
+#~ msgstr "CHOISISSEZ UN NOM D'AFFICHAGE"
+
+#~ msgid "Hello "
+#~ msgstr "Bonjour"
+
+#~ msgid "As you type your name comment will appear as:"
+#~ msgstr "Lorsque vous taperez votre nom, le commentaire s'affichera comme :"
+
+#~ msgid "Change My Password"
+#~ msgstr "Change le mot de passe"
+
+#~ msgid "Answer to Security Question 1"
+#~ msgstr "Réponds à la question de sécurité."
+
+#~ msgid "Answer to Security Question 2"
+#~ msgstr "Réponds à la question de sécurité."
+
+#~ msgid "This value must contain only numbers."
+#~ msgstr "Cette valeur ne peut contenir que des lettres."
+
+#~ msgid "%(comment_count)s comment"
+#~ msgid_plural "%(comment_count)s comments"
+#~ msgstr[0] "Commentaires"
+#~ msgstr[1] ""
+
+#~ msgid "Your answer to the security question was invalid. Please try again."
+#~ msgstr "La réponse à la question de sécurité est invalide. Réessaye"
+
+#~ msgid "The two PINs that you entered do not match. Please try again."
+#~ msgstr "Les deux codes PIN sont différents. Réessaye"
 
 #~ msgid "Click to Download!"
-#~ msgstr "Bofya ili upakue!"
+#~ msgstr "Clique ici pour télécharger!"
 
+# Incomplete
 #~ msgid "More about"
-#~ msgstr "Mengi kuhusu"
+#~ msgstr "En savoir plus"
+
+#~ msgid "View More"
+#~ msgstr "Afficher plus d'informations"
 
 #~ msgid "More Information"
-#~ msgstr "Maelezo Zaidi"
+#~ msgstr "Informations supplémentaires"
+
+#~ msgid "LOGIN TO YOUR ACCOUNT!"
+#~ msgstr "Identifiez-vous !"
 
 #~ msgid "We’re excited to have you..."
-#~ msgstr "Tunafuraha kuwa na wewe..."
+#~ msgstr "Nous sommes ravis de vous avoir..."
 
 #~ msgid ""
 #~ "The password reset link was invalid, possibly because it has already been "
 #~ "used.  Please request a new password reset."
 #~ msgstr ""
-#~ "Kiungo cha kuweka upya nenosiri hakikuwa sahihi, pengine ni kwa sababu "
-#~ "kimetumika tayari. Tafadhali omba kiungo kipya cha kuweka upya nenosiri."
-
-#~ msgid "That page is not translatable."
-#~ msgstr "Ukurasa huo hauwezi kutafsiriwa."
-
-#~ msgid "This value must contain only numbers."
-#~ msgstr "Lazima thamani hii iwe na nambari pekee."
-
-#~ msgid "Username already exists."
-#~ msgstr "Jina la mtumiaji tayari lipo."
-
-#~ msgid ""
-#~ "Sorry, but that is an invalid display name. Please don't use your %s in "
-#~ "your display name."
-#~ msgstr ""
-#~ "Samahani, lakini hilo si jina sahihi la onyesho. Tafadhali tumia %s yako "
-#~ "katika jina lako la onyesho."
-
-#~ msgid "This value must contain only           numbers."
-#~ msgstr "Lazima thamani hii iwe na nambari pekee."
-
-#~ msgid "New passwords do not match."
-#~ msgstr "Manenosiri mapya hayalingani."
-
-#~ msgid "Confirm New Password"
-#~ msgstr "Thibitisha Nenosiri Jipya:"
-
-#~ msgid "I IDENTIFY MY GENDER AS:"
-#~ msgstr "NINATAMBUA JINSIA YANGU KAMA:"
-
-#~ msgid "WHAT IS YOUR HIGHEST LEVEL OF EDUCATION?"
-#~ msgstr "JE, KIWANGO CHA JUU CHA ELIMU ULICHOSOMA NI KIPI?"
-
-#~ msgid "CHOOSE A USERNAME"
-#~ msgstr "CHAGUA JINA LA MTUMIAJI"
-
-#~ msgid "CHOOSE A DISPLAY NAME"
-#~ msgstr "CHAGUA JINA LA ONYESHO"
-
-#~ msgid "ENTER YOUR MOBILE NUMBER"
-#~ msgstr "INGIZA NAMBARI YAKO YA SIMU YA MKONONI"
-
-#~ msgid "ENTER YOUR EMAIL ADDRESS"
-#~ msgstr "INGIZA ANWANI YAKO YA BARUA PEPE"
-
-#~ msgid "Hello "
-#~ msgstr "Hujambo"
-
-#~ msgid "As you type your name comment will appear as:"
-#~ msgstr "Unapokuwa ukiandika jina lako, maoni yatatokea kama:"
-
-#~ msgid " Not set."
-#~ msgstr " Haijawekwa."
-
-#~ msgid "Change My Password"
-#~ msgstr "Badilisha Nenosiri"
-
-#~ msgid "Too many attempts. Please try again later."
-#~ msgstr "Majaribio ni mengi sana. Tafadhai jaribu tena baadaye."
-
-#~ msgid ""
-#~ "The username that you entered appears to be invalid. Please try again."
-#~ msgstr ""
-#~ "Jina la mtumiaji ambalo uliingiza linaonekana kuwa sio sahihi. Tafadhali "
-#~ "jaribu tena."
-
-#~ msgid "View More"
-#~ msgstr "Tazama Zaidi"
-
-#~ msgid "LOGIN TO YOUR ACCOUNT!"
-#~ msgstr "INGIA KWENYE AKAUNI YAKO!"
-
-#~ msgid "Your username and password does not match. Please try again."
-#~ msgstr ""
-#~ "Jina lako la mtumiaji na nenosiri halilingani. Tafadhali jaribu tena."
-
-#~ msgid "Your password has been set.  You may go ahead and log in now."
-#~ msgstr "Nenosiri lako limewekwa.  Unaweza kuendelea na uingie sasa."
+#~ "Le lien de réinitialisation du mot de passe était invalide, peut être "
+#~ "parce qu'il a déjà été utilisé. Veuillez demander une nouvelle "
+#~ "réinitialisation de votre mot de passe."
 
 #~ msgid ""
 #~ "Forgotten your password? Enter your email address below, and we'll email "
 #~ "instructions for setting a new one."
 #~ msgstr ""
-#~ "Umesahau nenosiri lako? Ingiza anwani yako ya barua pepe hapa chini, na "
-#~ "tutakutumia barua pepe yenye maagizo ya kuweka mpya."
+#~ "Mot de passe oublié ? Saisissez votre adresse électronique ci-dessous et "
+#~ "nous vous enverrons les instructions à suivre pour en créer un nouveau."
 
 #~ msgid "Education Level"
-#~ msgstr "Kiwango cha Elimu"
+#~ msgstr "Niveau d'éducation"
+
+#~ msgid "New passwords do not match."
+#~ msgstr "Les nouveaux mots de passe ne sont pas identiques."
+
+#~ msgid "Confirm New Password"
+#~ msgstr "Confirme le nouveau mot de passe."
+
+#~ msgid "SELECT DATE OF BIRTH"
+#~ msgstr "SELECTIONNER LA DATE DE NAISSANCE"
+
+#~ msgid "DISPLAY NAME"
+#~ msgstr "NOM D'AFFICHAGE"
+
+#~ msgid "WHERE DO YOU LIVE?"
+#~ msgstr "OU HABITEZ-VOUS ?"
+
+#~ msgid "CHOOSE A USERNAME"
+#~ msgstr "CHOISISSEZ UN NOM D'UTILISATEUR"
+
+#~ msgid "CHOOSE A 4-DIGIT PIN"
+#~ msgstr "Choisis un code PIN à 4 chiffres."
+
+#~ msgid "ENTER YOUR MOBILE NUMBER"
+#~ msgstr "Entre ton numéro de portable."
+
+#~ msgid "ENTER YOUR EMAIL ADDRESS"
+#~ msgstr "Saisissez votre adresse électronique"
+
+#~ msgid "Your thought"
+#~ msgstr "Tes opinions"
+
+#~ msgid ""
+#~ "Your email address is not configured. Please update it before exporting."
+#~ msgstr ""
+#~ "Votre adresse électronique n'est pas configurée. Veuillez la mettre à "
+#~ "jour avant de procéder à l'exportation."
 
 #~ msgid ""
 #~ "Sorry, but that is an invalid username. Please don't use your %s in your "
 #~ "username."
 #~ msgstr ""
-#~ "Samahani, lakini jina la mtumiaji si sahihi. Tafadhali usitumie %s yako "
-#~ "katika jina lako la mtumiaji."
-
-#~ msgid "New Password"
-#~ msgstr "Nenosiri Jipya:"
-
-#~ msgid "Confirm Password"
-#~ msgstr "Thibitisha Nenosiri:"
-
-#~ msgid "SELECT DATE OF BIRTH"
-#~ msgstr "CHAGUA TAREHE YA KUZALIWA"
-
-#~ msgid "DISPLAY NAME"
-#~ msgstr "JINA LA ONYESHO"
-
-#~ msgid "WHERE DO YOU LIVE?"
-#~ msgstr "JE, UNAISHI WAPI?"
-
-#~ msgid ""
-#~ "This name you will use to log in and won't appear to other users. Only "
-#~ "you will see this."
-#~ msgstr ""
-#~ "Utatumia jina hili kuingia na halitaonekana na watumiaji wengine. Ni wewe "
-#~ "tu utaliona."
-
-#~ msgid "CHOOSE A 4-DIGIT PIN"
-#~ msgstr "CHAGUA PIN YA DIJITI 4"
-
-#~ msgid "The two PINs that you entered do not match. Please try again."
-#~ msgstr "PIN mbili ulizoingiza hazilingani. Tafadhali jaribu tena."
-
-#~ msgid "Answer to Security Question"
-#~ msgstr "Majibu ya Swali la Usalama"
-
-#~ msgid ""
-#~ "This site is free for all MTN subscribers. If you are an Airtel "
-#~ "subscriber, you can access this site for free by going to "
-#~ msgstr ""
-#~ "Tovuti hii hailipishwi kwa wateja wote wa MTN. Ikiwa wewe ni mteja wa "
-#~ "Airtel, unaweza kufikia tovuti hii bila malipo kwa kwenda kwenye"
-
-#~ msgid "Submit Your Story"
-#~ msgstr "Wasilisha Hadithi Yako"
-
-#~ msgid "Please"
-#~ msgstr "Tafadhali"
-
-#~ msgid "to leave a comment."
-#~ msgstr "kutoa maoni."
-
-#~ msgid "Continue to sign in"
-#~ msgstr "Endelea kuingia"
-
-#~ msgid "Log in to take Survey"
-#~ msgstr "Ingia ili ufanye utafiti"
-
-#~ msgid "unread replies"
-#~ msgstr "Majibu yasiyosomwa"
-
-#~ msgid "Answer to Security Question 1"
-#~ msgstr "Majibu ya Swali la Usalama"
-
-#~ msgid "Answer to Security Question 2"
-#~ msgstr "Majibu ya Swali la Usalama"
-
-#~ msgid ""
-#~ " Sorry we are having trouble accessing this feature! Due to a temporary "
-#~ "technical issue, log in and registrations are not available on Free "
-#~ "Basics app for now. To login or register for a profile, visit our free "
-#~ "mobisite through your mobile browser at:"
-#~ msgstr ""
-#~ "Samahani tuna tatizo la kupata kipengele hiki! Kwa sababu ya tatizo la "
-#~ "muda la kiufundi, kuingia kwenye akaunti na usajili hazipatikani kwenye "
-#~ "programu ya Free Basics kwa sasa. Ili kuingia au kujisajili upate wasifu, "
-#~ "tembelea tovuti yetu isiyolipishwa kupitia kivinjari chako cha simu ya "
-#~ "mkononi kwenye:"
-
-#~ msgid ""
-#~ "Please answer the above security questions. You'll have to provide these "
-#~ "answers if you ever need to reset your pin."
-#~ msgstr ""
-#~ "Tafadhali jibu maswali ya usalama yafuatayo. Itakubidi utoe majibu haya "
-#~ "ikiwa unahitaji kutengeza upya nambari yako ya siri."
-
-#~ msgid "Your answer to the security question was invalid. Please try again."
-#~ msgstr "Jibu lako la swali la usalama sio sahihi. Tafadhali jaribu tena."
-
-#~ msgid "Your thought"
-#~ msgstr "Mawazo yako"
-
-#~ msgid ""
-#~ "Your email address is not configured. Please update it before exporting."
-#~ msgstr ""
-#~ "Anwani yako ya barua pepe haijasanidiwa. Tafadhali isasishe kabla ya "
-#~ "kuihamisha."
+#~ "Désolé, mais le nom d'utilisateur est invalide. Veuillez ne pas utiliser "
+#~ "%s dans votre nom d'utilisateur."
 
 #~ msgid ""
 #~ "You haven't set a nickname, so your comments will appear as 'anonymous'"
 #~ msgstr ""
-#~ "Hujaweka jina la utani, kwa hivyo maoni yako yataonekana kama "
-#~ "'yasiojulikana'"
+#~ "Vous n'avez pas créé de pseudonyme, alors vos commentaires s'afficheront "
+#~ "comme 'anonymes'"
+
+#~ msgid ""
+#~ "Sorry, but that is an invalid display name. Please don't use your %s in "
+#~ "your display name."
+#~ msgstr ""
+#~ "Désolé, mais le nom d'affichage est invalide. Veuillez ne pas utiliser de "
+#~ "%s dans votre nom d'affichage."
+
+#~ msgid "This value must contain only           numbers."
+#~ msgstr "Cette valeur ne peut contenir que des lettres."
+
+#~ msgid "That page is not translatable."
+#~ msgstr "Cette page ne peut pas être traduite."
