@@ -364,6 +364,26 @@ a {
   font-size: 18px;
 }
 
+.error-page {
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  margin: 0 auto;
+  padding: 10px 15px;
+  justify-content: center;
+  width: 100%;
+}
+.error-page .heading {
+  font-size: 36px;
+  margin: 0;
+  padding: 20px 0;
+}
+.error-page .subheading {
+  font-size: 27px;
+  margin: 0;
+  padding: 20px 0;
+}
+
 .footer {
   align-items: flex-start;
   background-color: #711343;
