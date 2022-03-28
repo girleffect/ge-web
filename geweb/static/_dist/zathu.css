@@ -265,6 +265,23 @@ a {
   text-decoration: underline;
 }
 
+.error-page {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 10px 15px;
+  width: 320px;
+}
+.error-page .heading {
+  font-size: 36px;
+  margin: 0;
+  padding: 20px 0;
+}
+.error-page .subheading {
+  font-size: 27px;
+  margin: 0;
+  padding: 20px 0;
+}
+
 .footer {
   background-color: #dadada;
   padding: 25px 8px;

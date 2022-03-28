@@ -1,13 +1,50 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html class="no-js">
     <head>
         <meta charset="utf-8" />
         <title>Internal server error</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <h1>Internal server error</h1>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400&display=swap" rel="stylesheet">
+        <style>
+            html, body {
+                background-color: #fff;
+            }
 
-        <h2>Sorry, there seems to be an error. Please try again soon.</h2>
+            body {
+                box-sizing: border-box;
+                color: #000;
+                font-family: 'Signika', sans-serif;
+                height: 0;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .error-page {
+                margin: 0 auto;
+                padding: 10px 15px;
+                width: 360px;
+            }
+
+            .heading {
+                color: #000;
+            }
+            
+        </style>
+    </head>
+    <body class="main template-500">
+        {% block content %}
+            <div class="error-page">
+                <h1 class="heading">{% trans "Internal server error" %}</h1>
+                <h2 class="subheading">
+                    {% trans "Sorry, there seems to be an error. Please try again soon." %}
+                </h2>
+            </div>
+        {% endblock %}
     </body>
 </html>
+
+
+
