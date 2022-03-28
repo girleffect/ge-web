@@ -1,0 +1,24 @@
+.forms-page {
+    &--banner {
+        margin: 0 auto;
+    }
+    &__icon {
+        display: block;
+        margin: 0 auto;
+    }
+    &__inner {
+        text-align: center;
+    }
+    &__title {
+        color: $dark_violet;
+        font-family: "Berfa";
+        font-size: $medium;
+        padding: 15px 15px 10px;
+    }
+    &__subtitle {
+        color: $dark_violet;
+        font-family: "TwCenMTStd-Bold";
+        padding: 10px 0;
+    }
+
+}

@@ -262,10 +262,18 @@ a {
   font-size: 18px;
   font-family: "TwCenMTStd-Bold";
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 10px 25px;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 84%;
+}
+.call-to-action__submit:hover, .call-to-action__submit:focus {
+  background-color: #2c4376;
 }
 .call-to-action__link {
   color: #412a83;
@@ -637,6 +645,28 @@ input[type=submit] {
   margin: 0 5px 0 0;
   padding: 0 5px 0 0;
   width: 25px;
+}
+
+.forms-page--banner {
+  margin: 0 auto;
+}
+.forms-page__icon {
+  display: block;
+  margin: 0 auto;
+}
+.forms-page__inner {
+  text-align: center;
+}
+.forms-page__title {
+  color: #412a83;
+  font-family: "Berfa";
+  font-size: 18.72px;
+  padding: 15px 15px 10px;
+}
+.forms-page__subtitle {
+  color: #412a83;
+  font-family: "TwCenMTStd-Bold";
+  padding: 10px 0;
 }
 
 .header {
