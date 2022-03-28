@@ -49,10 +49,6 @@
         &-link {
             display: block;
         }
-        img {
-            height: auto;
-            width: 200px;
-        }
     }
     &__item {
         overflow: hidden;
@@ -74,12 +70,9 @@
                 width: 100%;
             }
             .teaser-stacklist__thumbnail {
-                height: 250px;
+                height: 220px;
                 margin: 0 auto;
                 width: 290px;
-                img {
-                    width: 400px;
-                }
             }
             .teaser-stacklist__title {
                 font-size: 26px;

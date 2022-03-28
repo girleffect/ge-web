@@ -1,4 +1,4 @@
-{% load wagtailcore_tags article_tags static %}
+{% load article_tags i18n static wagtailcore_tags %}
 
 <div id="header" class="header">
     <header id="header-wrapper" class="header-wrapper">
@@ -7,11 +7,11 @@
                 <li id="profile" class="menu-list__item">
                     {% if not user.is_authenticated %}
                         <a  href="{% url 'user_register' %}" class="menu-list__anchor">
-                            Sign up
+                            {% trans "Sign up" %} 
                         </a>
                     {% else %}
                         <a  href="{% url 'view_my_profile' %}" class="menu-list__anchor">
-                            Profile
+                            {% trans "Profile" %} 
                         </a>
                     {% endif %}
                 </li>
@@ -22,7 +22,9 @@
                 </li>
                 <li id="search" class="menu-list__item">
                     <a class="menu-list__anchor">
-                        <label for="search-toggle">Search</label>
+                        <label for="search-toggle">
+                            {% trans "Search" %}
+                        </label>
                     </a>
                 </li>
             </ul>

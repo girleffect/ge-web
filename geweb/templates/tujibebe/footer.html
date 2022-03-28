@@ -1,4 +1,4 @@
-{% load article_tags home_tags static wagtailcore_tags  %}
+{% load article_tags i18n home_tags static wagtailcore_tags  %}
 <footer id="footer" class="footer">
     <div class="footer__inner">
         {% include "../_patterns/search-input.html" with enhance="footer" %}
@@ -10,7 +10,7 @@
 
 
     <h3 class="heading heading__micro">
-        Find us elsewhere:
+        {% trans "Find us elsewhere:" %}
     </h3>
 
     {% social_media_footer %}
@@ -21,13 +21,13 @@
 
     <div class="call-to-action call-to-action--backToTop items">
         <a href="#" class="call-to-action__nav-item-text call-to-action__nav-item-text--backToTop">
-            Back to Top
+            {% trans "Back to Top" %}
         </a>
     </div>
 
     <div class="copyright">
         <p class="copyright__text">
-            © {% now "Y" %} Tujibebe. All Rights Reserved.
+            © {% now "Y" %} Tujibebe. {% trans "All Rights Reserved." %}
             <a href="/en/footer-pages/terms-and-conditions/" class="copyright__anchor">
                 Terms &amp; Conditions
             </a>
