@@ -58,16 +58,7 @@
         &--full-width {
             width: 100%;
             &:after {
-                background-image: url($staticPath + 'img/zathu/mw_zig_pattern_30.png');
-                background-position: center;
-                background-repeat: repeat-x;
-                content: '';
-                clear: both;
-                display: block;
-                height: 50px;
-                margin: 0 0 10px 0;
-                overflow: visible;
-                width: 100%;
+                @include line-break-pattern;
             }
             .teaser-stacklist__thumbnail {
                 height: 220px;

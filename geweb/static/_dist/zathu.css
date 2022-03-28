@@ -233,6 +233,25 @@ a {
   padding: 15px 20px;
 }
 
+.banner__image {
+  background-color: #e2e5e7;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.banner:after {
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/zathu/mw_zig_pattern_30.png");
+  background-position: center;
+  background-repeat: repeat-x;
+  content: "";
+  clear: both;
+  display: block;
+  height: 50px;
+  margin: 0 0 10px 0;
+  overflow: visible;
+  width: 100%;
+}
+
 .call-to-action {
   padding: 10px;
 }
@@ -876,7 +895,7 @@ input[type=submit] {
   clear: both;
   display: block;
   height: 50px;
-  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
   overflow: visible;
   width: 100%;
 }
