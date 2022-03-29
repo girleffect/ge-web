@@ -42,11 +42,19 @@ class HomePage(Page):
         db_index=True,
     )
 
+    featured_articles = models.TextField(
+        default=15,
+        null=True,
+        blank=True,
+        help_text=_("The number of featured articles on the Home Page. Default is 15"),
+    )
+
     content_panels = Page.content_panels + [
         StreamFieldPanel("banners"),
     ]
     settings_panels = Page.settings_panels + [
         FieldPanel("theme"),
+        FieldPanel("featured_articles"),
     ]
 
     def get_context(self, request):
@@ -61,11 +69,31 @@ class HomePage(Page):
         forms = FormPage.objects.descendant_of(self).live()
         context["forms"] = forms
 
+        try:
+            number_featured = int(self.featured_articles)
+        except ValueError:
+            number_featured = 15
+
         articlepages = (
             ArticlePage.objects.filter(feature_in_homepage=True)
             .live()
             .descendant_of(section_index)
+            [:number_featured]
         )
+
+        if len(articlepages) < number_featured:
+            number_needed = number_featured - len(articlepages)
+            articlepages = articlepages | (
+                ArticlePage.objects.filter(feature_in_homepage=False)
+                .live()
+                .descendant_of(section_index)
+                .order_by('page_ptr_id')
+                .reverse()
+                [:number_needed]
+            )
+        for article in articlepages:
+            article.feature_in_homepage = True
+
         context["articlepages"] = articlepages
 
         articlepages_in_menu = (
