@@ -89,6 +89,8 @@ class HomePage(Page):
                 .order_by("-last_published_at")[:number_needed]
             )
         for article in articlepages:
+            # save() is not being used here intentionally to only temporarily set
+            # articles as featured for this request
             article.feature_in_homepage = True
 
         context["articlepages"] = articlepages
