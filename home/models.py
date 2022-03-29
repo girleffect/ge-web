@@ -86,8 +86,7 @@ class HomePage(Page):
                 ArticlePage.objects.filter(feature_in_homepage=False)
                 .live()
                 .descendant_of(section_index)
-                .order_by("page_ptr_id")
-                .reverse()[:number_needed]
+                .order_by("-last_published_at")[:number_needed]
             )
         for article in articlepages:
             article.feature_in_homepage = True
