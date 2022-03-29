@@ -77,8 +77,7 @@ class HomePage(Page):
         articlepages = (
             ArticlePage.objects.filter(feature_in_homepage=True)
             .live()
-            .descendant_of(section_index)
-            [:number_featured]
+            .descendant_of(section_index)[:number_featured]
         )
 
         if len(articlepages) < number_featured:
@@ -87,9 +86,8 @@ class HomePage(Page):
                 ArticlePage.objects.filter(feature_in_homepage=False)
                 .live()
                 .descendant_of(section_index)
-                .order_by('page_ptr_id')
-                .reverse()
-                [:number_needed]
+                .order_by("page_ptr_id")
+                .reverse()[:number_needed]
             )
         for article in articlepages:
             article.feature_in_homepage = True
