@@ -197,7 +197,7 @@ ul, ol, li {
   text-decoration: none;
 }
 .call-to-action__read-more:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/yegna/icon-readmore.svg") no-repeat center center/100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 15px;
@@ -212,7 +212,7 @@ ul, ol, li {
   float: left;
 }
 .call-to-action__back:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/yegna/icon-readmore.svg") no-repeat center center/100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 15px;
@@ -230,7 +230,7 @@ ul, ol, li {
   text-decoration: none;
 }
 .call-to-action__button:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/yegna/icon-watch-white.svg") no-repeat center center/100%;
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-watch-white.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 19px;
