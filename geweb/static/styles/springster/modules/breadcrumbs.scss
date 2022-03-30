@@ -19,18 +19,15 @@
             text-decoration: none;
             text-transform: capitalize;
             &:after {
-                color: $dark_gray_blue; //#868b95
+                color: $dark_gray_blue; 
                 content: " / ";
                 font-weight: 100;
                 margin: 0 2px 0 5px;
             }
         }
-
         span {
-            color: #868b95;
+            color: $dark_gray_blue2;
         }
-        
     }
-
-    
 }
+

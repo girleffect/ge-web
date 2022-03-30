@@ -3,9 +3,7 @@
 {% load article_tags %}
 
 {% block content %}
-    {% if theme.slug == 'yegna' %}
-        -
-    {% else %}
+    {% if not theme.slug == 'yegna' %}
         {% include "./_patterns/form-page-thank-you.html" %}
     {% endif %}
 {% endblock content %}
