@@ -29,6 +29,23 @@ a {
     word-wrap: break-word;
 }
 
+img {
+    height: auto;
+    width: 100%;
+}
+
+iframe,
+video {
+    height: 500px;
+    width: 100%;
+}
+
+audio  {
+    height: auto;
+    width: 100%;
+}
+
+
 //!! IMPORTANT RULE
 .ninyampinga {
     background-color: $white;

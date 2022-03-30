@@ -1,4 +1,5 @@
 .languages {
+    width: auto;
     &__label {
         color: #fff;
         cursor: pointer;
@@ -21,10 +22,11 @@
             vertical-align: middle;
             width: 35px;
             @media (min-width: 991px) {
-                background-position: 0 -75px;
-                background-size: 45px;
-                height: 50px;
-                width: 50px;
+                background-position: 0 -50px;
+                background-size: 35px;
+                height: 45px;
+                width: 45px;
+                padding: 5px 0;
             }
         }
         &:hover,
@@ -47,8 +49,8 @@
                 @media (min-width: 991px) {
                     background-position: 0 -155px;
                     background-size: 35px;
+                    padding: 5px 0;
                     height: 40px;
-                    padding: initial;
                     width: 45px;
                 }
             }
