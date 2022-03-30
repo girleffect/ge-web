@@ -2,6 +2,7 @@ from django import template
 from wagtail.core.models import Site
 
 from home.models import SiteSettings
+from home.utils import get_moderator_reply_name_from_request
 
 register = template.Library()
 
@@ -51,3 +52,13 @@ def social_media_article(context, page=None):
 @register.filter(name="field_type")
 def field_type(field):
     return field.field.widget.__class__.__name__
+
+
+@register.simple_tag(takes_context=True)
+def get_moderator_reply_name(context):
+    """
+    Returns the moderator_reply_name for the current request (retrieved from
+    the site root).
+    """
+    request = context["request"]
+    return get_moderator_reply_name_from_request(request)

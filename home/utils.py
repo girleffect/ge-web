@@ -26,3 +26,15 @@ def get_theme_from_slug(value):
         if theme.slug == value:
             return theme
     raise ValueError(f"No Theme can be found matching the slug '{value}'.")
+
+
+def get_moderator_reply_name_from_request(request):
+    """
+    Returns the moderator_reply_name for the current request.
+    """
+    site = Site.find_for_request(request)
+    moderator_reply_name = "BigSis"
+    if site:
+        if site.root_page.specific.theme:
+            moderator_reply_name = site.root_page.specific.moderator_reply_name
+    return moderator_reply_name

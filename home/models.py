@@ -49,11 +49,21 @@ class HomePage(Page):
         help_text=_("The number of featured articles on the Home Page. Default is 15"),
     )
 
+    moderator_reply_name = models.TextField(
+        default="BigSis",
+        null=True,
+        blank=True,
+        help_text=_(
+            "The name that will appear on the moderator comment reply. Default is BigSis"
+        ),
+    )
+
     content_panels = Page.content_panels + [
         StreamFieldPanel("banners"),
     ]
     settings_panels = Page.settings_panels + [
         FieldPanel("theme"),
+        FieldPanel("moderator_reply_name"),
         FieldPanel("featured_articles"),
     ]
 
