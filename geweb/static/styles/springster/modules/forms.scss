@@ -87,13 +87,6 @@ input[type=checkbox] {
         height: 24px;
         width: 24px;
     }
-
-    // & + label {
-    //     &:before {
-    //         background-color: $colorWhite;
-    //         border: 1px solid $colorWhite;
-    //     }
-    // }
     &:checked:before {
         background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
     }

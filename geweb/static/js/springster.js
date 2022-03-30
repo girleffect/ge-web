@@ -9,7 +9,6 @@ const elemHeaderSearchToggle = document.getElementById('search'),
 
 elemSearchBar.classList.add('search__hidden')
 elemHeaderSearchToggle.addEventListener('click', (e) => {
-    console.log(e.target.parentElement)
     if (elemSearchBar.classList.contains('search__hidden')) {
         elemSearchBar.classList.remove('search__hidden', 'loading') 
         e.target.parentElement.classList.add('close')
@@ -85,8 +84,6 @@ function inputChange(arg, action, name, className) {
        const eachInputDivCollection = selectEachInputQuestion.children;
        
         const eachInputDivArray =  [...eachInputDivCollection];
-
-        console.log(eachInputDivArray, eachInputDivArray.length)
     
         for (let i = 0; i < eachInputDivArray.length; i++) {
             const eachDiv = eachInputDivArray[i],
@@ -103,11 +100,20 @@ function inputChange(arg, action, name, className) {
                             allLabels = eachInputDivArray[j].children[0] 
                             allInputs = allLabels.children[0]
 
-                            allInputs.removeAttribute('checked')
+                            // CHECK MULTIPLE CHECKBOXES & ONLY SELECT 1 RADIO BUTTON
+                            if (allInputs.getAttribute('type') !== 'checkbox') {
+                                allInputs.removeAttribute('checked')
+                            }
                             allLabels.classList.remove(className)
                         }
-                        $targetInput.setAttribute('checked','checked')
-                        label.classList.add(className)
+                        if ($targetInput.checked) {
+                            $targetInput.setAttribute('checked','checked')
+                            label.classList.add(className)
+                        } else  {
+                            // CHECK OR UNCHECK MULTIPLE CHECKBOXES
+                            $targetInput.removeAttribute('checked')
+                            label.classList.remove(className)
+                        }
                     }
                 })
             }
