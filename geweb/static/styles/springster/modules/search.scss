@@ -15,6 +15,16 @@
     }
     &__bar {
         overflow: auto;
+        display: block;
+        visibility: visible;
+        &.loading {
+            display: none;
+            visibility: hidden;
+        }
+    }
+    &__hidden {
+        display: none;
+        visibility: hidden;
     }
     &__form {
         position: relative;
@@ -30,7 +40,7 @@
     }
     &__cta {
         background-color: transparent;
-        background-image: url($staticPath + '/img/springster/search.svg');
+        background-image: url($staticPath + 'img/springster/search.svg');
         background-repeat: no-repeat;
         background-position: 100% 0;
         background-size: auto 98%;
@@ -47,6 +57,9 @@
         top: 8px;
         text-indent: -99em;
         width: 21px;
+    }
+    .search-radio {
+        visibility: hidden;
     }
     &--header {
         #{$block}__bar { 

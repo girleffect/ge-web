@@ -1,16 +1,7 @@
 <div class="article-teaser">
     <div class="teaser-stacklist">
         {% for post in articlepages %}
-        
             {% include "./article-teasers.html" %}
-
-            {% if post.tags.all.count %}
-                <div class="tags">
-                    {% for tag in post.tags.all %}
-                        #{{ tag.name}}
-                    {% endfor %}
-                </div>
-            {% endif %}
         {% endfor %}
     </div>
 </div>

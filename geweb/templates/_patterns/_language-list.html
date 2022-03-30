@@ -1,12 +1,10 @@
 {% load i18n wagtailcore_tags %}
 
-{% for language_code, language_name in LANGUAGES %}
-{% get_language_info for language_code as lang %}
-  {% language language_code %}
+{% for translation in self.get_translations.live %}
     <li class="languages-list__item">
-      <a href="{% pageurl page.localized %}" rel="{{ language_code }}" hreflang="{{ language_code }}" class="languages-list__anchor">
-        {{ lang.name_local }}
-      </a>
+        {% get_language_info for translation.locale.language_code as lang %}
+        <a href="{% pageurl translation.specific %}" rel="alternate" hreflang="{{ language_code }}" class="languages-list__anchor">
+            {{ lang.name_local }}
+        </a>
     </li>
-  {% endlanguage %}
 {% endfor %}

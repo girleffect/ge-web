@@ -1,9 +1,14 @@
 {% load wagtailcore_tags %}
 
-{% if page %}
-  <div id="language-bar" class="languages">
+{% if self.get_translations.live %}
+  <div id="language-bar" class="languages{% if position %} languages--{{position}}{% endif %}">
     <div class="languages__wrapper">
       <ul class="languages-list">
+        {% if position %}
+            <li class="languages-list__item">
+                <p class="languages-list__label">Language</p>
+            </li>
+        {% endif %}
         {% include "./_language-list.html" %}
       </ul>
     </div>

@@ -2,12 +2,6 @@ form {
     overflow: inherit;
 }
 
-label {
-    color: $dark_gray;
-    padding: 16px 0 10px 0;
-    text-align: center;
-}
-
 fieldset {
     border: none;
     text-align: center;
@@ -17,6 +11,17 @@ fieldset {
         margin: 0 0 10px;
         justify-content: space-between;
     }
+}
+
+label {
+    color: $dark_gray;
+    padding: 16px 0 10px 0;
+    text-align: center;
+}
+
+label[for=id_terms_and_conditions] {
+    display: none;
+    visibility: hidden;
 }
 
 input[type="text"],
@@ -49,6 +54,12 @@ select {
     }
 }
 
+select {
+    background: #fafafa url($staticPath + 'img/springster/drop-down@2x.png') 0 0/20px no-repeat;
+    padding: 10px 30px 10px 5px;
+    width: 100%;
+}
+
 textarea {
     border-radius: 0;
     border: 2px solid $violet;
@@ -60,17 +71,14 @@ textarea {
     -webkit-appearance: none;
 }
 
-label[for=id_terms_and_conditions] {
-    display: none;
-    visibility: hidden;
-}
-
-input[type=checkbox]#id_terms_and_conditions {
+input[type=checkbox] {
     cursor: pointer;
     display: inline-block;
     visibility: visible;
     margin: 0 10px 0 0;
-    
+    height: 24px;
+    vertical-align: middle;
+    width: 24px;
     &:before {
         background: #fff;
         content: "";
@@ -79,8 +87,60 @@ input[type=checkbox]#id_terms_and_conditions {
         height: 24px;
         width: 24px;
     }
-    &.is-on:before {
+
+    // & + label {
+    //     &:before {
+    //         background-color: $colorWhite;
+    //         border: 1px solid $colorWhite;
+    //     }
+    // }
+    &:checked:before {
         background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
+    }
+}
+.typeCheckbox {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 0 0;
+    width: 100%;
+    &.is-on input[type=checkbox]:before {
+        background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
+    }
+}
+
+input[type=radio] {
+    display: inline-block;
+}
+//DEFAULT input[type=radio] MODIFIER
+.typeRadio {
+    background-color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    opacity: .8;
+    width: 100%;
+    &:before {
+        background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
+        content: '';
+        display: inline-block;
+        height: 24px;
+        margin: 0 10px 0 20px;
+        vertical-align: middle;
+        width: 24px;
+    }
+    &:hover, &focus {
+        opacity: 1;
+    }
+    &.selected {
+        opacity: 1;
+        &:before {
+            background: url($staticPath + 'img/springster/selected@2x.png') 0 0/24px no-repeat;
+            content: '';
+        }
+    }
+    input[type=radio] {
+        margin: 0;
+        visibility: hidden;
+        width: auto;
     }
 }
 
@@ -105,7 +165,7 @@ input[type=checkbox]#id_terms_and_conditions {
 }
 
 /*
-    FORMS
+     FORMS
 */
 
 .forms {
@@ -124,7 +184,6 @@ input[type=checkbox]#id_terms_and_conditions {
         font-weight: 400;
         margin: 0 0 10px;
         padding: 0 15px;
-        
     }
     &__paragraph {
         font-size: 16px;
@@ -134,7 +193,7 @@ input[type=checkbox]#id_terms_and_conditions {
         font-family: 'Baton-Regular';
         font-size: 21px;
         font-weight: 400;
-        padding: 0 15px 20px;
+        padding: 10px 15px 20px;
     }
 
     p, label {
@@ -175,13 +234,13 @@ input[type=checkbox]#id_terms_and_conditions {
             margin: 15px 0;
             padding: 0 15px;
             text-align: left;
-            &:before {
-                background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
-                content: '';
-                height: 25px;
-                margin: 0 10px 10px 0;
-                width: 10%;
-            }
+            // &:before {
+            //     background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
+            //     content: '';
+            //     height: 25px;
+            //     margin: 0 10px 10px 0;
+            //     width: 10%;
+            // }
             label {
                 width: 85%;
             }
@@ -189,6 +248,12 @@ input[type=checkbox]#id_terms_and_conditions {
                 position: absolute;
                 left: 0;
             }
+        }
+    }
+    //ASSUMPTION ITS RADIO BUTTONS MARKUP
+    div {
+        label {
+
         }
     }
     .errorlist,

@@ -82,4 +82,7 @@
     width: 28px;
     padding: 0;
     height: 25px;
+    &.close {
+        background: $violet url($staticPath + 'img/springster/dismiss.svg')  no-repeat 3px 3px / auto 80%;
+    }
 }

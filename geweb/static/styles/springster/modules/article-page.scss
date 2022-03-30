@@ -39,14 +39,27 @@
         p {
             margin: 5px 0;
         }
+        ul {
+            padding: 0 20px;
+            li {
+                list-style: disc;   
+            }
+        }
+        ol {
+            padding: 0 20px;
+            li {
+                list-style: decimal;
+            }
+        }
     }
 
     &-image {
         overflow: auto;
-        img {
-            height: auto;
-            width: 100%;
-        }
-    }    
+    }  
+    
+    &-media {
+        padding: 10px;
+    }
 }
+
 

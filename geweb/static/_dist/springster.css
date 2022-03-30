@@ -44,6 +44,25 @@ ul, ol, li {
   padding: 0;
 }
 
+img {
+  height: auto;
+  width: 100%;
+}
+
+iframe,
+video,
+audio {
+  width: 100%;
+}
+
+iframe {
+  min-height: 240px;
+}
+
+a {
+  text-decoration: underline;
+}
+
 .springster {
   background-color: #ffffff;
   margin: 0 auto;
@@ -97,12 +116,23 @@ ul, ol, li {
 .block-paragraph p {
   margin: 5px 0;
 }
+.block-paragraph ul {
+  padding: 0 20px;
+}
+.block-paragraph ul li {
+  list-style: disc;
+}
+.block-paragraph ol {
+  padding: 0 20px;
+}
+.block-paragraph ol li {
+  list-style: decimal;
+}
 .block-image {
   overflow: auto;
 }
-.block-image img {
-  height: auto;
-  width: 100%;
+.block-media {
+  padding: 10px;
 }
 
 .article-teasers {
@@ -276,6 +306,7 @@ ul, ol, li {
   display: inline-block;
 }
 .call-to-action__submit {
+  align-items: center;
   background-color: transparent;
   background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/button-sprite.png");
   background-position: 0 0;
@@ -285,18 +316,73 @@ ul, ol, li {
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  display: block;
+  display: flex;
   font-family: "Baton-Medium";
   font-size: 18px;
   font-weight: 400;
   height: 40px;
+  justify-content: center;
   margin: 15px auto 0;
   max-width: 344px;
   max-height: 40px;
-  padding: 10px 0;
+  position: relative;
   text-align: center;
   text-decoration: none;
   width: 100%;
+}
+.call-to-action__submit--enhanced:after {
+  background-color: #7300ff;
+  border-radius: 5px;
+  content: "";
+  display: block;
+  height: 35px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 98%;
+}
+.call-to-action__submit:hover .call-to-action__label, .call-to-action__submit:focus .call-to-action__label {
+  text-decoration: underline;
+}
+.call-to-action__label {
+  display: block;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+.call-to-action__back {
+  color: #7300ff;
+  cursor: pointer;
+  display: block;
+  font-family: "Baton-Medium";
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.call-to-action__back:before {
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: auto 100%;
+  content: "";
+  display: inline-block;
+  height: 24px;
+  margin-left: 10px;
+  transform: rotate(-90deg);
+  vertical-align: middle;
+  width: 24px;
+}
+.call-to-action--full {
+  background-color: #f1e5ff;
+  padding: 10px 5px 10px 15px;
 }
 .call-to-action--profiles {
   padding: 10px 0;
@@ -484,14 +570,137 @@ ul, ol, li {
   margin: 0;
 }
 
-form {
-  overflow: inherit;
+.forms-page {
+  background-color: #ffffff;
+  margin: 10px 0;
+  padding: 10px 10px 0;
+  position: relative;
+}
+.forms-page__inner {
+  position: relative;
+  padding: 20px 0 0;
+}
+.forms-page__icon {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+}
+.forms-page__icon:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/think_purple.png") no-repeat 0 0/85px;
+  content: "";
+  display: block;
+  height: 88px;
+  padding: 5px;
+  width: 100px;
+}
+.forms-page__results {
+  background-color: #ffffff;
+  padding: 20px 15px;
+}
+.forms-page__results p {
+  font-size: 18px;
+}
+.forms-page__title {
+  color: #4e5358;
+  font-family: "Baton-Regular";
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.forms-page__title:after {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
+  content: "";
+  display: block;
+  height: 10px;
+  margin: 5px 0 20px 0;
+  width: 100%;
+}
+.forms-page__subtitle {
+  color: #4e5358;
+  font-family: "Baton-Regular";
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+.forms-page__subtitle h1, .forms-page__subtitle h2, .forms-page__subtitle h3, .forms-page__subtitle h4, .forms-page__subtitle h5, .forms-page__subtitle h5, .forms-page__subtitle p {
+  text-transform: capitalize;
+}
+.forms-page__paragraph {
+  color: #000;
+  font-size: 18px;
+}
+.forms-page--banner {
+  background-color: #fffc78;
+  padding: 10px 15px;
+}
+.forms-page--main {
+  padding: 20px 0;
+}
+.forms-page--main .forms-page__icon {
+  background-size: 100px;
+  margin-bottom: 30px;
+}
+.forms-page--main .forms-page__inner {
+  padding: 0 5%;
+}
+.forms-page--main .forms-page__inner p {
+  font-size: 18px;
+}
+.forms-page--main .forms-page__title {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.forms-page--main .forms-page__title:after {
+  left: 0;
+  margin: 5px auto;
+  position: absolute;
+  right: 0;
+  width: 145px;
+}
+.forms-page--main .forms-page__subtitle h1, .forms-page--main .forms-page__subtitle h2, .forms-page--main .forms-page__subtitle h3, .forms-page--main .forms-page__subtitle h4, .forms-page--main .forms-page__subtitle h5, .forms-page--main .forms-page__subtitle h5, .forms-page--main .forms-page__subtitle p {
+  font-size: 24px;
+}
+.forms-page--main .forms {
+  background-color: #fffec5;
+  padding: 10px 15px;
+  margin: 10px 0;
+}
+.forms-page--main .forms__title {
+  text-align: center;
+}
+.forms-page--main .forms__title:after {
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 150px;
+}
+.forms-page--main .forms input[type=text],
+.forms-page--main .forms input[type=number],
+.forms-page--main .forms input[type=password],
+.forms-page--main .forms input[type=email],
+.forms-page--main .forms input[type=tel],
+.forms-page--main .forms input[type=search],
+.forms-page--main .forms input[type=week],
+.forms-page--main .forms input[type=date],
+.forms-page--main .forms input[type=month],
+.forms-page--main .forms input[type=datetime],
+.forms-page--main .forms input[type=datetime-local],
+.forms-page--main .forms input[type=url],
+.forms-page--main .forms select,
+.forms-page--main .forms textarea {
+  margin: 10px 0;
+}
+.forms-page--main .forms label {
+  font-size: 20px;
+}
+.forms-page--main .forms p, .forms-page--main .forms div {
+  padding: 5px 0;
 }
 
-label {
-  color: #656d78;
-  padding: 16px 0 10px 0;
-  text-align: center;
+form {
+  overflow: inherit;
 }
 
 fieldset {
@@ -503,6 +712,17 @@ fieldset .dropdowns {
   display: flex;
   margin: 0 0 10px;
   justify-content: space-between;
+}
+
+label {
+  color: #656d78;
+  padding: 16px 0 10px 0;
+  text-align: center;
+}
+
+label[for=id_terms_and_conditions] {
+  display: none;
+  visibility: hidden;
 }
 
 input[type=text],
@@ -557,6 +777,12 @@ select:focus-visible {
   outline: none;
 }
 
+select {
+  background: #fafafa url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/drop-down@2x.png") 0 0/20px no-repeat;
+  padding: 10px 30px 10px 5px;
+  width: 100%;
+}
+
 textarea {
   border-radius: 0;
   border: 2px solid #7300ff;
@@ -568,18 +794,16 @@ textarea {
   -webkit-appearance: none;
 }
 
-label[for=id_terms_and_conditions] {
-  display: none;
-  visibility: hidden;
-}
-
-input[type=checkbox]#id_terms_and_conditions {
+input[type=checkbox] {
   cursor: pointer;
   display: inline-block;
   visibility: visible;
   margin: 0 10px 0 0;
+  height: 24px;
+  vertical-align: middle;
+  width: 24px;
 }
-input[type=checkbox]#id_terms_and_conditions:before {
+input[type=checkbox]:before {
   background: #fff;
   content: "";
   border: 2px solid #7300ff;
@@ -587,8 +811,54 @@ input[type=checkbox]#id_terms_and_conditions:before {
   height: 24px;
   width: 24px;
 }
-input[type=checkbox]#id_terms_and_conditions.is-on:before {
+input[type=checkbox]:checked:before {
   background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
+}
+
+.typeCheckbox {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 0 0;
+  width: 100%;
+}
+.typeCheckbox.is-on input[type=checkbox]:before {
+  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
+}
+
+input[type=radio] {
+  display: inline-block;
+}
+
+.typeRadio {
+  background-color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0.8;
+  width: 100%;
+}
+.typeRadio:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
+  content: "";
+  display: inline-block;
+  height: 24px;
+  margin: 0 10px 0 20px;
+  vertical-align: middle;
+  width: 24px;
+}
+.typeRadio:hover, .typeRadiofocus {
+  opacity: 1;
+}
+.typeRadio.selected {
+  opacity: 1;
+}
+.typeRadio.selected:before {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/selected@2x.png") 0 0/24px no-repeat;
+  content: "";
+}
+.typeRadio input[type=radio] {
+  margin: 0;
+  visibility: hidden;
+  width: auto;
 }
 
 .terms_and_conditions-link {
@@ -612,7 +882,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 
 /*
-    FORMS
+     FORMS
 */
 .forms {
   text-align: left;
@@ -640,7 +910,7 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   font-family: "Baton-Regular";
   font-size: 21px;
   font-weight: 400;
-  padding: 0 15px 20px;
+  padding: 10px 15px 20px;
 }
 .forms p, .forms label {
   color: #4e5358;
@@ -680,13 +950,6 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   margin: 15px 0;
   padding: 0 15px;
   text-align: left;
-}
-.forms fieldset .input-group:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
-  content: "";
-  height: 25px;
-  margin: 0 10px 10px 0;
-  width: 10%;
 }
 .forms fieldset .input-group label {
   width: 85%;
@@ -812,6 +1075,52 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 .homepage {
   background: #ffffff;
   margin: 0 auto;
+}
+
+.languages {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.languages__wrapper {
+  padding: 3px 0;
+}
+.languages-list {
+  text-align: center;
+}
+.languages-list__item {
+  display: inline-block;
+  padding: 0 5px 0;
+}
+.languages-list__label {
+  color: #656d78;
+  display: inline-block;
+  font-family: "Baton-Medium";
+  font-size: 16px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.languages-list__anchor {
+  color: #000;
+  font-size: 12px;
+  text-decoration: none;
+  text-underline-position: under;
+}
+.languages-list__anchor .is-active, .languages-list__anchor:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+.languages--bottom {
+  padding: 5px 0 20px;
+}
+.languages--bottom .languages-list__anchor {
+  color: #7300ff;
+  display: inline-block;
+  font-family: "Baton-Medium";
+  font-size: 16px;
+  margin-right: 10px;
+  text-decoration: underline;
+  text-transform: uppercase;
 }
 
 .footer-menu {
@@ -1054,6 +1363,9 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   padding: 0;
   height: 25px;
 }
+#search.close {
+  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/dismiss.svg") no-repeat 3px 3px/auto 80%;
+}
 
 .pagination {
   align-items: center;
@@ -1212,6 +1524,12 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 .search-page {
   background-color: #ffffff;
 }
+.search-page .search {
+  padding: 0 10px 15px;
+}
+.search-page .heading__subheading {
+  padding: 10px 15px 15px;
+}
 .search-page .subheading {
   padding: 0 15px 15px;
 }
@@ -1233,6 +1551,16 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
 }
 .search__bar {
   overflow: auto;
+  display: block;
+  visibility: visible;
+}
+.search__bar.loading {
+  display: none;
+  visibility: hidden;
+}
+.search__hidden {
+  display: none;
+  visibility: hidden;
 }
 .search__form {
   position: relative;
@@ -1265,6 +1593,9 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   top: 8px;
   text-indent: -99em;
   width: 21px;
+}
+.search .search-radio {
+  visibility: hidden;
 }
 .search--header .search__bar {
   margin: 15px 0 10px;
@@ -1463,80 +1794,4 @@ input[type=checkbox]#id_terms_and_conditions.is-on:before {
   margin: 0 5px;
   text-decoration: none;
   text-transform: lowercase;
-}
-
-.yourwords {
-  background-color: #ffffff;
-  margin: 0;
-  padding: 10px 0 0;
-  position: relative;
-  overflow: auto;
-}
-.yourwords__inner {
-  position: relative;
-}
-.yourwords__icon {
-  display: flex;
-  height: 100px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-}
-.yourwords__icon:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/think_purple.png") no-repeat 0 0/95px;
-  content: "";
-  display: block;
-  height: 88px;
-  padding: 5px;
-  position: absolute;
-  right: 0;
-  width: 100px;
-}
-.yourwords__results {
-  background-color: #fffec5;
-  padding: 20px 10px;
-}
-.yourwords .forms__title {
-  font-family: "Baton-Medium";
-  font-size: 24px;
-  text-transform: uppercase;
-}
-.yourwords .forms__title:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
-  content: "";
-  height: 10px;
-  margin: 0 auto;
-  display: block;
-  width: 100%;
-}
-.yourwords .forms__title__subtitle p {
-  text-transform: capitalize;
-}
-.yourwords--banner {
-  background-color: #fffc78;
-  padding: 10px 10px 0;
-}
-.yourwords--page {
-  padding: 20px 0;
-}
-.yourwords--page .yourwords__icon {
-  margin-bottom: 30px;
-}
-.yourwords--page .yourwords__icon:before {
-  left: 0;
-  margin: 0 auto;
-  right: 0;
-}
-.yourwords--page .forms {
-  background-color: #fffec5;
-  padding: 20px 10px;
-}
-.yourwords--page .forms__title {
-  text-align: center;
-}
-.yourwords--page .forms__title:after {
-  left: 0;
-  position: absolute;
-  right: 0;
-  width: 150px;
 }

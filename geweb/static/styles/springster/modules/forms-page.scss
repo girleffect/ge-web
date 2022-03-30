@@ -1,0 +1,141 @@
+.forms-page {
+    background-color: $white;
+    margin: 10px 0;
+    padding: 10px 10px 0;
+    position: relative;
+    $this: unquote("#{&}");
+    &__inner {
+        position: relative;
+        padding: 20px 0 0;
+    }
+    &__icon {
+        align-items: center;
+        display: flex;
+        height: 100px;
+        position: relative;
+        justify-content: center;
+        width: 100%;
+        &:before {
+            background: url($staticPath + 'img/springster/think_purple.png') no-repeat 0 0/85px;
+            content: '';
+            display: block;
+            height: 88px;
+            padding: 5px;
+            width: 100px;
+        }
+    }
+    &__results {
+        background-color: $white;
+        padding: 20px 15px;
+        p {
+            font-size: 18px;
+        }
+    }
+
+    &__title {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 24px;
+        text-transform: uppercase;
+        &:after {
+            background: url($staticPath + 'img/springster/zig-zag-underline.png') no-repeat 0 0/145px;
+            content: '';
+            display: block;
+            height: 10px;
+            margin: 5px 0 20px 0;
+            width: 100%;
+        }
+    }
+
+    &__subtitle {
+        color: $dark_grayish;
+        font-family: 'Baton-Regular';
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0 0 10px;
+        //WSYWIG
+        h1, h2, h3, h4, h5, h5, p {
+            text-transform: capitalize;
+        }
+    }
+
+    &__paragraph {
+        color: #000;
+        font-size: 18px;
+    }
+
+    &--banner {
+        background-color: $vivid_yellow;
+        padding: 10px 15px;
+    }
+
+    &--main {
+        padding: 20px 0;
+        #{$this}__icon {
+            background-size: 100px;
+            margin-bottom: 30px;
+        }
+        #{$this}__inner {
+            padding: 0 5%;
+            //WSYWIG
+            p {
+                font-size: 18px;
+            }
+        }
+        #{$this}__title {
+            text-align: center;
+            padding-bottom: 40px;
+            &:after {
+                left: 0;
+                margin: 5px auto;
+                position: absolute;
+                right: 0;
+                width: 145px;
+            }
+        }
+        #{$this}__subtitle {
+            //WSYWIG
+            h1, h2, h3, h4, h5, h5, p {
+                font-size: 24px;
+            }
+        }
+
+        .forms {
+            background-color: $pale_yellow;
+            padding: 10px 15px;
+            margin: 10px 0;
+            &__title {
+                text-align: center;
+                &:after {
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    width: 150px;
+                }
+            }
+            //WSYWIG
+            input[type=text], 
+            input[type=number], 
+            input[type=password], 
+            input[type=email], 
+            input[type=tel], 
+            input[type=search], 
+            input[type=week], 
+            input[type=date], 
+            input[type=month], 
+            input[type=datetime], 
+            input[type=datetime-local], 
+            input[type=url],
+            select,
+            textarea {
+                margin: 10px 0;
+            }
+            label {
+                font-size: 20px;
+            }
+            p, div {
+                padding: 5px 0;
+            }
+        }
+    }
+}

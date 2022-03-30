@@ -1,25 +1,36 @@
-{% load comments wagtailcore_tags i18n %}
+{% load comments i18n  %}
 
 <div class="homepage">
     <div class="content">
-        {% include "./_banner.html" with urlString='/' imagePos='one' altString='Big Sis on Springster' %}
+        <!-- FIRST BANNER POSITION -->
+        {% if page.banners %}
+            {% for banner in page.banners %}
+                {% if forloop.counter == 1 %}
+                    {% include "../_patterns/banner.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
+        <!-- FIRST 5 ARTICLES -->
         {% for post in articlepages|slice:":5" %}
             {% include "../_patterns/article-teasers-listing.html" %}
         {% endfor %}
 
-        {% include "./_banner.html" with urlString='/' imagePos='two' altString='Celebrate girls - Read inspiring stories' %}
+        <!--ALL OTHER BANNERS POSITION -->
+        {% if page.banners %}
+            {% for banner in page.banners %}
+                {% if not forloop.counter == 1 %}
+                    {% include "../_patterns/banner.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
+        <!-- FORMS BANNER -->
         {% for form in forms %}
-            {% if form.title|slugify == 'polls' %}
-                {% include "./_polls.html" %}
-            {% endif %}
-
-            {% if form.title|slugify == 'yourwords' %}
-                {% include "./_yourwords.html" %}
-            {% endif %}
+            {% include "./_forms-page.html" %}
         {% endfor %}
        
+        <!-- ALL OTHER ARTICLES -->
         {% for post in articlepages|slice:"5:" %} 
             {% include "../_patterns/article-teasers-listing.html" %}
         {% endfor %}

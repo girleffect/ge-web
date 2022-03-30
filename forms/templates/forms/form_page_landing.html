@@ -5,26 +5,11 @@
 {% block content %}
     {% if theme.slug == 'springster' %}
 
-        {% if page.title|slugify == 'polls' %}
-            {% include "./springster/polls/thank-you.html" %}
-        {% endif %}
-
-        {% if page.title|slugify == 'yourwords' %}
-            {% include "./springster/yourwords/thank-you.html" %}
-        {% endif %}
+        {% include "./_patterns/form-page-thank-you.html" %}
 
     {% elif theme.slug == 'tujibebe' %}
 
-        {% if page.title|slugify == 'polls' %}
-            {% include "./springster/polls/thank-you.html" %}
-        {% endif %}
+        {% include "./_patterns/form-page-thank-you.html" %}
 
-        {% if page.title|slugify == 'yourwords' %}
-            {% include "./springster/yourwords/thank-you.html" %}
-        {% endif %}
-
-     {% endif %}
-     <div class="breadcrumbs">
-        {% breadcrumbs %}
-    </div>
+    {% endif %}
 {% endblock content %}

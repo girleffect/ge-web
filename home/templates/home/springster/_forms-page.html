@@ -1,0 +1,28 @@
+{% load i18n wagtailcore_tags %}
+
+<div class="forms-page forms-page--banner">
+    <div class="forms-page__icon"></div>
+    <div class="forms-page__inner">
+        <h1 class="forms-page__title">{{form.title}}</h1>
+
+        {% if form.introduction %}
+            <h3 class="forms-page__subtitle">{{form.introduction|safe}}</h3>
+        {% endif %}
+     
+        {% if user.is_authenticated %}
+            <a href="{% pageurl form %}" class="call-to-action__submit call-to-action__submit--enhanced">
+                <span class="call-to-action__label">{% trans "Enter" %}</span>
+            </a>
+        {% else %}
+            {% if form.allow_anonymous_submissions %}
+                <a href="{% pageurl form %}" class="call-to-action__submit call-to-action__submit--enhanced">
+                    <span class="call-to-action__label">{% trans "Enter" %}</span>
+                </a>
+            {% else %}
+                <a href="{% url 'auth_login' %}" class="call-to-action__submit call-to-action__submit--enhanced">
+                    <span class="call-to-action__label">{% trans "Log in to answer" %} </span>
+                </a>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>

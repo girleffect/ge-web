@@ -23,7 +23,7 @@
         padding: 10px;
         height: 45px;
         &:after {
-            background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+            background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
             background-repeat: no-repeat;
             background-position: -17px -55px;
             background-size: 75px;
@@ -67,7 +67,7 @@
             margin: 0 auto;
             width: 83%;
             &:before {
-                background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+                background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
                 background-repeat: no-repeat;
                 background-position: -15px 8px;
                 background-size: 80px;
