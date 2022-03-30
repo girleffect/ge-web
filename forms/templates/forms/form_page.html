@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if theme.slug == 'yegna' %}
-        -
-    {% else %}
+    {% if not theme.slug == 'yegna' %}
         {% include "./_patterns/form-page.html" %}
     {% endif %}
 {% endblock content %}
