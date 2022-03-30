@@ -9,7 +9,6 @@ const elemHeaderSearchToggle = document.getElementById('search'),
 
 elemSearchBar.classList.add('search__hidden')
 elemHeaderSearchToggle.addEventListener('click', (e) => {
-    console.log(e.target.parentElement)
     if (elemSearchBar.classList.contains('search__hidden')) {
         elemSearchBar.classList.remove('search__hidden', 'loading') 
         e.target.parentElement.classList.add('close')
