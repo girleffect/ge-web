@@ -1572,7 +1572,7 @@ input[type=radio] {
 }
 .search__cta {
   background-color: transparent;
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/springster/search.svg");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/search.svg");
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: auto 98%;
