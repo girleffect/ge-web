@@ -1,0 +1,18 @@
+.error-page {
+    background-color: $white;
+    margin: 0 auto;
+    padding: 10px 15px;
+    width: 320px;
+
+    .heading {
+        font-size: 36px;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .subheading {
+        font-size: 27px;
+        margin: 0;
+        padding: 20px 0;
+    }
+}
