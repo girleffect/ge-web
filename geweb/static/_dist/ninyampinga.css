@@ -309,7 +309,7 @@ a {
 }
 .call-to-action__item--search {
   background-color: #e7357c;
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/header-icons.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/header-icons.png");
   background-repeat: no-repeat;
   background-position: -12px -52px;
   background-size: 145%;
@@ -573,7 +573,7 @@ input[type=search].search__input {
   padding: 0 15px;
 }
 .heading--hero {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/ShapesSprites.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/ShapesSprites.png");
   background-repeat: no-repeat;
   background-position: -10px -4074px;
   background-size: 125px;
@@ -794,7 +794,7 @@ input[type=search].search__input {
   }
 }
 .languages__label:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/header-icons.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/header-icons.png");
   background-position: 0 -45px;
   background-size: 30px;
   background-repeat: no-repeat;
@@ -885,7 +885,7 @@ input[type=search].search__input {
   padding-right: 35px;
 }
 .languages-list__label:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/header-icons.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/header-icons.png");
   background-position: 0 -75px;
   background-size: 45px;
   background-repeat: no-repeat;
@@ -1016,7 +1016,7 @@ input[type=search].search__input {
   display: none;
 }
 .nav__label.is-active:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/header-icons.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/header-icons.png");
   background-position: 0 -115px;
   background-size: 25px;
   background-repeat: no-repeat;
@@ -1087,7 +1087,7 @@ input[type=search].search__input {
   }
 }
 .nav-profile__anchor:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/iconsSprite.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/iconsSprite.png");
   background-position: 0 -405px;
   background-size: 60px;
   background-repeat: no-repeat;
@@ -1107,7 +1107,7 @@ input[type=search].search__input {
   color: #e7357c;
 }
 .nav-profile__anchor:hover:before, .nav-profile__anchor:focus:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/header-icons.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/header-icons.png");
   background-position: 0 -90px;
   background-size: 30px;
 }
@@ -1291,7 +1291,7 @@ input[type=search].search__input {
   height: 45px;
 }
 .search__label:after {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/header-icons.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/header-icons.png");
   background-repeat: no-repeat;
   background-position: -17px -55px;
   background-size: 75px;
@@ -1338,7 +1338,7 @@ input[type=search].search__input {
   width: 83%;
 }
 .search-dropdown__label:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static//img/ninyampinga/header-icons.png");
+  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/header-icons.png");
   background-repeat: no-repeat;
   background-position: -15px 8px;
   background-size: 80px;

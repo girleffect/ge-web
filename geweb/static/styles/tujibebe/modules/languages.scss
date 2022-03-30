@@ -10,7 +10,7 @@
         text-align: center;
         
         &__item {
-            display: inline-block;    
+            display: inline-block;
             margin: 0 10px;
         }
         &__anchor {
@@ -18,6 +18,32 @@
             font-size: 14px;
             text-transform: capitalize;
             text-decoration: none;
+        }
+    }
+    &--bottom {
+        padding: 5px 0 20px;
+        .languages-list {
+            &__item {
+                margin: 0;
+            }
+            &__label {
+                color: $blue;
+                display: inline-block;
+                font-size: 17px;
+                font-weight: 500;
+                margin-right: 10px;
+                text-decoration: none;
+                text-transform: uppercase;
+                &:after {
+                    display: inline-block;
+                    content: ':';
+                }
+            }
+            &__anchor {
+                font-size: 15px;
+                color: $dark_gray_blue;
+                text-decoration: underline;
+            }
         }
     }
 }
