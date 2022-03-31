@@ -16,28 +16,11 @@
             font-size: 12px;
             text-transform: uppercase;
             text-decoration: none;
+            &:hover, focus {
+                color: $strong_cyan;
+                text-decoration: underline;
+            }
         }
     }
 }
-
-/*
-    CSS TOOGLE LOADED LANGUAGES
-*/
-
-$fr: 'fr';
-$en: 'en';
-
-@if $fr  {
-    .languages-list__anchor[rel=fr]:lang(fr) {
-        color: $strong_cyan;
-    }
-} 
-
-@if $en {
-    .languages-list__anchor[rel=en]:lang(en) {
-        color: $strong_cyan;
-    }    
-}
-
-
 

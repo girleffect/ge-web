@@ -1,33 +1,31 @@
 //AMMED CSS SELECTORS
 .breadcrumbs {
     background-color: $white;
-    font-family: 'Baton-Regular';
     padding: 10px 0;
-    font-size: 16px;
+    font-size: 14px;
     div {
         position: relative;
     }
-    ul {
+    &-list {
         padding: 0 15px;
-    }
-    li {
-        display: inline-block;
-        a {
-            color: $violet;
-            font-size: 16px;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $dark_violet;
+            font-size: 14px;
             font-weight: 700;
             text-decoration: none;
             text-transform: capitalize;
             &:after {
-                color: $dark_gray_blue; 
+                color: $dark_blue;
                 content: " / ";
                 font-weight: 100;
                 margin: 0 2px 0 5px;
             }
         }
-        span {
-            color: $dark_gray_blue2;
+        &__label {
+            color: $dark_graying_blue;
         }
     }
 }
-

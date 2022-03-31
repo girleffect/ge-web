@@ -49,10 +49,6 @@
         &-link {
             display: block;
         }
-        img {
-            height: auto;
-            width: 200px;
-        }
     }
     &__item {
         overflow: hidden;
@@ -62,24 +58,12 @@
         &--full-width {
             width: 100%;
             &:after {
-                background-image: url($staticPath + 'img/zathu/mw_zig_pattern_30.png');
-                background-position: center;
-                background-repeat: repeat-x;
-                content: '';
-                clear: both;
-                display: block;
-                height: 50px;
-                margin: 0 0 10px 0;
-                overflow: visible;
-                width: 100%;
+                @include line-break-pattern;
             }
             .teaser-stacklist__thumbnail {
-                height: 250px;
+                height: 220px;
                 margin: 0 auto;
                 width: 290px;
-                img {
-                    width: 400px;
-                }
             }
             .teaser-stacklist__title {
                 font-size: 26px;

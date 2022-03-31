@@ -1,4 +1,4 @@
-{% load wagtailcore_tags %}
+{% load i18n wagtailcore_tags %}
 
 {% if self.get_translations.live %}
   <div id="language-bar" class="languages{% if position %} languages--{{position}}{% endif %}">
@@ -6,7 +6,7 @@
       <ul class="languages-list">
         {% if position %}
             <li class="languages-list__item">
-                <p class="languages-list__label">Language</p>
+                <p class="languages-list__label">{% trans "Language" %}</p>
             </li>
         {% endif %}
         {% include "./_language-list.html" %}
