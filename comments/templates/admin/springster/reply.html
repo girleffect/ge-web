@@ -45,7 +45,7 @@
                   {{form.content_type}}
                   {{form.timestamp}}
                   {{form.security_hash}}
-                  <input type="hidden" name="name" required="" id="id_name" value={{moderator_reply_name}}>
+                  <input type="hidden" name="name" required="" id="id_name" value={{settings.home.SiteSettings.moderator_reply_name}}>
                   <input type="hidden" name="email" required="" id="id_email" value="test@email.com">
                   <input type="hidden" name="parent" required="" id="id_parent" value={{parent.pk}}>
                 </div>
