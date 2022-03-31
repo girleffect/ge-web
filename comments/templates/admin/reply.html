@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if theme.slug == 'springster' %}
-        {% include "./springster/reply.html" %}
-    {% elif theme.slug == 'tujibebe' %}
-        {% include "./tujibebe/reply.html" %}
+    {% if settings.home.SiteSettings.commenting_switch %}
+        {% if theme.slug == 'springster' %}
+            {% include "./springster/reply.html" %}
+        {% elif theme.slug == 'tujibebe' %}
+            {% include "./tujibebe/reply.html" %}
+        {% endif %}
     {% endif %}
 {% endblock %}

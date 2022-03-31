@@ -46,7 +46,9 @@
         </div>
     {% endif %}
 
-    {% include "../_patterns/commenting.html" %}
+    {% if settings.home.SiteSettings.commenting_switch %}
+        {% include "../_patterns/commenting.html" %}
+    {% endif %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}
 </div>

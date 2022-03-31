@@ -227,6 +227,11 @@ class SiteSettings(BaseSetting):
         ),
     )
 
+    commenting_switch = models.BooleanField(
+        verbose_name=_("commenting"),
+        default=True,
+    )
+
     panels = [
         MultiFieldPanel(
             [
@@ -275,4 +280,5 @@ class SiteSettings(BaseSetting):
             heading="Social Media Article Sharing Buttons",
         ),
         FieldPanel("moderator_reply_name"),
+        FieldPanel("commenting_switch"),
     ]
