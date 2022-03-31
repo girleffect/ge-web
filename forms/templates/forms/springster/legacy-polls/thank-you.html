@@ -1,0 +1,40 @@
+{% load i18n wagtailcore_tags %}
+
+<div class="polls">
+    <div class="polls__icon">
+        <p class="polls__label"> {% trans "Cast Your Vote!" %}</p>
+    </div>
+    <div class="polls__inner polls__inner--results">
+        <h1 class="forms__title">{{page.title}}</h1>
+        <p class="forms__subtitle">
+            {% if page.thank_you_text %}
+                {{ page.thank_you_text|richtext }}
+            {% else %}
+                {% trans "Thank you" %}
+            {% endif %}
+        </p>
+
+        <div class="polls__results">
+            {% if results %}
+                {% for question, answers in results.items %}
+                    <fieldset>
+                        <label>{{ question }}</label>
+                        {% for answer, count in answers.items %}
+                            <div class="input-group">
+                                <label>{{ answer }}:</label> 
+                                <div class="input-group__percent">
+                                    <div class="input-group__percent-bar" style="width:{{ count }}%">
+                                        {{ count }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="call-to-action call-to-action--forms">
+        <a href="" class="call-to-action__link">{% trans "Back" %}</a>
+    </div>
+</div>
