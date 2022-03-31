@@ -1,21 +1,40 @@
 .commenting {
-    //padding: 0 15px;
     &--on-article {
-        border-top: 4px solid $light_gray_blue;
-        margin: 8px 0;
-    }
-    &__counter {
-        color: $dark_gray;
-        font-size: 16px;
-        text-decoration: none;
+        text-align: center;
+        padding: 15px 15% 40px;
         &:before {
-            background: url($staticPath + 'img/springster/comment.svg') no-repeat 0 0/20px;
-            content: '';
-            display: inline-block;
-            height: 20px;
+            content: "";
+            margin: 10px auto;
+            padding: 10px 20px;
+            text-align: center;
+            border-top: 3px solid $pink;
+            width: 50%;
+        }
+
+        textarea {
             margin: 0 auto;
-            vertical-align: middle;
-            width: 20px;
+            height: 250px;
+            width: 670px;
+        }
+    }
+    
+
+    &__counter {
+        background: url($staticPath + 'img/ninyampinga/iconsSprite.svg') no-repeat 0 -25.7em/32px;
+        display: inline-block;
+        text-decoration: none;
+        height: 40px;
+        margin: 0 auto;
+        vertical-align: middle;
+        width: 45px;
+        &-num {
+            color: $white;
+            font-size: 16px;
+            margin: 5px 0;
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
         }
     }
     &__label {
@@ -37,10 +56,9 @@
     }
     &-thread {
         padding: 10px 0 0;
-        border-bottom: 4px solid $lime_green;
+        border-bottom: 4px solid $pink;
         &__alias {
             color: $dark_gray_blue;
-            font-family: 'Baton-Medium';
             font-size: 15px;
             font-weight: 700;
             padding: 5px 10px;
@@ -52,7 +70,7 @@
             }
         }
         &__msg {
-            color: $very_dark_gray_blue;
+            color: $dark_gray_blue;
             font-size: 16px; 
             padding: 5px 10px;
         }
@@ -69,11 +87,10 @@
         justify-content: space-between;
         padding: 15px 10px 10px;
         &__label {
-            color: $violet;
+            color: $pink;
             cursor: pointer;
             display: inline-block;
             font-size: 16px;
-            font-family: 'Baton-Medium';
             font-weight: 500;
             text-decoration: underline;
             text-transform: uppercase;
@@ -81,11 +98,10 @@
     }
     
     &-replies {
-        background-color: $dark_gray_blue3;
+        background-color: $dark_gray_blue;
         padding: 10px 0 0;
         &-title {
             color: $dark_gray;
-            font-family: 'Baton-Regular';
             font-size: 18px;
             font-weight: 400;
             padding: 8px 10px 10px;
@@ -94,5 +110,17 @@
             color: $dark_gray_blue;
             display: block;
         }
+    }
+    .heading--component {
+        padding: 10px 0;
+    }
+
+    .heading__component-title {
+        font-size: 38px;
+        text-transform: inherit;
+    }
+
+    .commenting-form {
+        width: 100%;
     }
 }

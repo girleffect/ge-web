@@ -326,6 +326,9 @@ audio {
   padding: 8px 15px;
   text-decoration: none;
   vertical-align: middle;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .call-to-action__submit:after {
   display: inline-block;
@@ -339,11 +342,11 @@ audio {
   top: 1px;
   width: 0;
 }
-.call-to-action__submit:hover {
+.call-to-action__submit:hover, .call-to-action__submit:focus {
   box-shadow: none;
   color: #ffe82c;
 }
-.call-to-action__submit:hover .call-to-action:after {
+.call-to-action__submit:hover:after, .call-to-action__submit:focus:after {
   border-left-color: #ffe82c;
 }
 .call-to-action__item--search {
@@ -370,6 +373,124 @@ audio {
 }
 .call-to-action__link {
   color: #e7357c;
+}
+
+.commenting--on-article {
+  text-align: center;
+  padding: 15px 15% 40px;
+}
+.commenting--on-article:before {
+  content: "";
+  margin: 10px auto;
+  padding: 10px 20px;
+  text-align: center;
+  border-top: 3px solid #e7357c;
+  width: 50%;
+}
+.commenting--on-article textarea {
+  margin: 0 auto;
+  height: 250px;
+  width: 670px;
+}
+.commenting__counter {
+  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/ninyampinga/iconsSprite.svg") no-repeat 0 -25.7em/32px;
+  display: inline-block;
+  text-decoration: none;
+  height: 40px;
+  margin: 0 auto;
+  vertical-align: middle;
+  width: 45px;
+}
+.commenting__counter-num {
+  color: #ffffff;
+  font-size: 16px;
+  margin: 5px 0;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.commenting__label {
+  color: #333333;
+  display: inline-block;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.commenting__list {
+  position: relative;
+}
+.commenting__list__item {
+  background-color: #ffffff;
+  display: block;
+}
+.commenting-form {
+  padding: 0 10px;
+}
+.commenting-thread {
+  padding: 10px 0 0;
+  border-bottom: 4px solid #e7357c;
+}
+.commenting-thread__alias {
+  color: #f8fafd;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+.commenting-thread__alias-removed {
+  color: #333333;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.commenting-thread__msg {
+  color: #f8fafd;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+.commenting-thread__publish-date {
+  color: #f8fafd;
+  font-size: 12px;
+  padding: 5px 5px 0 10px;
+  font-weight: 700;
+}
+.commenting-cta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px 10px;
+}
+.commenting-cta__label {
+  color: #e7357c;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.commenting-replies {
+  background-color: #f8fafd;
+  padding: 10px 0 0;
+}
+.commenting-replies-title {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 10px 10px;
+}
+.commenting-replies__feedback {
+  color: #f8fafd;
+  display: block;
+}
+.commenting .heading--component {
+  padding: 10px 0;
+}
+.commenting .heading__component-title {
+  font-size: 38px;
+  text-transform: inherit;
+}
+.commenting .commenting-form {
+  width: 100%;
 }
 
 .component {
@@ -484,7 +605,7 @@ audio {
 }
 @media screen and (min-width: 991px) {
   .footerpage {
-    padding: 50px 8% 30px;
+    padding: 50px 6.5% 30px;
   }
 }
 .footerpage .component {
@@ -566,6 +687,16 @@ input[type=url]:focus-visible,
 select:focus,
 select:focus-visible {
   outline: none;
+}
+
+select {
+  width: 80%;
+}
+
+textarea {
+  border: 2px solid #e7357c;
+  display: block;
+  padding: 15px 10px;
 }
 
 input[type=search].search__input {
@@ -2066,7 +2197,7 @@ input[type=search].search__input {
 
 .tag-cloud {
   text-align: center;
-  margin: 5% auto 0;
+  margin: 10px auto 0;
   padding: 40px 5.5% 20px;
   width: 60%;
 }

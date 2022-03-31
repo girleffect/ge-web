@@ -45,6 +45,16 @@ select {
     }
 }
 
+select {
+    width: 80%;
+}
+
+textarea {
+    border: 2px solid $pink;
+    display: block;
+    padding: 15px 10px;
+}
+
 input[type="search"].search__input {
     width: 100%;
 }

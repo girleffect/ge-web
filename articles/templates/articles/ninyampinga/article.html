@@ -1,4 +1,4 @@
-{% load i18n home_tags wagtailcore_tags %}
+{% load i18n home_tags threadedcomments_tags wagtailcore_tags %}
 
 <div class="article-page">
     {% include "../_patterns/breadcrumbs.html" %}
@@ -9,6 +9,11 @@
         {% if page.subtitle %}
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
+        <a href="#comments" class="call-to-action__nav-link">
+            <div class="commenting__counter">
+                <span class="commenting__counter-num">0</span>
+            </div>
+        </a>
 
         {% include_block page.body %}
     </div>
@@ -22,6 +27,8 @@
             </ul>
         </div>
     {% endif %}
+
+    {% include "../_patterns/commenting.html" %}
     {% social_media_article %}
     {% include "./article-teasers-recommendations.html" %}
 </div>
