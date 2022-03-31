@@ -13,7 +13,9 @@
         padding: 0 13px;
     }
     .languages {
-        padding: 20px 15px 5px;
+        background: transparent;
+        padding: 20px 0 5px;
+        margin-left: -8px;
         &-list {
             align-items: center;
             display: flex;
@@ -25,6 +27,10 @@
             &__label {
                 color: #5c5c5c;
                 font-size: $large;
+                &:after {
+                    content: ":";
+                    display: inline-block;
+                }
             }
             &__anchor {
                 color: $dark_gray;

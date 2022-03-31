@@ -1,0 +1,11 @@
+.banner {
+    &__image {
+        background-color: #e2e5e7;
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    &:after {
+        @include line-break-pattern;
+    }
+}
