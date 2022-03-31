@@ -52,6 +52,19 @@
                 </div>
             {% endif %}
         {% endfor %}
-
     </div>
+
+     <!--ALL OTHER BANNERS POSITION -->
+    {% if page.banners %}
+        {% for banner in page.banners %}
+            {% if not forloop.counter == 1 %}
+                {% include "../_patterns/banner.html" %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <!-- FORMS BANNER -->
+     {% for form in forms %}
+        {% include "../_patterns/forms-page.html" %}
+    {% endfor %}
 </div>

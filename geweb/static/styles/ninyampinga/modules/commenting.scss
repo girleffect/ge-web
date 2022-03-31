@@ -1,3 +1,7 @@
+/*
+    !! This needs to be applied and tested to comments
+        Class name selectors on markup must be used 
+*/
 .commenting {
     &--on-article {
         text-align: center;
@@ -10,7 +14,6 @@
             border-top: 3px solid $pink;
             width: 50%;
         }
-
         textarea {
             margin: 0 auto;
             height: 250px;

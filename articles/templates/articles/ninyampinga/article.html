@@ -1,6 +1,16 @@
 {% load i18n home_tags threadedcomments_tags wagtailcore_tags %}
 
-<div class="article-page">
+
+{% with parent=page.get_parent %}
+
+{% comment %}
+    <!-- 
+        !!! {{  parent.css_color }} on an article is empty
+
+    -->
+{% endcomment %}
+
+<div class="article-page article-page--{{  parent.css_color }}">
     {% include "../_patterns/breadcrumbs.html" %}
     <div class="article-page__body">
         <div class="article-heading">
@@ -32,3 +42,4 @@
     {% social_media_article %}
     {% include "./article-teasers-recommendations.html" %}
 </div>
+{% endwith %}

@@ -1,4 +1,13 @@
 .article-page {
+    &:before {
+        content: "";
+        display: block;
+        @each $modifier, $style_element in $section_themes { 
+            &--#{$modifier}  {
+                background-color: map-get($style_element, background_color);
+            }
+        }
+    }
     &__body {
         align-items: center;
         display: flex;
