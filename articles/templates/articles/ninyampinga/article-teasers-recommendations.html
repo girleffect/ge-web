@@ -3,7 +3,7 @@
 
 {% if next_article %}
 <div class="article-page__recommendations">
-    <h4 class="heading heading--related-up-next">
+    <h4 class="heading heading--related-up-next heading--{{ next_article.get_parent.css_color }}">
         {% trans "Next up in" %}
     </h4>
     <div class="article-teaser">

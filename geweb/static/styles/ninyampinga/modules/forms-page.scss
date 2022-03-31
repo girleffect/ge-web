@@ -1,0 +1,144 @@
+.forms-page {
+    background-color: $white;
+    margin: 10px 0;
+    padding: 10px 0 15px;
+    position: relative;
+    $this: unquote("#{&}");
+    @media screen and (min-width: 991px) {
+        padding: 10px 6.5% 40px;
+    }
+    &__inner {
+        position: relative;
+        padding: 20px 0 0;
+        text-align: center;
+    }
+    &__icon {
+        align-items: center;
+        display: flex;
+        height: auto;
+        position: relative;
+        justify-content: center;
+        width: 100%;
+    }
+    &__results {
+        background-color: $white;
+        padding: 20px 15px;
+        margin: 0 auto;
+        text-align: center;
+        width: 60%;
+        @media screen and (min-width: 991px) {
+            width: 60%;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    &__title {
+        color: #000;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        color: $dark_gray;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0 0 10px;
+        //WSYWIG
+        h1, h2, h3, h4, h5, h5, p {
+            text-transform: capitalize;
+        }
+    }
+
+    &__paragraph {
+        color: #000;
+        font-size: 18px;
+    }
+
+    &--banner {
+        @media screen and (min-width: 991px) {
+            padding: 10px 6.5% 40px;
+        }
+    }
+
+    &--main {
+        padding: 20px 0;
+        #{$this}__icon {
+            background-size: 100px;
+            margin-bottom: 30px;
+        }
+        #{$this}__inner {
+            padding: 0 5%;
+            //WSYWIG
+            p {
+                font-size: 18px;
+            }
+        }
+        #{$this}__title {
+            text-align: center;
+            padding-bottom: 40px;
+            &:after {
+                left: 0;
+                margin: 5px auto;
+                position: absolute;
+                right: 0;
+                width: 145px;
+            }
+        }
+        #{$this}__subtitle {
+            //WSYWIG
+            h1, h2, h3, h4, h5, h5, p {
+                font-size: 24px;
+            }
+        }
+
+        .forms {
+            padding: 10px 15px;
+            margin: 10px auto;
+            width: 60%;
+            &__title {
+                text-align: center;
+                &:after {
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    width: 150px;
+                }
+            }
+            //WSYWIG
+            input[type=text], 
+            input[type=number], 
+            input[type=password], 
+            input[type=email], 
+            input[type=tel], 
+            input[type=search], 
+            input[type=week], 
+            input[type=date], 
+            input[type=month], 
+            input[type=datetime], 
+            input[type=datetime-local], 
+            input[type=url],
+            select,
+            textarea {
+                margin: 10px 5px;
+                @media screen and (min-width: 991px) {
+                    margin: 10px 0;
+                }
+            }
+            textarea {
+                width: 100%;
+                @media screen and (min-width: 991px) {
+                    width: 73%;
+                }
+            }
+            label {
+                font-size: 20px;
+            }
+            p, div {
+                padding: 5px 0;
+            }
+        }
+    }
+}

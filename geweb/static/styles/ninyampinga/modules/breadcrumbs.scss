@@ -1,5 +1,11 @@
 .breadcrumbs {
-    padding: 50px 70px 25px;
+    padding: 10px 10px 25px;
+    @media screen and (min-width: 991px) {
+        padding: 20px 6.5%;
+        &:first-child {
+            padding: 50px 6.5% 25px;
+        }
+    }
     &-list {
         list-style-type: none;
         &__item {
@@ -20,7 +26,7 @@
             text-transform: capitalize;
             &:after {
                 color: $pink;
-                content: " ≫ ";
+                content: "/";
                 display: inline-block;
                 padding: 0 5px;
             }

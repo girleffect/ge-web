@@ -25,7 +25,7 @@
         &:after {
             background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
             background-repeat: no-repeat;
-            background-position: -17px -55px;
+            background-position: -15px -50px;
             background-size: 75px;
             content: " ";
             display: inline-block;
@@ -33,10 +33,12 @@
             height: 40px;
             width: 40px;
         }
+        //HOVER | FOCUS STATES
         &:hover:after, 
         &:focus:after {
-            background-position: -17px 9px;
+            background-position: -15px 14px;
         }
+        // ACTIVE STATE
         &.is-active {
             text-decoration: underline;
             @media (min-width: 991px) {
@@ -44,7 +46,7 @@
                 color: $white;
             }
             &:after {
-                background-position: -17px 9px;
+                background-position: -15px 14px;
             }
         }
     }

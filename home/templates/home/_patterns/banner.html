@@ -2,7 +2,12 @@
 
 <div class="banner">
     <a href="{% if banner.value.banner_link_page %}{% pageurl banner.value.banner_link_page %}{% else %}{{ banner.value.banner_external_link }}{% endif %}" target="_top" class="banner__link">
-        {% image banner.value.banner_image width-360 as tmp_photo %}
-        <img alt=" {{ tmp_photo.title }}" src=" {{ tmp_photo.url }}" class="banner__image" width="360" height="120">        
+        {% if theme.slug == 'ninyampinga' or theme.slug == 'yegna' %}
+            {% image banner.value.banner_image width-1280 as large_photo %}
+            <img alt=" {{ large_photo.title }}" src=" {{ large_photo.url }}" class="banner__image" width="1280" height="100%">        
+        {% else %}
+            {% image banner.value.banner_image width-360 as tmp_photo %}
+            <img alt=" {{ tmp_photo.title }}" src=" {{ tmp_photo.url }}" class="banner__image" width="360" height="120">        
+        {% endif %}
     </a>
 </div>

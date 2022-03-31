@@ -1,22 +1,22 @@
 {% load i18n wagtailcore_tags %}
 
+
 <div class="languages">
-    <label for="languages_toggle" class="languages__label toggle">
-        Languages
-    </label>
-    <input type="checkbox" value="toggles" name="languages_toggle" id="languages_toggle" class="languages__checkbox"/>
-    
-   
-    <div class="languages-dropdown dropdown">
-        <ul class="languages-list">
-            <li class="languages-list__item">
-                <div class="languages-list__label">
-                    <h1 class="languages-list__title">Indimi:</h1>
-                </div>
-            </li>
-            {% if self %}
-                {% include "../patterns/_language-list.html" %}
-            {% endif %}
-        </ul>
-    </div>
-  </div>
+    {% if self.get_translations.live %}
+        <label for="languages_toggle" class="languages__label toggle">
+            {% trans "Languages" %}
+        </label>
+        <input type="checkbox" value="toggles" name="languages_toggle" id="languages_toggle" class="languages__checkbox"/>
+        
+        <div class="languages-dropdown dropdown">
+            <ul class="languages-list">
+                <li class="languages-list__item">
+                    <div class="languages-list__label">
+                        <h1 class="languages-list__title">{% trans "Language:" %}</h1>
+                    </div>
+                </li>    
+                {% include "../_patterns/_language-list.html" %}
+            </ul>
+        </div>
+    {% endif %}
+</div>

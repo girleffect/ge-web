@@ -3,7 +3,9 @@ $white: #ffffff;
 
 $gray: #b4b4b4;
 
-$dark_grey: #333333;
+$dark_gray: #333333;
+
+$dark_gray_blue: #f8fafd;
 
 $light_cyan: #b3dcde;
 
@@ -125,7 +127,7 @@ $color-magenta-black        :     color(brand, magenta-black);
 
 $themes: (
   white: $white,
-  dark_grey: $dark_grey,
+  dark_grey: $dark_gray,
   light_cyan: $light_cyan,
   strong_cyan: $strong_cyan,
   vivid_red: $vivid_red,

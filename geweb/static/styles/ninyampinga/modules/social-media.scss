@@ -11,12 +11,15 @@
             font-weight: 600;
         }
         &__anchor {
+            align-items: center;
             color: $light_cyan;
             cursor: pointer;
-            display: block;
+            display: flex;
             font-size: 20px;
+            justify-content: center;
             text-decoration: underline;
             text-underline-position: under;
+           
             &-title {
                 color: $light_cyan;
             }
@@ -27,6 +30,9 @@
                 max-height: 50px;
                 max-width: 50px;
                 width: 100%;
+                @media (min-width: 991px) {
+                    margin-right: 25px;
+                }
             }
             &:hover {
                 text-decoration: none;

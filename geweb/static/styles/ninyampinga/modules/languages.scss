@@ -1,4 +1,5 @@
 .languages {
+    width: auto;
     &__label {
         color: #fff;
         cursor: pointer;
@@ -21,10 +22,11 @@
             vertical-align: middle;
             width: 35px;
             @media (min-width: 991px) {
-                background-position: 0 -75px;
-                background-size: 45px;
-                height: 50px;
-                width: 50px;
+                background-position: 0 -50px;
+                background-size: 35px;
+                height: 45px;
+                width: 45px;
+                padding: 5px 0;
             }
         }
         &:hover,
@@ -47,8 +49,8 @@
                 @media (min-width: 991px) {
                     background-position: 0 -155px;
                     background-size: 35px;
+                    padding: 5px 0;
                     height: 40px;
-                    padding: initial;
                     width: 45px;
                 }
             }
@@ -87,10 +89,6 @@
         &__item {
             display: inline-block;
             padding: 5px;
-            &:nth-child(2) > .languages-list__anchor {
-                color: $dark_grey !important;
-                opacity: .7 !important;
-            }
         }
         &__label {
             padding-right: 35px;
@@ -124,7 +122,28 @@
             text-underline-position: under;
             text-transform: uppercase;
             .is-active {
-                color: $dark_grey;
+                color: $dark_gray;
+            }
+            &[hreflang = 'rw'], 
+            &[hreflang = 'en'] {
+                color: $pink;
+                &:before {
+                    content: '';
+                    background-image: url($staticPath + 'img/ninyampinga/iconsSprite.png');
+                    background-size: 70px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+            &[hreflang = 'rw']:before {
+                background-position: 0 69.5%;
+            }
+            
+            &[hreflang = 'en']:before {
+                background-position: 0 73.5%;
             }
         }
     }
