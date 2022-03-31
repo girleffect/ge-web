@@ -216,6 +216,16 @@ class SiteSettings(BaseSetting):
         on_delete=models.SET_NULL,
         related_name="+",
     )
+    moderator_reply_name = models.CharField(
+        verbose_name=_("moderator"),
+        max_length=100,
+        default="BigSis",
+        null=True,
+        blank=True,
+        help_text=_(
+            "The name that will appear on the moderator comment reply. Default is BigSis"
+        ),
+    )
 
     panels = [
         MultiFieldPanel(
@@ -264,4 +274,5 @@ class SiteSettings(BaseSetting):
             ],
             heading="Social Media Article Sharing Buttons",
         ),
+        FieldPanel("moderator_reply_name"),
     ]
