@@ -31,6 +31,7 @@ a {
 
 img {
     height: auto;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -50,4 +51,8 @@ audio  {
 .ninyampinga {
     background-color: $white;
     width: 100%;
+}
+
+.dropdown {
+    display: none;
 }

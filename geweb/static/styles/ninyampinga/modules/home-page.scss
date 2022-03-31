@@ -14,129 +14,138 @@
     @media (min-width: 991px) {
        padding: 0;
     }
+
+    //!! START: ARTICLE .article-stacklist
     .article-stacklist {
         display: block;
         padding: 15px;
-    }
-
-    .teaser-stacklist__content {
-        width: auto;
-    }
-    
-    .teaser-stacklist__item {
-        flex-direction: column;
         @media (min-width: 991px) {
-            flex-direction: row;
-        }
-    }
-
-    .teaser-stacklist__item--full-width > .teaser-stacklist__content {
-        min-width: 100%;
-        max-width: 100%;
-        padding: 15px 0;
-        @media (min-width: 991px) {
-            padding: 15px 0;
-            overflow: hidden;
-            min-width: 430px;
-            max-width: 430px;
-        }
-    }
-
-    &-column {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        &__one {
-            order: 2;
-        }
-        &__two {
-            background-color: $bright_orange;
-            order: 1;
-        }
-    }
-}
-
-@media (min-width: 991px) {
-    .homepage {
-        .article-stacklist {
             padding: 15px 5px 15px 70px;
         }
-        // ARTICLE TEASER OVERRIDE
-        .teaser-stacklist {
-            &__thumbnail,
-            &__images {
+    }
+
+    //START: TEASER .teaser-stacklist
+    .teaser-stacklist {
+        &__thumbnail,
+        &__image {
+            @media (min-width: 991px) {
                 height: 153px;
                 width: 272px;
             }
+        }
+        &__content {
+            width: auto;
+        }
 
-            &__item {
+        //START: teaser-stacklist__item
+        &__item {
+            flex-direction: column;
+            @media (min-width: 991px) {
+                flex-direction: row;
                 display: inline-block;
                 list-style: none;
                 margin: 0 10px;
                 vertical-align: text-top;
                 margin: 0 25px 20px 0;
                 width: 30%;
-
+    
                 //START HOMEPAGE: ON LATEST - ARTICLE TEASERS
                 &:nth-child(2),
                 &:nth-child(3) {                
-                    height: 360px;
-                    margin: 0;
+                    min-height: 360px;
                     width: 240px;
                 }
-                //END HOMEPAGE: ON LATEST - ARTICLE TEASERS
+            }
 
-                &--full-width {
+            //START: teaser-stacklist__item--full-width 
+            &--full-width {
+                @media (min-width: 991px) {
                     float: left;
                     overflow: hidden;
                     margin: 0 5px 20px;
-                    height: 750px;
+                    height: auto;
                     padding: 0 30px 20px 0;
-                    width: 65%;
+                    width: 60%;
+
                     .teaser-stacklist__thumbnail, 
-                    .teaser-stacklist__images {
+                    .teaser-stacklist__image {
                         height: auto;
-                        width: 100%;
+                        min-width: 100%;
+                        max-width: 100%;
+                    }
+                }
+        
+                .teaser-stacklist__content {
+                    padding: 15px 0;
+                    @media (min-width: 991px) {
+                        padding: 15px 0;
+                        overflow: hidden;
+                        min-width: 100%;
+                        max-width: 100%;
                     }
                 }
             }
-            
+            //END: teaser-stacklist__item--full-width 
         }
-        
-        // LATEST + ANNOUNCEMENT ARTICLE TEASER LAYOUT
-        &-column {
+        //END: teaser-stacklist__item 
+    }
+
+
+    //START: homepage-column 
+    &-column {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 991px) {
             flex-direction: initial;
-            &__one {
+        }
+        &__one {
+            order: 2;
+            @media (min-width: 991px) {
                 order: 1;
                 width: 75%;
                 .heading--hero {
                     margin: 10px 5%;
                 }
             }
-            &__two {
+        }
+        &__two {
+            background-color: $bright_orange;
+            order: 1;
+            @media (min-width: 991px) {
                 padding: 0 15px;
                 order: 2;
                 width: 25%;
                 .heading--hero {
                     margin: 10px -20px;
                 }
-                .article-hero > .teaser-stacklist__item {
+                .teaser-stacklist__item {
+                    flex-direction: column;
                     height: auto;
-                    width: 95%;
+                    width: 100%;
+                }
+                .teaser-stacklist__content {
+                    width: 100%;
                 }
             }
-            &--with-side-bar {
+        }
+
+        //START: homepage-column--with-side-bar
+        &--with-side-bar {
+            display: block;
+            @media (min-width: 991px) {
+                display: inline-block;
                 justify-content: center;
-                .homepage-column__one {
+                .homepage-column__one,
+                .homepage-column__two {
                     width: 100%;
                 }
                 
                 .article-stacklist {
                     padding: 15px 70px;
                 }
-
                 .teaser-stacklist__thumbnail,
-                .teaser-stacklist__images {
+                .teaser-stacklist__image {
                     width: 430px;
                 }
                 .teaser-stacklist__item:nth-child(2),
@@ -149,12 +158,18 @@
                     width: 65%;   
                 }   
             }
-            .teaser-stacklist__item--full-width > .teaser-stacklist__content {
+        }
+        //END: homepage-column--with-side-bar
+
+        .teaser-stacklist__item--full-width > .teaser-stacklist__content {
+            @media (min-width: 991px) {
                 white-space: initial;
                 overflow: initial;
                 text-overflow: initial;
                 height: auto;
-            } 
-        }
+            }
+        } 
     }
+    //END: homepage-column
 }
+

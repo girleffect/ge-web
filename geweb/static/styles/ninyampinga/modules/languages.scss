@@ -89,10 +89,6 @@
         &__item {
             display: inline-block;
             padding: 5px;
-            &:nth-child(2) > .languages-list__anchor {
-                color: $dark_grey !important;
-                opacity: .7 !important;
-            }
         }
         &__label {
             padding-right: 35px;
@@ -127,6 +123,27 @@
             text-transform: uppercase;
             .is-active {
                 color: $dark_grey;
+            }
+            &[hreflang = 'rw'], 
+            &[hreflang = 'en'] {
+                color: $pink;
+                &:before {
+                    content: '';
+                    background-image: url($staticPath + 'img/ninyampinga/iconsSprite.png');
+                    background-size: 70px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+            &[hreflang = 'rw']:before {
+                background-position: 0 69.5%;
+            }
+            
+            &[hreflang = 'en']:before {
+                background-position: 0 73.5%;
             }
         }
     }
