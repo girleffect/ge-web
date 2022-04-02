@@ -27,8 +27,7 @@
         @media (min-width: 991px) {
             height: auto;
             margin: 0 0 10px;
-           // max-height: 410px;
-           max-height: inherit;
+            max-height: inherit;
             width: 300px;
         }
         
@@ -74,6 +73,7 @@
         font-size: 12px;
     }
     &__content {
+        padding: 15px 0 0;
         width: 100%;
     }
     &--featured-main {

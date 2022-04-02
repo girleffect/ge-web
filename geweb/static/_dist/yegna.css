@@ -166,6 +166,7 @@ ul, ol, li {
   font-size: 12px;
 }
 .teaser-stacklist__content {
+  padding: 15px 0 0;
   width: 100%;
 }
 .teaser-stacklist--featured-main .teaser-stacklist__item:first-child {
@@ -180,7 +181,7 @@ ul, ol, li {
   display: block;
 }
 .banner__image {
-  border-radius: 20px;
+  border-radius: 5px;
   height: auto;
   width: 100%;
 }
@@ -264,7 +265,7 @@ ul, ol, li {
 }
 @media (min-width: 991px) {
   .copyright {
-    padding: 10px 8%;
+    padding: 10px 7.5%;
   }
 }
 .copyright__text {
@@ -303,7 +304,7 @@ ul, ol, li {
 }
 @media (min-width: 991px) {
   .footer-page {
-    padding: 20px 8%;
+    padding: 20px 7.5%;
   }
 }
 .footer__inner {
@@ -350,7 +351,7 @@ ul, ol, li {
 }
 @media (min-width: 991px) {
   .header-wrapper {
-    padding: 40px 8% 10px;
+    padding: 0 7.5% 10px;
   }
 }
 
@@ -445,7 +446,7 @@ ul, ol, li {
 }
 @media (min-width: 991px) {
   .homepage {
-    padding: 40px 8%;
+    padding: 40px 7.5%;
   }
 }
 .homepage__inner {
@@ -489,7 +490,16 @@ ul, ol, li {
 }
 
 .languages {
-  padding: 10px 8%;
+  padding: 10px 10px;
+}
+@media (min-width: 991px) {
+  .languages {
+    padding: 10px 7.5%;
+    height: 21.5px;
+  }
+}
+.languages-wrapper {
+  height: 41.5px;
 }
 .languages-list {
   text-align: right;
@@ -576,7 +586,7 @@ ul, ol, li {
   background-size: 100%;
   content: " ";
   display: inline-block;
-  margin: 0 10px 0 0;
+  margin: 0 5px 0 0;
   height: 40px;
   vertical-align: middle;
   width: 37px;
@@ -608,7 +618,7 @@ ul, ol, li {
 }
 @media screen and (min-width: 991px) {
   .nav__dropdown {
-    padding: 30px 8% 30px 19.5%;
+    padding: 30px 7.5% 30px 19.5%;
   }
 }
 .nav__dropdown .nav-list__our-story {
@@ -655,8 +665,13 @@ ul, ol, li {
   background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-listen-black.svg");
 }
 
+#search_label {
+  padding: 10px 0 10px 15px;
+}
 #search_label:before {
   background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-search.svg");
+  height: 35px;
+  width: 30px;
 }
 
 .pagination {
@@ -711,6 +726,11 @@ ul, ol, li {
   padding: 20px 0 10px;
   width: 100%;
 }
+@media (min-width: 991px) {
+  .search__bar {
+    padding: 20px 0 40px;
+  }
+}
 .search__form {
   align-items: center;
   display: flex;
@@ -751,7 +771,7 @@ ul, ol, li {
 }
 @media (min-width: 991px) {
   .section-page {
-    padding: 40px 8%;
+    padding: 40px 7.5%;
   }
 }
 .section-page__inner {

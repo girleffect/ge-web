@@ -16,8 +16,14 @@
             </h1>
         </div>
     </div>
-
-    {% include "./_banner.html" %}
+    
+    {% if page.banners %}
+        {% for banner in page.banners %}
+            {% if forloop.counter == 1 %}
+                {% include "../_patterns/banner.html" %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 
     <div class="homepage__inner">
         <div class="homepage__column-main">
