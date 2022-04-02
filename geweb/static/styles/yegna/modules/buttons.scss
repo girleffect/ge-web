@@ -13,6 +13,10 @@
             vertical-align: middle;
             width: 25px;
         }
+        &:focus,
+        &:hover {
+            color: $vivid_violet;
+        }
     }
     &__back {
         padding: 5px 0 15px;
@@ -29,11 +33,16 @@
             vertical-align: middle;
             width: 25px;
         }
+        &:focus,
+        &:hover {
+            color: $vivid_violet;
+        }
     }
     &__button {
-        background-color: #000;
+        background-color: $black;
         color: $white;
         cursor: pointer;
+        display: inline-block;
         font-size: 18px;
         padding: 10px;
         text-decoration: none;
@@ -45,6 +54,13 @@
             margin: 0 10px 0 0px;
             vertical-align: middle;
             width: 14px;
+        }
+        &:focus,
+        &:hover {
+           text-decoration: underline;
+        }
+        &-label {
+            font-size: 12px;
         }
     }
 }

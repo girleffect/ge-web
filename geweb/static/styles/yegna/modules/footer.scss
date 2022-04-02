@@ -2,7 +2,7 @@
     overflow: auto;
     width: 100%;
     &-page {
-        color: #000;
+        color: $black;
         text-align: left;
         @media (min-width: 991px) {
             padding: 20px 7.5%;
@@ -13,7 +13,9 @@
         background: $lime_green url($staticPath + 'img/yegna/bg.svg') no-repeat 0 0/auto;
         display: flex;
         justify-content: space-between;
-        padding: 50px 10%; 
+        @media (min-width: 991px) {
+            padding: 50px 7.5%;
+        } 
     }
 
     .nav-list__anchor {

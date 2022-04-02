@@ -37,6 +37,16 @@
             text-decoration: none;
         }
     }
+    &__media {
+        padding: 10px;
+        @media (min-width: 991px) {
+            padding: 25px;
+            margin: -10px 0 0;
+        }
+        &--listen {
+            background-color: $pink;
+        }
+    }
     &__thumbnail {
         display: flex;
         height: auto;
@@ -56,19 +66,20 @@
             width: fit-content;
         } 
     }
-
     &__title {
         color: $vivid_violet;
         font-size: 27px;
         margin: 5px 0 16px;
     }
-
+    &__subtitle {
+        padding: 16px 0;
+    }
     &__anchor {
         display: block;
         text-decoration: none;
     }
     &__label {
-        color: #000;
+        color: $black;
         display: block;
         font-size: 12px;
     }
@@ -76,12 +87,33 @@
         padding: 15px 0 0;
         width: 100%;
     }
+    &-actions-list {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        &__item {
+            display: inline-block;
+
+            //REVERT SOCIALMEDIA LINKS HERE
+            .social-media-list {
+                background-color: transparent;
+                padding: 0;
+                width: auto;
+            }
+            .call-to-action__button:before {
+                background: url($staticPath + 'img/yegna/icon-download.svg') no-repeat center center/auto;
+            }
+        }
+    }
     &--featured-main {
-        .teaser-stacklist__item:first-child {
-            width: 100%;
-            padding: 0 25px 25px;
-            .teaser-stacklist__image {
+        .teaser-stacklist__item {
+            padding: 0 0 25px;
+            &:first-child {
                 width: 100%;
+                .teaser-stacklist__image {
+                    width: 100%;
+                }
             }
         }
     }

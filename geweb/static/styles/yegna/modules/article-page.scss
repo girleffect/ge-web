@@ -37,13 +37,36 @@
     }
 }
 
-.block-paragraph {
-    padding: 10px 15px;
-    @media (min-width: 991px) {
-        padding: 10px 0;
+.block {
+    &-paragraph {
+        padding: 10px 15px;
+        @media (min-width: 991px) {
+            padding: 10px 0;
+        }
+        p {
+            color: $black;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        ul {
+            padding: 0 20px;
+            li {
+                list-style: disc;   
+            }
+        }
+        ol {
+            padding: 0 20px;
+            li {
+                list-style: decimal;
+            }
+        }
     }
-    p {
-        color: $black;
-        font-size: 16px;
+
+    &-image {
+        overflow: auto;
+    }  
+    
+    &-media {
+        padding: 10px 0;
     }
 }

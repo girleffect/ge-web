@@ -19,7 +19,7 @@
             display: inline-block;
         }
         &__anchor {
-            color: #000;
+            color: $black;
             cursor: pointer;
             display: block;
             font-size: 16px;
@@ -50,7 +50,7 @@
                 width: 45%;
             }
             &:hover:after {
-                border-bottom-color: #000;
+                border-bottom-color: $black;
             }
             &.is-active {
                 background-color: $white;
@@ -58,7 +58,7 @@
         }
     }
     &__dropdown {
-        background-color: #fff;
+        background-color: $white;
         box-shadow: -1px 3px 8px 0 rgb(0 0 0 / 50%);
         display: flex;
         left: 0;
