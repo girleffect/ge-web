@@ -63,4 +63,10 @@
             font-size: 12px;
         }
     }
+    &__duration {
+        color: $dark_gray;
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+    }
 }

@@ -21,4 +21,11 @@
             margin: 16px 0;
         }
     }
+
+    .subheading {
+        color: $vivid_violet;
+        &__label {
+            font-style: italic;
+        }
+    }
 }

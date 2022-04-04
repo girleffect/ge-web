@@ -3,24 +3,78 @@
 <div class="article-page{% if page.get_parent|slugify  == 'cast' %} article-page--cast{% endif %}">
     <div class="component-title">
         <div class="component-title__super">
-            <h1 class="heading heading--primary">{% if page.get_parent|slugify  == 'cast' %}{% trans "Meet the Yegna cast" %} {% endif %} {{ page.title }}</h1>
+            {% if page.get_parent|slugify  == 'cast' %}
+                <h1 class="heading heading--primary">
+                    {% trans "Meet the Yegna cast" %}
+                </h1>
+            {% else %}
+                <h1 class="heading heading--primary">{{ page.get_parent }}</h1>
+            {% endif %}
         </div>
     </div>
 
     <div class="article-page__inner">
-        {% if page.image %}
-            <div class="article-page__image">
-                {% image page.image max-360x200 as article_image %}
-                <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
-            </div>
+        {% if not page.get_parent|slugify  == 'cast' %}
+            <div class="article-page__intro">
+                <p class="article-page__breadcrumb">{{ page.get_parent }}</p>
+                <h2 class="subheading">{{ page.title }}</h2>
+            </div>  
         {% endif %}
-        <h2 class="subheading">{{ page.title }}</h2>
-        
 
-        {% if page.subtitle %}
-            <h3 class="heading heading--micro">{{ page.subtitle }}</h3>
+        {% if page.featured_media.type == 'video' %}
+            <div class="article-page__intro">
+                <span class="call-to-action__duration">({{ page.featured_media.duration }})</span>
+                <a alt="{% trans 'Click here to watch video' %}"  href="{{page.featured_media.file.url}}" onclick="ga('send', 'event', 'Video', 'Download', '{{page.featured_media.title}}');" class="call-to-action__button  call-to-action__button--media">
+                    {% trans "Download" %}
+                    <span class="call-to-action__button-label">({{ page.featured_media.file.size|filesizeformat }})</span>
+                </a>
+            </div>
+            <video poster="/media/{{ page.featured_media.thumbnail }}" controls>
+                <source src={{page.featured_media.file.url}} type="video/mp4">
+                <source src={{page.featured_media.file.url}} type="video/webm">
+                <source src={{page.featured_media.file.url}} type="video/ogg">
+                <span class="media-player__caption">
+                    {% trans "Your browser does not support the video tag." %}
+                </span>
+            </video>
+        {% elif page.featured_media.type == 'audio' %}
+            <div class="article-page__intro">
+                <a alt="{% trans 'Click here to download audio' %}"  href="{{page.featured_media.file.url}}" onclick="ga('send', 'event', 'Audio', 'Download', '{{page.featured_media.title}}');" class="call-to-action__button  call-to-action__button--media">
+                    {% trans "Download" %}
+                    <span class="call-to-action__button-label">({{ page.featured_media.file.size|filesizeformat }})</span>
+                </a>
+            </div>
+
+            {% if page.image %}
+                <div class="article-page__image">
+                    {% image page.image max-360x200 as article_image %}
+                    <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
+                </div>
+            {% endif %}
+            <audio controls>
+                <source src={{page.featured_media.file.url}} type="audio/mpeg">
+                <source src={{page.featured_media.file.url}} type="audio/ogg">
+                <source src={{page.featured_media.file.url}} type="audio/wav">
+                <span class="media-player__caption">
+                    {% trans "Your browser does not support the audio tag." %}
+                </span>
+            </audio>
+        {% else %}
+            {% if page.image %}
+                <div class="article-page__image">
+                    {% image page.image max-360x200 as article_image %}
+                    <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
+                </div>
+            {% endif %}
         {% endif %}
-        {% include_block page.body %}
+
+        <div class="article-page__body">
+            <h2 class="subheading">{{ page.title }}</h2>
+            {% if page.subtitle %}
+                <h3 class="heading heading--micro">{{ page.subtitle }}</h3>
+            {% endif %}
+            {% include_block page.body %}
+        </div>
     </div>
 
     {% social_media_article %}

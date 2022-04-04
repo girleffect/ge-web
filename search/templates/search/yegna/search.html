@@ -1,7 +1,20 @@
 {% load wagtailcore_tags wagtailimages_tags article_tags static theme_tags i18n %}
 
 <div class="search-page">
+    <div class="component-title">
+        <div class="component-title__super">
+            <h1 class="heading heading--primary">
+                {% trans "Search" %}
+            </h1>
+        </div>
+    </div>
+
     <div class="search-page__inner">
+        <div class="component">
+            <h2 class="subheading">{{ search_results|length }} {% trans "results found for" %} 
+                <span class="subheading__label">"{{search_query}}"</span>.
+            </h2>
+        </div>
         {% if search_results %}
             <div class="teaser-stacklist">
                 {% for post in search_results.object_list %}
@@ -27,7 +40,7 @@
                                 <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
                             {% endif %}
                             <div class="call-to-action">
-                                <a href="{% pageurl post %}" class="call-to-action__button">
+                                <a href="{% pageurl post %}" class="call-to-action__read-more">
                                     {% trans "See more" %}
                                 </a>
                             </div>

@@ -21,25 +21,28 @@
         {% if post.subtitle %}
             <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
         {% endif %}
-        <div class="call-to-action">
-            <a href="{% pageurl post %}" class="call-to-action__button">
-                {% trans "See more" %}
-            </a>
-        </div>
+
+        {% if not post.featured_media %}
+            <div class="call-to-action">
+                <a href="{% pageurl post %}" class="call-to-action__button">
+                    {% trans "See more" %}
+                </a>
+            </div>
+        {% endif %}
     </div> 
 </div>
 
-{% if  post.featured_media %}
+{% if post.featured_media %}
     <div class="teaser-stacklist__media{% if post.get_parent %} teaser-stacklist__media--{{ post.get_parent|slugify }}{% endif %}">
         {% if post.featured_media.type == 'video' %}
-            <video poster="/media/{{ post.featured_media.thumbnail }}" controls>
+            <!-- <video poster="/media/{{ post.featured_media.thumbnail }}" controls>
                 <source src={{post.featured_media.file.url}} type="video/mp4">
                 <source src={{post.featured_media.file.url}} type="video/webm">
                 <source src={{post.featured_media.file.url}} type="video/ogg">
                 <span class="media-player__caption">
                     {% trans "Your browser does not support the video tag." %}
                 </span>
-            </video>
+            </video> -->
         {% elif post.featured_media.type == 'audio' %}
             <audio controls>
                 <source src={{post.featured_media.file.url}} type="audio/mpeg">
@@ -53,8 +56,16 @@
         <ul class="teaser-stacklist-actions-list">
             <li class="teaser-stacklist-actions-list__item">
                 <div class="call-to-action">
-                    <a alt="{% trans 'Click here to download audio' %}"  href="{{post.featured_media.file.url}}" onclick="ga('send', 'event', 'Audio', 'Download', '{{post.featured_media.title}}');" class="call-to-action__button  call-to-action__button--media">{% trans "Download" %}
+                    {% if post.featured_media.type == 'video' %}
                         <span class="call-to-action__button-label">({{ post.featured_media.file.size|filesizeformat }})</span>
+                        <a alt="{% trans 'Click here to watch video' %}"  href="{% pageurl post %}" class="call-to-action__button  call-to-action__button--media">
+                            {% trans "Watch video" %}
+                    {% elif post.featured_media.type == 'audio' %}
+                        <a alt="{% trans 'Click here to download audio' %}"  href="{{post.featured_media.file.url}}" onclick="ga('send', 'event', 'Audio', 'Download', '{{post.featured_media.title}}');" class="call-to-action__button  call-to-action__button--media">
+                            {% trans "Download" %}
+                            <span class="call-to-action__button-label">({{ post.featured_media.file.size|filesizeformat }})</span>
+                    {% endif %}
+                        
                     </a>
                 </div>
             </li>

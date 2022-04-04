@@ -76,6 +76,7 @@
         }
         .nav-list {
             margin: 0 5% 0 0;
+            z-index: 100;
             &__item {
                 display: block;
             }
@@ -119,7 +120,7 @@
 }
 
 #search_label {
-    padding: 10px 0 10px 15px;
+    padding: 10px 10px 15px;
     &:before {
         background-image: url($staticPath + 'img/yegna/icon-search.svg');
         height: 35px;
