@@ -1,7 +1,6 @@
 from django.utils.translation import (
     ungettext,
-    ugettext,
-    ugettext_lazy as _,
+    ugettext as _,
 )
 from django.core.paginator import Paginator
 
