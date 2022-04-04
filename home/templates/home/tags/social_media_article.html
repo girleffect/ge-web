@@ -4,7 +4,7 @@
 {% if settings.home.SiteSettings.facebook_sharing or settings.home.SiteSettings.twitter_sharing or settings.home.SiteSettings.whatsapp_sharing or settings.home.SiteSettings.telegram_sharing or settings.home.SiteSettings.viber_sharing %}
   <ul class="social-media-list">
     <li class="social-media-list__item"> 
-        <label class="social-media-list__label">Share:</label>
+        <label class="social-media-list__label">{% trans "Share" %}:</label>
     </li>
 
     {% if settings.home.SiteSettings.facebook_sharing %}

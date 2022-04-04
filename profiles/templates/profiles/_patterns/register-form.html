@@ -11,7 +11,7 @@
             {% if field.name == "terms_and_conditions" %}
                 {% if settings.profiles.ProfileSettings.terms_and_conditions %}
                     <a href="{% pageurl settings.profiles.ProfileSettings.terms_and_conditions %}" class="terms_and_conditions-link">
-                        I accept the Terms and Conditions
+                        {% trans 'I accept the Terms and Conditions' %} 
                     </a>
                 {% endif %}
             {% endif %}

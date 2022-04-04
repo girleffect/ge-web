@@ -1,12 +1,12 @@
 {% load wagtailcore_tags %}
 
 <div class="search">
-  <label for="search_toggle" id="search_nav" class="search__label toggle">Search</label>
+  <label for="search_toggle" id="search_nav" class="search__label toggle">{% trans 'Search' %}</label>
   <input type="checkbox" value="toggles" name="search_toggle" id="search_toggle" class="search__checkbox"/>
     
   <div class="search-dropdown dropdown">
         <div class="search-dropdown__label">
-            <h1 class="search-dropdown__title">Search:</h1>
+            <h1 class="search-dropdown__title">{% trans 'Search' %}:</h1>
         </div>
       {% include "./_search-form.html" %}
   </div>
