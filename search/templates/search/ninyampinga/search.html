@@ -27,7 +27,7 @@
             </div>
 
             <div class="pagination__item">
-                <p class="pagination__num">Page {{ search_results.number }} of {{ search_results.paginator.num_pages }}</p>
+                <p class="pagination__num">{% trans "Page" %} {{ search_results.number }} {% trans "of" %} {{ search_results.paginator.num_pages }}</p>
             </div>
 
             <div class="pagination__item">

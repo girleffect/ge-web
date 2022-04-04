@@ -1,4 +1,4 @@
-{% load article_tags home_tags static wagtailcore_tags %}
+{% load article_tags i18n home_tags static wagtailcore_tags %}
 
 {% section_pages as sections %}
 
@@ -6,14 +6,14 @@
     <div class="menu">
         <div class="heading heading--hero">
             <h3 class="heading__basic">
-                Links
+                {% trans "Links" %}
             </h3>
         </div>
 
         <div class="nav">
             <ul class="nav-list nav-list--column1">
                 <li class="nav-list__item">
-                    <a href="/" class="nav-list__anchor{% if request.path == '/' %} is-selected{% endif %}">Home</a>
+                    <a href="/" class="nav-list__anchor{% if request.path == '/' %} is-selected{% endif %}">{% trans "Home" %}</a>
                 </li>
                 {% if sections %}
                     {% for section in sections|slice:":4" %}
@@ -44,25 +44,22 @@
                 {% if not user.is_authenticated %}
                     <li class="nav-list__item">
                         <a href="{% url 'user_register' %}" class="nav-list__anchor">
-                            Join us
+                            {% trans "Join us" %}
                         </a>
                     </li>
                     <li class="nav-list__item">
                         <a href="{% url 'auth_login' %}" class="nav-list__anchor">
-                            Log in
+                            {% trans "Log in" %}
                         </a>
                     </li>
                 {% else %}
                     <li class="nav-list__item">
                         <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">
-                            Profile
+                            {% trans "Profile" %}
                         </a>
                     </li>
                     <li class="nav-list__item">
-                        <form method="post" action="{{ LOGOUT_URL }}" novalidate>
-                        {% csrf_token %}
-                            <input class="nav-list__anchor" value="Log out" type="submit" />
-                        </form>
+                        <a href="{% url 'auth_logout' %}" class="nav-list__anchor">{% trans "Log out" %}</a>
                     </li>
                 {% endif %}
             </ul>
@@ -73,7 +70,7 @@
         <div class="social-media">
             <div class="heading heading--hero">
                 <h3 class=" heading__basic">
-                    Follow us
+                    {% trans "Follow us" %}
                 </h3>
             </div>
             {% social_media_footer %}
@@ -91,10 +88,21 @@
             {% include "./_search-form.html" %}
         </div>
 
+        <div class="footer--languages">
+            <ul class="languages-list">
+                <li class="languages-list__item">
+                    <div class="languages-list__label">
+                        <h1 class="languages-list__title">{% trans "Languages:" %}</h1>
+                    </div>
+                </li>    
+                {% include "../_patterns/_language-list.html" %}
+            </ul>
+        </div>
+
 
         <div class="copyright">
             <p class="copyright__disclaimer">
-                &copy; {% now "Y" %} Girl Effect. All Rights Reserved.
+                &copy; {% now "Y" %} Girl Effect. {% trans "All Rights Reserved." %} 
                 {% if settings.profiles.UserProfilesSettings.terms_and_conditions %}
                     <a href="{% pageurl settings.profiles.UserProfilesSettings.terms_and_conditions.specific %}" class="copyright__link">
                         Terms &amp; Conditions

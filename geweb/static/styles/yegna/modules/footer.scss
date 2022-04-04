@@ -24,7 +24,8 @@
         &:hover {
             text-decoration: underline;
             text-underline-position: below;
-            .nav-list__anchor:before {
+            &:after,
+            &:before {
                 display: none;
                 visibility: hidden;
             }
