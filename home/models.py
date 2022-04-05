@@ -234,7 +234,9 @@ class SiteSettings(BaseSetting):
     show_comments = models.BooleanField(
         verbose_name=_("Show existing comments"),
         default=True,
-        help_text=_("Show existing user comments, if disabled, this will disable new comment submission."),
+        help_text=_(
+            "Show existing user comments, if disabled, this will disable new comment submission."
+        ),
     )
 
     panels = [
