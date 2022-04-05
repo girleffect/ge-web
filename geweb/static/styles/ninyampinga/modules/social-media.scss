@@ -19,6 +19,10 @@
             justify-content: center;
             text-decoration: underline;
             text-underline-position: under;
+            &:hover,
+            &:focus {
+                color: $strong_cyan;
+            }
            
             &-title {
                 color: $light_cyan;
@@ -44,10 +48,18 @@
 .article-page { 
     .social-media-list {
         border-top: 3px solid $pink;
-        margin: 5% auto 0;
-        padding: 40px 5.5% 20px;
+        margin: 20px auto 0;
+        padding: 20px 15px 20px;
         text-align: center;
-        width: 60%;
+        width: 100%;
+        @media (min-width: 991px) {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 5% auto 0;
+            padding: 40px 5.5% 20px;
+            width: 60%;
+        }
         &__label {
             display: block;
             font-size: 22px;
@@ -60,9 +72,18 @@
                 display: block;
             }
         }
-        &__anchor-title {
-            display: none;
-            visibility: hidden;
+        &__anchor {
+            color: $black;
+            &-icon {
+                margin: 0;;
+            }
+            &-title {
+                color: $black;
+                &.with-icon {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
         }
     }
 }

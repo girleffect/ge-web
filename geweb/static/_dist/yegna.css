@@ -464,7 +464,7 @@ audio {
   text-decoration: underline;
   text-underline-position: below;
 }
-.footer .nav-list__anchor:hover .nav-list__anchor:before {
+.footer .nav-list__anchor:hover:after, .footer .nav-list__anchor:hover:before {
   display: none;
   visibility: hidden;
 }

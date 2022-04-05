@@ -9,6 +9,37 @@
     overflow: auto;
     overflow: auto;
 
+    &--languages {
+        padding: 15px 0 10px;
+        .languages-list {
+            align-items: flex-start;
+            flex-direction: column;
+            &__item {
+                display: block;
+            }
+            &__label {
+                color: $white !important;
+                font-size: 17px;
+                &:before {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+            &__title {
+                color: $white !important;
+                font-size: 17px;
+            }
+            &__anchor {
+                color: $white !important;
+                font-size: 17px;
+                &:before {
+                    display: none !important;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
     //NAVIGATION
     .nav {
         align-items: flex-start;
@@ -39,6 +70,10 @@
                 text-transform: uppercase;
                 word-wrap: break-word;
                 word-break: initial;
+                &:hover,
+                &:focus {
+                    color: $strong_cyan;
+                }
             }
         }
     }
@@ -49,6 +84,14 @@
     .heading--hero {
         @media (min-width: 991px) {
             margin: 10px -15px;
+        }
+    }
+
+    .social-media-list__anchor:hover,
+    .social-media-list__anchor:focus {
+        color: $strong_cyan;
+        .social-media-list__anchor-title {
+            color: $strong_cyan;
         }
     }
 }
