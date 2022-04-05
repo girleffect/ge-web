@@ -5,8 +5,12 @@
         @media (min-width: 991px) {
             width: 95%;
         }
+        &--listen {
+            .teaser-stacklist__item {
+                background-color: $very_light_gray;
+            }
+        }
     }
-
     .teaser-stacklist {
         &__item {
             @media (min-width: 991px) {
@@ -15,6 +19,13 @@
         }
         &__subtitle {
             margin: 16px 0;
+        }
+    }
+
+    .subheading {
+        color: $vivid_violet;
+        &__label {
+            font-style: italic;
         }
     }
 }

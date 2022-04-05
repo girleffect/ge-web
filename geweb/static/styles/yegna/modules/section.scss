@@ -1,7 +1,7 @@
 .section-page {
     padding: 40px 10px;
     @media (min-width: 991px) {
-        padding: 40px 8%;
+        padding: 40px 7.5%;
     } 
     &__inner {
         align-items: center;
@@ -20,17 +20,57 @@
                 margin-right: 5%;
                 width: 60%;
             } 
-             //ARTICLE TEASER OVERRIDE - MAIN PANEL
+            //ARTICLE TEASER OVERRIDE - MAIN PANEL
             .teaser-stacklist {
                 &__item {
-                    background-color: #0ff;
+                    background-color: $cyan;
                     width: 90%;
                 }
                 &__title {
-                    color: #000;
+                    color: $black;
                 }
             }
+
+            //START: LISTEN (AUDIO) ARTICLE TEASERS
+            &--listen,
+            &--watch {
+                .teaser-stacklist {
+                    &__item { 
+                        background-color: $very_light_gray;
+                        width: auto;
+                        @media (min-width: 991px) {
+                            align-items: flex-start;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        } 
+                    }
+                    &__thumbnail {
+                        @media (min-width: 991px) {
+                            max-height: 190px;
+                            min-height: 190px;
+                            width: 45%;
+                        }
+                    }
+                    &__content {
+                        width: 50%;
+                        @media (min-width: 991px) {
+                            padding: 15px 0 15px 15px;
+                        }
+                    }
+                }
+            }
+            &--watch {
+                .call-to-action__button-label {
+                    display: block;
+                    padding: 0 0 5px;
+                }
+            }
+            //END: LISTEN (AUDIO) ARTICLE TEASERS
+
+           
         }
+
         &-side {
             width: 80%;
             @media (min-width: 991px) {
@@ -47,12 +87,12 @@
                     background-color: $very_light_gray;
                 }
                 &__content {
-                    background-color: #0ff;
+                    background-color: $cyan;
                     padding: 10px 10px 30px 10px;
                     width: auto;
                 }
                 &__title {
-                    color: #000;
+                    color: $black;
                     font-size: 20px;
                 }
             }

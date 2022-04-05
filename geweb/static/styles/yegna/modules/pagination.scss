@@ -1,4 +1,45 @@
 .pagination {
-    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    padding: 10px 10px 20px;
+    justify-content: center;
     text-align: center;
+    &__item {
+        position: relative;
+        padding: 0 5px;
+    }
+    &__anchor {
+        color: $white;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        &--prev:before,
+        &--next:after  {
+            background: url($staticPath + 'img/yegna/icon-readmore.svg') no-repeat center center/100%;
+            color: $vivid_violet;
+            content: '';
+            display: inline-block;
+            height: 15px;
+            margin: 0 0 0 20px;
+            vertical-align: middle;
+            width: 25px;
+        }
+        &--prev:before {
+            transform: rotate(180deg);
+        }
+        &--next:after {
+            transform: rotate(0deg);
+        }
+    }
+    &__num {
+        color: $black;
+        font-size: 16px;
+    }
 }
+
