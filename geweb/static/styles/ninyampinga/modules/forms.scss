@@ -45,9 +45,48 @@ select {
     }
 }
 
+select {
+    width: 77%;
+}
+
+textarea {
+    border: 2px solid $pink;
+    display: block;
+    padding: 15px 10px;
+}
+
+input[type="radio"], 
+input[type="checkbox"] {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -o-appearance:none;
+}
+
+input[type="radio"] {
+    border-radius: 100%;  
+    outline: 2px solid $pink;
+    height: 24px;
+    width: 24px;
+    &:checked {
+        background-color: $vivid_yellow;
+        outline-color: $pink;
+    }
+} 
+
+input[type="checkbox"] {
+    outline: 2px solid $pink;
+    height: 24px;
+    width: 24px;
+    &:checked {
+        background-color: $vivid_yellow;
+        outline-color: $pink;
+    }
+}
+
 input[type="search"].search__input {
     width: 100%;
 }
+
 
 .input-group {
     width: 75%;

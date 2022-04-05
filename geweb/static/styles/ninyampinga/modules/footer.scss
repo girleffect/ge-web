@@ -12,6 +12,9 @@
     //NAVIGATION
     .nav {
         align-items: flex-start;
+        @media (min-width: 991px) {
+            width: auto;
+        }
         &-list {
             display: inline-block;
             margin: 0 10px 0 0;
@@ -39,8 +42,13 @@
             }
         }
     }
-
     .search__form {
         width: 100%;
+    }
+
+    .heading--hero {
+        @media (min-width: 991px) {
+            margin: 10px -15px;
+        }
     }
 }

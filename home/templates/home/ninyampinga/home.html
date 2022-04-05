@@ -1,9 +1,16 @@
-{% load wagtailcore_tags wagtailimages_tags static i18n %}
+{% load i18n wagtailcore_tags wagtailimages_tags %}
 
 <div class="homepage">
-    {% include "./banner.html" %}
+    <!-- FIRST BANNER POSITION -->
+    {% if page.banners %}
+        {% for banner in page.banners %}
+            {% if forloop.counter == 1 %}
+                {% include "../_patterns/banner.html" %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
     <div class="homepage-column {% if articlepages_in_menu.count == 0 %} homepage-column--with-side-bar{% endif %}">
-       
         <div class="homepage-column__one">
             <div class="heading heading--hero">
                 <h3 class="heading__basic">
@@ -24,7 +31,13 @@
             {% endif %}
         </div>
 
-        {# <!-- feature_in_homepage TAKES PRECEDENCE --> #}
+        {% comment %} 
+            <!-- 
+                !!
+                IF article is NOT feature_in_homepage because feature_in_homepage TAKES PRECEDENCE and will be included in  <div class="homepage-column__one"> about.
+                AND article is show_in_menus ENABLED  will be shown on the sidebar.
+            -->
+        {% endcomment %}
         {% for post in articlepages_in_menu %}
             {% if not post.feature_in_homepage %}
                 <div class="homepage-column__two">
@@ -39,6 +52,19 @@
                 </div>
             {% endif %}
         {% endfor %}
-
     </div>
+
+     <!--ALL OTHER BANNERS POSITION -->
+    {% if page.banners %}
+        {% for banner in page.banners %}
+            {% if not forloop.counter == 1 %}
+                {% include "../_patterns/banner.html" %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <!-- FORMS BANNER -->
+     {% for form in forms %}
+        {% include "../_patterns/forms-page.html" %}
+    {% endfor %}
 </div>
