@@ -16,6 +16,7 @@ from wagtail.admin.edit_handlers import (  # isort:skip
     FieldPanel,
     MultiFieldPanel,
     StreamFieldPanel,
+    PageChooserPanel,
 )
 
 
@@ -226,6 +227,14 @@ class SiteSettings(BaseSetting):
             "The name that will appear on the moderator comment reply. Default is BigSis"
         ),
     )
+    terms_and_conditions = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text=_('Choose the terms & conditions')
+    )
 
     panels = [
         MultiFieldPanel(
@@ -275,4 +284,9 @@ class SiteSettings(BaseSetting):
             heading="Social Media Article Sharing Buttons",
         ),
         FieldPanel("moderator_reply_name"),
+        MultiFieldPanel(
+            [
+                PageChooserPanel('terms_and_conditions'),
+            ],
+            heading="Terms and Conditions on registration", ),
     ]
