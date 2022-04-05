@@ -16,6 +16,7 @@ from wagtail.admin.edit_handlers import (  # isort:skip
     FieldPanel,
     MultiFieldPanel,
     StreamFieldPanel,
+    PageChooserPanel,
 )
 
 
@@ -232,6 +233,15 @@ class SiteSettings(BaseSetting):
         default=True,
     )
 
+    terms_and_conditions = models.ForeignKey(
+        'wagtailcore.Page',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text=_('Choose the terms & conditions')
+    )
+
     panels = [
         MultiFieldPanel(
             [
@@ -281,4 +291,9 @@ class SiteSettings(BaseSetting):
         ),
         FieldPanel("moderator_reply_name"),
         FieldPanel("commenting_switch"),
+        MultiFieldPanel(
+            [
+                PageChooserPanel('terms_and_conditions'),
+            ],
+            heading="Terms and Conditions on registration", ),
     ]
