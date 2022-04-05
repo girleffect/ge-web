@@ -228,12 +228,12 @@ class SiteSettings(BaseSetting):
         ),
     )
     terms_and_conditions = models.ForeignKey(
-        'wagtailcore.Page',
+        "wagtailcore.Page",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name='+',
-        help_text=_('Choose the terms & conditions')
+        related_name="+",
+        help_text=_("Choose the terms & conditions"),
     )
 
     panels = [
@@ -286,7 +286,8 @@ class SiteSettings(BaseSetting):
         FieldPanel("moderator_reply_name"),
         MultiFieldPanel(
             [
-                PageChooserPanel('terms_and_conditions'),
+                PageChooserPanel("terms_and_conditions"),
             ],
-            heading="Terms and Conditions on registration", ),
+            heading="Terms and Conditions on registration",
+        ),
     ]
