@@ -1,29 +1,34 @@
 {% load article_tags home_tags i18n wagtailcore_tags theme_tags threadedcomments_tags %}
 
 <div id="comments" class="commenting commenting--on-article">
-    <div class="heading heading--component">
-        <h1 class="heading__component-title">{% trans "Share your feedback" %}</h1>
-    </div>
-
+    {% if  settings.home.SiteSettings.comment_posting %}
+        <div class="heading heading--component">
+            <h1 class="heading__component-title">{% trans "Share your feedback" %}</h1>
+        </div>
+    {% endif %}
     {# <!-- ========== start THREADED COMMENTS ========== --> #}
     {% get_comment_form for page as form %}
     {% if user.is_authenticated %}
-        <form action="{{form.action}}" method="POST" class="commenting-form">
-        {% csrf_token %}
-           {{ form.comment }}
-            {{ form.content_type }}
-            {{ form.object_pk }}
-            {{ form.security_hash }}
-            {{ form.timestamp }}
-            <input type="hidden" name="next" value="{{ page.url }}" />
-            <input type="hidden" name="email" value="comment@example.com" />
-            <input type="hidden" name="parent" value="{{comment.pk}}" />
-            <input type="submit" value="Add comment" id="id_submit" class="call-to-action__submit" />
-        </form>
+        {% if  settings.home.SiteSettings.comment_posting %}
+            <form action="{{form.action}}" method="POST" class="commenting-form">
+            {% csrf_token %}
+            {{ form.comment }}
+                {{ form.content_type }}
+                {{ form.object_pk }}
+                {{ form.security_hash }}
+                {{ form.timestamp }}
+                <input type="hidden" name="next" value="{{ page.url }}" />
+                <input type="hidden" name="email" value="comment@example.com" />
+                <input type="hidden" name="parent" value="{{comment.pk}}" />
+                <input type="submit" value="Add comment" id="id_submit" class="call-to-action__submit" />
+            </form>
+        {% endif %}
     {% else %}
-        <div class="call-to-action">
-            <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
-        </div>
+        {% if  settings.home.SiteSettings.comment_posting %}
+            <div class="call-to-action">
+                <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
+            </div>
+        {% endif %}
     {% endif %}
 
     {% get_comment_list for page as comment_list root_only %}
@@ -52,7 +57,9 @@
                                     NEEDS A REPLY CALL TO ACTION URL
                                     e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment-block
                                 -->
-                                <a href="/comments/{{ page.id }}/reply" class="commenting-cta__label">{% trans "Reply" %}</a>
+                                {% if  settings.home.SiteSettings.comment_posting %}
+                                    <a href="/comments/{{ page.id }}/reply" class="commenting-cta__label">{% trans "Reply" %}</a>
+                                {% endif %}
                             </div>
                             <div class="commenting-cta__right">
                                 <!--

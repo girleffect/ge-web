@@ -226,6 +226,18 @@ class SiteSettings(BaseSetting):
             "The name that will appear on the moderator comment reply. Default is BigSis"
         ),
     )
+    comment_posting = models.BooleanField(
+        verbose_name=_("Allow comment posting"),
+        default=True,
+        help_text=_("Allow users to submit new comments"),
+    )
+    show_comments = models.BooleanField(
+        verbose_name=_("Show existing comments"),
+        default=True,
+        help_text=_(
+            "Show existing user comments, if disabled, this will disable new comment submission."
+        ),
+    )
 
     panels = [
         MultiFieldPanel(
@@ -274,5 +286,12 @@ class SiteSettings(BaseSetting):
             ],
             heading="Social Media Article Sharing Buttons",
         ),
-        FieldPanel("moderator_reply_name"),
+        MultiFieldPanel(
+            [
+                FieldPanel("moderator_reply_name"),
+                FieldPanel("comment_posting"),
+                FieldPanel("show_comments"),
+            ],
+            heading="Commenting Settings",
+        ),
     ]

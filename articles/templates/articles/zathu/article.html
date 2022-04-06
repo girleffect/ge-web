@@ -27,6 +27,8 @@
         </div>
     {% endif %}
     {% social_media_article %}
-    {% include "../_patterns/commenting.html" %}
+    {% if settings.home.SiteSettings.show_comments %}
+        {% include "../_patterns/commenting.html" %}
+    {% endif %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
 </div>
