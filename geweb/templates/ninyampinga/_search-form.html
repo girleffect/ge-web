@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <form action="{% url 'search' %}" class="search__form" novalidate>
     <label class="label" for="search_bar">Search</label>
     <input name="q" type="search" aria-label="Search Input" id="search_bar" class="search__input" placeholder="{% trans 'Search' %}" />
