@@ -1,6 +1,6 @@
 .search { 
     $block: unquote("#{&}");
-    background: #fff;
+    background: $white;
     box-shadow: -1px 3px 8px 0 rgb(0 0 0 / 50%);
     margin: 0 auto;
     left: 0;
@@ -17,7 +17,7 @@
         visibility: hidden;
     }
     &__label {
-        color: #fff;
+        color: $white;
         display: none;
         visibility: hidden;
     }
@@ -25,6 +25,10 @@
         overflow: auto;
         padding: 20px 0 10px;
         width: 100%;
+        z-index: 100;
+        @media (min-width: 991px) {
+            padding: 20px 0 40px;
+        }
     }
     &__form {
         align-items: center;
@@ -45,7 +49,7 @@
         width: 100%;
     }
     &__cta {
-        background-color: #000;
+        background-color: $black;
         border: none;
         color: $white;
         cursor: pointer;
@@ -54,6 +58,7 @@
         margin: 0 3px 0;
         height: 40px;
         padding: 12px;
+        
     }
     .search-radio {
         position: absolute;

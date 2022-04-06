@@ -11,9 +11,8 @@
 
     <!-- TRAVERSE -->
     {% if page.title|slugify == 'watch' or page.title|slugify == 'listen' %}
-
-        <div class="section-page__inner">
-            <div class="section-page__column-main">
+        <div class="section-page__inner{% if page.title %} section-page__inner--{{page.title|slugify}}{% endif %}">
+            <div class="section-page__column-main{% if page.title %} section-page__column-main--{{page.title|slugify}}{% endif %}">
                 <div class="heading-full">
                     <h2 class="heading--primary">{% trans "Featured episode" %}</h2>
                 </div>
@@ -25,7 +24,7 @@
                 {% endfor %}
             </div>
             
-            <div class="section-page__column-side">
+            <div class="section-page__column-side {% if page.title %} section-page__column-side--{{page.title|slugify}}{% endif %}">
                 {% for subsection in articlepages %}
                     {% if subsection.content_type.app_labeled_name == 'articles | section page' %}
                         {% if subsection.get_children %}
@@ -34,7 +33,7 @@
                             </div>
                             <div class="teaser-stacklist">
                                 {% for post in subsection.get_children %}
-                                {% include "./_article-teasers.html" %}
+                                    {% include "./_article-teasers.html" %}
                                 {% endfor %}
                             </div>
                         {% endif %}
@@ -42,8 +41,6 @@
                 {% endfor %}
             </div>
         </div>
-
-
     {% else %}
         {% include "./_article-teasers-listing.html" %}
     {% endif %}

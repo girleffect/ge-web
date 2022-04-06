@@ -1,5 +1,12 @@
 .languages {
-    padding: 10px 8%;
+    padding: 10px 10px;
+    @media (min-width: 991px) {
+        padding: 10px 7.5%;
+        height: 21.5px;
+    }
+    &-wrapper {
+        height: 41.5px;
+    }
     &-list {
         text-align: right;
         &__item {

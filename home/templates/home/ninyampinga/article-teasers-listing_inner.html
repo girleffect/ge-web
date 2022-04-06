@@ -48,9 +48,6 @@
                 {% endfor %}
             </ul>
         </div>
-
-
-        {% with parent=post.get_parent %}{% endwith %}
         <a href="{% pageurl post %}" class="call-to-action__submit">
             {% trans "Click here" %}
         </a>

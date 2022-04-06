@@ -17,6 +17,30 @@ ul, ol, li {
     padding: 0;
 }
 
+a {
+    color: #000;
+    overflow: auto;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+img {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
+
+iframe,
+video {
+    height: 390px;
+    width: 100%;
+}
+
+audio  {
+    width: 100%;
+}
+
+
 //!! IMPORTANT RULE
 .yegna {
     background-color: $white;

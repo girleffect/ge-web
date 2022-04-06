@@ -29,7 +29,7 @@
             {% if post.subtitle %}
                 <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
             {% else %}
-                <p class="teaser-stacklist__subtitle"> ... </p>
+                <p class="teaser-stacklist__subtitle"> - </p>
             {% endif %}
             <div class="teaser-stacklist__cta">
                 <ul class="teaser-tags-list">
@@ -50,7 +50,6 @@
                     </div>
                 {% endif %}
             </div>
-
         </div>  
     </div>
 {% endwith %}

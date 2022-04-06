@@ -1,7 +1,7 @@
 .homepage {
     padding: 40px 10px;
     @media (min-width: 991px) {
-        padding: 40px 8%;
+        padding: 40px 7.5%;
     } 
     &__inner {
         align-items: center;
@@ -20,6 +20,33 @@
                 margin-right: 5%;
                 width: 60%;
             } 
+            .teaser-stacklist {
+                &__item { 
+                    width: auto;
+                    @media (min-width: 991px) {
+                        align-items: flex-start;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                    } 
+                }
+                &__thumbnail {
+                    @media (min-width: 991px) {
+                        max-height: 190px;
+                        min-height: 190px;
+                        width: 45%;
+                    }
+                }
+                &__content {
+                    width: 50%;
+                    @media (min-width: 991px) {
+                        padding: 15px 0 15px 15px;
+                    }
+                }
+                &__title {
+                    color: $black;
+                }
+            }
         }
         &-side {
             width: 80%;
@@ -27,6 +54,10 @@
                 width: 35%;
             } 
             .teaser-stacklist {
+                @media (min-width: 991px) {
+                    margin-left: 20px;
+                } 
+                
                 &__item {
                     background-color: $very_light_gray;
                 }

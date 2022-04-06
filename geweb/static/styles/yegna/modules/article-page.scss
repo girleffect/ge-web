@@ -1,5 +1,24 @@
 .article-page {
     padding: 40px 5%;
+    &__inner {
+        margin: 0 auto;
+    }
+    &__intro {
+        text-align: center;
+        margin: 0 auto;
+        @media (min-width: 991px) {
+            width: 60%;
+        }
+        .subheading {
+            padding: 0;
+        }
+    }
+    &__body {
+        margin: 0 auto;
+        @media (min-width: 991px) {
+            width: 60%;
+        }
+    }
     &__image {
         border-radius: 20px;
         margin: 15px auto 0;
@@ -12,12 +31,7 @@
         object-fit: cover;
         object-position: left top;
     }
-    &__inner {
-        margin: 0 auto;
-        @media (min-width: 991px) {
-            width: 60%;
-        }
-    }
+   
     &--cast {
         text-align: left;
         padding: 40px;
@@ -25,6 +39,13 @@
             display: none;
         }
     }
+    &__breadcrumb {
+        font-size: 14px;
+        padding: 1em 0 0;
+        text-align: center;
+       
+    }
+   
     .call-to-action {
         margin: 0 auto;
         @media (min-width: 991px) {
@@ -35,15 +56,46 @@
         display: none;
         visibility: hidden;
     }
+    iframe, video,  audio {
+        display: block;
+        margin: 15px auto 0;
+        @media (min-width: 991px) {
+            margin: 25px auto 0;
+            width: 80%;
+        }
+    }
 }
 
-.block-paragraph {
-    padding: 10px 15px;
-    @media (min-width: 991px) {
-        padding: 10px 0;
+.block {
+    &-paragraph {
+        padding: 10px 15px;
+        @media (min-width: 991px) {
+            padding: 10px 0;
+        }
+        p {
+            color: $black;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        ul {
+            padding: 0 20px;
+            li {
+                list-style: disc;   
+            }
+        }
+        ol {
+            padding: 0 20px;
+            li {
+                list-style: decimal;
+            }
+        }
     }
-    p {
-        color: $black;
-        font-size: 16px;
+
+    &-image {
+        overflow: auto;
+    }  
+    
+    &-media {
+        padding: 10px 0;
     }
 }

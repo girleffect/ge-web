@@ -1,4 +1,4 @@
-{% load wagtailcore_tags wagtailimages_tags article_tags static theme_tags i18n %}
+{% load article_tags i18n home_tags wagtailcore_tags wagtailimages_tags  static theme_tags %}
 
 <div class="teaser-stacklist__item">
     {% if post.image %}
@@ -21,10 +21,57 @@
         {% if post.subtitle %}
             <p class="teaser-stacklist__subtitle"> {{ post.subtitle }}</p>
         {% endif %}
-        <div class="call-to-action">
-            <a href="{% pageurl post %}" class="call-to-action__button">
-                {% trans "See more" %}
-            </a>
-        </div>
+
+        {% if not post.featured_media %}
+            <div class="call-to-action">
+                <a href="{% pageurl post %}" class="call-to-action__button">
+                    {% trans "See more" %}
+                </a>
+            </div>
+        {% endif %}
     </div> 
 </div>
+
+{% if post.featured_media %}
+    <div class="teaser-stacklist__media{% if post.get_parent %} teaser-stacklist__media--{{ post.get_parent|slugify }}{% endif %}">
+        {% if post.featured_media.type == 'video' %}
+            <!-- <video poster="/media/{{ post.featured_media.thumbnail }}" controls>
+                <source src={{post.featured_media.file.url}} type="video/mp4">
+                <source src={{post.featured_media.file.url}} type="video/webm">
+                <source src={{post.featured_media.file.url}} type="video/ogg">
+                <span class="media-player__caption">
+                    {% trans "Your browser does not support the video tag." %}
+                </span>
+            </video> -->
+        {% elif post.featured_media.type == 'audio' %}
+            <audio controls>
+                <source src={{post.featured_media.file.url}} type="audio/mpeg">
+                <source src={{post.featured_media.file.url}} type="audio/ogg">
+                <source src={{post.featured_media.file.url}} type="audio/wav">
+                <span class="media-player__caption">
+                    {% trans "Your browser does not support the audio tag." %}
+                </span>
+            </audio>
+        {% endif %}
+        <ul class="teaser-stacklist-actions-list">
+            <li class="teaser-stacklist-actions-list__item">
+                <div class="call-to-action">
+                    {% if post.featured_media.type == 'video' %}
+                        <span class="call-to-action__button-label">({{ post.featured_media.file.size|filesizeformat }})</span>
+                        <a alt="{% trans 'Click here to watch video' %}"  href="{% pageurl post %}" class="call-to-action__button  call-to-action__button--media">
+                            {% trans "Watch video" %}
+                    {% elif post.featured_media.type == 'audio' %}
+                        <a alt="{% trans 'Click here to download audio' %}"  href="{{post.featured_media.file.url}}" onclick="ga('send', 'event', 'Audio', 'Download', '{{post.featured_media.title}}');" class="call-to-action__button  call-to-action__button--media">
+                            {% trans "Download" %}
+                            <span class="call-to-action__button-label">({{ post.featured_media.file.size|filesizeformat }})</span>
+                    {% endif %}
+                        
+                    </a>
+                </div>
+            </li>
+            <li class="teaser-stacklist-actions-list__item">
+                {% social_media_article %}
+            </li>
+        </ul>
+    </div>
+{% endif %}

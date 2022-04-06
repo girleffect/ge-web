@@ -1,4 +1,4 @@
-.nav {
+ .nav {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -9,19 +9,17 @@
     }
     &-list {
         display: inline-block;
-
         &--search {
             @media screen and (min-width: 991px) {
                 position: absolute;
                 right: -10%;
             }
         }   
-
         &__item {
             display: inline-block;
         }
         &__anchor {
-            color: #000;
+            color: $black;
             cursor: pointer;
             display: block;
             font-size: 16px;
@@ -38,7 +36,7 @@
                 background-size: 100%;
                 content: " ";
                 display: inline-block;
-                margin: 0 10px 0 0;
+                margin: 0 5px 0 0;
                 height: 40px;
                 vertical-align: middle;
                 width: 37px;
@@ -52,7 +50,7 @@
                 width: 45%;
             }
             &:hover:after {
-                border-bottom-color: #000;
+                border-bottom-color: $black;
             }
             &.is-active {
                 background-color: $white;
@@ -60,7 +58,7 @@
         }
     }
     &__dropdown {
-        background-color: #fff;
+        background-color: $white;
         box-shadow: -1px 3px 8px 0 rgb(0 0 0 / 50%);
         display: flex;
         left: 0;
@@ -70,7 +68,7 @@
         right: 0;
         top: 135px;
         @media screen and (min-width: 991px) {
-            padding: 30px 8% 30px 19.5%;
+            padding: 30px 7.5% 30px 19.5%;
         }
         .nav-list__our-story {
             color: $vivid_violet;
@@ -78,6 +76,7 @@
         }
         .nav-list {
             margin: 0 5% 0 0;
+            z-index: 100;
             &__item {
                 display: block;
             }
@@ -120,6 +119,12 @@
     background-image: url($staticPath + 'img/yegna/icon-listen-black.svg');
 }
 
-#search_label:before {
-    background-image: url($staticPath + 'img/yegna/icon-search.svg');
+#search_label {
+    padding: 10px 10px 15px;
+    &:before {
+        background-image: url($staticPath + 'img/yegna/icon-search.svg');
+        height: 35px;
+        width: 30px;
+    }
 }
+

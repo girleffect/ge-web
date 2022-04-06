@@ -48,7 +48,6 @@ video {
 }
 
 audio {
-  height: auto;
   width: 100%;
 }
 
@@ -660,6 +659,10 @@ audio {
   font-size: 18px;
 }
 
+.copyright {
+  padding: 5px 0;
+}
+
 .error-page {
   align-items: center;
   background-color: #ffffff;
@@ -690,6 +693,36 @@ audio {
   padding: 3em 5% 1em;
   overflow: auto;
   overflow: auto;
+}
+.footer--languages {
+  padding: 15px 0 10px;
+}
+.footer--languages .languages-list {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.footer--languages .languages-list__item {
+  display: block;
+}
+.footer--languages .languages-list__label {
+  color: #ffffff !important;
+  font-size: 17px;
+}
+.footer--languages .languages-list__label:before {
+  display: none;
+  visibility: hidden;
+}
+.footer--languages .languages-list__title {
+  color: #ffffff !important;
+  font-size: 17px;
+}
+.footer--languages .languages-list__anchor {
+  color: #ffffff !important;
+  font-size: 17px;
+}
+.footer--languages .languages-list__anchor:before {
+  display: none !important;
+  visibility: hidden;
 }
 .footer .nav {
   align-items: flex-start;
@@ -723,6 +756,9 @@ audio {
   word-wrap: break-word;
   word-break: initial;
 }
+.footer .nav-list__anchor:hover, .footer .nav-list__anchor:focus {
+  color: #00a8b7;
+}
 .footer .search__form {
   width: 100%;
 }
@@ -730,6 +766,14 @@ audio {
   .footer .heading--hero {
     margin: 10px -15px;
   }
+}
+.footer .social-media-list__anchor:hover,
+.footer .social-media-list__anchor:focus {
+  color: #00a8b7;
+}
+.footer .social-media-list__anchor:hover .social-media-list__anchor-title,
+.footer .social-media-list__anchor:focus .social-media-list__anchor-title {
+  color: #00a8b7;
 }
 
 .footerpage {
@@ -2636,6 +2680,9 @@ input[type=search].search__input {
   text-decoration: underline;
   text-underline-position: under;
 }
+.social-media-list__anchor:hover, .social-media-list__anchor:focus {
+  color: #00a8b7;
+}
 .social-media-list__anchor-title {
   color: #b3dcde;
 }
@@ -2658,10 +2705,20 @@ input[type=search].search__input {
 
 .article-page .social-media-list {
   border-top: 3px solid #e7357c;
-  margin: 5% auto 0;
-  padding: 40px 5.5% 20px;
+  margin: 20px auto 0;
+  padding: 20px 15px 20px;
   text-align: center;
-  width: 60%;
+  width: 100%;
+}
+@media (min-width: 991px) {
+  .article-page .social-media-list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 5% auto 0;
+    padding: 40px 5.5% 20px;
+    width: 60%;
+  }
 }
 .article-page .social-media-list__label {
   display: block;
@@ -2675,7 +2732,16 @@ input[type=search].search__input {
 .article-page .social-media-list__item:first-child {
   display: block;
 }
+.article-page .social-media-list__anchor {
+  color: #000;
+}
+.article-page .social-media-list__anchor-icon {
+  margin: 0;
+}
 .article-page .social-media-list__anchor-title {
+  color: #000;
+}
+.article-page .social-media-list__anchor-title.with-icon {
   display: none;
   visibility: hidden;
 }

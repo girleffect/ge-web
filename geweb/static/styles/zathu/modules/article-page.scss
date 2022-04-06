@@ -10,6 +10,10 @@
             padding: 15px;
         }
     }
+    &__thumbnail {
+        width: 100%;
+        height: auto;
+    }
     &__recommendations {
         .teaser-stacklist {
             &__title {
