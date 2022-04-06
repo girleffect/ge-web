@@ -41,5 +41,4 @@ urlpatterns += i18n_patterns(
     path("profiles/", include(profile_urls), name="profiles"),
     path("search/", search_views.search, name="search"),
     path("", include(wagtail_urls)),
-
 )
