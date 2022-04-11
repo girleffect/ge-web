@@ -1,0 +1,149 @@
+.call-to-action {
+    &--backToTop {
+        background: $light_gray;
+        padding: 20px 0 18px 0;
+    }
+    &--forms {
+        background-color: $pale_violet;
+        font-size: 16px;
+        margin: 10px 0;
+        padding: 8px 8px 5px;
+    }
+    &__nav {
+        &-item-text {
+            color: $violet;
+            cursor: pointer;
+            display: block;
+            font-family: 'Baton-Medium';
+            font-size: 16px;
+            padding: 0 0 30px;
+            position: relative;
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+            &--backToTop {
+                color: $violet;
+                cursor: pointer;
+                display: block;
+                font-family: 'Baton-Medium';
+                font-size: 16px;
+                font-weight: 700;
+                padding: 0;
+                position: relative;
+                text-align: center;
+                text-decoration: underline;
+                text-transform: uppercase;
+                &:after {
+                    background-image: url($staticPath + 'img/springster/up-arrow.svg');
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    background-size: auto 100%;
+                    position: absolute;
+                    content: '';
+                    height: 24px;
+                    width: 24px;
+                    top: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }  
+    &__link {
+        color: $violet;
+        cursor: pointer;
+        display: block;
+        font-family: 'Baton-Medium';
+        font-size: 16px;
+        margin: 10px auto 5px;
+        text-align: center;
+        text-transform: uppercase;
+        &--inline {
+            display: inline-block;
+        }
+    }
+    &__submit {
+        align-items: center;
+        background-color: transparent;
+        background-image: url($staticPath + 'img/springster/button-sprite.png');
+        background-position: 0 0;
+        background-size: 1880px 330px;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        font-family: 'Baton-Medium';
+        font-size: 18px;
+        font-weight: 400;
+        height: 40px;
+        justify-content: center;
+        margin: 15px auto 0;
+        max-width: 344px;
+        max-height: 40px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        &--enhanced {
+            &:after {
+                background-color: $violet;
+                border-radius: 5px;
+                content: '';
+                display: block;
+                height: 35px;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 98%;
+            }
+        }
+        &:hover .call-to-action__label, 
+        &:focus .call-to-action__label {
+            text-decoration: underline;
+        }
+    }
+    &__label {
+        display: block;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        z-index: 10;
+    }
+    &__back {
+        color: $violet;
+        cursor: pointer;
+        display: block;
+        font-family: 'Baton-Medium';
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0;
+        position: relative;
+        text-align: left;
+        text-decoration: underline;
+        text-transform: uppercase;
+        &:before {
+            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: auto 100%;
+            content: '';
+            display: inline-block;
+            height: 24px;
+            margin-left: 10px;
+            transform: rotate(-90deg);
+            vertical-align: middle;
+            width: 24px;
+        }
+    }   
+    &--full {
+        background-color: #f1e5ff;
+        padding: 10px 5px 10px 15px;
+    }
+    &--profiles {
+        padding: 10px 0;
+    }
+} 

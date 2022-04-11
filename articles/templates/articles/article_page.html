@@ -1,14 +1,14 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags article_tags theme_tags i18n %}
 
-{% block content %}
-{% get_current_theme as theme %}
+{% block content %} 
     {% if theme.slug == 'ninyampinga' %}
-    {% include "./ninyampinga/articlepage.html" %}
+        {% include "./ninyampinga/article.html" %}
     {% elif theme.slug == 'springster' %}
         {% include "./springster/article.html" %}
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/article.html" %}
     {% elif theme.slug == 'yegna' %}
-        {% breadcrumbs %}
+        {% include "./yegna/article.html" %}
     {% elif theme.slug == 'zathu' %}
         {% include "./zathu/article.html" %}
     {% endif %}

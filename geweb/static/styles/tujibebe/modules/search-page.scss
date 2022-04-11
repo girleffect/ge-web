@@ -1,0 +1,29 @@
+.search-page {
+    background-color: $white;
+
+    .heading__component-title {
+        color: $very_dark_gray;
+        font-size: 25px;
+        font-weight: 700;
+        padding: 25px 0;
+        text-align: center;
+        text-transform: capitalize;
+        &:after {
+            background: #fff url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -440px/245px;
+            content: '';
+            display: block;
+            padding: 10px 0;
+            margin: 0 auto;
+            width: 65%;
+        }
+    }
+    .subheading {
+        font-size: 16px;
+        font-weight: normal;
+        padding: 10px 15px 15px;
+    }
+    .search,
+    .heading__subheading {
+        padding: 0 10px;
+    }
+}

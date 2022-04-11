@@ -1,12 +1,22 @@
+{% load article_tags home_tags wagtailcore_tags wagtailimages_tags %}
+
 <div class="article-page">
-    {% include "./section-banner.html" %}
+    {% include "./_article-banner.html" %}
+
     <div class="article-page__inner">
         <h1 class="heading heading--primary">{{ page.title }}</h1>
         {% if page.subtitle %}
-            <h3 class="heading heading--micro">{{ page.subtitle }}</3>
+            <h3 class="heading heading--micro">{{ page.subtitle }}</h3>
         {% endif %}
+        {% if page.image %}
+            <div class="article-page__image">
+                {% image page.image max-360x200 as article_image %}
+                <img alt="{{ article_image.title }}" src="{{ article_image.url }}" class="article-page__thumbnail"/>
+            </div>
+        {% endif %}
+        {% include_block page.body %}
     </div>
-    
+
     {% if page.tags.all.count %}
         <div class="tags">
             <ul class="tags-list">
@@ -16,6 +26,9 @@
             </ul>
         </div>
     {% endif %}
-    
+    {% social_media_article %}
+    {% if settings.home.SiteSettings.show_comments %}
+        {% include "../_patterns/commenting.html" %}
+    {% endif %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
 </div>

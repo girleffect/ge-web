@@ -1,0 +1,49 @@
+.subheading {
+    color: $very_dark_gray_blue;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.subtitle {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: $very_dark_gray;
+}
+
+.heading {
+    $block: unquote("#{&}");
+    
+    &__primary {
+        color: $white;
+        font-size: 40px;
+    }
+    &__micro {
+        color: $very_dark_gray;
+        display: block;
+        font-size: 18px;
+        font-weight: normal;
+        margin: 18px 0 0;
+        padding: 15px 0 15px;
+        text-align: center;
+        text-transform: uppercase;   
+    }
+    &--section {
+        color: $white;
+    }
+    &--related-up-next {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+
+    &--label {
+        overflow: auto;
+    }
+}
+
+

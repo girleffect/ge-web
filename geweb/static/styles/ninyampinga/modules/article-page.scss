@@ -1,0 +1,60 @@
+.article-page {
+    &:before {
+        content: "";
+        display: block;
+        @each $modifier, $style_element in $section_themes { 
+            &--#{$modifier}  {
+                background-color: map-get($style_element, background_color);
+            }
+        }
+    }
+    &__body {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        justify-content: center;
+        @media screen and (min-width: 991px) {
+            padding: 15px 15%;
+        }
+    }
+    &__recommendations {
+        padding: 15px 10px;
+        @media screen and (min-width: 991px) {
+            padding: 15px 6.5%;
+        }
+        .article-teaser {
+            padding: 20px 0;
+        }
+    }
+}
+
+.block {
+    &-paragraph {
+        font-size: 18px;
+        padding: 10px;
+        p {
+            margin: 5px 0;
+        }
+        ul {
+            padding: 0 20px;
+            li {
+                list-style: disc;   
+            }
+        }
+        ol {
+            padding: 0 20px;
+            li {
+                list-style: decimal;
+            }
+        }
+    }
+
+    &-image {
+        overflow: auto;
+    }  
+    
+    &-media {
+        padding: 10px;
+    }
+}

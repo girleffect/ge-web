@@ -3,7 +3,8 @@
   {% if ancestors %}
     <ul class="breadcrumbs-list">
       <li class="breadcrumbs-list__item">
-        <a href="{{current_site.root_page.url}}" class="breadcrumbs-list__anchor">{% trans "Home" %}</a>
+        {# <!-- {{current_site.root_page.url}} --> #}
+        <a href="/" class="breadcrumbs-list__anchor">{% trans "Home" %}</a>
       </li>
       {% for ancestor in ancestors %}
         <li class="breadcrumbs-list__item">

@@ -1,0 +1,174 @@
+/**
+    THE STYLESHEET HEAVILY TWEAKS THE ARTICLE TEASER TO ACHIEVE THE FOLLOWING UI
+    - When appropriately display homepage article teaser for Latest Articles WITHOU announcement article.
+    - When appropriately display homepage article teaser for Latest Articles WITH announcement article.
+
+    !!NB
+        Please make sure you have throurougly tested your UI change.
+        Make sure you have tested all layout scenarios
+    
+*/
+.homepage {
+    padding: 165px 0 0 0;
+    @media (min-width: 991px) {
+       padding: 0;
+    }
+
+    //!! START: ARTICLE .article-stacklist
+    .article-stacklist {
+        display: block;
+        padding: 15px;
+        @media (min-width: 991px) {
+            padding: 15px 5px 15px 70px;
+        }
+    }
+
+    //START: TEASER .teaser-stacklist
+    .teaser-stacklist {
+        &__thumbnail,
+        &__image {
+            @media (min-width: 991px) {
+                height: 153px;
+                width: 272px;
+            }
+        }
+        &__content {
+            width: auto;
+        }
+
+        //START: teaser-stacklist__item
+        &__item {
+            flex-direction: column;
+            @media (min-width: 991px) {
+                flex-direction: row;
+                display: inline-block;
+                list-style: none;
+                margin: 0 10px;
+                vertical-align: text-top;
+                margin: 0 25px 20px 0;
+                width: 30%;
+    
+                //START HOMEPAGE: ON LATEST - ARTICLE TEASERS
+                &:nth-child(2),
+                &:nth-child(3) {                
+                    min-height: 360px;
+                    width: 240px;
+                }
+            }
+
+            //START: teaser-stacklist__item--full-width 
+            &--full-width {
+                @media (min-width: 991px) {
+                    float: left;
+                    overflow: hidden;
+                    margin: 0 5px 20px;
+                    height: auto;
+                    padding: 0 30px 20px 0;
+                    width: 60%;
+
+                    .teaser-stacklist__thumbnail, 
+                    .teaser-stacklist__image {
+                        height: auto;
+                        min-width: 100%;
+                        max-width: 100%;
+                    }
+                }
+        
+                .teaser-stacklist__content {
+                    padding: 15px 0;
+                    @media (min-width: 991px) {
+                        padding: 15px 0;
+                        overflow: hidden;
+                        min-width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+            //END: teaser-stacklist__item--full-width 
+        }
+        //END: teaser-stacklist__item 
+    }
+
+
+    //START: homepage-column 
+    &-column {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 991px) {
+            flex-direction: initial;
+        }
+        &__one {
+            order: 2;
+            @media (min-width: 991px) {
+                order: 1;
+                width: 75%;
+                .heading--hero {
+                    margin: 10px 5%;
+                }
+            }
+        }
+        &__two {
+            background-color: $bright_orange;
+            order: 1;
+            @media (min-width: 991px) {
+                padding: 0 15px;
+                order: 2;
+                width: 25%;
+                .heading--hero {
+                    margin: 10px -20px;
+                }
+                .teaser-stacklist__item {
+                    flex-direction: column;
+                    height: auto;
+                    width: 100%;
+                }
+                .teaser-stacklist__content {
+                    width: 100%;
+                }
+            }
+        }
+
+        //START: homepage-column--with-side-bar
+        &--with-side-bar {
+            display: block;
+            @media (min-width: 991px) {
+                display: inline-block;
+                justify-content: center;
+                .homepage-column__one,
+                .homepage-column__two {
+                    width: 100%;
+                }
+                
+                .article-stacklist {
+                    padding: 15px 70px;
+                }
+                .teaser-stacklist__thumbnail,
+                .teaser-stacklist__image {
+                    width: 430px;
+                }
+                .teaser-stacklist__item:nth-child(2),
+                .teaser-stacklist__item:nth-child(3) {                
+                    width: 30%;
+                }
+                .teaser-stacklist__item--full-width {
+                    height: auto;
+                    margin: 0 5% 20px 0;
+                    width: 65%;   
+                }   
+            }
+        }
+        //END: homepage-column--with-side-bar
+
+        .teaser-stacklist__item--full-width > .teaser-stacklist__content {
+            @media (min-width: 991px) {
+                white-space: initial;
+                overflow: initial;
+                text-overflow: initial;
+                height: auto;
+            }
+        } 
+    }
+    //END: homepage-column
+}
+

@@ -1,0 +1,89 @@
+.social-media {
+    &-list {
+        display: block;
+        margin: 0;
+        padding: 15px;
+        &__item {
+            display: block;
+            padding: 0 8px 8px 0;
+        }
+        &__label {
+            font-weight: 600;
+        }
+        &__anchor {
+            align-items: center;
+            color: $light_cyan;
+            cursor: pointer;
+            display: flex;
+            font-size: 20px;
+            justify-content: center;
+            text-decoration: underline;
+            text-underline-position: under;
+            &:hover,
+            &:focus {
+                color: $strong_cyan;
+            }
+           
+            &-title {
+                color: $light_cyan;
+            }
+            &-icon { 
+                vertical-align: middle;
+                height: auto;
+                margin-right: 5px;
+                max-height: 50px;
+                max-width: 50px;
+                width: 100%;
+                @media (min-width: 991px) {
+                    margin-right: 25px;
+                }
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.article-page { 
+    .social-media-list {
+        border-top: 3px solid $pink;
+        margin: 20px auto 0;
+        padding: 20px 15px 20px;
+        text-align: center;
+        width: 100%;
+        @media (min-width: 991px) {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 5% auto 0;
+            padding: 40px 5.5% 20px;
+            width: 60%;
+        }
+        &__label {
+            display: block;
+            font-size: 22px;
+            padding: 0 0 10px;
+            text-transform: uppercase;
+        }
+        &__item {
+            display: inline-block;
+            &:first-child {
+                display: block;
+            }
+        }
+        &__anchor {
+            color: $black;
+            &-icon {
+                margin: 0;;
+            }
+            &-title {
+                color: $black;
+                &.with-icon {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}

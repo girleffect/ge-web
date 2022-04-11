@@ -1,0 +1,45 @@
+.footer {
+    background-color: $very_light_gray;
+    padding: 25px 8px;
+    &__inner {
+        overflow: hidden;
+    }
+    &-page {
+        background-color: $white;
+        color: $dark_violet;
+        padding: 0 0 5px;
+    }
+    &-languages {
+        padding: 0 13px;
+    }
+    .languages {
+        background: transparent;
+        padding: 20px 0 5px;
+        margin-left: -8px;
+        &-list {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+            &__item {
+                display: inline;
+            }
+            &__label {
+                color: #5c5c5c;
+                font-size: $large;
+                &:after {
+                    content: ":";
+                    display: inline-block;
+                }
+            }
+            &__anchor {
+                color: $dark_gray;
+                font-size: $small;
+                padding: 0 5px 0 0;
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+

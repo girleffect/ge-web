@@ -1,22 +1,15 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags article_tags static theme_tags %}
 
-
-{% block content %}
-    {% comment %}
-        <!--
-            Ideally should be {% include THEME_PATH|add:"header.html" %} but this does not work.
-        -->
-    {% endcomment %}
-    {% get_current_theme as theme %}
+{% block content %} 
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/home.html" %}
     {% elif theme.slug == 'springster' %}
         {% include "./springster/home.html" %}
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/home.html" %}
     {% elif theme.slug == 'yegna' %}
         {% include "./yegna/home.html" %}
     {% elif theme.slug == 'zathu' %}
         {% include "./zathu/home.html" %}
     {% endif %}
-
 {% endblock content %}

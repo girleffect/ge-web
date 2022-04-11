@@ -25,6 +25,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
     nginx \
     gosu \
+    gettext \
  && rm -rf /var/lib/apt/lists/*
 
 # Add nginx user to wagtail group so that Nginx can read/write to gunicorn socket
@@ -53,6 +54,7 @@ RUN pip install -r /requirements.txt
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
+RUN python manage.py compilemessages
 
 # Runtime command that executes when "docker run" is called, it does the
 # following:

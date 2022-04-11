@@ -1,0 +1,18 @@
+<div class="article-teaser">
+    <div class="teaser-stacklist">
+        {% for post in articlepages %}
+            {% if forloop.counter == 1 %}
+                {% include "./article-teasers.html" %}        
+            {% endif %}
+        {% endfor %}
+        
+        <div class="teaser-stacklist-wrapper">
+            {% for post in articlepages %}
+                {% if not forloop.counter == 1 %}
+                    {% include "./article-teasers.html" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>

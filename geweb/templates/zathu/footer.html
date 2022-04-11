@@ -1,32 +1,37 @@
+{% load article_tags i18n home_tags static wagtailcore_tags theme_tags %}
+
 <footer  id="footer" class="footer">
     <div class="footer__inner">
         {% include "../_patterns/search-input.html" with enhance="footer" %}
-        <!-- Social links here -->
+        {% social_media_footer %}
         <div class="footer-wrapper">
             {% include "../_patterns/nav.html" with suffix="zathu" %}
             {% include "../_patterns/footer-nav.html" with suffix="zathu" %}
         </div>
+        <div class="nav-list footer-profiles">
+            <div class="nav-list__item">
+              {% if not user.is_authenticated %}
+                <a href="{% url 'auth_login' %}" class="nav-list__anchor">{% trans "Log in" %}</a>
+              {% else %}
+                <a href="{% url 'auth_logout' %}" class="nav-list__anchor">{% trans "Log out" %}</a>
+              {% endif %}
+            </div>
+            <div class="nav-list__item">
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'user_register' %}" class="nav-list__anchor">{% trans "Sign up" %}</a>
+                {% else %}
+                    <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">{% trans "Profile" %}</a>
+                {% endif %}
+            </div>
+            {% include "../_patterns/language.html" with position="bottom" %}
+        </div>
     </div>
 
-    <!-- TO BE DYNAMICALLY PULLED THROUGH -->
-    <div class="footer-languages">
-        <ul class="footer-languages-list">
-            <li class="footer-languages-list__item">
-                <label  class="footer-languages-list__label">Languages:</label>
-            </li>
-            <li class="footer-languages-list__item">
-                <a class="footer-languages-list__anchor is-active">English</a>
-            </li>
-            <li class="footer-languages-list__item">
-                <a class="footer-languages-list__anchor">Chichewa</a>
-            </li>
-        </ul>
-    </div>
 
     <div class="copyright">
         <p class="copyright__text">
-            © {% now "Y" %} Zathu. All Rights Reserved.
+            © {% now "Y" %} Zathu. {% trans "All Rights Reserved." %}
         </p>
     </div>
-    
+
 </footer>

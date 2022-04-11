@@ -1,6 +1,6 @@
 .languages {
     background-color: $light_gray;
-    padding: 0 8px;
+    padding: 5px 8px;
     margin: 0 auto;
     &-bar {
         position: relative;
@@ -9,11 +9,16 @@
         text-align: center;
         &__item {
             display: inline-block;
+            margin: 0 3px 0;
         }
         &__anchor {
             color: $dark_gray;
-            &.is-active {
+            font-size: 12px;
+            text-transform: uppercase;
+            text-decoration: none;
+            &:hover, focus {
                 color: $strong_cyan;
+                text-decoration: underline;
             }
         }
     }

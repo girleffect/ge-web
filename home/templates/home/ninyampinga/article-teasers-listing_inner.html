@@ -3,7 +3,8 @@
 <div class="teaser-stacklist__item{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}">
     {% if post.image %}
         <div class="teaser-stacklist__thumbnail">
-            {% image post.image fill-360x160 as article_image %}
+           
+            {% image post.image width-600 as article_image %}
             <a href="{% pageurl post %}" class="teaser-stacklist__thumbnail-link">
                 <img alt="{{ post.title }}" src="{{ article_image.url }}" class="teaser-stacklist__image"/>
             </a>
@@ -20,7 +21,7 @@
             <p class="teaser-stacklist__caption"> 
                 {% for post_field in post.body %}
                     {% if post_field.block_type == 'paragraph' %}
-                        {{ post_field|truncatewords:140 }}
+                        {{ post_field|truncatewords:60 }}
                     {% endif %}
                 {% endfor %}
             </p>
@@ -47,14 +48,9 @@
                 {% endfor %}
             </ul>
         </div>
-
-
-        {% with parent=post.get_parent %}
-            <a href="{% pageurl parent %}" class="call-to-action__submit">
-                {% trans "Click here" %}
-            </a>
-        {% endwith %}
-        
+        <a href="{% pageurl post %}" class="call-to-action__submit">
+            {% trans "Click here" %}
+        </a>
     </div>  
 </div>
 

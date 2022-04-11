@@ -1,0 +1,83 @@
+.pagination {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 0;
+    @media screen and (min-width: 991px) {
+        padding: 15px 0 0;
+    }
+
+    &__item {
+        padding: 5px 10px;
+        @media screen and (min-width: 991px) {
+            padding: 5px 20px;
+        }
+    }
+    &__num {
+        color: $pink;
+        text-decoration: underline;
+    }
+
+    &__anchor {
+        background-color: $pink;
+        box-shadow: 9px 9px 0 0 $vivid_yellow;
+        border: none;
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 15px 15px 0;
+        overflow: hidden;
+        padding: 8px 15px;
+        text-decoration: none;
+        vertical-align: middle;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+
+        &--prev {
+            &:before {
+                display: inline-block;
+                border-top: 7px solid transparent;
+                border-right: 15px solid #fff;
+                border-bottom: 7px solid transparent;
+                content: " ";
+                height: 0;
+                margin: 0 0 0 5px;
+                position: inherit;
+                top: 1px;
+                width: 0;
+            }
+            &:hover,
+            &:focus {
+                box-shadow: none;
+                color: $vivid_yellow;
+                &:before {
+                    border-right-color: $vivid_yellow;
+                }
+            }
+        }
+        &--next {
+            &:after {
+                display: inline-block;
+                border-top: 7px solid transparent;
+                border-left: 15px solid #fff;
+                border-bottom: 7px solid transparent;
+                content: " ";
+                height: 0;
+                margin: 0 0 0 5px;
+                position: inherit;
+                top: 1px;
+                width: 0;
+            }
+            &:hover,
+            &:focus {
+                box-shadow: none;
+                color: $vivid_yellow;
+                &:after {
+                    border-left-color: $vivid_yellow;
+                }
+            }
+        }
+        
+    }
+}

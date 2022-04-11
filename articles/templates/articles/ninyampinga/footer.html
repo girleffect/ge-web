@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+
+<div class="footerpage">
+    <h1 class="subheading">{{ page.title }}</h1>
+    <div class="footerpage__body">
+        {% if page.subtitle %}
+            <p class="subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+
+        {% include_block page.body %}
+    </div>
+</div>

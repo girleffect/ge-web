@@ -1,30 +1,59 @@
 .languages {
+    width: auto;
     &__label {
         color: #fff;
         cursor: pointer;
         display: inline-block;
         font-size: $standard;
         text-transform: uppercase;
-        padding: 10px 20px;
-        height: 45px;
+        padding: 5px;
+        @media (min-width: 991px) {
+            padding: 10px 20px;
+            height: 45px;
+        }
         &:before {
-            background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
-            background-position: 0 -75px;
-            background-size: 45px;
+            background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
+            background-position: 0 -45px;
+            background-size: 30px;
             background-repeat: no-repeat;
             content: "";
             display: inline-block;
-            height: 50px;
+            height: 40px;
             vertical-align: middle;
-            width: 50px;
+            width: 35px;
+            @media (min-width: 991px) {
+                background-position: 0 -50px;
+                background-size: 35px;
+                height: 45px;
+                width: 45px;
+                padding: 5px 0;
+            }
         }
         &:hover,
         &:focus {
             color: $pink;
         }
         &.is-active {
-            background-color: #fff;
             color: $pink;
+            text-decoration: underline;
+            @media (min-width: 991px) {
+                background-color: $white;
+            }
+            &:before {
+                background-position: 0 -115px;
+                background-size: 25px;  
+                //display: block;
+                height: 20px;
+                padding: 5px;
+                width: 25px;
+                @media (min-width: 991px) {
+                    background-position: 0 -155px;
+                    background-size: 35px;
+                    padding: 5px 0;
+                    height: 40px;
+                    width: 45px;
+                }
+            }
         }
     }
     &__checkbox {
@@ -39,13 +68,24 @@
         height: auto;
         left: 0;
         margin: 0 auto;
-        padding: 60px 10% 45px 20%;
+        padding: 15px;
         position: absolute;
         right: 0;
-        top: 65px;
+        top: 165px;
+        @media (min-width: 991px) {
+            padding: 60px 10% 45px 20%;
+            top: 65px;
+        }
     }
     
     &-list {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        @media (min-width: 991px) {
+            flex-direction: row;
+        } 
         &__item {
             display: inline-block;
             padding: 5px;
@@ -53,7 +93,7 @@
         &__label {
             padding-right: 35px;
             &:before {
-                background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+                background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
                 background-position: 0 -75px;
                 background-size: 45px;
                 background-repeat: no-repeat;
@@ -74,8 +114,36 @@
         }
         &__anchor {
             color: $pink;
+            display: inline-block;
+            font-size: $medium_small;
+            font-weight: 700;
+            opacity: 1;
+            text-decoration: underline;
+            text-underline-position: under;
+            text-transform: uppercase;
             .is-active {
-                color: $dark_grey;
+                color: $dark_gray;
+            }
+            &[hreflang = 'rw'], 
+            &[hreflang = 'en'] {
+                color: $pink;
+                &:before {
+                    content: '';
+                    background-image: url($staticPath + 'img/ninyampinga/iconsSprite.png');
+                    background-size: 70px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+            &[hreflang = 'rw']:before {
+                background-position: 0 69.5%;
+            }
+            
+            &[hreflang = 'en']:before {
+                background-position: 0 73.5%;
             }
         }
     }

@@ -1,0 +1,27 @@
+//ARTICLE TEASER 
+.teaser-tags-list {
+    &__item {
+        color: $dark_violet;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0 8px 0 0;
+        text-transform: lowercase;
+    }
+
+}
+
+//ARTICLE PAGE TAGS
+.tags-list {
+    margin: 0 auto 10px;
+    padding: 10px;
+    &__item {
+        background: $light_gray_red;
+        color: #000;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 5px 0;
+        padding: 5px;
+    }
+}

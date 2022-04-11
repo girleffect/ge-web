@@ -1,0 +1,48 @@
+.social-media {
+    &-list {
+        background-color: $very_light_gray;
+        display: block;
+        text-align: right;
+        margin: 15px auto;
+        padding: 15px;
+        @media (min-width: 991px) {
+            padding: 25px 15px;
+            width: 60%;
+        }
+        &__item {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 8px;
+        }
+        &__anchor {
+            color: $black;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            &-title {
+                color: $black;
+                display: inline-block;
+                font-size: 13px;
+                visibility: visible;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &-icon { 
+                vertical-align: middle;
+                margin-right: 5px;
+                height: auto;
+                max-height: 20px;
+                width: 25px;
+                & ~ .social-media-list__anchor-title {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+        }
+        &__label {
+            font-weight: bold;
+        }
+        
+    }
+}

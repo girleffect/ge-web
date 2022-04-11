@@ -1,0 +1,10 @@
+.profiles {
+    background-color: $white;
+    &:after {
+        @include line-break-pattern;
+    }
+    &__inner {
+        margin: 0 10px;
+        background-color: $very_light_gray;
+    }
+}

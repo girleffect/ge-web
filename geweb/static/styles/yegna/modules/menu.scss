@@ -1,5 +1,11 @@
 .menu {
     align-items: center;
     display: flex;
-    justify-content: left;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 99;
+    @media (min-width: 492px) {
+        flex-direction: row;
+    } 
 }

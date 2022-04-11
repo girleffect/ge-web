@@ -1,0 +1,49 @@
+{% load i18n static wagtailcore_tags wagtailimages_tags %}
+
+<div class="search-page">
+    <div class="heading heading--component">
+        <h1 class="heading__component-title">{% trans "Search" %}</h1>
+    </div>
+    {% if search_results %}
+        <div class="component">
+            <h2 class="subheading">{{ search_results|length }} {% trans "results found for" %} "{{search_query}}".</h2>
+        </div>
+    
+        <div class="article-teaser">
+            <div class="teaser-stacklist">
+                {% for post in search_results.object_list %}
+                    {% include "../_patterns/article-teasers.html" %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="pagination">
+            <div class="pagination__item">
+                {% if search_results.has_previous %}
+                    <a href="{% url 'search' %}?q={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}" class="pagination__anchor pagination__anchor--prev">
+                        {% trans "Prev" %}
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="pagination__item">
+                <p class="pagination__num">{% trans "Page" %} {{ search_results.number }} {% trans "of" %} {{ search_results.paginator.num_pages }}</p>
+            </div>
+
+            <div class="pagination__item">
+                {% if search_results.has_next %}
+                    <a href="{% url 'search' %}?q={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}" class="pagination__anchor pagination__anchor--next">
+                        {% trans "Next" %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+       
+    {% elif search_query %}
+        <h2 class="heading__subheading">{% trans "Nothing was found matching" %} {{search_query}}</h2>
+        {% include "../_patterns/search-input.html" %}
+    {% else %}
+        <h2 class="heading__subheading">{% trans "Please type something into the search box" %}</h2>
+        {% include "../_patterns/search-input.html" %}
+    {% endif %}
+</div>

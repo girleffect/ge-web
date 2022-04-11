@@ -1,0 +1,9 @@
+{% load i18n wagtailsettings_tags %}
+<div class="profiles">
+    <div class="component">
+        <div class="component__super">
+            <h1 class="super-title">{% trans "My profile" %} - {{request.user.username}}</h1>
+        </div>
+    </div>
+    {% include "../_patterns/profile-form.html" %}
+</div>

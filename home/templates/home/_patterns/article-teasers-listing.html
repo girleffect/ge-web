@@ -1,8 +1,8 @@
 
-{% for post in articlepages %}
-    {% if post.feature_in_homepage %}
-        {% include "./article-teasers-listing_inner.html" %}
-    {% endif %}
-{% endfor %}
+{% if post.feature_in_homepage %}  
+    {% include "./article-teasers-listing_inner.html" %}
+{% endif %}
+
+
 
 

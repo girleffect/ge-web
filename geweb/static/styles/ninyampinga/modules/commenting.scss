@@ -1,0 +1,129 @@
+/*
+    !! This needs to be applied and tested to comments
+        Class name selectors on markup must be used 
+*/
+.commenting {
+    &--on-article {
+        text-align: center;
+        padding: 15px 15% 40px;
+        &:before {
+            content: "";
+            margin: 10px auto;
+            padding: 10px 20px;
+            text-align: center;
+            border-top: 3px solid $pink;
+            width: 50%;
+        }
+        textarea {
+            margin: 0 auto;
+            height: 250px;
+            width: 670px;
+        }
+    }
+    
+
+    &__counter {
+        background: url($staticPath + 'img/ninyampinga/iconsSprite.svg') no-repeat 0 -25.7em/32px;
+        display: inline-block;
+        text-decoration: none;
+        height: 40px;
+        margin: 0 auto;
+        vertical-align: middle;
+        width: 45px;
+        &-num {
+            color: $white;
+            font-size: 16px;
+            margin: 5px 0;
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    }
+    &__label {
+        color: $dark_gray;
+        display: inline-block;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        position: relative;
+        &__item {
+            background-color: $white;
+            display: block;
+        }
+    }
+    &-form {
+        padding: 0 10px;
+    }
+    &-thread {
+        padding: 10px 0 0;
+        border-bottom: 4px solid $pink;
+        &__alias {
+            color: $dark_gray_blue;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 5px 10px;
+            &-removed {
+                color: $dark_gray;
+                padding: 10px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+        &__msg {
+            color: $dark_gray_blue;
+            font-size: 16px; 
+            padding: 5px 10px;
+        }
+        &__publish-date {
+            color: $dark_gray_blue;
+            font-size: 12px;
+            padding: 5px 5px 0 10px;
+            font-weight: 700;
+        }
+    }
+    &-cta {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 10px 10px;
+        &__label {
+            color: $pink;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    }
+    
+    &-replies {
+        background-color: $dark_gray_blue;
+        padding: 10px 0 0;
+        &-title {
+            color: $dark_gray;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 8px 10px 10px;
+        }
+        &__feedback {
+            color: $dark_gray_blue;
+            display: block;
+        }
+    }
+    .heading--component {
+        padding: 10px 0;
+    }
+
+    .heading__component-title {
+        font-size: 38px;
+        text-transform: inherit;
+    }
+
+    .commenting-form {
+        width: 100%;
+    }
+}

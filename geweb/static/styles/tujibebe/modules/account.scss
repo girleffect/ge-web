@@ -1,0 +1,22 @@
+.account {
+    &-list {
+        text-align: center;
+        &__item {
+            margin: 0 0 10px;
+            &--leading {
+                display: inline-block;
+            }
+        }
+        &__label {
+            color: $very_dark_gray;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 16px 0 10px 0;
+        }
+        &__info {
+            display: inline-block;
+            text-transform: capitalize;
+        }
+    }
+}

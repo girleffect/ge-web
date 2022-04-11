@@ -1,0 +1,40 @@
+.social-media {
+    &-list {
+        display: block;
+        text-align: center;
+        margin: 0;
+        padding: 0 0 15px;
+        &__item {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 8px;
+        }
+        &__anchor {
+            color: $blue;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            &-title {
+                color: $blue;
+            }
+            &-icon { 
+                height: auto;
+                margin-right: 5px;
+                max-height: 21px;
+                max-width: 21px;
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
+        
+    }
+}
+
+.article-page { 
+    .social-media-list {
+        &__anchor-title {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}

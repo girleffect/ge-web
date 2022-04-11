@@ -3,25 +3,22 @@
 
     &__title {
         color: $vivid_violet;
-        display: inline-block;
+        display: block;
         font-size: 27px;
         padding: 15px 0;
-        &:before {
-            content: "";
-            display: inline-block;
-            height: 40px;
-            margin: 0 0.5em 0 0;
-            vertical-align: middle;
-            width: 30px;
-        }
+        text-align: center;
     }
-
     &--primary {
         color: $vivid_violet;
         font-size: 32px;
     }
-
+    &--micro {
+        color: $black;
+        font-size: 18px;
+        font-weight: normal;
+    }
     &-full {
+        padding: 10px 0;
         &:before {
             background: url($staticPath + 'img/yegna/divider.svg') no-repeat center 0/cover;
             border-top-right-radius: 10px;
@@ -32,11 +29,20 @@
             padding: 15px;
             width: auto;
         }
-        .heading__title:before {
-            background: url($staticPath + 'img/yegna/icon-diamond.svg') no-repeat center / auto;
+        .heading__title {
+            text-align: left;
+            &:before {
+                background: url($staticPath + 'img/yegna/icon-diamond.svg') no-repeat center / auto;
+                content: "";
+                display: inline-block;
+                height: 20px;
+                margin: 0 10px 0;
+                width: 30px;
+            }
         }
     }
     &-mid {
+        padding: 10px 0;
         &:before {
             background: url($staticPath + 'img/yegna/divider.svg') no-repeat  25px -45px/auto;
             border-top-right-radius: 10px;
@@ -47,8 +53,36 @@
             padding: 15px;
             width: auto;
         }
-        .heading__title:before {
-            background: url($staticPath + 'img/yegna/icon-characters.svg') no-repeat  center / auto;
+        .heading {
+            &__title {
+                text-align: left;
+                &:before {
+                    background: url($staticPath + 'img/yegna/icon-characters.svg') no-repeat  center / auto;
+                    content: "";
+                    display: inline-block;
+                    height: 30px;
+                    margin: 0 20px 0;
+                    width: 30px;
+                }
+            }
+            &--primary {
+                padding: 0 30px 0;
+            }
         }
+    }
+}
+
+.subheading {
+    color: $black;
+    display: inline-block;
+    font-size: 27px;
+    padding: 15px 0;
+    &:before {
+        content: "";
+        display: inline-block;
+        height: 40px;
+        margin: 0 0.5em 0 0;
+        vertical-align: middle;
+        width: 30px;
     }
 }

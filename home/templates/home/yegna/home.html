@@ -1,28 +1,42 @@
-{% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
+{% load i18n wagtailcore_tags %}
 
-
-<div class="component-title">
-    <div class="component-title__super">
-        <h1 class="heading heading--primary">
-            Yegna launched the first ever teen TV Drama in Ethiopia
-        </h1>
-    </div>
-    {% include "./banner.html" %}
-</div>
-
+{% block extra_css %}
+    <style>
+        body.yegna {
+            background: url('https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/home-bg.svg') no-repeat center/100%;
+        }
+    </style>
+{% endblock %}
 
 <div class="homepage">
-    <div class="homepage__inner">
+    <div class="component-title">
+        <div class="component-title__super">
+            <h1 class="heading heading--primary">
+                {% trans "Yegna launched the first ever teen TV Drama in Ethiopia" %}
+            </h1>
+        </div>
+    </div>
+    
+    {% if page.banners %}
+        {% for banner in page.banners %}
+            {% if forloop.counter == 1 %}
+                {% include "../_patterns/banner.html" %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
 
+    <div class="homepage__inner">
         <div class="homepage__column-main">
             <div class="heading-full">
-                <h2 class="heading__title">Yegna news</h2>
+                <h2 class="heading__title">{% trans "Yegna news" %}</h2>
             </div>
 
-            <div class="article-teasers">
+            <div class="teaser-stacklist teaser-stacklist--featured-main">
                 {% for post in articlepages %}
-                    {% if post.feature_in_homepage %}
-                        {% include "../_patterns/article-teasers-listing_inner.html" %}
+                    {% if not post.get_parent|slugify == 'cast' %}
+                        {% if post.feature_in_homepage %}
+                            {% include "./_article-teasers.html" %}
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
             </div>
@@ -30,7 +44,18 @@
 
         <div class="homepage__column-side">
             <div class="heading-mid">
-                <h2 class="heading__title">Meet the characters</h2>
+                <h2 class="heading__title">{% trans "Meet the characters" %}</h2>
+            </div>
+            <div class="teaser-stacklist">
+                {% for post in articlepages %}
+                    {% if post.get_parent|slugify == 'cast' %}
+                        {% if post.feature_in_homepage %}
+                            {% with post=post.specific %}
+                                {% include "./_article-teasers.html" %}
+                            {% endwith %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
 

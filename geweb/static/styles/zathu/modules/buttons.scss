@@ -3,15 +3,24 @@
     
     &__submit {
         background-color: $dark_violet;
+        border: none;
         color: $yellow;
         cursor: pointer;
+        display: block;
         font-size: 18px;
         font-family: "TwCenMTStd-Bold";
-        display: block;
-        margin: 0 auto;
+        margin: 10px auto;
         padding: 10px 25px;
         text-transform: uppercase;
         text-decoration: none;
+        text-align: center;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+        width: 84%;
+        &:hover, &:focus {
+            background-color: $dark_blue;
+        }
     }
     &__link {
         color: $dark_violet;
@@ -20,6 +29,28 @@
         margin: 0 auto;
         text-decoration: underline;
         text-transform: uppercase;
+    }
+    &__back {
+        color: $dark_violet;
+        cursor: pointer;
+        display: block;
+        font-family: "TwCenMTStd-Bold";
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0;
+        position: relative;
+        text-align: left;
+        text-decoration: underline;
+        text-transform: uppercase;
+        &:before {
+            content: ' →';
+            display: inline-block;
+            transform: rotate(180deg);
+            margin: 0 5px 0 0;
+        }
+    }   
+    &--full {
+        padding: 10px 5px 10px 15px;
     }
     &--profiles {
         text-align: center;

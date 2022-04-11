@@ -8,15 +8,18 @@
         padding: 0 15px;
     }
     &--hero {
-        background-image: url($staticPath + '/img/ninyampinga/ShapesSprites.png');
+        background-image: url($staticPath + 'img/ninyampinga/ShapesSprites.png');
         background-repeat: no-repeat;
         background-position: -10px -4074px;
         background-size: 125px;
         height: 55px;
         display: inline-block;
         padding: 25px 22px;
-        margin: 10px 0;
+        margin: 10px -15px;
         text-align: center;
+        @media (min-width: 991px) {
+            margin: 10px 0;
+        }
     }
     &--primary {
         font-family: $heebo;
@@ -24,9 +27,19 @@
         padding: 15px 0;
         position: relative;
     }
+    &--related-up-next {
+        display: inline-block;
+        padding: 2px 10px;
+    }
     @each $theme, $color in $themes {
         &--#{$theme} .section-page__title {
             background-color: $color;
+        }
+    }
+    @each $modifier, $style_element in $section_themes { 
+        .heading--#{$modifier} {
+            background-color: map-get($style_element, background_color);
+            color: map-get($style_element, text_color);
         }
     }
 }

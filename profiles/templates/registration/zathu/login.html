@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<div class="profiles">
+    <div class="component">
+        <div class="component__super">
+            <h1 class="super-title">{% trans "Log in" %}</h1>
+        </div>
+    
+        <div class="component__subtitle">
+            <a href="/profiles/register/" class="component__anchor">
+                <p class="subtitle">{% trans "Are you not a member yet? Sign up" %}</p>
+            </a>
+        </div>
+    </div>
+    <div class="profiles__inner">
+        {% include "../_patterns/login-form.html" %}
+        <div class="call-to-action--profiles">
+            <a href="/profiles/forgot-password/" class="call-to-action__link">
+                {% trans "Forgotten your pin?" %}
+            </a>
+        </div>
+    </div>
+</div>

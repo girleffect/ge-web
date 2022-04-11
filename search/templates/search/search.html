@@ -1,19 +1,15 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags theme_tags %}
 
-
-
-{% block title %}{% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}Zathu | {% endif %} Search{% endblock %}
 {% block content %}
-   <div class="content">
     {% if theme.slug == 'ninyampinga' %}
-        Ninyampinga 
+        {% include "./ninyampinga/search.html" %}
     {% elif theme.slug == 'springster' %}
         {% include "./springster/search.html" %}
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/search.html" %}
     {% elif theme.slug == 'yegna' %}
-    
-    {% elif theme.slug == 'zathu' or theme.slug == 'default'  %}
-    
+        {% include "./yegna/search.html" %}
+    {% elif theme.slug == 'zathu' %}
+        {% include "./zathu/search.html" %}
     {% endif %}
-    </div>
 {% endblock %}

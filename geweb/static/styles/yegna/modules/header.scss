@@ -14,8 +14,9 @@
     }
 
     &-wrapper {
+        padding: 5px 10px;
         @media (min-width: 991px) {
-            padding: 10px 8%;
+            padding: 0 7.5% 10px;
         }
     
     }

@@ -1,52 +1,66 @@
-{% load wagtailcore_tags %}
+{% load article_tags wagtailcore_tags %}
 
+{% section_pages as sections %}
 <div class="nav-dropdown dropdown">
     <div class="nav-primary">
-      <div class="nav-primary-column nav-primary-column-one">
-        <ul class="nav-list">
-          <li class="nav-list__item">
-            <a href="/" class="nav-list__anchor{% if request.path == '/' %} is-selected{% endif %}">
-              Home
-            </a>
-          </li>
+        <div class="nav-primary-column nav-primary-column-one">
+            <ul class="nav-list">
+                <li class="nav-list__item">
+                    <a href="/" class="nav-list__anchor{% if request.path == '/' %} is-selected{% endif %}">
+                        {% trans 'Home' %}
+                    </a>
+                </li>
 
-          <li class="nav-list__item">
-            {% if not user.is_authenticated %}
-              <a href="{% url 'auth_login' %}" class="nav-list__anchor">Sign up</a>
-            {% else %}
-              <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">Profile</a>
-            {% endif %}
-          </li>
+                <li class="nav-list__item">
+                    {% if not user.is_authenticated %}
+                        <a href="{% url 'auth_login' %}" class="nav-list__anchor">{% trans 'Sign up' %}</a>
+                    {% else %}
+                        <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">{% trans 'Profile' %}</a>
+                    {% endif %}
+                </li>
 
-          <li class="nav-list__item">
-            {% if not user.is_authenticated %}
-              <a href="{% url 'auth_login' %}" class="nav-list__anchor">Log in</a>
-            {% else %}
-              <a href="{% url 'auth_logout' %}" class="nav-list__anchor">Log in</a>
-            {% endif %}
-          </li>
-        </ul>
-      </div>
+                <li class="nav-list__item">
+                    {% if not user.is_authenticated %}
+                        <a href="{% url 'auth_login' %}" class="nav-list__anchor">{% trans 'Log in' %}</a>
+                    {% else %}
+                        <a href="{% url 'auth_logout' %}" class="nav-list__anchor">{% trans 'Log in' %}</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
 
-      <div class="nav-primary-column nav-primary-column-two">
-        <h4 class="nav__title">Featured:</h4>
-        <ul class="nav-list nav-list--column-three">
-         
-        </ul>
-      </div>
-     
-      <div class="nav-primary-column nav-primary-column-three">
-        <h4 class="nav__title">News and stories:</h4>
-        <ul class="nav-list">
-          {% if sections %}
-            {% for section_cat in sections %}
-              <li class="nav-list__item">
-                <a href="{% pageurl section_cat.specific %}" class="nav-list__anchor">{{section_cat.title}}</a>
-              </li>
-            {% endfor %}
-          {% endif %}
-        </ul>
-      </div>
     
+       {% if sections %}
+       {% comment %}
+       <!-- COMMENT OUT - THIS IS NOT CATERED FOR ON THE CMS-->
+       <!-- 
+        <div class="nav-primary-column nav-primary-column-two">
+            <h4 class="nav__title">Featured:</h4>
+            <ul class="nav-list nav-list--column-three">
+                {% for section in sections %}
+                    {% if section.show_in_menus == True %}
+                        <li class="nav-list__item">
+                            <a href="{% pageurl section.specific %}" class="nav-list__anchor">{{section.title}}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        -->
+        {% endcomment %}
+        
+        <div class="nav-primary-column nav-primary-column-three">
+            <h4 class="nav__title">{% trans 'News and stories' %}:</h4>
+            <ul class="nav-list">
+                {% for section in sections %}
+                    {% if section.show_in_menus == False %}
+                        <li class="nav-list__item">
+                            <a href="{% pageurl section.specific %}" class="nav-list__anchor">{{section.title}}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+      {% endif %}
     </div>
   </div> 

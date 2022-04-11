@@ -1,9 +1,11 @@
 .footer {
+    overflow: auto;
+    width: 100%;
     &-page {
-        background: #000;
-        text-align: center;
+        color: $black;
+        text-align: left;
         @media (min-width: 991px) {
-            padding: 20px 8%;
+            padding: 20px 7.5%;
         } 
     }
     &__inner {
@@ -11,17 +13,26 @@
         background: $lime_green url($staticPath + 'img/yegna/bg.svg') no-repeat 0 0/auto;
         display: flex;
         justify-content: space-between;
-        padding: 50px 8%; 
+        @media (min-width: 991px) {
+            padding: 50px 7.5%;
+        } 
     }
 
     .nav-list__anchor {
-        text-decoration: underline;
-        &::before {
+        text-decoration: none;
+        padding: 10px 15px 0 0;
+        &:hover {
+            text-decoration: underline;
+            text-underline-position: below;
+            &:after,
+            &:before {
+                display: none;
+                visibility: hidden;
+            }
+        }
+        &:before {
             display: none;
             visibility: hidden;
         }
     }
-
-
-    
 }

@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% load article_tags %}
 
 {% block content %}
-{% get_current_theme as theme %}
     {% if theme.slug == 'ninyampinga' %}
         {% include "./ninyampinga/footer.html" %}
     {% elif theme.slug == 'springster' %}
         {% include "./springster/footer.html" %}
+    {% elif theme.slug == 'tujibebe' %}
+        {% include "./tujibebe/footer.html" %}
     {% elif theme.slug == 'yegna' %}
         {% include "./yegna/footer.html" %}
     {% elif theme.slug == 'zathu' %}

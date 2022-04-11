@@ -1,0 +1,17 @@
+{% load i18n static wagtailsettings_tags wagtailcore_tags %}
+
+<div class="profiles">
+    <div class="component">
+        <div class="component__super">
+            <h1 class="super-title">{% trans "Thank you for joining!" %} {{request.user.username}}</h1>
+        </div>
+        <div class="component__subtitle">
+            <p class="subtitle"> {% trans "Let us know more about yourself." %}</p>
+        </div>
+    </div>
+    {% include "../_patterns/profile-form.html" %}
+    <div class="call-to-action--profiles">
+        <a href="{% url 'view_my_profile' %}" class="call-to-action__link">{% trans "Profile" %}</a>
+        <a href="/" class="call-to-action__link">{% trans "Home Page" %}</a>
+    </div>
+</div>

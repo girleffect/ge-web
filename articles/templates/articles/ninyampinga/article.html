@@ -1,0 +1,44 @@
+{% load i18n home_tags threadedcomments_tags wagtailcore_tags %}
+
+
+{% with parent=page.get_parent %}
+
+{% comment %}
+    <!-- 
+        !!! {{  parent.css_color }} on an article is empty
+    -->
+{% endcomment %}
+
+<div class="article-page article-page--{{  parent.css_color }}">
+    {% include "../_patterns/breadcrumbs.html" %}
+    <div class="article-page__body">
+        <div class="article-heading">
+            <h1 class="heading__primary">{{ page.title }}</h1>
+        </div>
+        {% if page.subtitle %}
+            <p class="subheading">{{ page.subtitle }}</p>
+        {% endif %}
+        <a href="#comments" class="call-to-action__nav-link">
+            <div class="commenting__counter">
+                <span class="commenting__counter-num">0</span>
+            </div>
+        </a>
+
+        {% include_block page.body %}
+    </div>
+    {% if page.tags.all.count %}
+        <div class="tag-cloud">
+            <h3 class="heading heading__micro">{% trans "Read more about" %}</h3>
+            <ul class="tag-cloud-list">
+                {% for tag in page.tags.all %}
+                    <li class="tag-cloud-list__item">#{{ tag.name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% include "../_patterns/commenting.html" %}
+    {% social_media_article %}
+    {% include "./article-teasers-recommendations.html" %}
+</div>
+{% endwith %}

@@ -1,0 +1,56 @@
+html, body {
+    background: $dark_gray_blue;
+    position: relative;
+}
+
+body {
+    font-size: 15px;
+    font-family: $poppins;
+    font-weight: 400;
+    margin: 0 auto;
+    line-height: 1.3;
+    overflow: auto;
+   
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+ul, ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+iframe,
+video,
+audio {
+    width: 100%;
+}
+
+iframe {
+    min-height: 240px;
+}
+
+a {
+    text-decoration: underline;
+}
+
+
+//!! IMPORTANT RULE
+.tujibebe {
+    background-color: $white;
+    margin: 0 auto;
+    width: 360px;
+}

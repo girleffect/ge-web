@@ -1,0 +1,22 @@
+.search-page {
+    text-align: center;
+    &:after {
+        @include line-break-pattern;
+    }
+    .heading--primary {
+       padding: 15px 15px 5px;
+    }
+    .article-teaser {
+        padding: 50px 0 10px;
+    }
+    .teaser-stacklist {
+        align-items: flex-start;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        overflow: hidden;
+        padding: 0 8px;
+        justify-content: space-between;
+        text-align: left;
+    }
+}

@@ -1,5 +1,5 @@
 .subheading {
-    color: #4e5358;
+    color: $dark_grayish;
     display: block;
     font-family: 'Baton-Regular';
     font-size: 24px;
@@ -35,6 +35,12 @@
         text-align: center;
         text-transform: uppercase;   
     }
+    &__component-title {
+        color: $dark_grayish;
+        font-family: 'Baton-Medium';
+        font-size: 24px;
+        text-transform: uppercase;
+    }
     &--section {
         color: #fff;
     }
@@ -46,8 +52,17 @@
         text-transform: uppercase;
     }
 
-    &--label {
-        
+    &--component {
+        padding: 55px 0 30px;
+        text-align: center;
+        &:after {
+            background: url($staticPath + 'img/springster/zig-zag-underline.png') no-repeat 0 0/145px;
+            content: '';
+            height: 10px;
+            margin: 0 auto;
+            display: block;
+            width: 145px;
+        }
     }
 }
 

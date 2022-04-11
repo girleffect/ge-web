@@ -1,0 +1,72 @@
+.call-to-action {
+    &__read-more {
+        color: $black;
+        display: block;
+        padding: 20px 20px 0 0;
+        text-decoration: none;
+        &:after {
+            background: url($staticPath + 'img/yegna/icon-readmore.svg') no-repeat center center/100%;
+            content: "";
+            display: inline-block;
+            height: 15px;
+            margin: 0 0 0 20px;
+            vertical-align: middle;
+            width: 25px;
+        }
+        &:focus,
+        &:hover {
+            color: $vivid_violet;
+        }
+    }
+    &__back {
+        padding: 5px 0 15px;
+        color: $black;
+        text-decoration: none;
+        float: left;
+        &:before {
+            background: url($staticPath + 'img/yegna/icon-readmore.svg') no-repeat center center/100%;
+            content: "";
+            display: inline-block;
+            height: 15px;
+            margin: 0 0 0 20px;
+            transform: rotate(180deg);
+            vertical-align: middle;
+            width: 25px;
+        }
+        &:focus,
+        &:hover {
+            color: $vivid_violet;
+        }
+    }
+    &__button {
+        background-color: $black;
+        color: $white;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 18px;
+        padding: 10px;
+        text-decoration: none;
+        &:before {
+            background: url($staticPath + 'img/yegna/icon-watch-white.svg') no-repeat center center/100%;
+            content: "";
+            display: inline-block;
+            height: 19px;
+            margin: 0 10px 0 0px;
+            vertical-align: middle;
+            width: 14px;
+        }
+        &:focus,
+        &:hover {
+           text-decoration: underline;
+        }
+        &-label {
+            font-size: 12px;
+        }
+    }
+    &__duration {
+        color: $dark_gray;
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+    }
+}

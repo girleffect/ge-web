@@ -1,13 +1,22 @@
 .footerpage {
-    align-items: center;
+    align-items: baseline;
     display: flex;
     flex-direction: column;
     padding: 15px;
-    justify-content: center;
+    justify-content: flex-start;
     @media screen and (min-width: 991px) {
-        padding: 50px 15% 30px;
+        padding: 50px 6.5% 30px;
     }
     .component {
         align-self: flex-start;
+    }
+}
+
+.block-image {
+    padding: 10px 0;
+}
+.block-paragraph {
+    p {
+        padding: 10px 0; 
     }
 }

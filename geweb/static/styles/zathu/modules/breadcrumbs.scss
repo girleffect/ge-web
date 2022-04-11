@@ -1,0 +1,31 @@
+//AMMED CSS SELECTORS
+.breadcrumbs {
+    background-color: $white;
+    padding: 10px 0;
+    font-size: 14px;
+    div {
+        position: relative;
+    }
+    &-list {
+        padding: 0 15px;
+        &__item {
+            display: inline-block;
+        }
+        &__anchor {
+            color: $dark_violet;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: capitalize;
+            &:after {
+                color: $dark_blue;
+                content: " / ";
+                font-weight: 100;
+                margin: 0 2px 0 5px;
+            }
+        }
+        &__label {
+            color: $dark_graying_blue;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}}>
+<form method="post" action="{% url 'registration_done' %}" instance={{request.user.profile}} class="profiles__form">
 {% csrf_token %}
     <fieldset>
         <label for="date_of_birth">{% trans "Date of birth" %}</label>
@@ -23,8 +23,6 @@
         </div>
     </fieldset>
     <div class="call-to-action">
-        <input type="submit" value="{% if theme.slug == 'ninyampinga' %}{% trans 'Update' %}{% elif theme.slug == 'springster' %}{% trans 'Save' %}{% elif theme.slug == 'yegna' %}{% trans 'Update' %}{% elif theme.slug == 'zathu' %}{% trans 'Update' %}{% endif %}
-        " class="call-to-action__submit"/>
+        <input type="submit" value="{% if theme.slug == 'ninyampinga' or theme.slug == 'tujibebe' or theme.slug == 'yegna' %}{% trans 'Update' %}{% elif theme.slug == 'springster' %}{% trans 'Save' %}{% elif theme.slug == 'zathu' %}{% trans 'Update' %}{% endif %}" class="call-to-action__submit"/>
     </div>
-    
 </form>

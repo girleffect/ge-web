@@ -1,0 +1,11 @@
+{% load article_tags i18n %}
+<div id="searchBar" class="search{% if enhance %} search--{{enhance}}{% endif %}">
+    <input class="search-radio" type="checkbox" id="search-toggle">
+    <div class="search__bar">
+        <form class="search__form" action="{% url 'search' %}" method="get" novalidate>
+            <label class="search__label" for="search_top">{% trans "Search" %}</label>
+            <input class="search__input" aria-label="Search Input" placeholder="{% trans 'Search' %}" name="q" value="{{ search_query }}" type="text">
+            <input type="submit" value="{% trans 'Search' %}" class="search__cta">
+        </form>
+    </div>
+</div>

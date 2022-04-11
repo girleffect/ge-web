@@ -1,0 +1,15 @@
+{% load i18n %}
+<div class="profiles">
+    <div class="component">
+        <div class="component__super">
+            <h1 class="super-title">{% trans "Hello " %} {{ user.username }}</h1>
+        </div>
+        <div class="component__subtitle">
+            <p class="subtitle">{% trans "Your profile" %}</p>
+        </div>
+        <a href="{% url 'auth_logout' %}" class="call-to-action__link call-to-action__link--left">
+            {% trans "Log out" %}
+        </a>
+    </div>
+    {% include "./account.html" %}
+</div>

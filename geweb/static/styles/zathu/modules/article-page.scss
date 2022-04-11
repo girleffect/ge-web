@@ -1,7 +1,18 @@
 .article-page {
     background-color: $white;
     &__inner {
-        padding: 0 15px;
+        overflow: auto;
+        .heading {
+            padding: 0 15px;
+        }
+        .block-paragraph {
+            color: $dark_violet;
+            padding: 15px;
+        }
+    }
+    &__thumbnail {
+        width: 100%;
+        height: auto;
     }
     &__recommendations {
         .teaser-stacklist {
@@ -27,4 +38,42 @@
             }
         }
     }
+
+    audio {
+        background-color: $dark_violet;
+        color: $white;
+        padding: 20px;
+        width: 87%;
+    }
 }
+
+
+.block {
+    &-paragraph {
+        font-size: 16px;
+        padding: 10px;
+        p {
+            margin: 5px 0;
+        }
+        ul {
+            padding: 0 20px;
+            li {
+                list-style: disc;   
+            }
+        }
+        ol {
+            padding: 0 20px;
+            li {
+                list-style: decimal;
+            }
+        }
+    }
+    &-image {
+        overflow: auto;
+    }  
+    &-media {
+        padding: 10px;
+    }
+}
+
+

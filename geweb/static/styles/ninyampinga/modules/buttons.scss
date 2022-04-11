@@ -3,22 +3,26 @@
     @media (min-width: 991px) {
         padding: 0 0 0 27%;
     }
+    &__back,
     &__submit {
         background-color: $pink;
         box-shadow: 9px 9px 0 0 $vivid_yellow;
         border: none;
-        color: #fff;
+        color: $white;
         display: inline-block;
         font-size: 16px;
-        margin: 25px 15px 15px 0;
+        margin: 10px 15px 15px 0;
         overflow: hidden;
         padding: 8px 15px;
         text-decoration: none;
         vertical-align: middle;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
         &:after {
             display: inline-block;
             border-top: 7px solid transparent;
-            border-left: 15px solid #fff;
+            border-left: 15px solid $white;
             border-bottom: 7px solid transparent;
             content: " ";
             height: 0;
@@ -27,19 +31,47 @@
             top: 1px;
             width: 0;
         }
-        &:hover {
+        &:hover,
+        &:focus {
             box-shadow: none;
             color: $vivid_yellow;
-            #{$block}:after {
+            &:after {
                 border-left-color: $vivid_yellow;
+            }
+        }
+    }
+
+    &__back {
+        &:after {
+            display: none;
+            visibility: hidden;
+        }
+        &:before {
+            display: inline-block;
+            border-top: 7px solid transparent;
+            border-right: 15px solid $white;
+            border-bottom: 7px solid transparent;
+            content: " ";
+            height: 0;
+            margin: 0 0 0 5px;
+            position: inherit;
+            top: 1px;
+            width: 0;
+        }
+        &:hover,
+        &:focus {
+            box-shadow: none;
+            color: $vivid_yellow;
+            &:before {
+                border-right-color: $vivid_yellow;
             }
         }
     }
 
     &__item {
         &--search {
-            background-color: #e7357c;
-            background-image: url($staticPath + '/img/ninyampinga/header-icons.png');
+            background-color: $pink;
+            background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
             background-repeat: no-repeat;
             background-position: -12px -52px;
             background-size: 145%;
@@ -64,5 +96,13 @@
     &__link {
         color: $pink;
     }
-    
+
+    &--full {
+        display: inline-block;
+        padding: 10px;
+        @media (min-width: 991px) {
+            padding: 10px 6.5%;
+        }
+        
+    }
 }

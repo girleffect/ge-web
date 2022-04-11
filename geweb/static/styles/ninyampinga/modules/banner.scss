@@ -1,7 +1,8 @@
 .banner {
     height: 280px;
+    overflow: hidden;
     @media (min-width: 991px) {
-        height: 326px; 
+        height: 326px;
     }
     &__image {
         height: 280px;

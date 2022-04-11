@@ -1,0 +1,40 @@
+.pagination {
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    text-align: center;
+    &__item {
+        position: relative;
+    }
+    &__anchor {
+        color: $blue;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        &--prev:before,
+        &--next:after {
+            background: url($staticPath + 'img/tujibebe/icon-sprite.png') -10px -455px/290px no-repeat;
+            content: '';
+            display: inline-block;
+            margin: 0 auto;
+            height: 15px;
+            padding: 10px 0;
+            vertical-align: middle;
+            width: 30px;
+        }
+        &--prev:before {
+            transform: rotate(-180deg);
+        }
+        &--next:after {
+            transform: rotate(0deg);
+        }
+    }
+}
+

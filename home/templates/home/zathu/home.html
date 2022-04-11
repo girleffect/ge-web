@@ -1,16 +1,46 @@
-{% load wagtailcore_tags wagtailimages_tags article_tags i18n %}
+{% load wagtailcore_tags wagtailimages_tags article_tags i18n home_tags %}
 
 <div class="homepage">
     <div class="article-teaser">
         <div class="teaser-stacklist">
+            <!-- FIRST BANNER POSITION -->
+            {% if page.banners %}
+                {% for banner in page.banners %}
+                    {% if forloop.counter == 1 %}
+                        {% include "../_patterns/banner.html" %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
             {% for post in articlepages %}
                 {% if forloop.counter == 1 %}
                     {% include "../_patterns/article-teasers-listing_inner.html" %}
                 {% endif %}
             {% endfor %}
-            
+
             <div class="teaser-stacklist-wrapper">
-                {% for post in articlepages %}
+                {% for post in articlepages|slice:":6" %}
+                    {% if not forloop.counter == 1 %}
+                        {% include "../_patterns/article-teasers-listing_inner.html" %}
+                    {% endif %}
+                {% endfor %}
+
+            
+                <!--ALL OTHER BANNERS POSITION -->
+                {% if page.banners %}
+                    {% for banner in page.banners %}
+                        {% if not forloop.counter == 1 %}
+                            {% include "../_patterns/banner.html" %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                <!-- FORMS BANNER -->
+                {% for form in forms %}
+                    {% include "../_patterns/forms-page.html" %}
+                {% endfor %}
+
+                {% for post in articlepages|slice:"6:" %} 
                     {% if not forloop.counter == 1 %}
                         {% include "../_patterns/article-teasers-listing_inner.html" %}
                     {% endif %}

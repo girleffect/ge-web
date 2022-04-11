@@ -9,6 +9,10 @@ from wagtail.core.models import Page
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
+from wagtailmedia.edit_handlers import MediaChooserPanel
+
+from .blocks import GEMediaBlock
+from .utils import paginate
 
 from wagtail.admin.edit_handlers import (  # isort:skip
     FieldPanel,
@@ -46,7 +50,11 @@ class SectionPage(Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
-        articlepages = self.get_children().live().order_by("-first_published_at")
+        page = request.GET.get("page", 1)
+        articlepages = (
+            ArticlePage.objects.child_of(self).live().order_by("-first_published_at")
+        )
+        articlepages = paginate(articlepages, page)
         context["articlepages"] = articlepages
         return context
 
@@ -73,9 +81,16 @@ class ArticlePage(Page):
     )
 
     # Web page setup
-    subtitle = models.CharField(max_length=200, blank=True, null=True)
+    subtitle = models.CharField(max_length=600, blank=True, null=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    featured_media = models.ForeignKey(
+        "wagtailmedia.Media",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -85,6 +100,7 @@ class ArticlePage(Page):
         [
             ("paragraph", blocks.RichTextBlock()),
             ("image", ImageChooserBlock()),
+            ("media", GEMediaBlock(icon="media")),
         ],
         blank=True,
         null=True,
@@ -92,6 +108,7 @@ class ArticlePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("subtitle"),
         ImageChooserPanel("image"),
+        MediaChooserPanel("featured_media"),
         StreamFieldPanel("body"),
         FieldPanel("tags"),
     ]

@@ -1,14 +1,29 @@
-{% load static wagtailuserbar theme_tags i18n %}
+{% load i18n static theme_tags wagtailuserbar wagtailsettings_tags wagtailcore_tags %}
 {% get_current_theme as theme %}
-
+{% get_settings %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% get_current_language as LANGUAGE %}
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" lang="{{ LANGUAGE }}">
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {% if settings.home.SiteSettings.google_search_console %}
+        <meta name="google-site-verification" content="{{settings.home.SiteSettings.google_search_console}}" />
+    {% endif %}
     <title>
         {% block title %}
-            {% if theme.slug == 'ninyampinga' %}Ninyampinga | {% elif theme.slug == 'springster' %}Springster | {% elif theme.slug == 'yegna' %}Yegna | {% elif theme.slug == 'zathu' %}Zathu | {% endif %}
-            {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% if theme.slug == 'ninyampinga' %}
+                Ninyampinga
+            {% elif theme.slug == 'springster' %}
+                Springster
+            {% elif theme.slug == 'tujibebe' %}
+                Tujibebe
+            {% elif theme.slug == 'yegna' %}
+                Yegna
+            {% elif theme.slug == 'zathu' %}
+                Zathu
+            {% endif %} | {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
         {% endblock %}
         {% block title_suffix %}
             {% with self.get_site.site_name as site_name %}
@@ -16,39 +31,124 @@
             {% endwith %}
         {% endblock %}
     </title>
+
+    <!-- Google Tag Manager -->
+    {% if settings.home.SiteSettings.ga_tag_manager %}
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','{{settings.home.SiteSettings.ga_tag_manager}}');</script>
+    {% endif %}
+    <!-- End Google Tag Manager -->
+
+    <!--Global Google Tag Manager -->
+    {% if settings.home.SiteSettings.global_ga_tag_manager %}
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{settings.home.SiteSettings.global_ga_tag_manager}}');</script>
+    {% endif %}
+    <!-- End Global Google Tag Manager -->
+
+    {% if settings.home.SiteSettings.local_ga_tracking_code %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{settings.home.SiteSettings.local_ga_tracking_code}}', 'auto');
+      </script>
+    {% endif %}
+
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content=" {% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu.png.png' %}{% endif %}" />
+    <meta name="msapplication-TileImage" content="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu.png' %}{% endif %}" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="apple-touch-icon" sizes="144x144" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/apple-touch-icon.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_192.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/springster_icon_96.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-32x32.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% if theme.slug == 'ninyampinga' %}{% elif theme.slug == 'springster' %}{% static 'img/springster/favicon-16x16.png' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'yegna' %}{% elif theme.slug == 'zathu' %}{% static 'img/zathu/zathu-favicon.ico' %}{% endif %}">
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-    <link rel="stylesheet" href="{{STATIC_URL}}css/{{theme.slug}}/base.css">
-    {% block extra_css %}
-        <style></style>
-    {% endblock %}
+    <link rel="apple-touch-icon" sizes="144x144" href="{% if theme.slug == 'springster' %}{% static 'img/springster/springster_icon_144.png' %}{% endif %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% if theme.slug == 'springster' %}{% static 'img/springster/apple-touch-icon.png' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% if theme.slug == 'springster' %}{% static 'img/springster/springster_icon_192.png' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% if theme.slug == 'springster' %}{% static 'img/springster/springster_icon_96.png' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% if theme.slug == 'springster' %}{% static 'img/springster/favicon-32x32.png' %}{% endif %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="
+        {% if theme.slug == 'ninyampinga' %}
+            {% static 'img/ninyampinga/favicon.ico' %}
+        {% elif theme.slug == 'springster' %}
+            {% static 'img/springster/favicon-16x16.png' %}
+        {% elif theme.slug == 'tujibebe' %}
+            {% static 'img/tujibebe/tujibebe-favicon.jpg' %}
+        {% elif theme.slug == 'yegna' %}
+            {% static 'img/yegna/favicon.ico' %}
+        {% elif theme.slug == 'zathu' %}
+            {% static 'img/zathu/zathu-favicon.ico' %}
+        {% endif %}">
+    <link rel="stylesheet" href="{{STATIC_URL}}_dist/{{theme.slug}}.css">
+
+    {% block extra_css %}{% endblock %}
 </head>
-<body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
+<body class="main {% block body_class %}{% if theme.slug == 'ninyampinga' %}ninyampinga{% elif theme.slug == 'springster' %}springster{% elif theme.slug == 'tujibebe' %}tujibebe{% elif theme.slug == 'yegna' %}yegna{% elif theme.slug == 'zathu' %}zathu{% endif %}{% endblock %}">
+    <!-- Google Tag Manager (noscript) -->
+    {% if settings.home.SiteSettings.ga_tag_manager %}
+     <noscript>
+       <iframe src="//www.googletagmanager.com/ns.html?id={{settings.home.SiteSettings.ga_tag_manager}}&client_session_id={{request.session.MOLO_GA_SESSION_FOR_NOSCRIPT}}&page_title={% if self.seo_title %}{{ self.seo_title|urlencode }}{% else %}{{ self.title|urlencode }}{% endif %}"
+       height="0" width="0" style="display:none;visibility:hidden"></iframe>
+     </noscript>
+   {% endif %}
+   <!-- End Google Tag Manager (noscript) -->
+
+   <!-- Global Google Tag Manager (noscript) -->
+   {% if settings.home.SiteSettings.global_ga_tag_manager %}
+     <noscript>
+       <iframe src="//www.googletagmanager.com/ns.html?id={{settings.home.SiteSettings.global_ga_tag_manager}}&client_session_id={{request.session.MOLO_GA_SESSION_FOR_NOSCRIPT}}"
+       height="0" width="0" style="display:none;visibility:hidden"></iframe>
+     </noscript>
+   {% endif %}
+   <!-- End Global Google Tag Manager (noscript) -->
+    {% if settings.home.SiteSettings.fb_enable_chat_bot %}
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v3.2'
+        });
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution=install_email
+      page_id="200029997300894"
+      logged_in_greeting="Hi! "
+      logged_out_greeting="Hi! "
+      ref="website">
+    </div>
+  {% endif %}
     {% wagtailuserbar %}
     {% with "./"|add:theme.slug|add:"/" as THEME_PATH %}
-        {% block header %} 
+        {% block header %}
             {% include THEME_PATH|add:"header.html" %}
         {% endblock %}
-            
-        {% block content %}{% endblock %}
-    
+
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+
         {% block footer %}
             {% include THEME_PATH|add:"footer.html" %}
         {% endblock %}
     {% endwith %}
-   
+
     <script type="text/javascript" src="{{STATIC_URL}}_dist/{{theme.slug}}.bundle.js"></script>
     {% block extra_js %}{# Override this in templates to add extra javascript #}{% endblock %}
 </body>
 </html>
-

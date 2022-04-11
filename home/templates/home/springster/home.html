@@ -1,6 +1,38 @@
+{% load comments i18n %}
+
 <div class="homepage">
     <div class="content">
-        {% include "./banner.html" %}
-        {% include "../_patterns/article-teasers-listing.html" %}
-    </div>  
+        <!-- FIRST BANNER POSITION -->
+        {% if page.banners %}
+            {% for banner in page.banners %}
+                {% if forloop.counter == 1 %}
+                    {% include "../_patterns/banner.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <!-- FIRST 5 ARTICLES -->
+        {% for post in articlepages|slice:":5" %}
+            {% include "../_patterns/article-teasers-listing.html" %}
+        {% endfor %}
+
+        <!--ALL OTHER BANNERS POSITION -->
+        {% if page.banners %}
+            {% for banner in page.banners %}
+                {% if not forloop.counter == 1 %}
+                    {% include "../_patterns/banner.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <!-- FORMS BANNER -->
+        {% for form in forms %}
+            {% include "../_patterns/forms-page.html" %}
+        {% endfor %}
+       
+        <!-- ALL OTHER ARTICLES -->
+        {% for post in articlepages|slice:"5:" %} 
+            {% include "../_patterns/article-teasers-listing.html" %}
+        {% endfor %}
+    </div>
 </div>

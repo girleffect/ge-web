@@ -1,0 +1,47 @@
+{% load article_tags i18n static wagtailcore_tags wagtailimages_tags %}
+
+<div class="section-page">
+    <div class="component-title">
+        <div class="component-title__super">
+            <h1 class="heading heading--primary">
+                {{ page.title }}
+            </h1>
+        </div>
+    </div>
+
+    <!-- TRAVERSE -->
+    {% if page.title|slugify == 'watch' or page.title|slugify == 'listen' %}
+        <div class="section-page__inner{% if page.title %} section-page__inner--{{page.title|slugify}}{% endif %}">
+            <div class="section-page__column-main{% if page.title %} section-page__column-main--{{page.title|slugify}}{% endif %}">
+                <div class="heading-full">
+                    <h2 class="heading--primary">{% trans "Featured episode" %}</h2>
+                </div>
+
+                {% for post in articlepages %}
+                    {% if post.content_type.app_labeled_name == 'articles | article page' %}
+                        {% include "./_article-teasers.html" %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            
+            <div class="section-page__column-side {% if page.title %} section-page__column-side--{{page.title|slugify}}{% endif %}">
+                {% for subsection in articlepages %}
+                    {% if subsection.content_type.app_labeled_name == 'articles | section page' %}
+                        {% if subsection.get_children %}
+                            <div class="heading-mid">
+                                <h2 class="heading--primary">{{ subsection }}</h2>
+                            </div>
+                            <div class="teaser-stacklist">
+                                {% for post in subsection.get_children %}
+                                    {% include "./_article-teasers.html" %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        {% include "./_article-teasers-listing.html" %}
+    {% endif %}
+</div>
