@@ -17,8 +17,8 @@ import os
 import environ
 import sentry_sdk
 from django.conf import global_settings, locale
-from sentry_sdk.integrations.django import DjangoIntegration
 from django_storage_url import dsn_configured_storage_class
+from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()
 
