@@ -31,7 +31,9 @@ from .models import (  # isort:skip
 class ProfilesTestCaseMixin(object):
     def login(self):
         # Login
-        self.client.post("/profiles/login/", {"username": "tester", "password": "0000"})
+        self.client.post(
+            reverse("auth_login"), {"username": "tester", "password": "0000"}
+        )
 
     def mk_root(self):
         page_content_type, created = ContentType.objects.get_or_create(
@@ -191,25 +193,25 @@ class RegistrationViewTest(TestCase, ProfilesTestCaseMixin):
         self.setup_cms()
 
     def test_register_view(self):
-        response = self.client.get("/profiles/register/")
+        response = self.client.get(reverse("user_register"))
         self.assertTrue(isinstance(response.context["form"], RegistrationForm))
 
     def test_register_view_invalid_form(self):
         # NOTE: empty form submission
-        response = self.client.post("/profiles/register/", {})
+        response = self.client.post(reverse("user_register"), {})
         self.assertFormError(response, "form", "username", ["This field is required."])
         self.assertFormError(response, "form", "password", ["This field is required."])
 
     def test_logout(self):
         response = self.client.get(
-            "%s?next=%s" % ("/profiles/logout/", "/profiles/register/")
+            "%s?next=%s" % (reverse("auth_logout"), reverse("user_register"))
         )
-        self.assertRedirects(response, "/profiles/register/")
+        self.assertRedirects(response, reverse("user_register"))
 
     def test_email_not_allowed_in_username(self):
 
         response = self.client.post(
-            "/profiles/register/",
+            reverse("user_register"),
             {
                 "username": "test@test.com",
                 "password": "1234",
@@ -222,7 +224,7 @@ class RegistrationViewTest(TestCase, ProfilesTestCaseMixin):
 
     def test_ascii_code_not_allowed_in_username(self):
         response = self.client.post(
-            "/profiles/register/",
+            reverse("user_register"),
             {
                 "username": "A bad username 😁",
                 "password": "1234",
@@ -237,7 +239,7 @@ class RegistrationViewTest(TestCase, ProfilesTestCaseMixin):
 
     def test_phone_number_not_allowed_in_username(self):
         response = self.client.post(
-            "/profiles/register/",
+            reverse("user_register"),
             {
                 "username": "021123123123",
                 "password": "1234",
@@ -255,12 +257,12 @@ class RegistrationDone(TestCase, ProfilesTestCaseMixin):
         self.login()
 
     def test_gender_on_done(self):
-        response = self.client.get("/profiles/register/done/")
+        response = self.client.get(reverse("registration_done"))
         self.assertContains(response, "Let us know more about yourself.")
         self.assertContains(response, "Thank you for joining!")
 
         response = self.client.post(
-            "/profiles/register/done/",
+            reverse("registration_done"),
             {
                 "gender": "Male",
             },
@@ -270,9 +272,9 @@ class RegistrationDone(TestCase, ProfilesTestCaseMixin):
         self.assertEqual(user.profile.gender, ("Male"))
 
     def test_location_on_done(self):
-        response = self.client.get("/profiles/register/done/")
+        response = self.client.get(reverse("registration_done"))
         response = self.client.post(
-            "/profiles/register/done/",
+            reverse("registration_done"),
             {
                 "location": "mlazi",
             },
@@ -302,7 +304,7 @@ class MyProfileViewTest(TestCase, ProfilesTestCaseMixin):
         self.login()
 
     def test_view(self):
-        response = self.client.get("/profiles/view/myprofile/")
+        response = self.client.get(reverse("view_my_profile"))
         self.assertContains(response, "tester")
         self.assertContains(response, "The Gender")
 
@@ -320,31 +322,31 @@ class MyProfileEditTest(TestCase, ProfilesTestCaseMixin):
         self.login()
 
     def test_view(self):
-        response = self.client.get("/profiles/edit/myprofile/")
+        response = self.client.get(reverse("edit_my_profile"))
         form = response.context["form"]
         self.assertTrue(isinstance(form, EditProfileForm))
 
     def test_update_no_input(self):
-        response = self.client.post("/profiles/edit/myprofile/", {})
+        response = self.client.post(reverse("edit_my_profile"), {})
         self.assertEqual(response.status_code, 302)
 
     def test_update_dob(self):
         response = self.client.post(
-            "/profiles/edit/myprofile/", {"date_of_birth": "2000-01-01"}
+            reverse("edit_my_profile"), {"date_of_birth": "2000-01-01"}
         )
-        self.assertRedirects(response, "/profiles/view/myprofile/")
+        self.assertRedirects(response, reverse("view_my_profile"))
         self.assertEqual(
             Profile.objects.get(user=self.user).date_of_birth, date(2000, 1, 1)
         )
 
     def test_update_gender(self):
-        response = self.client.post("/profiles/edit/myprofile/", {"gender": "Female"})
-        self.assertRedirects(response, "/profiles/view/myprofile/")
+        response = self.client.post(reverse("edit_my_profile"), {"gender": "Female"})
+        self.assertRedirects(response, reverse("view_my_profile"))
         self.assertEqual(Profile.objects.get(user=self.user).gender, "Female")
 
     def test_update_location(self):
-        response = self.client.post("/profiles/edit/myprofile/", {"location": "mlazi"})
-        self.assertRedirects(response, "/profiles/view/myprofile/")
+        response = self.client.post(reverse("edit_my_profile"), {"location": "mlazi"})
+        self.assertRedirects(response, reverse("view_my_profile"))
         self.assertEqual(Profile.objects.get(user=self.user).location, "mlazi")
 
 
@@ -392,7 +394,7 @@ class ProfilePasswordChangeViewTest(TestCase, ProfilesTestCaseMixin):
                 "confirm_password": "1234",
             },
         )
-        self.assertEqual(response["location"], "/profiles/view/myprofile/")
+        self.assertEqual(response["location"], reverse("view_my_profile"))
         # Avoid cache by loading from db
         user = User.objects.get(pk=self.user.pk)
         self.assertTrue(user.check_password("1234"))
