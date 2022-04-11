@@ -22,7 +22,6 @@ urlpatterns = [
         "robots.txt",
         TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
     ),
-    path("profiles/", include(profile_urls), name="profiles"),
     path("comments/", include(comments_urls), name="comments"),
     path("", include("social_django.urls", namespace="social")),
     path("health/", views.health, name="health"),
@@ -39,6 +38,7 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
+    path("profiles/", include(profile_urls), name="profiles"),
     path("search/", search_views.search, name="search"),
     path("", include(wagtail_urls)),
 )
