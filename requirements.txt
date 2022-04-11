@@ -10,3 +10,4 @@ boto3
 django-storages
 wagtailmedia
 sentry-sdk
+django_storage_url
