@@ -17,6 +17,7 @@ import os
 import environ
 import sentry_sdk
 from django.conf import global_settings, locale
+from django_storage_url import dsn_configured_storage_class
 from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()
@@ -245,7 +246,19 @@ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "")
 AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL = "public-read"
 
-if AWS_STORAGE_BUCKET_NAME and AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY:
+# DEFAULT_FILE_STORAGE is configured using DEFAULT_STORAGE_DSN
+DEFAULT_STORAGE_DSN = os.environ.get("DEFAULT_STORAGE_DSN", "")
+
+if DEFAULT_STORAGE_DSN:
+    # dsn_configured_storage_class() requires the name of the setting
+    DefaultStorageClass = dsn_configured_storage_class("DEFAULT_STORAGE_DSN")
+
+    # Django's DEFAULT_FILE_STORAGE requires the class name
+    DEFAULT_FILE_STORAGE = "geweb.settings.base.DefaultStorageClass"
+    INSTALLED_APPS += [
+        "storages",
+    ]
+elif AWS_STORAGE_BUCKET_NAME and AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY:
     MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     INSTALLED_APPS += [
