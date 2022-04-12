@@ -1,7 +1,7 @@
-{% load article_tags home_tags i18n wagtailcore_tags theme_tags threadedcomments_tags %}
+{% load article_tags home_tags i18n wagtailcore_tags theme_tags comments threadedcomments_tags  %}
 
 <div id="comments" class="commenting commenting--on-article">
-    {% if  settings.home.SiteSettings.comment_posting %}
+    {% if settings.home.SiteSettings.comment_posting %}
         <div class="heading heading--component">
             <h1 class="heading__component-title">{% trans "Share your feedback" %}</h1>
         </div>
@@ -9,8 +9,8 @@
     {# <!-- ========== start THREADED COMMENTS ========== --> #}
     {% get_comment_form for page as form %}
     {% if user.is_authenticated %}
-        {% if  settings.home.SiteSettings.comment_posting %}
-            <form action="{{form.action}}" method="POST" class="commenting-form">
+        {% if settings.home.SiteSettings.comment_posting %}
+            <form action="{% comment_form_target %}" method="post" class="commenting-form">
             {% csrf_token %}
             {{ form.comment }}
                 {{ form.content_type }}
@@ -24,7 +24,7 @@
             </form>
         {% endif %}
     {% else %}
-        {% if  settings.home.SiteSettings.comment_posting %}
+        {% if settings.home.SiteSettings.comment_posting %}
             <div class="call-to-action">
                 <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
             </div>
@@ -74,7 +74,7 @@
 
                         {% if comment.children.all.count > 0 %}
                             <div class="commenting-replies">
-                                <h5 class="commenting-replies-title">Latest Reply</h5>
+                                <h5 class="commenting-replies-title">{% trans "Latest Reply" %}</h5>
                                 {% for threaded_comment in comment.children.all %}
                                     <h6 class="commenting-thread__alias">{{ threaded_comment.user_name }}</h6>
                                     <p class="commenting-thread__msg">{{ threaded_comment.comment }}</p>
