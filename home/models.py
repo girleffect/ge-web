@@ -238,6 +238,13 @@ class SiteSettings(BaseSetting):
             "Show existing user comments, if disabled, this will disable new comment submission."
         ),
     )
+    allowed_emails = StreamField(
+        [
+            ("email_address", blocks.EmailBlock()),
+        ],
+        blank=True,
+        null=True,
+    )
 
     panels = [
         MultiFieldPanel(
@@ -294,4 +301,5 @@ class SiteSettings(BaseSetting):
             ],
             heading="Commenting Settings",
         ),
+        FieldPanel("allowed_emails"),
     ]
