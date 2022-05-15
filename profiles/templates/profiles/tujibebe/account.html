@@ -36,15 +36,11 @@
         </li>
     </ul>
 
-    <div class="profiles__account--passwords">
-        <div class="component">
-            <div class="component__subtitle">
-                <p class="subtitle">{% trans "Change your pin" %}</p>
-            </div>
-        </div>
-        {% include "../_patterns/change-password-form.html" %}
+     <div class="call-to-action--profiles">
+        <a href="{% url 'auth_logout' %}" class="call-to-action__submit">{% trans "Log out" %}</a>
+        <a href="{% url 'edit_my_profile' %}" class="call-to-action__link">{% trans "Edit My Profile" %}</a>
+        <a href="{% url 'profile_password_change' %}" class="call-to-action__link">{% trans "Change my pin" %}</a>
     </div>
-
     <div class="call-to-action--profiles">
         <a href="/" class="call-to-action__link call-to-action__link--left">
             {% trans "Home" %}
