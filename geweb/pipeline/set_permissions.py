@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.auth.models import Group
 from social_core.exceptions import AuthForbidden
 from wagtail.core.models import Site
 
@@ -7,7 +8,8 @@ from home.models import SiteSettings
 
 def set_permissions(user, is_new, *args, **kwargs):
     if user and is_new:
-        user.is_superuser = True
+        group = Group.objects.get(name="Editors")
+        user.groups.add(group)
         user.save()
 
 
