@@ -25,24 +25,8 @@
         {% endif %}
         {% include_block page.body %}
     </div>
-    {% if page.tags.all.count %}
-        <div class="tags-list">
-            {% for tag in page.tags.all %}
-                <span class="tags-list__item">#{{ tag.name}}</span>
-            {% endfor %}
-        </div>
-    {% endif %}
+
     {% social_media_article %}
-    {% if page.tags.all.count %}
-        <div class="tag-cloud">
-            <h3 class="heading heading__micro">{% trans "Read more about" %}</h3>
-            <ul class="tag-cloud-list">
-                {% for tag in page.tags.all %}
-                    <li class="tag-cloud-list__item">#{{ tag.name}}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
 
     {% if settings.home.SiteSettings.show_comments %}
         {% include "../_patterns/commenting.html" %}

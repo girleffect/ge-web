@@ -1,0 +1,21 @@
+{% extends "articles/article_page.html" %}
+{% load article_tags comments threadedcomments_tags home_tags i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}{% trans "Flag this comment" %}{% endblock %}
+
+{% block content %}
+ <div class="article-heading">
+    <h1 class="heading__primary">{% trans "Really report this comment?" %}</h1>
+</div>
+  <p class="commenting-thread__msg">{{ comment.comment }}</p>
+  <p class="commenting-thread__publish-date">{{ comment.submit_date }}</p>
+  <form action="." method="post">{% csrf_token %}
+      <div><input type="hidden" name="next" value="{{comment.content_object.url}}" id="next"/></div>
+    <p class="submit">
+      <input type="submit" name="submit" value="{% trans "REPORT" %}" class="call-to-action__submit"/> <a
+            href="{{comment.content_object.url}}" class="call-to-action__submit">CANCEL</a>
+    </p>
+  </form>
+{% endblock %}
+
+
