@@ -1,7 +1,9 @@
 {% load wagtailcore_tags %}
 
 {% for footer in footers %}
+    {% if footer.title|slugify == "terms-conditions" %}
     <li class="nav-list__item">
         <a href="{% pageurl footer %}" class="nav-list__anchor nav-list__{{ footer.title|slugify }}">{{ footer.title }}</a>
     </li>
+    {% endif %}
 {% endfor %}
