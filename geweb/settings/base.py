@@ -82,6 +82,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    "social_django.middleware.SocialAuthExceptionMiddleware",
 ]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 AUTHENTICATION_BACKENDS = [
