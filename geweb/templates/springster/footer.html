@@ -30,9 +30,11 @@
     <div class="copyright">
         <p class="copyright__text">
             © {% now "Y" %} Springster. {% trans "All Rights Reserved." %}
-            <a href="/en/footers/terms-conditions/" class="copyright__anchor">
+             {% if settings.profiles.ProfileSettings.terms_and_conditions %}
+            <a href="{% pageurl settings.profiles.ProfileSettings.terms_and_conditions.specific %}" class="copyright__anchor">
                 Terms &amp; Conditions
             </a>
+            {% endif %}
         </p>
     </div>
 </footer>
