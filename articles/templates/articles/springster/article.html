@@ -8,7 +8,7 @@
         {% if page.subtitle %}
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
-        {% if page.hide_comment == False %}
+        {% if settings.home.SiteSettings.show_comments %}
         {% get_comment_count for page as comment_count %}
         {% if comment_count > 0 %}
             <div class="article-page__commenting-counter">
@@ -30,10 +30,8 @@
     {% social_media_article %}
 
 
-    {% if page.hide_comment == False %}
     {% if settings.home.SiteSettings.show_comments %}
         {% include "../_patterns/commenting.html" %}
-    {% endif %}
     {% endif %}
     {% include "../_patterns/article-teasers-recommendations.html" %}
     {% include "../_patterns/breadcrumbs.html" %}

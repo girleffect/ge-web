@@ -79,12 +79,6 @@ class ArticlePage(Page):
             " at the top of the home page"
         ),
     )
-    hide_comment = models.BooleanField(
-        default=False,
-        help_text=_(
-            "Check if we need to hide the comments on the article."
-        ),
-    )
 
     # Web page setup
     subtitle = models.CharField(max_length=600, blank=True, null=True)
@@ -123,8 +117,7 @@ class ArticlePage(Page):
         index.SearchField("subtitle"),
     ]
     promote_panels = Page.promote_panels + [
-        MultiFieldPanel([FieldPanel("feature_in_homepage")], "Featured in Homepage"),
-        MultiFieldPanel([FieldPanel("hide_comment")], "Hide comment"),
+        MultiFieldPanel([FieldPanel("feature_in_homepage")], "Featured in Homepage")
     ]
 
 
