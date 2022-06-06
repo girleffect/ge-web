@@ -97,6 +97,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get(
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/admin/"
 SOCIAL_AUTH_WHITELISTED_EMAILS = []  # set through sitesettings
+LOGIN_ERROR_URL = "/admin/"
 
 SOCIAL_AUTH_PIPELINE = (
     "social_core.pipeline.social_auth.social_details",
