@@ -566,7 +566,6 @@ audio {
   border-bottom: 4px solid #e7357c;
 }
 .commenting-thread__alias {
-  color: #f8fafd;
   font-size: 15px;
   font-weight: 700;
   padding: 5px 10px;
@@ -578,12 +577,10 @@ audio {
   text-transform: uppercase;
 }
 .commenting-thread__msg {
-  color: #f8fafd;
   font-size: 16px;
   padding: 5px 10px;
 }
 .commenting-thread__publish-date {
-  color: #f8fafd;
   font-size: 12px;
   padding: 5px 5px 0 10px;
   font-weight: 700;
