@@ -19,7 +19,6 @@ def auth_allowed(user, backend, details, response, request, *args, **kwargs):
         not backend.auth_allowed(response, details)
         or not settings.SOCIAL_AUTH_WHITELISTED_EMAILS
     ):
-        user.delete()
         raise AuthForbidden(backend)
 
 
