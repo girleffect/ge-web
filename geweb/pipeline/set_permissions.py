@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.contrib.auth.models import Group
 from social_core.exceptions import AuthForbidden
 from wagtail.core.models import Site
