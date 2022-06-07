@@ -1,4 +1,4 @@
-{% load wagtailcore_tags wagtailimages_tags static i18n %}
+{% load comments wagtailcore_tags wagtailimages_tags static i18n %}
 
 <div class="teaser-stacklist__item{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}">
     {% if post.image %}
@@ -38,6 +38,15 @@
                 </p>
             {% endif %}
         {% endif %}
+
+        <div class="commenting">
+            {% get_comment_count for post as comment_count %}
+            {% if comment_count > 0 %}
+                <a href="{% pageurl post %}" class="commenting__counter">
+                    <span class="commenting__counter-num">{{ comment_count }}</span>
+                </a>
+            {% endif %}
+        </div>
 
         <div class="teaser-stacklist__cta">
             <ul class="teaser-tags-list">

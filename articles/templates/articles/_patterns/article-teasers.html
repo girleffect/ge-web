@@ -65,6 +65,14 @@
                         {% endif %}
                     {% endfor %}
                 </p>
+                <div class="commenting">
+                    {% get_comment_count for post as comment_count %}
+                    {% if comment_count > 0 %}
+                        <a href="{% pageurl post %}" class="commenting__counter">
+                            <span class="commenting__counter-num">{{ comment_count }}</span>
+                        </a>
+                    {% endif %}
+                </div>
                 <a href="{% pageurl post %}" class="call-to-action__submit">
                     {% trans "Click here" %}
                 </a>
