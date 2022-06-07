@@ -1,4 +1,5 @@
 from django.contrib.auth.models import Group
+from social_core.exceptions import AuthForbidden
 from wagtail.core.models import Site
 
 from home.models import SiteSettings
@@ -16,11 +17,13 @@ def auth_allowed(user, backend, details, response, request, *args, **kwargs):
     site_settings = SiteSettings.for_site(site)
 
     allowed_emails = [
-        email.lower() for email in site_settings.allowed_emails.__iter__()
+        str(email).lower() for email in site_settings.allowed_emails.__iter__()
     ]
     email = details.get("email")
+
     allowed = False
     if email and allowed_emails:
         email = email.lower()
         allowed = email in allowed_emails
-    return allowed
+    if not allowed:
+        raise AuthForbidden(backend)
