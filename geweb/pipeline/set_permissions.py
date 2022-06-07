@@ -17,8 +17,10 @@ def auth_allowed(user, backend, details, response, request, *args, **kwargs):
     site = Site.find_for_request(request)
     site_settings = SiteSettings.for_site(site)
 
-    allowed_emails = [email.lower() for email in site_settings.allowed_emails.__iter__()]
-    email = details.get('email')
+    allowed_emails = [
+        email.lower() for email in site_settings.allowed_emails.__iter__()
+    ]
+    email = details.get("email")
     allowed = False
     if email and allowed_emails:
         email = email.lower()
