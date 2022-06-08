@@ -36,3 +36,6 @@ LOGGING = {
         },
     },
 }
+
+if os.getenv("SECURE_SSL_REDIRECT", "true").lower() == "true":
+    SECURE_SSL_REDIRECT = True
