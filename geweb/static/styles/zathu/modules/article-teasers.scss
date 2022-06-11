@@ -1,5 +1,6 @@
 .article-teaser {
     overflow: auto;
+    overflow-x: hidden;
 }
 
 .teaser-stacklist {
@@ -33,7 +34,7 @@
         color: $dark_violet;
         font-size: 20px;
         font-family: "Berfa";
-        font-weight: 400;
+        font-weight: 400;`
         margin: 0 0 15px 0;
         text-transform: uppercase;
     }
@@ -45,15 +46,21 @@
         height: 135px;
         overflow: hidden;
         margin: 0 0 15px;
-        width: 200px;
+        width: 290px;
         &-link {
             display: block;
         }
     }
+    &__image{
+       vertical-align: middle;
+       max-width: 290px;
+       max-height: 180px;
+    }
     &__item {
         overflow: hidden;
         padding: 0 0 10px;
-        width: 45%;
+        margin: 0 15px;
+        // width: 45%;
         
         &--full-width {
             width: 100%;
@@ -62,7 +69,7 @@
             }
             .teaser-stacklist__thumbnail {
                 height: 220px;
-                margin: 0 auto;
+                // margin: 0 auto;
                 width: 290px;
             }
             .teaser-stacklist__title {
@@ -70,7 +77,8 @@
                 line-height: 32px;
             }
             .teaser-stacklist__content {
-                padding: 15px 20px;
+                padding: 15px 15px 20px 0;
+
             }
         }
     }
