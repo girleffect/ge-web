@@ -1,5 +1,5 @@
-{% load i18n home_tags threadedcomments_tags wagtailcore_tags %}
-
+{% load i18n home_tags threadedcomments_tags wagtailcore_tags wagtailsettings_tags %}
+{% get_settings %}
 
 {% with parent=page.get_parent %}
 
@@ -27,7 +27,9 @@
         {% include_block page.body %}
     </div>
 
+    {% if settings.home.SiteSettings.show_comments %}
     {% include "../_patterns/commenting.html" %}
+    {% endif %}
     {% social_media_article %}
     {% include "./article-teasers-recommendations.html" %}
 </div>
