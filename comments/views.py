@@ -48,4 +48,3 @@ class CommentReplyView(FormView, ContextMixin):
         if "files" in kwargs.keys():
             del kwargs["files"]
         return kwargs
-
