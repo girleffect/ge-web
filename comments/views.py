@@ -29,3 +29,23 @@ class AdminCommentReplyView(FormView, ContextMixin):
         comment.save()
         messages.success(self.request, "Comment Reply Successfully Posted")
         return super().form_valid(form, *args, **kwargs)
+
+
+class CommentReplyView(FormView, ContextMixin):
+    form_class = ThreadedCommentForm
+    template_name = "comments/reply.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["parent"] = self.get_form_kwargs()["target_object"]
+        return context
+
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super(CommentReplyView, self).get_form_kwargs(*args, **kwargs)
+        kwargs["parent"] = self.kwargs["parent"]
+        kwargs["target_object"] = ThreadedComment.objects.get(pk=self.kwargs["parent"])
+        del kwargs["prefix"]
+        if "files" in kwargs.keys():
+            del kwargs["files"]
+        return kwargs
+

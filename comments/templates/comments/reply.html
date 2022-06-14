@@ -1,0 +1,37 @@
+{% extends "articles/article_page.html" %}
+{% load article_tags comments threadedcomments_tags home_tags i18n wagtailcore_tags wagtailimages_tags static %}
+
+{% block title %}{% trans "Flag this comment" %}{% endblock %}
+
+{% block content %}
+ <div class="article-heading">
+    <h1 class="heading__primary">{% trans "Add your reply" %}</h1>
+</div>
+  <p class="commenting-thread__msg">{{ parent.comment }}</p>
+  <p class="commenting-thread__publish-date">{{ parent.submit_date }}</p>
+ {% get_comment_form for parent as form %}
+    {% if user.is_authenticated %}
+        {% if settings.home.SiteSettings.comment_posting %}
+            <form action="{% comment_form_target %}" method="post" class="commenting-form">
+            {% csrf_token %}
+            {{ form.comment }}
+                {{ form.content_type }}
+                {{ form.object_pk }}
+                {{ form.security_hash }}
+                {{ form.timestamp }}
+                <input type="hidden" name="next" value="{{ parent.content_object.url }}" />
+                <input type="hidden" name="email" value="comment@example.com" />
+                <input type="hidden" name="parent" value="{{parent.pk}}" />
+                <input type="submit" value="Add comment" id="id_submit" class="call-to-action__submit" />
+            </form>
+        {% endif %}
+    {% else %}
+        {% if settings.home.SiteSettings.comment_posting %}
+            <div class="call-to-action">
+                <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+
