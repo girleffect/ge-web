@@ -53,20 +53,12 @@
                         <div class="commenting-cta">
                             <div class="commenting-cta__left">
                                 <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a>
-                                <!--
-                                    NEEDS A REPLY CALL TO ACTION URL
-                                    e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment-block
-                                -->
                                 {% if  settings.home.SiteSettings.comment_posting %}
-                                    <a href="/comments/{{ page.id }}/reply" class="commenting-cta__label">{% trans "Reply" %}</a>
+                                    <a href="/comments/reply/{{ comment.id }}/" class="commenting-cta__label">{% trans "Reply" %}</a>
                                 {% endif %}
                             </div>
                             <div class="commenting-cta__right">
-                                <!--
-                                    NEEDS A REPLIES FORM - CALL TO ACTION URL
-                                    e.g. https://id.heyspringster.com/commenting/molo/reply/12637/#comment_reply
-                                -->
-                                <a href="/comments/{{ comment.id }}/#comment_reply" class="commenting-cta__label">
+                                <a href="/comments/reply/{{ comment.id }}/" class="commenting-cta__label">
                                     {{ comment.children.all.count }} {% if comment.children.all.count > 0 %}{% trans "Replies" %}{% else %}{% trans "Reply" %}{% endif %}
                                 </a>
                             </div>
