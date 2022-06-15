@@ -61,7 +61,6 @@
         padding: 10px 0 0;
         border-bottom: 4px solid $pink;
         &__alias {
-            color: $dark_gray_blue;
             font-size: 15px;
             font-weight: 700;
             padding: 5px 10px;
@@ -73,12 +72,10 @@
             }
         }
         &__msg {
-            color: $dark_gray_blue;
             font-size: 16px; 
             padding: 5px 10px;
         }
         &__publish-date {
-            color: $dark_gray_blue;
             font-size: 12px;
             padding: 5px 5px 0 10px;
             font-weight: 700;
