@@ -13,6 +13,11 @@ def set_permissions(user, is_new, *args, **kwargs):
 
 
 def auth_allowed(user, backend, details, response, request, *args, **kwargs):
+    # Allow users with the Administrator role to always login from any site
+    if user and user.is_superuser:
+        return
+    
+    # Check if this Google email is in the whitelist for the site
     site = Site.find_for_request(request)
     site_settings = SiteSettings.for_site(site)
 
