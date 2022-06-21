@@ -7,8 +7,10 @@ from home.models import SiteSettings
 
 def set_permissions(user, is_new, request, *args, **kwargs):
     if user and is_new:
+        # Restrict new users to the site they logged in on
         site = Site.find_for_request(request)
         group = Group.objects.filter(name__iexact=f"{site.site_name} Editors").first()
+
         if not group:
             group = Group.objects.get(name="Editors")
         user.groups.add(group)
