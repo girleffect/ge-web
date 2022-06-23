@@ -105,7 +105,7 @@ a {
   padding: 0 0 25px;
 }
 .article-page__body:after {
-  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
+  background: #fff url("/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
   content: "";
   display: block;
   padding: 20px 0;
@@ -292,7 +292,7 @@ a {
   text-transform: uppercase;
 }
 .call-to-action__nav-item-text--backToTop:after {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite-backup.png");
+  background-image: url("/static/img/tujibebe/icon-sprite-backup.png");
   background-repeat: no-repeat;
   background-position: -15px -634px;
   background-size: 320px;
@@ -314,7 +314,7 @@ a {
   text-decoration: none;
 }
 .call-to-action__back:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
+  background: url("/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
   content: "";
   display: inline-block;
   height: 20px;
@@ -339,7 +339,7 @@ a {
   text-align: left;
 }
 .call-to-action__link--left:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
+  background: url("/static/img/tujibebe/icon-sprite.png") 0 -463px/290px no-repeat;
   content: "";
   display: inline-block;
   height: 20px;
@@ -377,7 +377,7 @@ a {
 }
 .commenting--on-article:before {
   content: "";
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/illustrations.png") no-repeat 0 -24em/150px;
+  background: url("/static/img/tujibebe/illustrations.png") no-repeat 0 -24em/150px;
   height: 105px;
   overflow: auto;
   margin: 0 auto;
@@ -399,7 +399,7 @@ a {
   text-decoration: none;
 }
 .commenting__counter:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/checkbox-icons.png") no-repeat -15px -75px/50px;
+  background: url("/static/img/tujibebe/checkbox-icons.png") no-repeat -15px -75px/50px;
   content: "";
   display: inline-block;
   height: 20px;
@@ -501,7 +501,7 @@ a {
   text-transform: capitalize;
 }
 .component__super .super-title:after {
-  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
+  background: #fff url("/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
   content: "";
   display: block;
   padding: 10px 0;
@@ -568,7 +568,7 @@ a {
   padding: 10px 0;
 }
 .footer-page__body:after {
-  background: #ffffff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
+  background: #ffffff url("/static/img/tujibebe/icon-sprite.png") no-repeat -60px -425px/245px;
   content: "";
   display: block;
   padding: 20px 0;
@@ -630,7 +630,7 @@ a {
   width: 100%;
 }
 .forms-page__icon:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/illustrations.png") no-repeat 0 -360px/100px;
+  background: url("/static/img/tujibebe/illustrations.png") no-repeat 0 -360px/100px;
   content: "";
   display: block;
   height: 88px;
@@ -650,7 +650,7 @@ a {
   text-transform: uppercase;
 }
 .forms-page__title:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -105px -440px/245px;
+  background: url("/static/img/tujibebe/icon-sprite.png") no-repeat -105px -440px/245px;
   content: "";
   display: block;
   height: 20px;
@@ -804,7 +804,7 @@ select:focus-visible {
 }
 
 select {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") 285px -200px/180px no-repeat;
+  background: url("/static/img/tujibebe/icon-sprite.png") 285px -200px/180px no-repeat;
   width: 98%;
 }
 
@@ -850,7 +850,7 @@ input[type=checkbox]:before {
   width: 24px;
 }
 input[type=checkbox]:checked:before {
-  background: #00d79b url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") -120px -50px/180px no-repeat;
+  background: #00d79b url("/static/img/tujibebe/icon-sprite.png") -120px -50px/180px no-repeat;
 }
 
 .typeRadio {
@@ -1147,7 +1147,7 @@ input[type=radio]:checked:before {
 
 #profile,
 #search {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
+  background-image: url("/static/img/tujibebe/icon-sprite.png");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 245px;
@@ -1208,7 +1208,7 @@ input[type=radio]:checked:before {
   text-transform: uppercase;
 }
 .pagination__anchor--prev:before, .pagination__anchor--next:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") -10px -455px/290px no-repeat;
+  background: url("/static/img/tujibebe/icon-sprite.png") -10px -455px/290px no-repeat;
   content: "";
   display: inline-block;
   margin: 0 auto;
@@ -1264,7 +1264,7 @@ input[type=radio]:checked:before {
   text-transform: capitalize;
 }
 .search-page .heading__component-title:after {
-  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
+  background: #fff url("/static/img/tujibebe/icon-sprite.png") no-repeat -60px -440px/245px;
   content: "";
   display: block;
   padding: 10px 0;
@@ -1321,7 +1321,7 @@ input[type=radio]:checked:before {
 }
 .search__cta {
   background-color: transparent;
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
+  background-image: url("/static/img/tujibebe/icon-sprite.png");
   background-repeat: no-repeat;
   background-position: 0 -112px;
   background-size: 235px;
@@ -1368,7 +1368,7 @@ input[type=radio]:checked:before {
 }
 .section-banners__inner {
   align-items: center;
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/sections-bg2.png");
+  background-image: url("/static/img/tujibebe/sections-bg2.png");
   background-position: -110px 5px;
   background-size: inherit;
   background-repeat: repeat;
@@ -1422,7 +1422,7 @@ input[type=radio]:checked:before {
 }
 .section-banners .heading__primary:after {
   content: "";
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/tujibebe/icon-sprite.png");
+  background-image: url("/static/img/tujibebe/icon-sprite.png");
   background-size: 250px;
   background-repeat: no-repeat;
   display: block;

@@ -56,7 +56,7 @@
         padding: 55px 0 30px;
         text-align: center;
         &:after {
-            background: url($staticPath + 'img/springster/zig-zag-underline.png') no-repeat 0 0/145px;
+            background: url('/img/springster/zig-zag-underline.png') no-repeat 0 0/145px;
             content: '';
             height: 10px;
             margin: 0 auto;

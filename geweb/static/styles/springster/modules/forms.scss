@@ -55,7 +55,7 @@ select {
 }
 
 select {
-    background: #fafafa url($staticPath + 'img/springster/drop-down@2x.png') 0 0/20px no-repeat;
+    background: #fafafa url('/img/springster/drop-down@2x.png') 0 0/20px no-repeat;
     padding: 10px 30px 10px 5px;
     width: 100%;
 }
@@ -88,7 +88,7 @@ input[type=checkbox] {
         width: 24px;
     }
     &:checked:before {
-        background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
+        background: #7300ff url('/img/check-box.png') 0 50%/24px no-repeat;
     }
 }
 .typeCheckbox {
@@ -97,7 +97,7 @@ input[type=checkbox] {
     padding: 10px 0 0;
     width: 100%;
     &.is-on input[type=checkbox]:before {
-        background: #7300ff url($staticPath + 'img/check-box.png') 0 50%/24px no-repeat;
+        background: #7300ff url('/img/check-box.png') 0 50%/24px no-repeat;
     }
 }
 
@@ -112,7 +112,7 @@ input[type=radio] {
     opacity: .8;
     width: 100%;
     &:before {
-        background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
+        background: url('/img/springster/select@2x.png') 0 0/24px no-repeat;
         content: '';
         display: inline-block;
         height: 24px;
@@ -126,7 +126,7 @@ input[type=radio] {
     &.selected {
         opacity: 1;
         &:before {
-            background: url($staticPath + 'img/springster/selected@2x.png') 0 0/24px no-repeat;
+            background: url('/img/springster/selected@2x.png') 0 0/24px no-repeat;
             content: '';
         }
     }
@@ -228,7 +228,7 @@ input[type=radio] {
             padding: 0 15px;
             text-align: left;
             // &:before {
-            //     background: url($staticPath + 'img/springster/select@2x.png') 0 0/24px no-repeat;
+            //     background: url('/img/springster/select@2x.png') 0 0/24px no-repeat;
             //     content: '';
             //     height: 25px;
             //     margin: 0 10px 10px 0;

@@ -4,7 +4,7 @@
     height: 160px;
     &__inner {
         align-items: center;
-        background-image: url($staticPath + 'img/tujibebe/sections-bg2.png');
+        background-image: url('/img/tujibebe/sections-bg2.png');
         background-position: -110px 5px;
         background-size: inherit;
         background-repeat: repeat;
@@ -38,7 +38,7 @@
         text-transform: capitalize;
         &:after {
             content: "";
-            background-image: url($staticPath + 'img/tujibebe/icon-sprite.png');
+            background-image: url('/img/tujibebe/icon-sprite.png');
             background-size: 250px;
             background-repeat: no-repeat;
             display: block;

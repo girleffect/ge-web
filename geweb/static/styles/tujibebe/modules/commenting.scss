@@ -4,7 +4,7 @@
         margin: 8px 0;
         &:before {
             content: "";
-            background: url($staticPath + 'img/tujibebe/illustrations.png') no-repeat 0 -24em/150px;
+            background: url('/img/tujibebe/illustrations.png') no-repeat 0 -24em/150px;
             height: 105px;
             overflow: auto;
             margin: 0 auto;
@@ -27,7 +27,7 @@
         text-decoration: none;
        
        &:before {
-            background: url($staticPath + 'img/tujibebe/checkbox-icons.png') no-repeat -15px -75px/50px;
+            background: url('/img/tujibebe/checkbox-icons.png') no-repeat -15px -75px/50px;
             content: '';
             display: inline-block;
             height: 20px;

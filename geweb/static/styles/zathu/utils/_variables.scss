@@ -47,7 +47,7 @@ $very_larger: 26px;
 
 
 @mixin line-break-pattern {
-    background-image: url($staticPath + 'img/zathu/mw_zig_pattern_30.png');
+    background-image: url('/img/zathu/mw_zig_pattern_30.png');
     background-position: center;
     background-repeat: repeat-x;
     content: '';

@@ -16,7 +16,7 @@
         justify-content: center;
         width: 100%;
         &:before {
-            background: url($staticPath + 'img/springster/think_purple.png') no-repeat 0 0/85px;
+            background: url('/img/springster/think_purple.png') no-repeat 0 0/85px;
             content: '';
             display: block;
             height: 88px;
@@ -38,7 +38,7 @@
         font-size: 24px;
         text-transform: uppercase;
         &:after {
-            background: url($staticPath + 'img/springster/zig-zag-underline.png') no-repeat 0 0/145px;
+            background: url('/img/springster/zig-zag-underline.png') no-repeat 0 0/145px;
             content: '';
             display: block;
             height: 10px;
