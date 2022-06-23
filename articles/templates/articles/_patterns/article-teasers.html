@@ -43,8 +43,11 @@
                 <p class="teaser-stacklist__subtitle"> - </p>
             {% endif %}
 
+
+            {% if settings.home.SiteSettings.show_comments %}
             <div class="teaser-stacklist__cta">
                 {% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}
+                
                     <div class="commenting">
                         {% get_comment_count for post as comment_count %}
                         {% if comment_count > 0 %}
@@ -55,6 +58,7 @@
                     </div>
                 {% endif %}
             </div>
+            {% endif %}
 
             {# <!-- ========== start NINYAMPINGA ======== --> #}
             {% if theme.slug == 'ninyampinga' %}

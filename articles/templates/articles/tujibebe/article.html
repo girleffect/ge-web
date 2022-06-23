@@ -10,6 +10,7 @@
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
 
+        {% if settings.home.SiteSettings.show_comments %}
         {% get_comment_count for page as comment_count %}
         {% if comment_count > 0 %}
             <div class="article-page__commenting-counter">
@@ -17,6 +18,7 @@
                     {% trans "Your thoughts" %} ({{ comment_count }})
                 </a>
             </div>
+        {% endif %}
         {% endif %}
 
         {% if page.image %}

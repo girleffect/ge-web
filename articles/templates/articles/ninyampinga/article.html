@@ -19,11 +19,16 @@
         {% if page.subtitle %}
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
+        {% if settings.home.SiteSettings.show_comments %}
+        {% get_comment_count for page as comment_count %}
+        {% if comment_count > 0 %}
         <a href="#comments" class="call-to-action__nav-link">
             <div class="commenting__counter">
-                <span class="commenting__counter-num">0</span>
+                <span class="commenting__counter-num">{{ comment_count }}</span>
             </div>
         </a>
+        {% endif %}
+        {% endif %}
 
         {% include_block page.body %}
     </div>
