@@ -1,4 +1,5 @@
-{% load comments i18n wagtailimages_tags wagtailcore_tags %}
+{% load comments i18n wagtailimages_tags wagtailcore_tags wagtailsettings_tags %}
+{% get_settings %}
 
 {% with post=post.specific %}
     <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
