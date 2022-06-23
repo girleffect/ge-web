@@ -34,7 +34,7 @@
                 text-decoration: underline;
                 text-transform: uppercase;
                 &:after {
-                    background-image: url($staticPath + 'img/springster/up-arrow.svg');
+                    background-image: url('/img/springster/up-arrow.svg');
                     background-repeat: no-repeat;
                     background-position: 0 0;
                     background-size: auto 100%;
@@ -64,7 +64,7 @@
     &__submit {
         align-items: center;
         background-color: transparent;
-        background-image: url($staticPath + 'img/springster/button-sprite.png');
+        background-image: url('/img/springster/button-sprite.png');
         background-position: 0 0;
         background-size: 1880px 330px;
         background-repeat: no-repeat;
@@ -126,7 +126,7 @@
         text-decoration: underline;
         text-transform: uppercase;
         &:before {
-            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-image: url('/img/springster/up-arrow.svg');
             background-repeat: no-repeat;
             background-position: 0 0;
             background-size: auto 100%;

@@ -20,7 +20,7 @@
         text-transform: uppercase;
         &--prev:before,
         &--next:after {
-            background: url($staticPath + 'img/tujibebe/icon-sprite.png') -10px -455px/290px no-repeat;
+            background: url('/img/tujibebe/icon-sprite.png') -10px -455px/290px no-repeat;
             content: '';
             display: inline-block;
             margin: 0 auto;

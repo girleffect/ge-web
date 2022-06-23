@@ -17,7 +17,7 @@
         }
     }
     &__inner {
-        background: url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100% / contain, url($staticPath + 'img/springster/top-div-2@2x.png') no-repeat 0 0 / contain;
+        background: url('/img/springster/bottom-div-1@2x.png') no-repeat 0 100% / contain, url('/img/springster/top-div-2@2x.png') no-repeat 0 0 / contain;
         background-color: $lime_green;
         padding: 12px 8px;
     }

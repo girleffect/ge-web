@@ -21,7 +21,7 @@
         text-transform: uppercase;
         &--prev:before,
         &--next:after  {
-            background: url($staticPath + 'img/yegna/icon-readmore.svg') no-repeat center center/100%;
+            background: url('/img/yegna/icon-readmore.svg') no-repeat center center/100%;
             color: $vivid_violet;
             content: '';
             display: inline-block;

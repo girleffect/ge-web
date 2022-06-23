@@ -21,7 +21,7 @@
         text-transform: uppercase;
         &--prev:before,
         &--next:after  {
-            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-image: url('/img/springster/up-arrow.svg');
             background-repeat: no-repeat;
             background-position: 0 0;
             background-size: auto 100%;

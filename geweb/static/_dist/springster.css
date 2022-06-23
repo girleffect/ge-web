@@ -99,7 +99,7 @@ a {
   margin: 0 auto;
 }
 .article-page__body {
-  background: #fff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/sharpie-underline.png") no-repeat 50% 99%/122px;
+  background: #fff url("/static/img/springster/sharpie-underline.png") no-repeat 50% 99%/122px;
   padding: 0 0 25px;
 }
 .article-page__recommendations {
@@ -281,7 +281,7 @@ a {
   text-transform: uppercase;
 }
 .call-to-action__nav-item-text--backToTop:after {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
+  background-image: url("/static/img/springster/up-arrow.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: auto 100%;
@@ -308,7 +308,7 @@ a {
 .call-to-action__submit {
   align-items: center;
   background-color: transparent;
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/button-sprite.png");
+  background-image: url("/static/img/springster/button-sprite.png");
   background-position: 0 0;
   background-size: 1880px 330px;
   background-repeat: no-repeat;
@@ -368,7 +368,7 @@ a {
   text-transform: uppercase;
 }
 .call-to-action__back:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
+  background-image: url("/static/img/springster/up-arrow.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: auto 100%;
@@ -398,7 +398,7 @@ a {
   text-decoration: none;
 }
 .commenting__counter:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/comment.svg") no-repeat 0 0/20px;
+  background: url("/static/img/springster/comment.svg") no-repeat 0 0/20px;
   content: "";
   display: inline-block;
   height: 20px;
@@ -486,13 +486,13 @@ a {
   text-align: center;
 }
 .component__super {
-  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
+  background: #7300ff url("/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
   color: #656d78;
   padding: 25px 8px 35px;
   text-align: center;
 }
 .component__super .super-title {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/skewed-underline.png") no-repeat 50% 100%/200px;
+  background: url("/static/img/springster/skewed-underline.png") no-repeat 50% 100%/200px;
   color: #fff;
   font-family: "Baton-Medium";
   font-size: 32px;
@@ -500,7 +500,7 @@ a {
   text-transform: uppercase;
 }
 .component__title {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 50% 100%/145px;
+  background: url("/static/img/springster/zig-zag-underline.png") no-repeat 50% 100%/145px;
   margin: 0 8px 20px;
   padding: 20px 0 30px;
 }
@@ -569,7 +569,7 @@ a {
   text-transform: inherit;
 }
 .footer__inner {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain, url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/top-div-2@2x.png") no-repeat 0 0/contain;
+  background: url("/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain, url("/static/img/springster/top-div-2@2x.png") no-repeat 0 0/contain;
   background-color: #a4eed2;
   padding: 12px 8px;
 }
@@ -606,7 +606,7 @@ a {
   width: 100%;
 }
 .forms-page__icon:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/think_purple.png") no-repeat 0 0/85px;
+  background: url("/static/img/springster/think_purple.png") no-repeat 0 0/85px;
   content: "";
   display: block;
   height: 88px;
@@ -627,7 +627,7 @@ a {
   text-transform: uppercase;
 }
 .forms-page__title:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
+  background: url("/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
   content: "";
   display: block;
   height: 10px;
@@ -795,7 +795,7 @@ select:focus-visible {
 }
 
 select {
-  background: #fafafa url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/drop-down@2x.png") 0 0/20px no-repeat;
+  background: #fafafa url("/static/img/springster/drop-down@2x.png") 0 0/20px no-repeat;
   padding: 10px 30px 10px 5px;
   width: 100%;
 }
@@ -829,7 +829,7 @@ input[type=checkbox]:before {
   width: 24px;
 }
 input[type=checkbox]:checked:before {
-  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
+  background: #7300ff url("/static/img/check-box.png") 0 50%/24px no-repeat;
 }
 
 .typeCheckbox {
@@ -839,7 +839,7 @@ input[type=checkbox]:checked:before {
   width: 100%;
 }
 .typeCheckbox.is-on input[type=checkbox]:before {
-  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/check-box.png") 0 50%/24px no-repeat;
+  background: #7300ff url("/static/img/check-box.png") 0 50%/24px no-repeat;
 }
 
 input[type=radio] {
@@ -854,7 +854,7 @@ input[type=radio] {
   width: 100%;
 }
 .typeRadio:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/select@2x.png") 0 0/24px no-repeat;
+  background: url("/static/img/springster/select@2x.png") 0 0/24px no-repeat;
   content: "";
   display: inline-block;
   height: 24px;
@@ -869,7 +869,7 @@ input[type=radio] {
   opacity: 1;
 }
 .typeRadio.selected:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/selected@2x.png") 0 0/24px no-repeat;
+  background: url("/static/img/springster/selected@2x.png") 0 0/24px no-repeat;
   content: "";
 }
 .typeRadio input[type=radio] {
@@ -1081,7 +1081,7 @@ input[type=radio] {
   text-align: center;
 }
 .heading--component:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
+  background: url("/static/img/springster/zig-zag-underline.png") no-repeat 0 0/145px;
   content: "";
   height: 10px;
   margin: 0 auto;
@@ -1355,7 +1355,7 @@ input[type=radio] {
 }
 
 #profile {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/avatar.svg") no-repeat 3px 0/auto 95%;
+  background: url("/static/img/springster/avatar.svg") no-repeat 3px 0/auto 95%;
   cursor: pointer;
   height: 25px;
   padding: 0;
@@ -1370,7 +1370,7 @@ input[type=radio] {
 }
 
 #search {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/nav_search.svg") no-repeat 3px 0/auto 95%;
+  background: url("/static/img/springster/nav_search.svg") no-repeat 3px 0/auto 95%;
   cursor: pointer;
   text-indent: 120%;
   vertical-align: middle;
@@ -1381,7 +1381,7 @@ input[type=radio] {
   height: 25px;
 }
 #search.close {
-  background: #7300ff url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/dismiss.svg") no-repeat 3px 3px/auto 80%;
+  background: #7300ff url("/static/img/springster/dismiss.svg") no-repeat 3px 3px/auto 80%;
 }
 
 .pagination {
@@ -1408,7 +1408,7 @@ input[type=radio] {
   text-transform: uppercase;
 }
 .pagination__anchor--prev:before, .pagination__anchor--next:after {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
+  background-image: url("/static/img/springster/up-arrow.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: auto 100%;
@@ -1437,7 +1437,7 @@ input[type=radio] {
   text-align: center;
 }
 .polls__icon:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/poll@2x.png") no-repeat 0 0/100px;
+  background: url("/static/img/springster/poll@2x.png") no-repeat 0 0/100px;
   content: "";
   display: block;
   height: 88px;
@@ -1457,7 +1457,7 @@ input[type=radio] {
   margin-top: 100px;
 }
 .polls__inner {
-  background: #d1f6e8 url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
+  background: #d1f6e8 url("/static/img/springster/bottom-div-1@2x.png") no-repeat 0 100%/contain;
   margin-top: -45px;
   padding: 60px 0 8px;
 }
@@ -1507,7 +1507,7 @@ input[type=radio] {
   text-decoration: underline;
 }
 .polls .call-to-action__link:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/up-arrow.svg");
+  background-image: url("/static/img/springster/up-arrow.svg");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 25px;
@@ -1589,7 +1589,7 @@ input[type=radio] {
 }
 .search__cta {
   background-color: transparent;
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/springster/search.svg");
+  background-image: url("/static/img/springster/search.svg");
   background-repeat: no-repeat;
   background-position: 100% 0;
   background-size: auto 98%;

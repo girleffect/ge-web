@@ -9,7 +9,7 @@
             background: $white; 
             padding: 10px 0;
             &:after {
-                background: $white url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -425px/245px;
+                background: $white url('/img/tujibebe/icon-sprite.png') no-repeat  -60px -425px/245px;
                 content: '';
                 display: block;
                 padding: 20px 0;

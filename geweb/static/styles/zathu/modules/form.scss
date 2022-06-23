@@ -33,7 +33,7 @@ label {
     //label[for=id_terms_and_conditions] specificity
     &.is-on:after {
         background-color: $very_dark_gray;
-        background-image: url($staticPath + 'img/check-box.png');
+        background-image: url('/img/check-box.png');
         background-position: 0 50%;
         background-size: 24px;
         background-repeat: no-repeat;
@@ -125,7 +125,7 @@ input[type=submit] {
         font-size: 16px;
         padding: 8px 10px;
         &:before {
-            background:url($staticPath + 'img/error.png') no-repeat center / 100%;
+            background:url('/img/error.png') no-repeat center / 100%;
             background-size: 16px;
             background-repeat: no-repeat;
             background-position: 50%;

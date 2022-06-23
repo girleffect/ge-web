@@ -9,7 +9,7 @@
         margin: 20px 0 0;
         text-align: center;
         &:before {
-            background: url($staticPath + 'img/springster/poll@2x.png') no-repeat 0 0/100px;
+            background: url('/img/springster/poll@2x.png') no-repeat 0 0/100px;
             content: '';
             display: block;
             height: 88px;
@@ -30,7 +30,7 @@
         margin-top: 100px;
     }
     &__inner {
-        background: $very_soft_cyan url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100%/contain;
+        background: $very_soft_cyan url('/img/springster/bottom-div-1@2x.png') no-repeat 0 100%/contain;
         margin-top: -45px;
         padding: 60px 0 8px;
         &--results {
@@ -81,7 +81,7 @@
         padding: 0 0 5px;
         text-decoration: underline;
         &:before {
-            background-image: url($staticPath + 'img/springster/up-arrow.svg');
+            background-image: url('/img/springster/up-arrow.svg');
             background-position: 0 0;
             background-repeat: no-repeat;
             background-size: 25px;

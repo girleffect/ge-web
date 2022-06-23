@@ -9,7 +9,7 @@
         text-align: center;
         text-transform: capitalize;
         &:after {
-            background: #fff url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -440px/245px;
+            background: #fff url('/img/tujibebe/icon-sprite.png') no-repeat  -60px -440px/245px;
             content: '';
             display: block;
             padding: 10px 0;

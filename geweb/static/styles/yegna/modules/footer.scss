@@ -10,7 +10,7 @@
     }
     &__inner {
         align-items: center;
-        background: $lime_green url($staticPath + 'img/yegna/bg.svg') no-repeat 0 0/auto;
+        background: $lime_green url('/img/yegna/bg.svg') no-repeat 0 0/auto;
         display: flex;
         justify-content: space-between;
         @media (min-width: 991px) {
