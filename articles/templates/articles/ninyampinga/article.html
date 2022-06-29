@@ -1,4 +1,5 @@
-{% load i18n home_tags threadedcomments_tags wagtailcore_tags %}
+{% load i18n home_tags threadedcomments_tags wagtailcore_tags wagtailsettings_tags %}
+{% get_settings %}
 
 
 {% with parent=page.get_parent %}
@@ -18,16 +19,23 @@
         {% if page.subtitle %}
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
+        {% if settings.home.SiteSettings.show_comments %}
+        {% get_comment_count for page as comment_count %}
+        {% if comment_count > 0 %}
         <a href="#comments" class="call-to-action__nav-link">
             <div class="commenting__counter">
-                <span class="commenting__counter-num">0</span>
+                <span class="commenting__counter-num">{{ comment_count }}</span>
             </div>
         </a>
+        {% endif %}
+        {% endif %}
 
         {% include_block page.body %}
     </div>
 
+    {% if settings.home.SiteSettings.show_comments %}
     {% include "../_patterns/commenting.html" %}
+    {% endif %}
     {% social_media_article %}
     {% include "./article-teasers-recommendations.html" %}
 </div>

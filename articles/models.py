@@ -117,7 +117,7 @@ class ArticlePage(Page):
         index.SearchField("subtitle"),
     ]
     promote_panels = Page.promote_panels + [
-        MultiFieldPanel([FieldPanel("feature_in_homepage")], "Featured in Homepage"),
+        MultiFieldPanel([FieldPanel("feature_in_homepage")], "Featured in Homepage")
     ]
 
 

@@ -1,4 +1,5 @@
-{% load comments i18n wagtailimages_tags wagtailcore_tags %}
+{% load comments i18n wagtailimages_tags wagtailcore_tags wagtailsettings_tags %}
+{% get_settings %}
 
 {% with post=post.specific %}
     <div class="teaser-stacklist__item{% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}{% if post.image %} teaser-stacklist__item--split{% endif %}{% endif %}{% if theme.slug == 'zathu' %}{% if forloop.first %} teaser-stacklist__item--full-width{% endif %}{% endif %}">
@@ -43,8 +44,11 @@
                 <p class="teaser-stacklist__subtitle"> - </p>
             {% endif %}
 
+
+            {% if settings.home.SiteSettings.show_comments %}
             <div class="teaser-stacklist__cta">
                 {% if theme.slug == 'springster' or theme.slug == 'tujibebe' %}
+                
                     <div class="commenting">
                         {% get_comment_count for post as comment_count %}
                         {% if comment_count > 0 %}
@@ -55,6 +59,7 @@
                     </div>
                 {% endif %}
             </div>
+            {% endif %}
 
             {# <!-- ========== start NINYAMPINGA ======== --> #}
             {% if theme.slug == 'ninyampinga' %}
