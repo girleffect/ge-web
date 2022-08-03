@@ -58,7 +58,7 @@
 
 
 #profile {
-    background: url($staticPath + 'img/springster/avatar.svg')  no-repeat 3px 0 / auto 95%;
+    background: url('/img/springster/avatar.svg')  no-repeat 3px 0 / auto 95%;
     cursor: pointer;
     height: 25px;
     padding: 0;
@@ -73,7 +73,7 @@
 }
 
 #search {
-    background: url($staticPath + 'img/springster/nav_search.svg')  no-repeat 3px 0 / auto 95%;
+    background: url('/img/springster/nav_search.svg')  no-repeat 3px 0 / auto 95%;
     cursor: pointer;
     text-indent: 120%;
     vertical-align: middle;
@@ -83,6 +83,6 @@
     padding: 0;
     height: 25px;
     &.close {
-        background: $violet url($staticPath + 'img/springster/dismiss.svg')  no-repeat 3px 3px / auto 80%;
+        background: $violet url('/img/springster/dismiss.svg')  no-repeat 3px 3px / auto 80%;
     }
 }

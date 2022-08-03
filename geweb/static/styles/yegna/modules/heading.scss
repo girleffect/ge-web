@@ -20,7 +20,7 @@
     &-full {
         padding: 10px 0;
         &:before {
-            background: url($staticPath + 'img/yegna/divider.svg') no-repeat center 0/cover;
+            background: url('/img/yegna/divider.svg') no-repeat center 0/cover;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 20px;
             content: "";
@@ -32,7 +32,7 @@
         .heading__title {
             text-align: left;
             &:before {
-                background: url($staticPath + 'img/yegna/icon-diamond.svg') no-repeat center / auto;
+                background: url('/img/yegna/icon-diamond.svg') no-repeat center / auto;
                 content: "";
                 display: inline-block;
                 height: 20px;
@@ -44,7 +44,7 @@
     &-mid {
         padding: 10px 0;
         &:before {
-            background: url($staticPath + 'img/yegna/divider.svg') no-repeat  25px -45px/auto;
+            background: url('/img/yegna/divider.svg') no-repeat  25px -45px/auto;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 20px;
             content: "";
@@ -57,7 +57,7 @@
             &__title {
                 text-align: left;
                 &:before {
-                    background: url($staticPath + 'img/yegna/icon-characters.svg') no-repeat  center / auto;
+                    background: url('/img/yegna/icon-characters.svg') no-repeat  center / auto;
                     content: "";
                     display: inline-block;
                     height: 30px;

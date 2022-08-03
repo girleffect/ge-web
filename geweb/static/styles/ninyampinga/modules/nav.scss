@@ -54,7 +54,7 @@
                 display: none;
             }
             &:before {
-                background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
+                background-image: url('/img/ninyampinga/header-icons.png');
                 background-position: 0 -115px;
                 background-size: 25px;
                 background-repeat: no-repeat;
@@ -121,7 +121,7 @@
                 height: 45px;
             }
             &:before {
-                background-image: url($staticPath + 'img/ninyampinga/iconsSprite.png');
+                background-image: url('/img/ninyampinga/iconsSprite.png');
                 background-position: 0 -405px;
                 background-size: 60px;
                 background-repeat: no-repeat;
@@ -139,7 +139,7 @@
             &:hover, &:focus {
                 color: $pink;
                 &:before {
-                    background-image: url($staticPath + 'img/ninyampinga/header-icons.png');
+                    background-image: url('/img/ninyampinga/header-icons.png');
                     background-position: 0 -90px;
                     background-size: 30px;
                     @media (min-width: 991px) {

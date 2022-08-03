@@ -23,7 +23,7 @@
             background: #fff;
             padding: 0 0 25px;
             &:after {
-                background: #fff url($staticPath + 'img/tujibebe/icon-sprite.png') no-repeat  -60px -425px/245px;
+                background: #fff url('/img/tujibebe/icon-sprite.png') no-repeat  -60px -425px/245px;
                 content: '';
                 display: block;
                 padding: 20px 0;

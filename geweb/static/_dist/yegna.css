@@ -284,7 +284,7 @@ audio {
   width: auto;
 }
 .teaser-stacklist-actions-list__item .call-to-action__button:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-download.svg") no-repeat center center/auto;
+  background: url("/static/img/yegna/icon-download.svg") no-repeat center center/auto;
 }
 .teaser-stacklist--featured-main .teaser-stacklist__item {
   padding: 0 0 25px;
@@ -317,7 +317,7 @@ audio {
   text-decoration: none;
 }
 .call-to-action__read-more:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
+  background: url("/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 15px;
@@ -335,7 +335,7 @@ audio {
   float: left;
 }
 .call-to-action__back:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
+  background: url("/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 15px;
@@ -357,7 +357,7 @@ audio {
   text-decoration: none;
 }
 .call-to-action__button:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-watch-white.svg") no-repeat center center/100%;
+  background: url("/static/img/yegna/icon-watch-white.svg") no-repeat center center/100%;
   content: "";
   display: inline-block;
   height: 19px;
@@ -447,7 +447,7 @@ audio {
 }
 .footer__inner {
   align-items: center;
-  background: #00ff00 url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/bg.svg") no-repeat 0 0/auto;
+  background: #00ff00 url("/static/img/yegna/bg.svg") no-repeat 0 0/auto;
   display: flex;
   justify-content: space-between;
 }
@@ -474,7 +474,7 @@ audio {
 }
 
 .header {
-  background: #00ff00 url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/main-bg.svg") no-repeat center/auto;
+  background: #00ff00 url("/static/img/yegna/main-bg.svg") no-repeat center/auto;
   vertical-align: middle;
   position: relative;
   margin: 0 auto;
@@ -520,7 +520,7 @@ audio {
   padding: 10px 0;
 }
 .heading-full:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/divider.svg") no-repeat center 0/cover;
+  background: url("/static/img/yegna/divider.svg") no-repeat center 0/cover;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 20px;
   content: "";
@@ -533,7 +533,7 @@ audio {
   text-align: left;
 }
 .heading-full .heading__title:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-diamond.svg") no-repeat center/auto;
+  background: url("/static/img/yegna/icon-diamond.svg") no-repeat center/auto;
   content: "";
   display: inline-block;
   height: 20px;
@@ -544,7 +544,7 @@ audio {
   padding: 10px 0;
 }
 .heading-mid:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/divider.svg") no-repeat 25px -45px/auto;
+  background: url("/static/img/yegna/divider.svg") no-repeat 25px -45px/auto;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 20px;
   content: "";
@@ -557,7 +557,7 @@ audio {
   text-align: left;
 }
 .heading-mid .heading__title:before {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-characters.svg") no-repeat center/auto;
+  background: url("/static/img/yegna/icon-characters.svg") no-repeat center/auto;
   content: "";
   display: inline-block;
   height: 30px;
@@ -826,27 +826,27 @@ audio {
 }
 
 #menu:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-burger.svg");
+  background-image: url("/static/img/yegna/icon-burger.svg");
 }
 
 #watch:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-watch.svg");
+  background-image: url("/static/img/yegna/icon-watch.svg");
   width: 25px;
 }
 
 #cast:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-cast.svg");
+  background-image: url("/static/img/yegna/icon-cast.svg");
 }
 
 #listen:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-listen-black.svg");
+  background-image: url("/static/img/yegna/icon-listen-black.svg");
 }
 
 #search_label {
   padding: 10px 10px 15px;
 }
 #search_label:before {
-  background-image: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-search.svg");
+  background-image: url("/static/img/yegna/icon-search.svg");
   height: 35px;
   width: 30px;
 }
@@ -875,7 +875,7 @@ audio {
   text-transform: uppercase;
 }
 .pagination__anchor--prev:before, .pagination__anchor--next:after {
-  background: url("https://standard-wagtail.prd-hub.ie.gehosting.org/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
+  background: url("/static/img/yegna/icon-readmore.svg") no-repeat center center/100%;
   color: #8208ff;
   content: "";
   display: inline-block;

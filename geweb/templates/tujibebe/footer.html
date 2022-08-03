@@ -1,4 +1,6 @@
-{% load article_tags i18n home_tags static wagtailcore_tags  %}
+{% load article_tags i18n home_tags static wagtailcore_tags wagtailsettings_tags  %}
+{% get_settings %}
+
 <footer id="footer" class="footer">
     <div class="footer__inner">
         {% include "../_patterns/search-input.html" with enhance="footer" %}

@@ -44,7 +44,7 @@ select {
 }
 
 select { 
-    background: url($staticPath + 'img/tujibebe/icon-sprite.png') 285px -200px/180px no-repeat;
+    background: url('/img/tujibebe/icon-sprite.png') 285px -200px/180px no-repeat;
     width: 98%;
 }
 
@@ -89,7 +89,7 @@ input[type=checkbox] {
         width: 24px;
     }
     &:checked:before {
-        background: $lime url($staticPath + 'img/tujibebe/icon-sprite.png') -120px -50px/180px no-repeat;
+        background: $lime url('/img/tujibebe/icon-sprite.png') -120px -50px/180px no-repeat;
     }
 }
 

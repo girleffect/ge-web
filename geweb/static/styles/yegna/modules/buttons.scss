@@ -5,7 +5,7 @@
         padding: 20px 20px 0 0;
         text-decoration: none;
         &:after {
-            background: url($staticPath + 'img/yegna/icon-readmore.svg') no-repeat center center/100%;
+            background: url('/img/yegna/icon-readmore.svg') no-repeat center center/100%;
             content: "";
             display: inline-block;
             height: 15px;
@@ -24,7 +24,7 @@
         text-decoration: none;
         float: left;
         &:before {
-            background: url($staticPath + 'img/yegna/icon-readmore.svg') no-repeat center center/100%;
+            background: url('/img/yegna/icon-readmore.svg') no-repeat center center/100%;
             content: "";
             display: inline-block;
             height: 15px;
@@ -47,7 +47,7 @@
         padding: 10px;
         text-decoration: none;
         &:before {
-            background: url($staticPath + 'img/yegna/icon-watch-white.svg') no-repeat center center/100%;
+            background: url('/img/yegna/icon-watch-white.svg') no-repeat center center/100%;
             content: "";
             display: inline-block;
             height: 19px;

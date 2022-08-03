@@ -23,7 +23,7 @@
     
 
     &__counter {
-        background: url($staticPath + 'img/ninyampinga/iconsSprite.svg') no-repeat 0 -25.7em/32px;
+        background: url('/img/ninyampinga/iconsSprite.svg') no-repeat 0 -25.7em/32px;
         display: inline-block;
         text-decoration: none;
         height: 40px;
@@ -61,7 +61,6 @@
         padding: 10px 0 0;
         border-bottom: 4px solid $pink;
         &__alias {
-            color: $dark_gray_blue;
             font-size: 15px;
             font-weight: 700;
             padding: 5px 10px;
@@ -73,12 +72,10 @@
             }
         }
         &__msg {
-            color: $dark_gray_blue;
             font-size: 16px; 
             padding: 5px 10px;
         }
         &__publish-date {
-            color: $dark_gray_blue;
             font-size: 12px;
             padding: 5px 5px 0 10px;
             font-weight: 700;

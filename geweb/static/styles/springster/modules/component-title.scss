@@ -1,12 +1,12 @@
 .component {
     text-align: center;
     &__super {
-        background: $violet url($staticPath + 'img/springster/bottom-div-1@2x.png') no-repeat 0 100%/contain;
+        background: $violet url('/img/springster/bottom-div-1@2x.png') no-repeat 0 100%/contain;
         color: $dark_gray;
         padding: 25px 8px 35px;
         text-align: center;
         .super-title {
-            background: url($staticPath + 'img/springster/skewed-underline.png') no-repeat 50% 100%/200px;
+            background: url('/img/springster/skewed-underline.png') no-repeat 50% 100%/200px;
             color: #fff;
             font-family: 'Baton-Medium';
             font-size: 32px;
@@ -15,7 +15,7 @@
         }
     }
     &__title {
-        background: url($staticPath + 'img/springster/zig-zag-underline.png') no-repeat 50% 100%/145px;
+        background: url('/img/springster/zig-zag-underline.png') no-repeat 50% 100%/145px;
         margin: 0 8px 20px;
         padding: 20px 0 30px;
     }
