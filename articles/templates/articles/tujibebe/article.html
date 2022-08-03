@@ -1,4 +1,5 @@
-{% load article_tags comments threadedcomments_tags home_tags i18n wagtailcore_tags wagtailimages_tags %}
+{% load article_tags comments threadedcomments_tags home_tags i18n wagtailcore_tags wagtailimages_tags wagtailsettings_tags %}
+{% get_settings %}
 
 <div class="article-page">
     <div class="article-page__body">
@@ -9,6 +10,7 @@
             <p class="subheading">{{ page.subtitle }}</p>
         {% endif %}
 
+        {% if settings.home.SiteSettings.show_comments %}
         {% get_comment_count for page as comment_count %}
         {% if comment_count > 0 %}
             <div class="article-page__commenting-counter">
@@ -16,6 +18,7 @@
                     {% trans "Your thoughts" %} ({{ comment_count }})
                 </a>
             </div>
+        {% endif %}
         {% endif %}
 
         {% if page.image %}
