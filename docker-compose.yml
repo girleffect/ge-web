@@ -7,15 +7,24 @@ services:
     build: "."
     # map the internal port 80 to port 8000 on the host
     ports:
-      - "8000:80"
+      - "8000:8000"
     # map the host directory to app (which allows us to see and edit files inside the container)
     volumes:
       - ".:/app:rw"
       - "./data:/data:rw"
+      - "./gunicorn/config.py:/etc/gunicorn/config.py"
+      - "./nginx/conf.d/django.conf:/etc/nginx/conf.d/django.conf"
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
     # the default command to run whenever the container is launched
+    # can be commented out to run via nginx + gunicorn locally as well
     command: python manage.py runserver 0.0.0.0:80
     links:
       - "database_default"
+    environment:
+      SECRET_KEY: dummy
+      ALLOWED_HOSTS: "*"
+      DJANGO_SETTINGS_MODULE: geweb.settings.production
+      DATABASE_URL: postgres://postgres@database_default:5432/db
 
   database_default:
     # the application's web service will use an off-the-shelf image
