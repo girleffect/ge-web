@@ -5,7 +5,7 @@ import dj_database_url
 
 from .base import *  # noqa
 
-DEBUG = True
+DEBUG = False
 
 PROJECT_ROOT = os.environ.get("PROJECT_ROOT") or dirname(dirname(abspath(__file__)))
 DATABASES = {
