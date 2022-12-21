@@ -18,11 +18,14 @@ import environ
 import sentry_sdk
 from django.conf import global_settings, locale
 from django_storage_url import dsn_configured_storage_class
+import dj_database_url
 from sentry_sdk.integrations.django import DjangoIntegration
 
 env = environ.Env()
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = os.environ.get("PROJECT_ROOT") or os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))
+)
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 DEFAULT_SECRET_KEY = "please-change-me"
@@ -142,10 +145,9 @@ TEMPLATES = [
 WSGI_APPLICATION = "geweb.wsgi.application"
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
+    "default": dj_database_url.config(
+        default="sqlite:///%s" % os.path.join(BASE_DIR, "db.sqlite3")
+    )
 }
 
 
