@@ -8,6 +8,7 @@ django-threadedcomments
 wagtailfontawesome
 boto3
 django-storages
-wagtailmedia
+wagtailmedia < 0.13
 sentry-sdk
 django_storage_url
+urllib3 < 2
