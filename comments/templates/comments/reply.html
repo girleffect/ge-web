@@ -10,7 +10,7 @@
   <p class="commenting-thread__msg">{{ parent.comment }}</p>
   <p class="commenting-thread__publish-date">{{ parent.submit_date }}</p>
  {% get_comment_form for parent as form %}
-    {% if user.is_authenticated %}
+    <!-- {% if user.is_authenticated %}
         {% if settings.home.SiteSettings.comment_posting %}
             <form action="{% comment_form_target %}" method="post" class="commenting-form">
             {% csrf_token %}
@@ -31,7 +31,7 @@
                 <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
             </div>
         {% endif %}
-    {% endif %}
+    {% endif %} -->
 {% endblock %}
 
 

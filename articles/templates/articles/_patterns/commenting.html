@@ -8,7 +8,7 @@
     {% endif %}
     {# <!-- ========== start THREADED COMMENTS ========== --> #}
     {% get_comment_form for page as form %}
-    {% if user.is_authenticated %}
+    <!-- {% if user.is_authenticated %}
         {% if settings.home.SiteSettings.comment_posting %}
             <form action="{% comment_form_target %}" method="post" class="commenting-form">
             {% csrf_token %}
@@ -29,7 +29,7 @@
                 <a href="{% url 'auth_login' %}" class="call-to-action__submit">{% trans "Log in to leave a comment." %}</a>
             </div>
         {% endif %}
-    {% endif %}
+    {% endif %} -->
 
     {% get_comment_list for page as comment_list root_only %}
     {% if comment_list %}
