@@ -10,12 +10,12 @@
             <a href="{% url 'view_my_profile' %}" class="nav-list__anchor">{% trans "Profile" %}</a>
         {% endif %}
 
-        <li class="nav-list__item">
+        <!-- <li class="nav-list__item">
             {% if not user.is_authenticated %}
                 <a href="{% url 'auth_login' %}" class="nav-list__anchor">{% trans "Log in" %}</a>
             {% else %}
                 <a href="{% url 'auth_logout' %}" class="nav-list__anchor">{% trans "Log out" %}</a>
             {% endif %}
-        </li>
+        </li> -->
     </ul>
 </nav>
