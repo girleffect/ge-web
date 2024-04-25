@@ -1,8 +1,7 @@
 {% load static wagtailsettings_tags wagtailcore_tags i18n %}
 {% get_settings %}
-<p class="subtitle">{% trans "This page is no longer available" %}</p>
 
-<!-- <form method="post" action="{% url 'user_register' %}" class="profiles__form">
+<form method="post" action="{% url 'user_register' %}" class="profiles__form">
     {% csrf_token %}
     {% for field in form %}
         <fieldset {% if field.name == "terms_and_conditions" %}class="profiles__split"{% endif %}>
@@ -21,4 +20,4 @@
     <div class="call-to-action">
         <input type="submit" value="{% trans 'Sign up' %}" class="call-to-action__submit" />
     </div>
-  </form> -->
+  </form>
