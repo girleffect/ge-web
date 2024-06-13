@@ -29,13 +29,19 @@ from wagtail.contrib.forms.models import (  # isort:skip
 
 
 class CustomFormSubmission(AbstractFormSubmission):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True
+    )
 
     def get_data(self):
         form_data = super().get_data()
+        for key, value in form_data.items():
+            # Convert lists to strings so they display properly in the view
+            if isinstance(value, list):
+                form_data[key] = u", ".join(value)
         form_data.update(
             {
-                "username": self.user.username,
+                "username": self.user.username if self.user else "Anonymous",
             }
         )
 
@@ -193,10 +199,11 @@ class FormPage(AbstractEmailForm):
         return CustomFormSubmission
 
     def process_form_submission(self, form):
+        user = form.user if not form.user.is_anonymous else None
         self.get_submission_class().objects.create(
             form_data=json.dumps(form.cleaned_data, cls=DjangoJSONEncoder),
             page=self,
-            user=form.user,
+            user=user,
         )
 
     @property
@@ -211,11 +218,14 @@ class FormPage(AbstractEmailForm):
 
     def serve(self, request, *args, **kwargs):
         if (
-            not self.allow_multiple_submissions_per_user
+            not self.allow_anonymous_submissions
+            and not self.allow_multiple_submissions_per_user
             and self.get_submission_class()
             .objects.filter(page=self, user__pk=request.user.pk)
             .exists()
         ):
+            return render(request, self.template, self.get_context(request))
+        if not request.user.is_authenticated and not self.allow_anonymous_submissions:
             return render(request, self.template, self.get_context(request))
         if self.multi_step:
             is_last_step = False
@@ -287,7 +297,6 @@ class FormPage(AbstractEmailForm):
             context["form"] = form
             context["fields_step"] = step
             return render(request, self.template, context)
-
         return super().serve(request, *args, **kwargs)
 
     def get_form_class_for_step(self, step):
