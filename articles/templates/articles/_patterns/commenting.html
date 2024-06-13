@@ -31,50 +31,52 @@
         {% endif %}
     {% endif %} -->
 
-    {% get_comment_list for page as comment_list root_only %}
+    {% get_comment_list for page as comment_list %}
     {% if comment_list %}
         <div class="commenting__list">
             <div class="heading heading--component">
                 <h1 class="heading__component-title">{% trans "Your thoughts" %}</h1>
             </div>
-            {% for comment in comment_list %}
-                <div class="commenting__list-item">
-                    <div class="commenting-thread">
-                        {% if comment.is_removed %}
-                            <h6 class="commenting-thread__alias-removed">
-                                {% trans "This comment has been deleted. Please read our platform rules." %}
-                            </h6>
-                        {% else %}
-                            <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
-                            <p class="commenting-thread__msg">{{ comment.comment }}</p>
-                            <p class="commenting-thread__publish-date">{{ comment.submit_date }}</p>
-                        {% endif %}
+            {% for comment in comment_list|annotate_tree %}
+                {% if not comment.parent_id %}
+                    <div class="commenting__list-item">
+                        <div class="commenting-thread">
+                            {% if comment.is_removed %}
+                                <h6 class="commenting-thread__alias-removed">
+                                    {% trans "This comment has been deleted. Please read our platform rules." %}
+                                </h6>
+                            {% else %}
+                                <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
+                                <p class="commenting-thread__msg">{{ comment.comment }}</p>
+                                <p class="commenting-thread__publish-date">{{ comment.submit_date }}</p>
+                            {% endif %}
 
-                        <div class="commenting-cta">
-                            <div class="commenting-cta__left">
-                                <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a>
-                                {% if  settings.home.SiteSettings.comment_posting %}
-                                    <a href="/comments/reply/{{ comment.id }}/" class="commenting-cta__label">{% trans "Reply" %}</a>
+                            <div class="commenting-cta">
+                                <div class="commenting-cta__left">
+                                    <a href="/comments/flag/{{ comment.id }}/" class="commenting-cta__label">{% trans "Report" %}</a>
+                                    {% if settings.home.SiteSettings.comment_posting %}
+                                        <a href="/comments/reply/{{ comment.id }}/" class="commenting-cta__label">{% trans "Reply" %}</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                {% else %}
+                    {% if comment.open %}
+                        <div class="commenting-replies" style="background-color: red">
+                            <h5 class="commenting-replies-title">
+                                {% if comment.close %}
+                                    {% trans "Latest Reply" %}
+                                {% else %}
+                                    {% trans "Latest Replies" %}
                                 {% endif %}
-                            </div>
-                            <div class="commenting-cta__right">
-                                <a href="/comments/reply/{{ comment.id }}/" class="commenting-cta__label">
-                                    {{ comment.children.all.count }} {% if comment.children.all.count > 0 %}{% trans "Replies" %}{% else %}{% trans "Reply" %}{% endif %}
-                                </a>
-                            </div>
-                        </div>
+                            </h5>
+                    {% endif %}
 
-                        {% if comment.children.all.count > 0 %}
-                            <div class="commenting-replies">
-                                <h5 class="commenting-replies-title">{% trans "Latest Reply" %}</h5>
-                                {% for threaded_comment in comment.children.all %}
-                                    <h6 class="commenting-thread__alias">{{ threaded_comment.user_name }}</h6>
-                                    <p class="commenting-thread__msg">{{ threaded_comment.comment }}</p>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
+                    <h6 class="commenting-thread__alias">{{ comment.user_name }}</h6>
+                    <p class="commenting-thread__msg">{{ comment.comment }}</p>
+
+                    {% if comment.close %}</div>{% endif %}
+                {% endif %}
+                {% if comment.close %}</div></div>{% endif %}
             {% endfor %}
         </div>
     {% endif %}

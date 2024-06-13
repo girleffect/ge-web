@@ -7,7 +7,7 @@ services:
     build: "."
     # map the internal port 80 to port 8000 on the host
     ports:
-      - "8000:8000"
+      - "8000:80"
     # map the host directory to app (which allows us to see and edit files inside the container)
     volumes:
       - ".:/app:rw"
@@ -23,7 +23,7 @@ services:
     environment:
       SECRET_KEY: dummy
       ALLOWED_HOSTS: "*"
-      DJANGO_SETTINGS_MODULE: geweb.settings.production
+      DJANGO_SETTINGS_MODULE: geweb.settings.dev
       DATABASE_URL: postgres://postgres@database_default:5432/db
 
   database_default:
