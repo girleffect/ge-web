@@ -1,46 +1,57 @@
 
-
-{% load wagtailcore_tags wagtailimages_tags %}
 {% load i18n %}
 {% load static %}
+{% load wagtailcore_tags wagtailimages_tags helpers_tags %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Sign in - Wagtail</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
+{% get_site as site_name %}
 
-    <link rel="stylesheet" href="{% static 'wagtailadmin/css/core.css' %}?v=1f5b2029">
-    <link rel="shortcut icon" href="{% static 'wagtailadmin/images/favicon.ico' %}?v=1f5b2029">
-</head>
 
-<body id="wagtail" class="login">
-<div data-sprite></div>
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Sign in - Wagtail</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex">
 
-<div class="wrapper">
-    <main class="content-wrapper" id="main">
-        <h1>Sign in to Wagtail</h1>
-        <form class="login-form" action="/admin/login/" method="post" autocomplete="off" novalidate>
-            {% csrf_token %}
-            <input type="hidden" name="next" value="/admin/" />
+        <link rel="stylesheet" href="{% static 'wagtailadmin/css/core.css' %}?v=1f5b2029">
+        <link rel="shortcut icon" href="{% static 'wagtailadmin/images/favicon.ico' %}?v=1f5b2029">
+    </head>
 
-            <div class="w-field__wrapper" data-field-wrapper>
-                <a  href="/login/google-oauth2/"><button style="margin-top: 10px;" type="button" class="button">{% trans 'Google' %}</button></a>
+    <body id="wagtail" class="login">
+    <div data-sprite></div>
+
+    <div class="wrapper">
+        <main class="content-wrapper" id="main">
+            <h1>Sign in to Wagtail</h1>
+            <form class="login-form" action="/admin/login/" method="post" autocomplete="off" novalidate>
+                {% csrf_token %}
+                <input type="hidden" name="next" value="/admin/" />
+
+                    <div class="w-field__wrapper" data-field-wrapper>
+                        <label for="id_username">{% trans 'Username' %}</label>
+                        <input type="text" name="username" autocapitalize="none" autofocus required id="id_username">
+                    </div>
+                    <div class="w-field__wrapper" data-field-wrapper>
+                        <label for="id_password">{% trans 'Password' %}</label>
+                        <input type="password" name="password" autocomplete="current-password" required id="id_password">
+                    </div>
+                    <div class="w-field__wrapper" data-field-wrapper>
+                        <input type="submit" value="{% trans 'Log in' %}" class="button">
+                    </div>
+            </form>
+
+            <div class="login-logo">
+                <img class="login-logo-img" alt="" src="{% static 'wagtailadmin/images/wagtail-logo.svg' %}?v=1f5b2029">
             </div>
-        </form>
+            <br>
+            <p class="login-footer">
+                If you are unable to login using Google-sign, email: <a href="mailto:admin.support@girleffect.org" target="_blank">admin.support@girleffect.org</a>
+            </p>
+        </main>
 
-        <div class="login-logo">
-            <img class="login-logo-img" alt="" src="{% static 'wagtailadmin/images/wagtail-logo.svg' %}?v=1f5b2029">
-        </div>
-        <br>
-        <p class="login-footer">
-            If you are unable to login using Google-sign, email: <a href="mailto:admin.support@girleffect.org" target="_blank">admin.support@girleffect.org</a>
-        </p>
-    </main>
+    </div>
+    </body>
+    </html>
 
-</div>
-</body>
-</html>
